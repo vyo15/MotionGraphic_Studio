@@ -1,0 +1,12 @@
+{
+  "id": "WindowsShortcutWinEDuaJendelaProV2",
+  "slug": "windows-shortcut-win-e-dua-jendela-pro-v2",
+  "title": "Windows Hacks 04 — WIN + E | Dua File Explorer Tanpa Menutup Folder Lama",
+  "entry": "src/Video.tsx",
+  "exportName": "Video",
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "durationInFrames": 300,
+  "defaultProps": {}
+}

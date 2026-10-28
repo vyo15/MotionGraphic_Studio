@@ -1,0 +1,15 @@
+{
+  "id": "IPAddressReels",
+  "slug": "ip-address",
+  "title": "Belajar IP Address",
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "durationInFrames": 720,
+  "entry": "src/Video.tsx",
+  "exportName": "Video",
+  "defaultProps": {
+    "backgroundColor": "#071429",
+    "musicVolume": 0.27
+  }
+}

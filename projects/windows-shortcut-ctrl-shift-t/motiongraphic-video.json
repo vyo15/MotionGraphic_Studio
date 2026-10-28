@@ -1,0 +1,12 @@
+{
+  "id": "WindowsShortcutCtrlShiftT",
+  "slug": "windows-shortcut-ctrl-shift-t",
+  "title": "Shortcut Windows — Ctrl + Shift + T",
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "durationInFrames": 270,
+  "entry": "src/Video.tsx",
+  "exportName": "Video",
+  "defaultProps": {}
+}

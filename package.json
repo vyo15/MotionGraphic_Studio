@@ -1,0 +1,37 @@
+{
+  "name": "motiongraphic-studio-master",
+  "version": "1.6.2",
+  "private": true,
+  "description": "MotionGraphic Studio v1.6.2 folder-first; safe project rename, external master backup",
+  "scripts": {
+    "predev": "node tools/prepare-studio.mjs",
+    "dev": "remotion studio src/index.ts",
+    "studio": "npm run dev",
+    "import": "node tools/import-inbox.mjs && node tools/sync-projects.mjs && node tools/validate-library.mjs",
+    "add": "node tools/add-video.mjs",
+    "list": "node tools/list-videos.mjs",
+    "delete": "node tools/delete-video.mjs",
+    "restore": "node tools/restore-video.mjs",
+    "prerender": "node tools/prepare-studio.mjs",
+    "render": "node tools/render-menu.mjs",
+    "validate": "node tools/validate-library.mjs",
+    "check": "node tools/sync-projects.mjs && node tools/validate-library.mjs && tsc --noEmit",
+    "sync": "node tools/sync-projects.mjs && node tools/validate-library.mjs",
+    "zip": "node tools/zip-video.mjs",
+    "addfolder": "node tools/add-folder.mjs",
+    "rename": "node tools/rename-video.mjs",
+    "doctor": "node tools/doctor.mjs",
+    "menu": "node tools/studio-menu.mjs"
+  },
+  "dependencies": {
+    "@remotion/cli": "4.0.538",
+    "remotion": "4.0.538",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.5.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0"
+  }
+}

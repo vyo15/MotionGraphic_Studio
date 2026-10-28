@@ -1,0 +1,33 @@
+# Dependensi & cache
+node_modules/
+.cache/
+dist/
+build/
+coverage/
+*.log
+.DS_Store
+Thumbs.db
+
+# Render, asset mirror, dan export hasil generate
+out/
+exports/zips/
+public/videos/
+*.zip
+
+# Arsip lokal. Disimpan di ZIP backup Master, tidak untuk repo GitHub publik.
+library/backups/
+library/arsip-migrasi-v15/
+library/arsip-exports-lama/
+library/arsip-source-salah-tempat/
+library/sampah/
+library/sudah-diimpor/
+library/gagal-import/
+library/masuk/*
+!library/masuk/TARUH-ZIP-VIDEO-DI-SINI.txt
+
+# Rahasia/konfigurasi pribadi
+.env
+.env.*
+!.env.example
+*.pem
+*.key

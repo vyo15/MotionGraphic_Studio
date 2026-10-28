@@ -1,0 +1,97 @@
+.cteRoot{position:relative;overflow:hidden;color:#f8fcff}.cteRoot *{box-sizing:border-box}
+.cteGrid{position:absolute;inset:0;background-image:radial-gradient(#8bb4eb 1px,transparent 1px);background-size:32px 32px;opacity:.11;mask-image:linear-gradient(transparent 7%,#000 28%,#000 82%,transparent)}
+.cteGlowOne{position:absolute;left:-200px;top:600px;width:640px;height:800px;background:#0a658b;border-radius:100%;filter:blur(180px);opacity:.32}
+.cteGlowTwo{position:absolute;right:-290px;top:930px;width:560px;height:640px;background:#3d38b0;border-radius:100%;filter:blur(180px);opacity:.27}
+.cteOutline{position:absolute;left:32px;top:238px;width:1016px;height:1355px;border:1px solid #41769720;border-radius:38px;pointer-events:none}
+.cteTopLabel{position:absolute;width:930px;display:flex;align-items:center;gap:13px;letter-spacing:3.7px;font-weight:850;font-size:19px;color:#72dff1}
+.cteIndicator{height:12px;width:12px;border-radius:50%;background:#67eeeb;box-shadow:0 0 17px #55ffe8}
+.cteEpNumber{margin-left:auto;letter-spacing:2px;color:#adc4d6;font-size:18px}
+.cteMainTitle{position:absolute;font-weight:950;font-size:87px;line-height:1.05;letter-spacing:-3.8px;text-shadow:0 8px 30px #0006}
+.cteSubTitle{position:absolute;font-size:30px;color:#c0d5e9;font-weight:620;max-width:930px}
+.cteMonitor{position:absolute;border:2px solid #a1cef844;border-radius:23px;box-shadow:0 28px 85px #000a,0 0 0 12px #bedcff08;overflow:hidden;transform-origin:center}
+.cteMonitorScreen{position:relative;height:608px;width:100%;background:#142e77;overflow:hidden}
+.cteMonitorFooter{height:41px;background:#102235;display:flex;align-items:center;gap:14px;padding:0 27px;font-size:15px;font-weight:800;color:#97c3de;letter-spacing:1.5px}
+.cteFooterLed{height:9px;width:9px;border-radius:50%;background:#64efc9;box-shadow:0 0 8px #64efc9}
+.cteFooterLive{margin-left:auto;color:#78e6ce;font-size:12px}
+.cteDesktop{position:relative;width:956px;height:608px;overflow:hidden;background:#132f75;font-family:'Segoe UI Variable','Segoe UI',Arial,sans-serif}
+.cteWallpaper{position:absolute;inset:0;background:radial-gradient(circle at 72% 49%,#196acd 0%,#0b3789 47%,#0a235d 85%)}
+.cteWblob{position:absolute;filter:drop-shadow(0 19px 18px #001946a0);border-radius:70% 19% 58% 27%;background:linear-gradient(115deg,#40c3fe,#2178d4 60%,#0d448e);box-shadow:inset 10px 9px 29px #adf4ff3d}
+.cteWblob.one{left:400px;top:76px;width:520px;height:200px;transform:rotate(-30deg)}
+.cteWblob.two{left:484px;top:290px;width:410px;height:152px;transform:rotate(42deg)}
+.cteWblob.three{left:555px;top:185px;width:255px;height:172px;transform:rotate(-35deg);background:linear-gradient(145deg,#84d4ff,#296ec2)}
+.cteDesktopIcon{position:absolute;top:20px;left:12px;display:flex;flex-direction:column;align-items:center;gap:2px;width:82px;color:#fff;font-size:11px;text-shadow:0 1px 3px #001c38}
+.cteRecycleIcon{font-size:33px;color:#dffbff;text-shadow:none}
+.cteDesktopTaskbar{position:absolute;bottom:0;left:0;right:0;height:46px;display:flex;align-items:center;justify-content:center;gap:16px;border-top:1px solid #c9d7ee94;background:#ebf2fbeF;color:#273b56;font-size:11px;box-shadow:0 -3px 14px #24496930}
+.cteWindowsIcon{width:24px;height:24px;display:grid;grid-template-columns:repeat(2,11px);grid-template-rows:repeat(2,11px);gap:2px}.cteWindowsIcon i{background:#1886e5}
+.cteTaskSearch{background:#fff;border:1px solid #c4cedb;border-radius:19px;width:131px;padding:7px;color:#64748a;display:flex;align-items:center;gap:10px}.cteTaskSearch span{font-size:20px;line-height:6px}
+.cteTbExplorer{font-size:22px}.cteTbEdge{display:inline-flex;align-items:center;justify-content:center;border-radius:50%;width:26px;height:26px;color:white;font-weight:850;font-size:21px;background:linear-gradient(150deg,#00c494,#0576d2)}
+.cteTbExcel{background:#0e7d48;color:white;padding:4px 6px;border-radius:4px;font-weight:bold;font-size:16px}.cteTbTm{font-size:23px;color:#4384cf}
+.cteTbRight{position:absolute;right:11px;display:flex;align-items:center;gap:9px;opacity:.85;font-size:11px}.cteTbRight small{font-size:9px;line-height:1.2;text-align:right}
+.cteExcelWindow{position:absolute;left:96px;top:66px;width:750px;height:482px;background:#f9fff9;color:#172c20;box-shadow:0 15px 42px #00183875;overflow:hidden}
+.cteExcelHead{height:39px;background:#157951;display:flex;align-items:center;gap:15px;color:white;font-size:14px;padding:0 10px}.cteExcelHead>span:first-child{background:#0d5f3f;padding:3px 7px;border-radius:3px;font-weight:900}.cteExcelHead>span:last-child{margin-left:auto}
+.cteExcelRibbon{height:50px;background:#fafbfa;color:#476051;padding:17px;font-size:12px;border-bottom:1px solid #bcd4c8}
+.cteExcelSheetHeader{height:31px;background:#e6eeea;display:flex;align-items:center;font-size:12px;color:#52665b;border-bottom:1px solid #adc8b4}
+.cteExcelSheetRow{height:31px;display:grid;grid-template-columns:45px repeat(5,1fr);font-size:12px}.cteExcelSheetRow span{border-right:1px solid #dce6df;border-bottom:1px solid #dce6df;padding:7px}
+.cteFreeze{position:absolute;inset:39px 0 0;background:#d0d8d8a8;backdrop-filter:blur(1.2px);display:flex;flex-direction:column;align-items:center;justify-content:center;color:#43596a;font-size:17px;font-weight:650;gap:17px}.cteFreezeSpinner{width:47px;height:47px;border:5px solid #7baab5;border-right-color:transparent;border-radius:50%}
+.cteManagerMount{position:absolute;filter:drop-shadow(0 18px 30px #0009);transform-origin:50% 15%}
+/* Windows 11 Task Manager — faithful compact dark UI */
+.cteTM{font-family:'Segoe UI Variable','Segoe UI',Arial,sans-serif;position:relative;overflow:hidden;border:1px solid #53565b;border-radius:11px;background:#202124;color:#dce0e7;box-shadow:0 0 0 1px #0008}
+.cteTmTitlebar{display:flex;align-items:center;height:35px;font-size:12px;gap:9px;padding:0 13px;background:#202124}
+.cteTmAppGlyph{height:17px;width:17px;display:grid;grid-template-columns:repeat(2,7px);gap:2px}.cteTmAppGlyph span{background:#6ab0e2;border-radius:1px}
+.cteTmWindowButtons{display:flex;gap:22px;margin-left:auto;font-size:16px;align-items:center;color:#b8c0c9}
+.cteTmBody{display:flex;height:420px}.cteTmSidebar{width:151px;background:#24262a;padding:8px 7px 8px;display:flex;flex-direction:column;gap:2px;flex-shrink:0}
+.cteTmHamburger{height:37px;display:flex;align-items:center;padding:0 10px;margin-bottom:1px;color:#d3dbe6}.cteTmHamburger svg{width:21px;height:21px}
+.cteTmNav{height:35px;border-radius:5px;display:flex;align-items:center;gap:10px;padding:0 8px;font-size:11px;color:#c6c8ce;white-space:nowrap}
+.cteTmNav.active{background:#373f47;border-left:2px solid #78baff;color:#fff}.cteTmNavIcon{display:flex;align-items:center;justify-content:center;font-size:16px;width:19px;min-width:19px}
+.cteTmSettings{margin-top:auto}
+.cteTmMain{width:597px;min-width:597px;background:#202124;overflow:hidden;position:relative}
+.cteTmSectionHead{height:56px;display:flex;align-items:flex-start;padding:12px 13px 0 16px;justify-content:space-between}
+.cteTmSectionHead>b{font-size:20px;font-weight:600;line-height:32px}
+.cteTmSearch{height:27px;width:225px;border-radius:16px;display:flex;align-items:center;gap:6px;background:#2c2d32;border:1px solid #36383d;color:#a5a7b0;font-size:9px;padding:0 10px;white-space:nowrap;overflow:hidden}
+.cteTmSearch svg{width:14px;height:14px;flex-shrink:0}
+.cteTmToolbar{height:45px;display:flex;align-items:center;justify-content:flex-end;padding:0 14px;gap:12px;border-bottom:1px solid #35383d;font-size:10px}
+.cteTmTool{display:flex;align-items:center;gap:5px;color:#c5c8ce;white-space:nowrap}.cteTmTool svg{width:17px;height:17px}
+.cteTmEnd{height:28px;min-width:87px;display:flex;align-items:center;justify-content:center;gap:4px;border-radius:5px;color:#81858a;white-space:nowrap;padding:0 6px;background:#222328}
+.cteTmEnd svg{width:17px;height:17px}.cteTmEnd.available{color:#e9f4ff;background:#333941;border:1px solid #637284}.cteTmEnd.pressed{background:#126fba;color:#fff;border:1px solid #8ae7ff}
+.cteTmEfficiency{opacity:.48}.cteTmDots{font-size:17px;margin-left:2px;margin-top:-7px}
+.cteTmColumns{height:55px;display:grid;grid-template-columns:229px 116px 64px 88px 100px;align-items:center;border-bottom:1px solid #353a40;color:#c9ced7;font-size:11px}
+.cteTmColumns>span{padding-left:12px}.cteTmColumns>div{height:100%;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center;border-left:1px solid #373a40}
+.cteTmColumns strong{font-size:16px;color:#fff;font-weight:650}.cteTmColumns small{font-size:10px;color:#b0b7c1}
+.cteTmCategory{height:32px;display:flex;align-items:center;padding-left:15px;font-weight:650;font-size:11px}
+.cteTmCategoryDim{color:#a8b5c4;margin-top:5px}
+.cteTmProcess{display:grid;grid-template-columns:229px 116px 64px 88px 100px;height:41px;align-items:center;border-bottom:1px solid #32353a;color:#e0e3e8;font-size:10px;white-space:nowrap;overflow:hidden}
+.cteTmProcess.selected{background:#3b4654;box-shadow:inset 3px 0 #6db8ff}
+.cteTmName{display:flex;align-items:center;gap:6px;overflow:hidden;padding-left:10px}.cteTmName b{font-size:10px;font-weight:650}
+.cteTmChevron{font-size:19px;font-weight:300;color:#a2a6ae;min-width:8px}
+.cteTmExcelIcon{background:#0c804b;color:white;width:22px;height:22px;border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:800}
+.cteTmEdgeIcon{background:linear-gradient(135deg,#0ac3a8,#2779d4);border-radius:100%;width:22px;height:22px;color:white;font-size:18px;font-weight:bold;display:flex;align-items:center;justify-content:center}
+.cteTmFolderIcon{color:#ffdb61;font-size:21px;width:22px;text-align:center}.cteTmGearIcon{width:22px;font-size:19px;color:#87c1f1;text-align:center}
+.cteTmProcessStatus{color:#ffb0b0;font-size:9px;white-space:nowrap}
+.cteTmMetric{height:100%;display:flex;align-items:center;justify-content:center;background:#293845;font-size:9px}.cteTmMetric.hot{background:#4a5461}.cteTmMetric.warm{background:#334b5e}
+.cteTmProcessDim{opacity:.62}
+/* cursor */
+.cteCursorWrap{position:absolute;pointer-events:none;z-index:90;filter:drop-shadow(0 2px 2px #0008)}
+.cteClickHalo{position:absolute;left:-13px;top:-14px;width:42px;height:42px;border:3px solid #b4f3fc;border-radius:100%;box-shadow:0 0 18px #a0f4ff88}
+/* Keycaps */
+.cteKeyboard{position:absolute;display:flex;align-items:center;gap:13px;justify-content:center;width:890px}
+.cteKeyboard>span{font-size:31px;font-weight:850;color:#9ebdd6;margin:0 3px}
+.cteKeyShell{padding-bottom:8px;background:#092039;border-radius:15px;box-shadow:0 12px 24px #000a}
+.cteKeyTop{padding:23px 28px;border-radius:14px;color:white;font-weight:850;font-size:37px;letter-spacing:-1px;min-width:170px;text-align:center;text-shadow:0 2px 3px #0008}
+/* instructional banner */
+.cteHint{position:absolute;left:102px;top:1343px;color:#d2e5f2;font-size:19px;font-weight:800;letter-spacing:1px;display:flex;align-items:center;gap:14px;white-space:nowrap}
+.cteHintBullet{width:11px;height:11px;background:#58fae0;border-radius:50%;box-shadow:0 0 20px #5dffde}.cteHint>span:last-child{color:#6be1eb;font-size:29px}
+/* real DOM detail re-render */
+.cteZoom{position:absolute;background:linear-gradient(180deg,#153448,#0b1b2e);border:2px solid #6edaf080;border-radius:25px;box-shadow:0 22px 56px #000b,0 0 35px #4bceda25;overflow:hidden;z-index:110}
+.cteZoomHead{height:61px;display:flex;align-items:center;gap:14px;padding:0 24px;background:#123e55;color:#e6fbff;letter-spacing:1.5px;font-size:17px;font-weight:850}
+.cteZoomLive{width:11px;height:11px;border-radius:100%;background:#9af9bd;box-shadow:0 0 13px #9af9bd}
+.cteZoomPhase{margin-left:10px;margin-right:auto;font-size:13px;letter-spacing:.65px;color:#b7dbe5}
+.cteZoomHead strong{background:#245e80;color:#a4f2ff;padding:8px 13px;border-radius:9px;font-size:16px;letter-spacing:0}
+.cteZoomViewport{position:absolute;left:10px;right:10px;top:66px;bottom:10px;overflow:hidden;border-radius:13px;background:#202124;border:1px solid #607c8f}
+.cteZoomManager{position:absolute;transform-origin:top left}
+.cteZoomCursor{position:absolute;z-index:15;filter:drop-shadow(0 4px 2px #0008)}
+.cteZoomRing{position:absolute;width:90px;height:90px;left:-29px;top:-35px;border:5px solid #7af0ff;border-radius:100%;box-shadow:0 0 15px #7af0ff80;pointer-events:none}
+.cteSuccess{position:absolute;left:117px;top:1324px;width:844px;height:155px;border-radius:24px;border:1px solid #76f5bb80;background:linear-gradient(130deg,#174c46,#10343a);box-shadow:0 15px 65px #031115af;display:flex;gap:23px;padding:22px 35px;align-items:center}
+.cteSuccessCheck{border:3px solid #a5f8c6;color:#a6ffcb;border-radius:50%;height:80px;width:80px;display:flex;align-items:center;justify-content:center;font-size:55px;flex-shrink:0}
+.cteSuccess>div:nth-child(2){display:flex;flex-direction:column;gap:6px}.cteSuccess small{font-size:15px;color:#8af9c6;letter-spacing:2px;font-weight:800}
+.cteSuccess b{font-size:27px;color:#f4fff9}.cteSuccess span{font-size:16px;color:#9bbdb4}
+.cteProgress{position:absolute;bottom:245px;left:120px;width:840px;height:4px;border-radius:4px;background:#28435a;overflow:hidden}.cteProgress div{height:100%;background:#61dce3;border-radius:4px}
