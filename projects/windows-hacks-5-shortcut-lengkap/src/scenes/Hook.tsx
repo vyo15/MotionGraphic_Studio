@@ -47,6 +47,9 @@ export const Hook:React.FC=()=>{
  <ShortcutChip index={3} label="WIN + E" frame={frame}/>
  <ShortcutChip index={4} label="CTRL + SHIFT + N" frame={frame}/>
  </Interactive.Div>
+ <Interactive.Div name="00 · Progress · Jalur" style={{position:'absolute',left:76,top:1630,width:928,height:6,borderRadius:8,backgroundColor:'#29465e',overflow:'hidden',translate:'0px 0px',scale:1,rotate:'0deg'}}>
+  <Interactive.Div name="00 · Progress · Isi" style={{height:6,borderRadius:8,backgroundColor:'#67E8F9',width:`${Math.min(100,rawFrame/Math.max(1,239)*100)}%`,translate:'0px 0px',scale:1,rotate:'0deg'}}/>
+ </Interactive.Div>
  </AbsoluteFill>
 };
 

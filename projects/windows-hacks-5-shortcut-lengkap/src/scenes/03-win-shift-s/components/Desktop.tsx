@@ -75,7 +75,7 @@ export const Desktop:React.FC<{time:number}> = ({time}) => {
        <div className="whssSnipCorner" style={{left:-4,top:-4}}/><div className="whssSnipCorner" style={{right:-4,top:-4}}/><div className="whssSnipCorner" style={{left:-4,bottom:-4}}/><div className="whssSnipCorner" style={{right:-4,bottom:-4}}/>
       </Interactive.Div>
     </>:<div className="whssDarkStripe" style={{inset:0}}/>}
-    <Interactive.Div name="03 · Snipping mode toolbar" className="whssSnipToolbar" style={{translate:'0px 0px',scale:1,rotate:'0deg',transformOrigin:'50% 50%',top:13,height:41,color:"#EAF8FF",width:30,fontSize:28,fontWeight:250,transform:`translateX(-50%) translateY(${(1-clamp((time-tl.overlay)/.4))*-45}px)`}}>
+    <Interactive.Div name="03 · Snipping mode toolbar" className="whssSnipToolbar" style={{translate:'0px 0px',scale:1,rotate:'0deg',transformOrigin:'50% 50%',top:13,height:58,color:"#EAF8FF",fontSize:28,fontWeight:250,transform:`translateX(-50%) translateY(${(1-clamp((time-tl.overlay)/.4))*-45}px)`}}>
       <span className="whssSnipActive"><SnipIcon type="rectangle"/></span>
       <span><SnipIcon type="freeform"/></span><span><SnipIcon type="window"/></span><span><SnipIcon type="fullscreen"/></span>
       <div className="whssSnipDivider"/><span className="whssSnipClose">×</span>

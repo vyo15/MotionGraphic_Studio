@@ -38,14 +38,22 @@ const Magnify:React.FC<{t:number}>=({t})=>{
  const swap=p(t,5.85,6.20);
  // The entire TaskManager component is reused and enlarged instead of a rasterized screenshot.
  const scale=CONFIG.zoom.scale;
- const left=-lerp(CONFIG.zoom.rowCropX,CONFIG.zoom.buttonCropX,swap)*scale;
- const top=-lerp(CONFIG.zoom.rowCropY,CONFIG.zoom.buttonCropY,swap)*scale;
+ const cropX=lerp(CONFIG.zoom.rowCropX,CONFIG.zoom.buttonCropX,swap);
+ const cropY=lerp(CONFIG.zoom.rowCropY,CONFIG.zoom.buttonCropY,swap);
+ const left=-cropX*scale;
+ const top=-cropY*scale;
+ // Projeksi posisi kursor memakai target dari CONFIG yang sama dengan cursor desktop.
+ // Offset +10/+66 berasal dari viewport dalam panel magnifier.
+ const targetX=lerp(CONFIG.cursorTargets.excelRow.x,CONFIG.cursorTargets.endTask.x,swap);
+ const targetY=lerp(CONFIG.cursorTargets.excelRow.y,CONFIG.cursorTargets.endTask.y,swap);
+ const zoomPointerX=10+(targetX-CONFIG.manager.left-cropX)*scale;
+ const zoomPointerY=66+(targetY-CONFIG.manager.top-cropY)*scale;
  
  const press=p(t,6.80,6.89)*(1-p(t,7.00,7.15));
  return <Interactive.Div name="02 · ZOOM DETAIL (reusable component)" className="whecZoom" style={{translate:'0px 0px',scale:1,rotate:'0deg',transformOrigin:'50% 50%',left:82,top:1210,width:916,height:332,opacity:a,transform:`translateY(${(1-a)*35}px) scale(${.95+.05*a})`}}>
     <div className="whecZoomHead"><span className="whecZoomLive"/> ZOOM DETAIL <span className="whecZoomPhase">{swap<.5?'01 — PILIH APLIKASI MACET':'02 · KLIK END TASK'}</span><strong>2.1×</strong></div>
     <div className="whecZoomViewport"><div className="whecZoomManager" style={{left,top,transform:`scale(${scale})`}}><TaskManager time={t}/></div></div>
-    <div className="whecZoomCursor" style={{...layerStyle("cursor-zoom"),left:lerp(428,449,swap),top:lerp(137,171,swap),opacity:t<7.18?1:0}}><svg viewBox="0 0 33 46" width="37" height="51"><path d="M3 2v34l8.6-9.2 7.5 14.8 7.2-3.6-7.7-14.2H31L3 2Z" fill="white" stroke="#111b27" strokeLinejoin="round" strokeWidth="2.6"/></svg>{press>.05&&<div className="whecZoomRing" style={{opacity:1-press,transform:`scale(${.45+press*.95})`}}/>}</div>
+    <div className="whecZoomCursor" style={{...layerStyle("cursor-zoom"),left:zoomPointerX,top:zoomPointerY,opacity:t<7.18?1:0}}><svg viewBox="0 0 33 46" width="37" height="51"><path d="M3 2v34l8.6-9.2 7.5 14.8 7.2-3.6-7.7-14.2H31L3 2Z" fill="white" stroke="#111b27" strokeLinejoin="round" strokeWidth="2.6"/></svg>{press>.05&&<div className="whecZoomRing" style={{opacity:1-press,transform:`scale(${.45+press*.95})`}}/>}</div>
  </Interactive.Div>;
 };
 export const Video:React.FC=()=>{
@@ -56,8 +64,8 @@ export const Video:React.FC=()=>{
  const zoomScale=.945+.055*begin+.036*zoomIn;
  const m=CONFIG.manager;
  const tx=p(t,4.03,4.68),ty=p(t,5.45,6.63);
- const cursorX=t<5.45?lerp(690,330,tx):lerp(330,662,ty);
- const cursorY=t<5.45?lerp(432,359,tx):lerp(359,181,ty);
+ const cursorX=t<5.45?lerp(690,CONFIG.cursorTargets.excelRow.x,tx):lerp(CONFIG.cursorTargets.excelRow.x,CONFIG.cursorTargets.endTask.x,ty);
+ const cursorY=t<5.45?lerp(432,CONFIG.cursorTargets.excelRow.y,tx):lerp(CONFIG.cursorTargets.excelRow.y,CONFIG.cursorTargets.endTask.y,ty);
  const pointerPress=t>=6.82&&t<7.06;
  const hint=p(t,4.53,4.95)*(1-p(t,6.0,6.4));
  const check=p(t,7.36,7.88);

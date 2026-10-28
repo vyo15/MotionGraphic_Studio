@@ -18,6 +18,9 @@ export const CONFIG={
  task:{app:'Microsoft Excel',status:'Not responding',endTask:'End task',
   appCountBefore:4,appCountAfter:3,cpu:'24%',memory:'63%'},
  manager:{left:104,top:80,width:748,height:455},
+ // Titik target dalam koordinat desktop 956 × 608, bukan koordinat monitor 1080 × 1920.
+ // Kursor utama dan close-up membaca titik yang sama.
+ cursorTargets:{excelRow:{x:310,y:324},endTask:{x:667,y:194}},
  zoom:{scale:2.08,rowCropX:45,rowCropY:226,buttonCropX:325,buttonCropY:50},
  sound:{enabled:true,volume:.55},
 } as const;

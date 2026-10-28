@@ -34,3 +34,10 @@ Default: vertikal 9:16, 1080×1920, 30 fps, durasi 15–30 detik (kecuali dimint
 **PERINTAH PC:** `npm run dev` (sinkron + Studio); `npm run sync` (folder baru); `npm run list`; `npm run check`; `npm run render` (menu video, MP4 `out/`); `npm run zip` (menu 1 video/semua/Master), `npm run zip -- --studio` (backup Master tanpa WinRAR), `npm run zip -- --all`; `npm run delete`/`restore` (arsip aman). ChatGPT tidak dapat menjalankan perintah di PC tanpa akses.
 
 **CREATE ONCE — EDIT VISUALLY — REUSE FOREVER.**
+
+## WAJIB — Jangan merusak layout saat membuat layer editable (Flow Guard)
+- Pisahkan **layout dasar Windows/UI** (tab bar, address bar, toolbar, sidebar, tabel, file row) dari **transform pengguna** dan **gerak animasi**. Jangan menyalin `position:absolute` secara massal ke elemen flex/grid.
+- Beri `data-layout-role="flow"` pada setiap `Interactive.Div` yang menjadi bagian struktural flex/grid. Default `translate: '0px 0px'`, `position: 'relative'`/static, tidak digeser manual untuk perbaikan layout. Pindahkan seluruh jendela melalui *outer window layer*, bukan tab dan navbar satu per satu.
+- Untuk mengedit detail, gunakan layer anak (mis. teks nama tab/tombol) dengan properti inline. Hindari menempelkan style absolut ke parent yang mengatur susunan berderet.
+- Bila ada masalah tampilan setelah migrasi, **kembalikan flow dari CSS asli** sebelum menambah layer edit baru. Simpan perubahan pengguna yang sengaja dilakukan.
+- `tools/check-layout-flow.mjs` dijalankan otomatis oleh `npm run dev` dan menolak flow UI yang tidak sengaja berubah menjadi `absolute/fixed`. Pemeriksaan ini **bukan** pengganti preview visual dan uji render.

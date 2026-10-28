@@ -24,17 +24,17 @@ export const CtrlShiftT:React.FC = () => {
  return <AbsoluteFill className="whShortcutTScene" style={{position:'relative',overflow:'hidden',width:VIDEO.width,height:VIDEO.height}}>
     <div className="grain"/><div className="glowOrb"/><div className="glowOrb2"/>
     <Interactive.Div name="01 · Label Seri" className="topline" style={{position:'absolute',translate:'0px 0px',scale:1,rotate:'0deg',transformOrigin:'50% 50%',left:86,top:248}}><div className="chip">WINDOWS SHORTCUT</div><div className="chipNo">TIPS #01 / 05</div></Interactive.Div>
-    <div style={{position:'absolute',inset:0,pointerEvents:'none',opacity:(t>=0&&t<3.4?1:0)}}>
+    <div style={{position:'absolute',inset:0,pointerEvents:'none',opacity:seg(t,0,.42)*(1-seg(t,3.15,3.55))}}>
       <Interactive.Div name="01 · Tab tertutup · Judul baris 1" className="introText whiteText" style={{position:'absolute',left:84,top:333,width:920,fontSize:83,fontWeight:950,letterSpacing:-3,translate:'0px 0px',scale:1,rotate:'0deg',color:'#ffffff',pointerEvents:'auto'}}>TAB PENTING</Interactive.Div>
       <Interactive.Div name="01 · Tab tertutup · Judul baris 2" className="introText highText" style={{position:'absolute',left:84,top:435,width:920,fontSize:83,fontWeight:950,letterSpacing:-3,translate:'0px 0px',scale:1,rotate:'0deg',color:'#6DE9DF',pointerEvents:'auto'}}>KE-TUTUP?</Interactive.Div>
       <Interactive.Div name="01 · Tab tertutup · Subtitle" className="smallExplainer" style={{position:'absolute',left:87,top:525,width:910,fontSize:27,fontWeight:650,color:'#9fbbd8',translate:'0px 0px',scale:1,rotate:'0deg',pointerEvents:'auto'}}>Jangan panik, nggak perlu cari ulang.</Interactive.Div>
     </div>
-    <div style={{position:'absolute',inset:0,pointerEvents:'none',opacity:(t>=3.4&&t<6.15?1:0)}}>
+    <div style={{position:'absolute',inset:0,pointerEvents:'none',opacity:seg(t,3.35,3.67)*(1-seg(t,5.94,6.25))}}>
       <Interactive.Div name="01 · Tekan tombol · Judul baris 1" className="introText whiteText" style={{position:'absolute',left:84,top:333,width:920,fontSize:83,fontWeight:950,letterSpacing:-3,translate:'0px 0px',scale:1,rotate:'0deg',color:'#ffffff',pointerEvents:'auto'}}>PAKAI</Interactive.Div>
       <Interactive.Div name="01 · Tekan tombol · Judul baris 2" className="introText highText" style={{position:'absolute',left:84,top:435,width:920,fontSize:83,fontWeight:950,letterSpacing:-3,translate:'0px 0px',scale:1,rotate:'0deg',color:'#FDE68A',pointerEvents:'auto'}}>SHORTCUT INI!</Interactive.Div>
       <Interactive.Div name="01 · Tekan tombol · Subtitle" className="smallExplainer" style={{position:'absolute',left:87,top:525,width:910,fontSize:27,fontWeight:650,color:'#9fbbd8',translate:'0px 0px',scale:1,rotate:'0deg',pointerEvents:'auto'}}>Cukup tekan tiga tombol keyboard.</Interactive.Div>
     </div>
-    <div style={{position:'absolute',inset:0,pointerEvents:'none',opacity:(t>=6.15&&t<100?1:0)}}>
+    <div style={{position:'absolute',inset:0,pointerEvents:'none',opacity:seg(t,6.12,6.46)}}>
       <Interactive.Div name="01 · Tab kembali · Judul baris 1" className="introText whiteText" style={{position:'absolute',left:84,top:333,width:920,fontSize:83,fontWeight:950,letterSpacing:-3,translate:'0px 0px',scale:1,rotate:'0deg',color:'#ffffff',pointerEvents:'auto'}}>TAB-NYA</Interactive.Div>
       <Interactive.Div name="01 · Tab kembali · Judul baris 2" className="introText highText" style={{position:'absolute',left:84,top:435,width:920,fontSize:83,fontWeight:950,letterSpacing:-3,translate:'0px 0px',scale:1,rotate:'0deg',color:'#86F9C6',pointerEvents:'auto'}}>BALIK LAGI!</Interactive.Div>
       <Interactive.Div name="01 · Tab kembali · Subtitle" className="smallExplainer" style={{position:'absolute',left:87,top:525,width:910,fontSize:27,fontWeight:650,color:'#9fbbd8',translate:'0px 0px',scale:1,rotate:'0deg',pointerEvents:'auto'}}>Lanjut kerja tanpa cari riwayat browser.</Interactive.Div>
@@ -49,5 +49,8 @@ export const CtrlShiftT:React.FC = () => {
     <Interactive.Div name="01 · Peringatan Tab" className="errorToast" style={{translate:'0px 0px',scale:1,rotate:'0deg',transformOrigin:'50% 50%',left:121,top:1250,fontSize:27,fontWeight:750,color:"#ffb3bd",opacity:seg(t,2.05,2.4)*(1-seg(t,3.13,3.5)),transform:`translateY(${26*(1-seg(t,2.05,2.4))}px)`}}><span style={{fontSize:34}}>!</span><span>Waduh! Tab penting tertutup.</span></Interactive.Div>
     <ShortcutKeyboard seconds={t} config={VIDEO} opacity={seg(t,3.45,3.85)} translateY={32*(1-seg(t,3.45,3.85))}/>
     <Interactive.Div name="01 · Hasil Tab Kembali" className="bottomLine" style={{translate:'0px 0px',scale:1,rotate:'0deg',transformOrigin:'50% 50%',fontSize:28,fontWeight:750,color:"#82f6db",textAlign:"center",top:1534,left:70,right:VIDEO.layers.result.x,opacity:seg(t,6.25,6.65),transform:`translateY(${15*(1-seg(t,6.25,6.65))}px)`}}>{text("success-prefix","Satu shortcut,")} <strong>{text("success","tab langsung kembali!")}</strong></Interactive.Div>
+  <Interactive.Div name="01 · Loading Demo · Jalur" style={{position:'absolute',left:76,top:1630,width:928,height:6,borderRadius:8,backgroundColor:'#29465e',overflow:'hidden',translate:'0px 0px',scale:1,rotate:'0deg'}}>
+   <Interactive.Div name="01 · Loading Demo · Isi" style={{height:6,borderRadius:8,backgroundColor:'#67E8F9',width:`${Math.min(100,t/9*100)}%`,translate:'0px 0px',scale:1,rotate:'0deg'}}/>
+  </Interactive.Div>
  </AbsoluteFill>
 }
