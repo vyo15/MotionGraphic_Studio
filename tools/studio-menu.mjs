@@ -15,6 +15,7 @@ const choices={
  '8':['Arsipkan video (aman)','delete'],
  '9':['Pulihkan video','restore'],
  '10':['Cek masalah folder (tanpa perubahan)','doctor'],
+ '11':['Buka Easy Editor (pengaturan teks / layer)','edit'],
 };
 async function ask(q){const rl=createInterface({input:process.stdin,output:process.stdout});try{return (await rl.question(q)).trim()}finally{rl.close()}}
 while(true){

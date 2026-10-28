@@ -1,3 +1,19 @@
+## PENGEDITAN TANPA CODING — Perbaikan Inline Editable
+
+**Windows:** klik dua kali `01-MULAI-STUDIO-EDITABLE.bat` untuk Remotion Studio plus Visual Editor. `02-BUKA-EASY-EDITOR.bat` untuk teks, VO dan parameter manifest. Editor berjalan lokal; hasil disimpan di source/manifest project.
+
+Standar wajib video baru: `STANDAR-EDITABLE-STUDIO.md`. Untuk mengecek: klik `03-CEK-EDITABLE.bat`. Model IP Address adalah contoh pola komponen inline yang valid. Informasi pengujian dan keterbatasan tercantum dalam standar.
+
+---
+
+# Visual Editor Universal (pembaruan dari Master v1.7.0)
+
+Jalankan `npm run dev` seperti biasa, atau klik dua kali `BUKA-EDIT-VISUAL.bat` di Windows. **Visual Editor** tersedia di http://localhost:4077/visual, **Easy Editor** di http://localhost:4077, dan **Remotion Studio** di http://localhost:3000. Tidak perlu instalasi Studio baru; semua folder project dan arsip lama dipertahankan. Baca `PANDUAN-VISUAL-EDITOR.md` dan `STANDAR-EDITABLE-STUDIO.md`.
+
+---
+
+> **NEW — Easy Editor:** Jalankan `npm run dev`; buka [Remotion Studio](http://localhost:3000) untuk preview/drag layer yang kompatibel atau [Easy Editor](http://localhost:4077) untuk teks, posisi, opsi animasi/audio yang tersedia, animasi preset, dan audio seri 5 Shortcut. Baca [Panduan Easy Editor](PANDUAN-EASY-EDITOR.md).
+
 # 🎬 MotionGraphic Studio
 
 **One Studio. Unlimited Projects. Fully Editable.**
@@ -77,3 +93,13 @@ GitHub: [@vyo15](https://github.com/vyo15)
 ---
 
 *CREATE ONCE — EDIT VISUALLY — REUSE FOREVER.*
+
+### Audit kesiapan editing
+
+Jalankan `npm run editcheck` untuk menemukan pola source yang sering menghambat edit visual. Hasilnya hanya peringatan, bukan bukti bahwa semua layer sudah draggable.
+
+**Penting:** `src/Root.tsx` merupakan hasil sync; untuk video yang mengandalkan `sceneEditor`, simpan perubahan melalui Easy Editor agar tidak hilang ketika Root diregenerasi.
+
+
+### No-code editor V3
+Untuk semua add-on baru baca `STANDAR-EDITABLE-STUDIO-v3.md`. Teks utama harus langsung editable di Remotion Studio; teks UI dinamis/legacy dapat diedit lewat Easy Editor → Edit Visual → `LAYER_INTERACTIVE` → pilih layer → `Edit teks` → Simpan. `computed` pada properti animasi dinamis tidak serta-merta hilang dengan install skill.

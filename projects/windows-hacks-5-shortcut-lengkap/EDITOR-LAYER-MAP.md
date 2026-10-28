@@ -1,3 +1,7 @@
+# Referensi Kontrol Lama (V2)
+
+**Untuk versi terbaru, baca `EDIT-MAP-V3.md` terlebih dahulu.** File ini dipertahankan sebagai referensi kompatibilitas sceneEditor sebelumnya.
+
 # PETA LAYER — 7 ADEGAN
 
 Buka **Props → sceneEditor → [ADEGAN] → layers**. Setiap layer memiliki offset `x/y` terpisah dari transform animasinya. Semua nilai awal `x=0`, `y=0`, `scale=1`, `opacity=1` kecuali bila diubah sendiri.

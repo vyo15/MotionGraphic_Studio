@@ -1,4 +1,4 @@
-/** 69.5s, VO-friendly, each native demo at 1x speed, short pause after. FPS=30. */
+/** Frame-accurate VO friendly timeline. All native motion is 1x; only result holds added. */
 export const TIMELINE = [
   {
     "key": "HOOK",
@@ -49,19 +49,19 @@ export const TIMELINE = [
     "key": "CTRL_SHIFT_N",
     "label": "05 · Ctrl + Shift + N",
     "start": 1515,
-    "frames": 450,
-    "nativeFrames": 450,
-    "hold": 0,
-    "end": 1965
+    "frames": 570,
+    "nativeFrames": 540,
+    "hold": 30,
+    "end": 2085
   },
   {
     "key": "CTA",
     "label": "CTA · Simpan video",
-    "start": 1965,
+    "start": 2085,
     "frames": 120,
     "nativeFrames": 114,
     "hold": 6,
-    "end": 2085
+    "end": 2205
   }
 ] as const;
 export const START = {
@@ -71,7 +71,7 @@ export const START = {
   "WIN_SHIFT_S": 855,
   "WIN_E": 1185,
   "CTRL_SHIFT_N": 1515,
-  "CTA": 1965
+  "CTA": 2085
 } as const;
 export const FRAMES = {
   "HOOK": 240,
@@ -79,7 +79,7 @@ export const FRAMES = {
   "CTRL_SHIFT_ESC": 330,
   "WIN_SHIFT_S": 330,
   "WIN_E": 330,
-  "CTRL_SHIFT_N": 450,
+  "CTRL_SHIFT_N": 570,
   "CTA": 120
 } as const;
 export const NATIVE_FRAMES = {
@@ -88,7 +88,7 @@ export const NATIVE_FRAMES = {
   "CTRL_SHIFT_ESC": 300,
   "WIN_SHIFT_S": 300,
   "WIN_E": 300,
-  "CTRL_SHIFT_N": 450,
+  "CTRL_SHIFT_N": 540,
   "CTA": 114
 } as const;
 export const NARASI = {
@@ -110,4 +110,4 @@ export const LABELS = {
  "CTA":"CTA · Simpan video",
 } as const;
 export const COLORS = {background:'#071321',cyan:'#67E8F9',mint:'#9FF6C7',text:'#F8FCFF',muted:'#91B1CE',yellow:'#FFCC77'} as const;
-export const TOTAL_FRAMES = 2085;
+export const TOTAL_FRAMES = 2205;

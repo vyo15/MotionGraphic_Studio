@@ -7,7 +7,7 @@ export const layerStyle = (name:string):React.CSSProperties => {
   translate:`var(--l-${key}-translate, 0px 0px)`,
   scale:`var(--l-${key}-scale, 1)`,
   rotate:`var(--l-${key}-rotate, 0deg)`,
-  filter:`opacity(var(--l-${key}-alpha, 1))`,
+  filter:`opacity(var(--l-${key}-alpha, 1)) hue-rotate(var(--l-${key}-hue, 0deg))`,
   zIndex:`var(--l-${key}-z, auto)`,
   visibility:`var(--l-${key}-visibility, visible)` as React.CSSProperties['visibility'],
  };

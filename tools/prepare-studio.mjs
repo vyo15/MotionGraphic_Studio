@@ -26,4 +26,7 @@ if(!fs.existsSync(cli)){
 runNode('import-inbox.mjs');
 runNode('sync-projects.mjs');
 runNode('validate-library.mjs');
+runNode('check-editability.mjs');
+runNode('audit-inline-editing.mjs');
+runNode('check-direct-studio-text.mjs');
 console.log('[STUDIO] Library siap.\n');

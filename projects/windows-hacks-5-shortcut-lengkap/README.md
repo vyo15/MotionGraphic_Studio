@@ -1,55 +1,52 @@
-# WINDOWS HACKS — 5 SHORTCUT WINDOWS | EDITABLE V2
+# Edisi Inline Editable — sesuai pola IP Address
 
-**Satu add-on folder-first · 7 adegan · 1080 × 1920 · 30 FPS · 2.085 frame (69,5 detik).**
+**Perubahan pada revisi ini:** 135 node `Interactive` mengandung `translate/scale/rotate` secara inline; 54 properti layout statis dipindah ke JSX; 40 target UI kecil dipromosikan menjadi elemen `Interactive`. 175 slider warisan yang tidak lagi terhubung dihapus dari manifest agar tidak ada kontrol palsu; 22 kontrol legacy masih dipakai untuk elemen non-Interactive. Source, animasi, script, dan durasi 73,5 detik dipertahankan.
 
-## Pemasangan tanpa menimpa Master
+**Cara edit termudah:** buka komposisi `WindowsHacks5ShortcutLengkap` di Remotion Studio, pilih elemen langsung pada preview/timeline, edit Offset / Scale / Rotation, klik keyframe bila didukung, simpan. Untuk teks dinamis/VO gunakan Easy Editor dari Master. Jangan edit parameter legacy dengan nama sama karena layer tersebut sudah diganti kontrol Studio.
 
-1. Backup **hanya** folder lama `MotionGraphic-Studio/projects/windows-hacks-5-shortcut-lengkap/` jika kamu ingin bisa kembali ke versi lama.
-2. Ekstrak ZIP ini hingga terlihat folder `windows-hacks-5-shortcut-lengkap` yang di dalamnya ada `motiongraphic-video.json`.
-3. Ganti folder project dengan **folder hasil ekstrak utuh** di `MotionGraphic-Studio/projects/`. Jangan memindahkan `src/` atau `public/` ke root Master.
-4. Jalankan `npm run dev` atau `npm run sync` **dari folder Master** (yang berisi `package.json`).
-5. Buka komposisi **WindowsHacks5ShortcutLengkap**. Preview dan render memakai source yang sama; jika sudah siap, jalankan `npm run render`.
+**Batas:** animasi per-frame, beberapa font atau warna dari CSS, dan teks yang dihasilkan fungsi masih tampil `computed`. Jangan mengasumsikan semua node bisa drag. Belum diverifikasi render langsung pada Windows.
 
-Slug dan ID lama **dipertahankan**, karena ini revisi dari project gabungan, bukan video baru. Project asli 5 episode lainnya tidak diubah.
+---
 
-## Kenapa sekarang lebih editable?
+# WINDOWS HACKS — 5 SHORTCUT WINDOWS | DETAIL EDITABLE V4
 
-- Tiap adegan punya beberapa `Interactive.Div` bernama, dan seluruh lapisan demo utama tetap berupa HTML/CSS/SVG, bukan video raster.
-- Di panel **Props** komposisi, buka `sceneEditor` → pilih adegan → `layers` → pilih elemen (misalnya `window`, `zoom`, `keyboard`, `cursor`, `title-problem`). Ubah `x`, `y`, `scale`, `rotation`, `opacity`, `zIndex`, `enabled`, `startFrame`, `endFrame`, `animation`, `delayFrames`, `animationFrames`.
-- `sceneEditor.<ADEGAN>.copy` mengubah judul, subtitle, dan sejumlah teks isi UI melalui Props. Kosong = gunakan teks default. Daftar lengkap lihat `EDITOR-LAYER-MAP.md`.
-- `sceneEditor.<ADEGAN>.sfxVolume` dan `sfxEnabled` mengatur SFX masing-masing shortcut secara independen.
-- CSS `translate`, `scale`, `rotate` dari editor **terpisah** dari `transform` animasi asli; perpindahan posisi tidak menghilangkan animasi klik/zoom.
-- Konfigurasi UI kecil (mis. isi daftar file, warna detail, lintasan kursor dan timing proses) tetap dapat diubah di `src/scenes/<episode>/config/video.ts` dan file komponen terkait.
-- Kemampuan drag/resize secara langsung bergantung pada bagian JSX yang didukung `Interactive` di versi Remotion Studio, **tidak menjamin semua subelemen** bisa di-drag. Props dan edit file konfigurasi adalah cara edit yang lebih dapat diandalkan.
+**Komposisi:** `WindowsHacks5ShortcutLengkap`  
+**Folder:** `windows-hacks-5-shortcut-lengkap`  
+**Format:** 1080×1920, 30 FPS, 2205 frame (73,5 detik).
 
-## Tempo Reels + voice-over
+## Yang berubah di V4
 
-Tempo ditargetkan mudah untuk rekaman suara: **69,5 detik**. Animasi asli tetap bergerak dengan kecepatan normal. Jeda setelah beberapa demo hanya **0,5–1,0 detik**. Semua waktu ada dalam `src/config/series.ts`, `VOICEOVER-CUES.md`.
+- Error saat menjalankan Studio diperbaiki: `Interactive` hanya diimpor dari `remotion`; bukan dari `./Icons`.
+- Error File Explorer diperbaiki: `useCopy()` sekarang diinisialisasi sebelum dipakai.
+- Nama setiap layer dalam `Props → sceneEditor → pilih scene → layers` dibuat mudah dibaca, bernomor sesuai urutan video.
+- `scaleX` dan `scaleY` mengubah ukuran horizontal/vertikal secara terpisah. `hueShift` menggeser nuansa warna layer secara deterministik.
+- Garis **loading/progress bawah di semua demo** sekarang punya kontrol terpisah: *Jalur*, *Isi Bergerak*, serta identitas/footer seri yang bisa diubah.
+- Ada pengaturan `transitionEditor` untuk enabled, fadeFrames, opacity, color.
+- Text layer menggunakan kunci berbahasa Indonesia di `Props → sceneEditor → [scene] → copy`.
+- Tiap shortcut tetap berisi **5 beat + 1 jeda hasil** untuk memudahkan cut serta VO; animasi utama 1×.
+- Tidak ada video lain di Master yang diubah dan tidak ada file root Master yang disentuh.
 
-Rekam VO per adegan agar mudah diulang. Simpan `00-hook.wav` hingga `06-cta.wav` dalam `public/audio/`. Jalankan `npm run sync`, lalu set `voice.enabled=true` lewat Props. Disertakan **7 file WAV placeholder hening (0,1 detik)** agar pemeriksaan aset Master lolos. Ganti dengan rekaman asli; kontrol default `false`.
+## Cara memasang
 
-## Struktur
+1. Backup dulu folder `MotionGraphic-Studio/projects/windows-hacks-5-shortcut-lengkap` jika sudah ada.
+2. Ekstrak ZIP add-on dan salin **folder `windows-hacks-5-shortcut-lengkap` utuh** ke `MotionGraphic-Studio/projects/`.
+3. Jalankan `npm run sync` (atau `npm run dev` jika Studio belum berjalan).
+4. Buka komposisi `WindowsHacks5ShortcutLengkap`.
+5. Buka `Props → sceneEditor` lalu pilih bagian yang ingin diedit.
 
-```
-windows-hacks-5-shortcut-lengkap/
-├── motiongraphic-video.json          # ID/slugs tetap, defaultProps edit-layer
-├── src/
-│   ├── Video.tsx                     # 7 scene + tujuh jalur suara
-│   ├── scenes/Hook.tsx, CTA.tsx
-│   ├── scenes/01-ctrl-shift-t/...     # DOM Chrome
-│   ├── scenes/02-ctrl-shift-esc/...   # DOM Task Manager
-│   ├── scenes/03-win-shift-s/...      # DOM Snipping Tool
-│   ├── scenes/04-win-e/...            # dua Explorer
-│   ├── scenes/05-ctrl-shift-n/...     # folder baru + InPrivate
-│   ├── editor/                        # layer posisi, animasi, teks, opacity
-│   ├── animations/
-│   ├── components/DemoSlot.tsx       # normal-speed + jeda akhir
-│   └── config/series.ts             # timeline utama
-├── public/                           # SFX asli + folder audio VO kosong
-├── EDITOR-LAYER-MAP.md
-├── PANDUAN-EDIT-ASSET.md
-├── VOICEOVER-CUES.md
-└── README.md
-```
+## Cara mengubah satu elemen
 
-**Batas uji:** migrasi dan sync master berhasil, typecheck `tsc --noEmit` lolos. Render Windows/MP4 dan drag interaktif tiap komponen belum diuji; native renderer Linux pada lingkungan produksi ini terkendala dependensi binari Rspack Windows dari ZIP Master.
+Contoh: `03 · Snipping · Area Seleksi` di bawah `WIN_SHIFT_S → layers`. Ubah `x`, `y`, `scale`, `scaleX`, `scaleY`, `rotation`, `opacity`, `enabled`, `startFrame`, `endFrame`, `animation`, `delayFrames`, atau `animationFrames`. Hindari mengubah kolom `id` karena menjadi penghubung ke elemen sebenarnya. Untuk teks, ubah di `copy` pada bagian scene yang sama.
+
+**Catatan penting:** Ini editor berbasis Props dan source Remotion. Beberapa elemen bisa dipilih melalui `Interactive.Div` di Studio, tetapi **drag-and-drop langsung seluruh subelemen belum terverifikasi**. Warna dasar UI Windows dan ukuran detail kontrol yang tersusun dalam CSS masih dapat diedit melalui file CSS/TSX. Jangan menganggap setiap path SVG/ikon kecil sudah mendukung drag langsung.
+
+## Voice-over
+
+File `public/audio/00-hook.wav` sampai `06-cta.wav` berupa placeholder WAV dan dapat diganti rekaman aslimu. Set `voice.enabled=true` bila sudah siap. Atur volume efek pada `sceneEditor → [scene] → sfxVolume`.
+
+Tata cara editing berdasarkan subelemen lihat `EDIT-MAP-V4.md`, jadwal naskah dan cut lihat `VOICEOVER-CUES.md`.
+
+
+## Pembaruan V5: edit kursor secara visual
+
+Baca `PANDUAN-EDITOR-KURSOR-V5.md` dan `CATATAN-REVISI-V5.md`. Jalankan `BUKA-EDITOR-KURSOR.bat` setelah menyalin folder add-on ke Master. Editor ini khusus kursor/klik, **bukan NLE setara CapCut**. ID dan slug project tetap sama.

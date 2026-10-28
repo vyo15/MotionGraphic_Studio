@@ -1,11 +1,11 @@
 {
   "name": "motiongraphic-studio-master",
-  "version": "1.6.2",
+  "version": "1.7.0",
   "private": true,
-  "description": "MotionGraphic Studio v1.6.2 folder-first; safe project rename, external master backup",
+  "description": "MotionGraphic Studio folder-first with integrated local Easy Editor",
   "scripts": {
     "predev": "node tools/prepare-studio.mjs",
-    "dev": "remotion studio src/index.ts",
+    "dev": "node tools/start-studio.mjs",
     "studio": "npm run dev",
     "import": "node tools/import-inbox.mjs && node tools/sync-projects.mjs && node tools/validate-library.mjs",
     "add": "node tools/add-video.mjs",
@@ -21,7 +21,9 @@
     "addfolder": "node tools/add-folder.mjs",
     "rename": "node tools/rename-video.mjs",
     "doctor": "node tools/doctor.mjs",
-    "menu": "node tools/studio-menu.mjs"
+    "menu": "node tools/studio-menu.mjs",
+    "edit": "node tools/easy-editor-server.mjs",
+    "editcheck": "node tools/check-editability.mjs"
   },
   "dependencies": {
     "@remotion/cli": "4.0.538",

@@ -1,0 +1,7 @@
+/* Only while a visually edited cursor track is active: never draw two cursors. */
+.wh-cursor-override .whShortcutTScene .cursor,
+.wh-cursor-override .whecCursorWrap,
+.wh-cursor-override .whecZoomCursor,
+.wh-cursor-override .whssNativePointer,
+.wh-cursor-override .weV2DesktopCursor,
+.wh-cursor-override .whnPointer {visibility:hidden!important;}

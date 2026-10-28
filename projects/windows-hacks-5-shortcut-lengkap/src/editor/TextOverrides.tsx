@@ -1,5 +1,10 @@
 import React,{createContext,useContext} from 'react';
-const TextContext=createContext<Record<string,string>>({});
-export const TextOverrides:React.FC<{copy:Record<string,string>;children:React.ReactNode}>=({copy,children})=><TextContext.Provider value={copy??{}}>{children}</TextContext.Provider>;
-/** Empty string = use original text. Editable from Studio Props without changing source. */
-export const useCopy=()=>{const copy=useContext(TextContext);return (key:string,original:string)=>copy[key]?.trim()?copy[key]:original;};
+import {COPY_LABELS} from './EditorNames';
+const TextContext=createContext<{copy:Record<string,string>;scope:string}>({copy:{},scope:''});
+export const TextOverrides:React.FC<{copy:Record<string,string>;scope:string;children:React.ReactNode}>=({copy,scope,children})=><TextContext.Provider value={{copy:copy??{},scope}}>{children}</TextContext.Provider>;
+/** Props names are Indonesian; rendering keys remain predictable and backward-compatible. */
+export const useCopy=()=>{const {copy,scope}=useContext(TextContext);return (key:string,original:string)=>{
+ const names=COPY_LABELS[scope as keyof typeof COPY_LABELS] as Record<string,string>|undefined;
+ const value=copy[names?.[key]??key]??copy[key];
+ return typeof value==='string' && value.trim() ? value : original;
+};};

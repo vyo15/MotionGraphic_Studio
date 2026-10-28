@@ -134,7 +134,27 @@ const AddressScene:React.FC = () => {
     <Interactive.Div name="S2 • Penjelasan alamat" style={{position:'absolute',left:75,top:675,width:930,color:'#A5C2D8',fontSize:41,fontWeight:600,textAlign:'center',translate:'0px 0px',scale:1,opacity:interpolate(frame,[16,29],[0,1],{extrapolateLeft:'clamp',extrapolateRight:'clamp'}),rotate:'0deg'}}>
       Setiap perangkat punya alamat di jaringan.
     </Interactive.Div>
-    <EditableHouse name="S2 • Rumah utama BESAR" wallColor="#E7F7FF" roofColor="#31E7E7" accentColor="#66EAF2" style={{position:'absolute',left:244,top:769,width:590,height:529,translate:'0px 0px',scale:interpolate(frame,[15,35],[0.83,1],{extrapolateLeft:'clamp',extrapolateRight:'clamp'}),rotate:'0deg'}}/>
+    <EditableHouse
+      name="S2 • Rumah utama BESAR"
+      wallColor="#E7F7FF"
+      roofColor="#31E7E7"
+      accentColor="#66EAF2"
+      style={{
+        position: 'absolute',
+        left: 244,
+        top: 769,
+        width: 590,
+        height: 529,
+        translate: '-50.6px -69.1px',
+
+        scale: interpolate(frame, [15, 35], [0.83, 1], {
+          extrapolateLeft: 'clamp',
+          extrapolateRight: 'clamp'
+        }),
+
+        rotate: '0deg'
+      }}
+    />
     <Interactive.Div
       name="S2 • Badge IPv4 192.168.1.10"
       style={{

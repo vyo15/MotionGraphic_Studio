@@ -31,3 +31,6 @@ library/masuk/*
 !.env.example
 *.pem
 *.key
+
+# Backup hasil Easy Editor (termasuk versi sebelum simpan)
+library/backups/easy-editor/

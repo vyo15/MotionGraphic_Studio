@@ -7,7 +7,7 @@ export const WindowsIcon: React.FC<{size?: number; color?: string}> = ({size=33,
   </svg>
 );
 export const Pointer: React.FC<{x:number;y:number;visible:boolean;crosshair?:boolean;click?:number}> = ({x,y,visible,crosshair,click=0}) => !visible?null:(
-  <div style={{...layerStyle('cursor'),position:'absolute',left:x,top:y,zIndex:30,boxShadow:'none',pointerEvents:'none'}}>
+  <div className="whssNativePointer" style={{...layerStyle('cursor'),position:'absolute',left:x,top:y,zIndex:30,boxShadow:'none',pointerEvents:'none'}}>
     {click>0&&<div style={{position:'absolute',left:-23,top:-23,width:52,height:52,border:'3px solid rgba(145,233,255,.85)',borderRadius:'50%',transform:`scale(${1+click*2.5})`,opacity:1-click}}/>}
     {crosshair?<svg width="34" height="34" viewBox="0 0 34 34"><path d="M17 1V33M1 17H33" stroke="#222" strokeWidth="4"/><path d="M17 1V33M1 17H33" stroke="white" strokeWidth="2"/></svg>:<svg width="37" height="53" viewBox="0 0 37 53"><path d="M3 2v40l10-10 8 17 9-5-9-16h13Z" stroke="#191b28" strokeWidth="3.4" fill="white" strokeLinejoin="round"/></svg>}
   </div>

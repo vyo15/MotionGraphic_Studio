@@ -1,35 +1,37 @@
-# PANDUAN EDIT — LAYER & ASSET
+# WINDOWS HACKS — 5 SHORTCUT WINDOWS | DETAIL EDITABLE V4
 
-## A. Cara yang paling mudah (melalui Props di Remotion Studio)
+**Komposisi:** `WindowsHacks5ShortcutLengkap`  
+**Folder:** `windows-hacks-5-shortcut-lengkap`  
+**Format:** 1080×1920, 30 FPS, 2205 frame (73,5 detik).
 
-1. Pilih `WindowsHacks5ShortcutLengkap`, lalu buka **Props**.
-2. Buka `sceneEditor`. Nama kategori: `HOOK`, `CTRL_SHIFT_T`, `CTRL_SHIFT_ESC`, `WIN_SHIFT_S`, `WIN_E`, `CTRL_SHIFT_N`, `CTA`.
-3. Buka `layers`, pilih lapisan misalnya `window` atau `cursor`.
-4. Untuk geser elemen: `x` (+ ke kanan), `y` (+ ke bawah). Untuk memperbesar: `scale` (contoh 1.12), untuk putar: `rotation` dalam derajat. Untuk menyembunyikan: `enabled=false` atau `opacity=0`. `zIndex=0` berarti susunan asli.
-5. `startFrame` dan `endFrame` memakai frame **lokal scene** pada 30 FPS; `endFrame=-1` berarti tanpa batas akhir. `animation` menerima `none`, `fade`, `slide-up`, `pop`. Gunakan `delayFrames` dan `animationFrames` untuk menunda dan mengatur lama efek tambahan.
-6. Teks utama dan sejumlah teks isi Windows dapat diubah di `copy`. Isi value teks (kosong = kembali ke aslinya). **Nilai yang disimpan secara permanen ada di** `motiongraphic-video.json > defaultProps`. Jika panel Studio hanya mengubah preview sementara, ubah nilai yang sama di manifest dengan editor teks dan jalankan `npm run sync`.
-7. `sfxEnabled` dan `sfxVolume` per shortcut mengendalikan audio efek suara; untuk suara narasi gunakan `voice.enabled` dan `voice.volume` di tingkat atas.
+## Yang berubah di V4
 
-## B. Detail UI, font, warna, kursor dan zoom
+- Error saat menjalankan Studio diperbaiki: `Interactive` hanya diimpor dari `remotion`; bukan dari `./Icons`.
+- Error File Explorer diperbaiki: `useCopy()` sekarang diinisialisasi sebelum dipakai.
+- Nama setiap layer dalam `Props → sceneEditor → pilih scene → layers` dibuat mudah dibaca, bernomor sesuai urutan video.
+- `scaleX` dan `scaleY` mengubah ukuran horizontal/vertikal secara terpisah. `hueShift` menggeser nuansa warna layer secara deterministik.
+- Garis **loading/progress bawah di semua demo** sekarang punya kontrol terpisah: *Jalur*, *Isi Bergerak*, serta identitas/footer seri yang bisa diubah.
+- Ada pengaturan `transitionEditor` untuk enabled, fadeFrames, opacity, color.
+- Text layer menggunakan kunci berbahasa Indonesia di `Props → sceneEditor → [scene] → copy`.
+- Tiap shortcut tetap berisi **5 beat + 1 jeda hasil** untuk memudahkan cut serta VO; animasi utama 1×.
+- Tidak ada video lain di Master yang diubah dan tidak ada file root Master yang disentuh.
 
-- `src/scenes/01-ctrl-shift-t/components/BrowserChrome.tsx`: tab browser, URL, dokumen dan toolbar. `config/video.ts`: posisi browser, trigger tutup/kembali, warna, timing.
-- `02-ctrl-shift-esc/components/TaskManager.tsx`: baris proses, status **Not responding**, tombol **End task**. `config/video.ts`: ukuran window, crop zoom, event select/end.
-- `03-win-shift-s/components/Desktop.tsx`: toolbar Snipping Tool, area seleksi, overlay, notifikasi. `config/video.ts`: koordinat awal/akhir drag, ukuran crop zoom.
-- `04-win-e/components/ExplorerWindow.tsx` dan `Desktop.tsx`: dua jendela, sidebar, isi folder, status folder lama tetap terbuka. `config/video.ts`: jarak jendela, durasi klik, tampilan dan teks.
-- `05-ctrl-shift-n/components/WindowsUI.tsx`: File Explorer, nama folder, kursor, bonus Edge InPrivate. `config/video.ts`: nama folder, ketikan, timing, warna.
-- CSS `styles.css` di tiap episode mengendalikan warna, font, ukuran elemen mikro, stroke ikon, background, dan warna hover.
-- `src/scenes/Hook.tsx` dan `CTA.tsx` mengatur opening/closing. Teks penting juga tersedia dalam Props.
+## Cara memasang
 
-## C. Jika ingin mengubah total durasi video
+1. Backup dulu folder `MotionGraphic-Studio/projects/windows-hacks-5-shortcut-lengkap` jika sudah ada.
+2. Ekstrak ZIP add-on dan salin **folder `windows-hacks-5-shortcut-lengkap` utuh** ke `MotionGraphic-Studio/projects/`.
+3. Jalankan `npm run sync` (atau `npm run dev` jika Studio belum berjalan).
+4. Buka komposisi `WindowsHacks5ShortcutLengkap`.
+5. Buka `Props → sceneEditor` lalu pilih bagian yang ingin diedit.
 
-Total utama `src/config/series.ts` adalah 2.085 frame. Untuk mengganti durasi, ubah *bersamaan* `TIMELINE`, `START`, `FRAMES`, `TOTAL_FRAMES` serta `motiongraphic-video.json > durationInFrames`. Nilai `nativeFrames` menandakan durasi aksi asli; menambah `frames` hanya menahan frame terakhir (jangan set lebih rendah dari `nativeFrames`). 
+## Cara mengubah satu elemen
 
-Untuk memperpendek video secara sehat, kurangi jeda *hold* yang 0,5–1 detik, **jangan mempercepat animasi utama**. Untuk menyelaraskan voice, baca `VOICEOVER-CUES.md`.
+Contoh: `03 · Snipping · Area Seleksi` di bawah `WIN_SHIFT_S → layers`. Ubah `x`, `y`, `scale`, `scaleX`, `scaleY`, `rotation`, `opacity`, `enabled`, `startFrame`, `endFrame`, `animation`, `delayFrames`, atau `animationFrames`. Hindari mengubah kolom `id` karena menjadi penghubung ke elemen sebenarnya. Untuk teks, ubah di `copy` pada bagian scene yang sama.
 
-## D. Lokasi aset
+**Catatan penting:** Ini editor berbasis Props dan source Remotion. Beberapa elemen bisa dipilih melalui `Interactive.Div` di Studio, tetapi **drag-and-drop langsung seluruh subelemen belum terverifikasi**. Warna dasar UI Windows dan ukuran detail kontrol yang tersusun dalam CSS masih dapat diedit melalui file CSS/TSX. Jangan menganggap setiap path SVG/ikon kecil sudah mendukung drag langsung.
 
-Aset asli disimpan di dalam `public/<episode>/audio/`. File suara narasi baru ditaruh di `public/audio/`; Master otomatis membuat mirror `public/videos/windows-hacks-5-shortcut-lengkap/` sesudah `npm run sync`. Jangan ubah mirror itu secara manual.
+## Voice-over
 
-## E. Batas editing visual
+File `public/audio/00-hook.wav` sampai `06-cta.wav` berupa placeholder WAV dan dapat diganti rekaman aslimu. Set `voice.enabled=true` bila sudah siap. Atur volume efek pada `sceneEditor → [scene] → sfxVolume`.
 
-Beberapa elemen dengan animasi dinamis mungkin tidak bisa langsung di-drag di Studio (opsi abu-abu). Itu **bukan tombol palsu**: gunakan Props `sceneEditor`, atau ubah nilai file JSX/config. Tidak ada editor drag terpisah dengan fungsi Save/Reload yang dijanjikan dalam ZIP ini.
+Tata cara editing berdasarkan subelemen lihat `EDIT-MAP-V4.md`, jadwal naskah dan cut lihat `VOICEOVER-CUES.md`.
