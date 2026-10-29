@@ -1,0 +1,4 @@
+TARUH ZIP ADD-ON VIDEO BARU DI FOLDER INI.
+Jangan ekstrak ZIP.
+Kemudian jalankan 01-MULAI-STUDIO.bat.
+ZIP harus memiliki motiongraphic-video.json. Lihat PANDUAN-PAKET-VIDEO.md.

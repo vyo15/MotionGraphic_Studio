@@ -1,0 +1,26 @@
+/** SEMUA KONTEN DAN TIMING — edit di satu tempat, tanpa mengutak-atik kode animasi. */
+export const CONFIG={
+ fps:30,durationInFrames:300,
+ colors:{bg:'#071321',accent:'#64ECF5',blue:'#3B9AF7',green:'#9DF5BC',white:'#F7FBFF'},
+ text:{kicker:'WINDOWS HACKS',episode:'02 / 05',
+  problemTop:'APLIKASI',problemBottom:'NGE-HANG?',problemSub:'Tiba-tiba berhenti merespons?',
+  hotkeyTop:'TEKAN SHORTCUT',hotkeyBottom:'CTRL + SHIFT + ESC',hotkeySub:'Task Manager langsung terbuka.',
+  demoTop:'PILIH APLIKASI',demoBottom:'YANG MACET',demoSub:'Cari status Not responding.',
+  endTop:'KLIK END TASK',endBottom:'BERES!',endSub:'Aplikasi macet berhasil ditutup.',
+  warning:'Pastikan pekerjaan sudah disimpan jika memungkinkan.',
+ },
+ layout:{kickerX:74,kickerY:275,titleX:72,titleY:340,subtitleX:77,subtitleY:557,
+  monitorX:61,monitorY:659,monitorW:958,monitorH:653,
+  keyboardX:95,keyboardY:1402,zoomX:82,zoomY:1210,zoomW:916,zoomH:332,
+ },
+ timing:{hotkey:1.45,keyPress:2.29,managerAppear:3.18,select:4.68,zoomStart:4.78,
+  zoomSwitch:5.87,cursorAtButton:6.57,endPress:6.86,remove:7.18,success:7.55},
+ task:{app:'Microsoft Excel',status:'Not responding',endTask:'End task',
+  appCountBefore:4,appCountAfter:3,cpu:'24%',memory:'63%'},
+ manager:{left:104,top:80,width:748,height:455},
+ // Titik target dalam koordinat desktop 956 × 608, bukan koordinat monitor 1080 × 1920.
+ // Kursor utama dan close-up membaca titik yang sama.
+ cursorTargets:{excelRow:{x:310,y:324},endTask:{x:667,y:194}},
+ zoom:{scale:2.08,rowCropX:45,rowCropY:226,buttonCropX:325,buttonCropY:50},
+ sound:{enabled:true,volume:.55},
+} as const;

@@ -1,0 +1,78 @@
+/* Scoped to CtrlShiftT so no other Master Studio video is modified */
+.whShortcutTScene *{box-sizing:border-box}
+.whShortcutTScene{margin:0;background:#0a111e;color:#fff;font-family:Inter,'Segoe UI',Arial,sans-serif}
+.whShortcutTScene .previewShell{display:flex;align-items:center;justify-content:center;flex-direction:column;padding:12px;gap:12px}
+.whShortcutTScene .canvasViewport{width:min(100%,540px);aspect-ratio:9/16;position:relative;overflow:hidden;border-radius:14px;box-shadow:0 20px 75px #0009;background:#081422}
+.whShortcutTScene{width:1080px;height:1920px;position:absolute;left:0;top:0;transform-origin:0 0;overflow:hidden;background:radial-gradient(ellipse 750px 530px at 50% 39%,#15365c 0%,transparent 95%),linear-gradient(160deg,#061321,#111e32 57%,#081322)}
+.whShortcutTScene .grain{position:absolute;inset:0;opacity:.16;background-image:radial-gradient(#849ab5 1px,transparent 1px);background-size:30px 30px;mask-image:linear-gradient(transparent 4%,black 30%,black 80%,transparent 98%)}
+.whShortcutTScene .glowOrb{position:absolute;left:-330px;top:675px;width:600px;height:600px;border-radius:50%;background:#095c83;filter:blur(120px);opacity:.35}
+.whShortcutTScene .glowOrb2{position:absolute;right:-310px;top:920px;width:650px;height:550px;background:#653bad;border-radius:50%;filter:blur(145px);opacity:.27}
+.whShortcutTScene .topline{position:absolute;left:86px;top:248px;right:86px;display:flex;align-items:center;justify-content:space-between}
+.whShortcutTScene .chip{font-weight:850;font-size:22px;letter-spacing:4px;color:#5de5de}
+.whShortcutTScene .chipNo{font-size:20px;color:#90a9c5;font-weight:700;letter-spacing:2px}
+.whShortcutTScene .introText{position:absolute;left:84px;top:333px;right:84px;line-height:.98;letter-spacing:-3px;font-size:83px;font-weight:950;text-transform:uppercase;transform-origin:left center;text-shadow:0px 7px 32px #0005}
+.whShortcutTScene .whiteText{color:#fff}
+.whShortcutTScene .highText{color:#6DE9DF}
+.whShortcutTScene .introText .two{margin-top:12px}
+.whShortcutTScene .smallExplainer{position:absolute;top:525px;left:87px;font-size:27px;color:#9fbbd8;font-weight:650;letter-spacing:.1px}
+.whShortcutTScene .chromeContainer{position:absolute;top:598px;left:72px;width:936px;height:670px;border-radius:24px;background:#e7eff8;border:2px solid #9bafc8;box-shadow:0 30px 85px #0009,0 0 0 11px #ffffff08;overflow:hidden;transform-origin:center center}
+.whShortcutTScene .chromeTitle{height:69px;background:#dce4ed;display:flex;align-items:end;padding:0 18px 0 28px;gap:9px;position:relative}
+.whShortcutTScene .chromeTab{height:54px;display:flex;align-items:center;padding:0 14px 0 14px;gap:12px;position:relative;border-radius:15px 15px 0 0;white-space:nowrap;font-size:20px;font-weight:580;color:#2c3648}
+.whShortcutTScene .chromeTab.doc{width:338px;background:#fff;z-index:2}
+.whShortcutTScene .chromeTab.home{width:224px;background:transparent;color:#536577}
+.whShortcutTScene .chromeTab .tabText{overflow:hidden;text-overflow:ellipsis;flex:1}
+.whShortcutTScene .tabCross{position:relative;display:flex;align-items:center;justify-content:center;border-radius:50%;width:27px;height:27px;font-size:22px;color:#506070;line-height:1;font-weight:400}
+.whShortcutTScene .chromeActions{margin-left:auto;align-self:center;display:flex;align-items:center;gap:30px;color:#526374;font-size:24px}
+.whShortcutTScene .chromeToolbar{height:67px;background:#fff;display:flex;align-items:center;padding:0 29px;gap:21px;border-bottom:1px solid #e4e7ed;color:#69717b;font-size:30px}
+.whShortcutTScene .browserIcon{font-size:29px;font-weight:400}
+.whShortcutTScene .address{height:45px;background:#f0f2f6;border-radius:23px;flex:1;display:flex;gap:13px;align-items:center;padding:0 17px;overflow:hidden;font-size:18px;color:#2d3847}
+.whShortcutTScene .lockIcon{font-size:17px;color:#687580}
+.whShortcutTScene .bookmarks{background:#fff;height:39px;border-bottom:1px solid #e9eef3;display:flex;align-items:center;padding:0 35px;gap:30px;font-size:17px;color:#576473}
+.whShortcutTScene .browserBody{height:495px;background:#fff;position:relative;color:#202934;overflow:hidden}
+.whShortcutTScene .docsHeader{height:90px;display:flex;align-items:center;padding:0 23px;gap:18px;border-bottom:1px solid #e8eaf0}
+.whShortcutTScene .docBadge{width:48px;height:58px;background:#4388ec;color:#fff;font-weight:900;font-size:23px;border-radius:7px;display:flex;align-items:center;justify-content:center}
+.whShortcutTScene .docName{font-size:23px;font-weight:650;color:#252d38}
+.whShortcutTScene .docSub{font-size:14px;color:#858fa0;margin-top:7px}
+.whShortcutTScene .share{margin-left:auto;background:#c2e7ff;border-radius:23px;padding:14px 21px;font-weight:700;font-size:18px;color:#093850}
+.whShortcutTScene .docsToolbar{height:52px;background:#f7f8fb;display:flex;align-items:center;gap:28px;padding:0 30px;color:#687585;font-size:18px}
+.whShortcutTScene .docsPaper{width:670px;height:380px;margin:22px auto 0;border-radius:4px;border:1px solid #d8dce3;box-shadow:0 7px 20px #00000014;padding:40px 63px}
+.whShortcutTScene .reportTitle{font-size:31px;font-weight:850;color:#1a2640}
+.whShortcutTScene .rule{height:2px;background:#dfebf2;margin:18px 0 25px}
+.whShortcutTScene .textLine{height:12px;border-radius:15px;background:#dbe3eb;margin-top:15px}
+.whShortcutTScene .statRow{display:flex;gap:13px;margin-top:28px}
+.whShortcutTScene .statBox{height:70px;border-radius:10px;background:#e9f4ff;flex:1;position:relative}
+.whShortcutTScene .statBox:nth-child(2){background:#eef8ee}
+.whShortcutTScene .statBox:nth-child(3){background:#fff2e8}
+.whShortcutTScene .googlePage{position:absolute;inset:0;background:white;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;padding-top:125px}
+.whShortcutTScene .googleLogo{font-weight:590;letter-spacing:-5px;font-size:88px}
+.whShortcutTScene .googleSearch{margin-top:45px;height:65px;width:650px;border-radius:33px;border:1px solid #d6dce3;display:flex;align-items:center;padding:0 23px;gap:18px;color:#6a7a91;font-size:21px;box-shadow:0 3px 12px #00121b0a}
+.whShortcutTScene .googleLinks{margin-top:28px;display:flex;gap:15px}
+.whShortcutTScene .googleLinks span{background:#f4f6f8;border-radius:7px;padding:13px 21px;font-size:16px;color:#505764}
+.whShortcutTScene .googlePage .googleFooter{font-size:17px;color:#8493a4;margin-top:45px}
+.whShortcutTScene .winTaskbar{position:absolute;bottom:0;left:0;right:0;height:66px;background:linear-gradient(180deg,#d7edf9ed,#c2d9e6f2);display:flex;align-items:center;justify-content:center;gap:24px}
+.whShortcutTScene .winIcon{height:28px;width:28px;display:grid;grid-template-columns:1fr 1fr;gap:2px}
+.whShortcutTScene .winIcon i{background:#077bd1}
+.whShortcutTScene .appIcon{font-size:29px;line-height:1}
+.whShortcutTScene .chromeLogo{height:28px;width:28px;border-radius:50%;background:conic-gradient(#e6bb31 0deg 115deg,#158b50 115deg 235deg,#d73f34 235deg 360deg);display:flex;align-items:center;justify-content:center}
+.whShortcutTScene .chromeLogo:after{content:"";display:block;width:12px;height:12px;border-radius:50%;background:#4196f3;border:2px solid #f9f9f9}
+.whShortcutTScene .webWinWallpaper{position:absolute;inset:0;background:radial-gradient(ellipse at 55% 50%,#addfff 0,#3768d2 43%,#163876 100%)}
+.whShortcutTScene .webWinWallpaper:before{content:"";position:absolute;left:45%;top:12%;width:47%;height:74%;border-radius:55% 20% 50% 25%;transform:skew(-18deg) rotate(-15deg);background:linear-gradient(100deg,#8fe9ff88,#b4f0ff15);filter:blur(5px)}
+.whShortcutTScene .browserCanvas{position:absolute;left:0;top:0;right:0;bottom:0}
+.whShortcutTScene .cursor{position:absolute;left:0;top:0;width:46px;height:55px;z-index:40;filter:drop-shadow(3px 4px 2px #0008);transform-origin:0 0}
+.whShortcutTScene .clickHalo{position:absolute;width:90px;height:90px;border:5px solid #ec5661;border-radius:50%;pointer-events:none;z-index:41}
+.whShortcutTScene .errorToast{position:absolute;left:121px;right:121px;top:1250px;background:#3b1927;color:#ffb3bd;padding:21px 35px;border:1px solid #d9687c;border-radius:15px;font-size:27px;font-weight:750;display:flex;align-items:center;gap:20px;box-shadow:0 12px 30px #0003;transform-origin:center}
+.whShortcutTScene .keyGuide{position:absolute;top:1354px;left:85px;right:85px;display:flex;flex-direction:column;align-items:center;gap:20px;transform-origin:center}
+.whShortcutTScene .keyGuideLabel{letter-spacing:3px;font-size:23px;color:#8db5cf;font-weight:800}
+.whShortcutTScene .keyRow{display:flex;gap:17px;align-items:center}
+.whShortcutTScene .key{height:100px;min-width:100px;padding:0 22px;background:linear-gradient(180deg,#3d526a,#243447);border:2px solid #6d89a4;box-shadow:0 10px 0 #101e2d,0 17px 26px #0007;border-radius:17px;font-weight:950;font-size:36px;display:flex;align-items:center;justify-content:center;color:white}
+.whShortcutTScene .keyPlus{font-size:26px;color:#76aac9}
+.whShortcutTScene .key.active{background:linear-gradient(180deg,#94fff1,#24cfce);border-color:#cafff5;color:#002a38;box-shadow:0 4px 0 #128f96,0 0 54px #24dbe899}
+.whShortcutTScene .bottomLine{position:absolute;top:1534px;left:70px;right:70px;text-align:center;font-size:28px;font-weight:750;color:#b6cce1}
+.whShortcutTScene .bottomLine strong{color:#82f6db}
+.whShortcutTScene .editorBar{width:min(100%,540px);display:flex;align-items:center;gap:9px}
+.whShortcutTScene .editorBar button{cursor:pointer;border:1px solid #45627d;background:#18344d;color:white;border-radius:8px;font-size:16px;padding:10px 15px}
+.whShortcutTScene .editorBar input{flex:1}
+.whShortcutTScene .editorBar .counter{min-width:54px;text-align:right;font-size:13px;color:#b7cadb}
+.whShortcutTScene .disclaimer{width:min(100%,540px);font-size:12px;color:#a0b3c9;text-align:center;line-height:1.5}
+.whShortcutTScene .noUi{padding:0}
+.whShortcutTScene .noUi .editorBar,.whShortcutTScene .noUi .disclaimer{display:none}

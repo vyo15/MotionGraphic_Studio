@@ -1,0 +1,22 @@
+WINDOWS HACKS — VOICEOVER V3 (73,5 DETIK)
+
+Hook (0.0–8.0 detik):
+Hook dikunci: “Ngapain klik sana-sini, kalau ada cara lebih cepat? Kamu pengguna Windows? Wajib tahu 5 shortcut ini!”
+
+01 · Ctrl + Shift + T (8.0–17.5 detik):
+Tab browser nggak sengaja ketutup? Jangan panik! Tekan Ctrl Shift T, tab-nya langsung balik!
+
+02 · Ctrl + Shift + Esc (17.5–28.5 detik):
+Lagi kerja, aplikasi malah nge-hang? Tekan Ctrl Shift Escape, buka Task Manager, lalu pilih aplikasi yang macet!
+
+03 · Win + Shift + S (28.5–39.5 detik):
+Butuh screenshot cuma sebagian layar? Tekan Windows Shift S, lalu pilih area yang mau diambil!
+
+04 · Win + E · dua jendela (39.5–50.5 detik):
+Mau cari file tanpa ribet buka menu? Tekan Windows E, File Explorer langsung kebuka! (Visual menunjukkan jendela kedua sementara folder pertama tetap terbuka.)
+
+05 · Ctrl + Shift + N (50.5–69.5 detik):
+Bikin folder baru masih lewat klik kanan? Di File Explorer, tekan Ctrl Shift N. Bonusnya, di Chrome atau Edge, shortcut yang sama bisa buka mode privat!
+
+CTA · Simpan video (69.5–73.5 detik):
+Simpan videonya, biar nggak lupa!

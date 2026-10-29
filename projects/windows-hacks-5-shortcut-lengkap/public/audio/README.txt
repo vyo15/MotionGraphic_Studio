@@ -1,0 +1,1 @@
+Tujuh WAV di sini adalah SLOT PLACEHOLDER HENING 0.1 detik untuk menjaga validator Master tidak error. GANTI nama yang sama dengan rekaman narasi 48kHz mono; jangan menganggap placeholder berisi voice-over. Aktifkan Props voice.enabled=true hanya setelah mengganti rekaman.
