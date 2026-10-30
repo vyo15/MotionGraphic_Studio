@@ -66,7 +66,7 @@ export function parseCompositions(source){
  return {props:found,skeleton:skeleton.replace(/\s+/g,'')};
 }
 export function saveGeneratedState(root,rootText,entries){
- const state={version:1,rootHash:hash(rootText),rootText,propsHashes:Object.fromEntries(entries.map(v=>[v.id,hash(JSON.stringify(v.defaultProps))]))};
+ const state={version:2,rootHash:hash(rootText),rootText,propsHashes:Object.fromEntries(entries.map(v=>[v.id,hash(JSON.stringify(v.defaultProps))])),compositionOwners:Object.fromEntries(entries.map(v=>[v.id,v.ownerId||v.id]))};
  const dest=statePath(root);fs.mkdirSync(path.dirname(dest),{recursive:true});
  const tmp=dest+'.'+process.pid+'.tmp';fs.writeFileSync(tmp,JSON.stringify(state,null,2)+'\n');fs.renameSync(tmp,dest);
 }
@@ -79,24 +79,63 @@ export function captureStudioProps(root){
  if(hash(current)===state.rootHash)return 0;
  const old=parseCompositions(state.rootText),next=parseCompositions(current);
  if(old.skeleton!==next.skeleton)throw new Error('Root.tsx berubah selain Props. Sync dibatalkan agar perubahan native Remotion tidak tertimpa. Backup tersedia di library/.studio-generated-state.json.');
- const changes=[];
+ // Segmen adalah jendela frame dari video yang sama. Perubahan Props dari setiap
+ // komposisi di-merge ke satu manifest agar video lengkap tidak berbeda.
+ const equal=(a,b)=>JSON.stringify(a)===JSON.stringify(b);
+ const plain=v=>v!==null&&typeof v==='object'&&!Array.isArray(v);
+ const diff=(a,b,prefix=[])=>{
+  if(equal(a,b))return [];
+  if(plain(a)&&plain(b)){
+   const result=[];
+   for(const key of new Set([...Object.keys(a),...Object.keys(b)])){
+    if(!Object.hasOwn(b,key))result.push({path:[...prefix,key],remove:true});
+    else if(!Object.hasOwn(a,key))result.push({path:[...prefix,key],value:b[key]});
+    else result.push(...diff(a[key],b[key],[...prefix,key]));
+   }
+   return result;
+  }
+  return [{path:prefix,value:b}];
+ };
+ const changesByOwner=new Map();
+ for(const id of old.props.keys())if(!next.props.has(id))throw new Error('Composition hilang saat save Props: '+id);
  for(const [id,props] of next.props){
-  if(!old.props.has(id))throw new Error('Composition berubah: '+id);
-  if(JSON.stringify(props)===JSON.stringify(old.props.get(id)))continue;
-  const item=rootProjectManifest(root,id);
-  if(!item)throw new Error('Manifest project ID tidak ditemukan: '+id);
-  const manifest=JSON.parse(fs.readFileSync(item,'utf8'));
-  const manifestHash=hash(JSON.stringify(manifest.defaultProps??{}));
-  if(manifestHash!==state.propsHashes[id])throw new Error('Props Remotion dan manifest sama-sama diubah untuk '+id+'. Sync dibatalkan untuk menghindari kehilangan data.');
-  changes.push({file:item,manifest,props,id});
+  const oldProps=old.props.get(id);
+  if(!oldProps)throw new Error('Composition berubah: '+id);
+  if(equal(props,oldProps))continue;
+  const owner=state.compositionOwners?.[id]??id;
+  const item=rootProjectManifest(root,owner);
+  if(!item)throw new Error('Manifest project ID tidak ditemukan: '+owner);
+  const existing=changesByOwner.get(owner);
+  const manifest=existing?.manifest??JSON.parse(fs.readFileSync(item,'utf8'));
+  if(hash(JSON.stringify(manifest.defaultProps??{}))!==state.propsHashes[id]){
+   throw new Error('Props Remotion dan manifest sama-sama diubah untuk '+owner+'. Sync dibatalkan untuk menghindari kehilangan data.');
+  }
+  const combined=existing?.props??structuredClone(manifest.defaultProps??{});
+  for(const patch of diff(oldProps,props)){
+   let node=combined,baseline=manifest.defaultProps??{};
+   for(const key of patch.path.slice(0,-1)){
+    if(!plain(node[key]))node[key]={};
+    node=node[key];baseline=plain(baseline)?baseline[key]:undefined;
+   }
+   const leaf=patch.path.at(-1);
+   const before=plain(baseline)?baseline[leaf]:undefined;
+   const current=node[leaf];
+   if(!equal(current,before)&&!equal(current,patch.value)){
+    throw new Error('Dua komposisi mengubah Props yang sama secara berbeda: '+owner+' / '+patch.path.join('.'));
+   }
+   if(patch.remove)delete node[leaf];
+   else node[leaf]=patch.value;
+  }
+  changesByOwner.set(owner,{file:item,manifest,props:combined,id:owner});
  }
+ const changes=[...changesByOwner.values()];
  const back=path.join(root,'library','backups','studio-props');fs.mkdirSync(back,{recursive:true});
  const tag=new Date().toISOString().replace(/[:.]/g,'-');
  for(const ch of changes){
   fs.copyFileSync(ch.file,path.join(back,`${ch.id}-${tag}.json`));
   ch.manifest.defaultProps=ch.props;
   const temp=ch.file+'.'+process.pid+'.tmp';fs.writeFileSync(temp,JSON.stringify(ch.manifest,null,2)+'\n');fs.renameSync(temp,ch.file);
-  console.log('[REMOTION PROPS] Edit Studio disimpan ke manifest '+ch.id);
+  console.log('[REMOTION PROPS] Edit Studio disimpan ke manifest '+ch.id+' (semua segmen tersinkron)');
  }
  return changes.length;
 }

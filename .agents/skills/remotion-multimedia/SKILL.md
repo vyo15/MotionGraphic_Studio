@@ -1,12 +1,20 @@
 ---
 name: remotion-multimedia
-description: Local MotionGraphic Studio adapter. Not official upstream skill.
+description: Interacting with Mediabunny
+version: 4.0.539
 ---
 
-# remotion-multimedia
+Mediabunny is a multimedia library for dealing with audio and video in the browser.
+Here is a compact overview of its capabilities: https://mediabunny.dev/llms.txt
 
-MotionGraphic Studio local adapter: referensi singkat untuk workflow Master v1.8.
+## Getting audio duration
 
-Asset disimpan dalam public project dan `staticFile("videos/<slug>/...")`. Timeline audio memakai konfigurasi tunggal untuk preview dan render.
+See [get-audio-duration.md](get-audio-duration.md) for getting the duration of an audio file in seconds with Mediabunny.
 
-Sumber resmi yang dapat dipasang terpisah: https://github.com/remotion-dev/skills .
+## Getting video dimensions
+
+See [get-video-dimensions.md](get-video-dimensions.md) for getting the width and height of a video file with Mediabunny.
+
+## Getting video duration
+
+See [get-video-duration.md](get-video-duration.md) for getting the duration of a video file in seconds with Mediabunny.

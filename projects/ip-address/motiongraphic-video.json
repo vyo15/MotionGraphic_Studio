@@ -23,5 +23,37 @@
         "muted": false
       }
     ]
-  }
+  },
+  "segments": [
+    {
+      "id": "IPAddress-01-Hook",
+      "title": "01 — Hook",
+      "startFrame": 0,
+      "durationInFrames": 90
+    },
+    {
+      "id": "IPAddress-02-Alamat-Rumah",
+      "title": "02 — IP = Alamat Rumah",
+      "startFrame": 90,
+      "durationInFrames": 138
+    },
+    {
+      "id": "IPAddress-03-IPv4",
+      "title": "03 — IPv4 Empat Angka",
+      "startFrame": 228,
+      "durationInFrames": 138
+    },
+    {
+      "id": "IPAddress-04-Router-Paket",
+      "title": "04 — Router dan Paket",
+      "startFrame": 366,
+      "durationInFrames": 156
+    },
+    {
+      "id": "IPAddress-05-CTA",
+      "title": "05 — Kesimpulan / CTA",
+      "startFrame": 522,
+      "durationInFrames": 198
+    }
+  ]
 }

@@ -1,9 +1,9 @@
 {
-  "attemptedAt": "2026-10-28T08:38:15.788Z",
-  "command": "auto",
-  "success": false,
-  "verifiedOfficialSkillCount": 0,
+  "attemptedAt": "2026-10-30T01:15:06.535Z",
+  "command": "install",
+  "success": true,
+  "verifiedOfficialSkillCount": 12,
   "expectedOfficialSkillCount": 12,
   "source": "remotion-dev/skills",
-  "note": "Bundled local fallback remains available. Re-run installer when internet and Node.js/npm are ready."
+  "note": "Twelve official repo skills available; remotion-license is a separate local reference."
 }

@@ -28,7 +28,39 @@
             "muted": false
           }
         ]
-      }
+      },
+      "segments": [
+        {
+          "id": "IPAddress-01-Hook",
+          "title": "01 — Hook",
+          "startFrame": 0,
+          "durationInFrames": 90
+        },
+        {
+          "id": "IPAddress-02-Alamat-Rumah",
+          "title": "02 — IP = Alamat Rumah",
+          "startFrame": 90,
+          "durationInFrames": 138
+        },
+        {
+          "id": "IPAddress-03-IPv4",
+          "title": "03 — IPv4 Empat Angka",
+          "startFrame": 228,
+          "durationInFrames": 138
+        },
+        {
+          "id": "IPAddress-04-Router-Paket",
+          "title": "04 — Router dan Paket",
+          "startFrame": 366,
+          "durationInFrames": 156
+        },
+        {
+          "id": "IPAddress-05-CTA",
+          "title": "05 — Kesimpulan / CTA",
+          "startFrame": 522,
+          "durationInFrames": 198
+        }
+      ]
     },
     {
       "id": "WindowsHacks5ShortcutLengkap",
@@ -697,7 +729,51 @@
             "muted": false
           }
         ]
-      }
+      },
+      "segments": [
+        {
+          "id": "WinHacks-00-Opening",
+          "title": "00 — Opening / Hook",
+          "startFrame": 0,
+          "durationInFrames": 240
+        },
+        {
+          "id": "WinHacks-01-CtrlShiftT",
+          "title": "01 — Ctrl + Shift + T",
+          "startFrame": 240,
+          "durationInFrames": 285
+        },
+        {
+          "id": "WinHacks-02-TaskManager",
+          "title": "02 — Ctrl + Shift + Esc",
+          "startFrame": 525,
+          "durationInFrames": 330
+        },
+        {
+          "id": "WinHacks-03-Win-Shift-S",
+          "title": "03 — Win + Shift + S",
+          "startFrame": 855,
+          "durationInFrames": 330
+        },
+        {
+          "id": "WinHacks-04-Win-E",
+          "title": "04 — Win + E",
+          "startFrame": 1185,
+          "durationInFrames": 330
+        },
+        {
+          "id": "WinHacks-05-Ctrl-Shift-N",
+          "title": "05 — Ctrl + Shift + N + Bonus",
+          "startFrame": 1515,
+          "durationInFrames": 570
+        },
+        {
+          "id": "WinHacks-06-CTA",
+          "title": "06 — CTA / Closing",
+          "startFrame": 2085,
+          "durationInFrames": 120
+        }
+      ]
     }
   ]
 }

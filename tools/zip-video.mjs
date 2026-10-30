@@ -33,7 +33,7 @@ async function videoZip(video){
 }
 async function studioZip(){
   const dirs=['projects','src','tools','library','.agents','.github','tests'];
-  const files=['package.json','package-lock.json','tsconfig.json','.gitignore','README.md','PANDUAN-EDIT-ASSET.md','PROMPT-PROYEK-CHATGPT.md','PANDUAN-GITHUB.md','PANDUAN-RENAME.md','AGENTS.md','STANDAR-EDITABLE-STUDIO.md','STANDAR-EDITABLE-STUDIO-v3.md','PANDUAN-REMOTION-STUDIO.md','PANDUAN-AUDIO-TIMELINE.md','STATUS-VALIDASI-v1.8.1.md','LAPORAN-PERBAIKAN-ZIP-v1.8.2.md','public/README.txt','01-BUKA-STUDIO.bat','02-CEK-STUDIO.bat','03-STOP-STUDIO.bat','INSTALL-SEMUA-SKILL-REMOTION.bat'];
+  const files=['package.json','package-lock.json','tsconfig.json','.gitignore','README.md','PANDUAN-EDIT-ASSET.md','PROMPT-PROYEK-CHATGPT.md','PRODUCTION-RULES.md','PANDUAN-GITHUB.md','PANDUAN-RENAME.md','AGENTS.md','STANDAR-EDITABLE-STUDIO.md','STANDAR-EDITABLE-STUDIO-v3.md','PANDUAN-REMOTION-STUDIO.md','PANDUAN-AUDIO-TIMELINE.md','STATUS-VALIDASI-v1.8.1.md','ALUR-KERJA-REMOTION-CONCAT.md','AUDIT-CLEANUP-MASTER-v1.8.1.md','AUDIT-FINAL-v1.8.1.md','PANDUAN-HANDOFF-CONCAT.md','LAPORAN-PERBAIKAN-ZIP-v1.8.2.md','public/README.txt','01-BUKA-STUDIO.bat','02-CEK-STUDIO.bat','03-STOP-STUDIO.bat','INSTALL-SEMUA-SKILL-REMOTION.bat'];
   const sources=[...dirs,...files].filter(name=>fs.existsSync(path.join(ROOT,name))).map(name=>({absolute:path.join(ROOT,name),name:'MotionGraphic-Studio/'+name}));
   const pkg=JSON.parse(fs.readFileSync(path.join(ROOT,'package.json'),'utf8'));
   const out=availableFile(exportDirs().master,`MotionGraphic-Studio-Master-v${pkg.version}-${timestamp()}`,'.zip');

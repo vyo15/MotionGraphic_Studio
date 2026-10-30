@@ -1,6 +1,25 @@
-# MotionGraphic Studio Master v1.8.1 — Remotion Studio Saja
+# MotionGraphic Studio Master v1.8.1 — Remotion + Concat
 
-**Satu Master. Satu editor.** Video tersedia langsung di **Remotion Studio resmi** (`http://127.0.0.1:3000`). Tidak ada Studio Hub, Visual Editor, Easy Editor, iframe, maupun server editor di port 4077.
+**Satu Master. Dua aplikasi, tanpa editor ketiga.** **Remotion Studio** (`npm run dev`) untuk motion graphic editable; **Concat portable dari GitHub** (`npm run concat`) untuk finishing voice-over, caption, cut dan export final. Tidak ada Studio Hub, Easy Editor atau iframe tambahan.
+
+## Mulai cepat — hanya dua aplikasi
+
+1. `npm run dev` → buat dan revisi animasi di Remotion Studio.
+2. `npm run handoff -- --project windows-hacks-5-shortcut-lengkap` → export tiga MP4 tanpa suara ke folder stabil `out/concat/<slug>/current/` (audio ditata di Concat). Untuk video IP Address, gunakan slug `ip-address`.
+3. `npm run concat` → clone source GitHub (jika belum ada), siapkan runtime portable resmi GitHub tanpa instal aplikasi, lalu buka Concat. Impor tiga MP4 dalam urutan yang sama, rekam voice-over, generate captions di GUI dan export final.
+
+Saat pertama kali handoff dibuat, impor tiga MP4 dari folder `current/`. Saat revisi Remotion, jalankan handoff lagi atau tambahkan `--only CTA` untuk merender satu bagian. **Tutup project Concat sebelum memperbarui aset**, kemudian buka ulang/relink media setelah update; handoff tidak otomatis mengubah timeline/caption Concat. Versi terdahulu disimpan dalam folder `history/` untuk pemulihan. `npm run handoff` hanya perintah export, **bukan interface/editor ketiga**. Pada first run `npm run concat`, launcher menyiapkan source GitHub dan mengekstrak runtime portable dari rilis resmi GitHub setelah memvalidasi SHA-256. **Tidak perlu Rust/Cargo dan tidak memasang aplikasi Concat di Windows.** Kompilasi source sendiri tetap memerlukan Rust, CMake, MSVC dan dependensi native. Folder `apps/concat/` adalah local-only dan tidak ikut backup ZIP Master.
+
+Baca **[PANDUAN-HANDOFF-CONCAT.md](PANDUAN-HANDOFF-CONCAT.md)** dan **[ALUR-KERJA-REMOTION-CONCAT.md](ALUR-KERJA-REMOTION-CONCAT.md)** untuk keputusan ekspor audio, revisi, status caption, dan cara pemulihan.
+
+
+## Workflow produksi ChatGPT + Remotion Studio (approval scene pertama)
+
+Aturan utama: [PRODUCTION-RULES.md](PRODUCTION-RULES.md) dan [PROMPT-PROYEK-CHATGPT.md](PROMPT-PROYEK-CHATGPT.md). Script/storyboard project, keputusan kreatif, dan status persetujuan disimpan **di dalam folder video** supaya ikut terbawa saat `npm run zip`.
+
+Alur: **script full → storyboard full → approval → build satu scene pertama → preview/revisi → approval scene pertama → build scene lain → sync voice-over → preview full → QA/render**. Studio tetap Remotion asli, bukan editor baru. Pada video lama, dokumen awal boleh merekam keputusan yang sudah disepakati, tetapi tidak otomatis dianggap approved seluruhnya.
+
+`npm run dev` dan `npm run sync` otomatis membuat `AGENTS.md`, `PROJECT-SCOPE.md`, `SCRIPT.md`, `STORYBOARD.md`, `PRODUCTION-STATE.json` **hanya jika belum tersedia** di project baru. Dokumen yang ada tidak pernah ditimpa oleh sync. Status dapat dilihat lewat `node tools/production-scope.mjs --check`. Pembuatan dokumen bukan persetujuan script otomatis.
 
 ## Mulai di Windows (tanpa VS Code)
 
@@ -27,6 +46,8 @@ MotionGraphic-Studio/
 ├── 01-BUKA-STUDIO.bat            # satu launcher => Remotion Studio
 ├── 02-CEK-STUDIO.bat
 ├── 03-STOP-STUDIO.bat
+├── apps/concat/source/             # clone source GitHub (ignored oleh Git/ZIP)
+├── apps/concat/runtime/current/    # binary portable rilis GitHub (tidak diinstal)
 ├── projects/
 │   ├── ip-address/
 │   └── windows-hacks-5-shortcut-lengkap/
@@ -43,7 +64,12 @@ Masukkan add-on sebagai **folder utuh** `projects/<slug>/` yang memiliki `motion
 
 | Perintah | Fungsi |
 | --- | --- |
-| `npm run dev` | Sync + buka Remotion Studio resmi (satu UI) |
+| `npm run dev` | Sync + buka Remotion Studio resmi |
+| `npm run handoff -- --project <slug>` | Export HOOK/ISI/CTA tanpa audio ke `out/concat/<slug>/current/` (default) |
+| `npm run handoff -- --project <slug> --only CTA` | Render ulang CTA saja, Hook/Isi tetap utuh |
+| `npm run handoff -- --project <slug> --with-remotion-audio` | Sertakan audio Remotion bila semua lisensi aset sudah terverifikasi |
+| `npm run concat` | Clone source (jika belum ada), ekstrak Concat portable rilis GitHub bila perlu, lalu buka tanpa Rust |
+| `npm run concat:status` | Cek source, runtime portable dan opsi toolchain |
 | `npm run sync` | Daftarkan project dan sinkronkan aset |
 | `npm run check` | Pemeriksaan library + TypeScript + editable + layout |
 | `npm run qa` | Audit statis proyek; laporan di terminal |

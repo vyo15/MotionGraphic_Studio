@@ -4,12 +4,18 @@ import fs from 'node:fs';
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
 import {captureStudioProps,saveGeneratedState} from './studio-props-bridge.mjs';
+import {registerMissingSceneSegments} from './register-scene-segments.mjs';
+import {ensureProjectProductionDocs} from './production-scope.mjs';
 const ROOT=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const PROJECTS=path.join(ROOT,'projects');
 const ROOT_FILE=path.join(ROOT,'src','Root.tsx');
 const CATALOG_FILE=path.join(ROOT,'library','catalog.json');
 const assert=(x,msg)=>{if(!x)throw Error(msg)};
 const js=p=>JSON.parse(fs.readFileSync(p,'utf8'));
+const folderName=(title,slug)=>{
+ const readable=title.normalize('NFKD').replace(/[\u0300-\u036f]/g,'').replace(/[^A-Za-z0-9]+/g,'-').replace(/^-+|-+$/g,'');
+ return readable||slug;
+};
 const safeRel=s=>typeof s==='string'&&s.length>0&&!path.isAbsolute(s)&&!s.includes('\\')&&s.split('/').every(t=>t&&t!=='.'&&t!=='..')&&/^[A-Za-z0-9_./-]+$/.test(s);
 function files(dir){
  if(!fs.existsSync(dir))return [];
@@ -33,6 +39,7 @@ function syncAssets(project,slug){
 }
 function main(){
  captureStudioProps(ROOT);
+ registerMissingSceneSegments(ROOT);
  assert(!fs.existsSync(path.join(ROOT,'motiongraphic-video.json')),'Manifest video ditemukan di ROOT Studio; pindahkan folder video utuh ke projects/<slug>/');
  fs.mkdirSync(PROJECTS,{recursive:true});
  const old=fs.existsSync(CATALOG_FILE)?js(CATALOG_FILE):{schemaVersion:1,videos:[]};
@@ -40,7 +47,7 @@ function main(){
  // Reject data legacy after migration; don't silently keep registrations that lack a source folder.
  assert(!old.videos.some(v=>!v.projectDir),'Katalog masih berisi project legacy; migrasikan dulu ke projects/<slug>/');
  const dirs=fs.readdirSync(PROJECTS,{withFileTypes:true}).filter(x=>x.isDirectory()&&!x.name.startsWith('_')&&!x.name.startsWith('.')).sort((a,b)=>a.name.localeCompare(b.name));
- const entries=[],imports=[],comps=[],ids=new Set(),slugs=new Set();
+ const entries=[],imports=[],segmentDeclarations=[],comps=[],ids=new Set(),slugs=new Set(),folderNames=new Set(),allCompositions=[];
  for(const dir of dirs){
   const slug=dir.name,folder=path.join(PROJECTS,slug),manifest=path.join(folder,'motiongraphic-video.json');
   assert(fs.existsSync(manifest),`Folder projects/${slug} tanpa motiongraphic-video.json`);
@@ -57,13 +64,51 @@ function main(){
   const deps=fs.existsSync(path.join(folder,'package.json'))?js(path.join(folder,'package.json')).dependencies||{}:{};
   for(const name of Object.keys(deps))assert(Object.hasOwn({...host.dependencies,...host.devDependencies},name),'Dependency belum di Master: '+name);
   for(const file of files(folder))assert(!path.relative(folder,file).split(path.sep).some(s=>['node_modules','.git','dist'].includes(s)),'Project berisi folder build: '+file);
+  const projectFolder=folderName(m.studioFolderName||m.title,slug);
+  assert(!folderNames.has(projectFolder),`Nama folder sidebar duplikat: ${projectFolder}. Perbarui judul video supaya berbeda.`);
+  folderNames.add(projectFolder);
+  const rawSegments=m.segments??[];
+  assert(Array.isArray(rawSegments),'segments harus array: '+slug);
+  const segments=[];
+  let nextFrame=0;
+  for(const seg of rawSegments){
+   assert(seg&&typeof seg==='object'&&!Array.isArray(seg),'Data segmen tidak valid: '+slug);
+   assert(/^[A-Za-z][A-Za-z0-9-]{1,75}$/.test(seg.id||''),'ID segmen tidak valid: '+slug);
+   assert(!ids.has(seg.id),`ID segmen duplikat: ${seg.id}`);
+   assert(typeof seg.title==='string'&&seg.title.trim(),'Judul segmen wajib: '+seg.id);
+   assert(Number.isInteger(seg.startFrame)&&seg.startFrame===nextFrame,`Start frame segmen ${seg.id} harus ${nextFrame} (berurutan tanpa celah)`);
+   assert(Number.isInteger(seg.durationInFrames)&&seg.durationInFrames>0,`Durasi segmen ${seg.id} tidak valid`);
+   nextFrame+=seg.durationInFrames;
+   assert(nextFrame<=m.durationInFrames,`Segmen ${seg.id} melampaui durasi video`);
+   ids.add(seg.id);
+   segments.push({id:seg.id,title:seg.title,startFrame:seg.startFrame,durationInFrames:seg.durationInFrames});
+  }
+  if(segments.length)assert(nextFrame===m.durationInFrames,`Segmen ${slug} tidak menutupi seluruh video (akhir ${nextFrame}, total ${m.durationInFrames})`);
   const alias='FolderProject_'+slug.replaceAll('-','_');
+  const segmentSource=path.join(folder,'src','SegmentVideo.tsx');
+  const directSegments=fs.existsSync(segmentSource);
+  if(directSegments) assert(/export\s+(?:const|function)\s+SegmentVideo\b/.test(fs.readFileSync(segmentSource,'utf8')),
+    `src/SegmentVideo.tsx harus export const SegmentVideo untuk ${slug}`);
+  else if(segments.length)console.log(`[EDITOR SCENE INFO] ${slug}: source SegmentVideo.tsx belum ada; segmen tetap preview frame (belum layer langsung).`);
   const props=m.defaultProps&&typeof m.defaultProps==='object'&&!Array.isArray(m.defaultProps)?m.defaultProps:{};
   imports.push(`import {${m.exportName} as ${alias}} from '../projects/${slug}/${m.entry.replace(/\.(tsx|jsx)$/,'')}';`);
-  comps.push(`      <Composition id=${JSON.stringify(m.id)} component={${alias}} width={${m.width}} height={${m.height}} fps={${m.fps}} durationInFrames={${m.durationInFrames}} defaultProps={${JSON.stringify(props)}} />`);
-  entries.push({id:m.id,slug,title:m.title,width:m.width,height:m.height,fps:m.fps,durationInFrames:m.durationInFrames,assetPrefix:`videos/${slug}`,source:`projects/${slug}/${m.entry}`,projectDir:`projects/${slug}`,exportName:m.exportName,defaultProps:props});
+  if(directSegments)imports.push(`import {SegmentVideo as ${alias}_editable} from '../projects/${slug}/src/SegmentVideo';`);
+  const fullAlias=alias+'_full';
+  segmentDeclarations.push(`const ${fullAlias} = createFullPreviewComposition(${alias}, ${m.durationInFrames});`);
+  const parts=[`        <Composition id=${JSON.stringify(m.id)} component={${fullAlias}} width={${m.width}} height={${m.height}} fps={${m.fps}} durationInFrames={${m.durationInFrames}} defaultProps={${JSON.stringify(props)}} />`];
+  allCompositions.push({id:m.id,ownerId:m.id,defaultProps:props});
+  for(const [i,seg] of segments.entries()){
+   const partAlias=alias+'_segment_'+i;
+   segmentDeclarations.push(directSegments
+     ? `const ${partAlias} = createEditableSegmentComposition(${alias}_editable, ${i});`
+     : `const ${partAlias} = createSegmentComposition(${alias}, ${seg.startFrame}, ${seg.durationInFrames});`);
+   parts.push(`        <Composition id=${JSON.stringify(seg.id)} component={${partAlias}} width={${m.width}} height={${m.height}} fps={${m.fps}} durationInFrames={${seg.durationInFrames}} defaultProps={${JSON.stringify(props)}} />`);
+   allCompositions.push({id:seg.id,ownerId:m.id,defaultProps:props});
+  }
+  comps.push(`      <Folder name=${JSON.stringify(projectFolder)}>\n${parts.join('\n')}\n      </Folder>`);
+  entries.push({id:m.id,slug,title:m.title,width:m.width,height:m.height,fps:m.fps,durationInFrames:m.durationInFrames,assetPrefix:`videos/${slug}`,source:`projects/${slug}/${m.entry}`,projectDir:`projects/${slug}`,exportName:m.exportName,defaultProps:props,segments});
  }
- const rootText=`import React from 'react';\nimport {Composition, Folder} from 'remotion';\n// AUTO-FOLDER-IMPORTS:START\n${imports.join('\n')}\n// AUTO-FOLDER-IMPORTS:END\n\n/** AUTO-GENERATED via npm run sync — jangan edit manual. */\nexport const Root: React.FC = () => (\n  <Folder name="Videos">\n    {/* AUTO-FOLDER-COMPOSITIONS:START */}\n${comps.join('\n')}\n    {/* AUTO-FOLDER-COMPOSITIONS:END */}\n  </Folder>\n);\n`;
+ const rootText=`import React from 'react';\nimport {Composition, Folder} from 'remotion';\nimport {createSegmentComposition,createEditableSegmentComposition} from './SegmentComposition';\nimport {createFullPreviewComposition} from './FullPreviewComposition';\n// AUTO-FOLDER-IMPORTS:START\n${imports.join('\n')}\n// AUTO-FOLDER-IMPORTS:END\n${segmentDeclarations.join('\n')}\n\n/** AUTO-GENERATED via npm run sync — jangan edit manual. */\nexport const Root: React.FC = () => (\n  <Folder name="Videos">\n    {/* AUTO-FOLDER-COMPOSITIONS:START */}\n${comps.join('\n')}\n    {/* AUTO-FOLDER-COMPOSITIONS:END */}\n  </Folder>\n);\n`;
  const catalogText=JSON.stringify({schemaVersion:1,videos:entries},null,2)+'\n';
  const previousRoot=fs.existsSync(ROOT_FILE)?fs.readFileSync(ROOT_FILE,'utf8'):'';
  const previousCatalog=fs.existsSync(CATALOG_FILE)?fs.readFileSync(CATALOG_FILE,'utf8'):'';
@@ -84,8 +129,14 @@ function main(){
   // Mirrors are generated. Only remove known, previously registered projects that are no longer active.
   if(!active.has(name)&&old.videos.some(v=>v.slug===name&&v.projectDir))fs.rmSync(path.join(mirrors,name),{recursive:true,force:true});
  }
- saveGeneratedState(ROOT,rootText,entries);
- for(const {slug} of entries)syncAssets(path.join(PROJECTS,slug),slug);
- console.log(`[FOLDER SYNC] ${entries.length} folder aktif; ${changed?'registrasi diperbarui':'registrasi sudah sinkron'}.`);
+ saveGeneratedState(ROOT,rootText,allCompositions);
+ for(const {slug} of entries){
+  const dir=path.join(PROJECTS,slug);
+  syncAssets(dir,slug);
+  const manifest=js(path.join(dir,'motiongraphic-video.json'));
+  const added=ensureProjectProductionDocs(dir,manifest);
+  if(added.length)console.log(`[PRODUCTION SCOPE] ${slug}: ${added.length} file panduan produksi dibuat (tanpa overwrite).`);
+ }
+ console.log(`[FOLDER SYNC] ${entries.length} folder video, ${allCompositions.length} komposisi (lengkap + segmen); ${changed?'registrasi diperbarui':'sudah sinkron'}.`);
 }
 try{main()}catch(e){console.error('[FOLDER SYNC ERROR] '+e.message);process.exitCode=1}

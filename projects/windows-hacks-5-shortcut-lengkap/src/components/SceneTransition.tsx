@@ -4,8 +4,8 @@ import {START} from '../config/series';
 import {smooth} from '../animations/presets';
 const boundaries=[START.CTRL_SHIFT_T,START.CTRL_SHIFT_ESC,START.WIN_SHIFT_S,START.WIN_E,START.CTRL_SHIFT_N,START.CTA];
 /** Soft dim near the cuts (0.3s out / 0.3s in), not a slow-motion or timeline shift. */
-export const SceneTransition:React.FC<{settings:{enabled:boolean;fadeFrames:number;opacity:number;color:string}}>=({settings})=>{
- const frame=useCurrentFrame();
+export const SceneTransition:React.FC<{settings:{enabled:boolean;fadeFrames:number;opacity:number;color:string};frameOffset?:number}>=({settings,frameOffset=0})=>{
+ const frame=useCurrentFrame()+frameOffset;
  if(!settings.enabled)return null;
  const spread=Math.max(2,Math.round(settings.fadeFrames));
  let opacity=0;

@@ -1,0 +1,116 @@
+{
+  "schemaVersion": 1,
+  "projectId": "WindowsHacks5ShortcutLengkap",
+  "slug": "windows-hacks-5-shortcut-lengkap",
+  "workflow": "guided-approval-first-scene",
+  "phase": "script-review",
+  "scriptApproval": "in-review",
+  "storyboardApproval": "in-review",
+  "referenceSceneId": "WinHacks-00-Opening",
+  "referenceSceneApproval": "pending",
+  "voiceOverStatus": "placeholder-only",
+  "fullVideoApproval": "pending",
+  "scenes": [
+    {
+      "id": "WinHacks-00-Opening",
+      "title": "00 — Opening / Hook",
+      "status": "pending",
+      "scriptApproval": "pending",
+      "storyboardApproval": "pending",
+      "visualApproval": "pending"
+    },
+    {
+      "id": "WinHacks-01-CtrlShiftT",
+      "title": "01 — Ctrl + Shift + T",
+      "status": "pending",
+      "scriptApproval": "pending",
+      "storyboardApproval": "pending",
+      "visualApproval": "pending"
+    },
+    {
+      "id": "WinHacks-02-TaskManager",
+      "title": "02 — Ctrl + Shift + Esc",
+      "status": "pending",
+      "scriptApproval": "pending",
+      "storyboardApproval": "pending",
+      "visualApproval": "pending"
+    },
+    {
+      "id": "WinHacks-03-Win-Shift-S",
+      "title": "03 — Win + Shift + S",
+      "status": "pending",
+      "scriptApproval": "pending",
+      "storyboardApproval": "pending",
+      "visualApproval": "pending"
+    },
+    {
+      "id": "WinHacks-04-Win-E",
+      "title": "04 — Win + E",
+      "status": "pending",
+      "scriptApproval": "pending",
+      "storyboardApproval": "pending",
+      "visualApproval": "pending"
+    },
+    {
+      "id": "WinHacks-05-Ctrl-Shift-N",
+      "title": "05 — Ctrl + Shift + N + Bonus",
+      "status": "pending",
+      "scriptApproval": "pending",
+      "storyboardApproval": "pending",
+      "visualApproval": "pending"
+    },
+    {
+      "id": "WinHacks-06-CTA",
+      "title": "06 — CTA / Closing",
+      "status": "pending",
+      "scriptApproval": "pending",
+      "storyboardApproval": "pending",
+      "visualApproval": "pending"
+    }
+  ],
+  "decisionLog": [
+    {
+      "scope": "project",
+      "status": "locked",
+      "item": "hook",
+      "value": "Ngapain klik sana-sini, kalau ada cara lebih cepat? Kamu pengguna Windows? Wajib tahu 5 shortcut ini!",
+      "source": "diskusi pengguna"
+    },
+    {
+      "scope": "project",
+      "status": "locked",
+      "item": "cta",
+      "value": "Simpan videonya, biar nggak lupa!",
+      "source": "diskusi pengguna"
+    },
+    {
+      "scope": "project",
+      "status": "approved",
+      "item": "narration-style",
+      "value": "santai, natural, tidak terburu-buru",
+      "source": "diskusi pengguna"
+    },
+    {
+      "scope": "project",
+      "status": "approved",
+      "item": "visual-strategy",
+      "value": "minimal typography; voice-over menjelaskan; UI demo memperlihatkan hasil shortcut",
+      "source": "diskusi pengguna"
+    },
+    {
+      "scope": "project",
+      "status": "approved",
+      "item": "workflow",
+      "value": "setujui scene pertama sebelum bangun scene lainnya",
+      "source": "diskusi pengguna"
+    },
+    {
+      "scope": "project",
+      "status": "proposed",
+      "item": "target-duration",
+      "value": "100-115 detik perkiraan; menunggu VO final",
+      "source": "diskusi pengguna"
+    }
+  ],
+  "notes": "Video sumber sudah ada (2205 frame), tetapi script penuh, storyboard penuh, dan referensi visual belum approved. Jangan menandai seluruh scene sebagai final karena sudah pernah dibuat."
+}

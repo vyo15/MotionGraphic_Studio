@@ -1,12 +1,35 @@
 ---
 name: remotion-render
-description: Local MotionGraphic Studio adapter. Not official upstream skill.
+description: Export a Remotion video
+version: 4.0.539
 ---
 
-# remotion-render
+## General rendering strategy
 
-MotionGraphic Studio local adapter: referensi singkat untuk workflow Master v1.8.
+Render a video using:
 
-Render MP4 dengan `npm run render -- <ID>`. Status dan log tersedia di Dashboard → Ekspor. Hasil di backup MP4 luar folder Master.
+```
+npx remotion render
+```
 
-Sumber resmi yang dapat dipasang terpisah: https://github.com/remotion-dev/skills .
+Full list of options: https://www.remotion.dev/docs/cli/render.md
+
+Render a still using:
+
+```
+npx remotion still
+```
+
+Full list of options: https://www.remotion.dev/docs/cli/still.md
+
+To render several frames as images in one call, use `render --frames`:
+
+```
+npx remotion render [composition-id] out/frames --frames=0,30,90 --image-format=png
+```
+
+See https://www.remotion.dev/docs/cli/render.md#--frames for more options.
+
+## Transparent videos
+
+See [Transparent videos](./transparent-videos.md) for rendering out a video with transparency.

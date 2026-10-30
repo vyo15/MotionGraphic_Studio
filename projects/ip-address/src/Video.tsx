@@ -38,8 +38,8 @@ const SceneCanvas:React.FC<{length:number;children:React.ReactNode}> = ({length,
   return <AbsoluteFill style={{opacity:Math.min(fadeIn,fadeOut)}}>{children}</AbsoluteFill>;
 };
 
-const Background:React.FC<{baseColor:string}> = ({baseColor}) => {
-  const frame=useCurrentFrame();
+export const Background:React.FC<{baseColor:string;frameOffset?:number}> = ({baseColor,frameOffset=0}) => {
+  const frame=useCurrentFrame()+frameOffset;
   return <AbsoluteFill style={{background:`linear-gradient(150deg, ${baseColor} 0%, #092641 50%, #0B172B 100%)`,overflow:'hidden'}}>
     <div style={{position:'absolute',left:-250+Math.sin(frame/58)*36,top:130,width:640,height:640,borderRadius:'50%',background:'#0ABCD625',filter:'blur(115px)'}}/>
     <div style={{position:'absolute',right:-280+Math.cos(frame/72)*40,top:870,width:770,height:770,borderRadius:'50%',background:'#176FDE1E',filter:'blur(145px)'}}/>
@@ -55,8 +55,8 @@ const Background:React.FC<{baseColor:string}> = ({baseColor}) => {
   </AbsoluteFill>;
 };
 
-const HeaderFooter:React.FC = () => {
-  const frame=useCurrentFrame();
+export const HeaderFooter:React.FC<{frameOffset?:number}> = ({frameOffset=0}) => {
+  const frame=useCurrentFrame()+frameOffset;
   return <>
     <Interactive.Div name="HUD • Label seri NETWORKING" style={{position:'absolute',left:78,top:273,width:480,height:46,color:'#A5C2D8',fontSize:26,fontWeight:800,letterSpacing:4,translate:'0px 0px',scale:1,rotate:'0deg',display:'flex',alignItems:'center',gap:15}}>
       <span style={{display:'inline-block',width:13,height:13,borderRadius:'50%',backgroundColor:'#36E2F2',boxShadow:'0 0 15px #36E2F2'}}/>
@@ -75,7 +75,7 @@ const HeaderFooter:React.FC = () => {
   </>;
 };
 
-const HookScene:React.FC = () => {
+export const HookScene:React.FC = () => {
   const frame=useCurrentFrame();
   return <SceneCanvas length={102}>
     <Interactive.Div name="S1 • Badge PERTANYAAN SINGKAT" style={{position:'absolute',left:247,top:402,width:585,height:101,backgroundColor:'#143755',border:'2px solid #FFDC7877',borderRadius:35,padding:'22px 25px',boxSizing:'border-box',fontSize:37,fontWeight:800,letterSpacing:2,textAlign:'center',color:'#FFDC78',translate:'0px 0px',scale:interpolate(frame,[0,13],[0.87,1],{extrapolateRight:'clamp'}),opacity:interpolate(frame,[0,11],[0,1],{extrapolateRight:'clamp'}),rotate:'0deg'}}>
@@ -125,7 +125,7 @@ const HookScene:React.FC = () => {
   </SceneCanvas>;
 };
 
-const AddressScene:React.FC = () => {
+export const AddressScene:React.FC = () => {
   const frame=useCurrentFrame();
   return <SceneCanvas length={150}>
     <Interactive.Div name="S2 • Judul IP ADDRESS" style={{position:'absolute',left:75,top:418,width:930,color:'#36E2F2',fontSize:96,fontWeight:900,textAlign:'center',letterSpacing:-2,translate:'0px 0px',scale:interpolate(frame,[3,19],[0.89,1],{extrapolateLeft:'clamp',extrapolateRight:'clamp'}),opacity:interpolate(frame,[3,14],[0,1],{extrapolateLeft:'clamp',extrapolateRight:'clamp'}),rotate:'0deg'}}>
@@ -196,7 +196,7 @@ const AddressScene:React.FC = () => {
   </SceneCanvas>;
 };
 
-const OctetScene:React.FC = () => {
+export const OctetScene:React.FC = () => {
   const frame=useCurrentFrame();
   return <SceneCanvas length={150}>
     <Interactive.Div name="S3 • Judul BENTUK IP" style={{position:'absolute',left:75,top:426,width:930,color:'#F6FCFF',fontSize:83,fontWeight:900,letterSpacing:-2,textAlign:'center',translate:'0px 0px',scale:interpolate(frame,[4,19],[0.89,1],{extrapolateLeft:'clamp',extrapolateRight:'clamp'}),opacity:interpolate(frame,[4,15],[0,1],{extrapolateLeft:'clamp',extrapolateRight:'clamp'}),rotate:'0deg'}}>
@@ -232,7 +232,7 @@ const OctetScene:React.FC = () => {
   </SceneCanvas>;
 };
 
-const RouteScene:React.FC = () => {
+export const RouteScene:React.FC = () => {
   const frame=useCurrentFrame();
   return <SceneCanvas length={168}>
     <Interactive.Div name="S4 • DATA = PAKET" style={{position:'absolute',left:75,top:422,width:930,color:'#FFDC78',fontSize:77,fontWeight:900,textAlign:'center',letterSpacing:-2,translate:'0px 0px',scale:interpolate(frame,[1,18],[0.89,1],{extrapolateLeft:'clamp',extrapolateRight:'clamp'}),opacity:interpolate(frame,[1,13],[0,1],{extrapolateLeft:'clamp',extrapolateRight:'clamp'}),rotate:'0deg'}}>
@@ -261,7 +261,7 @@ const RouteScene:React.FC = () => {
   </SceneCanvas>;
 };
 
-const EndScene:React.FC = () => {
+export const EndScene:React.FC = () => {
   const frame=useCurrentFrame();
   return <SceneCanvas length={198}>
     <Interactive.Div name="S5 • Judul SEKARANG INGAT" style={{position:'absolute',left:75,top:393,width:930,color:'#F6FCFF',fontSize:88,fontWeight:900,textAlign:'center',letterSpacing:-2,translate:'0px 0px',scale:interpolate(frame,[4,20],[0.89,1],{extrapolateLeft:'clamp',extrapolateRight:'clamp'}),opacity:interpolate(frame,[4,16],[0,1],{extrapolateLeft:'clamp',extrapolateRight:'clamp'}),rotate:'0deg'}}>

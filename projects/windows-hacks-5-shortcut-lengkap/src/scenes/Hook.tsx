@@ -26,8 +26,32 @@ export const Hook:React.FC=()=>{
    <Interactive.Div name="00 · Hook 1 · Keterangan" style={{color:'#a9c2de',fontSize:28,marginTop:25,fontWeight:700,letterSpacing:1.2,translate:'0px 0px',scale:1,rotate:'0deg'}}>MASIH PAKAI CARA LAMA?</Interactive.Div>
  </HookMessage>
  <HookMessage index={1} m={messages[1]} frame={frame}>
-   <Interactive.Div name="00 · Hook 2 · Teks 1" style={{fontWeight:950,fontSize:86,letterSpacing:-3.7,lineHeight:1.07,color:'#ffffff',translate:'0px 0px',scale:1,rotate:'0deg'}}>ADA CARA</Interactive.Div>
-   <Interactive.Div name="00 · Hook 2 · Teks 2" style={{fontWeight:950,fontSize:92,letterSpacing:-4.1,lineHeight:1.12,color:'#67E8F9',translate:'0px 0px',scale:1,rotate:'0deg'}}>LEBIH CEPAT!</Interactive.Div>
+   <Interactive.Div
+    name="00 · Hook 2 · Teks 1"
+    style={{
+     fontWeight: 950,
+     fontSize: 86,
+     letterSpacing: -3.7,
+     lineHeight: 1.07,
+     color: '#ffffff',
+     translate: '12.6px -12.6px',
+     scale: 1,
+     rotate: '0deg'
+    }}
+   >ADA CARA</Interactive.Div>
+   <Interactive.Div
+    name="00 · Hook 2 · Teks 2"
+    style={{
+     fontWeight: 950,
+     fontSize: 92,
+     letterSpacing: -4.1,
+     lineHeight: 1.12,
+     color: '#67E8F9',
+     translate: '-3px -8.4px',
+     scale: 1,
+     rotate: '0deg'
+    }}
+   >LEBIH CEPAT!</Interactive.Div>
    <Interactive.Div name="00 · Hook 2 · Keterangan" style={{color:'#a9c2de',fontSize:28,marginTop:25,fontWeight:700,letterSpacing:1.2,translate:'0px 0px',scale:1,rotate:'0deg'}}>KERJA LEBIH EFISIEN</Interactive.Div>
  </HookMessage>
  <HookMessage index={2} m={messages[2]} frame={frame}>
@@ -40,7 +64,23 @@ export const Hook:React.FC=()=>{
    <Interactive.Div name="00 · Hook 4 · Teks 2" style={{fontWeight:950,fontSize:92,letterSpacing:-4.1,lineHeight:1.12,color:'#9FF6C7',translate:'0px 0px',scale:1,rotate:'0deg'}}>5 SHORTCUT!</Interactive.Div>
    <Interactive.Div name="00 · Hook 4 · Keterangan" style={{color:'#a9c2de',fontSize:28,marginTop:25,fontWeight:700,letterSpacing:1.2,translate:'0px 0px',scale:1,rotate:'0deg'}}>TIPS WINDOWS · EPISODE LENGKAP</Interactive.Div>
  </HookMessage>
- <Interactive.Div name="S00 — Papan 5 shortcut" style={{translate:'0px 0px',scale:1,rotate:'0deg',transformOrigin:'50% 50%',position:'absolute',top:855,left:72,width:936,height:590,display:'flex',flexDirection:'column',gap:17}}>
+ <Interactive.Div
+  name="S00 — Papan 5 shortcut"
+  style={{
+   translate: '0px 134.4px',
+   scale: 1.015,
+   rotate: '0deg',
+   transformOrigin: '50% 50%',
+   position: 'absolute',
+   top: 855,
+   left: 72,
+   width: 936,
+   height: 590,
+   display: 'flex',
+   flexDirection: 'column',
+   gap: 17
+  }}
+ >
  <ShortcutChip index={0} label="CTRL + SHIFT + T" frame={frame}/>
  <ShortcutChip index={1} label="CTRL + SHIFT + ESC" frame={frame}/>
  <ShortcutChip index={2} label="WIN + SHIFT + S" frame={frame}/>

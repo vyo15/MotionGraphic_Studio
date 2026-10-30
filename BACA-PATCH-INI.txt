@@ -1,0 +1,43 @@
+HOTFIX: npm run concat tanpa Rust / instalasi Concat (MotionGraphic Studio v1.8.1)
+
+MASALAH:
+  [GAGAL] Rust/Cargo tidak tersedia.
+
+SOLUSI:
+  npm run concat sekarang memakai binary PORTABLE dari GitHub resmi
+  tanpa menjalankan instalasi normal aplikasi Concat.
+
+ALUR PERTAMA KALI:
+  1. Jika Git tersedia, clone tag GitHub Concat ke apps/concat/source/.
+  2. Baca GitHub Releases API resmi dan ambil MSI resmi untuk Windows x86_64.
+  3. Periksa SHA-256 terhadap digest dari GitHub Releases API.
+  4. EKSTRAK dengan mode admin-image 'msiexec /a' (BUKAN instalasi '/i'),
+     hasil dipindah ke apps/concat/runtime/current/.
+  5. Jalankan concat.exe dari runtime/current/.
+  Setelah itu hanya buka runtime yang telah ada (tidak mengunduh lagi).
+
+PERINGATAN TEKNIS:
+  - Installer aplikasi Concat tidak dijalankan dalam mode instalasi normal.
+    MSI resmi tetap diunduh sebagai ARSIP dan diekstrak memakai Windows Installer.
+  - Runtime portable resmi tidak sama dengan menjalankan source Rust.
+    Untuk memodifikasi lalu mengompilasi source, Rust/CMake/MSVC tetap diperlukan.
+  - Belum diuji menjalankan MSI extraction dan GUI di Windows pengguna;
+    jika gagal, lihat apps/concat/cache/portable-extract.log.
+  - Tetap butuh koneksi internet pada pengambilan pertama.
+  - Proses tidak menyentuh project, media, audio, atau source Remotion.
+
+PASANG:
+  Backup Master terlebih dahulu.
+  Ekstrak ZIP ini langsung ke root MotionGraphic-Studio, ganti file terkait.
+  Tidak perlu edit package.json.
+
+JALANKAN:
+  npm test
+  npm run concat
+  npm run concat:status
+
+Jika UI Concat pecah / tidak muncul:
+  npm run concat:safe
+
+Pemeriksaan dilakukan secara statis dan npm test (37/37) pada Linux.
+Ekstraksi MSI Windows dan build Rust native BELUM diverifikasi di PC pengguna.

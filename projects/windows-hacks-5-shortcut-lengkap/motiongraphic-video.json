@@ -664,5 +664,50 @@
       }
     ]
   },
-  "editableContract": "studio-inline-v2"
+  "editableContract": "studio-inline-v2",
+  "segments": [
+    {
+      "id": "WinHacks-00-Opening",
+      "title": "00 — Opening / Hook",
+      "startFrame": 0,
+      "durationInFrames": 240
+    },
+    {
+      "id": "WinHacks-01-CtrlShiftT",
+      "title": "01 — Ctrl + Shift + T",
+      "startFrame": 240,
+      "durationInFrames": 285
+    },
+    {
+      "id": "WinHacks-02-TaskManager",
+      "title": "02 — Ctrl + Shift + Esc",
+      "startFrame": 525,
+      "durationInFrames": 330
+    },
+    {
+      "id": "WinHacks-03-Win-Shift-S",
+      "title": "03 — Win + Shift + S",
+      "startFrame": 855,
+      "durationInFrames": 330
+    },
+    {
+      "id": "WinHacks-04-Win-E",
+      "title": "04 — Win + E",
+      "startFrame": 1185,
+      "durationInFrames": 330
+    },
+    {
+      "id": "WinHacks-05-Ctrl-Shift-N",
+      "title": "05 — Ctrl + Shift + N + Bonus",
+      "startFrame": 1515,
+      "durationInFrames": 570
+    },
+    {
+      "id": "WinHacks-06-CTA",
+      "title": "06 — CTA / Closing",
+      "startFrame": 2085,
+      "durationInFrames": 120
+    }
+  ],
+  "studioFolderName": "Windows-Hacks-5-Shortcut"
 }

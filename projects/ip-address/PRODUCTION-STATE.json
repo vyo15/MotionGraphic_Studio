@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "projectId": "IPAddressReels",
+  "slug": "ip-address",
+  "workflow": "guided-approval-first-scene",
+  "phase": "script-review",
+  "scriptApproval": "pending",
+  "storyboardApproval": "pending",
+  "referenceSceneId": "IPAddress-01-Hook",
+  "referenceSceneApproval": "pending",
+  "voiceOverStatus": "not-recorded",
+  "fullVideoApproval": "pending",
+  "scenes": [
+    {
+      "id": "IPAddress-01-Hook",
+      "title": "01 — Hook",
+      "status": "pending",
+      "scriptApproval": "pending",
+      "storyboardApproval": "pending",
+      "visualApproval": "pending"
+    },
+    {
+      "id": "IPAddress-02-Alamat-Rumah",
+      "title": "02 — IP = Alamat Rumah",
+      "status": "pending",
+      "scriptApproval": "pending",
+      "storyboardApproval": "pending",
+      "visualApproval": "pending"
+    },
+    {
+      "id": "IPAddress-03-IPv4",
+      "title": "03 — IPv4 Empat Angka",
+      "status": "pending",
+      "scriptApproval": "pending",
+      "storyboardApproval": "pending",
+      "visualApproval": "pending"
+    },
+    {
+      "id": "IPAddress-04-Router-Paket",
+      "title": "04 — Router dan Paket",
+      "status": "pending",
+      "scriptApproval": "pending",
+      "storyboardApproval": "pending",
+      "visualApproval": "pending"
+    },
+    {
+      "id": "IPAddress-05-CTA",
+      "title": "05 — Kesimpulan / CTA",
+      "status": "pending",
+      "scriptApproval": "pending",
+      "storyboardApproval": "pending",
+      "visualApproval": "pending"
+    }
+  ],
+  "decisionLog": [],
+  "notes": "Dokumen dibuat otomatis saat sync. Status approval tidak boleh diubah menjadi approved tanpa persetujuan pengguna."
+}

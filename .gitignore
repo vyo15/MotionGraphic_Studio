@@ -34,3 +34,6 @@ library/masuk/*
 
 # Backup hasil Easy Editor (termasuk versi sebelum simpan)
 library/backups/easy-editor/
+
+# Concat binaries and cloned source: local-only, not part of Master ZIP
+apps/concat/
