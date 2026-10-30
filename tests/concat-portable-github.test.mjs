@@ -13,14 +13,38 @@ test('npm run dev stays Remotion, npm run concat uses one GitHub-only launcher',
   assert.match(manager,/https:\/\/github\.com\/jub0t\/Concat\.git/);
   assert.match(manager,/api\.github\.com\/repos\/jub0t\/Concat\/releases\/latest/);
 });
+// Ambil HANYA fungsi launcher. Blok switch di bawahnya boleh memanggil
+// Check-Toolchain/Build-ConcatSource untuk aksi 'build' yang memang opsional.
+// Mengiris hingga 'try { switch ($Action)' membuat tes Windows salah gagal.
+function functionBody(source, functionName) {
+  const escapedName=functionName.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');
+  const pattern=new RegExp('^function '+escapedName+' \\{([\\s\\S]*?)^\\}', 'm');
+  const match=source.match(pattern);
+  assert.ok(match,`Fungsi ${functionName} tidak ditemukan atau tidak tertutup dengan benar`);
+  return match[1];
+}
+
 test('Concat portable launch does not require Rust or use normal MSI installation',()=>{
-  const launch=manager.slice(manager.indexOf('function Launch-ConcatSource {'),manager.indexOf('\ntry {\n    switch ($Action)'));
+  const launch=functionBody(manager,'Launch-ConcatSource');
   assert.match(launch,/Ensure-Portable/);
-  assert.doesNotMatch(launch,/Check-Toolchain|Build-ConcatSource/);
+  assert.doesNotMatch(launch,/\b(?:Check-Toolchain|Build-ConcatSource)\b/);
+  // Git on Windows may check out .ps1 with CRLF; guard against the CI failure.
+  const windowsLaunch=functionBody(manager.replace(/\r?\n/g,'\r\n'),'Launch-ConcatSource');
+  assert.match(windowsLaunch,/Ensure-Portable/);
+  assert.doesNotMatch(windowsLaunch,/\b(?:Check-Toolchain|Build-ConcatSource)\b/);
+  assert.doesNotMatch(windowsLaunch,/switch \(\$Action\)/);
   assert.match(manager,/msiexec \/a/);
   assert.doesNotMatch(manager,/msiexec \/i\b|winget install|cargo install|rustup-init\.exe/);
   assert.match(manager,/Get-FileHash .*SHA256/);
   assert.match(manager,/Get-OfficialRelease/);
+});
+
+test('optional Rust source-build remains available without affecting portable launch',()=>{
+  const manualBuild=functionBody(manager,'Build-ConcatSource');
+  assert.match(manualBuild,/Check-Toolchain/);
+  assert.match(manager,/'build' \{ Build-ConcatSource \}/);
+  const launch=functionBody(manager,'Launch-ConcatSource');
+  assert.doesNotMatch(launch,/\b(?:Check-Toolchain|Build-ConcatSource)\b/);
 });
 test('existing editor, projects, and handoff have not been replaced',()=>{
   const read=(p)=>fs.readFileSync(path.join(root,p),'utf8');
