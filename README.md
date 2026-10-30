@@ -10,6 +10,8 @@
 
 Saat pertama kali handoff dibuat, impor tiga MP4 dari folder `current/`. Saat revisi Remotion, jalankan handoff lagi atau tambahkan `--only CTA` untuk merender satu bagian. **Tutup project Concat sebelum memperbarui aset**, kemudian buka ulang/relink media setelah update; handoff tidak otomatis mengubah timeline/caption Concat. Versi terdahulu disimpan dalam folder `history/` untuk pemulihan. `npm run handoff` hanya perintah export, **bukan interface/editor ketiga**. Pada first run `npm run concat`, launcher menyiapkan source GitHub dan mengekstrak runtime portable dari rilis resmi GitHub setelah memvalidasi SHA-256. **Tidak perlu Rust/Cargo dan tidak memasang aplikasi Concat di Windows.** Kompilasi source sendiri tetap memerlukan Rust, CMake, MSVC dan dependensi native. Folder `apps/concat/` adalah local-only dan tidak ikut backup ZIP Master.
 
+**Diagnosis mudah:** `npm run concat` memantau crash dengan logger native Concat; `npm run logs` menampilkan ringkasan Bahasa Indonesia, `npm run concat:debug` menambah detail saat import bermasalah, `npm run concat:safe` untuk mode grafis aman. Panduan: **[PANDUAN-LOG-CONCAT.md](PANDUAN-LOG-CONCAT.md)**. Log lokal di `apps/concat/` tidak ikut Git/ZIP.
+
 Baca **[PANDUAN-HANDOFF-CONCAT.md](PANDUAN-HANDOFF-CONCAT.md)** dan **[ALUR-KERJA-REMOTION-CONCAT.md](ALUR-KERJA-REMOTION-CONCAT.md)** untuk keputusan ekspor audio, revisi, status caption, dan cara pemulihan.
 
 
@@ -69,6 +71,9 @@ Masukkan add-on sebagai **folder utuh** `projects/<slug>/` yang memiliki `motion
 | `npm run handoff -- --project <slug> --only CTA` | Render ulang CTA saja, Hook/Isi tetap utuh |
 | `npm run handoff -- --project <slug> --with-remotion-audio` | Sertakan audio Remotion bila semua lisensi aset sudah terverifikasi |
 | `npm run concat` | Clone source (jika belum ada), ekstrak Concat portable rilis GitHub bila perlu, lalu buka tanpa Rust |
+| `npm run logs` | Ringkasan log native Concat & crash sesi terbaru; `-- --share` untuk laporan tersamarkan |
+| `npm run concat:debug` | Jalankan Concat dengan log debug untuk kasus import yang crash |
+| `npm run concat:safe` | Jalankan Concat menggunakan software graphics |
 | `npm run concat:status` | Cek source, runtime portable dan opsi toolchain |
 | `npm run sync` | Daftarkan project dan sinkronkan aset |
 | `npm run check` | Pemeriksaan library + TypeScript + editable + layout |

@@ -7,7 +7,8 @@
 param(
     [ValidateSet('launch', 'setup', 'clone', 'status', 'build')]
     [string]$Action = 'launch',
-    [switch]$SoftwareGraphics
+    [switch]$SoftwareGraphics,
+    [switch]$DebugLogging
 )
 Set-StrictMode -Version Latest
 $ErrorActionPreference = 'Stop'
@@ -366,16 +367,127 @@ function Build-ConcatSource {
     Write-Host "[BUILD SELESAI] $binary"
 }
 
+function Ensure-LocalPortableFolder([string]$binary) {
+    # Concat official: a folder named `portable` beside concat.exe switches
+    # config, downloaded models AND native logs to that folder. No installer.
+    if ($binary -ne (Join-Path $portableCurrent 'concat.exe')) { return }
+    $folder = Join-Path (Split-Path -Parent $binary) 'portable'
+    if (-not (Test-Path -LiteralPath $folder -PathType Container)) {
+        if ($env:LOCALAPPDATA -and (Test-Path -LiteralPath (Join-Path $env:LOCALAPPDATA 'app.concat.editor'))) {
+            Write-Host '[PORTABLE] Profil Concat lama di LOCALAPPDATA tidak dipindah atau dihapus; profil baru akan ada di Master.'
+        }
+        New-Item -ItemType Directory -Path $folder -Force | Out-Null
+    }
+}
+
+function Write-JsonFile([string]$file, $value) {
+    # Save a complete JSON at once, not half a session on interruption.
+    $temp = "$file.tmp"
+    $value | ConvertTo-Json -Depth 9 | Set-Content -LiteralPath $temp -Encoding UTF8
+    Move-Item -LiteralPath $temp -Destination $file -Force
+}
+
+function Get-SessionRoot {
+    $sessions = Join-Path $appRoot 'logs\sessions'
+    New-Item -ItemType Directory -Path $sessions -Force | Out-Null
+    $name = [DateTime]::UtcNow.ToString('yyyyMMdd-HHmmss') + '-' + [guid]::NewGuid().ToString('N').Substring(0,6)
+    $directory = Join-Path $sessions $name
+    New-Item -ItemType Directory -Path $directory -Force | Out-Null
+    # Only 15 recent launcher sessions kept. Does NOT delete native Concat logs
+    # or user projects. Prevent deleting this running session.
+    $old = @(Get-ChildItem -LiteralPath $sessions -Directory | Sort-Object Name -Descending | Select-Object -Skip 15)
+    foreach ($item in $old) {
+        if ($item.FullName -ne $directory) {
+            Remove-Item -LiteralPath $item.FullName -Recurse -Force -ErrorAction SilentlyContinue
+        }
+    }
+    return $directory
+}
+
+function Save-WindowsEvents([string]$file, [datetime]$since) {
+    # Optional evidence. Windows Event Viewer may be disabled or inaccessible.
+    try {
+        $events = @(Get-WinEvent -FilterHashtable @{
+            LogName = 'Application'
+            StartTime = $since.AddSeconds(-5)
+            EndTime = (Get-Date).AddSeconds(8)
+            Id = @(1000,1001,1026)
+        } -ErrorAction Stop | Where-Object { $_.Message -match '(?i)concat(?:\.exe)?' } | Select-Object -First 12)
+        if ($events.Count -gt 0) {
+            $events | ForEach-Object {
+                "Time: $($_.TimeCreated) | Provider: $($_.ProviderName) | EventID: $($_.Id)`r`n$($_.Message)`r`n---"
+            } | Set-Content -LiteralPath $file -Encoding UTF8
+        } else {
+            'Tidak ada event Concat relevan yang tersedia (bukan bukti tidak terjadi crash).' | Set-Content -LiteralPath $file -Encoding UTF8
+        }
+    } catch {
+        "Windows Event Viewer tidak tersedia: $($_.Exception.Message)" | Set-Content -LiteralPath $file -Encoding UTF8
+    }
+}
+
+function Start-ObservedConcat([string]$binary, [string]$sessionDir, [string]$label, [bool]$safe) {
+    $attemptDir = Join-Path $sessionDir $label
+    New-Item -ItemType Directory -Path $attemptDir -Force | Out-Null
+    $stdout = Join-Path $attemptDir 'stdout.log'
+    $stderr = Join-Path $attemptDir 'stderr.log'
+    $started = Get-Date
+    $startedUtc = $started.ToUniversalTime().ToString('o')
+    $p = $null
+    $exitCode = $null
+    $note = $null
+    $mode = if ($safe) { 'software' } else { 'normal' }
+    $arguments = @{}
+    if ($safe) { $arguments['ArgumentList'] = @('--software') }
+    Write-Host "[CONCAT] Membuka $mode; proses dipantau hingga jendela ditutup."
+    try {
+        # GUI Rust release: stdout/stderr alone are NOT the source of truth;
+        # Concat's own <app-data>/logs/concat-*.log is primary.
+        $p = Start-Process -FilePath $binary -WorkingDirectory (Split-Path -Parent $binary) -PassThru `
+            -RedirectStandardOutput $stdout -RedirectStandardError $stderr @arguments
+        $p.WaitForExit()
+        $exitCode = [int]$p.ExitCode
+    } catch {
+        $note = "Gagal membuka/memantau proses: $($_.Exception.Message)"
+        Write-Warning $note
+    }
+    if ($null -eq $exitCode -or $exitCode -ne 0) {
+        # A Windows Error Reporting event can arrive slightly after process exit.
+        Start-Sleep -Milliseconds 950
+        Save-WindowsEvents (Join-Path $attemptDir 'windows-events.txt') $started
+    }
+    $status = [ordered]@{
+        startedAtUtc = $startedUtc
+        finishedAtUtc = [DateTime]::UtcNow.ToString('o')
+        processId = if ($null -ne $p) { $p.Id } else { $null }
+        exitCode = $exitCode
+        binaryPath = $binary
+        mode = $mode
+        note = $note
+    }
+    Write-JsonFile (Join-Path $attemptDir 'attempt.json') $status
+    if ($null -ne $exitCode) { Write-Host "[CONCAT] $mode selesai: exit code $exitCode" }
+    return $exitCode
+}
+
+function Print-Diagnostics([string]$sessionDir) {
+    $node = Get-AvailableCommand 'node.exe'
+    if (-not $node) { $node = Get-AvailableCommand 'node' }
+    $scriptPath = Join-Path $root 'tools\concat-log-analyzer.mjs'
+    if ($node -and (Test-Path -LiteralPath $scriptPath)) {
+        & $node $scriptPath --session $sessionDir
+    } else {
+        Write-Warning "Node/analyzer tidak tersedia. Log proses di: $sessionDir"
+    }
+}
+
 function Launch-ConcatSource {
-    # If user explicitly compiled the matching GitHub source, prefer that.
+    # Source build stays optional. The normal path uses verified GitHub binary.
     $binary = $null
     if (Test-BuildMatchesSource) {
         $binary = Get-BuildExecutable
         Configure-FFmpeg
         Write-Host '[SOURCE] Menggunakan build lokal dari GitHub source.'
     } else {
-        # Default: clone the repository for source/inspection, then extract the
-        # verified official GitHub artifact. No Rust, CMake or MSVC required.
         $binary = Get-PortableExecutable
         if (-not $binary) {
             try { Ensure-Source }
@@ -384,10 +496,30 @@ function Launch-ConcatSource {
         }
     }
     if (-not $binary) { throw 'Tidak ada executable Concat yang bisa dijalankan.' }
+    Ensure-LocalPortableFolder $binary
+    # Concat officially supports CONCAT_LOG=info|debug|trace. Do not force
+    # noisy debugging every run; users can select npm run concat:debug.
+    if ($DebugLogging) { $env:CONCAT_LOG='debug' }
     Write-Host "[LAUNCH] $binary"
-    $args = @{}
-    if ($SoftwareGraphics) { $args['ArgumentList'] = @('--software') }
-    Start-Process -FilePath $binary -WorkingDirectory (Split-Path -Parent $binary) @args
+    $sessionDir = Get-SessionRoot
+    $session = [ordered]@{ startedAtUtc=[DateTime]::UtcNow.ToString('o'); attempts=@(); source='MotionGraphic Studio launcher'; nativeLogging='Concat built-in logs' }
+    Write-JsonFile (Join-Path $sessionDir 'session.json') $session
+    $initialMode = if ($SoftwareGraphics) { '01-software' } else { '01-normal' }
+    $session.attempts = @($initialMode)
+    Write-JsonFile (Join-Path $sessionDir 'session.json') $session
+    $exitCode = Start-ObservedConcat $binary $sessionDir $initialMode ([bool]$SoftwareGraphics)
+    # Capture a report BEFORE any recovery. Do not lose the original crash.
+    Print-Diagnostics $sessionDir
+    if ($null -ne $exitCode -and $exitCode -ne 0 -and -not $SoftwareGraphics) {
+        Write-Warning 'Concat berakhir tidak normal. Mencoba SATU KALI dalam Software Graphics Mode; project yang belum disimpan mungkin tidak dapat dipulihkan.'
+        $session.attempts = @('01-normal','02-software')
+        Write-JsonFile (Join-Path $sessionDir 'session.json') $session
+        $exitCode = Start-ObservedConcat $binary $sessionDir '02-software' $true
+        Print-Diagnostics $sessionDir
+    }
+    Write-Host "[DIAGNOSTIK] Riwayat sesi tersimpan lokal: $sessionDir"
+    if ($null -eq $exitCode) { throw 'Concat tidak dapat dibuka. Lihat laporan dan npm run logs.' }
+    if ($exitCode -ne 0) { throw "Concat gagal dengan exit code $exitCode. Buka npm run logs untuk ringkasan." }
 }
 
 try {

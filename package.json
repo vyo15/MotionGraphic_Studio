@@ -2,7 +2,7 @@
   "name": "motiongraphic-studio-master",
   "version": "1.8.1",
   "private": true,
-  "description": "Satu Master folder-first; hanya Remotion Studio sebagai editor dan preview, tanpa UI/editor tambahan",
+  "description": "Satu Master folder-first; Remotion untuk motion graphic dan Concat portable untuk finishing, tanpa editor tambahan",
   "scripts": {
     "predev": "node tools/prepare-studio.mjs",
     "dev": "node tools/start-studio.mjs",
@@ -32,6 +32,9 @@
     "concat:status": "powershell.exe -NoProfile -ExecutionPolicy Bypass -File tools/concat-manager.ps1 -Action status",
     "concat:clone": "powershell.exe -NoProfile -ExecutionPolicy Bypass -File tools/concat-manager.ps1 -Action clone",
     "concat:safe": "powershell.exe -NoProfile -ExecutionPolicy Bypass -File tools/concat-manager.ps1 -Action launch -SoftwareGraphics",
+    "concat:debug": "powershell.exe -NoProfile -ExecutionPolicy Bypass -File tools/concat-manager.ps1 -Action launch -DebugLogging",
+    "logs": "node tools/concat-log-analyzer.mjs",
+    "concat:logs": "node tools/concat-log-analyzer.mjs",
     "handoff": "node tools/export-concat-segments.mjs"
   },
   "dependencies": {
