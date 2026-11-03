@@ -17,6 +17,10 @@ const MARKER='MOTIONGRAPHIC_STUDIO_CPU_UI_PATCH_V1';
 export const cpuPatchMarker = MARKER;
 const findOccurrences=(s,needle)=>s.split(needle).length-1;
 function gitBlobHash(buffer){return crypto.createHash('sha1').update(Buffer.from(`blob ${buffer.length}\0`)).update(buffer).digest('hex');}
+// Git on Windows can checkout text as CRLF. The pinned upstream blob is LF.
+// Normalize ONLY CRLF; never ignore differences in actual Rust source content.
+export function canonicalSource(source){return source.replace(/\r\n/g,'\n');}
+export function canonicalSourceBlobHash(source){return gitBlobHash(Buffer.from(canonicalSource(source),'utf8'));}
 
 export function applyCpuPatch(src){
   if(src.includes(MARKER))return {changed:false,content:src};
@@ -39,15 +43,15 @@ export function patchLocalSource(root=MASTER,command='status'){
   const commit=execFileSync('git',['-C',srcRoot,'rev-parse','HEAD'],{encoding:'utf8'}).trim();
   if(commit!==EXPECTED_COMMIT)throw new Error(`Hanya source resmi Concat v0.2.8 (${EXPECTED_COMMIT.slice(0,8)}) yang didukung. Ditemukan ${commit.slice(0,12)}.`);
   const original=fs.readFileSync(file);
-  const code=original.toString('utf8');
+  const code=canonicalSource(original.toString('utf8'));
   if(code.includes(MARKER)){
     if(command==='status')return {status:'patched',file};
     if(command==='apply')return {status:'already-patched',file};
   }
   if(command==='status')return {status:'not-patched',file};
   if(command!=='apply')throw new Error(`Action tidak tersedia: ${command}`);
-  const actual=gitBlobHash(original);
-  if(actual!==EXPECTED_PLATFORM_BLOB)throw new Error(`platform.rs memiliki perubahan lokal (${actual}). Tidak menimpa source. Buat salinan source bersih v0.2.8 jika ingin memakai patch CPU.`);
+  const actual=canonicalSourceBlobHash(original.toString('utf8'));
+  if(actual!==EXPECTED_PLATFORM_BLOB)throw new Error(`platform.rs berbeda dari source resmi Concat v0.2.8 setelah normalisasi CRLF/LF (${actual}). Tidak menimpa file; periksa perubahan source sebelum build.`);
   const result=applyCpuPatch(code);
   const backupDir=path.join(root,'apps','concat','deps','cpu-source-backups');
   fs.mkdirSync(backupDir,{recursive:true});

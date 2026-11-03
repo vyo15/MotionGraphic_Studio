@@ -10,6 +10,25 @@ const manager=read('tools/concat-manager.ps1');
 const importer=read('tools/import-concat-cpu.mjs');
 const zip=read('tools/zip-video.mjs');
 const pkg=JSON.parse(read('package.json'));
+import {applyCpuPatch, canonicalSource, canonicalSourceBlobHash} from '../tools/concat-cpu-source.mjs';
+
+test('Windows CRLF and LF Concat source hash to same pinned Git blob; modified source is rejected',()=>{
+  const source = 'pub fn run() {\n    let gpu = Gpu::acquire();\n}\n';
+  const crlf = source.replace(/\n/g,'\r\n');
+  assert.equal(canonicalSource(crlf), source);
+  assert.equal(canonicalSourceBlobHash(crlf),canonicalSourceBlobHash(source));
+  assert.notEqual(canonicalSourceBlobHash(crlf.replace('Gpu::acquire()', 'Gpu::acquire_new()')),canonicalSourceBlobHash(source));
+});
+test('CPU source patch applies to both Windows CRLF and LF sources',()=>{
+  const base = `fn backend() {\n    let gpu = Gpu::acquire();\n    let mut selector = selector_start();\n    selector = match &gpu {\n        None => selector,\n    };\n\n    // The custom title bar.\n}`;
+  const a=applyCpuPatch(canonicalSource(base));
+  const b=applyCpuPatch(canonicalSource(base.replace(/\n/g,'\r\n')));
+  assert.equal(a.changed,true);
+  assert.equal(b.content,a.content);
+  assert.match(a.content,/MOTIONGRAPHIC_STUDIO_CPU_UI_PATCH_V1/);
+  assert.match(a.content,/renderer_name\("software"\.into\(\)\)/);
+  assert.equal(applyCpuPatch(a.content).changed,false);
+});
 test('cloud workflow is manual only, pinned upstream, and uses verified dependencies',()=>{
  assert.match(workflow,/workflow_dispatch:/);
  assert.doesNotMatch(workflow,/^\s+(?:push|pull_request):/m);
