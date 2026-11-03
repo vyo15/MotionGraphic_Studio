@@ -35,7 +35,13 @@
     "concat:debug": "powershell.exe -NoProfile -ExecutionPolicy Bypass -File tools/concat-manager.ps1 -Action launch -DebugLogging",
     "logs": "node tools/concat-log-analyzer.mjs",
     "concat:logs": "node tools/concat-log-analyzer.mjs",
-    "handoff": "node tools/export-concat-segments.mjs"
+    "handoff": "node tools/export-concat-segments.mjs",
+    "concat:prepare": "node tools/concat-video-sanitize.mjs",
+    "concat:gpu-reset": "powershell.exe -NoProfile -ExecutionPolicy Bypass -File tools/concat-manager.ps1 -Action gpu-reset",
+    "concat:cpu:build": "powershell.exe -NoProfile -ExecutionPolicy Bypass -File tools/concat-manager.ps1 -Action build-cpu",
+    "concat:cpu": "powershell.exe -NoProfile -ExecutionPolicy Bypass -File tools/concat-manager.ps1 -Action launch-cpu",
+    "concat:cpu:import": "node tools/import-concat-cpu.mjs",
+    "concat:cpu:cloud": "node tools/concat-cloud-guide.mjs"
   },
   "dependencies": {
     "@remotion/cli": "4.0.538",

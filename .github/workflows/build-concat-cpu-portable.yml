@@ -1,0 +1,163 @@
+name: Build Concat CPU-only (Windows portable)
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  concat-cpu:
+    runs-on: windows-2022
+    timeout-minutes: 180
+    defaults:
+      run:
+        shell: pwsh
+    env:
+      CARGO_TERM_COLOR: always
+      GGML_NATIVE: 'OFF'
+      GGML_BACKEND_DL: 'ON'
+      GGML_CPU_ALL_VARIANTS: 'ON'
+      GGML_AVX2: 'OFF'
+      GGML_FMA: 'OFF'
+      GGML_F16C: 'OFF'
+      GGML_BMI2: 'OFF'
+      ORT_PREFER_DYNAMIC_LINK: '1'
+    steps:
+      - name: Checkout MotionGraphic Studio
+        uses: actions/checkout@v4
+      - name: Node.js for pinned source patch
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Fetch exact Concat 0.2.8 source
+        run: |
+          git clone --depth 1 --branch v0.2.8 https://github.com/jub0t/Concat.git apps/concat/source
+          if ($LASTEXITCODE -ne 0) { throw 'Could not fetch source' }
+          $actual = (git -C apps/concat/source rev-parse HEAD).Trim()
+          if ($actual -ne '79116bd0f9a103c633d888603ad27890e929dbdc') { throw "Unexpected source revision: $actual" }
+      - name: Patch native software UI (no WGPU / WARP)
+        run: |
+          node tools/concat-cpu-source.mjs apply
+          if ($LASTEXITCODE -ne 0) { throw 'CPU source patch failed; refusing to build unpatched Concat' }
+          if (-not (Select-String -LiteralPath apps/concat/source/src/crates/concat/src/platform.rs -Pattern 'MOTIONGRAPHIC_STUDIO_CPU_UI_PATCH_V1' -SimpleMatch -Quiet)) { throw 'CPU marker missing' }
+      - name: Rust pinned to upstream source
+        run: |
+          $toolchain = (Select-String -LiteralPath apps/concat/source/src/rust-toolchain.toml -Pattern '^channel\s*=\s*"([^"]+)"').Matches.Groups[1].Value
+          if (-not $toolchain) { throw 'Cannot read rust-toolchain.toml' }
+          rustup toolchain install $toolchain --profile minimal
+          if ($LASTEXITCODE -ne 0) { throw 'Rust setup failed' }
+          rustup default $toolchain
+          if ($LASTEXITCODE -ne 0) { throw 'Rust activation failed' }
+          cargo --version
+          cmake --version
+      - name: FFmpeg and LLVM from Concat verified lockfile
+        working-directory: apps/concat/source
+        run: |
+          $ErrorActionPreference = 'Stop'
+          $bash = "$env:ProgramFiles\Git\bin\bash.exe"
+          if (-not (Test-Path $bash)) { throw 'Git Bash not found on Windows runner' }
+          & $bash scripts/ci/fetch.sh llvm-win64 llvm.exe
+          if ($LASTEXITCODE -ne 0) { throw 'Pinned LLVM download failed' }
+          Start-Process -Wait -FilePath .\llvm.exe -ArgumentList '/S', '/D=C:\llvm'
+          if (-not (Test-Path C:\llvm\bin\libclang.dll)) { throw 'libclang not found' }
+          'C:\llvm\bin' | Out-File -FilePath $env:GITHUB_PATH -Append
+          'LIBCLANG_PATH=C:\llvm\bin' | Out-File -FilePath $env:GITHUB_ENV -Append
+          & $bash scripts/ci/fetch.sh ffmpeg-win64 ffmpeg-win.zip
+          if ($LASTEXITCODE -ne 0) { throw 'Pinned FFmpeg download failed' }
+          Expand-Archive ffmpeg-win.zip -DestinationPath ffdl
+          $dir = (Get-ChildItem ffdl -Directory | Select-Object -First 1).FullName
+          if (-not (Test-Path "$dir\include") -or -not (Test-Path "$dir\bin")) { throw 'FFmpeg archive invalid' }
+          "FFMPEG_DIR=$dir" | Out-File -FilePath $env:GITHUB_ENV -Append
+          "$dir\bin" | Out-File -FilePath $env:GITHUB_PATH -Append
+      - name: ONNX Runtime from verified lockfile
+        working-directory: apps/concat/source
+        run: |
+          $bash = "$env:ProgramFiles\Git\bin\bash.exe"
+          & $bash scripts/ci/fetch.sh onnxruntime-win-x64 onnxruntime.zip
+          if ($LASTEXITCODE -ne 0) { throw 'Pinned ONNX download failed' }
+          Expand-Archive onnxruntime.zip -DestinationPath .
+          $dir = "$PWD\onnxruntime-win-x64-1.28.0"
+          if (-not (Test-Path "$dir\lib\onnxruntime.dll")) { throw "ONNX library missing: $dir" }
+          "ORT_DIR=$dir" | Out-File -FilePath $env:GITHUB_ENV -Append
+          "ORT_LIB_LOCATION=$dir\lib" | Out-File -FilePath $env:GITHUB_ENV -Append
+          "$dir\lib" | Out-File -FilePath $env:GITHUB_PATH -Append
+      - name: Sherpa ONNX from verified lockfile
+        working-directory: apps/concat/source
+        run: |
+          $bash = "$env:ProgramFiles\Git\bin\bash.exe"
+          $version = (Select-String -Path src/Cargo.lock -Pattern 'name = "sherpa-onnx-sys"' -Context 0,1).Context.PostContext[0] -replace '.*"(.*)".*', '$1'
+          $name = 'sherpa-onnx-win-x64-shared-MT-Release-lib'
+          $url = & $bash scripts/ci/fetch.sh --url $name
+          if ($url -notmatch "/v$([regex]::Escape($version))/") { throw 'Pinned Sherpa version does not match Cargo.lock' }
+          & $bash scripts/ci/fetch.sh $name sherpa.tar.bz2
+          if ($LASTEXITCODE -ne 0) { throw 'Pinned Sherpa download failed' }
+          python -c "import tarfile; t=tarfile.open('sherpa.tar.bz2'); t.extractall(filter='data')"
+          if ($LASTEXITCODE -ne 0) { throw 'Sherpa extraction failed' }
+          $stem = "sherpa-onnx-v$version-win-x64-shared-MT-Release-lib"
+          if (-not (Test-Path "$stem\lib")) { throw 'Sherpa lib folder not found' }
+          New-Item -ItemType Directory -Force sherpa-libs, sherpa-dlls | Out-Null
+          Copy-Item "$stem\lib\sherpa-onnx-*.lib" sherpa-libs\
+          Copy-Item "$stem\lib\sherpa-onnx-*.dll" sherpa-dlls\
+          "SHERPA_ONNX_LIB_DIR=$PWD\sherpa-libs" | Out-File -FilePath $env:GITHUB_ENV -Append
+          "SHERPA_DLL_DIR=$PWD\sherpa-dlls" | Out-File -FilePath $env:GITHUB_ENV -Append
+      - name: Build patched Concat for Windows x64
+        working-directory: apps/concat/source/src
+        timeout-minutes: 110
+        run: |
+          cargo build --locked --profile app -p concat --target x86_64-pc-windows-msvc
+          if ($LASTEXITCODE -ne 0) { throw 'Rust native build failed; see job logs' }
+      - name: Stage complete portable application
+        run: |
+          $ErrorActionPreference = 'Stop'
+          $source = 'apps\concat\source'
+          $stage = 'concat-cpu-portable'
+          New-Item -ItemType Directory -Force $stage | Out-Null
+          $bin = "$source\src\target\x86_64-pc-windows-msvc\app\concat.exe"
+          if (-not (Test-Path $bin)) { throw 'Expected CPU patched concat.exe absent' }
+          Copy-Item $bin $stage
+          Copy-Item "$env:FFMPEG_DIR\bin\*.dll" $stage
+          Copy-Item "$env:SHERPA_DLL_DIR\*.dll" $stage
+          Copy-Item "$env:ORT_DIR\lib\*.dll" $stage
+          $whisper = Get-ChildItem "$source\src\target\x86_64-pc-windows-msvc\app\build\whisper-rs-sys-*\out\bin\ggml-cpu-x64.dll" | Sort-Object LastWriteTime -Descending | Select-Object -First 1
+          if (-not $whisper) { throw 'Whisper x64 baseline DLL missing' }
+          Copy-Item "$($whisper.DirectoryName)\whisper.dll" $stage
+          Copy-Item "$($whisper.DirectoryName)\ggml*.dll" $stage
+          foreach ($cpu in @('x64','sandybridge','haswell')) {
+            if (-not (Test-Path "$stage\ggml-cpu-$cpu.dll")) { throw "Missing baseline CPU plugin $cpu" }
+          }
+          Copy-Item "$source\LICENSE" $stage
+          Copy-Item "$source\THIRD_PARTY_NOTICES.md" $stage
+          $vswhere = "${env:ProgramFiles(x86)}\Microsoft Visual Studio\Installer\vswhere.exe"
+          $vs = & $vswhere -latest -products * -property installationPath
+          $crt = Get-ChildItem "$vs\VC\Redist\MSVC\*\x64\Microsoft.VC14*.CRT" -Directory | Sort-Object FullName -Descending | Select-Object -First 1
+          if (-not $crt) { throw 'VC++ redistributable missing on runner' }
+          $dumpbin = & $vswhere -latest -products * -find 'VC\Tools\MSVC\**\bin\Host*\*\dumpbin.exe' | Select-Object -First 1
+          foreach ($pass in 1,2) {
+            foreach ($pe in Get-ChildItem $stage -File -Recurse | Where-Object { $_.Extension -in '.dll','.exe' }) {
+              foreach ($line in & $dumpbin /nologo /dependents $pe.FullName) {
+                $dll = $line.Trim()
+                if ($dll -match '\.dll$' -and (Test-Path "$($crt.FullName)\$dll") -and -not (Test-Path "$stage\$dll")) {
+                  Copy-Item "$($crt.FullName)\$dll" $stage
+                }
+              }
+            }
+          }
+          New-Item -ItemType Directory -Force "$stage\portable" | Out-Null
+          $sha = (Get-FileHash "$stage\concat.exe" -Algorithm SHA256).Hash.ToLowerInvariant()
+          $meta = [ordered]@{
+            kind = 'motiongraphic-concat-cpu-native-v1'
+            sourceCommit = '79116bd0f9a103c633d888603ad27890e929dbdc'
+            patchMarker = 'MOTIONGRAPHIC_STUDIO_CPU_UI_PATCH_V1'
+            executableSha256 = $sha
+            builtUtc = (Get-Date).ToUniversalTime().ToString('o')
+          }
+          $meta | ConvertTo-Json | Set-Content "$stage\cpu-build-manifest.json" -Encoding UTF8
+          Write-Host '[READY] CPU-only native portable artifact prepared'
+      - name: Upload CPU-only portable package
+        uses: actions/upload-artifact@v4
+        with:
+          name: Concat-CPU-Portable-Windows-x64
+          path: concat-cpu-portable/
+          if-no-files-found: error
+          retention-days: 14
