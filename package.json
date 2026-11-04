@@ -2,7 +2,7 @@
   "name": "motiongraphic-studio-master",
   "version": "1.8.1",
   "private": true,
-  "description": "Satu Master folder-first; Remotion untuk motion graphic dan Concat portable untuk finishing, tanpa editor tambahan",
+  "description": "Satu Master folder-first, Remotion Studio saja; tanpa Concat atau editor tambahan",
   "scripts": {
     "predev": "node tools/prepare-studio.mjs",
     "dev": "node tools/start-studio.mjs",
@@ -26,22 +26,7 @@
     "qa": "node tools/studio-check.mjs",
     "skills": "node tools/remotion-skills.mjs status",
     "skills:install": "node tools/remotion-skills.mjs install",
-    "test": "node --test tests/*.test.mjs",
-    "concat": "powershell.exe -NoProfile -ExecutionPolicy Bypass -File tools/concat-manager.ps1 -Action launch",
-    "concat:setup": "powershell.exe -NoProfile -ExecutionPolicy Bypass -File tools/concat-manager.ps1 -Action setup",
-    "concat:status": "powershell.exe -NoProfile -ExecutionPolicy Bypass -File tools/concat-manager.ps1 -Action status",
-    "concat:clone": "powershell.exe -NoProfile -ExecutionPolicy Bypass -File tools/concat-manager.ps1 -Action clone",
-    "concat:safe": "powershell.exe -NoProfile -ExecutionPolicy Bypass -File tools/concat-manager.ps1 -Action launch -SoftwareGraphics",
-    "concat:debug": "powershell.exe -NoProfile -ExecutionPolicy Bypass -File tools/concat-manager.ps1 -Action launch -DebugLogging",
-    "logs": "node tools/concat-log-analyzer.mjs",
-    "concat:logs": "node tools/concat-log-analyzer.mjs",
-    "handoff": "node tools/export-concat-segments.mjs",
-    "concat:prepare": "node tools/concat-video-sanitize.mjs",
-    "concat:gpu-reset": "powershell.exe -NoProfile -ExecutionPolicy Bypass -File tools/concat-manager.ps1 -Action gpu-reset",
-    "concat:cpu:build": "powershell.exe -NoProfile -ExecutionPolicy Bypass -File tools/concat-manager.ps1 -Action build-cpu",
-    "concat:cpu": "powershell.exe -NoProfile -ExecutionPolicy Bypass -File tools/concat-manager.ps1 -Action launch-cpu",
-    "concat:cpu:import": "node tools/import-concat-cpu.mjs",
-    "concat:cpu:cloud": "node tools/concat-cloud-guide.mjs"
+    "test": "node --test tests/*.test.mjs"
   },
   "dependencies": {
     "@remotion/cli": "4.0.538",

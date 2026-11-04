@@ -95,16 +95,21 @@ function main(){
   if(directSegments)imports.push(`import {SegmentVideo as ${alias}_editable} from '../projects/${slug}/src/SegmentVideo';`);
   const fullAlias=alias+'_full';
   segmentDeclarations.push(`const ${fullAlias} = createFullPreviewComposition(${alias}, ${m.durationInFrames});`);
-  const parts=[`        <Composition id=${JSON.stringify(m.id)} component={${fullAlias}} width={${m.width}} height={${m.height}} fps={${m.fps}} durationInFrames={${m.durationInFrames}} defaultProps={${JSON.stringify(props)}} />`];
+  const fullPart=`          <Composition id=${JSON.stringify(m.id)} component={${fullAlias}} width={${m.width}} height={${m.height}} fps={${m.fps}} durationInFrames={${m.durationInFrames}} defaultProps={${JSON.stringify(props)}} />`;
+  const sceneParts=[];
   allCompositions.push({id:m.id,ownerId:m.id,defaultProps:props});
   for(const [i,seg] of segments.entries()){
    const partAlias=alias+'_segment_'+i;
    segmentDeclarations.push(directSegments
      ? `const ${partAlias} = createEditableSegmentComposition(${alias}_editable, ${i});`
      : `const ${partAlias} = createSegmentComposition(${alias}, ${seg.startFrame}, ${seg.durationInFrames});`);
-   parts.push(`        <Composition id=${JSON.stringify(seg.id)} component={${partAlias}} width={${m.width}} height={${m.height}} fps={${m.fps}} durationInFrames={${seg.durationInFrames}} defaultProps={${JSON.stringify(props)}} />`);
+   sceneParts.push(`          <Composition id=${JSON.stringify(seg.id)} component={${partAlias}} width={${m.width}} height={${m.height}} fps={${m.fps}} durationInFrames={${seg.durationInFrames}} defaultProps={${JSON.stringify(props)}} />`);
    allCompositions.push({id:seg.id,ownerId:m.id,defaultProps:props});
   }
+  // Dashboard Remotion bawaan: dua folder jelas, tanpa editor/route tambahan.
+  // ID composition tetap sama sehingga render, props, dan bookmark existing tidak berubah.
+  const parts=[`        <Folder name="Full-Video">`,fullPart,'        </Folder>'];
+  if(sceneParts.length)parts.push('        <Folder name="Scenes">',...sceneParts,'        </Folder>');
   comps.push(`      <Folder name=${JSON.stringify(projectFolder)}>\n${parts.join('\n')}\n      </Folder>`);
   entries.push({id:m.id,slug,title:m.title,width:m.width,height:m.height,fps:m.fps,durationInFrames:m.durationInFrames,assetPrefix:`videos/${slug}`,source:`projects/${slug}/${m.entry}`,projectDir:`projects/${slug}`,exportName:m.exportName,defaultProps:props,segments});
  }

@@ -1,9 +1,0 @@
-{
-  "attemptedAt": "2026-10-30T01:15:06.535Z",
-  "command": "install",
-  "success": true,
-  "verifiedOfficialSkillCount": 12,
-  "expectedOfficialSkillCount": 12,
-  "source": "remotion-dev/skills",
-  "note": "Twelve official repo skills available; remotion-license is a separate local reference."
-}

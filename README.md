@@ -1,91 +1,55 @@
-# MotionGraphic Studio Master v1.8.1 — Remotion + Concat
+# MotionGraphic Studio Master v1.8.1 — Remotion Only
 
-**Satu Master. Dua aplikasi, tanpa editor ketiga.** **Remotion Studio** (`npm run dev`) untuk motion graphic editable; **Concat portable dari GitHub** (`npm run concat`) untuk finishing voice-over, caption, cut dan export final. Tidak ada Studio Hub, Easy Editor atau iframe tambahan.
+**Satu Master, satu Studio: Remotion.** Paket ini adalah pembersihan terhadap Master v1.8.1 yang sama, **bukan Master baru** dan bukan perpindahan proyek. Tidak ada Concat, launcher aplikasi kedua, Easy Editor, atau Studio Hub.
 
-## Mulai cepat — hanya dua aplikasi
+## Mulai di Windows
 
-1. `npm run dev` → buat dan revisi animasi di Remotion Studio.
-2. `npm run handoff -- --project windows-hacks-5-shortcut-lengkap` → export tiga MP4 tanpa suara ke folder stabil `out/concat/<slug>/current/` (audio ditata di Concat). Untuk video IP Address, gunakan slug `ip-address`.
-3. `npm run concat` → clone source GitHub (jika belum ada), siapkan runtime portable resmi GitHub tanpa instal aplikasi, lalu buka Concat. Impor tiga MP4 dalam urutan yang sama, rekam voice-over, generate captions di GUI dan export final.
+1. Simpan ZIP/folder Master lama sebagai cadangan di luar folder Studio. Gunakan folder hasil ekstrak ini sebagai **Master yang sama**. Jika memakai Git, terapkan perubahan di repository yang sudah ada, bukan membuat repo baru.
+2. Dari folder `MotionGraphic-Studio` jalankan `npm install` (pertama kali), kemudian `npm run dev`, atau klik `01-BUKA-STUDIO.bat`.
+3. Pilih video di sidebar Remotion Studio: **Belajar IP Address** atau **WINDOWS HACKS | 5 Shortcut Windows**. Pilih komposisi full atau preview segmen.
+4. Edit melalui Remotion Studio dan Props bila layer mendukung, lalu render lewat dialog Remotion Studio atau `npm run render`.
+5. Simpan project tambahan sebagai folder mandiri `projects/<slug>/`. Jalankan `npm run sync` untuk registrasi ulang; tidak perlu mengedit `src/Root.tsx`, `src/index.ts`, atau `library/catalog.json` secara manual.
 
-Saat pertama kali handoff dibuat, impor tiga MP4 dari folder `current/`. Saat revisi Remotion, jalankan handoff lagi atau tambahkan `--only CTA` untuk merender satu bagian. **Tutup project Concat sebelum memperbarui aset**, kemudian buka ulang/relink media setelah update; handoff tidak otomatis mengubah timeline/caption Concat. Versi terdahulu disimpan dalam folder `history/` untuk pemulihan. `npm run handoff` hanya perintah export, **bukan interface/editor ketiga**. Pada first run `npm run concat`, launcher menyiapkan source GitHub dan mengekstrak runtime portable dari rilis resmi GitHub setelah memvalidasi SHA-256. **Tidak perlu Rust/Cargo dan tidak memasang aplikasi Concat di Windows.** Kompilasi source sendiri tetap memerlukan Rust, CMake, MSVC dan dependensi native. Folder `apps/concat/` adalah local-only dan tidak ikut backup ZIP Master.
-
-**Diagnosis mudah:** `npm run concat` memantau crash dengan logger native Concat; `npm run logs` menampilkan ringkasan Bahasa Indonesia, `npm run concat:debug` menambah detail saat import bermasalah, `npm run concat:safe` untuk mode grafis aman. Panduan: **[PANDUAN-LOG-CONCAT.md](PANDUAN-LOG-CONCAT.md)**. Log lokal di `apps/concat/` tidak ikut Git/ZIP.
-
-Baca **[PANDUAN-HANDOFF-CONCAT.md](PANDUAN-HANDOFF-CONCAT.md)** dan **[ALUR-KERJA-REMOTION-CONCAT.md](ALUR-KERJA-REMOTION-CONCAT.md)** untuk keputusan ekspor audio, revisi, status caption, dan cara pemulihan.
-
-
-## Workflow produksi ChatGPT + Remotion Studio (approval scene pertama)
-
-Aturan utama: [PRODUCTION-RULES.md](PRODUCTION-RULES.md) dan [PROMPT-PROYEK-CHATGPT.md](PROMPT-PROYEK-CHATGPT.md). Script/storyboard project, keputusan kreatif, dan status persetujuan disimpan **di dalam folder video** supaya ikut terbawa saat `npm run zip`.
-
-Alur: **script full → storyboard full → approval → build satu scene pertama → preview/revisi → approval scene pertama → build scene lain → sync voice-over → preview full → QA/render**. Studio tetap Remotion asli, bukan editor baru. Pada video lama, dokumen awal boleh merekam keputusan yang sudah disepakati, tetapi tidak otomatis dianggap approved seluruhnya.
-
-`npm run dev` dan `npm run sync` otomatis membuat `AGENTS.md`, `PROJECT-SCOPE.md`, `SCRIPT.md`, `STORYBOARD.md`, `PRODUCTION-STATE.json` **hanya jika belum tersedia** di project baru. Dokumen yang ada tidak pernah ditimpa oleh sync. Status dapat dilihat lewat `node tools/production-scope.mjs --check`. Pembuatan dokumen bukan persetujuan script otomatis.
-
-## Mulai di Windows (tanpa VS Code)
-
-1. Backup folder Master yang lama; ekstrak paket ini sebagai **folder Master terpisah**. Jangan dicampur dengan Master lain.
-2. Klik ganda **`01-BUKA-STUDIO.bat`**. Launcher menyiapkan dependensi (saat pertama kali), import ZIP add-on, sinkronisasi, dan pemeriksaan, kemudian membuka **Remotion Studio** di browser.
-3. Pada sidebar Remotion, pilih **Videos → Belajar IP Address** atau **Windows Hacks** (Composition ID tetap sama); scrub / Play, pilih layer dan gunakan panel Properties / Props untuk mengedit yang memang didukung.
-4. Render video lewat kontrol **Render** pada Remotion Studio. Untuk pemeriksaan tambahan klik **`02-CEK-STUDIO.bat`**, untuk menutup proses dari launcher klik **`03-STOP-STUDIO.bat`**.
-
-Jika tombol pembuka mendeteksi Remotion dari Master lain di port 3000, **tutup server lama dulu**; launcher tidak akan membuka proyek yang salah secara diam-diam. Kalau port dipakai app lain, baca log `../MotionGraphic-Studio-Backups/Runtime/`.
-
-## Hal yang bisa dilakukan di Studio
-
-- **Preview dan timeline**: Play, scrub, pilih scene / layer (`Interactive` dan `Sequence`).
-- **Edit visual**: klik layer `Interactive` dan ubah posisi, skala, gaya atau teks **apabila properti layer itu didukung langsung oleh Remotion**; gunakan komposisi **Props** untuk pengaturan seperti `sceneEditor`, `voice`, `audioTimeline`, `backgroundColor` dan `musicVolume` yang memang terhubung pada video.
-- **Render**: tekan tombol Render bawaan Remotion Studio. Render manual / ZIP add-on tetap tersedia sebagai fungsi pemeliharaan dari perintah `npm run render` / `npm run zip` (tidak membuka UI lain).
-- **Audio**: file audio sumber di `projects/<slug>/public/audio`; path & timing track dapat diubah lewat **Props** komposisi setelah file dimasukkan. Lihat [Panduan Audio](PANDUAN-AUDIO-TIMELINE.md).
-
-**Batas nyata:** beberapa layer Windows Hacks masih menggunakan posisi/animasi hasil perhitungan (`computed`) atau elemen non-`Interactive`, jadi belum semua objek bisa di-drag langsung. Tidak ada editor audio multitrack waveform khusus / upload-aset terintegrasi yang dibuat sendiri dalam paket ini. Jangan mengira Props otomatis membuat setiap elemen draggable. Teks source yang dihitung tiap frame juga mungkin memerlukan pengembangan komponen.
-
-## Struktur folder (folder-first)
-
-```text
-MotionGraphic-Studio/
-├── 01-BUKA-STUDIO.bat            # satu launcher => Remotion Studio
-├── 02-CEK-STUDIO.bat
-├── 03-STOP-STUDIO.bat
-├── apps/concat/source/             # clone source GitHub (ignored oleh Git/ZIP)
-├── apps/concat/runtime/current/    # binary portable rilis GitHub (tidak diinstal)
-├── projects/
-│   ├── ip-address/
-│   └── windows-hacks-5-shortcut-lengkap/
-├── src/                         # Root/index registrasi auto-generated
-├── public/videos/               # mirror aset saat sync (jangan edit)
-├── library/                     # katalog, backup, trash, arsip tetap dipertahankan
-├── tools/                       # sync, validate, QA, render, ZIP CLI
-└── package.json
-```
-
-Masukkan add-on sebagai **folder utuh** `projects/<slug>/` yang memiliki `motiongraphic-video.json`. Jangan copy isi `src/` atau `public/` add-on ke root Master, jangan edit `src/Root.tsx` atau `library/catalog.json` secara manual.
-
-## Perintah lanjutan (opsional)
+## Perintah yang dipakai
 
 | Perintah | Fungsi |
 | --- | --- |
-| `npm run dev` | Sync + buka Remotion Studio resmi |
-| `npm run handoff -- --project <slug>` | Export HOOK/ISI/CTA tanpa audio ke `out/concat/<slug>/current/` (default) |
-| `npm run handoff -- --project <slug> --only CTA` | Render ulang CTA saja, Hook/Isi tetap utuh |
-| `npm run handoff -- --project <slug> --with-remotion-audio` | Sertakan audio Remotion bila semua lisensi aset sudah terverifikasi |
-| `npm run concat` | Clone source (jika belum ada), ekstrak Concat portable rilis GitHub bila perlu, lalu buka tanpa Rust |
-| `npm run logs` | Ringkasan log native Concat & crash sesi terbaru; `-- --share` untuk laporan tersamarkan |
-| `npm run concat:debug` | Jalankan Concat dengan log debug untuk kasus import yang crash |
-| `npm run concat:safe` | Jalankan Concat menggunakan software graphics |
-| `npm run concat:status` | Cek source, runtime portable dan opsi toolchain |
-| `npm run sync` | Daftarkan project dan sinkronkan aset |
-| `npm run check` | Pemeriksaan library + TypeScript + editable + layout |
-| `npm run qa` | Audit statis proyek; laporan di terminal |
-| `npm run render` | Render via CLI dengan hasil di folder backup luar Master |
-| `npm run zip -- --studio` | ZIP Master lengkap |
-| `npm run zip -- --all` | ZIP tiap add-on |
-| `npm run addfolder -- "C:\\lokasi\\folder-video"` | Impor folder project |
-| `npm run delete` / `npm run restore` | Arsipkan dan pulihkan secara aman |
+| `npm run dev` | Sinkronisasi, lalu membuka Remotion Studio resmi |
+| `npm run sync` | Registrasi project dan aset otomatis |
+| `npm run list` | Menampilkan semua video aktif |
+| `npm run check` | Audit manifest, editability, layout, TypeScript |
+| `npm test` | Jalankan pengujian otomatis |
+| `npm run render` | Render full/segmen ke MP4 |
+| `npm run zip` | Menu ekspor ZIP video editable / Master |
+| `npm run zip -- --studio` | Ekspor ZIP Master lengkap |
+| `npm run zip -- --all` | Ekspor semua video satu per satu |
+| `npm run addfolder -- "C:\\lokasi\\folder-video"` | Impor folder add-on |
+| `npm run delete` / `npm run restore` | Arsipkan / pulihkan video dengan aman |
+| `npm run qa` | Audit kualitas statis |
 
-ZIP Master menyertakan project, aset, arsip asli, panduan, dan skill. Tidak menyertakan node_modules/cache. Output CLI masuk ke `../MotionGraphic-Studio-Backups/`; render lewat **Remotion Studio** menggunakan pengaturan tujuan yang dipilih di dialog render Studio.
+## Struktur Master folder-first
 
-Dokumentasi: [Panduan Remotion](PANDUAN-REMOTION-STUDIO.md) · [Audio](PANDUAN-AUDIO-TIMELINE.md) · [Aset](PANDUAN-EDIT-ASSET.md) · [Standar Editable](STANDAR-EDITABLE-STUDIO.md).
+```text
+MotionGraphic-Studio/
+├── projects/
+│   ├── ip-address/                       # Belajar IP Address
+│   └── windows-hacks-5-shortcut-lengkap/ # Windows Hacks
+├── src/                                 # komposisi, auto-generated saat sync
+├── public/videos/                       # mirror aset dari project, jangan edit
+├── library/catalog.json                # katalog auto-generated
+├── library/.studio-generated-state.json # status internal sync
+├── library/masuk/                       # tempat ZIP add-on yang akan diimpor
+├── tools/                               # alat Remotion, render, impor, audit, ZIP
+├── tests/                               # tes regresi Remotion
+└── package.json
+```
 
-**Bukti pengujian dan batasan tersedia di `STATUS-VALIDASI-v1.8.1.md`.** Pengujian browser Windows dan render MP4 tidak boleh dianggap berhasil jika belum dijalankan.
+## Audio, editability, dan batas yang benar
+
+Audio sumber dipertahankan di masing-masing `projects/<slug>/public/`. Untuk mengatur voice-over dan musik, lihat [Panduan Audio Timeline](PANDUAN-AUDIO-TIMELINE.md). Untuk impor, preview, props, render dan ekspor, baca [Panduan Remotion Studio](PANDUAN-REMOTION-STUDIO.md). Aturan produksi ada di [PRODUCTION-RULES.md](PRODUCTION-RULES.md).
+
+Remotion Studio **tidak otomatis membuat semua node React draggable**. Layer `Interactive`, Properties/Props dan struktur masing-masing video menentukan apa yang bisa diedit secara visual. Beberapa layer Windows Hacks masih memiliki animasi/posisi computed dan belum semua bebas drag-and-drop. Tidak ada editor voice-over waveform multi-track bawaan tambahan dalam paket ini. Editabilitas penuh tidak boleh diklaim tanpa pengujian per layer.
+
+**Riwayat dipertahankan terpisah:** arsip backup/import lama dari ZIP sumber ada di ZIP pendamping `MotionGraphic-Studio-ARSIP-LAMA-20261104.zip`. Tidak perlu mengekstrak arsip itu ke dalam Master kecuali ingin memulihkan berkas tertentu. Backup baru di `library/backups/` akan dibuat oleh tool saat perlu; output export/render CLI disimpan di folder cadangan di luar Master.
+
+Hasil dan batas audit: [AUDIT-REMOTION-ONLY-20261104.md](AUDIT-REMOTION-ONLY-20261104.md). UI Remotion di Windows, drag/edit manual, dan render MP4 aktual memerlukan uji langsung di PC pengguna.

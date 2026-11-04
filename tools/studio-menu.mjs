@@ -10,6 +10,7 @@ import path from 'node:path';
 import {createInterface} from 'node:readline/promises';
 import {spawnSync} from 'node:child_process';
 import {ROOT,readCatalog} from './menu-helper.mjs';
+import {renderChoices,resolveMode,printSceneList,makeRenderPlan} from './render-plan.mjs';
 
 if(!process.stdin.isTTY){
   console.error('[MENU] Gunakan terminal interaktif untuk npm run menu. Untuk otomatisasi gunakan npm run zip -- --all / --studio / IDVideo.');
@@ -88,10 +89,31 @@ async function doZip(){
   else console.log('[MENU] Pilihan ekspor tidak dikenal: '+mode);
 }
 async function doRender(){
+  // Sinkronkan lebih dulu agar daftar scene untuk project baru juga aktual.
+  if(!runScript('prepare-studio.mjs'))return;
   const video=await chooseVideo();
   if(!video)return;
-  console.log(`[MENU] Render dipilih: ${video.title} [${video.id}]`);
-  if(runScript('prepare-studio.mjs'))runScript('render-menu.mjs',[video.id]);
+  console.log(`\n=== RENDER: ${video.title} ===`);
+  for(const [num,label] of renderChoices)console.log(`  ${num}. ${label}`);
+  const answer=await ask('Pilih mode 1/2/3/4 (Enter = kembali): ');
+  if(!answer)return console.log('[MENU] Render dibatalkan.');
+  let mode;
+  try{mode=resolveMode(answer)}catch(e){return console.log('[MENU] '+e.message)}
+  let selection='';
+  if(mode==='scene'||mode==='selected'){
+    try{console.log('\nSCENE TERSEDIA:');printSceneList(video)}
+    catch(e){return console.log('[MENU] '+e.message)}
+    selection=await ask(mode==='scene'
+      ?'Pilih nomor / ID scene (Enter = kembali): '
+      :'Pilih nomor scene dipisah koma, contoh 1,3,5 (Enter = kembali): ');
+    if(!selection)return console.log('[MENU] Render dibatalkan.');
+  }
+  // Validasi sebelum anak proses berjalan. Tidak ada input di child (Git Bash aman).
+  let plan;
+  try{plan=makeRenderPlan(video,mode,selection)}catch(e){return console.log('[MENU] '+e.message)}
+  console.log(`\n[RENDER] ${video.title} | ${mode.toUpperCase()} | ${plan.length} MP4`);
+  for(const job of plan)console.log(`  • ${job.title} [${job.id}]`);
+  runScript('render-menu.mjs',[video.id,'--mode',mode,...(selection?[mode==='scene'?'--scene':'--scenes',selection]:[])]);
 }
 async function doRename(){
   const project=await choose(currentProjects(),'PROJECT TERSEDIA:',p=>`${p.title} [${p.id}] (projects/${p.folder})`,p=>[p.id,p.slug,p.folder]);

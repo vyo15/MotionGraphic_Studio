@@ -1,11 +1,11 @@
-# Pengaturan Audio dalam Remotion Studio (tanpa editor kedua)
+# Panduan Audio pada Remotion Studio
 
-1. Copy berkas MP3 / WAV yang benar ke `projects/<slug>/public/audio/`.
-2. Jalankan `npm run sync` dari Master atau tutup lalu buka Studio dengan launcher.
-3. Dalam Remotion Studio pilih video → **Props** → `audioTimeline`. Untuk track yang tersedia, isi `src` = `audio/nama.wav`, `enabled = true`, dan `muted = false`.
-4. Sesuaikan `startFrame`, `trimStartFrames`, `durationFrames`, dan `volume` (0..1). Audio track akan masuk preview dan render dari props yang sama bila disimpan melalui Remotion Studio.
-5. Tekan Play, dengarkan timing dan gunakan Render bawaan Remotion.
+Audio/video sumber tinggal di `projects/<slug>/public/`. Path aset yang disinkronkan memakai pola Remotion `staticFile('videos/<slug>/audio/nama-file.wav')`. Jangan menaruh file audio langsung ke `public/videos/` karena itu hanya mirror hasil sync.
 
-Tidak ada waveform drag khusus atau upload otomatis dalam paket ini. Untuk menambah jumlah track secara permanen di template, perlu mengembangkan Props/manifest add-on; opsi audio native Remotion dapat dipakai melalui UI Remotion yang tersedia pada versi terpasang.
+1. Masukkan file audio ke `projects/<slug>/public/audio/` (buat folder bila diperlukan).
+2. Panggil `npm run sync` agar aset tersalin ke mirror.
+3. Buka Remotion Studio, pilih komposisi video, dan gunakan Props yang disediakan project (`audioTimeline`, `voice`, `musicVolume` bila ada) untuk mengatur path sumber, start frame, trim, durasi, volume dan mute.
+4. Jalankan preview; sinkronkan awal voice-over dan subtitle yang ada dengan nomor frame. Di 30 fps, 30 frame = 1 detik.
+5. Render final via Remotion. Periksa suara hasil MP4 dan pastikan semua lisensi media sesuai penggunaan.
 
-Catatan: tujuh WAV pada projek Windows Hacks merupakan placeholder 0,1 detik hening, **bukan voice-over jadi**. Teks/subtitle tidak otomatis diselaraskan oleh editor ini. Aset sumber **bukan** `public/videos/<slug>/` karena folder itu mirror yang akan tersinkron ulang.
+**Batasan:** paket ini tidak menyertakan DAW/editor suara drag-and-drop atau transkripsi otomatis. Ketersediaan Props dan kemampuan edit tiap audio mengikuti implementasi video, dan UI bukan waveform multitrack.
