@@ -1,0 +1,55 @@
+/** SCENE 04 — 15s, 450f @ 30fps. Semua nilai bersifat relatif terhadap S04. */
+export const SCENE04 = {
+  durationInFrames: 450,
+  command: 'irm https://christitus.com/win | iex',
+  // Teks judul, subtitle, dan command berada langsung pada Interactive.Div
+  // supaya bisa diedit di Studio. Timing/koordinat dikontrol dari konfigurasi ini.
+  timing: {
+    introEnd: 0.58,
+    searchOpen: 1.15,
+    searchTypeStart: 1.73,
+    searchTypeEnd: 2.63,
+    adminHighlight: 3.35,
+    adminClick: 4.23,
+    searchClose: 4.55,
+    uacOpen: 4.65,
+    uacYesClick: 5.20,
+    uacClose: 5.55,
+    terminalOpen: 5.75,
+    commandTypeStart: 7.05,
+    commandTypeEnd: 9.90,
+    enter: 10.12,
+    progressStart: 10.30,
+    progressEnd: 12.15,
+    progressFadeEnd: 12.35,
+    winutilReveal: 12.43,
+    winutilEnd: 12.95,
+  },
+  position: {
+    desktop: {x: 80, y: 498, width: 920, height: 1064},
+    terminal: {x: 80, y: 702, width: 920, height: 732},
+    heading: {x: 80, y: 350, width: 920},
+    subtitle: {x: 115, y: 1492, width: 850, height: 78},
+  },
+  colors: {
+    bg: '#F8F7F4', ink: '#23282F', muted: '#767A80', coral: '#D8876D',
+    terminal: '#12161C', terminalText: '#E1EAF1', progress: '#43A3EE',
+  },
+  // Posisi kursor merupakan koordinat Scene 04 1080x1920, dapat diedit per keyframe.
+  cursorKeyframes: [
+    {s: 0.00, x: 836, y: 1424},
+    {s: 1.20, x: 488, y: 1526},
+    {s: 1.55, x: 452, y: 1520},
+    {s: 2.70, x: 558, y: 1072},
+    {s: 3.30, x: 728, y: 1154},
+    {s: 4.19, x: 726, y: 1166},
+    {s: 4.65, x: 724, y: 1166},
+    {s: 5.18, x: 610, y: 1236},
+    {s: 5.55, x: 614, y: 1236},
+    {s: 7.10, x: 600, y: 1370},
+    {s: 9.98, x: 920, y: 1410},
+    {s: 10.40, x: 900, y: 1390},
+    {s: 12.25, x: 900, y: 1390},
+    {s: 13.30, x: 360, y: 764},
+  ],
+} as const;

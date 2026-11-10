@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "projectId": "DebloatWindows11Opening",
+  "slug": "debloat-windows11-opening",
+  "workflow": "guided-approval-first-scene",
+  "phase": "script-review",
+  "scriptApproval": "pending",
+  "storyboardApproval": "pending",
+  "referenceSceneId": "DebloatWindows11Opening-S01",
+  "referenceSceneApproval": "pending",
+  "voiceOverStatus": "not-recorded",
+  "fullVideoApproval": "pending",
+  "scenes": [
+    {
+      "id": "DebloatWindows11Opening-S01",
+      "title": "01 — Opening",
+      "status": "pending",
+      "scriptApproval": "pending",
+      "storyboardApproval": "pending",
+      "visualApproval": "pending"
+    },
+    {
+      "id": "DebloatWindows11Opening-S02",
+      "title": "02 — Xbox, Bing Search, Copilot",
+      "status": "pending",
+      "scriptApproval": "pending",
+      "storyboardApproval": "pending",
+      "visualApproval": "pending"
+    }
+  ],
+  "decisionLog": [],
+  "notes": "Dokumen dibuat otomatis saat sync. Status approval tidak boleh diubah menjadi approved tanpa persetujuan pengguna."
+}

@@ -2,6 +2,51 @@
   "schemaVersion": 1,
   "videos": [
     {
+      "id": "DebloatWindows11Opening",
+      "slug": "debloat-windows11-opening",
+      "title": "Debloat Windows 11 — Scene 01, 02, 03 & 04",
+      "width": 1080,
+      "height": 1920,
+      "fps": 30,
+      "durationInFrames": 1605,
+      "assetPrefix": "videos/debloat-windows11-opening",
+      "source": "projects/debloat-windows11-opening/src/Video.tsx",
+      "projectDir": "projects/debloat-windows11-opening",
+      "exportName": "Video",
+      "defaultProps": {
+        "voiceEnabled": false,
+        "voiceVolume": 1,
+        "showSubtitles": true,
+        "showGrid": true
+      },
+      "segments": [
+        {
+          "id": "DebloatWindows11Opening-S01",
+          "title": "01 — Opening",
+          "startFrame": 0,
+          "durationInFrames": 240
+        },
+        {
+          "id": "DebloatWindows11Opening-S02",
+          "title": "02 — Xbox, Bing Search, Copilot",
+          "startFrame": 240,
+          "durationInFrames": 465
+        },
+        {
+          "id": "DebloatWindows11Opening-S03",
+          "title": "03 — Debloat, Tong Sampah, GitHub Stars",
+          "startFrame": 705,
+          "durationInFrames": 450
+        },
+        {
+          "id": "DebloatWindows11Opening-S04",
+          "title": "04 — PowerShell Administrator, Loading Bar, WinUtil",
+          "startFrame": 1155,
+          "durationInFrames": 450
+        }
+      ]
+    },
+    {
       "id": "IPAddressReels",
       "slug": "ip-address",
       "title": "Belajar IP Address",
