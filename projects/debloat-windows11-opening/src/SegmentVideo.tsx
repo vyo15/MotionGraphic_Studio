@@ -5,6 +5,8 @@ import {OpeningScene} from './scenes/OpeningScene';
 import {Scene02} from './scenes/Scene02';
 import {Scene03} from './scenes/Scene03';
 import {Scene04} from './scenes/Scene04';
+import {Scene05} from './scenes/Scene05';
+import {Scene06} from './scenes/Scene06';
 
 /** The same scenes, props, config and audio as the full composition. */
 export const SegmentVideo:React.FC<DebloatOpeningProps&{segmentIndex:number}> = ({
@@ -22,5 +24,11 @@ export const SegmentVideo:React.FC<DebloatOpeningProps&{segmentIndex:number}> = 
   </> : segmentIndex===3 ? <>
     <Scene04 showSubtitles={showSubtitles} showGrid={showGrid}/>
     {voiceEnabled ? <Audio src={staticFile('videos/debloat-windows11-opening/audio/voiceover-scene04.wav')} volume={voiceVolume}/> : null}
+  </> : segmentIndex===4 ? <>
+    <Scene05 showSubtitles={showSubtitles} showGrid={showGrid}/>
+    {voiceEnabled ? <Audio src={staticFile('videos/debloat-windows11-opening/audio/voiceover-scene05.wav')} volume={voiceVolume}/> : null}
+  </> : segmentIndex===5 ? <>
+    <Scene06 showSubtitles={showSubtitles} showGrid={showGrid}/>
+    {voiceEnabled ? <Audio src={staticFile('videos/debloat-windows11-opening/audio/voiceover-scene06.wav')} volume={voiceVolume}/> : null}
   </> : null}
 </AbsoluteFill>;

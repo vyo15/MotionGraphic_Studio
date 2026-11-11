@@ -10,11 +10,13 @@ import {SegmentVideo as FolderProject_ip_address_editable} from '../projects/ip-
 import {Video as FolderProject_windows_hacks_5_shortcut_lengkap} from '../projects/windows-hacks-5-shortcut-lengkap/src/Video';
 import {SegmentVideo as FolderProject_windows_hacks_5_shortcut_lengkap_editable} from '../projects/windows-hacks-5-shortcut-lengkap/src/SegmentVideo';
 // AUTO-FOLDER-IMPORTS:END
-const FolderProject_debloat_windows11_opening_full = createFullPreviewComposition(FolderProject_debloat_windows11_opening, 1605);
+const FolderProject_debloat_windows11_opening_full = createFullPreviewComposition(FolderProject_debloat_windows11_opening, 2827);
 const FolderProject_debloat_windows11_opening_segment_0 = createEditableSegmentComposition(FolderProject_debloat_windows11_opening_editable, 0);
 const FolderProject_debloat_windows11_opening_segment_1 = createEditableSegmentComposition(FolderProject_debloat_windows11_opening_editable, 1);
 const FolderProject_debloat_windows11_opening_segment_2 = createEditableSegmentComposition(FolderProject_debloat_windows11_opening_editable, 2);
 const FolderProject_debloat_windows11_opening_segment_3 = createEditableSegmentComposition(FolderProject_debloat_windows11_opening_editable, 3);
+const FolderProject_debloat_windows11_opening_segment_4 = createEditableSegmentComposition(FolderProject_debloat_windows11_opening_editable, 4);
+const FolderProject_debloat_windows11_opening_segment_5 = createEditableSegmentComposition(FolderProject_debloat_windows11_opening_editable, 5);
 const FolderProject_ip_address_full = createFullPreviewComposition(FolderProject_ip_address, 720);
 const FolderProject_ip_address_segment_0 = createEditableSegmentComposition(FolderProject_ip_address_editable, 0);
 const FolderProject_ip_address_segment_1 = createEditableSegmentComposition(FolderProject_ip_address_editable, 1);
@@ -34,15 +36,17 @@ const FolderProject_windows_hacks_5_shortcut_lengkap_segment_6 = createEditableS
 export const Root: React.FC = () => (
   <Folder name="Videos">
     {/* AUTO-FOLDER-COMPOSITIONS:START */}
-      <Folder name="Debloat-Windows-11-Scene-01-02-03-04">
+      <Folder name="Debloat-Windows-11-Scene-01-06-CTA">
         <Folder name="Full-Video">
-          <Composition id="DebloatWindows11Opening" component={FolderProject_debloat_windows11_opening_full} width={1080} height={1920} fps={30} durationInFrames={1605} defaultProps={{"voiceEnabled":false,"voiceVolume":1,"showSubtitles":true,"showGrid":true}} />
+          <Composition id="DebloatWindows11Opening" component={FolderProject_debloat_windows11_opening_full} width={1080} height={1920} fps={30} durationInFrames={2827} defaultProps={{"voiceEnabled":false,"voiceVolume":1,"showSubtitles":true,"showGrid":true}} />
         </Folder>
         <Folder name="Scenes">
           <Composition id="DebloatWindows11Opening-S01" component={FolderProject_debloat_windows11_opening_segment_0} width={1080} height={1920} fps={30} durationInFrames={240} defaultProps={{"voiceEnabled":false,"voiceVolume":1,"showSubtitles":true,"showGrid":true}} />
           <Composition id="DebloatWindows11Opening-S02" component={FolderProject_debloat_windows11_opening_segment_1} width={1080} height={1920} fps={30} durationInFrames={465} defaultProps={{"voiceEnabled":false,"voiceVolume":1,"showSubtitles":true,"showGrid":true}} />
           <Composition id="DebloatWindows11Opening-S03" component={FolderProject_debloat_windows11_opening_segment_2} width={1080} height={1920} fps={30} durationInFrames={450} defaultProps={{"voiceEnabled":false,"voiceVolume":1,"showSubtitles":true,"showGrid":true}} />
           <Composition id="DebloatWindows11Opening-S04" component={FolderProject_debloat_windows11_opening_segment_3} width={1080} height={1920} fps={30} durationInFrames={450} defaultProps={{"voiceEnabled":false,"voiceVolume":1,"showSubtitles":true,"showGrid":true}} />
+          <Composition id="DebloatWindows11Opening-S05" component={FolderProject_debloat_windows11_opening_segment_4} width={1080} height={1920} fps={30} durationInFrames={705} defaultProps={{"voiceEnabled":false,"voiceVolume":1,"showSubtitles":true,"showGrid":true}} />
+          <Composition id="DebloatWindows11Opening-S06" component={FolderProject_debloat_windows11_opening_segment_5} width={1080} height={1920} fps={30} durationInFrames={517} defaultProps={{"voiceEnabled":false,"voiceVolume":1,"showSubtitles":true,"showGrid":true}} />
         </Folder>
       </Folder>
       <Folder name="Belajar-IP-Address">

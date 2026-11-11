@@ -57,3 +57,47 @@ Semua teks penting Scene 02 disediakan dalam layer Interactive mandiri; aset iko
 - **Audio:** ganti file `public/audio/voiceover-scene04.wav` (sekarang hening). Setelah mengganti audio, cek ulang timing subtitle.
 
 Jangan memindahkan isi `src/` add-on ke root Master. Jangan menimpa/mengganti file proyek Scene 01–03 secara selektif. Gunakan seluruh folder proyek yang sama, dan cadangkan modifikasi lokal sebelum memperbarui.
+
+---
+
+## Scene 05 — Restore Point, Tweaks, AppX Removal (23,5 detik)
+
+**Buka komposisi `DebloatWindows11Opening-S05` di Remotion Studio.** Hindari menyunting komposisi gabungan ketika ingin berfokus pada satu scene.
+
+### Mengedit tulisan
+
+- Judul per fase: `S05 — Judul ...` di `src/scenes/Scene05.tsx`; layer ini memakai teks literal di `Interactive.Div`.
+- Subtitle VO: `S05 — Subtitle ...` di `src/scenes/Scene05.tsx`.
+- Nama tombol/tab/opsi: `src/components/Scene05WinUtil.tsx`, misalnya `AppX Removal`, `Create Restore Point`, `Run Tweaks`, `Xbox App`, `Microsoft Copilot`. Komponen dibuat dari HTML/CSS/React, bukan screenshot. Jika editor Master tidak mengizinkan mengubah teks komponen reusable secara langsung, edit tulisan di file JSX tersebut.
+- Warna/ukuran/posisi UI: `src/components/Scene05WinUtil.tsx` dan `src/config/scene05.ts`.
+
+### Mengedit gerakan
+
+- Waktu tindakan (kapan dipilih, membuka panel, progress): `SCENE05.time` di `src/config/scene05.ts`.
+- Titik gerakan kursor: `SCENE05.cursorKeyframes` (`s` = detik lokal Scene 05; `x`,`y` = pixel absolut di 1080×1920). Event klik: `SCENE05.clickTimes`.
+- Kehalusan gerakan: `src/animations/scene05.ts`.
+- Progress: `S05 — Progress bar Restore Point` di `src/components/Scene05WinUtil.tsx`.
+- Checkbox contoh di AppX: ambang `xboxSelect` dan `copilotSelect`, bukan checkbox sungguhan pada PC.
+
+### Penggantian voice-over
+
+Ganti `public/audio/voiceover-scene05.wav` dengan rekaman Scene 05 dan aktifkan `voiceEnabled` di Props. Periksa sinkronisasi lagi setelah VO dipasang; file yang sekarang hanya hening 24 detik.
+
+### Kesinambungan scene
+
+Scene 05 mulai dari WinUtil terbuka (akhir Scene 04) dan berakhir pada dua aplikasi dipilih (menyambung Scene 06 yang berisi peringatan). Tombol **Remove Selected tidak diklik** dalam Scene 05.
+
+> Penting: keberhasilan fitur edit visual secara langsung, simpan/reload transform, dan export setelah edit harus diuji pada Remotion Studio di PC pengguna. Kontrak Master hanya memeriksa bentuk source secara statis, bukan memastikan semua interaksi visual berfungsi di semua instalasi.
+
+
+## Tambahan Scene 06 — Penutup + CTA final
+
+- Komposisi: `DebloatWindows11Opening-S06`; tersedia juga pada komposisi penuh.
+- Teks CTA **“MENURUT KAMU,”, “DEBLOAT”, “WINDOWS”, “PERLU NGGAK SIH?”, “PERLU”, “NGGAK”, “TULIS DI KOLOM”, “KOMENTAR”** dapat diedit melalui layer `Interactive.Div` di `src/components/Scene06CTA.tsx`.
+- Judul dan subtitle penutup ada di `src/scenes/Scene06.tsx`; khususnya CTA **tidak** perlu subtitle ekstra karena teks utamanya sudah muncul di visual.
+- Animasi CTA dikontrol oleh waktu lokal `t=seconds-SCENE06.timing.cta.start` pada `Scene06CTA.tsx`. Posisi/waktu utama di `src/config/scene06.ts`, easing di `src/animations/scene06.ts`.
+- Untuk kursor: `SCENE06.cursor.keyframes` dan `SCENE06.cursor.clickTimes`. **Tidak mengklik Restart**; hanya highlight.
+- Untuk wallpaper: `public/images/windows11-bloom-scene04.png` (aset yang sudah ada) atau ganti `SCENE06.assets.bloom`.
+- Untuk audio: ganti `public/audio/voiceover-scene06.wav` dengan VO S06, aktifkan `voiceEnabled: true` pada Props, kemudian sesuaikan beat sebelum render.
+- Source Scene 01–05 tidak perlu diubah untuk revisi CTA Scene 06.
+- Inspector drag/move serta penyimpanannya setelah reload belum diuji di komputer Windows; gunakan config/source untuk perubahan yang harus persisten bila UI visual tidak mendukungnya.

@@ -54,3 +54,53 @@ Aksi tong sampah adalah metafora ilustratif, **bukan** cara kerja penghapusan ap
 - Sinkronisasi kata VO belum diuji karena VO asli belum tersedia.
 
 **Akurasi:** gambar Bloom adalah grafis bergaya Windows 11, bukan wallpaper yang direkam dari Windows; terminal, UI dan WinUtil adalah komponen simulasi. Progress bar setelah Enter **sengaja ilustratif**, bukan log/progress bawaan WinUtil yang terverifikasi. Command ditampilkan satu baris, namun mengeksekusi skrip jarak jauh sebagai Administrator perlu memverifikasi sumber.
+
+## UPDATE SCENE 05 — 10 November 2026 (paket Scene 01–05)
+
+**Struktur:** manifest `DebloatWindows11Opening` / slug `debloat-windows11-opening` dipertahankan, total **2310 frame / 77 detik @30fps**. Segmen `DebloatWindows11Opening-S05` mulai frame 1605, sepanjang **705 frame / 23,5 detik**.
+
+**Teruji pada salinan Master v1.8.1 di container (bukan PC pengguna):**
+
+- `node tools/sync-projects.mjs`: lolos, **3 proyek / 20 komposisi** (17 segmen di semua proyek).
+- `node tools/validate-library.mjs`: lolos, **0 masalah aset** (17 rujukan diperiksa).
+- `node tools/check-direct-studio-text.mjs`: lolos untuk kontrak `studio-direct-v3`: Debloat **226 Interactive**, **164 teks literal langsung**, **0 non-inline/rumit** menurut pemeriksaan kontrak; fragmen teks terhitung dinamis 19 (termasuk komponen reusable).
+- `node tools/check-editability.mjs --strict`: lolos, ada peringatan informatif mengenai spread style pada komponen wrapper S05; style `Interactive.Div` sendiri lolos pemeriksaan di atas.
+- `node tools/check-layout-flow.mjs`: 0 layout struktural invalid. Tiga peringatan translate berasal dari proyek Windows Hacks lama, **bukan Scene 05**.
+- Seluruh **28 file TS/TSX** pada add-on berhasil diparse dan ditranspile lewat API TypeScript global: **0 diagnostic error sintaks**.
+- 35 file existing `src/scenes/`, `src/components/`, `src/config/`, dan aset image/icon yang sudah ada dalam ZIP 01–04 dibandingkan byte-for-byte: **0 perubahan**. Berkas `src/Video.tsx` / `src/SegmentVideo.tsx` memang diperluas untuk registrasi S05, manifest diperbarui.
+- `public/audio/voiceover-scene05.wav`: PCM 16-bit mono 16 kHz, **24 detik hening** sebagai placeholder.
+
+**Belum terverifikasi:**
+- `npm run check` penuh / `tsc --noEmit` dengan seluruh dependensi Remotion/React asli belum berhasil karena dependensi Master di salinan uji tidak lengkap.
+- Render MP4 **langsung dari source editable S05**, tampilan piksel dibanding preview MP4 sebelumnya, drag/drop, penyimpanan posisi/teks sesudah reload, dan uji Windows belum dilakukan.
+- Sinkronisasi subtitle dan animasi dengan VO belum tervalidasi karena belum ada rekaman VO asli.
+- UI dan progress adalah simulasi grafis; checkbox AppX tidak menghapus aplikasi sungguhan.
+
+**Dasar langkah tutorial:** WinUtil docs https://winutil.christitus.com/guides/getting-started/ (Tweaks → Create Restore Point → Run Tweaks); penjelasan AppX di https://github.com/ChrisTitusTech/winutil. Layout WinUtil merupakan adaptasi dari preview yang pengguna setujui dan dapat berbeda dari versi aplikasi sesungguhnya.
+
+
+## UPDATE SCENE 06 + CTA FINAL — 11 November 2026
+
+**Komposisi:** `DebloatWindows11Opening-S06` 517 frame (17,23 detik) mulai pada frame 2310. Gabungan `DebloatWindows11Opening` sekarang **2827 frame / 94,23 detik**, 1080×1920, 30 FPS. ID dan slug tidak berubah.
+
+**Berhasil diuji dengan salinan Master v1.8.1 (Linux, pemeriksaan statis):**
+
+- Sync: `node tools/sync-projects.mjs` → **3 video / 21 komposisi**; semua Scene 01–06 dikenali.
+- `node tools/validate-library.mjs` → **18 rujukan aset, 0 masalah**.
+- `node tools/check-editability.mjs --strict` → lolos; add-on Debloat berisi **275 JSX Interactive**. Ada catatan informatif wrapper style pada file sebelumnya dan beberapa komponen baru, bukan error.
+- `node tools/check-direct-studio-text.mjs` → **lulus** kontrak `studio-direct-v3`, **275 elemen Interactive, 193 teks literal langsung, 0 style rumit**.
+- `node tools/check-layout-flow.mjs` → **0 struktur invalid**; 3 peringatan pada video `windows-hacks-5-shortcut-lengkap`, bukan proyek Debloat.
+- Parser/transpiler TypeScript global → **34 file TS/TSX** di proyek Debloat, **0 error parsing** (tidak setara dengan typecheck penuh).
+- Perbandingan byte ZIP sumber Scene 01–05: **42 file source/aset lama sama persis**, selain `src/Video.tsx` dan `src/SegmentVideo.tsx` yang memang perlu registrasi Scene 06, serta dokumen yang ditambah.
+- `public/audio/voiceover-scene06.wav` tersedia, 16 kHz 16-bit mono, **18 detik hening** sebagai placeholder.
+
+**Belum berhasil diverifikasi:**
+
+- `node tools/studio-check.mjs` menyelesaikan audit QA dan menemukan **1 error kritis karena TypeScript tidak terpasang dalam salinan Master uji**. Audit QA heuristik juga mencatat potensi overlap layer di Scene 02 (sebelum revisi ini); penampakan hasil render belum dapat dikonfirmasi.
+- `npm run check` penuh / semantic `tsc --noEmit` dengan seluruh paket `remotion`, `react`, `@remotion/cli`; rendering MP4 dari **source Remotion Scene 06**; pratinjau di PC pengguna; drag/drop dan penyimpanan edit setelah reload; sinkronisasi per kata VO.
+
+**Catatan visual dan akurasi:**
+
+- S06 dibuat dari komponen React/SVG terpisah berdasarkan preview `preview-scene06-penutup-cta-final-gabungan-v1.mp4` yang disetujui; **tidak** mengimpor preview MP4 itu sebagai layer dan **belum diklaim identik per piksel**.
+- Progress removal bersifat ilustratif; Restart hanya disorot, tidak diklik. Tidak ada aplikasi Windows yang sungguhan dihapus.
+- Subtitle penutup dan timing CTA diperkirakan dari script; sesuaikan ketika VO asli diberikan.

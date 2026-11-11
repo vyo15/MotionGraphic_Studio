@@ -34,3 +34,26 @@ Catatan fakta: bintang GitHub **bukan** rating bintang 1–5, bukan jumlah pengg
 | S04e | 12,4–15s | hold hasil | WinUtil terbuka | WinUtil | Progress selesai → aplikasi muncul | WINUTIL TERBUKA | Siap lanjut Scene 05 | UI WinUtil, tab, subtitle |
 
 VO final belum ada, sehingga timing masih mengikuti preview disetujui dan dapat disesuaikan nanti.
+
+## Scene 05 — Restore Point, Tweaks, AppX Removal (23,5 detik)
+
+| Scene | Durasi | VO/Beat | Pesan | Objek utama | Sebab → akibat | Teks layar | Transisi / Continuity | Editable assets |
+|---|---|---|---|---|---|---|---|---|
+| S05a | 0–3,7s | “Setelah terbuka, buat Restore Point dulu.” | Aman sebelum tweak | WinUtil → Tweaks | Dari aplikasi yang baru terbuka, kursor memilih tab Tweaks | WINUTIL SIAP DIGUNAKAN | Window S04 dipertahankan ukuran/posisinya | WinUtil, tab, kursor, heading, subtitle |
+| S05b | 3,7–8,9s | “Buat Restore Point dulu.” | Titik pemulihan | Checkbox Create Restore Point; Run Tweaks | Checkbox dicentang → tombol ditekan → proses visual → status | BUAT RESTORE POINT DULU | Same window, hold hasil | Checkbox, button, progress, status |
+| S05c | 8,9–13,72s | “Terus masuk ke Tweaks, pilih pengaturan yang dibutuhkan.” | Seleksi seperlunya | Essential Tweaks | Sebuah tweak contoh dipilih, bukan semuanya | PILIH TWEAKS SEPERLUNYA | Fokus tetap di tab Tweaks | Row tweak, highlight, kursor |
+| S05d | 13,72–18,15s | “Kalau mau hapus aplikasi bawaan, buka AppX Removal...” | Buka pilihan AppX | Tombol AppX Removal → panel aplikasi | Kursor membuka AppX, mencentang Xbox App | BUKA APPX REMOVAL | Panel masuk halus dalam jendela yang sama | Pane, baris aplikasi, checkbox |
+| S05e | 18,15–23,5s | “...lalu pilih aplikasi yang nggak dipakai.” | Pemilihan, **belum hapus** | Baris Xbox App, Copilot | Copilot dicentang; 2 selected; hasil ditahan | PILIH APLIKASI YANG TAK DIPAKAI | Scene 06 lanjut ke peringatan jangan asal hapus | Baris/teks/checkbox/cursor/hasil |
+
+Antarmuka WinUtil menggunakan simulasi HTML/CSS, mengikuti preview yang disetujui; bukan screenshot penuh atau aplikasi hidup. Tindakan yang ditampilkan tidak menghapus apa pun. Timing VO masih perkiraan karena belum ada rekaman suara asli.
+
+
+## Scene 06 — Penutup dan CTA (final, 17,23 detik)
+
+| Scene | Durasi | VO/Beat | Pesan utama | Objek utama | Aksi → hasil | Teks layar | Continuity | Editable assets |
+|---|---:|---|---|---|---|---|---|---|
+| S06 A | 0–3,75s | Tapi jangan asal hapus semuanya, ya. | Pilih seperlunya | WinUtil AppX list | Checkbox tetap hanya 2; aplikasi lain tidak dipilih | JANGAN HAPUS SEMUANYA | Mulai dari akhir S05 | UI, kursor, teks, label |
+| S06 B | 3,75–5,95s | Selesai! | Tindakan selektif | Remove Selected dan progress | Klik ilustratif → progress selesai | PILIHAN SUDAH DIPROSES | UI yang sama | Progress, status, kursor |
+| S06 C | 5,95–8,72s | Restart kalau diperlukan. | Restart opsional | Desktop Windows 11, Start Menu, Power menu | Power → highlight Restart, tanpa klik | RESTART JIKA DIPERLUKAN | Desktop Bloom dari S04 | Wallpaper, menu, teks |
+| S06 D | 8,72–13,92s | Menurut kamu, debloat Windows perlu nggak sih? | Mengajak pendapat | Logo Windows, kartu PERLU / NGGAK | Logo mengarah ke pertanyaan, kartu hadir berpasangan | DEBLOAT WINDOWS / PERLU NGGAK SIH? | Transisi fade/wash dari desktop | Windows tiles, typography, cards |
+| S06 E | 13,92–17,23s | Coba tulis di kolom komentar! | Mengajak komentar | Bubble chat | Kartu menyatu jadi bubble → teks CTA | TULIS DI KOLOM KOMENTAR | Satu komposisi sama | Bubble, titik, label |

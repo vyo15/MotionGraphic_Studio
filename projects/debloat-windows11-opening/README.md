@@ -1,84 +1,78 @@
-# Debloat Windows 11 — Scene 01–04 (Editable)
+# Debloat Windows 11 — Scene 01–05 (editable)
 
-**Add-on folder-first untuk MotionGraphic Studio v1.8.1.** Ini adalah pembaruan project `debloat-windows11-opening` yang sama, **bukan project/video baru**. Scene 01–03 sebelumnya dipertahankan; Scene 04 ditambahkan sebagai komposisi terpisah sekaligus bagian video gabungan.
+Add-on **folder-first** untuk MotionGraphic Studio Master v1.8.1. Project ini **tetap ID dan slug lama**:
+- ID: `DebloatWindows11Opening`
+- Folder / slug: `debloat-windows11-opening`
+- Entry: `src/Video.tsx` → `export const Video`
+- 1080×1920, 30 fps, **77 detik / 2310 frame**. Seluruh efek deterministik terhadap frame.
+
+**Paket ini menggantikan folder Debloat sebelumnya secara utuh**, bukan menambah proyek baru. Source serta aset Scene 01–04 dipertahankan byte-for-byte. Yang ditambahkan adalah Scene 05, konfigurasi, komponen, audio hening, dan dokumen.
 
 ## Komposisi
-- `DebloatWindows11Opening` — preview gabungan Scene 01–04, **53,5 detik** (1605 frame).
-- `DebloatWindows11Opening-S01` — hanya Scene 01, **8 detik**.
-- `DebloatWindows11Opening-S02` — hanya Scene 02, **15,5 detik**.
-- `DebloatWindows11Opening-S03` — hanya Scene 03, **15 detik**.
-- `DebloatWindows11Opening-S04` — hanya Scene 04, **15 detik**.
 
-Semua komposisi: vertikal 1080×1920, 30 fps. Voice-over **belum tersedia**, dan dua berkas WAV hanyalah placeholder hening. Scene 05–06 **belum dibuat**.
+| ID komposisi | Isi | Durasi |
+| --- | --- | ---: |
+| `DebloatWindows11Opening` | S01 + S02 + S03 + S04 + S05 | 77 detik |
+| `DebloatWindows11Opening-S01` | Opening | 8 detik |
+| `DebloatWindows11Opening-S02` | Xbox / Bing Search / Copilot | 15,5 detik |
+| `DebloatWindows11Opening-S03` | Tong sampah / GitHub Stars | 15 detik |
+| `DebloatWindows11Opening-S04` | PowerShell / Progress Bar / WinUtil | 15 detik |
+| `DebloatWindows11Opening-S05` | Restore Point / Tweaks / AppX Removal | 23,5 detik |
 
-## Instalasi / upgrade tanpa mengubah Master
-1. Cadangkan folder `MotionGraphic-Studio/projects/debloat-windows11-opening` yang sudah ada, jika pernah diedit pada PC sendiri.
-2. Ekstrak ZIP sampai tampak **satu folder** `debloat-windows11-opening/` yang berisi `motiongraphic-video.json`.
-3. Salin folder itu sebagai **pengganti project yang sama** di `MotionGraphic-Studio/projects/`. Jangan salin isinya ke `src/` atau `public/` root master. Kalau sebelumnya tidak ada folder tersebut, cukup tambahkan.
-4. Dari root Master jalankan `npm run sync` (atau `npm run dev` bila Studio belum dibuka).
-5. Di sidebar Remotion Studio buka **Videos → Debloat Windows 11 → Scenes → 02 — Xbox, Bing Search, Copilot** untuk edit hanya Scene 02. Lihat menu **Full-Video** untuk gabungan.
+## Instalasi dan pembaruan
 
-**Jangan** mengubah `src/Root.tsx`, `src/index.ts`, `library/catalog.json`, atau `package.json` Master. `npm run sync` menghasilkan registrasi otomatis.
+1. Jika pernah mengedit folder `MotionGraphic-Studio/projects/debloat-windows11-opening/`, **cadangkan** versi tersebut sebelum menggantinya.
+2. Ekstrak ZIP hingga terlihat satu folder `debloat-windows11-opening/` yang di dalamnya ada `motiongraphic-video.json`.
+3. Salin **foldernya**, bukan isinya saja, ke `MotionGraphic-Studio/projects/`. Ganti folder Debloat lama; **jangan** menyalin file ke `src/` atau `public/` root Master.
+4. Dari root Master jalankan `npm run sync` (atau `npm run dev`). Tidak perlu mengubah registrasi master secara manual.
+5. Buka komposisi `DebloatWindows11Opening-S05` untuk mengedit khusus Scene 05, atau `DebloatWindows11Opening` untuk video gabungan.
 
-## Cerita Scene 02
-Narasi yang digunakan untuk mapping visual:
-> Gue sendiri jarang pakai Xbox, Bing Search, sama Copilot. Nah, daripada nggak kepakai, mending kita rapihin aja.
+## Scene 05 dan pengeditan
 
-- Xbox: ikon dari Scene 01 berkembang menjadi jendela Xbox.
-- Bing Search: jendela berganti ke simulasi Windows Search.
-- Copilot: panel Copilot dan contoh interaksinya.
-- Penutup: ketiganya disusun ke daftar review **Belum dihapus**, karena penghapusan baru dibahas pada scene tutorial berikutnya.
+**Voice-over Scene 05:** “Setelah terbuka, buat Restore Point dulu. Terus masuk ke Tweaks, pilih pengaturan yang dibutuhkan. Kalau mau hapus aplikasi bawaan, buka AppX Removal, lalu pilih aplikasi yang nggak dipakai.”
 
-Tampilan Windows/Xbox/Bing/Copilot adalah **rekonstruksi UI untuk storytelling**, bukan pengambilan layar/hasil aplikasi sebenarnya. Screenshot scene utuh tidak dipakai sebagai layer; ikon merupakan aset terpisah.
+Visual dan beat mengikuti preview yang disetujui:
+- 0–1,73s: WinUtil terbuka dari akhir Scene 04.
+- 1,73–8,9s: Tweaks → Create Restore Point → Run Tweaks → progress ilustratif.
+- 8,9–13,72s: pilih **hanya** satu contoh tweak, tidak memilih semua.
+- 13,72–23,5s: AppX Removal → pilih Xbox App dan Microsoft Copilot. **Tidak mengklik Remove Selected**.
 
-## Berkas penting
-- `src/Video.tsx` — scene gabungan, entry dan export `Video`.
-- `src/SegmentVideo.tsx` — tiap scene dapat dipreview/edit langsung dalam komposisi terpisah.
-- `src/scenes/OpeningScene.tsx` — Scene 01 lama, tidak diubah.
-- `src/scenes/Scene02.tsx` — Scene 02, kartu & subtitle editable.
-- `src/components/Scene02Panels.tsx` — UI simulasi Xbox, Windows Search dan Copilot sebagai elemen React yang terpisah.
-- `src/config/scene02.ts` — timing dan posisi dasar Scene 02.
-- `src/config/design.ts` — warna dan visual utama (sama dengan Scene 01).
-- `public/images/` — ikon per aplikasi, mandiri.
-- `public/audio/voiceover-scene02.wav` — placeholder 16 detik, **bukan VO asli**.
+**Yang editable:** heading, subtitle, label tombol dan tab, teks UI (via source; label penting memiliki layer Interactive), kotak centang, jendela WinUtil, progres, kursor, warna, posisi, jalur gerakan, dan timing. Lihat `SCENE-05-EDITABLE-LAYER-MAP.md` dan `PANDUAN-EDIT-ASSET.md`.
 
-Baca `PANDUAN-EDIT-ASSET.md`, `EDITABLE-LAYER-MAP.md`, `STORYBOARD.md`, dan `VALIDASI.md`.
+`src/scenes/Scene05.tsx` memuat judul dan subtitle literal dalam `Interactive.Div`, untuk editing teks via editor yang mendukung. `src/components/Scene05WinUtil.tsx` menyediakan UI sebagai layer React/HTML/SVG, bukan satu screenshot/video datar. `src/config/scene05.ts` memuat posisi, durasi, keyframe kursor, dan ambang transisi, sedangkan `src/animations/scene05.ts` mengatur easing. Pengeditan parameter dari source membutuhkan penyimpanan file; jangan menganggap semua layer React otomatis drag-and-drop pada Master.
 
-## UPDATE 2026-11-10 — Scene 03 (WinUtil → Tong Sampah → GitHub)
+## Audio
 
-Paket ini kini berisi **tiga scene** dalam **satu proyek** dengan ID/slug yang sama: `DebloatWindows11Opening` / `debloat-windows11-opening`. Scene 01 dan 02 berasal dari paket sebelumnya tanpa source scene diubah. Hanya komposisi dan manifest yang diperpanjang.
+`public/audio/voiceover-scene05.wav` adalah **placeholder 24 detik hening**, bukan VO asli. Rekam sesuai naskah, gantikan file dengan nama yang sama, lalu aktifkan Props `voiceEnabled=true`. Sesuaikan timing subtitle dan animasi dengan rekaman asli. Seluruh scene memakai default `voiceEnabled=false` karena belum ada VO.
 
-- Komposisi utama (setelah Scene 04): `DebloatWindows11Opening` — 53,5 detik (1605 frame).
-- Scene 01: `DebloatWindows11Opening-S01` — 8 detik / 240 frame.
-- Scene 02: `DebloatWindows11Opening-S02` — 15,5 detik / 465 frame.
-- Scene 03: `DebloatWindows11Opening-S03` — 15 detik / 450 frame.
+## Batasan dan keamanan
 
-**Scene 03 disusun dari HTML/CSS, SVG, dan layer Remotion**: tiga kartu aplikasi terpisah, body dan tutup tong sampah SVG, kartu browser GitHub, nama pemilik, direktori kode, ikon bintang, angka dan subtitle. Tidak ada video yang diflatten menjadi background.
+- UI WinUtil adalah **simulasi grafis** mengacu pada preview, tidak menjalankan perubahan Windows; detail dapat berbeda menurut versi WinUtil.
+- Progress bar pembuatan Restore Point bersifat ilustratif; bukan klaim output yang selalu sama.
+- Hanya aplikasi contoh Xbox App dan Copilot yang dipilih. Jangan menghapus komponen sistem/layanan sign-in tanpa memahami dampaknya.
+- Preview eksternal `preview-scene05-winutil-restore-tweaks-appx-v1.mp4` adalah **referensi visual**; bukan render sumber editable yang baru.
+- Uji registrasi, validasi aset, cek kontrak teks dan layout berhasil. Rendering Remotion, tes drag-and-drop/simpan/reload di Windows dan sinkronisasi VO asli **belum terverifikasi**. Lihat `VALIDASI.md`.
 
-Suara Scene 03 adalah placeholder **hening** (`public/audio/voiceover-scene03.wav`). Preview yang disetujui sebelumnya adalah **referensi** (`preview-scene03-tong-sampah-github-v8.mp4`), belum render sumber Remotion ini.
+Dokumentasi UI: https://winutil.christitus.com/guides/getting-started/ dan https://github.com/ChrisTitusTech/winutil.
 
-Aset dan SVG GitHub: GitHub logo based on Font Awesome Free brand icon (Fonticons; Font Awesome license in original repository). Untuk proyek ini diubah menjadi `public/icons/github.svg`, dan saat sync diakses sebagai `videos/debloat-windows11-opening/icons/github.svg`.
 
-## UPDATE 2026-11-10 — Scene 04 PowerShell + Windows 11 Bloom + Progress Bar
+---
 
-- Project tetap `DebloatWindows11Opening`, folder tetap `debloat-windows11-opening`.
-- Komposisi utama menjadi **53,5 detik (1605 frame)** dengan empat scene.
-- Scene 04: `DebloatWindows11Opening-S04` — **15 detik (450 frame)**.
-- Scene 01–03 diambil dari ZIP editable sebelumnya, source komponen/scenenya **tidak diubah**.
-- Scene 04 adalah reproduksi **UI HTML/SVG/CSS dan aset wallpaper independen**, bukan video hasil render yang ditempel di background. Windows Search, dialog UAC, terminal, satu-baris command, progress bar, kursor, dan WinUtil adalah komponen terpisah.
-- Audio S04: `public/audio/voiceover-scene04.wav` adalah placeholder **hening**, bukan rekaman VO.
+## Update Scene 06 — Penutup dan CTA final (11 November 2026)
 
-### Edit Scene 04
+Paket terbaru menambahkan **Scene 06 + CTA** pada **proyek yang sama**; ID/slug tetap `DebloatWindows11Opening` / `debloat-windows11-opening`.
 
-1. Instalasi: ekstrak seluruh folder `debloat-windows11-opening` dari ZIP dan salin **folder utuh** ke `MotionGraphic-Studio/projects/`. Cadangkan folder lama bila telah dimodifikasi.
-2. Dari root Master, jalankan `npm run sync` / `npm run dev`.
-3. Buka `DebloatWindows11Opening-S04` untuk mengedit Scene 04 saja. Komposisi `DebloatWindows11Opening` menampilkan keempat scene.
-4. **Ganti teks melalui layer langsung** `S04 — ...` di Studio jika fitur `Interactive` Master berjalan, terutama `S04 — PERINTAH SATU BARIS (edit teks di sini)`. Timeline dan lintasan dapat diubah di `src/config/scene04.ts`.
-5. **Ganti background** dengan file PNG bernama `public/images/windows11-bloom-scene04.png` atau ubah path di `src/components/Scene04Windows.tsx`.
-6. **Audio:** ganti `public/audio/voiceover-scene04.wav` dengan rekaman WAV final, lalu aktifkan `voiceEnabled` pada Props. Timing subtitle masih perkiraan, cocokkan dengan rekaman baru.
+- Gabungan S01–S06: **2827 frame / 94,23 detik** pada 30 FPS.
+- S06: **517 frame / 17,23 detik**; mulai pada frame **2310**.
+- Komposisi preview tersendiri: `DebloatWindows11Opening-S06`.
+- Scene S01–S05 bersumber dari ZIP sebelumnya dan tidak dimodifikasi, kecuali registrasi lewat `src/Video.tsx`, `src/SegmentVideo.tsx`, dan manifest.
 
-### Menampilkan perintah secara benar
+**VO final S06:** “Tapi jangan asal hapus semuanya, ya. Selesai! Restart kalau diperlukan. Menurut kamu, debloat Windows perlu nggak sih? Coba tulis di kolom komentar!”
 
-`irm https://christitus.com/win | iex` tetap satu baris; gunakan **Windows PowerShell sebagai Administrator**, bukan CMD. Perintah menjalankan skrip jarak jauh dengan hak tinggi, sehingga hanya gunakan setelah memverifikasi sumber serta memahami risikonya. Rujukan sumber: https://github.com/ChrisTitusTech/winutil
+**Visual:** WinUtil/AppX selektif → proses ilustratif → Windows 11 Power > Restart (tidak diklik) → animasi tipografi dan kartu *PERLU / NGGAK* yang menyatu menjadi bubble komentar. Bagian CTA **tidak memakai simulasi Windows atau kolom komentar palsu**.
 
-Progress bar yang muncul setelah Enter merupakan **ilustrasi proses loading**, bukan klaim output CLI WinUtil. Antarmuka UAC/PowerShell/WinUtil adalah rekonstruksi visual, bukan bukti rekaman Windows 11 sungguhan. Baca `SCENE-04-EDITABLE-LAYER-MAP.md` dan `VALIDASI.md` untuk detail.
+**File baru:** `src/scenes/Scene06.tsx`, `src/components/Scene06Windows.tsx`, `src/components/Scene06CTA.tsx`, `src/components/Scene06Pointer.tsx`, `src/config/scene06.ts`, `src/animations/scene06.ts`, dan `public/audio/voiceover-scene06.wav` (hening sementara).
+
+Cara menggunakan: ganti hanya **folder proyek Debloat** lama dengan folder utuh dari ZIP terbaru di `MotionGraphic-Studio/projects/`, lalu jalankan `npm run sync` atau `npm run dev`. Folder proyek lain tidak ikut dimasukkan ke ZIP.
+
+Untuk nama layer, timing, pengeditan, dan batasan hasil uji, lihat `SCENE-06-EDITABLE-LAYER-MAP.md` dan bagian akhir `VALIDASI.md`.
