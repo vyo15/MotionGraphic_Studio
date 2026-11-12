@@ -1,42 +1,33 @@
-# Scene 05 — Map layer dan alur edit
+# Scene 05 — Peta Layer Editable (Patch Smooth v5)
 
-ID `DebloatWindows11Opening-S05` • 705 frame • 23,5 detik • 1080×1920 • 30fps.
+Komposisi: `DebloatWindows11Opening-S05` — **630 frame / 21 detik / 30 fps**.
 
-| Layer | Letak source | Yang dapat diganti |
+## Urutan berdasarkan VO terbaru
+
+| Waktu visual perkiraan | Voice-over | Tindakan UI |
 |---|---|---|
-| `S05 — Label SCENE 05 WINUTIL` | `src/scenes/Scene05.tsx` | Teks, font, warna, posisi |
-| `S05 — Judul ...` | `src/scenes/Scene05.tsx` | Teks judul berdasarkan fase, ukuran, warna |
-| `S05 — Helper ...` | `src/scenes/Scene05.tsx` | Teks pendukung masing-masing fase |
-| `S05 — Subtitle ...` | `src/scenes/Scene05.tsx` | Teks per penggalan VO |
-| `S05 — Jendela WinUtil` | `src/components/Scene05WinUtil.tsx` | Ukuran, posisi, warna, radius, shadow |
-| `S05 — Bilah judul WinUtil` | `src/components/Scene05WinUtil.tsx` | Warna, logo, nama program |
-| `S05 — Tab Install/Tweaks/Config/Updates/MicroWin` | `src/components/Scene05WinUtil.tsx` | Label/nama tab, warna aktif, layout |
-| `S05 — Baris Tweak...` | `src/components/Scene05WinUtil.tsx` | Teks pilihan, kotak centang, highlight |
-| `S05 — Tombol Run Tweaks` | `src/components/Scene05WinUtil.tsx` | Teks, posisi, status sorot |
-| `S05 — Progress bar Restore Point` | `src/components/Scene05WinUtil.tsx` | Warna, progres, durasi |
-| `S05 — Status Restore Point ...` | `src/components/Scene05WinUtil.tsx` | Teks status simulasi |
-| `S05 — AppX Search Bar` | `src/components/Scene05WinUtil.tsx` | Posisi, placeholder, warna |
-| `S05 — Baris AppX Xbox App` | `src/components/Scene05WinUtil.tsx` | Item, checkbox, waktu centang |
-| `S05 — Baris AppX Microsoft Copilot` | `src/components/Scene05WinUtil.tsx` | Item, checkbox, waktu centang |
-| `S05 — Baris AppX Feedback Hub` | `src/components/Scene05WinUtil.tsx` | Item; tidak dicentang |
-| `S05 — Baris AppX Xbox Identity Provider` | `src/components/Scene05WinUtil.tsx` | Item; **tidak dicentang** |
-| `S05 — Tombol Remove Selected` | `src/components/Scene05WinUtil.tsx` | Teks, status; **tidak diklik** |
-| `S05 — Kursor mouse` | `src/components/Scene05Cursor.tsx`, `src/config/scene05.ts` | X/Y transform, lintasan, klik |
-| VO Scene 05 | `public/audio/voiceover-scene05.wav` | Ganti audio asli per scene |
+| 0–3,0 dtk | Begitu WinUtil terbuka, masuk ke tab Tweaks. | Kursor menuju tab Tweaks; klik ±1,27 dtk |
+| 3,0–8,05 dtk | Centang Create Restore Point, lalu klik Run Tweaks. | Centang ±3,73; klik Run Tweaks ±5,28; proses sampai ±7,60 |
+| 8,05–10,65 dtk | Setelah itu, buka AppX Removal. | Kursor menuju AppX; klik ±9,11 |
+| 10,65–15,4 dtk | Pilih aplikasi yang nggak kepakai, misalnya Xbox atau Copilot. | Pilih Xbox ±11,47 dan Copilot ±12,65 |
+| 15,4–21 dtk | Kalau udah yakin, klik Remove Selected. | Klik ±15,60; proses ilustratif sampai ±20,40 |
 
-### Timing relatif Scene 05
+Waktu ini acuan visual tanpa VO asli. Jika rekaman dimasukkan, sesuaikan onset visual mengikuti audio.
 
-| Detik | Tindakan |
-|---|---|
-| 0–1,73 | Jendela WinUtil tab Install |
-| 1,73 | Klik tab Tweaks |
-| 3,70 | Centang Create Restore Point |
-| 5,56 | Klik Run Tweaks |
-| 5,85–8,00 | Indikator progres simulasi |
-| 8,90–13,72 | Kembali memilih tweak sesuai kebutuhan |
-| 13,72 | Buka AppX Removal |
-| 16,15 | Centang Xbox App |
-| 18,15 | Centang Microsoft Copilot |
-| 18,15–23,5 | Tahan tampilan dua item terpilih |
+## File revisi
 
-**Layer terpisah** artinya bisa dimodifikasi secara independen lewat source/fitur Interactive ketika didukung. Ini **tidak** berarti otomatis semua React wrapper draggable/resizeable lewat browser. Seluruh UI hanyalah simulasi video, bukan tindakan pada komputer.
+- `src/scenes/Scene05.tsx`: heading dan subtitle teks literal `Interactive.Div` per beat.
+- `src/config/scene05.ts`: teks referensi, posisi, klik, path kursor, durasi, dan timing.
+- `src/animations/scene05.ts`: interpolasi easing dan lintasan melengkung deterministik.
+- `src/components/Scene05Cursor.tsx`: kursor editable + respons klik.
+- `src/components/Scene05WinUtil.tsx`: state UI, checkbox, Remove Selected, dan progress bawah.
+- `src/Video.tsx`: durasi scene 05 menjadi 630 frame; source Scene 01–04 dan 06 tidak diubah.
+- `motiongraphic-video.json`: segmen 05 jadi 630 frame, start segmen 06 jadi 2235, total 2752 frame.
+
+## Cara mengedit
+
+Edit teks dengan memilih layer bertanda `S05 — ...` di Remotion Studio yang mendukung `Interactive.Div`. Atau ubah literal teks pada `Scene05.tsx`.
+
+Untuk mengubah jalur kursor, edit `cursorKeyframes`, `clickTimes` dan `time` dalam `src/config/scene05.ts`. Jangan ubah titik klik saja tanpa menggeser state antarmuka terkait.
+
+Semua visual tetap berupa React/HTML/SVG per layer; audio VO sebelumnya masih placeholder. Tampilan WinUtil, proses restore dan remove hanyalah simulasi demonstrasi, bukan eksekusi nyata.

@@ -10,7 +10,7 @@ const cards: Focus[] = [
   {name:'Xbox',x:108,order:0}, {name:'Bing Search',x:427,order:1}, {name:'Copilot',x:746,order:2},
 ];
 
-const FocusCard: React.FC<{card:Focus;f:number;fps:number}> = ({card,f,fps}) => {
+const FocusCardInner: React.FC<{card:Focus;f:number;fps:number;style?:React.CSSProperties}> = ({card,f,fps,style}) => {
   const s=f/fps;
   const enter = pop(f,fps,5.04+card.order*.12);
   const focus=rise(s, ...TIMING.selectedCard);
@@ -21,30 +21,36 @@ const FocusCard: React.FC<{card:Focus;f:number;fps:number}> = ({card,f,fps}) => 
   const exitOpacity=active ? 1 : fadeOut(s,6.65,7.35);
   return <div style={{position:'absolute',left:card.x,top:1029,width:226,height:213,
     opacity:Math.min(1,Math.max(0,enter))*exitOpacity,
-    transform:`translate(${xToCenter}px,${mix(90,0,enter)+yToFocus}px) scale(${mix(.82,1,enter)*shrink})`}}>
-    <Interactive.Div name={`S01 — Kartu Fokus ${card.name}`} style={{position:'absolute',left:0,top:0,
+    transform:`translate(${xToCenter}px,${mix(90,0,enter)+yToFocus}px) scale(${mix(.82,1,enter)*shrink})`,...style}}>
+    <Interactive.Div name={`S01 — Kartu Fokus ${card.name}`} style={{pointerEvents:'auto',position:'absolute',left:0,top:0,
       width:226,height:213,background:'#FFFFFF',border:'1px solid #E6E4E0',borderRadius:22,
       boxShadow:DESIGN.shadow,translate:'0px 0px',scale:1,rotate:'0deg'}}/>
-    <Interactive.Div name={`S01 — Icon Fokus ${card.name}`} style={{position:'absolute',top:36,left:75,
+    <Interactive.Div name={`S01 — Icon Fokus ${card.name}`} style={{pointerEvents:'auto',position:'absolute',top:36,left:75,
       width:76,height:76,translate:'0px 0px',scale:1,rotate:'0deg'}}>
       <AppIcon app={card.name} size={76}/>
     </Interactive.Div>
-    {card.name === 'Xbox' ? <Interactive.Div name="S01 — Nama Fokus Xbox" style={{
+    {card.name === 'Xbox' ? <Interactive.Div name="S01 — Nama Fokus Xbox" style={{pointerEvents:'auto',
       position:'absolute',top:145,left:0,width:226,textAlign:'center',fontSize:24,fontWeight:600,color:'#373737',
       translate:'0px 0px',scale:1,rotate:'0deg',
-    }}>Xbox</Interactive.Div> : card.name === 'Copilot' ? <Interactive.Div name="S01 — Nama Fokus Copilot" style={{
+    }}>Xbox</Interactive.Div> : card.name === 'Copilot' ? <Interactive.Div name="S01 — Nama Fokus Copilot" style={{pointerEvents:'auto',
       position:'absolute',top:145,left:0,width:226,textAlign:'center',fontSize:24,fontWeight:600,color:'#373737',
       translate:'0px 0px',scale:1,rotate:'0deg',
-    }}>Copilot</Interactive.Div> : <Interactive.Div name="S01 — Nama Fokus Bing Search" style={{
+    }}>Copilot</Interactive.Div> : <Interactive.Div name="S01 — Nama Fokus Bing Search" style={{pointerEvents:'auto',
       position:'absolute',top:145,left:0,width:226,textAlign:'center',fontSize:24,fontWeight:600,color:'#373737',
       translate:'0px 0px',scale:1,rotate:'0deg',
     }}>Bing Search</Interactive.Div>}
   </div>;
 };
 
+const FocusCard=Interactive.create({Component:FocusCardInner});
+
 /** Kartu adalah layer mandiri; tidak menjadi screenshot Start Menu. */
 export const FocusCards: React.FC = () => {
   const f=useCurrentFrame(),{fps}=useVideoConfig();
   if(f/fps<5.0)return null;
-  return <>{cards.map(card=><FocusCard key={card.name} card={card} f={f} fps={fps}/>)}</>;
+  return <>
+    <FocusCard name="S01 — Kartu Fokus Xbox" card={cards[0]} f={f} fps={fps}/>
+    <FocusCard name="S01 — Kartu Fokus Bing Search" card={cards[1]} f={f} fps={fps}/>
+    <FocusCard name="S01 — Kartu Fokus Copilot" card={cards[2]} f={f} fps={fps}/>
+  </>;
 };

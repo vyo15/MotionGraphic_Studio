@@ -14,7 +14,7 @@ export const SCENE06 = {
     cta: {start: 8.72, fullyVisible: 9.35},
   },
   canvas: {
-    desktop: {x: 70, y: 530, width: 940, height: 970},
+    desktop: {x: 80, y: 498, width: 920, height: 1064},
     header: {x: 80, y: 246},
     headline: {x: 100, y: 342, width: 880},
     subtitles: {x: 115, y: 1510, width: 850, height: 78},
@@ -37,18 +37,17 @@ export const SCENE06 = {
   cursor: {
     // Animasi tangan/kursor berangkat dari titik mouse di akhir Scene 05.
     keyframes: [
-      {s: 0.00, x: 788, y: 1405},
-      {s: 1.10, x: 772, y: 1393},
-      {s: 1.60, x: 240, y: 1347}, // tunjukkan opsi yang tidak dipilih
-      {s: 2.50, x: 244, y: 1347},
-      {s: 3.38, x: 782, y: 1408}, // kembali ke Remove Selected
-      {s: 3.98, x: 792, y: 1411},
-      {s: 5.60, x: 792, y: 1411},
-      {s: 6.33, x: 756, y: 1380},
-      {s: 7.40, x: 668, y: 1310}, // hover opsi restart, tidak dieksekusi
-      {s: 8.47, x: 668, y: 1310},
+      {s: 0.00, x: 825, y: 1381}, // sama dengan akhir klik Scene 05
+      {s: 0.75, x: 825, y: 1381},
+      {s: 1.52, x: 179, y: 1193}, // sorot aplikasi yang tidak dipilih, TANPA klik
+      {s: 3.25, x: 179, y: 1193},
+      {s: 3.80, x: 825, y: 1381}, // kembali ke hasil penghapusan
+      {s: 5.60, x: 825, y: 1381},
+      {s: 6.35, x: 760, y: 1350},
+      {s: 7.42, x: 637, y: 1240}, // hover Restart, tidak diklik
+      {s: 8.47, x: 637, y: 1240},
     ],
-    clickTimes: [4.08], // klik simulasi Remove Selected, bukan klik Restart
+    clickTimes: [], // Scene 05 telah klik Remove Selected; jangan diulang.
   },
   // Visual onset ditautkan pada unit makna VO; sesuaikan saat WAV asli masuk.
   subtitleBeats: [

@@ -8,7 +8,7 @@
       "width": 1080,
       "height": 1920,
       "fps": 30,
-      "durationInFrames": 2827,
+      "durationInFrames": 2752,
       "assetPrefix": "videos/debloat-windows11-opening",
       "source": "projects/debloat-windows11-opening/src/Video.tsx",
       "projectDir": "projects/debloat-windows11-opening",
@@ -48,12 +48,12 @@
           "id": "DebloatWindows11Opening-S05",
           "title": "05 — Restore Point, Tweaks, AppX Removal",
           "startFrame": 1605,
-          "durationInFrames": 705
+          "durationInFrames": 630
         },
         {
           "id": "DebloatWindows11Opening-S06",
           "title": "06 — Penutup, Restart, CTA Perlu / Nggak",
-          "startFrame": 2310,
+          "startFrame": 2235,
           "durationInFrames": 517
         }
       ]

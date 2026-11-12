@@ -6,7 +6,7 @@ export const SCENE04 = {
   // supaya bisa diedit di Studio. Timing/koordinat dikontrol dari konfigurasi ini.
   timing: {
     introEnd: 0.58,
-    searchOpen: 1.15,
+    searchOpen: 1.47,
     searchTypeStart: 1.73,
     searchTypeEnd: 2.63,
     adminHighlight: 3.35,
@@ -39,11 +39,12 @@ export const SCENE04 = {
   cursorKeyframes: [
     {s: 0.00, x: 836, y: 1424},
     {s: 1.20, x: 488, y: 1526},
-    {s: 1.55, x: 452, y: 1520},
+    {s: 1.35, x: 508, y: 1520},
+    {s: 1.62, x: 508, y: 1520},
     {s: 2.70, x: 558, y: 1072},
-    {s: 3.30, x: 728, y: 1154},
-    {s: 4.19, x: 726, y: 1166},
-    {s: 4.65, x: 724, y: 1166},
+    {s: 3.30, x: 728, y: 1100},
+    {s: 4.19, x: 726, y: 1100},
+    {s: 4.65, x: 724, y: 1100},
     {s: 5.18, x: 610, y: 1236},
     {s: 5.55, x: 614, y: 1236},
     {s: 7.10, x: 600, y: 1370},

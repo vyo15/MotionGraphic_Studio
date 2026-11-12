@@ -18,7 +18,7 @@ const SCENE01_FRAMES=240;
 const SCENE02_FRAMES=465;
 const SCENE03_FRAMES=450;
 const SCENE04_FRAMES=450;
-const SCENE05_FRAMES=705;
+const SCENE05_FRAMES=630;
 const SCENE06_FRAMES=517;
 const PREFIX='videos/debloat-windows11-opening/audio/';
 
