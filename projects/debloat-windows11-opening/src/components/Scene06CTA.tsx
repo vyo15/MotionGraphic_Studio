@@ -15,15 +15,18 @@ export const Scene06CTA:React.FC<{seconds:number;showGrid:boolean}>=({seconds,sh
   const logoUp=reveal(t,1.00,1.02);
   const logoSize=.26+.74*easeOut((t-.1)/.9);
   const titleA=reveal(t,1.63,.55),titleB=reveal(t,1.83,.62),question=reveal(t,2.62,.65);
-  const optionIn=reveal(t,3.05,.75),optionOut=reveal(t,5.2,.60),bubbleIn=reveal(t,5.44,.76);
+  // Balasan komentar: masuk bergantian, mendekat, lalu menyatu menjadi satu bubble.
+  const replyPerluIn=reveal(t,3.05,.47);
+  const replyNggakIn=reveal(t,3.32,.47);
+  const repliesGather=reveal(t,5.09,.63);
+  const repliesOut=reveal(t,5.40,.48);
+  const bubbleIn=reveal(t,5.48,.66);
   const footer1=reveal(t,6.33,.7),footer2=reveal(t,6.74,.65),line=reveal(t,7.13,.45);
   const shiftY=SCENE06.canvas.ctaLogo.y+(448-SCENE06.canvas.ctaLogo.y)*logoUp;
   return <div style={{position:'absolute',inset:0,opacity:on,fontFamily:FONT,pointerEvents:'none',overflow:'hidden'}}>
     <Interactive.Div name="S06 — Background off-white / warna" style={{pointerEvents:'auto',position:'absolute',inset:0,background:C.bg,translate:'0px 0px',scale:1,rotate:'0deg'}}/>
     {showGrid?<div style={{position:'absolute',inset:0,backgroundImage:'linear-gradient(to right,rgba(165,160,150,.045) 1px,transparent 1px), linear-gradient(to bottom,rgba(165,160,150,.045) 1px,transparent 1px)',backgroundSize:'56px 56px'}}/>:null}
     <div style={{position:'absolute',left:80,top:234,display:'flex',alignItems:'center',gap:21}}>
-      <Interactive.Div name="S06 — Aksen coral brand" style={{pointerEvents:'auto',width:38,height:5,borderRadius:10,background:C.accent,translate:'0px 0px',scale:1,rotate:'0deg'}}/>
-      <Interactive.Div name="S06 — Label DEBLOAT WINDOWS 11" style={{pointerEvents:'auto',fontSize:20,fontWeight:680,letterSpacing:'.8px',color:C.muted,translate:'0px 0px',scale:1,rotate:'0deg'}}>DEBLOAT WINDOWS 11</Interactive.Div>
     </div>
     {/* Windows mark travels upward as the question is built. Four tiles remain separate editable layers. */}
     <div style={{position:'absolute',left:540,top:shiftY,transform:`translate(-50%,-50%) scale(${logoSize})`,opacity:logoIn,width:88,height:88}}>
@@ -40,16 +43,36 @@ export const Scene06CTA:React.FC<{seconds:number;showGrid:boolean}>=({seconds,sh
       <div style={{opacity:titleB,transform:`translateY(${20*(1-titleB)}px)`}}><Interactive.Div name="S06 — WINDOWS" style={{pointerEvents:'auto',fontSize:108,fontWeight:820,lineHeight:1.05,letterSpacing:'-3px',color:C.ink,translate:'0px 0px',scale:1,rotate:'0deg'}}>WINDOWS</Interactive.Div></div>
       <div style={{opacity:question,transform:`translateY(${18*(1-question)}px)`,marginTop:19}}><Interactive.Div name="S06 — PERLU NGGAK SIH?" style={{pointerEvents:'auto',fontSize:45,fontWeight:730,color:C.accent,letterSpacing:'-.5px',translate:'0px 0px',scale:1,rotate:'0deg'}}>PERLU NGGAK SIH?</Interactive.Div></div>
     </div>
-    {/* Two alternatives converge into the comment visual: no actual choice is made. */}
-    {optionIn>0&&optionOut<1?<div style={{position:'absolute',left:0,top:0,right:0,bottom:0,opacity:optionIn*(1-optionOut)}}>
-      <Interactive.Div name="S06 — Pilihan PERLU / posisi" style={{pointerEvents:'auto',position:'absolute',left:124+(216-124)*optionOut-215*(1-easeOut((t-3.05)/.68)),top:1166+26*optionOut,width:392,height:160,background:'#FFFFFF',border:`1px solid ${C.stroke}`,borderRadius:25,boxShadow:'0 15px 38px rgba(43,39,32,.075)',display:'flex',alignItems:'center',gap:18,padding:'0 30px',boxSizing:'border-box',translate:'0px 0px',scale:1,rotate:'0deg'}}>
-        <div style={{width:49,height:49,borderRadius:99,display:'grid',placeItems:'center',background:C.accentSoft,color:C.accent,fontSize:30,fontWeight:700}}>?</div>
-        <Interactive.Div name="S06 — PERLU" style={{pointerEvents:'auto',fontSize:35,fontWeight:710,color:C.ink,whiteSpace:'nowrap',translate:'0px 0px',scale:1,rotate:'0deg'}}>PERLU</Interactive.Div>
-      </Interactive.Div>
-      <Interactive.Div name="S06 — Pilihan NGGAK / posisi" style={{pointerEvents:'auto',position:'absolute',left:568-(216*optionOut)+214*(1-easeOut((t-3.17)/.67)),top:1166+26*optionOut,width:392,height:160,background:'#FFFFFF',border:`1px solid ${C.stroke}`,borderRadius:25,boxShadow:'0 15px 38px rgba(43,39,32,.075)',display:'flex',alignItems:'center',gap:18,padding:'0 30px',boxSizing:'border-box',translate:'0px 0px',scale:1,rotate:'0deg'}}>
-        <div style={{width:49,height:49,borderRadius:99,display:'grid',placeItems:'center',background:'#F1F0ED',color:'#90918D',fontSize:30,fontWeight:700}}>?</div>
-        <Interactive.Div name="S06 — NGGAK" style={{pointerEvents:'auto',fontSize:35,fontWeight:710,color:C.ink,whiteSpace:'nowrap',translate:'0px 0px',scale:1,rotate:'0deg'}}>NGGAK</Interactive.Div>
-      </Interactive.Div>
+    {/* CTA only: dua balasan komentar masuk natural dan menyatu; bagian atas dan footer tidak berubah. */}
+    {replyPerluIn>0&&repliesOut<1?<div style={{
+      position:'absolute',
+      left:124-230*(1-easeOut((t-3.05)/.46))+197*repliesGather,
+      top:1166+45*repliesGather,
+      opacity:replyPerluIn*(1-repliesOut),
+      transform:`scale(${1-.28*repliesGather})`,
+      transformOrigin:'center center',
+      pointerEvents:'none',
+    }}>
+      <Interactive.Div name="S06 — Ekor komentar PERLU" style={{pointerEvents:'auto',position:'absolute',left:268,top:138,width:39,height:39,background:'#FFFFFF',borderRight:`1px solid ${C.stroke}`,borderBottom:`1px solid ${C.stroke}`,boxShadow:'5px 5px 10px rgba(43,39,32,.045)',translate:'0px 0px',scale:1,rotate:'45deg'}}/>
+      <Interactive.Div name="S06 — Pilihan PERLU / posisi" style={{pointerEvents:'auto',position:'relative',width:392,height:160,background:'#FFFFFF',border:`1px solid ${C.stroke}`,borderRadius:28,boxShadow:'0 15px 36px rgba(43,39,32,.08)',translate:'0px 0px',scale:1,rotate:'0deg'}}/>
+      <Interactive.Div name="S06 — Ikon komentar PERLU" style={{pointerEvents:'auto',position:'absolute',left:37,top:47,width:66,height:66,borderRadius:99,background:C.accentSoft,translate:'0px 0px',scale:1,rotate:'0deg'}}/>
+      <Interactive.Div name="S06 — Tiga titik PERLU" style={{pointerEvents:'auto',position:'absolute',left:48,top:66,width:46,height:27,fontSize:31,lineHeight:'27px',textAlign:'center',letterSpacing:'1px',fontWeight:800,color:C.accent,translate:'0px 0px',scale:1,rotate:'0deg'}}>•••</Interactive.Div>
+      <Interactive.Div name="S06 — PERLU" style={{pointerEvents:'auto',position:'absolute',left:126,top:59,fontSize:35,fontWeight:710,color:C.ink,whiteSpace:'nowrap',translate:'0px 0px',scale:1,rotate:'0deg'}}>PERLU</Interactive.Div>
+    </div>:null}
+    {replyNggakIn>0&&repliesOut<1?<div style={{
+      position:'absolute',
+      left:568+230*(1-easeOut((t-3.32)/.46))-225*repliesGather,
+      top:1166+45*repliesGather,
+      opacity:replyNggakIn*(1-repliesOut),
+      transform:`scale(${1-.28*repliesGather})`,
+      transformOrigin:'center center',
+      pointerEvents:'none',
+    }}>
+      <Interactive.Div name="S06 — Ekor komentar NGGAK" style={{pointerEvents:'auto',position:'absolute',left:76,top:138,width:39,height:39,background:'#FFFFFF',borderRight:`1px solid ${C.stroke}`,borderBottom:`1px solid ${C.stroke}`,boxShadow:'5px 5px 10px rgba(43,39,32,.045)',translate:'0px 0px',scale:1,rotate:'45deg'}}/>
+      <Interactive.Div name="S06 — Pilihan NGGAK / posisi" style={{pointerEvents:'auto',position:'relative',width:392,height:160,background:'#FFFFFF',border:`1px solid ${C.stroke}`,borderRadius:28,boxShadow:'0 15px 36px rgba(43,39,32,.08)',translate:'0px 0px',scale:1,rotate:'0deg'}}/>
+      <Interactive.Div name="S06 — Ikon komentar NGGAK" style={{pointerEvents:'auto',position:'absolute',left:37,top:47,width:66,height:66,borderRadius:99,background:'#F1F0ED',translate:'0px 0px',scale:1,rotate:'0deg'}}/>
+      <Interactive.Div name="S06 — Tiga titik NGGAK" style={{pointerEvents:'auto',position:'absolute',left:48,top:66,width:46,height:27,fontSize:31,lineHeight:'27px',textAlign:'center',letterSpacing:'1px',fontWeight:800,color:'#929490',translate:'0px 0px',scale:1,rotate:'0deg'}}>•••</Interactive.Div>
+      <Interactive.Div name="S06 — NGGAK" style={{pointerEvents:'auto',position:'absolute',left:126,top:59,fontSize:35,fontWeight:710,color:C.ink,whiteSpace:'nowrap',translate:'0px 0px',scale:1,rotate:'0deg'}}>NGGAK</Interactive.Div>
     </div>:null}
     {bubbleIn>0?<div style={{position:'absolute',left:540,top:1220,transform:`translate(-50%,-50%) scale(${.76+.24*easeOut((t-5.44)/.74)})`,opacity:bubbleIn}}>
       <Interactive.Div name="S06 — Bubble komentar / posisi / ukuran" style={{pointerEvents:'auto',position:'relative',width:320,height:203,translate:'0px 0px',scale:1,rotate:'0deg'}}>

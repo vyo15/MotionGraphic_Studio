@@ -17,7 +17,6 @@ const h=(s:number,a:number,b:number):React.CSSProperties=>({
 // Animasi opacity/posisi tetap pada wrapper h() dan captionWrap().
 
 const Titles:React.FC<{s:number}>=({s})=><>
-  <Interactive.Div name="S05 — Label WINUTIL" style={{pointerEvents:'auto',position:'absolute',left:80,top:245,padding:'14px 24px',fontSize:22,fontWeight:650,letterSpacing:'.4px',color:'#6B6D6D',background:'#F0EEEB',borderRadius:20,translate:'0px 0px',scale:1,rotate:'0deg'}}>SCENE 05 / WINUTIL</Interactive.Div>
   <div style={h(s,0,3)}>
     <Interactive.Div name="S05 — Judul 01 BUKA TAB TWEAKS" style={{fontSize:49,fontWeight:790,color:'#232322',pointerEvents:'auto',translate:'0px 0px',scale:1,rotate:'0deg'}}>BUKA TAB TWEAKS</Interactive.Div>
   </div>

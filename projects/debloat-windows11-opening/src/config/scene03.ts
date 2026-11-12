@@ -16,9 +16,14 @@ export const SCENE03 = {
     githubTransitionEnd: 7.35,
     repoFilesStart: 7.4,
     openSourceStart: 8.55,
-    starIconStart: 9.6,
-    starLabelStart: 10.3,
+    // Perkiraan timing dari NASKAH, bukan wave alignment (WAV VO masih hening).
+    // "open-source" pada ~8.55s, "udah punya" ~10.4s,
+    // "lebih dari 65 ribu" ~11.2–13s, "stars di GitHub" setelahnya.
+    starIconStart: 10.35,
+    starLabelStart: 10.45,
     starNumberStart: 11.15,
+    starCountEnd: 13.05,
+    starFinalNumber: 65000,
     quickStartHold: 13.65,
   },
   positions: {

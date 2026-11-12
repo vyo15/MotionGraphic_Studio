@@ -12,11 +12,11 @@ const WinLogo:React.FC<{size?:number}> = ({size=25}) => <svg width={size} height
 </svg>;
 
 const DesktopIcon:React.FC<{name:string;type:'bin'|'edge';top:number}> = ({name,type,top}) => <div style={{position:'absolute',left:31,top,width:103,textAlign:'center',color:'#FDFEFF',fontSize:18,textShadow:'0px 1px 3px #23365E',display:'grid',justifyItems:'center',gap:7}}>
-  <Interactive.Div name={`S06 — Desktop Icon ${name}`} style={{pointerEvents:'auto',width:60,height:58,display:'grid',placeItems:'center',background:'rgba(255,255,255,.76)',borderRadius:12,translate:'0px 0px',scale:1,rotate:'0deg'}}>
-    {type==='bin'?<svg width="40" height="43" viewBox="0 0 40 43"><rect x="10" y="11" width="21" height="28" rx="3" stroke="#8995A1" strokeWidth="2" fill="#D6E0E5"/><path d="M7 10h27M14 6h13" stroke="#5D7A90" strokeWidth="3" strokeLinecap="round"/><path d="M16 17v16M25 17v16" stroke="#7897A5" strokeWidth="2"/></svg>:
+  <Interactive.Div name={`S06 — Desktop Icon ${name}`} style={{pointerEvents:'auto',width:60,height:58,display:'grid',placeItems:'center',background:type==='bin'?'transparent':'rgba(255,255,255,.76)',borderRadius:12,translate:'0px 0px',scale:1,rotate:'0deg'}}>
+    {type==='bin'?<svg width="49" height="48" viewBox="0 0 50 50" aria-label="Recycle Bin"><rect x="10" y="13" width="30" height="31" rx="4" fill="#F6F8FD" opacity=".91"/><path d="M8 12H42M18 7H32M20 20V36M30 20V36" stroke="#5D9CBC" strokeWidth="2.5" strokeLinecap="round"/></svg>:
     <svg width="42" height="42" viewBox="0 0 42 42"><circle cx="21" cy="21" r="18" fill="#1598BF"/><path d="M2 25c7 9 16 10 33 1-9 16-31 15-33-1z" fill="#34C4BD"/><path d="M15 3C27-1 38 9 39 22 29 12 21 14 15 21c-5 7-3 17 6 19C6 39-1 21 6 11c2-4 5-7 9-8z" fill="#246BD0"/></svg>}
   </Interactive.Div>
-  <Interactive.Div name={`S06 — Label desktop ${name}`} style={{pointerEvents:'auto',fontSize:17,color:'#fff',textShadow:'0 1px 4px #2E4364',translate:'0px 0px',scale:1,rotate:'0deg'}}>{name}</Interactive.Div>
+  <Interactive.Div name={`S06 — Label desktop ${name}`} style={{pointerEvents:'auto',fontSize:type==='bin'?18:17,color:'#fff',textShadow:'0 1px 4px #2E4364',translate:'0px 0px',scale:1,rotate:'0deg'}}>{name}</Interactive.Div>
 </div>;
 
 /** Wallpaper is an asset; Start Menu, taskbar, Restart and pointer remain JSX/SVG layers. */

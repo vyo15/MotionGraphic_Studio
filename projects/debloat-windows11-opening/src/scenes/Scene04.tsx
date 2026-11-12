@@ -18,9 +18,6 @@ const Cursor:React.FC<{seconds:number}>=({seconds:s})=>{
   const visible=s>.58&&s<13.75;
   return <div style={{position:'absolute',left:pos.x,top:pos.y,width:70,height:70,opacity:visible?1:0,zIndex:10,pointerEvents:'none'}}>
     {click>0?<div style={{position:'absolute',left:-17,top:-17,width:36,height:36,border:'3px solid #D8876D',opacity:click,borderRadius:'50%',transform:`scale(${1.45-click*.4})`}}/>:null}
-    <Interactive.Div name="S04 — Kursor Windows (X/Y editable)" style={{pointerEvents:'auto',width:42,height:53,translate:'0px 0px',scale:1,rotate:'0deg'}}>
-      <svg width="42" height="53" viewBox="0 0 42 53"><path d="M3 3v40l11-11 10 17 8-5-10-18 15-2Z" fill="#FDFDFE" stroke="#1B2636" strokeWidth="2.5" strokeLinejoin="round"/></svg>
-    </Interactive.Div>
   </div>;
 };
 
@@ -32,11 +29,26 @@ const Scene04Titles:React.FC<{seconds:number;fps:number;frame:number}>=({seconds
   const eased=spring({frame:Math.max(0,frame-titleStartFrames),fps,config:{damping:25,stiffness:120,mass:1}});
   const dy=interpolate(eased,[0,1],[22,0],{extrapolateLeft:'clamp',extrapolateRight:'clamp'});
   return <>
-    <Interactive.Div name="S04 — Label Tutorial" style={{pointerEvents:'auto',position:'absolute',left:80,top:245,padding:'14px 24px',fontSize:22,fontWeight:650,letterSpacing:'.4px',color:'#6B6D6D',background:'#F0EEEB',borderRadius:20,translate:'0px 0px',scale:1,rotate:'0deg'}}>SCENE 04  /  TUTORIAL</Interactive.Div>
     <div style={{position:'absolute',left:SCENE04.position.heading.x,top:SCENE04.position.heading.y,width:SCENE04.position.heading.width,textAlign:'center',transform:`translateY(${dy}px)`}}>
       {phase===0?<Interactive.Div name="S04 — Judul BUKA POWERSHELL" style={{pointerEvents:'auto',fontSize:52,fontWeight:800,letterSpacing:'-.8px',color:'#23282F',translate:'0px 0px',scale:1,rotate:'0deg'}}>BUKA POWERSHELL</Interactive.Div>
-      :phase===1?<Interactive.Div name="S04 — Judul JALANKAN SEBAGAI ADMIN" style={{pointerEvents:'auto',fontSize:43,fontWeight:800,letterSpacing:'-.6px',color:'#23282F',translate:'0px 0px',scale:1,rotate:'0deg'}}>JALANKAN SEBAGAI ADMIN</Interactive.Div>
-      :phase===2?<Interactive.Div name="S04 — Judul MASUKKAN PERINTAH" style={{pointerEvents:'auto',fontSize:52,fontWeight:800,letterSpacing:'-.8px',color:'#23282F',translate:'0px 0px',scale:1,rotate:'0deg'}}>MASUKKAN PERINTAH</Interactive.Div>
+      :phase===1?<Interactive.Div
+        name="S04 — Judul JALANKAN SEBAGAI ADMIN"
+        style={{
+          pointerEvents: 'auto',
+          fontSize: 48,
+          fontWeight: 800,
+          letterSpacing: '-.6px',
+          color: '#23282F',
+          translate: '0px 0px',
+          scale: 1,
+          rotate: '0deg'
+        }}
+      >JALANKAN SEBAGAI ADMIN</Interactive.Div>
+      :phase===2?<Interactive.Div
+        name="S04 — Judul MASUKKAN PERINTAH"
+        style={{pointerEvents:'auto',fontSize:52,fontWeight:800,letterSpacing:'-.8px',color:'#23282F',translate:'0px 0px',scale:1,rotate:'0deg'}}
+        durationInFrames={379}
+      >MASUKKAN PERINTAH</Interactive.Div>
       :<Interactive.Div name="S04 — Judul WINUTIL TERBUKA" style={{pointerEvents:'auto',fontSize:52,fontWeight:800,letterSpacing:'-.8px',color:'#23282F',translate:'0px 0px',scale:1,rotate:'0deg'}}>WINUTIL TERBUKA</Interactive.Div>}
       {phase===0?null
       :phase===1?null

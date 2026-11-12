@@ -22,8 +22,6 @@ export const Scene03:React.FC<{showSubtitles:boolean;showGrid:boolean}>=({showSu
   const demoNotice=rise(s,1.2,1.65);
   return <AbsoluteFill style={{fontFamily:DESIGN.font,color:DESIGN.ink,overflow:'hidden'}}>
     <Background showGrid={showGrid}/>
-    <Interactive.Div name="S03 — Label SCENE 03 WINUTIL" style={{pointerEvents:'auto',position:'absolute',left:76,top:245,padding:'13px 24px',fontSize:23,fontWeight:630,color:'#686A70',background:'#F0EEEB',borderRadius:22,
-      translate:'0px 0px',scale:1,rotate:'0deg'}}>SCENE 03 / WINUTIL</Interactive.Div>
     <div style={{position:'absolute',inset:0,opacity:introOpacity,transform:`translateY(${-toGithub*22}px)`}}>
       <Interactive.Div name="S03 — Bingkai Aplikasi Putih" style={{pointerEvents:'auto',position:'absolute',left:80,top:514,width:920,height:932,background:'#FFFFFF',border:'2px solid #E7E6E4',
         boxShadow:DESIGN.shadow,borderRadius:44,translate:'0px 0px',scale:1,rotate:'0deg'}}/>
@@ -62,7 +60,6 @@ export const Scene03:React.FC<{showSubtitles:boolean;showGrid:boolean}>=({showSu
       </div>
       <Scene03Github seconds={s}/>
       <div style={{position:'absolute',top:1473,left:0,width:1080,textAlign:'center',opacity:rise(s,10.2,10.85)}}>
-        <Interactive.Div name="S03 — Catatan Stars Bukan Jumlah Pengguna" style={{pointerEvents:'auto',fontSize:19,color:'#858990',translate:'0px 0px',scale:1,rotate:'0deg'}}>Stars adalah minat komunitas, bukan jumlah pengguna.</Interactive.Div>
       </div>
     </div>
     {showSubtitles?<Scene03Subtitle seconds={s}/>:null}
@@ -82,7 +79,7 @@ const Scene03Subtitle:React.FC<{seconds:number}>=({seconds})=>{
     {i===0?null
     :i===1?null
     :i===2?null
-    :i===3?<Interactive.Div name="S03 — Subtitle 04" style={{pointerEvents:'auto',fontSize:28,color:'#484746',textAlign:'center',translate:'0px 0px',scale:1,rotate:'0deg'}}>Tools ini open-source,</Interactive.Div>
+    :i===3?null
     :i===4?null
     :null}
   </div>;

@@ -15,14 +15,13 @@ const fade=(s:number,start:number,duration:number)=>reveal(s,start,duration);
 const TutorialHeadline:React.FC<{seconds:number}>=({seconds:s})=>{
   const phase=s<3.75?0:s<5.74?1:2;
   return <>
-    <Interactive.Div name="S06 — Label SCENE 06 PENUTUP" style={{pointerEvents:'auto',position:'absolute',left:80,top:246,fontSize:22,letterSpacing:'1px',fontWeight:670,color:'#888783',translate:'0px 0px',scale:1,rotate:'0deg'}}>SCENE 06 / PENUTUP</Interactive.Div>
     <div style={{position:'absolute',left:100,top:347,width:880,textAlign:'center'}}>
       {phase===0?<Interactive.Div name="S06 — Judul JANGAN HAPUS SEMUANYA" style={{pointerEvents:'auto',fontSize:52,fontWeight:810,color:DESIGN.ink,translate:'0px 0px',scale:1,rotate:'0deg'}}>JANGAN HAPUS SEMUANYA</Interactive.Div>:
        phase===1?<Interactive.Div name="S06 — Judul PILIHAN SUDAH DIPROSES" style={{pointerEvents:'auto',fontSize:52,fontWeight:810,color:DESIGN.ink,translate:'0px 0px',scale:1,rotate:'0deg'}}>PILIHAN SUDAH DIPROSES</Interactive.Div>:
        <Interactive.Div
          name="S06 — Judul RESTART JIKA DIPERLUKAN"
          style={{pointerEvents:'auto',fontSize:50,fontWeight:810,color:DESIGN.ink,translate:'0px 0px',scale:1,rotate:'0deg'}}
-       >{'RESTART '}</Interactive.Div>}
+       >RESTART JIKA DIPERLUKAN</Interactive.Div>}
     </div>
   </>;
 };

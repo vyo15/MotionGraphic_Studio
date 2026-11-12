@@ -8,6 +8,15 @@ import {rise} from '../animations/presets';
 export const Scene03Github: React.FC<{seconds:number}> = ({seconds}) => {
   const t=SCENE03.timing;
   const ghFiles=['.github','docs','scripts','README.md'];
+  // Frame-driven counter, deterministic in Studio and render. The displayed
+  // counter is an illustration, NOT a live GitHub metric or a voice waveform.
+  const duration=Math.max(.01,t.starCountEnd-t.starNumberStart);
+  const progress=Math.max(0,Math.min(1,(seconds-t.starNumberStart)/duration));
+  const easing=1-Math.pow(1-progress,2.6);
+  const counting=Math.min(t.starFinalNumber,Math.round(t.starFinalNumber*easing/100)*100);
+  const countingLabel=counting>=1000?`${(counting/1000).toFixed(1)}K`:String(counting);
+  const rowVisibility=rise(seconds,t.starIconStart,t.starIconStart+.36);
+  const labelVisibility=rise(seconds,t.starLabelStart,t.starLabelStart+.40);
   return <>
     <Interactive.Div name="S03 — Browser GitHub / Kartu Putih" style={{pointerEvents:'auto',position:'absolute',left:80,top:514,width:920,height:932,background:'#FFFFFF',
       border:'2px solid #E7E6E4',borderRadius:44,boxShadow:DESIGN.shadow,translate:'0px 0px',scale:1,rotate:'0deg'}}/>
@@ -41,18 +50,41 @@ export const Scene03Github: React.FC<{seconds:number}> = ({seconds}) => {
         <span style={{width:25,height:25,borderRadius:'50%',background:'#22996F'}}/>OPEN SOURCE
       </Interactive.Div>
     </div>
-    <Interactive.Div name="S03 — Background Panel GitHub Stars" style={{pointerEvents:'auto',position:'absolute',left:145,top:1344,width:785,height:118,borderRadius:24,
-      border:'2px solid #F2DFB6',background:'#FFFAF0',translate:'0px 0px',scale:1,rotate:'0deg',opacity:rise(seconds,t.starIconStart,t.starIconStart+.5)}}/>
-    <div style={{position:'absolute',left:195,top:1366,opacity:rise(seconds,t.starIconStart,t.starIconStart+.55),width:86,height:83}}>
-      <Interactive.Div name="S03 — Icon Star GitHub SVG" style={{pointerEvents:'auto',position:'absolute',inset:0,translate:'0px 0px',scale:1,rotate:'0deg'}}>
-        <svg viewBox="0 0 100 100" width="86" height="86" xmlns="http://www.w3.org/2000/svg"><path d="M50 5 L62 36 L96 37 L69 58 L78 91 L50 72 L21 91 L31 58 L4 37 L38 36Z" fill="#E5A62F"/></svg>
+    {/* Compact repository stat row replaces the old yellow promotional badge. */}
+    <div style={{position:'absolute',left:145,top:1343,opacity:rowVisibility,
+      transform:`translateY(${(1-rowVisibility)*14}px)`}}>
+      <Interactive.Div name="S03 — Background Baris GitHub Stars" style={{pointerEvents:'auto',position:'absolute',left:0,top:0,width:785,height:94,
+        borderRadius:18,border:'2px solid #E8E9E8',background:'#FFFFFF',
+        translate:'0px 0px',scale:1,rotate:'0deg'}}/>
+      <Interactive.Div name="S03 — Ikon Bintang GitHub" style={{pointerEvents:'auto',position:'absolute',left:28,top:17,width:60,height:60,
+        translate:'0px 0px',scale:1,rotate:'0deg'}}>
+        <svg viewBox="0 0 100 100" width="60" height="60" xmlns="http://www.w3.org/2000/svg">
+          <path d="M50 5 L62 36 L96 37 L69 58 L78 91 L50 72 L21 91 L31 58 L4 37 L38 36Z" fill="#E5A62F"/>
+        </svg>
       </Interactive.Div>
-    </div>
-    <div style={{position:'absolute',left:332,top:1358,opacity:rise(seconds,t.starNumberStart,t.starNumberStart+.75)}}>
-      <Interactive.Div name="S03 — Angka 65K+ GitHub Stars" style={{pointerEvents:'auto',fontSize:72,fontWeight:800,color:'#252B34',letterSpacing:-2,translate:'0px 0px',scale:1,rotate:'0deg'}}>65K+</Interactive.Div>
-    </div>
-    <div style={{position:'absolute',left:334,top:1432,opacity:rise(seconds,t.starLabelStart,t.starLabelStart+.55)}}>
-      <Interactive.Div name="S03 — Label GITHUB STARS" style={{pointerEvents:'auto',fontSize:21,fontWeight:710,color:'#857147',letterSpacing:1.1,translate:'0px 0px',scale:1,rotate:'0deg'}}>GITHUB STARS</Interactive.Div>
+      <div style={{position:'absolute',left:115,top:29,opacity:labelVisibility}}>
+        <Interactive.Div name="S03 — Label GITHUB STARS" style={{pointerEvents:'auto',fontSize:27,fontWeight:680,
+          color:'#535A61',letterSpacing:.5,translate:'0px 0px',scale:1,rotate:'0deg'}}>GITHUB STARS</Interactive.Div>
+      </div>
+      {/* Counter counts for ~1.9 s while the VO says 'lebih dari 65 ribu'.
+          This intermediate value is configured by starFinalNumber.
+          The final 65K+ remains an independent, directly editable literal text layer. */}
+      {seconds >= t.starNumberStart && seconds < t.starCountEnd ?
+        <div aria-label="Animasi angka menuju 65 ribu" style={{pointerEvents:'none',position:'absolute',left:478,top:5,
+          width:273,height:79,fontSize:64,fontWeight:800,letterSpacing:-2,
+          fontVariantNumeric:'tabular-nums',color:'#252B34',textAlign:'right',lineHeight:'79px'}}>{countingLabel}</div>
+        :null}
+      {seconds >= t.starCountEnd ? <div style={{position:'absolute',left:478,top:5,width:273,height:79,
+        textAlign:'right'}}>
+        <Interactive.Div name="S03 — Hasil Akhir 65K+ (editable)" style={{pointerEvents:'auto',fontSize:64,fontWeight:800,
+          letterSpacing:-2,color:'#252B34',fontVariantNumeric:'tabular-nums',lineHeight:'79px',
+          translate:'0px 0px',scale:1,rotate:'0deg'}}>65K+</Interactive.Div>
+      </div>:null}
+      <div style={{position:'absolute',left:478,top:88,width:273,height:3,overflow:'hidden',borderRadius:6}}>
+        <Interactive.Div name="S03 — Aksen Garis Selesai Hitung" style={{pointerEvents:'auto',position:'absolute',right:0,top:0,
+          height:3,width:seconds>=t.starCountEnd?96:0,background:'#D8876D',
+          translate:'0px 0px',scale:1,rotate:'0deg'}}/>
+      </div>
     </div>
   </>;
 };
