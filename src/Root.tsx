@@ -3,6 +3,7 @@ import {Composition, Folder} from 'remotion';
 import {createSegmentComposition,createEditableSegmentComposition} from './SegmentComposition';
 import {createFullPreviewComposition} from './FullPreviewComposition';
 // AUTO-FOLDER-IMPORTS:START
+import {Video as FolderProject_aomei_drive_c_scene_01} from '../projects/aomei-drive-c-scene-01/src/Video';
 import {Video as FolderProject_debloat_windows11_opening} from '../projects/debloat-windows11-opening/src/Video';
 import {SegmentVideo as FolderProject_debloat_windows11_opening_editable} from '../projects/debloat-windows11-opening/src/SegmentVideo';
 import {Video as FolderProject_ip_address} from '../projects/ip-address/src/Video';
@@ -10,6 +11,7 @@ import {SegmentVideo as FolderProject_ip_address_editable} from '../projects/ip-
 import {Video as FolderProject_windows_hacks_5_shortcut_lengkap} from '../projects/windows-hacks-5-shortcut-lengkap/src/Video';
 import {SegmentVideo as FolderProject_windows_hacks_5_shortcut_lengkap_editable} from '../projects/windows-hacks-5-shortcut-lengkap/src/SegmentVideo';
 // AUTO-FOLDER-IMPORTS:END
+const FolderProject_aomei_drive_c_scene_01_full = createFullPreviewComposition(FolderProject_aomei_drive_c_scene_01, 447);
 const FolderProject_debloat_windows11_opening_full = createFullPreviewComposition(FolderProject_debloat_windows11_opening, 2752);
 const FolderProject_debloat_windows11_opening_segment_0 = createEditableSegmentComposition(FolderProject_debloat_windows11_opening_editable, 0);
 const FolderProject_debloat_windows11_opening_segment_1 = createEditableSegmentComposition(FolderProject_debloat_windows11_opening_editable, 1);
@@ -36,6 +38,11 @@ const FolderProject_windows_hacks_5_shortcut_lengkap_segment_6 = createEditableS
 export const Root: React.FC = () => (
   <Folder name="Videos">
     {/* AUTO-FOLDER-COMPOSITIONS:START */}
+      <Folder name="AOMEI-Scene-01-Hook-Drive-C-dan-D">
+        <Folder name="Full-Video">
+          <Composition id="AomeiDriveCScene01" component={FolderProject_aomei_drive_c_scene_01_full} width={1080} height={1920} fps={60} durationInFrames={447} defaultProps={{"showGrid":true,"showSubtitles":true,"voiceEnabled":false,"voiceVolume":1,"sceneEditor":{"explorer":{"x":0,"y":0,"scale":1,"rotation":0,"opacity":1},"disk":{"x":0,"y":0,"scale":1,"rotation":0,"opacity":1},"header":{"x":0,"y":0,"scale":1,"rotation":0,"opacity":1},"cursor":{"x":0,"y":0,"scale":1,"rotation":0,"opacity":1},"subtitle":{"x":0,"y":0,"scale":1,"rotation":0,"opacity":1}}}} />
+        </Folder>
+      </Folder>
       <Folder name="Debloat-Windows-11-Scene-01-06-CTA">
         <Folder name="Full-Video">
           <Composition id="DebloatWindows11Opening" component={FolderProject_debloat_windows11_opening_full} width={1080} height={1920} fps={30} durationInFrames={2752} defaultProps={{"voiceEnabled":false,"voiceVolume":1,"showSubtitles":true,"showGrid":true}} />

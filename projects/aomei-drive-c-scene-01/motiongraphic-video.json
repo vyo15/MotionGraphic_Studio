@@ -1,0 +1,25 @@
+{
+  "id": "AomeiDriveCScene01",
+  "slug": "aomei-drive-c-scene-01",
+  "title": "AOMEI — Scene 01 Hook | Drive C dan D",
+  "entry": "src/Video.tsx",
+  "exportName": "Video",
+  "width": 1080,
+  "height": 1920,
+  "fps": 60,
+  "durationInFrames": 447,
+  "editableContract": "studio-direct-v3",
+  "defaultProps": {
+    "showGrid": true,
+    "showSubtitles": true,
+    "voiceEnabled": false,
+    "voiceVolume": 1,
+    "sceneEditor": {
+      "explorer": {"x": 0, "y": 0, "scale": 1, "rotation": 0, "opacity": 1},
+      "disk": {"x": 0, "y": 0, "scale": 1, "rotation": 0, "opacity": 1},
+      "header": {"x": 0, "y": 0, "scale": 1, "rotation": 0, "opacity": 1},
+      "cursor": {"x": 0, "y": 0, "scale": 1, "rotation": 0, "opacity": 1},
+      "subtitle": {"x": 0, "y": 0, "scale": 1, "rotation": 0, "opacity": 1}
+    }
+  }
+}

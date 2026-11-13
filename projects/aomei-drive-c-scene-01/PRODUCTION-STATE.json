@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "projectId": "AomeiDriveCScene01",
+  "slug": "aomei-drive-c-scene-01",
+  "workflow": "guided-approval-first-scene",
+  "phase": "script-review",
+  "scriptApproval": "pending",
+  "storyboardApproval": "pending",
+  "referenceSceneId": null,
+  "referenceSceneApproval": "pending",
+  "voiceOverStatus": "not-recorded",
+  "fullVideoApproval": "pending",
+  "scenes": [],
+  "decisionLog": [],
+  "notes": "Dokumen dibuat otomatis saat sync. Status approval tidak boleh diubah menjadi approved tanpa persetujuan pengguna."
+}
