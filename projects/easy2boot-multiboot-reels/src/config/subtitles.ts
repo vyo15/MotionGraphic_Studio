@@ -1,0 +1,20 @@
+/** Frame ranges are rough guide. Tune after recording VO. One subtitle layer, not headline duplication. */
+export const SUBTITLE_CUES:ReadonlyArray<{from:number;to:number;text:string}>=[
+ {from:0,to:90,text:'Mau instal Windows 11'},
+ {from:90,to:180,text:'Tapi flashdisknya Windows 10?'},
+ {from:180,to:275,text:'Masa harus bikin bootable ulang lagi?'},
+ {from:360,to:435,text:'Nggak perlu bikin ulang terus.'},
+ {from:435,to:525,text:'Pakai Easy2Boot.'},
+ {from:525,to:690,text:'Satu flashdisk, beberapa installer.'},
+ {from:690,to:780,text:'Pertama, backup data flashdisk.'},
+ {from:780,to:870,text:'Buka Easy2Boot.'},
+ {from:870,to:990,text:'Pilih USB, lalu buat multiboot.'},
+ {from:1110,to:1200,text:'Salin ISO ke folder yang sesuai.'},
+ {from:1200,to:1470,text:'Windows 10, Windows 11, atau Linux.'},
+ {from:1470,to:1590,text:'Mau tambah? Cukup salin lagi.'},
+ {from:1590,to:1740,text:'Sekarang boot komputer dari USB.'},
+ {from:1740,to:1860,text:'Pilih ISO Windows 11.'},
+ {from:1860,to:2010,text:'Installer Windows mulai terbuka.'},
+ {from:2040,to:2230,text:'Bootable ulang atau multiboot?'},
+ {from:2230,to:2330,text:'Coba tulis di kolom komentar!'},
+];

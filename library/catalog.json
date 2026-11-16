@@ -116,6 +116,107 @@
       ]
     },
     {
+      "id": "Easy2BootMultibootReels",
+      "slug": "easy2boot-multiboot-reels",
+      "title": "Easy2Boot — 1 Flashdisk Banyak Installer (Native Remotion Studio)",
+      "width": 1080,
+      "height": 1920,
+      "fps": 30,
+      "durationInFrames": 2400,
+      "assetPrefix": "videos/easy2boot-multiboot-reels",
+      "source": "projects/easy2boot-multiboot-reels/src/Video.tsx",
+      "projectDir": "projects/easy2boot-multiboot-reels",
+      "exportName": "Video",
+      "defaultProps": {
+        "title01Need": "MAU INSTAL",
+        "title01Target": "WINDOWS 11?",
+        "title01Wrong": "WINDOWS 10.",
+        "title01Redo": "BUAT ULANG?",
+        "title01Wait": "NUNGGU LAGI.",
+        "title02NoRedo": "NGGAK PERLU.",
+        "title02App": "EASY 2BOOT.",
+        "title02Usb": "SATU FLASHDISK",
+        "title02Installers": "BEBERAPA",
+        "backgroundColor": "#F7F7F5",
+        "showVoiceOver": false,
+        "voiceOverFileName": "",
+        "showMusic": false,
+        "musicFileName": "",
+        "layerOverrides": {},
+        "titleBackup": "BACKUP DATA.",
+        "titleOpen": "EASY2BOOT.",
+        "titleSelect": "PILIH USB.",
+        "titleCreate": "BUAT USB.",
+        "titleDone": "USB SIAP.",
+        "usbDriveLabel": "E: USB Flash Drive  —  32 GB",
+        "footerText": "EASY2BOOT — SATU USB, BANYAK PILIHAN",
+        "showSfx": true,
+        "titleIso": "SALIN ISO.",
+        "titleWin10": "WINDOWS 10",
+        "titleWin11": "WINDOWS 11",
+        "titleLinux": "LINUX",
+        "titleMore": "CUKUP SALIN.",
+        "isoWin10Name": "Win10_22H2.iso",
+        "isoWin11Name": "Win11_24H2.iso",
+        "isoLinuxName": "Ubuntu-24.04.iso",
+        "titleBoot": "BOOT DARI USB.",
+        "titleSelectUsb": "PILIH USB BOOT.",
+        "titleFindIso": "CARI FILE ISO.",
+        "titleSelectIso": "PILIH WINDOWS 11.",
+        "titleSetup": "INSTALLER TERBUKA.",
+        "bootOption": "UEFI: USB Flash Drive",
+        "isoBootName": "Win11_24H2.iso",
+        "ctaSetup": "KALAU KAMU, BIASANYA...",
+        "ctaOld": "BOOTABLE ULANG?",
+        "ctaMulti": "MULTIBOOT?",
+        "ctaComment": "KOMENTAR",
+        "coverBrand": "EASY2BOOT",
+        "coverLine1": "1 FLASHDISK",
+        "coverLine2": "BANYAK INSTALLER",
+        "showSubtitles": false,
+        "subtitleColor": "#202020",
+        "fontFamily": "Inter, Arial, sans-serif"
+      },
+      "segments": [
+        {
+          "id": "Easy2BootMultibootReels-S01",
+          "title": "01 — Masalah: Bootable ulang",
+          "startFrame": 0,
+          "durationInFrames": 360
+        },
+        {
+          "id": "Easy2BootMultibootReels-S02",
+          "title": "02 — Solusi: Easy2Boot",
+          "startFrame": 360,
+          "durationInFrames": 330
+        },
+        {
+          "id": "Easy2BootMultibootReels-S03",
+          "title": "03 — Persiapan USB",
+          "startFrame": 690,
+          "durationInFrames": 420
+        },
+        {
+          "id": "Easy2BootMultibootReels-S04",
+          "title": "04 — Salin ISO",
+          "startFrame": 1110,
+          "durationInFrames": 480
+        },
+        {
+          "id": "Easy2BootMultibootReels-S05",
+          "title": "05 — Booting Windows 11",
+          "startFrame": 1590,
+          "durationInFrames": 420
+        },
+        {
+          "id": "Easy2BootMultibootReels-S06",
+          "title": "06 — CTA + Cover",
+          "startFrame": 2010,
+          "durationInFrames": 390
+        }
+      ]
+    },
+    {
       "id": "IPAddressReels",
       "slug": "ip-address",
       "title": "Belajar IP Address",
