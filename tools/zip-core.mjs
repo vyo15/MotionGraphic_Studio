@@ -29,13 +29,14 @@ function cleanName(name){
   return n;
 }
 /** entries: [{absolute, name, isDirectory, size, date}] */
-export async function collectEntries(sources,{ignoreNames=new Set()}={}){
+export async function collectEntries(sources,{ignoreNames=new Set(),ignoreRelative=()=>false}={}){
   const entries=[];
   const seen=new Set();
   async function visit(absolute,name){
     const stat=await fsp.lstat(absolute);
     if(stat.isSymbolicLink())throw Error('Symlink tidak didukung pada ZIP: '+absolute);
     const n=cleanName(name);
+    if(ignoreRelative(n))return;
     if(stat.isDirectory()){
       if(!seen.has(n+'/')){entries.push({absolute,name:n+'/',isDirectory:true,size:0,date:stat.mtime});seen.add(n+'/')}
       const children=(await fsp.readdir(absolute,{withFileTypes:true})).sort((a,b)=>a.name.localeCompare(b.name));

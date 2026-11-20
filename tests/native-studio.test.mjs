@@ -32,7 +32,9 @@ test('only one native Studio is started; no separate editor routes remain',()=>{
   assert.equal(fs.existsSync(path.join(ROOT,p)),false,p);
  }
  const registered=[...parseCompositions(source).props.keys()];
- assert.equal(registered.length,14);
+ const catalog=JSON.parse(read(path.join(ROOT,'library/catalog.json')));
+ const expected=catalog.videos.reduce((n,v)=>n+1+(v.segments||[]).length+(v.voiceGuideCompositionId?1:0),0);
+ assert.equal(registered.length,expected);
  assert.ok(registered.includes('IPAddressReels'));
  assert.ok(registered.includes('WindowsHacks5ShortcutLengkap'));
  assert.ok(registered.includes('WinHacks-01-CtrlShiftT'));

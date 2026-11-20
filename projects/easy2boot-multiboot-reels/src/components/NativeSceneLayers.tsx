@@ -114,8 +114,6 @@ export const NativeS03Layers:React.FC<{markup:string}> = ({markup})=>{
    style={{position:'absolute',left:0,top:0,width:'100%',height:'100%',overflow:'visible'}}>
    <g dangerouslySetInnerHTML={{__html:globals}}/>
    <Interactive.G name="S03 — Latar editorial dan grid" style={{translate:'0px 0px',scale:1,rotate:'0deg',opacity:1}} dangerouslySetInnerHTML={{__html:layers['S03-layer-01']??''}}/>
-   <Interactive.G name="S03 — Header editorial" style={{translate:'0px 0px',scale:1,rotate:'0deg',opacity:1}} dangerouslySetInnerHTML={{__html:layers['S03-layer-02']??''}}/>
-   <Interactive.G name="S03 — Footer editorial" style={{translate:'0px 0px',scale:1,rotate:'0deg',opacity:1}} dangerouslySetInnerHTML={{__html:layers['S03-layer-03']??''}}/>
    <Interactive.G name="S03 — Penghubung dari scene sebelumnya" style={{translate:'0px 0px',scale:1,rotate:'0deg',opacity:1}} dangerouslySetInnerHTML={{__html:layers['S03-layer-04']??''}}/>
    <Interactive.G name="S03 — A — aTitle" style={{translate:'0px 0px',scale:1,rotate:'0deg',opacity:1}} dangerouslySetInnerHTML={{__html:layers['S03-layer-05']??''}}/>
    <Interactive.G name="S03 — A — aUsb" style={{translate:'0px 0px',scale:1,rotate:'0deg',opacity:1}} dangerouslySetInnerHTML={{__html:layers['S03-layer-06']??''}}/>

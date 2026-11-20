@@ -2,8 +2,9 @@ import React from 'react';
 import {SubtitleTrack} from './components/SubtitleTrack';
 import {AbsoluteFill, Audio, Sequence, staticFile} from 'remotion';
 import {Scene01Problem} from './scenes/Scene01Problem';
-import {Scene02Solution} from './scenes/Scene02Solution';
-import {Scene03Preparation} from './scenes/Scene03Preparation';
+import {Scene02WithBridge} from './scenes/Scene02WithBridge';
+import {Scene03ReadableEntrance} from './scenes/Scene03ReadableEntrance';
+import {Scene03ReadableSfx} from './components/Scene03ReadableSfx';
 import {Scene04CopyIso} from './scenes/Scene04CopyIso';
 import {Scene05Boot} from './scenes/Scene05Boot';
 import {Scene06Closing} from './scenes/Scene06Closing';
@@ -27,13 +28,13 @@ const sceneData=[
  {frames:SCENE05.durationInFrames,name:'S05 — Booting'},
  {frames:SCENE06.durationInFrames,name:'S06 — CTA & Cover'},
 ];
-/** Satu komposisi, 80 detik, seluruh scene independen dan editable. */
+/** Scene01 Impact, Scene02 Card Break unchanged; Opsi01 Match Move appended; scene03–06 unchanged. */
 export const Video:React.FC<Partial<Easy2BootScene03Props>>=(input)=>{
  const p={...DEFAULT_PROPS,...input};
  const segments=[
   <Scene01Problem {...p}/>,
-  <Scene02Solution {...p}/>,
-  <Scene03Preparation {...p}/>,
+  <Scene02WithBridge {...p}/>,
+  <Scene03ReadableEntrance {...p}/>,
   <Scene04CopyIso {...p}/>,
   <Scene05Boot {...p}/>,
   <Scene06Closing {...p}/>,
@@ -44,7 +45,7 @@ export const Video:React.FC<Partial<Easy2BootScene03Props>>=(input)=>{
    const item=sceneData[i]; const from=offset;offset+=item.frames;
    return <Sequence key={item.name} name={item.name} from={from} durationInFrames={item.frames}>
     {segment}
-    {p.showSfx?<Audio src={staticFile(paths[i])} volume={0.82}/>:null}
+    {p.showSfx && i===2 ? <Scene03ReadableSfx {...p}/> : p.showSfx && (i!==1 || !p.scene02ShowBreak)?<Audio src={staticFile(paths[i])} volume={0.82}/>:null}
    </Sequence>;
   })}
   {p.showVoiceOver&&p.voiceOverFileName?

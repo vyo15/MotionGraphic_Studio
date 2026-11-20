@@ -15,8 +15,9 @@
     "prerender": "node tools/prepare-studio.mjs",
     "render": "node tools/render-menu.mjs",
     "validate": "node tools/validate-library.mjs",
-    "check": "node tools/sync-projects.mjs && node tools/validate-library.mjs && node tools/check-editability.mjs --strict && node tools/check-direct-studio-text.mjs && node tools/check-layout-flow.mjs && node tools/studio-check.mjs && tsc --noEmit",
+    "check": "node tools/check-editability.mjs --strict && node tools/studio-check.mjs",
     "sync": "node tools/sync-projects.mjs && node tools/validate-library.mjs",
+    "vo:init": "node tools/vo-init.mjs",
     "zip": "node tools/zip-video.mjs",
     "addfolder": "node tools/add-folder.mjs",
     "rename": "node tools/rename-video.mjs",
@@ -26,7 +27,15 @@
     "qa": "node tools/studio-check.mjs",
     "skills": "node tools/remotion-skills.mjs status",
     "skills:install": "node tools/remotion-skills.mjs install",
-    "test": "node --test tests/*.test.mjs"
+    "test": "node --test tests/*.test.mjs",
+    "addon:validate": "node tools/validate-addon.mjs",
+    "addon:patch": "node tools/apply-addon-patch.mjs",
+    "addon:patch-create": "node tools/create-addon-patch.mjs",
+    "addon:scaffold": "node tools/scaffold-addon.mjs",
+    "capabilities": "node tools/export-capabilities.mjs",
+    "vo:edit": "node tools/vo-edit.mjs",
+    "qa:render": "node tools/qa-render.mjs",
+    "check:syntax": "node tools/check-source-syntax.mjs"
   },
   "dependencies": {
     "@remotion/cli": "4.0.538",

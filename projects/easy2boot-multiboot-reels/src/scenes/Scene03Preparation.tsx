@@ -4,6 +4,7 @@ import {NativeS03Layers} from '../components/NativeSceneLayers';
 import {frameSvg} from '../components/FrameSvgRenderer';
 import {frames} from '../config/frames/scene03';
 import {SCENE03_SVG} from '../config/scene03Svg';
+import {cleanScene03Svg} from '../config/scene03Clean';
 import type {Easy2BootScene03Props} from '../config/props';
 
 const escapeXml = (value: string): string => value
@@ -28,7 +29,7 @@ const withText = (svg: string, props: Easy2BootScene03Props): string => {
 /** Declarative frame renderer: text, SVG objects and animation use the same source data. */
 export const Scene03Preparation:React.FC<Easy2BootScene03Props>=(props)=>{
  const frame=useCurrentFrame();
- const original=useMemo(()=>withText(SCENE03_SVG.replaceAll('#F7F7F5',props.backgroundColor),props),[props]);
+ const original=useMemo(()=>withText(cleanScene03Svg(SCENE03_SVG,props).replaceAll('#F7F7F5',props.backgroundColor),props),[props]);
  const markup=useMemo(()=>frameSvg(original,'S03',frame,frames,props.layerOverrides,props.fontFamily),[original,frame,props.layerOverrides,props.fontFamily]);
  return <AbsoluteFill style={{background:props.backgroundColor}}><NativeS03Layers markup={markup}/></AbsoluteFill>;
 };

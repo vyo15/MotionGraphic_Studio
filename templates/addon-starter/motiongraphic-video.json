@@ -1,0 +1,1 @@
+{"contractVersion":"1.0.0","id":"ContohVideoReels","slug":"contoh-video-reels","title":"Contoh Video Reels","entry":"src/Video.tsx","exportName":"Video","width":1080,"height":1920,"fps":30,"durationInFrames":600,"defaultProps":{"headline":"Contoh Judul"}}

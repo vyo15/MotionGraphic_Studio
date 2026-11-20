@@ -19,7 +19,8 @@ process.on('exit',()=>{try{fs.rmSync(temp,{recursive:true,force:true});fs.rmSync
 
 test('original projects remain in the master',()=>{
  const projects=readCatalog().videos;
- assert.deepEqual(projects.map(v=>v.slug).sort(),['ip-address','windows-hacks-5-shortcut-lengkap']);
+ const known=['aomei-drive-c-scene-01','debloat-windows11-opening','easy2boot-multiboot-reels','ip-address','windows-hacks-5-shortcut-lengkap'];
+ for(const slug of known)assert.ok(projects.some(v=>v.slug===slug),'Project existing hilang: '+slug);
  assert.equal(projects.find(v=>v.slug==='ip-address').id,'IPAddressReels');
  assert.equal(projects.find(v=>v.slug.startsWith('windows')).durationInFrames,2205);
 });

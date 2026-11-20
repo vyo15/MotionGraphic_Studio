@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "engine": "MotionGraphic-Studio",
+  "masterVersion": "1.8.1",
+  "addonContractVersion": "1.0.0",
+  "remotionVersion": "4.0.538",
+  "nodeMinimumMajor": 22,
+  "folderFirst": "projects/<slug>/",
+  "registration": "npm run sync",
+  "assetPrefix": "videos/<slug>/",
+  "videoExport": "export const Video",
+  "voiceOverWorkflow": "motion -> visual-approval -> guide -> record -> sync -> qa -> final",
+  "voiceGuide": {
+    "narrationSchemaVersion": 1,
+    "editor": "Remotion Props (VO Guide composition) / CLI fallback",
+    "source": "src/config/narration.json"
+  },
+  "supportedEditable": [
+    "native Remotion Interactive",
+    "Studio props",
+    "interpolate",
+    "spring"
+  ],
+  "requiredRootFiles": [
+    "motiongraphic-video.json",
+    "src/Video.tsx",
+    "README.md",
+    "PANDUAN-EDIT-ASSET.md"
+  ],
+  "restrictions": [
+    "never overwrite a pre-existing project",
+    "no new runtime dependencies without updating Master",
+    "do not change master generated Root/catalog",
+    "no implicit deletion of approved files"
+  ],
+  "exportedAt": "generated from package.json (no timestamp)",
+  "pluginDependencies": [
+    "@remotion/cli",
+    "remotion",
+    "react",
+    "react-dom"
+  ]
+}

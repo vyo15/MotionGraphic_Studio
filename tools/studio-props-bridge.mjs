@@ -66,7 +66,7 @@ export function parseCompositions(source){
  return {props:found,skeleton:skeleton.replace(/\s+/g,'')};
 }
 export function saveGeneratedState(root,rootText,entries){
- const state={version:2,rootHash:hash(rootText),rootText,propsHashes:Object.fromEntries(entries.map(v=>[v.id,hash(JSON.stringify(v.defaultProps))])),compositionOwners:Object.fromEntries(entries.map(v=>[v.id,v.ownerId||v.id]))};
+ const state={version:2,rootHash:hash(rootText),rootText,propsHashes:Object.fromEntries(entries.map(v=>[v.id,hash(JSON.stringify(v.kind==='voiceGuide'?Object.fromEntries(Object.entries(v.defaultProps).filter(([k])=>k!=='voiceGuide')):v.defaultProps))])),voiceGuideIds:entries.filter(v=>v.kind==='voiceGuide').map(v=>v.id),compositionOwners:Object.fromEntries(entries.map(v=>[v.id,v.ownerId||v.id]))};
  const dest=statePath(root);fs.mkdirSync(path.dirname(dest),{recursive:true});
  const tmp=dest+'.'+process.pid+'.tmp';fs.writeFileSync(tmp,JSON.stringify(state,null,2)+'\n');fs.renameSync(tmp,dest);
 }
@@ -97,11 +97,40 @@ export function captureStudioProps(root){
   return [{path:prefix,value:b}];
  };
  const changesByOwner=new Map();
+ const voiceGuideChanges=[];
+ const guideIds=new Set(state.voiceGuideIds||[]);
  for(const id of old.props.keys())if(!next.props.has(id))throw new Error('Composition hilang saat save Props: '+id);
- for(const [id,props] of next.props){
-  const oldProps=old.props.get(id);
+ for(let [id,props] of next.props){
+  let oldProps=old.props.get(id);
   if(!oldProps)throw new Error('Composition berubah: '+id);
   if(equal(props,oldProps))continue;
+  if(guideIds.has(id)){
+    const owner=state.compositionOwners?.[id]??id;
+    const mf=rootProjectManifest(root,owner);
+    if(!mf)throw new Error('Manifest guide tidak ditemukan: '+owner);
+    const nar=path.join(path.dirname(mf),'src','config','narration.json');
+    if(!fs.existsSync(nar))throw new Error('Naskah guide tidak ditemukan: '+owner);
+    const narration=JSON.parse(fs.readFileSync(nar,'utf8'));
+    const original=oldProps.voiceGuide;
+    const updated=props.voiceGuide;
+    if(!updated||!Array.isArray(updated.beats))throw new Error('voiceGuide.beats harus array');
+    if(!equal(original,updated)){
+      if(!equal(narration.beats,original.beats))throw new Error('KONFLIK: narration.json juga berubah di luar Studio; edit VO tidak ditimpa');
+      let prev=0;
+      for(const [i,b] of updated.beats.entries()){
+        if(typeof b.scene!=='string'||typeof b.text!=='string'||!Number.isInteger(b.startFrame)||!Number.isInteger(b.endFrame)||b.startFrame!==prev||b.endFrame<=prev){
+          throw new Error('VO beat '+i+' tidak valid/berurutan; perbaiki di Props');
+        }
+        prev=b.endFrame;
+      }
+      const manifest=JSON.parse(fs.readFileSync(mf,'utf8'));
+      if(prev!==manifest.durationInFrames)throw new Error('Total beat VO harus sama dengan durasi video');
+      voiceGuideChanges.push({file:nar,data:{...narration,status:updated.status||'draft',beats:updated.beats}});
+    }
+    props=Object.fromEntries(Object.entries(props).filter(([k])=>k!=='voiceGuide'));
+    oldProps=Object.fromEntries(Object.entries(oldProps).filter(([k])=>k!=='voiceGuide'));
+    if(equal(props,oldProps))continue;
+  }
   const owner=state.compositionOwners?.[id]??id;
   const item=rootProjectManifest(root,owner);
   if(!item)throw new Error('Manifest project ID tidak ditemukan: '+owner);
@@ -129,6 +158,7 @@ export function captureStudioProps(root){
   changesByOwner.set(owner,{file:item,manifest,props:combined,id:owner});
  }
  const changes=[...changesByOwner.values()];
+ // All conflicts are checked before any narration or manifest file is written.
  const back=path.join(root,'library','backups','studio-props');fs.mkdirSync(back,{recursive:true});
  const tag=new Date().toISOString().replace(/[:.]/g,'-');
  for(const ch of changes){
@@ -137,7 +167,15 @@ export function captureStudioProps(root){
   const temp=ch.file+'.'+process.pid+'.tmp';fs.writeFileSync(temp,JSON.stringify(ch.manifest,null,2)+'\n');fs.renameSync(temp,ch.file);
   console.log('[REMOTION PROPS] Edit Studio disimpan ke manifest '+ch.id+' (semua segmen tersinkron)');
  }
- return changes.length;
+ for(const ch of voiceGuideChanges){
+  const backup=path.join(root,'library','backups','vo-guide');fs.mkdirSync(backup,{recursive:true});
+  const name=path.basename(path.dirname(path.dirname(path.dirname(ch.file))));
+  const tag=new Date().toISOString().replace(/[:.]/g,'-')+'-'+process.pid;
+  fs.copyFileSync(ch.file,path.join(backup,name+'-'+tag+'.json'));
+  const tmp=ch.file+'.'+process.pid+'.tmp';fs.writeFileSync(tmp,JSON.stringify(ch.data,null,2)+'\n');fs.renameSync(tmp,ch.file);
+  console.log('[VO GUIDE] Edit Studio disimpan: '+path.relative(root,ch.file));
+ }
+ return changes.length + voiceGuideChanges.length;
 }
 function rootProjectManifest(root,id){
  const base=path.join(root,'projects');

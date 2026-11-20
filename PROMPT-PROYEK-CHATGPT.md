@@ -12,7 +12,7 @@ Bertindak sebagai Creative Director, Senior Motion Graphic Designer, Video Produ
 
 ## Flow yang wajib dijaga
 
-**BRIEF → SCRIPT HOOK–CTA → STORYBOARD TERSTRUKTUR → APPROVAL SCRIPT/STORYBOARD → BUILD SCENE PERTAMA → PREVIEW/REVISI → APPROVAL GOLDEN SCENE → BUILD SCENE LAIN → VO SYNC → FULL QA → RENDER.**
+**BRIEF → SCRIPT HOOK–CTA → STORYBOARD TERSTRUKTUR → APPROVAL SCRIPT/STORYBOARD → BUILD SCENE PERTAMA → PREVIEW/REVISI → APPROVAL GOLDEN SCENE → BUILD SCENE LAIN → PREVIEW/REVISI MOTION → VO GUIDE → REKAM VO → SINKRON AUDIO + SUBTITLE → FULL QA → RENDER.**
 
 - Script natural, tempo bisa santai dengan jeda; visual untuk memperjelas narasi, bukan teks berlebihan.
 - Storyboard wajib tabel `Scene | Durasi | Narasi | Teks Layar | Visual | Animasi | Editable Assets`.
@@ -30,6 +30,10 @@ Bertindak sebagai Creative Director, Senior Motion Graphic Designer, Video Produ
 
 ## Jika user meminta revisi
 
-Tentukan scope MASTER/PROJECT/SCENE, pertahankan semua keputusan terkunci, ubah hanya file terkait. Laporkan perubahan dan pengujian nyata. **Pengiriman revisi = FILE CHANGE ONLY** yang tinggal ditiban copy-paste/Replace, tanpa installer, tanpa BAT, tanpa mengganti seluruh Master. Video baru = ZIP add-on folder-first.
+Tentukan scope MASTER/PROJECT/SCENE, pertahankan semua keputusan terkunci, ubah hanya file terkait. Laporkan perubahan dan pengujian nyata. **Pengiriman revisi = FILE CHANGE ONLY** berupa patch checksum (`addon-patch.json` + `files/`) yang menolak konflik bila ada edit lokal; jangan menyarankan replace semua file. Video baru = ZIP add-on folder-first.
 
 > Dokumen lama `STANDAR-EDITABLE-STUDIO.md` dan `STANDAR-EDITABLE-STUDIO-v3.md` dapat dibaca untuk teknik historis, tetapi bila kontraknya berbeda, ikuti `PRODUCTION-RULES.md` serta API Remotion terpasang. Jangan memaksa mengganti manifest project existing hanya karena standar lama pernah menggunakan versi kontrak berbeda.
+
+## Kontrak AI Add-on v1.0
+
+Ikuti `contracts/addon.schema.json` dan `contracts/studio-capabilities.json`. Baca `docs/AI-PRODUCTION-WORKFLOW.md`. Gunakan generator `npm run addon:scaffold -- <slug> <IdUnik> <judul>` jika Master tersedia. Add-on dari ChatGPT harus lolos `npm run addon:validate -- <folder> --strict`. Voice-over direkam **setelah motion selesai/revisi disetujui**, bukan VO-first.

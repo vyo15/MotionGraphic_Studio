@@ -1,8 +1,10 @@
-# SCRIPT — Easy2Boot — 1 Flashdisk Banyak Installer (6 Scene, Editable)
+# Script / Naskah — Easy2Boot
 
-> Draft awal otomatis. **Belum ada persetujuan narasi.** Salin naskah final ke sini sebelum build.
-> Tempo voice-over menentukan durasi final; jangan mengunci timing dari estimasi sebelum rekaman tersedia.
+**Belum ada rekaman VO final dan naskah belum disetujui sebagai hasil rekaman.**
 
-## Segmen belum terdaftar
+Sumber naskah dan estimasi timing yang aktif untuk komposisi panduan adalah `src/config/narration.json`.
+Jangan mengedit naskah duplikat di sini karena akan berbeda dengan teks yang tampil di video.
+Durasi visual: **2641 frame / 30 fps ≈ 88,03 detik**. Ada enam scene terdaftar di `motiongraphic-video.json`.
 
-Segmen ditentukan melalui manifest/source sesuai standar Master.
+Alur: selesaikan motion dan revisi → tinjau `Easy2BootMultibootReelsVOGuide` → rekam VO → sinkronkan → tambahkan subtitle sesuai audio asli.
+Persetujuan scene lama tetap mengikuti `APPROVAL-LOCK-20261120.json` dan dokumen status masing-masing.

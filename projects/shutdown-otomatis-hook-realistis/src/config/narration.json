@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "status": "draft",
+  "beats": [
+    {
+      "scene": "S01 — Menonton sampai ketiduran",
+      "startFrame": 0,
+      "endFrame": 240,
+      "text": ""
+    },
+    {
+      "scene": "S02 — Download belum selesai",
+      "startFrame": 240,
+      "endFrame": 405,
+      "text": ""
+    },
+    {
+      "scene": "S03 — Jam dan timer otomatis",
+      "startFrame": 405,
+      "endFrame": 630,
+      "text": ""
+    },
+    {
+      "scene": "S04 — Windows Run dan perintah shutdown",
+      "startFrame": 630,
+      "endFrame": 960,
+      "text": ""
+    }
+  ]
+}

@@ -18,6 +18,7 @@ for(const v of catalog.videos){
  let current=errors;
  if(known.has(v.id))fail('Catalog ID duplikat: '+v.id);known.add(v.id);
  if(!registeredSet.has(v.id))fail('Komposisi belum terdaftar: '+v.id);
+ if(v.voiceGuideCompositionId){known.add(v.voiceGuideCompositionId);if(!registeredSet.has(v.voiceGuideCompositionId))fail('Komposisi VO Guide belum terdaftar: '+v.voiceGuideCompositionId);}
  for(const seg of (v.segments||[])){
   if(known.has(seg.id))fail('ID segmen duplikat: '+seg.id);known.add(seg.id);
   if(!registeredSet.has(seg.id))fail('Komposisi segmen belum terdaftar: '+seg.id);

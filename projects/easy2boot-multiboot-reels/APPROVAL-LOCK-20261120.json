@@ -1,0 +1,99 @@
+{
+  "projectId": "Easy2BootMultibootReels",
+  "slug": "easy2boot-multiboot-reels",
+  "storyboard": {
+    "format": "1080×1920 30fps",
+    "latestSource": "ZIP Master 20261120-023455; source Scene 03 tidak berubah saat ACC",
+    "previewOnlyUntilVO": "voice-over final belum ada"
+  },
+  "approved": {
+    "scene01": {
+      "status": "locked",
+      "visual": "Windows 11 vs Windows 10, Impact Stamp tanpa lingkaran",
+      "sourceChanged": false
+    },
+    "scene02": {
+      "status": "locked",
+      "visual": "Ah ribet banget, Card Break, tiga ISO masuk satu USB",
+      "sourceChanged": false
+    },
+    "bridge02to03": {
+      "status": "locked — user ACC 2026-11-20",
+      "visual": "Opsi01 Match Move USB, ? dan GIMANA CARA BIKINNYA?, tanpa header dekoratif",
+      "durationInFrames": 108
+    },
+    "scene03": {
+      "status": "locked — user ACC 2026-11-20 (seluruh Scene 03)",
+      "scope": "Seluruh Scene 03: backup → data aman → buka Make_E2B → pilih USB → buat USB → USB siap",
+      "durationInFrames": 472,
+      "startFrame": 879,
+      "visualSourceUnchanged": true,
+      "preview": "Preview-Scene03-ACC-30FPS.mp4",
+      "voiceOverStatus": "belum ada VO final; preview visual+SFX saja",
+      "sourceSHA256": {
+        "src/scenes/Scene03Preparation.tsx": "82f0b8cf888f885f10622e89ab34d04043c7495e1e4f5909f95d14747d0c5061",
+        "src/scenes/Scene03ReadableEntrance.tsx": "96050b56955828f3134c27fd63806f9d4ad35adb3cbc2161b0dc0a6e4f829e43",
+        "src/components/Scene03ReadableSfx.tsx": "98ed3d2b63d3b1b7399fb4146893bf9a6abced238114d8584e3594ef68d9dc97",
+        "src/config/scene03Svg.ts": "a222e37c179f487897114ef3988691b4c5be9029aac30695a19997f906e04b59",
+        "src/config/frames/scene03.ts": "c894e0200a32c9f45a1f8e301ff227c13bb4b8bbe75e438742fad07456f89c5d",
+        "public/audio/scene03_sfx.wav": "ea3630edc5713007ff9bf9c51d442dbcbf98e7826ae894277765e0d8830e24c7"
+      },
+      "scopeExcluded": [
+        "Scene 04",
+        "Scene 05",
+        "Scene 06"
+      ]
+    },
+    "scene04": {
+      "status": "review v9, do not label approved",
+      "visual": "Dua jendela Explorer, ISO ke folder"
+    },
+    "scene05": {
+      "status": "not reviewed latest",
+      "visual": "Boot menu, agFM, Windows Setup"
+    },
+    "scene06": {
+      "status": "not reviewed latest",
+      "visual": "Bootable ulang vs multiboot, CTA"
+    },
+    "scene03Entrance": {
+      "status": "locked — user ACC 2026-11-20",
+      "scope": "HANYA penyambung dari bridge 02→03 ke pengantar BACKUP DATA: fade terpisah tanpa overlap, backup lebih pelan, hold DATA SUDAH AMAN",
+      "editableProps": [
+        "scene03EntryFadeFrames",
+        "scene03ReadableIntroFrames",
+        "scene03IntroHoldFrames",
+        "scene03IntroStartSourceFrame",
+        "scene03IntroEndSourceFrame"
+      ],
+      "sourceChangedSinceApprovedPreview": false,
+      "preview": "Preview-Transisi-S02-ke-S03-Lebih-Nyaman-30FPS.mp4"
+    }
+  },
+  "originalLockedSha256": {
+    "src/scenes/Scene01Problem.tsx": "b0eb440f79c33da48bf047cf335d53dafdbbd455ed65e6eb14f77d532c142906",
+    "src/scenes/Scene02Solution.tsx": "8fd77bf50eda3be617b7bdf8f834f10d59103562a10a0a7372d80bfacf3c036b",
+    "src/config/scene01Impact.ts": "525bfba93bc84da0a55f686e0873cde50f1ba3d91881d8f2c8862fe46d54cc06",
+    "src/config/scene02CardBreak.ts": "32d60a2ea69f976f62a35d51e521334f3a70327b3920360e67c90b72405968ea",
+    "src/animations/scene01Impact.ts": "1e04d9928cfac57617900f11bf623fb71674213b5d361b4f368a2c817f2451b9",
+    "src/animations/scene02CardBreak.ts": "3148dc082f65194ff62ab888d7036c117e6af86b67490341a3f7348b84f08770",
+    "public/audio/scene01_impact_stamp.wav": "63b30419455157a3a71835df95be3726be1c4228f3b6621ea6ba3d7884c4fa76",
+    "public/audio/scene02_card_break.wav": "96c00d89d51d360001d4e1e445463500d130a69e8acd41763534e97e2e6657c8"
+  },
+  "changesAllowed": [
+    "src/Video.tsx",
+    "src/SegmentVideo.tsx",
+    "src/config/timings.ts",
+    "src/config/props.ts",
+    "motiongraphic-video.json",
+    "new Scene02WithBridge and Scene02To03MatchMove"
+  ],
+  "notes": "Approval status from user message 2026-11-20, not from out-of-date generated PRODUCTION-STATE.json.",
+  "lockPolicy": "Tidak boleh mengubah Scene 01, Scene 02, pengantar 02→03, atau keseluruhan Scene 03 tanpa permintaan revisi eksplisit dari pengguna. Scene 04 masih review (preview konsep ISO serentak belum diintegrasikan); Scene 05–06 belum ACC.",
+  "newlyApprovedSha256": {
+    "src/scenes/Scene02To03MatchMove.tsx": "8cd7a332d79a8b6d3a2ebf1bf294296651ab9cfeee7f1bca6dddec76c57d7f98",
+    "src/scenes/Scene03ReadableEntrance.tsx": "96050b56955828f3134c27fd63806f9d4ad35adb3cbc2161b0dc0a6e4f829e43",
+    "src/components/Scene03ReadableSfx.tsx": "98ed3d2b63d3b1b7399fb4146893bf9a6abced238114d8584e3594ef68d9dc97"
+  },
+  "approvalRevision": "SCENE03-FULL-ACC-20261120"
+}

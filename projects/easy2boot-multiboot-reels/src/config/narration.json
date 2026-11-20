@@ -1,0 +1,133 @@
+{
+  "schemaVersion": 1,
+  "status": "draft",
+  "notes": "Timing estimasi dari visual 2641 frame; sesuaikan setelah suara final direkam. Satu sumber naskah VO Guide.",
+  "beats": [
+    {
+      "scene": "S01",
+      "startFrame": 0,
+      "endFrame": 118,
+      "text": "Mau instal Windows 11,"
+    },
+    {
+      "scene": "S01",
+      "startFrame": 118,
+      "endFrame": 257,
+      "text": "tapi flashdisk bootable-nya masih Windows 10?"
+    },
+    {
+      "scene": "S01",
+      "startFrame": 257,
+      "endFrame": 381,
+      "text": "Masa harus bikin bootable ulang lagi?"
+    },
+    {
+      "scene": "S02",
+      "startFrame": 381,
+      "endFrame": 484,
+      "text": "Ah, ribet banget."
+    },
+    {
+      "scene": "S02",
+      "startFrame": 484,
+      "endFrame": 570,
+      "text": "Mending pakai Easy2Boot aja."
+    },
+    {
+      "scene": "S02",
+      "startFrame": 570,
+      "endFrame": 771,
+      "text": "Satu flashdisk bisa nyimpen installer Windows 10, Windows 11, sampai Linux sekaligus."
+    },
+    {
+      "scene": "BRIDGE02TO03",
+      "startFrame": 771,
+      "endFrame": 879,
+      "text": "Gimana cara bikinnya?"
+    },
+    {
+      "scene": "S03",
+      "startFrame": 879,
+      "endFrame": 1010,
+      "text": "Pertama, backup data flashdisk."
+    },
+    {
+      "scene": "S03",
+      "startFrame": 1010,
+      "endFrame": 1121,
+      "text": "Buka Easy2Boot."
+    },
+    {
+      "scene": "S03",
+      "startFrame": 1121,
+      "endFrame": 1220,
+      "text": "Pilih USB yang benar,"
+    },
+    {
+      "scene": "S03",
+      "startFrame": 1220,
+      "endFrame": 1351,
+      "text": "lalu buat USB multiboot."
+    },
+    {
+      "scene": "S04",
+      "startFrame": 1351,
+      "endFrame": 1494,
+      "text": "Salin file ISO installer"
+    },
+    {
+      "scene": "S04",
+      "startFrame": 1494,
+      "endFrame": 1659,
+      "text": "ke folder masing-masing."
+    },
+    {
+      "scene": "S04",
+      "startFrame": 1659,
+      "endFrame": 1831,
+      "text": "Sesuai sistem operasinya."
+    },
+    {
+      "scene": "S05",
+      "startFrame": 1831,
+      "endFrame": 1950,
+      "text": "Sekarang, boot dari USB."
+    },
+    {
+      "scene": "S05",
+      "startFrame": 1950,
+      "endFrame": 2035,
+      "text": "Pilih flashdisk di boot menu."
+    },
+    {
+      "scene": "S05",
+      "startFrame": 2035,
+      "endFrame": 2120,
+      "text": "Di agFM, cari ISO Windows 11."
+    },
+    {
+      "scene": "S05",
+      "startFrame": 2120,
+      "endFrame": 2190,
+      "text": "Pilih, lalu jalankan."
+    },
+    {
+      "scene": "S05",
+      "startFrame": 2190,
+      "endFrame": 2251,
+      "text": "Installer Windows mulai terbuka."
+    },
+    {
+      "scene": "S06",
+      "startFrame": 2251,
+      "endFrame": 2440,
+      "text": "Kalau kamu, biasanya bikin bootable ulang atau pakai multiboot?"
+    },
+    {
+      "scene": "S06",
+      "startFrame": 2440,
+      "endFrame": 2641,
+      "text": "Coba tulis di kolom komentar!"
+    }
+  ]
+}

@@ -5,6 +5,9 @@ import os from 'node:os';
 import path from 'node:path';
 import {spawnSync,execFileSync} from 'node:child_process';
 import {fileURLToPath} from 'node:url';
+import {validateAddon} from './validate-addon.mjs';
+import {inspectZip} from './zip-preflight.mjs';
+import {normalizeProjectAssets} from './normalize-project-assets.mjs';
 const ROOT=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const assert=(ok,msg)=>{if(!ok)throw Error(msg)};
 const safeRel=s=>typeof s==='string'&&s.length>0&&!path.isAbsolute(s)&&!s.includes('\\')&&s.split('/').every(x=>x&&x!=='.'&&x!=='..')&&/^[A-Za-z0-9_./-]+$/.test(s);
@@ -16,6 +19,7 @@ function unpack(input){
   if(fs.statSync(input).isDirectory())return {dir:input,clear:()=>{}};
   assert(input.toLowerCase().endsWith('.zip'),'Harus .zip atau folder add-on');
   assert(fs.statSync(input).size<1024*1024*1024,'ZIP terlalu besar');
+  inspectZip(input); // checks path traversal, symlinks, collisions, bombs BEFORE extraction
   const tmp=fs.mkdtempSync(path.join(os.tmpdir(),'mg-import-'));
   try{
     if(process.platform==='win32'){
@@ -46,6 +50,9 @@ try{
   try{
     const manifest=JSON.parse(fs.readFileSync(path.join(dir,'motiongraphic-video.json'),'utf8'));
     const m=manifest;
+    const verdict=validateAddon(dir,{root:ROOT,matchFolder:true});
+    assert(verdict.ok,'Add-on gagal validasi: '+verdict.errors.join('; '));
+    verdict.warnings.forEach(x=>console.warn('[IMPORT WARN] '+x));
     assert(/^[a-z][a-z0-9-]{1,48}$/.test(m.slug||''),'slug tidak valid');
     assert(/^[A-Z][A-Za-z0-9]{2,80}$/.test(m.id||''),'id komposisi tidak valid');
     assert(typeof m.title==='string'&&m.title.trim(),'Judul tidak ada');
@@ -71,15 +78,7 @@ try{
         if(fs.lstatSync(p).isSymbolicLink())throw Error('Symlink dilarang: '+p);
         return true;
       }});
-      // Dukungan ZIP lama dengan staticFile('audio/xxx'): sesuaikan ke mirror asset folder-first.
-      for(const file of files(path.join(staging,'src')).filter(f=>/\.[jt]sx?$/.test(f))){
-        const original=fs.readFileSync(file,'utf8');
-        const updated=original.replace(/staticFile\(\s*(['"])([^'"`]+)\1\s*\)/g,(raw,q,s)=>{
-          assert(safeRel(s),'staticFile path tidak aman: '+s);
-          return `staticFile(${q}${s.startsWith('videos/'+m.slug+'/')?s:'videos/'+m.slug+'/'+s}${q})`;
-        });
-        if(original!==updated)fs.writeFileSync(file,updated);
-      }
+      normalizeProjectAssets(staging,m.slug); // only on staged new project
       fs.renameSync(staging,target);committed=target;staging=null;
       const r=spawnSync(process.execPath,[path.join(ROOT,'tools/sync-projects.mjs')],{cwd:ROOT,stdio:'inherit'});
       if(r.status!==0){fs.renameSync(target,path.join(ROOT,'projects','_failed-'+m.slug));committed=null;throw Error('Sync gagal; source dipindah ke projects/_failed-'+m.slug+' untuk diperbaiki, video lain aman.');}

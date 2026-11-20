@@ -13,8 +13,8 @@ process.on('SIGINT',()=>{console.error('\n[ZIP] Permintaan batal diterima, membe
 const report=progressLogger();
 const assert=(ok,message)=>{if(!ok)throw Error(message)};
 const exportDirs=()=>ensureExportDirs();
-async function pack(sources,out){
-  const entries=await collectEntries(sources,{ignoreNames:IGNORE});
+async function pack(sources,out,{lean=false}={}){
+  const entries=await collectEntries(sources,{ignoreNames:IGNORE,ignoreRelative:name=>lean && (/^MotionGraphic-Studio\/library\/(?:backups|sampah|arsip-|sudah-diimpor|gagal-import|arsip-migrasi)/.test(name))});
   console.log(`[ZIP] Menyiapkan ${entries.length} entri tanpa memuat seluruh file ke RAM.`);
   const result=await createZip(entries,out,{signal:controller.signal,onProgress:report});
   console.log(`\n[ZIP BERHASIL] ${result.out} (${(result.compressedBytes/1048576).toFixed(2)} MB)`);
@@ -31,14 +31,14 @@ async function videoZip(video){
   console.log(`\n[ZIP VIDEO] ${video.title} (${video.id})`);
   return pack([{absolute:origin,name:video.slug}],out);
 }
-async function studioZip(){
-  const dirs=['projects','src','tools','library','.agents','.github','tests'];
+async function studioZip({lean=false}={}){
+  const dirs=['projects','src','tools','library','.agents','.github','tests','contracts','templates','docs'];
   const files=['package.json','package-lock.json','tsconfig.json','.gitignore','README.md','PROMPT-PROYEK-CHATGPT.md','PRODUCTION-RULES.md','AGENTS.md','STANDAR-EDITABLE-STUDIO.md','STANDAR-EDITABLE-STUDIO-v3.md','PANDUAN-REMOTION-STUDIO.md','PANDUAN-AUDIO-TIMELINE.md','AUDIT-REMOTION-ONLY-20261104.md','public/README.txt','01-BUKA-STUDIO.bat','02-CEK-STUDIO.bat','03-STOP-STUDIO.bat','INSTALL-SEMUA-SKILL-REMOTION.bat'];
   const sources=[...dirs,...files].filter(name=>fs.existsSync(path.join(ROOT,name))).map(name=>({absolute:path.join(ROOT,name),name:'MotionGraphic-Studio/'+name}));
   const pkg=JSON.parse(fs.readFileSync(path.join(ROOT,'package.json'),'utf8'));
-  const out=availableFile(exportDirs().master,`MotionGraphic-Studio-Master-v${pkg.version}-${timestamp()}`,'.zip');
+  const out=availableFile(exportDirs().master,`MotionGraphic-Studio-Master-${lean?'LEAN-':''}v${pkg.version}-${timestamp()}`,'.zip');
   console.log('\n[ZIP MASTER] Mengemas seluruh project, source, konfigurasi, dokumen dan riwayat yang masih ada.');
-  const result=await pack(sources,out);
+  const result=await pack(sources,out,{lean});
   console.log('[MASTER] Lokasi: '+exportDirs().root+' (di LUAR folder Master).');
   console.log('[MASTER] Tidak menyertakan node_modules, render, cache, dan mirror aset.');
   return result;
@@ -50,7 +50,7 @@ function showVideos(videos){
 }
 async function run(){
   const args=process.argv.slice(2);
-  if(args.includes('--studio')||args.includes('--master'))return studioZip();
+  if(args.includes('--studio')||args.includes('--master'))return studioZip({lean:args.includes('--lean')});
   if(args.includes('--all')){
     for(const video of readCatalog().videos)await videoZip(video);
     return;

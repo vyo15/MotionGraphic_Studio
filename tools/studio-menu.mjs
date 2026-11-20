@@ -28,6 +28,9 @@ const menuItems=[
   ['8','Arsipkan video (aman)'],
   ['9','Pulihkan video'],
   ['10','Cek masalah folder (tanpa perubahan)'],
+  ['11','Validasi add-on dari ChatGPT'],
+  ['12','Edit panduan rekaman VO'],
+  ['13','Terapkan patch revisi aman'],
 ];
 // Satu sesi input untuk semua menu: tidak berganti readline antar proses.
 const rl=createInterface({input:process.stdin,output:process.stdout});
@@ -78,7 +81,8 @@ async function doZip(){
   console.log('  1. Satu video (ZIP editable)');
   console.log('  2. Semua video (ZIP masing-masing)');
   console.log('  3. MASTER STUDIO lengkap (di luar folder Studio)');
-  const mode=await ask('\nPilih 1/2/3 (Enter = kembali): ');
+  console.log('  4. MASTER STUDIO LEAN (tanpa backup historis di ZIP)');
+  const mode=await ask('\nPilih 1/2/3/4 (Enter = kembali): ');
   if(!mode)return console.log('[MENU] Ekspor dibatalkan tanpa perubahan.');
   if(mode==='1'){
     const video=await chooseVideo();
@@ -86,6 +90,7 @@ async function doZip(){
   }else if(mode==='2'){
     if(catalogVideos().length)runScript('zip-video.mjs',['--all']);
   }else if(mode==='3')runScript('zip-video.mjs',['--studio']);
+  else if(mode==='4')runScript('zip-video.mjs',['--studio','--lean']);
   else console.log('[MENU] Pilihan ekspor tidak dikenal: '+mode);
 }
 async function doRender(){
@@ -170,6 +175,34 @@ async function doAddFolder(){
   else if(process.platform==='win32')runScript('add-folder.mjs',['--dialog-only']);
   else console.log('[MENU] Import dibatalkan.');
 }
+async function doValidateAddon(){
+ const folder=await ask('Path folder add-on ChatGPT (Enter = kembali): ');
+ if(!folder)return;
+ runScript('validate-addon.mjs',[folder.replace(/^['"]|['"]$/g,''),'--strict']);
+}
+async function doEditVO(){
+ const project=await choose(catalogVideos().filter(v=>fs.existsSync(path.join(ROOT,v.projectDir,'src/config/narration.json'))),
+  'VIDEO DENGAN VO GUIDE:',v=>`${v.title} [${v.id}]`,v=>[v.id,v.slug]);
+ if(!project)return;
+ const file=path.join(ROOT,project.projectDir,'src/config/narration.json');
+ const data=JSON.parse(fs.readFileSync(file,'utf8'));
+ console.log('\nBEAT NASKAH:');
+ data.beats.forEach((b,i)=>console.log(`  ${i+1}. ${b.scene}: ${b.text.slice(0,70)||'(kosong)'}`));
+ const selected=await ask('Nomor beat untuk diubah (Enter = kembali): ');
+ const n=Number(selected);
+ if(!selected||!Number.isInteger(n)||n<1||n>data.beats.length)return console.log('[VO] Tidak ada perubahan.');
+ const updated=await ask('Tulis teks narasi baru (satu baris): ');
+ if((await ask('Ketik SIMPAN agar naskah disimpan: '))!=='SIMPAN')return console.log('[VO] Batal.');
+ if(runScript('vo-edit.mjs',[project.slug,'--beat',String(n),'--text',updated]))runScript('sync-projects.mjs');
+}
+async function doPatch(){
+ const folder=await ask('Path folder patch (addon-patch.json) (Enter = kembali): ');
+ if(!folder)return;
+ const dest=folder.replace(/^['"]|['"]$/g,'');
+ if(!runScript('apply-addon-patch.mjs',[dest,'--dry-run']))return;
+ if((await ask('Ketik TERAPKAN untuk menjalankan patch: '))!=='TERAPKAN')return console.log('[PATCH] Batal.');
+ if(runScript('apply-addon-patch.mjs',[dest]))runScript('sync-projects.mjs');
+}
 async function handle(choice){
   switch(choice){
     case '1': if(runScript('prepare-studio.mjs'))runScript('start-studio.mjs');break;
@@ -182,6 +215,9 @@ async function handle(choice){
     case '8': await doDelete();break;
     case '9': await doRestore();break;
     case '10': runScript('doctor.mjs');break;
+    case '11': await doValidateAddon();break;
+    case '12': await doEditVO();break;
+    case '13': await doPatch();break;
     default: console.log('[MENU] Pilihan tidak dikenal.');
   }
 }

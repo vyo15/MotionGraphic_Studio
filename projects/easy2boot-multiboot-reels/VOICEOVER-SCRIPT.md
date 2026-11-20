@@ -1,15 +1,17 @@
-# Naskah Voice-over Easy2Boot (Draft)
+# Naskah VO Easy2Boot — Panduan Rekaman (Draft)
 
-00:00–00:12  Mau instal Windows 11, tapi flashdisknya masih Windows 10? Masa harus bikin bootable ulang lagi?
+**Satu-satunya sumber naskah dan estimasi waktunya:** `src/config/narration.json`.
 
-00:12–00:23  Nggak perlu bikin ulang terus. Pakai Easy2Boot. Satu flashdisk bisa isi beberapa installer sekaligus.
+- Durasi video visual: **2641 frame / 30 fps = 88,03 detik**.
+- Timing di JSON adalah **draft dari visual**, bukan klaim telah sinkron dengan voice-over asli.
+- Untuk melihat teks VO mengikuti gerakan, buka komposisi `Easy2BootMultibootReelsVOGuide` di Remotion Studio.
+- Kamu juga bisa merender komposisi panduan ke MP4. Komposisi `Easy2BootMultibootReels` tetap bersih dan tidak mendapatkan overlay panduan.
+- Teks dibagi menjadi beat pendek agar cukup dibaca di layar ponsel saat latihan rekaman.
+- Setelah VO direkam, letakkan audio di `public/audio/`, sesuaikan batas beat di JSON, dan perbarui subtitle final secara independen.
+- `src/config/subtitles.ts` masih **caption draft**, tidak boleh dianggap hasil sinkronisasi audio final.
 
-00:23–00:37  Pertama, backup data flashdisk. Buka Easy2Boot. Pilih USB yang benar, lalu buat USB multiboot.
+**Workflow tetap:** motion + revisi → VO Guide → rekam → sinkronkan → QA → final.
 
-00:37–00:53  Setelah jadi, tinggal salin file ISO ke folder yang sesuai. Windows 10, Windows 11, atau Linux. Mau tambah installer? Cukup salin lagi.
+## Catatan revisi Scene 03 dan Scene 04
 
-00:53–01:07  Sekarang, boot dari USB. Pilih flashdisk di boot menu. Di agFM, cari ISO Windows 11. Pilih, lalu jalankan. Installer Windows mulai terbuka.
-
-01:07–01:20  Kalau kamu, biasanya bikin bootable ulang atau pakai multiboot? Coba tulis di kolom komentar!
-
-**VO belum direkam / disinkronkan.** Baca natural; waktu animasi perlu dilonggarkan/disesuaikan dengan suara hasil rekaman.
+Teks VO bawah Scene 03 dan Scene 04 sekarang ditampilkan otomatis sebagai layer teks mandiri (`SceneTextVO`) saat `scene03ShowTextVO` / `scene04ShowTextVO` bernilai true dan global `showSubtitles` bernilai false. Teks dan timing masih **draft tanpa rekaman VO**. Tidak ada label atau kotak subtitle. Jika menggunakan track VO final, sinkronkan subtitle berdasarkan audio asli.

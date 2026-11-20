@@ -1,0 +1,134 @@
+{
+  "schemaVersion": 1,
+  "projectId": "ShutdownOtomatisHookRealistis",
+  "slug": "shutdown-otomatis-hook-realistis",
+  "workflow": "guided-approval-first-scene",
+  "phase": "scene01-to-04-v35-editable-in-review",
+  "scriptApproval": "in-review",
+  "storyboardApproval": "in-review",
+  "referenceSceneId": "ShutdownOtomatisHookRealistis-S01",
+  "referenceSceneApproval": "in-review",
+  "voiceOverStatus": "not-recorded",
+  "fullVideoApproval": "in-review",
+  "scenes": [
+    {
+      "id": "ShutdownOtomatisHookRealistis-S01",
+      "title": "S01 — Menonton sampai ketiduran",
+      "status": "in-review",
+      "scriptApproval": "in-review",
+      "storyboardApproval": "in-review",
+      "visualApproval": "in-review"
+    },
+    {
+      "id": "ShutdownOtomatisHookRealistis-S02",
+      "title": "S02 — Download belum selesai",
+      "status": "in-review",
+      "scriptApproval": "in-review",
+      "storyboardApproval": "in-review",
+      "visualApproval": "in-review"
+    },
+    {
+      "id": "ShutdownOtomatisHookRealistis-S03",
+      "title": "S03 — Jam dan timer otomatis",
+      "status": "in-review",
+      "visualApproval": "in-review",
+      "scriptApproval": "in-review",
+      "storyboardApproval": "in-review"
+    },
+    {
+      "id": "ShutdownOtomatisHookRealistis-S04",
+      "title": "S04 — Windows Run dan perintah shutdown",
+      "status": "in-review",
+      "visualApproval": "in-review",
+      "scriptApproval": "in-review",
+      "storyboardApproval": "in-review"
+    }
+  ],
+  "decisionLog": [
+    {
+      "version": "v18",
+      "decision": "Perbaikan orientasi display laptop terhadap karakter dan label Sedang menonton film",
+      "scope": "Scene 01 · Laptop; sumber V17 dipertahankan",
+      "approval": "in-review"
+    },
+    {
+      "version": "S02-v1",
+      "decision": "Menambahkan masalah kedua: karakter menunggu unduhan 75% di set dan warna yang sama. Scene01 dipertahankan",
+      "scope": "Scene 02 saja; integrasi full dan segment",
+      "approval": "in-review"
+    },
+    {
+      "version": "v20",
+      "decision": "Sambungan S01→S02 pada frame 240 menggunakan pose tidur yang persis sama, karakter bangun singkat, layar film berubah melalui wipe menjadi unduhan, judul keluar/masuk berurutan; scene standalone tetap V18/V19",
+      "scope": "Sambungan full composition saja; tidak mengubah geometri karakter, background, ID/slug, atau scene lain",
+      "approval": "in-review"
+    },
+    {
+      "version": "v22",
+      "decision": "Menyempurnakan transisi opsi B: kamera zoom bermotivasi ke layar, UI film berganti ke download dengan clip panel, kembali ke komposisi asli; geometri engsel laptop lebih jelas. Source S01/S02 standalone tidak berubah.",
+      "scope": "Sambungan S01→S02 full composition dan detail laptop SVG saja",
+      "approval": "in-review"
+    },
+    {
+      "version": "v23",
+      "decision": "Perbaiki Opsi B: hentikan seluruh zoom dan camera movement. Perpindahan berlangsung lewat film->download di layar laptop dan reaksi karakter; tahan hasil; delay panel pembesaran agar tidak menumpuk.",
+      "scope": "Hanya transisi S01–S02 dan continuityIn scene02; status in-review",
+      "approval": "in-review"
+    },
+    {
+      "version": "v24",
+      "decision": "Laptop dan keyboard tidak ditampilkan. Karakter tetap duduk dan memandang indikator animasi film/download di atas kirinya; kamera statis, satu indikator berubah konten melalui transisi internal.",
+      "scope": "Scene 01, Scene 02 dan sambungan saja; karakter, ruangan, brand, slug/ID dipertahankan",
+      "approval": "in-review"
+    },
+    {
+      "version": "v25",
+      "decision": "Laptop dipulihkan sebagai objek properti tampak belakang dengan empat bentuk A-D, tidak menampilkan isi layar, tetap bertumpu pada meja dan menghadap karakter. Indikator film/download di atas tetap sumber informasi. Kamera statis.",
+      "scope": "Scene 01, 02 dan bridge, laptop saja ditambahkan ke rig sumber; approval in-review",
+      "approval": "in-review"
+    },
+    {
+      "version": "v26",
+      "decision": "Memperbaiki keyboard V25 yang berada di sisi kamera: sekarang bidang keyboard dan layar mengarah ke karakter, kamera hanya melihat punggung laptop. Empat opsi material A–D tetap tersedia.",
+      "scope": "Hanya komponen laptop SVG dan dokumentasi; scene, karakter, CTA, hook, brand kit, ID/slug unchanged.",
+      "approval": "in-review"
+    },
+    {
+      "version": "v27",
+      "decision": "Laptop back-view sepenuhnya: sisi kamera hanya melihat punggung layar, garis engsel, bayangan, dan tepi dasar; keyboard tidak digambar sama sekali. Empat opsi A–D mempertahankan UI kartu film/download serta kamera statis.",
+      "scope": "Laptop SVG/config dan dokumentasi saja. Tidak mengubah karakter, Hook, VO, CTA, ID/slug, project lain.",
+      "approval": "in-review"
+    },
+    {
+      "version": "v28",
+      "decision": "Ganti pose tangan menonton agar tidak memotong laptop, batasi profil alas punggung layar, satu model B sebagai fokus QA",
+      "scope": "Hanya shared SVG arm/hand/laptop; naskah, karakter kepala, scene lain tidak berubah",
+      "approval": "in-review"
+    },
+    {
+      "version": "v29",
+      "decision": "Alternatif Scene 01 dengan stickman 2D vector rig, animasi mata/mulut/kepala/tubuh/lengan frame-based; laptop hanya rear-view prop. Pengganti visual karakter S01 saja, belum approved.",
+      "scope": "Scene 01 sahaja; Scene 02, transition, brand kit, ID dan slug tidak diubah",
+      "approval": "in-review"
+    },
+    {
+      "version": "v30",
+      "decision": "Scene02 diubah menjadi stickman 2D dengan set visual identik V29; transisi ATAU tanpa zoom, karakter beranjak dari posisi tidur lalu melihat kartu unduhan 75%. VO ESTIMASI.",
+      "scope": "Scene02, komponen SVG baru, komposisi full dan segment; tidak mengubah Scene01Hook.tsx atau sceneSvg sumber V29.",
+      "approval": "in-review"
+    },
+    {
+      "version": "v31",
+      "decision": "Pemisah editorial 36 frame menandai kasus baru. Scene 02 tidak membangunkan karakter tidur dari Scene 01: stickman kini di kanan dan progress download dominan kiri. Scene01 V29 tetap identik.",
+      "scope": "Scene02, separator, integrasi full/segments, manifest dan dokumentasi; ID/slug/brand kit/Scene01 tidak berubah",
+      "approval": "in-review"
+    },
+    {
+      "version": "v35-editable",
+      "decision": "Implementasi empat segmen V35 yang user minta dibuat editable: stickman SVG V29/V31, jam/timer, Win+R, subtitle ESTIMASI; layout source tetap 9:16. VO aktual belum tersedia.",
+      "scope": "Project shutdown saja; Master dan project lain tidak diubah",
+      "approval": "in-review"
+    }
+  ],
+  "notes": "V31: preview animasi dua kasus, belum disinkronkan VO. Validasi rendering pendamping bukan Remotion CLI. Pemisah khusus di full timeline, scene S02 tetap segmen index=1."
+}

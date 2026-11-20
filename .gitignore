@@ -34,3 +34,8 @@ library/masuk/*
 
 # Backup hasil Easy Editor (termasuk versi sebelum simpan)
 library/backups/easy-editor/
+
+# Artefak QA dan addon scaffold generated
+qa-out/
+exports/addons/
+*.partial.zip

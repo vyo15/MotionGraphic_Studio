@@ -122,7 +122,7 @@
       "width": 1080,
       "height": 1920,
       "fps": 30,
-      "durationInFrames": 2400,
+      "durationInFrames": 2641,
       "assetPrefix": "videos/easy2boot-multiboot-reels",
       "source": "projects/easy2boot-multiboot-reels/src/Video.tsx",
       "projectDir": "projects/easy2boot-multiboot-reels",
@@ -133,8 +133,8 @@
         "title01Wrong": "WINDOWS 10.",
         "title01Redo": "BUAT ULANG?",
         "title01Wait": "NUNGGU LAGI.",
-        "title02NoRedo": "NGGAK PERLU.",
-        "title02App": "EASY 2BOOT.",
+        "title02NoRedo": "AH, RIBET BANGET.",
+        "title02App": "MENDING PAKAI EASY2BOOT.",
         "title02Usb": "SATU FLASHDISK",
         "title02Installers": "BEBERAPA",
         "backgroundColor": "#F7F7F5",
@@ -175,46 +175,123 @@
         "coverLine2": "BANYAK INSTALLER",
         "showSubtitles": false,
         "subtitleColor": "#202020",
-        "fontFamily": "Inter, Arial, sans-serif"
+        "fontFamily": "Inter, Arial, sans-serif",
+        "scene01MismatchTitle": "TAPI USB-NYA",
+        "scene01MismatchValue": "MASIH WIN 10",
+        "scene01FinalLine1": "MASA HARUS",
+        "scene01FinalLine2": "BIKIN ULANG LAGI?",
+        "scene01StampFrame": 332,
+        "scene01StampScale": 1,
+        "scene01ShakePower": 1,
+        "scene01StampColor": "#DA7A5C",
+        "scene01ShowStamp": true,
+        "scene01ShowCaptions": true,
+        "scene01CaptionLines": [
+          "Mau instal Windows 11,",
+          "tapi flashdisk bootable-nya|masih Windows 10?",
+          "Masa harus bikin bootable|ulang lagi?"
+        ],
+        "scene02BreakStartFrame": 5,
+        "scene02BreakDurationFrames": 23,
+        "scene02BreakSpread": 1,
+        "scene02BreakRotation": 1,
+        "scene02BreakColor": "#DA7A5C",
+        "scene02ShowBreak": true,
+        "scene02ReactionLine1": "AH, RIBET",
+        "scene02ReactionLine2": "BANGET.",
+        "scene02SolutionLine1": "MENDING PAKAI",
+        "scene02SolutionLine2": "EASY2BOOT.",
+        "scene02ManyLine1": "SATU FLASHDISK",
+        "scene02ManyLine2": "BANYAK INSTALLER",
+        "bridgeQuestionText": "GIMANA CARA BIKINNYA?",
+        "bridgeUsbLabel": "USB",
+        "bridgeMoveStartFrame": 26,
+        "bridgeMoveEndFrame": 55,
+        "bridgeUsbRiseLogicalPx": 137,
+        "bridgeQuestionStartFrame": 51,
+        "bridgeQuestionEndFrame": 68,
+        "scene03EntryFadeFrames": 32,
+        "scene03ReadableIntroFrames": 70,
+        "scene03IntroHoldFrames": 25,
+        "scene03IntroStartSourceFrame": 25,
+        "scene03IntroEndSourceFrame": 75,
+        "scene03CleanLayout": true,
+        "scene03ShowTextVO": true,
+        "scene04ShowTextVO": true,
+        "scene04CleanLayout": true,
+        "scene04IsoFiles": [
+          "Win8_64.iso",
+          "Win10_22H2.iso",
+          "Win11_24H2.iso",
+          "Ubuntu_24.04.iso"
+        ],
+        "scene04InstallerLabels": [
+          "WINDOWS 8",
+          "WINDOWS 10",
+          "WINDOWS 11",
+          "LINUX"
+        ],
+        "scene04FolderPaths": [
+          "WINDOWS / WIN8",
+          "WINDOWS / WIN10",
+          "WINDOWS / WIN11",
+          "LINUX"
+        ],
+        "scene04SubtitleLines": [
+          "Salin file ISO installer",
+          "ke folder masing-masing.",
+          "Sesuai sistem operasinya."
+        ],
+        "scene03SubtitleLines": [
+          "Pertama, backup data flashdisk.",
+          "Buka Easy2Boot.",
+          "Pilih USB yang benar,",
+          "lalu buat USB multiboot."
+        ],
+        "scene04SuccessLabel": "4 ISO TERSIMPAN",
+        "scene04UsbLabel": "USB",
+        "scene04HeroTitle": "4 INSTALLER",
+        "scene04HeroSupport": "SATU FLASHDISK"
       },
       "segments": [
         {
           "id": "Easy2BootMultibootReels-S01",
           "title": "01 — Masalah: Bootable ulang",
           "startFrame": 0,
-          "durationInFrames": 360
+          "durationInFrames": 381
         },
         {
           "id": "Easy2BootMultibootReels-S02",
           "title": "02 — Solusi: Easy2Boot",
-          "startFrame": 360,
-          "durationInFrames": 330
+          "startFrame": 381,
+          "durationInFrames": 498
         },
         {
           "id": "Easy2BootMultibootReels-S03",
           "title": "03 — Persiapan USB",
-          "startFrame": 690,
-          "durationInFrames": 420
+          "startFrame": 879,
+          "durationInFrames": 472
         },
         {
           "id": "Easy2BootMultibootReels-S04",
           "title": "04 — Salin ISO",
-          "startFrame": 1110,
+          "startFrame": 1351,
           "durationInFrames": 480
         },
         {
           "id": "Easy2BootMultibootReels-S05",
           "title": "05 — Booting Windows 11",
-          "startFrame": 1590,
+          "startFrame": 1831,
           "durationInFrames": 420
         },
         {
           "id": "Easy2BootMultibootReels-S06",
           "title": "06 — CTA + Cover",
-          "startFrame": 2010,
+          "startFrame": 2251,
           "durationInFrames": 390
         }
-      ]
+      ],
+      "voiceGuideCompositionId": "Easy2BootMultibootReelsVOGuide"
     },
     {
       "id": "IPAddressReels",
@@ -276,6 +353,384 @@
           "durationInFrames": 198
         }
       ]
+    },
+    {
+      "id": "ShutdownOtomatisHookRealistis",
+      "slug": "shutdown-otomatis-hook-realistis",
+      "title": "Shutdown Otomatis — Stickman & Windows Run (V35 Editable)",
+      "width": 1080,
+      "height": 1920,
+      "fps": 30,
+      "durationInFrames": 960,
+      "assetPrefix": "videos/shutdown-otomatis-hook-realistis",
+      "source": "projects/shutdown-otomatis-hook-realistis/src/Video.tsx",
+      "projectDir": "projects/shutdown-otomatis-hook-realistis",
+      "exportName": "Video",
+      "defaultProps": {
+        "showHookText": true,
+        "showEndText": true,
+        "showScene02Text": true,
+        "showSubtitle": true,
+        "filmLabel": "Sedang menonton film",
+        "downloadFileLabel": "materi-video.mp4",
+        "downloadPercent": 75,
+        "command": "shutdown /s /t 3600",
+        "shutdownSeconds": 3600,
+        "voiceEnabled": false,
+        "voiceVolume": 1,
+        "sceneEditor": {
+          "scene01": {
+            "speed": 1,
+            "layers": {
+              "background": {
+                "x": 0,
+                "y": 0,
+                "scale": 1,
+                "rotation": 0,
+                "opacity": 1
+              },
+              "chair": {
+                "x": 0,
+                "y": 0,
+                "scale": 1,
+                "rotation": 0,
+                "opacity": 1
+              },
+              "body": {
+                "x": 0,
+                "y": 0,
+                "scale": 1,
+                "rotation": 0,
+                "opacity": 1
+              },
+              "desk": {
+                "x": 0,
+                "y": 0,
+                "scale": 1,
+                "rotation": 0,
+                "opacity": 1
+              },
+              "laptop": {
+                "x": 0,
+                "y": 0,
+                "scale": 1,
+                "rotation": 0,
+                "opacity": 1
+              },
+              "arms": {
+                "x": 0,
+                "y": 0,
+                "scale": 1,
+                "rotation": 0,
+                "opacity": 1
+              },
+              "head": {
+                "x": 0,
+                "y": 0,
+                "scale": 1,
+                "rotation": 0,
+                "opacity": 1
+              },
+              "filmCard": {
+                "x": 0,
+                "y": 0,
+                "scale": 1,
+                "rotation": 0,
+                "opacity": 1
+              }
+            }
+          },
+          "scene02": {
+            "speed": 1,
+            "layers": {
+              "background": {
+                "x": 0,
+                "y": 0,
+                "scale": 1,
+                "rotation": 0,
+                "opacity": 1
+              },
+              "chair": {
+                "x": 0,
+                "y": 0,
+                "scale": 1,
+                "rotation": 0,
+                "opacity": 1
+              },
+              "body": {
+                "x": 0,
+                "y": 0,
+                "scale": 1,
+                "rotation": 0,
+                "opacity": 1
+              },
+              "desk": {
+                "x": 0,
+                "y": 0,
+                "scale": 1,
+                "rotation": 0,
+                "opacity": 1
+              },
+              "laptop": {
+                "x": 0,
+                "y": 0,
+                "scale": 1,
+                "rotation": 0,
+                "opacity": 1
+              },
+              "arms": {
+                "x": 0,
+                "y": 0,
+                "scale": 1,
+                "rotation": 0,
+                "opacity": 1
+              },
+              "head": {
+                "x": 0,
+                "y": 0,
+                "scale": 1,
+                "rotation": 0,
+                "opacity": 1
+              },
+              "downloadDetail": {
+                "x": 0,
+                "y": 0,
+                "scale": 1,
+                "rotation": 0,
+                "opacity": 1
+              }
+            }
+          },
+          "scene03": {
+            "speed": 1,
+            "layers": {
+              "background": {
+                "x": 0,
+                "y": 0,
+                "scale": 1,
+                "rotation": 0,
+                "opacity": 1
+              },
+              "header": {
+                "x": 0,
+                "y": 0,
+                "scale": 1,
+                "rotation": 0,
+                "opacity": 1
+              },
+              "footer": {
+                "x": 0,
+                "y": 0,
+                "scale": 1,
+                "rotation": 0,
+                "opacity": 1
+              },
+              "title": {
+                "x": 0,
+                "y": 0,
+                "scale": 1,
+                "rotation": 0,
+                "opacity": 1
+              },
+              "filmCard": {
+                "x": 0,
+                "y": 0,
+                "scale": 1,
+                "rotation": 0,
+                "opacity": 1
+              },
+              "downloadCard": {
+                "x": 0,
+                "y": 0,
+                "scale": 1,
+                "rotation": 0,
+                "opacity": 1
+              },
+              "clock": {
+                "x": 0,
+                "y": 0,
+                "scale": 1,
+                "rotation": 0,
+                "opacity": 1
+              },
+              "clockHands": {
+                "x": 0,
+                "y": 0,
+                "scale": 1,
+                "rotation": 0,
+                "opacity": 1
+              },
+              "timeTag": {
+                "x": 0,
+                "y": 0,
+                "scale": 1,
+                "rotation": 0,
+                "opacity": 1
+              },
+              "timer": {
+                "x": 0,
+                "y": 0,
+                "scale": 1,
+                "rotation": 0,
+                "opacity": 1
+              },
+              "scheduled": {
+                "x": 0,
+                "y": 0,
+                "scale": 1,
+                "rotation": 0,
+                "opacity": 1
+              }
+            }
+          },
+          "scene04": {
+            "speed": 1,
+            "layers": {
+              "background": {
+                "x": 0,
+                "y": 0,
+                "scale": 1,
+                "rotation": 0,
+                "opacity": 1
+              },
+              "header": {
+                "x": 0,
+                "y": 0,
+                "scale": 1,
+                "rotation": 0,
+                "opacity": 1
+              },
+              "footer": {
+                "x": 0,
+                "y": 0,
+                "scale": 1,
+                "rotation": 0,
+                "opacity": 1
+              },
+              "title": {
+                "x": 0,
+                "y": 0,
+                "scale": 1,
+                "rotation": 0,
+                "opacity": 1
+              },
+              "shortcut": {
+                "x": 0,
+                "y": 0,
+                "scale": 1,
+                "rotation": 0,
+                "opacity": 1
+              },
+              "runWindow": {
+                "x": 0,
+                "y": 0,
+                "scale": 1,
+                "rotation": 0,
+                "opacity": 1
+              },
+              "commandInput": {
+                "x": 0,
+                "y": 0,
+                "scale": 1,
+                "rotation": 0,
+                "opacity": 1
+              },
+              "runButtons": {
+                "x": 0,
+                "y": 0,
+                "scale": 1,
+                "rotation": 0,
+                "opacity": 1
+              },
+              "secondsHighlight": {
+                "x": 0,
+                "y": 0,
+                "scale": 1,
+                "rotation": 0,
+                "opacity": 1
+              },
+              "cursor": {
+                "x": 0,
+                "y": 0,
+                "scale": 1,
+                "rotation": 0,
+                "opacity": 1
+              },
+              "success": {
+                "x": 0,
+                "y": 0,
+                "scale": 1,
+                "rotation": 0,
+                "opacity": 1
+              }
+            }
+          }
+        },
+        "designOverrides": {
+          "subtitleY": 1475,
+          "subtitleX": 80,
+          "subtitleWidth": 920,
+          "subtitleFontSize": 43,
+          "subtitleBackground": "#253848"
+        },
+        "textOverrides": {
+          "hook1": "Pernah ketiduran",
+          "hook2": "pas nonton?",
+          "hookSmall": "Pernah ngalamin yang begini?",
+          "end1": "Film masih jalan.",
+          "end2": "Kamu sudah tidur.",
+          "scene02Title1": "Mau tidur, tapi...",
+          "scene02Title2": "download belum selesai?",
+          "scene02Small": "Sudah malam, belum selesai juga.",
+          "clockTitle": "Dua masalah, satu kebutuhan",
+          "clockSmall": "Laptop tetap menyala saat kita lelah.",
+          "timeTag": "WAKTU TERUS BERJALAN",
+          "timerTitle": "JADWALKAN SHUTDOWN",
+          "timerDescription": "Bisa diatur dari Windows",
+          "tutorialTitle": "Satu perintah saja",
+          "tutorialSmall": "Gunakan Windows Run.",
+          "runLabel": "Run",
+          "scheduledTitle": "Shutdown dijadwalkan",
+          "scheduledSmall": "60 menit dari sekarang",
+          "note": "Simulasi penjelas · simpan pekerjaanmu",
+          "caption01a": "Pernah ketiduran pas nonton,",
+          "caption01b": "sampai laptop masih nyala semalaman?",
+          "caption02a": "Atau malah sebaliknya, udah ngantuk,",
+          "caption02b": "tapi download belum selesai?",
+          "caption03a": "Daripada harus nungguin laptop terus,",
+          "caption03b": "kamu bisa atur kapan laptop mati sendiri.",
+          "caption04a": "Caranya, tekan Windows dan R.",
+          "caption04b": "Ketik perintah ini di Run, lalu Enter.",
+          "caption04c": "Angka 3600 berarti satu jam."
+        }
+      },
+      "segments": [
+        {
+          "id": "ShutdownOtomatisHookRealistis-S01",
+          "title": "S01 — Menonton sampai ketiduran",
+          "startFrame": 0,
+          "durationInFrames": 240
+        },
+        {
+          "id": "ShutdownOtomatisHookRealistis-S02",
+          "title": "S02 — Download belum selesai",
+          "startFrame": 240,
+          "durationInFrames": 165
+        },
+        {
+          "id": "ShutdownOtomatisHookRealistis-S03",
+          "title": "S03 — Jam dan timer otomatis",
+          "startFrame": 405,
+          "durationInFrames": 225
+        },
+        {
+          "id": "ShutdownOtomatisHookRealistis-S04",
+          "title": "S04 — Windows Run dan perintah shutdown",
+          "startFrame": 630,
+          "durationInFrames": 330
+        }
+      ],
+      "voiceGuideCompositionId": "ShutdownOtomatisHookRealistisVOGuide"
     },
     {
       "id": "WindowsHacks5ShortcutLengkap",

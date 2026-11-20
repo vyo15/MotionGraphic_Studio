@@ -42,13 +42,14 @@ function completedZip(file){
 }
 function snapshot(root){
   const {projects,inbox}=getPaths(root),pieces=[];
+  pieces.push('native-props:'+metadata(path.join(root,'src','Root.tsx')));
   if(fs.existsSync(projects))for(const dir of fs.readdirSync(projects,{withFileTypes:true}).sort((a,b)=>a.name.localeCompare(b.name))){
     if(!dir.isDirectory()||dir.name.startsWith('_')||dir.name.startsWith('.'))continue;
     const folder=path.join(projects,dir.name),manifest=path.join(folder,'motiongraphic-video.json');
     pieces.push(`folder:${dir.name}:${metadata(manifest)}:${metadata(path.join(folder,'src'))}`);
     let entry='src/Video.tsx';
     try{entry=JSON.parse(fs.readFileSync(manifest,'utf8')).entry||entry}catch{}
-    for(const rel of [entry,'src/SegmentVideo.tsx','src/config/segments.json','src/config/segments.ts','src/config/scenes.ts','src/config/series.ts']){
+    for(const rel of [entry,'src/SegmentVideo.tsx','src/config/narration.json','src/config/segments.json','src/config/segments.ts','src/config/scenes.ts','src/config/series.ts']){
       pieces.push(`${dir.name}/${rel}:${metadata(path.join(folder,rel))}`);
     }
   }
@@ -112,6 +113,10 @@ export function startAutoSync({
     }
   }
   attach(projects);attach(inbox);
+  // Save to Code in Remotion Studio modifies generated Root defaultProps.
+  // Watch it so changed VO Guide/Props can be merged into manifest/narration.
+  const nativePropsFile=path.join(root,'src','Root.tsx');
+  if(fs.existsSync(nativePropsFile))try{const w=fs.watch(nativePropsFile,schedule);w.on('error',()=>{});watchers.push(w)}catch{}
   const interval=setInterval(()=>{
     if(closed)return;
     const next=snapshot(root);

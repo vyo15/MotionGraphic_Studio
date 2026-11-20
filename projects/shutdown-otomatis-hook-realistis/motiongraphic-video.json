@@ -1,0 +1,376 @@
+{
+  "id": "ShutdownOtomatisHookRealistis",
+  "slug": "shutdown-otomatis-hook-realistis",
+  "title": "Shutdown Otomatis — Stickman & Windows Run (V35 Editable)",
+  "entry": "src/Video.tsx",
+  "exportName": "Video",
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "durationInFrames": 960,
+  "editableContract": "visual-v1",
+  "defaultProps": {
+    "showHookText": true,
+    "showEndText": true,
+    "showScene02Text": true,
+    "showSubtitle": true,
+    "filmLabel": "Sedang menonton film",
+    "downloadFileLabel": "materi-video.mp4",
+    "downloadPercent": 75,
+    "command": "shutdown /s /t 3600",
+    "shutdownSeconds": 3600,
+    "voiceEnabled": false,
+    "voiceVolume": 1,
+    "sceneEditor": {
+      "scene01": {
+        "speed": 1,
+        "layers": {
+          "background": {
+            "x": 0,
+            "y": 0,
+            "scale": 1,
+            "rotation": 0,
+            "opacity": 1
+          },
+          "chair": {
+            "x": 0,
+            "y": 0,
+            "scale": 1,
+            "rotation": 0,
+            "opacity": 1
+          },
+          "body": {
+            "x": 0,
+            "y": 0,
+            "scale": 1,
+            "rotation": 0,
+            "opacity": 1
+          },
+          "desk": {
+            "x": 0,
+            "y": 0,
+            "scale": 1,
+            "rotation": 0,
+            "opacity": 1
+          },
+          "laptop": {
+            "x": 0,
+            "y": 0,
+            "scale": 1,
+            "rotation": 0,
+            "opacity": 1
+          },
+          "arms": {
+            "x": 0,
+            "y": 0,
+            "scale": 1,
+            "rotation": 0,
+            "opacity": 1
+          },
+          "head": {
+            "x": 0,
+            "y": 0,
+            "scale": 1,
+            "rotation": 0,
+            "opacity": 1
+          },
+          "filmCard": {
+            "x": 0,
+            "y": 0,
+            "scale": 1,
+            "rotation": 0,
+            "opacity": 1
+          }
+        }
+      },
+      "scene02": {
+        "speed": 1,
+        "layers": {
+          "background": {
+            "x": 0,
+            "y": 0,
+            "scale": 1,
+            "rotation": 0,
+            "opacity": 1
+          },
+          "chair": {
+            "x": 0,
+            "y": 0,
+            "scale": 1,
+            "rotation": 0,
+            "opacity": 1
+          },
+          "body": {
+            "x": 0,
+            "y": 0,
+            "scale": 1,
+            "rotation": 0,
+            "opacity": 1
+          },
+          "desk": {
+            "x": 0,
+            "y": 0,
+            "scale": 1,
+            "rotation": 0,
+            "opacity": 1
+          },
+          "laptop": {
+            "x": 0,
+            "y": 0,
+            "scale": 1,
+            "rotation": 0,
+            "opacity": 1
+          },
+          "arms": {
+            "x": 0,
+            "y": 0,
+            "scale": 1,
+            "rotation": 0,
+            "opacity": 1
+          },
+          "head": {
+            "x": 0,
+            "y": 0,
+            "scale": 1,
+            "rotation": 0,
+            "opacity": 1
+          },
+          "downloadDetail": {
+            "x": 0,
+            "y": 0,
+            "scale": 1,
+            "rotation": 0,
+            "opacity": 1
+          }
+        }
+      },
+      "scene03": {
+        "speed": 1,
+        "layers": {
+          "background": {
+            "x": 0,
+            "y": 0,
+            "scale": 1,
+            "rotation": 0,
+            "opacity": 1
+          },
+          "header": {
+            "x": 0,
+            "y": 0,
+            "scale": 1,
+            "rotation": 0,
+            "opacity": 1
+          },
+          "footer": {
+            "x": 0,
+            "y": 0,
+            "scale": 1,
+            "rotation": 0,
+            "opacity": 1
+          },
+          "title": {
+            "x": 0,
+            "y": 0,
+            "scale": 1,
+            "rotation": 0,
+            "opacity": 1
+          },
+          "filmCard": {
+            "x": 0,
+            "y": 0,
+            "scale": 1,
+            "rotation": 0,
+            "opacity": 1
+          },
+          "downloadCard": {
+            "x": 0,
+            "y": 0,
+            "scale": 1,
+            "rotation": 0,
+            "opacity": 1
+          },
+          "clock": {
+            "x": 0,
+            "y": 0,
+            "scale": 1,
+            "rotation": 0,
+            "opacity": 1
+          },
+          "clockHands": {
+            "x": 0,
+            "y": 0,
+            "scale": 1,
+            "rotation": 0,
+            "opacity": 1
+          },
+          "timeTag": {
+            "x": 0,
+            "y": 0,
+            "scale": 1,
+            "rotation": 0,
+            "opacity": 1
+          },
+          "timer": {
+            "x": 0,
+            "y": 0,
+            "scale": 1,
+            "rotation": 0,
+            "opacity": 1
+          },
+          "scheduled": {
+            "x": 0,
+            "y": 0,
+            "scale": 1,
+            "rotation": 0,
+            "opacity": 1
+          }
+        }
+      },
+      "scene04": {
+        "speed": 1,
+        "layers": {
+          "background": {
+            "x": 0,
+            "y": 0,
+            "scale": 1,
+            "rotation": 0,
+            "opacity": 1
+          },
+          "header": {
+            "x": 0,
+            "y": 0,
+            "scale": 1,
+            "rotation": 0,
+            "opacity": 1
+          },
+          "footer": {
+            "x": 0,
+            "y": 0,
+            "scale": 1,
+            "rotation": 0,
+            "opacity": 1
+          },
+          "title": {
+            "x": 0,
+            "y": 0,
+            "scale": 1,
+            "rotation": 0,
+            "opacity": 1
+          },
+          "shortcut": {
+            "x": 0,
+            "y": 0,
+            "scale": 1,
+            "rotation": 0,
+            "opacity": 1
+          },
+          "runWindow": {
+            "x": 0,
+            "y": 0,
+            "scale": 1,
+            "rotation": 0,
+            "opacity": 1
+          },
+          "commandInput": {
+            "x": 0,
+            "y": 0,
+            "scale": 1,
+            "rotation": 0,
+            "opacity": 1
+          },
+          "runButtons": {
+            "x": 0,
+            "y": 0,
+            "scale": 1,
+            "rotation": 0,
+            "opacity": 1
+          },
+          "secondsHighlight": {
+            "x": 0,
+            "y": 0,
+            "scale": 1,
+            "rotation": 0,
+            "opacity": 1
+          },
+          "cursor": {
+            "x": 0,
+            "y": 0,
+            "scale": 1,
+            "rotation": 0,
+            "opacity": 1
+          },
+          "success": {
+            "x": 0,
+            "y": 0,
+            "scale": 1,
+            "rotation": 0,
+            "opacity": 1
+          }
+        }
+      }
+    },
+    "designOverrides": {
+      "subtitleY": 1475,
+      "subtitleX": 80,
+      "subtitleWidth": 920,
+      "subtitleFontSize": 43,
+      "subtitleBackground": "#253848"
+    },
+    "textOverrides": {
+      "hook1": "Pernah ketiduran",
+      "hook2": "pas nonton?",
+      "hookSmall": "Pernah ngalamin yang begini?",
+      "end1": "Film masih jalan.",
+      "end2": "Kamu sudah tidur.",
+      "scene02Title1": "Mau tidur, tapi...",
+      "scene02Title2": "download belum selesai?",
+      "scene02Small": "Sudah malam, belum selesai juga.",
+      "clockTitle": "Dua masalah, satu kebutuhan",
+      "clockSmall": "Laptop tetap menyala saat kita lelah.",
+      "timeTag": "WAKTU TERUS BERJALAN",
+      "timerTitle": "JADWALKAN SHUTDOWN",
+      "timerDescription": "Bisa diatur dari Windows",
+      "tutorialTitle": "Satu perintah saja",
+      "tutorialSmall": "Gunakan Windows Run.",
+      "runLabel": "Run",
+      "scheduledTitle": "Shutdown dijadwalkan",
+      "scheduledSmall": "60 menit dari sekarang",
+      "note": "Simulasi penjelas · simpan pekerjaanmu",
+      "caption01a": "Pernah ketiduran pas nonton,",
+      "caption01b": "sampai laptop masih nyala semalaman?",
+      "caption02a": "Atau malah sebaliknya, udah ngantuk,",
+      "caption02b": "tapi download belum selesai?",
+      "caption03a": "Daripada harus nungguin laptop terus,",
+      "caption03b": "kamu bisa atur kapan laptop mati sendiri.",
+      "caption04a": "Caranya, tekan Windows dan R.",
+      "caption04b": "Ketik perintah ini di Run, lalu Enter.",
+      "caption04c": "Angka 3600 berarti satu jam."
+    }
+  },
+  "segments": [
+    {
+      "id": "ShutdownOtomatisHookRealistis-S01",
+      "title": "S01 — Menonton sampai ketiduran",
+      "startFrame": 0,
+      "durationInFrames": 240
+    },
+    {
+      "id": "ShutdownOtomatisHookRealistis-S02",
+      "title": "S02 — Download belum selesai",
+      "startFrame": 240,
+      "durationInFrames": 165
+    },
+    {
+      "id": "ShutdownOtomatisHookRealistis-S03",
+      "title": "S03 — Jam dan timer otomatis",
+      "startFrame": 405,
+      "durationInFrames": 225
+    },
+    {
+      "id": "ShutdownOtomatisHookRealistis-S04",
+      "title": "S04 — Windows Run dan perintah shutdown",
+      "startFrame": 630,
+      "durationInFrames": 330
+    }
+  ]
+}

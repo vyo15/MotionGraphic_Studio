@@ -9,9 +9,13 @@ const ROOT=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const read=f=>fs.readFileSync(path.join(ROOT,f),'utf8');
 const root=read('src/Root.tsx');
 
-test('all existing 12 segments use direct scene editor rather than whole-video trim',()=>{
- assert.equal((root.match(/createEditableSegmentComposition\(/g)||[]).length,12);
- assert.equal((root.match(/createFullPreviewComposition\(/g)||[]).length,2);
+test('all segment compositions use their respective direct editor when available',()=>{
+ const catalog=JSON.parse(read('library/catalog.json'));
+ const directCount=catalog.videos.filter(v=>fs.existsSync(path.join(ROOT,v.projectDir,'src/SegmentVideo.tsx')))
+  .reduce((n,v)=>n+v.segments.length,0);
+ const previewCount=catalog.videos.length+catalog.videos.filter(v=>v.voiceGuideCompositionId).length;
+ assert.equal((root.match(/createEditableSegmentComposition\(/g)||[]).length,directCount);
+ assert.equal((root.match(/createFullPreviewComposition\(/g)||[]).length,previewCount);
  assert.doesNotMatch(root,/= createSegmentComposition\(/);
  assert.match(read('projects/windows-hacks-5-shortcut-lengkap/src/SegmentVideo.tsx'),/<SceneContent segmentKey=\{key\}/);
  assert.match(read('projects/ip-address/src/SegmentVideo.tsx'),/<Scene\/>/);
@@ -34,7 +38,7 @@ test('future add-on with SegmentVideo.tsx is automatically registered as direct 
  const temp=fs.mkdtempSync(path.join(os.tmpdir(),'studio-scene-mode-'));
  try{
   for(const dir of ['tools','projects/demo-baru/src/config','src','library'])fs.mkdirSync(path.join(temp,dir),{recursive:true});
-  for(const name of ['sync-projects.mjs','studio-props-bridge.mjs','register-scene-segments.mjs','production-scope.mjs'])fs.copyFileSync(path.join(ROOT,'tools',name),path.join(temp,'tools',name));
+  for(const name of ['sync-projects.mjs','studio-props-bridge.mjs','register-scene-segments.mjs','production-scope.mjs','validate-addon.mjs'])fs.copyFileSync(path.join(ROOT,'tools',name),path.join(temp,'tools',name));
   fs.writeFileSync(path.join(temp,'package.json'),JSON.stringify({dependencies:{react:'19.0.0',remotion:'4.0.538'}}));
   fs.writeFileSync(path.join(temp,'library/catalog.json'),JSON.stringify({schemaVersion:1,videos:[]}));
   const proj=path.join(temp,'projects/demo-baru');
@@ -52,6 +56,7 @@ test('future add-on with SegmentVideo.tsx is automatically registered as direct 
   const m=JSON.parse(fs.readFileSync(path.join(proj,'motiongraphic-video.json'),'utf8'));
   assert.equal(m.segments.length,2);
   assert.deepEqual(m.defaultProps,{text:'halo'});
+  assert.ok(fs.existsSync(path.join(proj,'src/config/narration.json')),'Project baru harus mendapat template VO Guide');
  }finally{fs.rmSync(temp,{recursive:true,force:true})}
 });
 

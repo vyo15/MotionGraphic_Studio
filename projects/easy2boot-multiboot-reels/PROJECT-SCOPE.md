@@ -7,7 +7,7 @@
 - Project ID: `Easy2BootMultibootReels`
 - Slug/folder: `easy2boot-multiboot-reels`
 - Komposisi penuh: `Easy2BootMultibootReels`
-- Frame: 1080 × 1920 · 30 FPS · 80.0 dtk (2400 frame)
+- Frame: 1080 × 1920 · 30 FPS · 80.7 dtk (2421 frame)
 - Scene referensi pertama: belum ada segmen pada manifest
 
 ## Creative brief (isi melalui diskusi; jangan menebak)
@@ -26,3 +26,7 @@
 - Proses produksi: script penuh → storyboard penuh → bangun scene referensi → approval scene referensi → bangun scene berikut → audio sync → full QA → render.
 - Edit segmen memakai komposisi segmen langsung; video lengkap untuk preview/render.
 - File ini bukan kode eksekusi. Preview/render mengikuti source Remotion; setiap ketidakcocokan dengan naskah harus ditandai.
+
+## Update Scene 01 — 2026-11-19
+
+Pengguna **memilih efek 02 — Impact Stamp** untuk akhir hook. Source Scene 01 dan audio dipaketkan untuk review, tetapi **preview full scene dan hasil native editor belum mendapat ACC final**. Scene 02–06 yang ada di master asli sengaja tidak diubah.

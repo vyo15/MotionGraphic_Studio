@@ -27,7 +27,7 @@ Bila script di dokumen berbeda dari implementasi, laporkan dua-duanya: **TARGET 
 
 **G0 Project recognition** — Baca manifest, source, media, voice-over, semua catatan keputusan dan status. Ringkas perubahan yang diminta, segment yang boleh diubah, status lock, mismatch source/target.
 
-**G1 Brief & script** — Buat script utuh HOOK → MASALAH → SOLUSI/DEMO → RANGKUMAN → CTA. Gaya bahasa natural, tempo santai sesuai permintaan, jeda untuk demonstrasi. Tidak boleh mempercepat voice-over demi mengejar durasi default. Minta approval script sebelum build besar.
+**G1 Brief & naskah draft (rekaman VO selalu setelah motion)** — Buat script utuh HOOK → MASALAH → SOLUSI/DEMO → RANGKUMAN → CTA. Gaya bahasa natural, tempo santai sesuai permintaan, jeda untuk demonstrasi. Tidak boleh mempercepat voice-over demi mengejar durasi default. Minta approval script sebelum build besar.
 
 **G2 Storyboard & visual mapping** — Tabel `Scene | Durasi | Narasi | Teks Layar | Visual | Animasi | Editable Assets`, termasuk beat yang memicu visual dan durasi *sementara*. User menyetujui storyboard dan arah visual (brand kit, komposisi, pacing) sebelum produksi.
 
@@ -35,7 +35,7 @@ Bila script di dokumen berbeda dari implementasi, laporkan dua-duanya: **TARGET 
 
 **G4 Other segments** — Scene berikut mengikuti visual reference yang terkunci: warna, font, typography density, safe zone, transisi, komponen UI, cursor, framing, dan tempo. Bisa direvisi per scene; jangan merombak semua jika hanya satu yang bermasalah.
 
-**G5 Audio sync** — Saat VO belum ada, scene memiliki timing estimasi, tanda jeda, marker beats dan placeholder yang diberi label. **Jangan mengklaim audio placeholder sebagai voice-over.** Setelah VO direkam, ukur timing kata/hasil demonstrasi dan sesuaikan frame. Render dan preview memakai data konfigurasi sama.
+**G5 VO GUIDE → REKAM → Audio sync (workflow WAJIB)** — Motion graphic lengkap dan revisi visual selesai terlebih dahulu. Naskah VO draft dan timing disimpan di `src/config/narration.json`; komposisi `IDVideoVOGuide` menampilkan teks panduan untuk rekaman, sementara `IDVideo` tetap tanpa overlay. Rekam voice-over **setelah** motion disetujui; bukan VO-first dalam arti audio direkam di awal. Saat VO belum ada, scene memiliki timing estimasi, tanda jeda, marker beats dan placeholder yang diberi label. **Jangan mengklaim audio placeholder sebagai voice-over.** Setelah VO direkam, ukur timing kata/hasil demonstrasi dan sesuaikan frame. Render dan preview memakai data konfigurasi sama.
 
 **G6 Full QA & render** — Uji transisi antar-segmen, lip-sync/caption, posisi teks, visual Windows asli, cursor target, editability, safe zone, asset path, audio, save/reload dan render. Jika tidak teruji, tulis keterbatasan secara eksplisit. Setelah approval, ekspor MP4 jika memang berhasil dirender.
 
@@ -75,3 +75,12 @@ Bila script di dokumen berbeda dari implementasi, laporkan dua-duanya: **TARGET 
 - Uji `node tools/production-scope.mjs --check`, `npm run check`, test otomatis yang relevan, dan preview/render bila lingkungan tersedia.
 
 **CREATE ONCE — APPROVE FIRST SCENE — EDIT NATIVELY — REUSE FOREVER.**
+
+## 7. VO Guide universal / source of truth (semua video baru)
+
+- `npm run sync` otomatis menyiapkan `src/config/narration.json` kosong **hanya untuk add-on baru** yang belum terdaftar. Project lama tanpa konfigurasi tidak diubah.
+- Isi `beats` secara berurutan, `startFrame` inklusif, `endFrame` eksklusif, dari 0 hingga tepat `durationInFrames`; setiap beat memiliki `scene`, `text`. Gunakan beat teks pendek agar muat di layar.
+- `npm run vo:init -- <slug>` dapat membuat template untuk project lama bila dibutuhkan tanpa menimpa file ada.
+- Jika ada teks non-kosong, `npm run sync` mendaftarkan komposisi `IDVideoVOGuide`. Komposisi utama tidak berubah. `npm run render` atau `npx remotion render` dapat mengekspor VO Guide sebagai MP4 referensi rekaman.
+- Subtitle final dan file voice-over asli dibuat **setelah** rekaman; jangan mengira teks VO Guide sudah menjadi subtitle tersinkron.
+- Sinkronisasi akan **menolak kehilangan project lama tanpa arsip resmi** untuk mencegah ZIP parsial merusak katalog; `npm run delete` mengarsipkan lewat `library/sampah` secara resmi.

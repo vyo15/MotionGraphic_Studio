@@ -7,15 +7,15 @@
   "width": 1080,
   "height": 1920,
   "fps": 30,
-  "durationInFrames": 2400,
+  "durationInFrames": 2641,
   "defaultProps": {
     "title01Need": "MAU INSTAL",
     "title01Target": "WINDOWS 11?",
     "title01Wrong": "WINDOWS 10.",
     "title01Redo": "BUAT ULANG?",
     "title01Wait": "NUNGGU LAGI.",
-    "title02NoRedo": "NGGAK PERLU.",
-    "title02App": "EASY 2BOOT.",
+    "title02NoRedo": "AH, RIBET BANGET.",
+    "title02App": "MENDING PAKAI EASY2BOOT.",
     "title02Usb": "SATU FLASHDISK",
     "title02Installers": "BEBERAPA",
     "backgroundColor": "#F7F7F5",
@@ -56,7 +56,83 @@
     "coverLine2": "BANYAK INSTALLER",
     "showSubtitles": false,
     "subtitleColor": "#202020",
-    "fontFamily": "Inter, Arial, sans-serif"
+    "fontFamily": "Inter, Arial, sans-serif",
+    "scene01MismatchTitle": "TAPI USB-NYA",
+    "scene01MismatchValue": "MASIH WIN 10",
+    "scene01FinalLine1": "MASA HARUS",
+    "scene01FinalLine2": "BIKIN ULANG LAGI?",
+    "scene01StampFrame": 332,
+    "scene01StampScale": 1,
+    "scene01ShakePower": 1,
+    "scene01StampColor": "#DA7A5C",
+    "scene01ShowStamp": true,
+    "scene01ShowCaptions": true,
+    "scene01CaptionLines": [
+      "Mau instal Windows 11,",
+      "tapi flashdisk bootable-nya|masih Windows 10?",
+      "Masa harus bikin bootable|ulang lagi?"
+    ],
+    "scene02BreakStartFrame": 5,
+    "scene02BreakDurationFrames": 23,
+    "scene02BreakSpread": 1,
+    "scene02BreakRotation": 1,
+    "scene02BreakColor": "#DA7A5C",
+    "scene02ShowBreak": true,
+    "scene02ReactionLine1": "AH, RIBET",
+    "scene02ReactionLine2": "BANGET.",
+    "scene02SolutionLine1": "MENDING PAKAI",
+    "scene02SolutionLine2": "EASY2BOOT.",
+    "scene02ManyLine1": "SATU FLASHDISK",
+    "scene02ManyLine2": "BANYAK INSTALLER",
+    "bridgeQuestionText": "GIMANA CARA BIKINNYA?",
+    "bridgeUsbLabel": "USB",
+    "bridgeMoveStartFrame": 26,
+    "bridgeMoveEndFrame": 55,
+    "bridgeUsbRiseLogicalPx": 137,
+    "bridgeQuestionStartFrame": 51,
+    "bridgeQuestionEndFrame": 68,
+    "scene03EntryFadeFrames": 32,
+    "scene03ReadableIntroFrames": 70,
+    "scene03IntroHoldFrames": 25,
+    "scene03IntroStartSourceFrame": 25,
+    "scene03IntroEndSourceFrame": 75,
+    "scene03CleanLayout": true,
+    "scene03ShowTextVO": true,
+    "scene04ShowTextVO": true,
+    "scene04CleanLayout": true,
+    "scene04IsoFiles": [
+      "Win8_64.iso",
+      "Win10_22H2.iso",
+      "Win11_24H2.iso",
+      "Ubuntu_24.04.iso"
+    ],
+    "scene04InstallerLabels": [
+      "WINDOWS 8",
+      "WINDOWS 10",
+      "WINDOWS 11",
+      "LINUX"
+    ],
+    "scene04FolderPaths": [
+      "WINDOWS / WIN8",
+      "WINDOWS / WIN10",
+      "WINDOWS / WIN11",
+      "LINUX"
+    ],
+    "scene04SubtitleLines": [
+      "Salin file ISO installer",
+      "ke folder masing-masing.",
+      "Sesuai sistem operasinya."
+    ],
+    "scene03SubtitleLines": [
+      "Pertama, backup data flashdisk.",
+      "Buka Easy2Boot.",
+      "Pilih USB yang benar,",
+      "lalu buat USB multiboot."
+    ],
+    "scene04SuccessLabel": "4 ISO TERSIMPAN",
+    "scene04UsbLabel": "USB",
+    "scene04HeroTitle": "4 INSTALLER",
+    "scene04HeroSupport": "SATU FLASHDISK"
   },
   "editableContract": "studio-inline-v2",
   "segments": [
@@ -64,36 +140,36 @@
       "id": "Easy2BootMultibootReels-S01",
       "title": "01 — Masalah: Bootable ulang",
       "startFrame": 0,
-      "durationInFrames": 360
+      "durationInFrames": 381
     },
     {
       "id": "Easy2BootMultibootReels-S02",
       "title": "02 — Solusi: Easy2Boot",
-      "startFrame": 360,
-      "durationInFrames": 330
+      "startFrame": 381,
+      "durationInFrames": 498
     },
     {
       "id": "Easy2BootMultibootReels-S03",
       "title": "03 — Persiapan USB",
-      "startFrame": 690,
-      "durationInFrames": 420
+      "startFrame": 879,
+      "durationInFrames": 472
     },
     {
       "id": "Easy2BootMultibootReels-S04",
       "title": "04 — Salin ISO",
-      "startFrame": 1110,
+      "startFrame": 1351,
       "durationInFrames": 480
     },
     {
       "id": "Easy2BootMultibootReels-S05",
       "title": "05 — Booting Windows 11",
-      "startFrame": 1590,
+      "startFrame": 1831,
       "durationInFrames": 420
     },
     {
       "id": "Easy2BootMultibootReels-S06",
       "title": "06 — CTA + Cover",
-      "startFrame": 2010,
+      "startFrame": 2251,
       "durationInFrames": 390
     }
   ]

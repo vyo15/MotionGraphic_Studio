@@ -6,6 +6,8 @@ import os from 'node:os';
 import {spawnSync} from 'node:child_process';
 import {fileURLToPath} from 'node:url';
 import {createInterface} from 'node:readline/promises';
+import {validateAddon} from './validate-addon.mjs';
+import {normalizeProjectAssets} from './normalize-project-assets.mjs';
 const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const projectRoot=path.join(root,'projects');
 const validSlug=s=>/^[a-z][a-z0-9-]{1,48}$/.test(s);
@@ -36,6 +38,9 @@ try{
   }
   if(!fs.existsSync(manifest))throw Error('Folder bukan add-on: tidak ada motiongraphic-video.json. Pilih folder VIDEO, bukan folder Master.');
   const m=JSON.parse(fs.readFileSync(manifest,'utf8'));
+  const verdict=validateAddon(source,{root,matchFolder:true});
+  if(!verdict.ok)throw Error('Add-on gagal validasi: '+verdict.errors.join('; '));
+  verdict.warnings.forEach(x=>console.warn('[ADDFOLDER WARN] '+x));
   if(!validSlug(m.slug))throw Error('Slug pada manifest tidak valid: '+m.slug);
   if(!/^[A-Z][A-Za-z0-9]{2,80}$/.test(m.id||''))throw Error('ID komposisi pada manifest tidak valid.');
   if(typeof m.entry!=='string'||!m.entry.startsWith('src/')||m.entry.includes('..')||!fs.existsSync(path.join(source,m.entry)))throw Error('File entry tidak ada / tidak valid: '+m.entry);
@@ -56,11 +61,14 @@ try{
     if(fs.lstatSync(p).isSymbolicLink())throw Error('Symlink tidak diizinkan dalam folder add-on: '+p);
     return true;
   }});
+  normalizeProjectAssets(temp,m.slug);
   fs.renameSync(temp,dest);
   cleanup.pop();
   const result=spawnSync(process.execPath,[path.join(root,'tools','sync-projects.mjs')],{cwd:root,stdio:'inherit'});
   if(result.status!==0){
-    console.error('[PERHATIAN] Folder sudah tersalin namun sync gagal. Perbaiki error, lalu jalankan npm run sync. Folder lama tetap aman.');
+    const failed=path.join(projectRoot,'_failed-'+m.slug+'-'+Date.now());
+    fs.renameSync(dest,failed);
+    console.error('[IMPORT BATAL] Sync gagal. Add-on dipindahkan ke '+path.basename(failed)+' agar project lama dan registrasi tetap aman.');
     process.exitCode=1;
   }else{
     const check=spawnSync(process.execPath,[path.join(root,'tools','validate-library.mjs')],{cwd:root,stdio:'inherit'});
