@@ -9,7 +9,7 @@ export const createFullPreviewComposition = <P extends Record<string, any>>(
 ): React.FC<P & VoiceGuideProps> => {
   const Full: React.FC<P & VoiceGuideProps> = ({voiceGuide,...props}) => <>
     <Sequence name="VIDEO LENGKAP — preview gabungan" from={0} durationInFrames={durationInFrames}>
-      <VideoComponent {...(guideBeats?.length && 'showSubtitles' in props ? {...props, showSubtitles:false} as P : props as P)}/>
+      <VideoComponent {...(guideBeats?.length && 'showSubtitles' in props ? {...props, showSubtitles:false} : props) as unknown as P}/>
     </Sequence>
     {guideBeats ? <VoiceGuideOverlay beats={voiceGuide?.beats ?? guideBeats}/> : null}
   </>;

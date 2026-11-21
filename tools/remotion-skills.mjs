@@ -2,7 +2,7 @@
 /**
  * MotionGraphic Studio: Remotion official skills bootstrap / audit.
  * Does not touch src/Root.tsx, src/index.ts, package.json, library/catalog.json or projects/.
- * Fallback local skill adapters are already bundled in .agents/skills/.
+ * Offline status may be missing: install official skills explicitly when network is available.
  */
 import fs from 'node:fs';
 import path from 'node:path';
@@ -42,11 +42,11 @@ function install(timeout){
   const statuses=inventory();
   const count=statuses.filter(s=>s.source==='upstream/other').length;
   const success=ok && count===expected.length;
-  const report={attemptedAt:new Date().toISOString(),command:mode,success,verifiedOfficialSkillCount:count,expectedOfficialSkillCount:expected.length,source:'remotion-dev/skills',note:success?'Twelve official repo skills available; remotion-license is a separate local reference.':'Bundled local fallback remains available. Re-run installer when internet and Node.js/npm are ready.'};
+  const report={attemptedAt:new Date().toISOString(),command:mode,success,verifiedOfficialSkillCount:count,expectedOfficialSkillCount:expected.length,source:'remotion-dev/skills',note:success?'Twelve official repo skills available; remotion-license is a separate local reference.':'Official Remotion skills are not fully verified; run npm run skills:install when internet and Node.js/npm are ready.'};
   fs.mkdirSync(path.dirname(stateFile),{recursive:true});
   fs.writeFileSync(stateFile,JSON.stringify(report,null,2)+'\n');
   console.log(`[SKILL] Verified official folders: ${count}/${expected.length}.`);
-  if(!success)console.warn('[SKILL] Instalasi resmi belum lengkap. Panduan lokal tetap tersedia. Untuk mencoba ulang, klik INSTALL-SEMUA-SKILL-REMOTION.bat.');
+  if(!success)console.warn('[SKILL] Instalasi resmi belum lengkap. Panduan lokal tetap tersedia. Untuk mencoba ulang, jalankan npm run skills:install.');
   else console.log('[SKILL] Semua 12 skill dari repo resmi terdeteksi.');
   return success;
 }

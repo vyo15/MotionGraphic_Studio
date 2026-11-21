@@ -1,0 +1,48 @@
+{
+  "sourceMaster": "MotionGraphic-Studio-FULL-v1.8.1-20261121-044452.zip",
+  "sourceAddon": "Easy2Boot-ADDON-Editable-PerElemen-Scene05.zip",
+  "id": "Easy2BootMultibootReels",
+  "slug": "easy2boot-multiboot-reels",
+  "masterArchiveContainsProjects": false,
+  "fps": 30,
+  "durationInFrames": 2701,
+  "status": [
+    {
+      "scene": "01",
+      "visual": "ACC LOCKED — Impact Stamp",
+      "sourceChanged": false
+    },
+    {
+      "scene": "02",
+      "visual": "ACC LOCKED — Card Break",
+      "sourceChanged": false
+    },
+    {
+      "scene": "02→03",
+      "visual": "ACC LOCKED — USB Match Move",
+      "sourceChanged": false
+    },
+    {
+      "scene": "03",
+      "visual": "Versi clean + pilih USB dan Make_E2B satu jendela; revisi setelah ACC lama — PERLU REVIEW",
+      "sourceChanged": false
+    },
+    {
+      "scene": "04",
+      "visual": "ISO Folder Stack serentak — REVIEW",
+      "sourceChanged": false
+    },
+    {
+      "scene": "05",
+      "visual": "Laptop disamakan dengan opening Scene 01; dipilih sebagai arah desain, BELUM ACC final",
+      "sourceChanged": false
+    },
+    {
+      "scene": "06",
+      "visual": "CTA/cover lama — BELUM ACC",
+      "sourceChanged": false
+    }
+  ],
+  "voiceOver": "DRAFT only; no final VO file included",
+  "editableQA": "source/Props and named Interactive components verified statically; GUI drag, inline text edit, Save/reload and native Remotion render not verified"
+}

@@ -1,0 +1,2391 @@
+{
+  "S03": [
+    {
+      "id": "element_001",
+      "label": "S03 \u2014 RECT element_001",
+      "path": [
+        1
+      ],
+      "tag": "rect"
+    },
+    {
+      "id": "element_002",
+      "label": "S03 \u2014 RECT element_002",
+      "path": [
+        2
+      ],
+      "tag": "rect"
+    },
+    {
+      "id": "element_003",
+      "label": "S03 \u2014 CIRCLE element_003",
+      "path": [
+        3
+      ],
+      "tag": "circle"
+    },
+    {
+      "id": "element_004",
+      "label": "S03 \u2014 CIRCLE element_004",
+      "path": [
+        4
+      ],
+      "tag": "circle"
+    },
+    {
+      "id": "element_005",
+      "label": "S03 \u2014 RECT element_005",
+      "path": [
+        5,
+        0
+      ],
+      "tag": "rect"
+    },
+    {
+      "id": "element_006",
+      "label": "S03 \u2014 TEXT element_006 \u2014 EASY2BOOT",
+      "path": [
+        5,
+        1
+      ],
+      "tag": "text"
+    },
+    {
+      "id": "element_007",
+      "label": "S03 \u2014 TEXT element_007 \u2014 03 / PERSIAPAN",
+      "path": [
+        5,
+        2
+      ],
+      "tag": "text"
+    },
+    {
+      "id": "element_008",
+      "label": "S03 \u2014 PATH element_008",
+      "path": [
+        6,
+        0
+      ],
+      "tag": "path"
+    },
+    {
+      "id": "timebar",
+      "label": "S03 \u2014 RECT timebar",
+      "path": [
+        6,
+        1
+      ],
+      "tag": "rect"
+    },
+    {
+      "id": "element_009",
+      "label": "S03 \u2014 TEXT element_009 \u2014 EASY2BOOT \u2014 SATU USB, BANYAK PILIH",
+      "path": [
+        6,
+        2
+      ],
+      "tag": "text"
+    },
+    {
+      "id": "element_010",
+      "label": "S03 \u2014 TEXT element_010 \u2014 03/06",
+      "path": [
+        6,
+        3
+      ],
+      "tag": "text"
+    },
+    {
+      "id": "element_011",
+      "label": "S03 \u2014 TEXT element_011 \u2014 BEBERAPA",
+      "path": [
+        7,
+        0,
+        0
+      ],
+      "tag": "text"
+    },
+    {
+      "id": "element_012",
+      "label": "S03 \u2014 TEXT element_012 \u2014 INSTALLER.",
+      "path": [
+        7,
+        0,
+        1
+      ],
+      "tag": "text"
+    },
+    {
+      "id": "element_013",
+      "label": "S03 \u2014 RECT element_013",
+      "path": [
+        7,
+        1,
+        0
+      ],
+      "tag": "rect"
+    },
+    {
+      "id": "element_014",
+      "label": "S03 \u2014 RECT element_014",
+      "path": [
+        7,
+        1,
+        1
+      ],
+      "tag": "rect"
+    },
+    {
+      "id": "element_015",
+      "label": "S03 \u2014 RECT element_015",
+      "path": [
+        7,
+        1,
+        2
+      ],
+      "tag": "rect"
+    },
+    {
+      "id": "element_016",
+      "label": "S03 \u2014 CIRCLE element_016",
+      "path": [
+        7,
+        1,
+        3
+      ],
+      "tag": "circle"
+    },
+    {
+      "id": "element_017",
+      "label": "S03 \u2014 CIRCLE element_017",
+      "path": [
+        7,
+        1,
+        4
+      ],
+      "tag": "circle"
+    },
+    {
+      "id": "element_018",
+      "label": "S03 \u2014 CIRCLE element_018",
+      "path": [
+        7,
+        1,
+        5
+      ],
+      "tag": "circle"
+    },
+    {
+      "id": "element_019",
+      "label": "S03 \u2014 TEXT element_019 \u2014 ISI FLASHDISK",
+      "path": [
+        7,
+        1,
+        6
+      ],
+      "tag": "text"
+    },
+    {
+      "id": "element_020",
+      "label": "S03 \u2014 RECT element_020",
+      "path": [
+        7,
+        1,
+        7,
+        0
+      ],
+      "tag": "rect"
+    },
+    {
+      "id": "element_021",
+      "label": "S03 \u2014 RECT element_021",
+      "path": [
+        7,
+        1,
+        7,
+        1
+      ],
+      "tag": "rect"
+    },
+    {
+      "id": "element_022",
+      "label": "S03 \u2014 PATH element_022",
+      "path": [
+        7,
+        1,
+        7,
+        2
+      ],
+      "tag": "path"
+    },
+    {
+      "id": "element_023",
+      "label": "S03 \u2014 TEXT element_023 \u2014 Windows 10",
+      "path": [
+        7,
+        1,
+        7,
+        3
+      ],
+      "tag": "text"
+    },
+    {
+      "id": "element_024",
+      "label": "S03 \u2014 CIRCLE element_024",
+      "path": [
+        7,
+        1,
+        7,
+        4
+      ],
+      "tag": "circle"
+    },
+    {
+      "id": "element_025",
+      "label": "S03 \u2014 PATH element_025",
+      "path": [
+        7,
+        1,
+        7,
+        5
+      ],
+      "tag": "path"
+    },
+    {
+      "id": "element_026",
+      "label": "S03 \u2014 RECT element_026",
+      "path": [
+        7,
+        1,
+        8,
+        0
+      ],
+      "tag": "rect"
+    },
+    {
+      "id": "element_027",
+      "label": "S03 \u2014 RECT element_027",
+      "path": [
+        7,
+        1,
+        8,
+        1
+      ],
+      "tag": "rect"
+    },
+    {
+      "id": "element_028",
+      "label": "S03 \u2014 PATH element_028",
+      "path": [
+        7,
+        1,
+        8,
+        2
+      ],
+      "tag": "path"
+    },
+    {
+      "id": "element_029",
+      "label": "S03 \u2014 TEXT element_029 \u2014 Windows 11",
+      "path": [
+        7,
+        1,
+        8,
+        3
+      ],
+      "tag": "text"
+    },
+    {
+      "id": "element_030",
+      "label": "S03 \u2014 CIRCLE element_030",
+      "path": [
+        7,
+        1,
+        8,
+        4
+      ],
+      "tag": "circle"
+    },
+    {
+      "id": "element_031",
+      "label": "S03 \u2014 PATH element_031",
+      "path": [
+        7,
+        1,
+        8,
+        5
+      ],
+      "tag": "path"
+    },
+    {
+      "id": "element_032",
+      "label": "S03 \u2014 RECT element_032",
+      "path": [
+        7,
+        1,
+        9,
+        0
+      ],
+      "tag": "rect"
+    },
+    {
+      "id": "element_033",
+      "label": "S03 \u2014 RECT element_033",
+      "path": [
+        7,
+        1,
+        9,
+        1
+      ],
+      "tag": "rect"
+    },
+    {
+      "id": "element_034",
+      "label": "S03 \u2014 PATH element_034",
+      "path": [
+        7,
+        1,
+        9,
+        2
+      ],
+      "tag": "path"
+    },
+    {
+      "id": "element_035",
+      "label": "S03 \u2014 TEXT element_035 \u2014 Linux",
+      "path": [
+        7,
+        1,
+        9,
+        3
+      ],
+      "tag": "text"
+    },
+    {
+      "id": "element_036",
+      "label": "S03 \u2014 CIRCLE element_036",
+      "path": [
+        7,
+        1,
+        9,
+        4
+      ],
+      "tag": "circle"
+    },
+    {
+      "id": "element_037",
+      "label": "S03 \u2014 PATH element_037",
+      "path": [
+        7,
+        1,
+        9,
+        5
+      ],
+      "tag": "path"
+    },
+    {
+      "id": "element_038",
+      "label": "S03 \u2014 RECT element_038",
+      "path": [
+        7,
+        2,
+        0
+      ],
+      "tag": "rect"
+    },
+    {
+      "id": "element_039",
+      "label": "S03 \u2014 TEXT element_039 \u2014 DALAM SATU FLASHDISK",
+      "path": [
+        7,
+        2,
+        1
+      ],
+      "tag": "text"
+    },
+    {
+      "id": "element_040",
+      "label": "S03 \u2014 TEXT element_040 \u2014 PERTAMA,",
+      "path": [
+        8,
+        0,
+        0
+      ],
+      "tag": "text"
+    },
+    {
+      "id": "element_041",
+      "label": "S03 \u2014 TEXT element_041 \u2014 BACKUP DATA.",
+      "path": [
+        8,
+        0,
+        1
+      ],
+      "tag": "text"
+    },
+    {
+      "id": "element_042",
+      "label": "S03 \u2014 RECT element_042",
+      "path": [
+        8,
+        1,
+        0
+      ],
+      "tag": "rect"
+    },
+    {
+      "id": "element_043",
+      "label": "S03 \u2014 RECT element_043",
+      "path": [
+        8,
+        1,
+        1
+      ],
+      "tag": "rect"
+    },
+    {
+      "id": "element_044",
+      "label": "S03 \u2014 RECT element_044",
+      "path": [
+        8,
+        1,
+        2
+      ],
+      "tag": "rect"
+    },
+    {
+      "id": "element_045",
+      "label": "S03 \u2014 RECT element_045",
+      "path": [
+        8,
+        1,
+        3
+      ],
+      "tag": "rect"
+    },
+    {
+      "id": "element_046",
+      "label": "S03 \u2014 PATH element_046",
+      "path": [
+        8,
+        1,
+        4
+      ],
+      "tag": "path"
+    },
+    {
+      "id": "element_047",
+      "label": "S03 \u2014 TEXT element_047 \u2014 USB DRIVE",
+      "path": [
+        8,
+        1,
+        5
+      ],
+      "tag": "text"
+    },
+    {
+      "id": "element_048",
+      "label": "S03 \u2014 TEXT element_048 \u2014 E:",
+      "path": [
+        8,
+        1,
+        6
+      ],
+      "tag": "text"
+    },
+    {
+      "id": "copyPath",
+      "label": "S03 \u2014 PATH copyPath",
+      "path": [
+        8,
+        2
+      ],
+      "tag": "path"
+    },
+    {
+      "id": "element_049",
+      "label": "S03 \u2014 RECT element_049",
+      "path": [
+        8,
+        3,
+        0
+      ],
+      "tag": "rect"
+    },
+    {
+      "id": "element_050",
+      "label": "S03 \u2014 PATH element_050",
+      "path": [
+        8,
+        3,
+        1
+      ],
+      "tag": "path"
+    },
+    {
+      "id": "element_051",
+      "label": "S03 \u2014 RECT element_051",
+      "path": [
+        8,
+        3,
+        2
+      ],
+      "tag": "rect"
+    },
+    {
+      "id": "element_052",
+      "label": "S03 \u2014 TEXT element_052 \u2014 BACKUP",
+      "path": [
+        8,
+        3,
+        3
+      ],
+      "tag": "text"
+    },
+    {
+      "id": "element_053",
+      "label": "S03 \u2014 RECT element_053",
+      "path": [
+        8,
+        4,
+        0
+      ],
+      "tag": "rect"
+    },
+    {
+      "id": "element_054",
+      "label": "S03 \u2014 PATH element_054",
+      "path": [
+        8,
+        4,
+        1
+      ],
+      "tag": "path"
+    },
+    {
+      "id": "element_055",
+      "label": "S03 \u2014 PATH element_055",
+      "path": [
+        8,
+        4,
+        2
+      ],
+      "tag": "path"
+    },
+    {
+      "id": "element_056",
+      "label": "S03 \u2014 RECT element_056",
+      "path": [
+        8,
+        5,
+        0
+      ],
+      "tag": "rect"
+    },
+    {
+      "id": "element_057",
+      "label": "S03 \u2014 PATH element_057",
+      "path": [
+        8,
+        5,
+        1
+      ],
+      "tag": "path"
+    },
+    {
+      "id": "element_058",
+      "label": "S03 \u2014 PATH element_058",
+      "path": [
+        8,
+        5,
+        2
+      ],
+      "tag": "path"
+    },
+    {
+      "id": "element_059",
+      "label": "S03 \u2014 RECT element_059",
+      "path": [
+        8,
+        6,
+        0
+      ],
+      "tag": "rect"
+    },
+    {
+      "id": "element_060",
+      "label": "S03 \u2014 CIRCLE element_060",
+      "path": [
+        8,
+        6,
+        1
+      ],
+      "tag": "circle"
+    },
+    {
+      "id": "element_061",
+      "label": "S03 \u2014 PATH element_061",
+      "path": [
+        8,
+        6,
+        2
+      ],
+      "tag": "path"
+    },
+    {
+      "id": "element_062",
+      "label": "S03 \u2014 TEXT element_062 \u2014 DATA SUDAH AMAN",
+      "path": [
+        8,
+        6,
+        3
+      ],
+      "tag": "text"
+    },
+    {
+      "id": "element_063",
+      "label": "S03 \u2014 TEXT element_063 \u2014 BUKA",
+      "path": [
+        9,
+        0,
+        0
+      ],
+      "tag": "text"
+    },
+    {
+      "id": "element_064",
+      "label": "S03 \u2014 TEXT element_064 \u2014 EASY2BOOT.",
+      "path": [
+        9,
+        0,
+        1
+      ],
+      "tag": "text"
+    },
+    {
+      "id": "element_065",
+      "label": "S03 \u2014 RECT element_065",
+      "path": [
+        9,
+        1,
+        0
+      ],
+      "tag": "rect"
+    },
+    {
+      "id": "element_066",
+      "label": "S03 \u2014 RECT element_066",
+      "path": [
+        9,
+        1,
+        1
+      ],
+      "tag": "rect"
+    },
+    {
+      "id": "element_067",
+      "label": "S03 \u2014 RECT element_067",
+      "path": [
+        9,
+        1,
+        2
+      ],
+      "tag": "rect"
+    },
+    {
+      "id": "element_068",
+      "label": "S03 \u2014 TEXT element_068 \u2014 \ud83d\udcc1",
+      "path": [
+        9,
+        1,
+        3
+      ],
+      "tag": "text"
+    },
+    {
+      "id": "element_069",
+      "label": "S03 \u2014 TEXT element_069 \u2014 Easy2Boot_v2.xx",
+      "path": [
+        9,
+        1,
+        4
+      ],
+      "tag": "text"
+    },
+    {
+      "id": "element_070",
+      "label": "S03 \u2014 RECT element_070",
+      "path": [
+        9,
+        1,
+        5
+      ],
+      "tag": "rect"
+    },
+    {
+      "id": "element_071",
+      "label": "S03 \u2014 TEXT element_071 \u2014 Name",
+      "path": [
+        9,
+        1,
+        6
+      ],
+      "tag": "text"
+    },
+    {
+      "id": "element_072",
+      "label": "S03 \u2014 TEXT element_072 \u2014 Type",
+      "path": [
+        9,
+        1,
+        7
+      ],
+      "tag": "text"
+    },
+    {
+      "id": "exeSelect",
+      "label": "S03 \u2014 RECT exeSelect",
+      "path": [
+        9,
+        1,
+        8
+      ],
+      "tag": "rect"
+    },
+    {
+      "id": "element_073",
+      "label": "S03 \u2014 RECT element_073",
+      "path": [
+        9,
+        1,
+        9
+      ],
+      "tag": "rect"
+    },
+    {
+      "id": "element_074",
+      "label": "S03 \u2014 PATH element_074",
+      "path": [
+        9,
+        1,
+        10
+      ],
+      "tag": "path"
+    },
+    {
+      "id": "element_075",
+      "label": "S03 \u2014 PATH element_075",
+      "path": [
+        9,
+        1,
+        11
+      ],
+      "tag": "path"
+    },
+    {
+      "id": "element_076",
+      "label": "S03 \u2014 TEXT element_076 \u2014 Make_E2B.exe",
+      "path": [
+        9,
+        1,
+        12
+      ],
+      "tag": "text"
+    },
+    {
+      "id": "element_077",
+      "label": "S03 \u2014 TEXT element_077 \u2014 Application",
+      "path": [
+        9,
+        1,
+        13
+      ],
+      "tag": "text"
+    },
+    {
+      "id": "element_078",
+      "label": "S03 \u2014 TEXT element_078 \u2014 EXE",
+      "path": [
+        9,
+        1,
+        14
+      ],
+      "tag": "text"
+    },
+    {
+      "id": "element_079",
+      "label": "S03 \u2014 PATH element_079",
+      "path": [
+        9,
+        1,
+        15
+      ],
+      "tag": "path"
+    },
+    {
+      "id": "element_080",
+      "label": "S03 \u2014 RECT element_080",
+      "path": [
+        9,
+        1,
+        16
+      ],
+      "tag": "rect"
+    },
+    {
+      "id": "element_081",
+      "label": "S03 \u2014 TEXT element_081 \u2014 BUKA APLIKASI",
+      "path": [
+        9,
+        1,
+        17
+      ],
+      "tag": "text"
+    },
+    {
+      "id": "element_082",
+      "label": "S03 \u2014 PATH element_082",
+      "path": [
+        9,
+        2,
+        0
+      ],
+      "tag": "path"
+    },
+    {
+      "id": "element_083",
+      "label": "S03 \u2014 CIRCLE element_083",
+      "path": [
+        9,
+        3,
+        0
+      ],
+      "tag": "circle"
+    },
+    {
+      "id": "element_084",
+      "label": "S03 \u2014 CIRCLE element_084",
+      "path": [
+        9,
+        3,
+        1
+      ],
+      "tag": "circle"
+    },
+    {
+      "id": "element_085",
+      "label": "S03 \u2014 TEXT element_085 \u2014 PASTIKAN",
+      "path": [
+        10,
+        0,
+        0
+      ],
+      "tag": "text"
+    },
+    {
+      "id": "element_086",
+      "label": "S03 \u2014 TEXT element_086 \u2014 PILIH USB.",
+      "path": [
+        10,
+        0,
+        1
+      ],
+      "tag": "text"
+    },
+    {
+      "id": "element_087",
+      "label": "S03 \u2014 RECT element_087",
+      "path": [
+        10,
+        1,
+        0
+      ],
+      "tag": "rect"
+    },
+    {
+      "id": "element_088",
+      "label": "S03 \u2014 RECT element_088",
+      "path": [
+        10,
+        1,
+        1
+      ],
+      "tag": "rect"
+    },
+    {
+      "id": "element_089",
+      "label": "S03 \u2014 RECT element_089",
+      "path": [
+        10,
+        1,
+        2
+      ],
+      "tag": "rect"
+    },
+    {
+      "id": "element_090",
+      "label": "S03 \u2014 RECT element_090",
+      "path": [
+        10,
+        1,
+        3
+      ],
+      "tag": "rect"
+    },
+    {
+      "id": "element_091",
+      "label": "S03 \u2014 TEXT element_091 \u2014 Make_E2B.exe",
+      "path": [
+        10,
+        1,
+        4
+      ],
+      "tag": "text"
+    },
+    {
+      "id": "element_092",
+      "label": "S03 \u2014 TEXT element_092 \u2014 \u2212 \u25a1 \u00d7",
+      "path": [
+        10,
+        1,
+        5
+      ],
+      "tag": "text"
+    },
+    {
+      "id": "element_093",
+      "label": "S03 \u2014 TEXT element_093 \u2014 USB DRIVE",
+      "path": [
+        10,
+        1,
+        6
+      ],
+      "tag": "text"
+    },
+    {
+      "id": "cDrive",
+      "label": "S03 \u2014 RECT cDrive",
+      "path": [
+        10,
+        1,
+        7
+      ],
+      "tag": "rect"
+    },
+    {
+      "id": "element_094",
+      "label": "S03 \u2014 TEXT element_094 \u2014 E: USB Flash Drive \u2014 32 GB",
+      "path": [
+        10,
+        1,
+        8
+      ],
+      "tag": "text"
+    },
+    {
+      "id": "element_095",
+      "label": "S03 \u2014 PATH element_095",
+      "path": [
+        10,
+        1,
+        9
+      ],
+      "tag": "path"
+    },
+    {
+      "id": "element_096",
+      "label": "S03 \u2014 RECT element_096",
+      "path": [
+        10,
+        1,
+        10
+      ],
+      "tag": "rect"
+    },
+    {
+      "id": "element_097",
+      "label": "S03 \u2014 TEXT element_097 \u2014 Refresh",
+      "path": [
+        10,
+        1,
+        11
+      ],
+      "tag": "text"
+    },
+    {
+      "id": "element_098",
+      "label": "S03 \u2014 RECT element_098",
+      "path": [
+        10,
+        1,
+        12
+      ],
+      "tag": "rect"
+    },
+    {
+      "id": "element_099",
+      "label": "S03 \u2014 RECT element_099",
+      "path": [
+        10,
+        1,
+        13
+      ],
+      "tag": "rect"
+    },
+    {
+      "id": "element_100",
+      "label": "S03 \u2014 PATH element_100",
+      "path": [
+        10,
+        1,
+        14
+      ],
+      "tag": "path"
+    },
+    {
+      "id": "element_101",
+      "label": "S03 \u2014 TEXT element_101 \u2014 Make E2B Drive",
+      "path": [
+        10,
+        1,
+        15
+      ],
+      "tag": "text"
+    },
+    {
+      "id": "element_102",
+      "label": "S03 \u2014 PATH element_102",
+      "path": [
+        10,
+        1,
+        16
+      ],
+      "tag": "path"
+    },
+    {
+      "id": "element_103",
+      "label": "S03 \u2014 RECT element_103",
+      "path": [
+        10,
+        1,
+        17
+      ],
+      "tag": "rect"
+    },
+    {
+      "id": "element_104",
+      "label": "S03 \u2014 CIRCLE element_104",
+      "path": [
+        10,
+        1,
+        18
+      ],
+      "tag": "circle"
+    },
+    {
+      "id": "element_105",
+      "label": "S03 \u2014 TEXT element_105 \u2014 Warning:",
+      "path": [
+        10,
+        1,
+        19
+      ],
+      "tag": "text"
+    },
+    {
+      "id": "element_106",
+      "label": "S03 \u2014 TEXT element_106 \u2014 USB drive will",
+      "path": [
+        10,
+        1,
+        20
+      ],
+      "tag": "text"
+    },
+    {
+      "id": "element_107",
+      "label": "S03 \u2014 TEXT element_107 \u2014 be erased!",
+      "path": [
+        10,
+        1,
+        21
+      ],
+      "tag": "text"
+    },
+    {
+      "id": "element_108",
+      "label": "S03 \u2014 TEXT element_108 \u2014 Simulasi UI \u2022 Pilih kapasitas & na",
+      "path": [
+        10,
+        1,
+        22
+      ],
+      "tag": "text"
+    },
+    {
+      "id": "element_109",
+      "label": "S03 \u2014 RECT element_109",
+      "path": [
+        10,
+        2,
+        0
+      ],
+      "tag": "rect"
+    },
+    {
+      "id": "element_110",
+      "label": "S03 \u2014 RECT element_110",
+      "path": [
+        10,
+        2,
+        1
+      ],
+      "tag": "rect"
+    },
+    {
+      "id": "element_111",
+      "label": "S03 \u2014 TEXT element_111 \u2014 E: USB Flash Drive \u2014 32 GB",
+      "path": [
+        10,
+        2,
+        2
+      ],
+      "tag": "text"
+    },
+    {
+      "id": "element_112",
+      "label": "S03 \u2014 PATH element_112",
+      "path": [
+        10,
+        2,
+        3
+      ],
+      "tag": "path"
+    },
+    {
+      "id": "element_113",
+      "label": "S03 \u2014 RECT element_113",
+      "path": [
+        10,
+        3,
+        0
+      ],
+      "tag": "rect"
+    },
+    {
+      "id": "element_114",
+      "label": "S03 \u2014 PATH element_114",
+      "path": [
+        10,
+        4,
+        0
+      ],
+      "tag": "path"
+    },
+    {
+      "id": "element_115",
+      "label": "S03 \u2014 CIRCLE element_115",
+      "path": [
+        10,
+        5,
+        0
+      ],
+      "tag": "circle"
+    },
+    {
+      "id": "element_116",
+      "label": "S03 \u2014 TEXT element_116 \u2014 LALU,",
+      "path": [
+        11,
+        0,
+        0
+      ],
+      "tag": "text"
+    },
+    {
+      "id": "element_117",
+      "label": "S03 \u2014 TEXT element_117 \u2014 BUAT USB.",
+      "path": [
+        11,
+        0,
+        1
+      ],
+      "tag": "text"
+    },
+    {
+      "id": "element_118",
+      "label": "S03 \u2014 RECT element_118",
+      "path": [
+        11,
+        1,
+        0
+      ],
+      "tag": "rect"
+    },
+    {
+      "id": "element_119",
+      "label": "S03 \u2014 RECT element_119",
+      "path": [
+        11,
+        1,
+        1
+      ],
+      "tag": "rect"
+    },
+    {
+      "id": "element_120",
+      "label": "S03 \u2014 TEXT element_120 \u2014 E: USB Flash Drive \u2014 32 GB",
+      "path": [
+        11,
+        1,
+        2
+      ],
+      "tag": "text"
+    },
+    {
+      "id": "element_121",
+      "label": "S03 \u2014 CIRCLE element_121",
+      "path": [
+        11,
+        1,
+        3
+      ],
+      "tag": "circle"
+    },
+    {
+      "id": "element_122",
+      "label": "S03 \u2014 PATH element_122",
+      "path": [
+        11,
+        1,
+        4
+      ],
+      "tag": "path"
+    },
+    {
+      "id": "dButton",
+      "label": "S03 \u2014 RECT dButton",
+      "path": [
+        11,
+        1,
+        5
+      ],
+      "tag": "rect"
+    },
+    {
+      "id": "element_123",
+      "label": "S03 \u2014 PATH element_123",
+      "path": [
+        11,
+        1,
+        6
+      ],
+      "tag": "path"
+    },
+    {
+      "id": "element_124",
+      "label": "S03 \u2014 TEXT element_124 \u2014 Make E2B Drive",
+      "path": [
+        11,
+        1,
+        7
+      ],
+      "tag": "text"
+    },
+    {
+      "id": "element_125",
+      "label": "S03 \u2014 PATH element_125",
+      "path": [
+        11,
+        1,
+        8,
+        0
+      ],
+      "tag": "path"
+    },
+    {
+      "id": "element_126",
+      "label": "S03 \u2014 RECT element_126",
+      "path": [
+        11,
+        1,
+        8,
+        1
+      ],
+      "tag": "rect"
+    },
+    {
+      "id": "element_127",
+      "label": "S03 \u2014 CIRCLE element_127",
+      "path": [
+        11,
+        1,
+        8,
+        2
+      ],
+      "tag": "circle"
+    },
+    {
+      "id": "element_128",
+      "label": "S03 \u2014 TEXT element_128 \u2014 USB drive will be erased!",
+      "path": [
+        11,
+        1,
+        8,
+        3
+      ],
+      "tag": "text"
+    },
+    {
+      "id": "element_129",
+      "label": "S03 \u2014 TEXT element_129 \u2014 SIMULASI TINDAKAN \u2014 BACKUP SEBELUM",
+      "path": [
+        11,
+        1,
+        9
+      ],
+      "tag": "text"
+    },
+    {
+      "id": "element_130",
+      "label": "S03 \u2014 PATH element_130",
+      "path": [
+        11,
+        2,
+        0
+      ],
+      "tag": "path"
+    },
+    {
+      "id": "element_131",
+      "label": "S03 \u2014 CIRCLE element_131",
+      "path": [
+        11,
+        3,
+        0
+      ],
+      "tag": "circle"
+    },
+    {
+      "id": "element_132",
+      "label": "S03 \u2014 CIRCLE element_132",
+      "path": [
+        11,
+        3,
+        1
+      ],
+      "tag": "circle"
+    },
+    {
+      "id": "element_133",
+      "label": "S03 \u2014 TEXT element_133 \u2014 SELESAI.",
+      "path": [
+        12,
+        0,
+        0
+      ],
+      "tag": "text"
+    },
+    {
+      "id": "element_134",
+      "label": "S03 \u2014 TEXT element_134 \u2014 USB SIAP.",
+      "path": [
+        12,
+        0,
+        1
+      ],
+      "tag": "text"
+    },
+    {
+      "id": "element_135",
+      "label": "S03 \u2014 RECT element_135",
+      "path": [
+        12,
+        1,
+        0
+      ],
+      "tag": "rect"
+    },
+    {
+      "id": "element_136",
+      "label": "S03 \u2014 CIRCLE element_136",
+      "path": [
+        12,
+        1,
+        1
+      ],
+      "tag": "circle"
+    },
+    {
+      "id": "element_137",
+      "label": "S03 \u2014 PATH element_137",
+      "path": [
+        12,
+        1,
+        2
+      ],
+      "tag": "path"
+    },
+    {
+      "id": "element_138",
+      "label": "S03 \u2014 TEXT element_138 \u2014 USB multiboot selesai",
+      "path": [
+        12,
+        1,
+        3
+      ],
+      "tag": "text"
+    },
+    {
+      "id": "element_139",
+      "label": "S03 \u2014 TEXT element_139 \u2014 Drive E: \u2022 Easy2Boot",
+      "path": [
+        12,
+        1,
+        4
+      ],
+      "tag": "text"
+    },
+    {
+      "id": "element_140",
+      "label": "S03 \u2014 RECT element_140",
+      "path": [
+        12,
+        1,
+        5
+      ],
+      "tag": "rect"
+    },
+    {
+      "id": "eBar",
+      "label": "S03 \u2014 RECT eBar",
+      "path": [
+        12,
+        1,
+        6,
+        0
+      ],
+      "tag": "rect"
+    },
+    {
+      "id": "element_142",
+      "label": "S03 \u2014 TEXT element_142 \u2014 Siap untuk ditambahkan file ISO",
+      "path": [
+        12,
+        1,
+        7
+      ],
+      "tag": "text"
+    },
+    {
+      "id": "element_143",
+      "label": "S03 \u2014 TEXT element_143 \u2014 100%",
+      "path": [
+        12,
+        1,
+        8
+      ],
+      "tag": "text"
+    },
+    {
+      "id": "element_144",
+      "label": "S03 \u2014 RECT element_144",
+      "path": [
+        12,
+        2,
+        0
+      ],
+      "tag": "rect"
+    },
+    {
+      "id": "element_145",
+      "label": "S03 \u2014 PATH element_145",
+      "path": [
+        12,
+        2,
+        1
+      ],
+      "tag": "path"
+    },
+    {
+      "id": "element_146",
+      "label": "S03 \u2014 TEXT element_146 \u2014 _ISO",
+      "path": [
+        12,
+        2,
+        2
+      ],
+      "tag": "text"
+    }
+  ],
+  "S06": [
+    {
+      "id": "element_001",
+      "label": "S06 \u2014 RECT element_001",
+      "path": [
+        1
+      ],
+      "tag": "rect"
+    },
+    {
+      "id": "element_002",
+      "label": "S06 \u2014 RECT element_002",
+      "path": [
+        2
+      ],
+      "tag": "rect"
+    },
+    {
+      "id": "element_003",
+      "label": "S06 \u2014 CIRCLE element_003",
+      "path": [
+        3
+      ],
+      "tag": "circle"
+    },
+    {
+      "id": "element_004",
+      "label": "S06 \u2014 CIRCLE element_004",
+      "path": [
+        4
+      ],
+      "tag": "circle"
+    },
+    {
+      "id": "element_005",
+      "label": "S06 \u2014 RECT element_005",
+      "path": [
+        5,
+        0
+      ],
+      "tag": "rect"
+    },
+    {
+      "id": "element_006",
+      "label": "S06 \u2014 TEXT element_006 \u2014 EASY2BOOT",
+      "path": [
+        5,
+        1
+      ],
+      "tag": "text"
+    },
+    {
+      "id": "element_007",
+      "label": "S06 \u2014 TEXT element_007 \u2014 06 / PENUTUP",
+      "path": [
+        5,
+        2
+      ],
+      "tag": "text"
+    },
+    {
+      "id": "element_008",
+      "label": "S06 \u2014 PATH element_008",
+      "path": [
+        5,
+        3
+      ],
+      "tag": "path"
+    },
+    {
+      "id": "timebar",
+      "label": "S06 \u2014 RECT timebar",
+      "path": [
+        5,
+        4
+      ],
+      "tag": "rect"
+    },
+    {
+      "id": "element_009",
+      "label": "S06 \u2014 TEXT element_009 \u2014 EASY2BOOT \u2014 SATU USB, BANYAK PILIH",
+      "path": [
+        5,
+        5
+      ],
+      "tag": "text"
+    },
+    {
+      "id": "element_010",
+      "label": "S06 \u2014 TEXT element_010 \u2014 06/06",
+      "path": [
+        5,
+        6
+      ],
+      "tag": "text"
+    },
+    {
+      "id": "element_011",
+      "label": "S06 \u2014 TEXT element_011 \u2014 ISO BERHASIL DIJALANKAN.",
+      "path": [
+        6,
+        0
+      ],
+      "tag": "text"
+    },
+    {
+      "id": "element_012",
+      "label": "S06 \u2014 TEXT element_012 \u2014 INSTALLER TERBUKA.",
+      "path": [
+        6,
+        1
+      ],
+      "tag": "text"
+    },
+    {
+      "id": "element_013",
+      "label": "S06 \u2014 RECT element_013",
+      "path": [
+        6,
+        2
+      ],
+      "tag": "rect"
+    },
+    {
+      "id": "element_014",
+      "label": "S06 \u2014 RECT element_014",
+      "path": [
+        6,
+        3
+      ],
+      "tag": "rect"
+    },
+    {
+      "id": "element_015",
+      "label": "S06 \u2014 PATH element_015",
+      "path": [
+        6,
+        4
+      ],
+      "tag": "path"
+    },
+    {
+      "id": "element_017",
+      "label": "S06 \u2014 PATH element_017",
+      "path": [
+        6,
+        5,
+        0
+      ],
+      "tag": "path"
+    },
+    {
+      "id": "element_018",
+      "label": "S06 \u2014 TEXT element_018 \u2014 Windows Setup",
+      "path": [
+        6,
+        6
+      ],
+      "tag": "text"
+    },
+    {
+      "id": "element_019",
+      "label": "S06 \u2014 RECT element_019",
+      "path": [
+        6,
+        7
+      ],
+      "tag": "rect"
+    },
+    {
+      "id": "element_020",
+      "label": "S06 \u2014 TEXT element_020 \u2014 Next",
+      "path": [
+        6,
+        8
+      ],
+      "tag": "text"
+    },
+    {
+      "id": "element_021",
+      "label": "S06 \u2014 TEXT element_021 \u2014 KALAU KAMU, BIASANYA...",
+      "path": [
+        7,
+        0,
+        0
+      ],
+      "tag": "text"
+    },
+    {
+      "id": "element_022",
+      "label": "S06 \u2014 TEXT element_022 \u2014 BOOTABLE ULANG?",
+      "path": [
+        7,
+        0,
+        1
+      ],
+      "tag": "text"
+    },
+    {
+      "id": "element_023",
+      "label": "S06 \u2014 RECT element_023",
+      "path": [
+        7,
+        1,
+        0
+      ],
+      "tag": "rect"
+    },
+    {
+      "id": "element_024",
+      "label": "S06 \u2014 RECT element_024",
+      "path": [
+        7,
+        1,
+        1
+      ],
+      "tag": "rect"
+    },
+    {
+      "id": "element_025",
+      "label": "S06 \u2014 PATH element_025",
+      "path": [
+        7,
+        1,
+        2
+      ],
+      "tag": "path"
+    },
+    {
+      "id": "element_026",
+      "label": "S06 \u2014 TEXT element_026 \u2014 USB BOOTABLE",
+      "path": [
+        7,
+        1,
+        3
+      ],
+      "tag": "text"
+    },
+    {
+      "id": "element_027",
+      "label": "S06 \u2014 TEXT element_027 \u2014 Windows 10",
+      "path": [
+        7,
+        1,
+        4
+      ],
+      "tag": "text"
+    },
+    {
+      "id": "element_028",
+      "label": "S06 \u2014 RECT element_028",
+      "path": [
+        7,
+        1,
+        5,
+        0
+      ],
+      "tag": "rect"
+    },
+    {
+      "id": "element_029",
+      "label": "S06 \u2014 TEXT element_029 \u2014 TERPASANG",
+      "path": [
+        7,
+        1,
+        5,
+        1
+      ],
+      "tag": "text"
+    },
+    {
+      "id": "element_030",
+      "label": "S06 \u2014 RECT element_030",
+      "path": [
+        7,
+        2,
+        0
+      ],
+      "tag": "rect"
+    },
+    {
+      "id": "element_031",
+      "label": "S06 \u2014 CIRCLE element_031",
+      "path": [
+        7,
+        2,
+        1
+      ],
+      "tag": "circle"
+    },
+    {
+      "id": "element_032",
+      "label": "S06 \u2014 PATH element_032",
+      "path": [
+        7,
+        2,
+        2
+      ],
+      "tag": "path"
+    },
+    {
+      "id": "element_033",
+      "label": "S06 \u2014 TEXT element_033 \u2014 MAU GANTI INSTALLER",
+      "path": [
+        7,
+        2,
+        3
+      ],
+      "tag": "text"
+    },
+    {
+      "id": "element_034",
+      "label": "S06 \u2014 TEXT element_034 \u2014 Windows 11",
+      "path": [
+        7,
+        2,
+        4
+      ],
+      "tag": "text"
+    },
+    {
+      "id": "element_035",
+      "label": "S06 \u2014 RECT element_035",
+      "path": [
+        7,
+        3,
+        0
+      ],
+      "tag": "rect"
+    },
+    {
+      "id": "element_036",
+      "label": "S06 \u2014 CIRCLE element_036",
+      "path": [
+        7,
+        3,
+        1
+      ],
+      "tag": "circle"
+    },
+    {
+      "id": "element_037",
+      "label": "S06 \u2014 PATH element_037",
+      "path": [
+        7,
+        3,
+        2
+      ],
+      "tag": "path"
+    },
+    {
+      "id": "element_038",
+      "label": "S06 \u2014 TEXT element_038 \u2014 BUAT USB LAGI",
+      "path": [
+        7,
+        3,
+        3
+      ],
+      "tag": "text"
+    },
+    {
+      "id": "element_039",
+      "label": "S06 \u2014 RECT element_039",
+      "path": [
+        7,
+        3,
+        4
+      ],
+      "tag": "rect"
+    },
+    {
+      "id": "repeatFill",
+      "label": "S06 \u2014 RECT repeatFill",
+      "path": [
+        7,
+        3,
+        5
+      ],
+      "tag": "rect"
+    },
+    {
+      "id": "element_040",
+      "label": "S06 \u2014 TEXT element_040 \u2014 ATAU...",
+      "path": [
+        8,
+        0,
+        0
+      ],
+      "tag": "text"
+    },
+    {
+      "id": "element_041",
+      "label": "S06 \u2014 TEXT element_041 \u2014 PAKAI",
+      "path": [
+        8,
+        0,
+        1
+      ],
+      "tag": "text"
+    },
+    {
+      "id": "element_042",
+      "label": "S06 \u2014 TEXT element_042 \u2014 MULTIBOOT?",
+      "path": [
+        8,
+        0,
+        2
+      ],
+      "tag": "text"
+    },
+    {
+      "id": "element_043",
+      "label": "S06 \u2014 RECT element_043",
+      "path": [
+        8,
+        1,
+        0
+      ],
+      "tag": "rect"
+    },
+    {
+      "id": "element_044",
+      "label": "S06 \u2014 RECT element_044",
+      "path": [
+        8,
+        1,
+        1
+      ],
+      "tag": "rect"
+    },
+    {
+      "id": "element_045",
+      "label": "S06 \u2014 RECT element_045",
+      "path": [
+        8,
+        1,
+        2
+      ],
+      "tag": "rect"
+    },
+    {
+      "id": "element_046",
+      "label": "S06 \u2014 RECT element_046",
+      "path": [
+        8,
+        1,
+        3
+      ],
+      "tag": "rect"
+    },
+    {
+      "id": "element_047",
+      "label": "S06 \u2014 RECT element_047",
+      "path": [
+        8,
+        1,
+        4
+      ],
+      "tag": "rect"
+    },
+    {
+      "id": "element_048",
+      "label": "S06 \u2014 RECT element_048",
+      "path": [
+        8,
+        1,
+        5
+      ],
+      "tag": "rect"
+    },
+    {
+      "id": "element_049",
+      "label": "S06 \u2014 TEXT element_049 \u2014 EASY2BOOT",
+      "path": [
+        8,
+        1,
+        6
+      ],
+      "tag": "text"
+    },
+    {
+      "id": "element_050",
+      "label": "S06 \u2014 TEXT element_050 \u2014 MULTIBOOT USB",
+      "path": [
+        8,
+        1,
+        7
+      ],
+      "tag": "text"
+    },
+    {
+      "id": "element_051",
+      "label": "S06 \u2014 RECT element_051",
+      "path": [
+        8,
+        2,
+        0
+      ],
+      "tag": "rect"
+    },
+    {
+      "id": "element_052",
+      "label": "S06 \u2014 RECT element_052",
+      "path": [
+        8,
+        2,
+        1
+      ],
+      "tag": "rect"
+    },
+    {
+      "id": "element_053",
+      "label": "S06 \u2014 TEXT element_053 \u2014 10",
+      "path": [
+        8,
+        2,
+        2
+      ],
+      "tag": "text"
+    },
+    {
+      "id": "element_054",
+      "label": "S06 \u2014 TEXT element_054 \u2014 Windows",
+      "path": [
+        8,
+        2,
+        3
+      ],
+      "tag": "text"
+    },
+    {
+      "id": "element_055",
+      "label": "S06 \u2014 TEXT element_055 \u2014 10",
+      "path": [
+        8,
+        2,
+        4
+      ],
+      "tag": "text"
+    },
+    {
+      "id": "element_056",
+      "label": "S06 \u2014 RECT element_056",
+      "path": [
+        8,
+        3,
+        0
+      ],
+      "tag": "rect"
+    },
+    {
+      "id": "element_057",
+      "label": "S06 \u2014 RECT element_057",
+      "path": [
+        8,
+        3,
+        1
+      ],
+      "tag": "rect"
+    },
+    {
+      "id": "element_058",
+      "label": "S06 \u2014 TEXT element_058 \u2014 11",
+      "path": [
+        8,
+        3,
+        2
+      ],
+      "tag": "text"
+    },
+    {
+      "id": "element_059",
+      "label": "S06 \u2014 TEXT element_059 \u2014 Windows",
+      "path": [
+        8,
+        3,
+        3
+      ],
+      "tag": "text"
+    },
+    {
+      "id": "element_060",
+      "label": "S06 \u2014 TEXT element_060 \u2014 11",
+      "path": [
+        8,
+        3,
+        4
+      ],
+      "tag": "text"
+    },
+    {
+      "id": "element_061",
+      "label": "S06 \u2014 RECT element_061",
+      "path": [
+        8,
+        4,
+        0
+      ],
+      "tag": "rect"
+    },
+    {
+      "id": "element_062",
+      "label": "S06 \u2014 RECT element_062",
+      "path": [
+        8,
+        4,
+        1
+      ],
+      "tag": "rect"
+    },
+    {
+      "id": "element_063",
+      "label": "S06 \u2014 TEXT element_063 \u2014 ISO",
+      "path": [
+        8,
+        4,
+        2
+      ],
+      "tag": "text"
+    },
+    {
+      "id": "element_064",
+      "label": "S06 \u2014 TEXT element_064 \u2014 Linux",
+      "path": [
+        8,
+        4,
+        3
+      ],
+      "tag": "text"
+    },
+    {
+      "id": "element_065",
+      "label": "S06 \u2014 RECT element_065",
+      "path": [
+        9,
+        0,
+        0
+      ],
+      "tag": "rect"
+    },
+    {
+      "id": "element_066",
+      "label": "S06 \u2014 PATH element_066",
+      "path": [
+        9,
+        0,
+        1
+      ],
+      "tag": "path"
+    },
+    {
+      "id": "element_067",
+      "label": "S06 \u2014 TEXT element_067 \u2014 TULIS DI KOMENTAR",
+      "path": [
+        9,
+        0,
+        2
+      ],
+      "tag": "text"
+    },
+    {
+      "id": "element_068",
+      "label": "S06 \u2014 TEXT element_068 \u2014 EASY2BOOT",
+      "path": [
+        10,
+        0
+      ],
+      "tag": "text"
+    },
+    {
+      "id": "element_069",
+      "label": "S06 \u2014 TEXT element_069 \u2014 1 FLASHDISK",
+      "path": [
+        10,
+        1,
+        0
+      ],
+      "tag": "text"
+    },
+    {
+      "id": "element_070",
+      "label": "S06 \u2014 TEXT element_070 \u2014 BANYAK INSTALLER",
+      "path": [
+        10,
+        1,
+        1
+      ],
+      "tag": "text"
+    },
+    {
+      "id": "element_071",
+      "label": "S06 \u2014 RECT element_071",
+      "path": [
+        10,
+        2,
+        0
+      ],
+      "tag": "rect"
+    },
+    {
+      "id": "element_072",
+      "label": "S06 \u2014 RECT element_072",
+      "path": [
+        10,
+        2,
+        1
+      ],
+      "tag": "rect"
+    },
+    {
+      "id": "element_073",
+      "label": "S06 \u2014 RECT element_073",
+      "path": [
+        10,
+        2,
+        2
+      ],
+      "tag": "rect"
+    },
+    {
+      "id": "element_074",
+      "label": "S06 \u2014 RECT element_074",
+      "path": [
+        10,
+        2,
+        3
+      ],
+      "tag": "rect"
+    },
+    {
+      "id": "element_075",
+      "label": "S06 \u2014 RECT element_075",
+      "path": [
+        10,
+        2,
+        4
+      ],
+      "tag": "rect"
+    },
+    {
+      "id": "element_076",
+      "label": "S06 \u2014 RECT element_076",
+      "path": [
+        10,
+        2,
+        5
+      ],
+      "tag": "rect"
+    },
+    {
+      "id": "element_077",
+      "label": "S06 \u2014 TEXT element_077 \u2014 EASY2BOOT",
+      "path": [
+        10,
+        2,
+        6
+      ],
+      "tag": "text"
+    },
+    {
+      "id": "element_078",
+      "label": "S06 \u2014 TEXT element_078 \u2014 MULTIBOOT USB",
+      "path": [
+        10,
+        2,
+        7
+      ],
+      "tag": "text"
+    },
+    {
+      "id": "element_079",
+      "label": "S06 \u2014 RECT element_079",
+      "path": [
+        10,
+        3,
+        0
+      ],
+      "tag": "rect"
+    },
+    {
+      "id": "element_080",
+      "label": "S06 \u2014 TEXT element_080 \u2014 WINDOWS",
+      "path": [
+        10,
+        3,
+        1
+      ],
+      "tag": "text"
+    },
+    {
+      "id": "element_081",
+      "label": "S06 \u2014 TEXT element_081 \u2014 10",
+      "path": [
+        10,
+        3,
+        2
+      ],
+      "tag": "text"
+    },
+    {
+      "id": "element_082",
+      "label": "S06 \u2014 RECT element_082",
+      "path": [
+        10,
+        3,
+        3
+      ],
+      "tag": "rect"
+    },
+    {
+      "id": "element_083",
+      "label": "S06 \u2014 TEXT element_083 \u2014 WINDOWS",
+      "path": [
+        10,
+        3,
+        4
+      ],
+      "tag": "text"
+    },
+    {
+      "id": "element_084",
+      "label": "S06 \u2014 TEXT element_084 \u2014 11",
+      "path": [
+        10,
+        3,
+        5
+      ],
+      "tag": "text"
+    },
+    {
+      "id": "element_085",
+      "label": "S06 \u2014 RECT element_085",
+      "path": [
+        10,
+        3,
+        6
+      ],
+      "tag": "rect"
+    },
+    {
+      "id": "element_086",
+      "label": "S06 \u2014 TEXT element_086 \u2014 LINUX",
+      "path": [
+        10,
+        3,
+        7
+      ],
+      "tag": "text"
+    },
+    {
+      "id": "element_087",
+      "label": "S06 \u2014 RECT element_087",
+      "path": [
+        10,
+        4,
+        0
+      ],
+      "tag": "rect"
+    },
+    {
+      "id": "element_088",
+      "label": "S06 \u2014 TEXT element_088 \u2014 USB MULTIBOOT",
+      "path": [
+        10,
+        4,
+        1
+      ],
+      "tag": "text"
+    }
+  ]
+}

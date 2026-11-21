@@ -10,3 +10,14 @@
 8. **AUTO PROJECT SCOPE**. `npm run sync` menambahkan file kontrol produksi hanya jika belum ada. File keputusan yang ada tidak pernah direset atau ditimpa saat sync. Untuk memeriksa gunakan `node tools/production-scope.mjs --check`.
 
 **Precedence:** permintaan user terbaru yang eksplisit → kondisi source render aktual → keputusan kreatif approved/locked di file scope → aturan teknis di atas → catatan lama. Jika source dan tujuan berbeda, laporkan mismatch; jangan mengarang kesesuaian.
+
+
+## User flow ChatGPT yang teruji
+`npm run flow` menuntun dari judul sampai QA. `npm run flow -- --new "Judul video"` menulis brief siap salin di `exports/briefs/` (tidak otomatis mengirim ke ChatGPT). Untuk distribusi sistem, `npm run zip -- --studio` hanya mengekspor engine; video tetap di `projects/` pada PC, ekspor video sendiri lewat `npm run zip -- --all`. Baca `docs/USER-FLOW-CHATGPT.md` dan `docs/EDITABLE-CONTRACT.md`.
+
+
+## Acuan Project ChatGPT terkini
+Baca `docs/CHATGPT-PROJECT-REFERENCE.md` untuk user flow, pemetaan 12 Agent Skills resmi Remotion,
+aturan native editability, VO setelah motion ACC, serta kontrak v1.8.1.
+Gunakan skill resmi secara selektif; `npm run skills:install` hanya memasang pada PC,
+bukan memperbarui Skill yang terinstal pada akun ChatGPT.

@@ -39,5 +39,25 @@
     "remotion",
     "react",
     "react-dom"
-  ]
+  ],
+  "validation": {
+    "version": "1.1",
+    "strict": "kontrak, asset literal, dynamic import/source lint; tidak menggantikan bundling",
+    "command": "npm run addon:validate -- <folder-addon> --strict --syntax",
+    "smokeCommand": "npm run qa:smoke -- --still <CompositionId>",
+    "verification": "static != render"
+  },
+  "revisionSafety": "SHA-256, preflight on isolated candidate project, rollback",
+  "creativeStyleBridge": {
+    "default": "minimal-editorial",
+    "profiles": "contracts/creative-style-profiles.json",
+    "mode": "reference-only",
+    "renderer": "remotion"
+  },
+  "studioUserFlow": {
+    "command": "npm run flow",
+    "briefOutput": "exports/briefs",
+    "source": "docs/USER-FLOW-CHATGPT.md"
+  },
+  "masterZipDefault": "engine-only (no projects, no historical logs)"
 }

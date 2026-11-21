@@ -1,2 +1,5 @@
-# Edit aset
-Edit text using Remotion Props or src/config; assets are stored in public/ and addressed with staticFile('videos/<slug>/...'). Keep base position, user transform, and animation transform independent.
+# Edit asset dan layer — native Remotion Studio
+
+Pilih layer bernama pada timeline atau preview, ubah teks/style/keyframe yang didukung. Klik Save lalu reload dan bandingkan hasil render sebelum menyebutnya editable. Nilai yang computed/diakses lewat JSX biasa tidak otomatis dapat diedit pada kanvas.
+
+Aset video asli disimpan di `public/` add-on dan diakses melalui `staticFile('videos/<slug>/...')` setelah sync. Gunakan `src/config/narration.json` untuk VO Guide, bukan untuk subtitle final. Dokumentasikan setiap layer penting di `EDITABLE-LAYER-MAP.md`. Lihat `docs/EDITABLE-CONTRACT.md` di Master.

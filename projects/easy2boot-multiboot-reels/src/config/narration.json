@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "status": "draft",
-  "notes": "Timing estimasi dari visual 2641 frame; sesuaikan setelah suara final direkam. Satu sumber naskah VO Guide.",
+  "notes": "Timing draft mengikuti 2701 frame; scene 05 menggunakan laptop Scene 01 selama 480 frame. VO final belum ada.",
   "beats": [
     {
       "scene": "S01",
@@ -90,43 +90,43 @@
     {
       "scene": "S05",
       "startFrame": 1831,
-      "endFrame": 1950,
-      "text": "Sekarang, boot dari USB."
+      "endFrame": 1939,
+      "text": "Sekarang, boot dari flashdisk."
     },
     {
       "scene": "S05",
-      "startFrame": 1950,
-      "endFrame": 2035,
-      "text": "Pilih flashdisk di boot menu."
+      "startFrame": 1939,
+      "endFrame": 2033,
+      "text": "Di Boot Menu, pilih USB."
     },
     {
       "scene": "S05",
-      "startFrame": 2035,
-      "endFrame": 2120,
-      "text": "Di agFM, cari ISO Windows 11."
+      "startFrame": 2033,
+      "endFrame": 2116,
+      "text": "Buka menu agFM."
     },
     {
       "scene": "S05",
-      "startFrame": 2120,
-      "endFrame": 2190,
-      "text": "Pilih, lalu jalankan."
+      "startFrame": 2116,
+      "endFrame": 2218,
+      "text": "Pilih ISO Windows 11, lalu jalankan."
     },
     {
       "scene": "S05",
-      "startFrame": 2190,
-      "endFrame": 2251,
-      "text": "Installer Windows mulai terbuka."
+      "startFrame": 2218,
+      "endFrame": 2311,
+      "text": "Installer Windows pun terbuka."
     },
     {
       "scene": "S06",
-      "startFrame": 2251,
-      "endFrame": 2440,
+      "startFrame": 2311,
+      "endFrame": 2500,
       "text": "Kalau kamu, biasanya bikin bootable ulang atau pakai multiboot?"
     },
     {
       "scene": "S06",
-      "startFrame": 2440,
-      "endFrame": 2641,
+      "startFrame": 2500,
+      "endFrame": 2701,
       "text": "Coba tulis di kolom komentar!"
     }
   ]

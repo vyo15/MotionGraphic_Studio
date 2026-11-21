@@ -37,13 +37,13 @@ export const SCENE04={
 
 export const SCENE05={
  fps:30,
- durationInFrames:420,
+ durationInFrames:480, // ACC visual preview laptop sama Scene01: 16 s
  beats:{
-  connection:{from:0,to:84,vo:'Sekarang, boot komputer dari USB.'},
-  bootMenu:{from:84,to:159,vo:'Pilih USB saat booting.'},
-  agfm:{from:159,to:255,vo:'Cari Windows 11 di menu agFM.'},
-  iso:{from:255,to:345,vo:'Pilih ISO-nya, lalu jalankan.'},
-  setup:{from:345,to:420,vo:'Installer Windows mulai terbuka.'},
+  connection:{from:0,to:108,vo:'Sekarang, boot dari flashdisk.'},
+  bootMenu:{from:108,to:202,vo:'Di Boot Menu, pilih USB.'},
+  agfm:{from:202,to:285,vo:'Buka menu agFM.'},
+  iso:{from:285,to:387,vo:'Pilih ISO Windows 11, lalu jalankan.'},
+  setup:{from:387,to:480,vo:'Installer Windows pun terbuka.'},
  }
 } as const;
 

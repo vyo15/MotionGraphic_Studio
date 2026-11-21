@@ -5,12 +5,14 @@ import {fileURLToPath} from 'node:url';
 import {dirname,resolve,join} from 'node:path';
 import {startAutoSync} from './auto-sync-watch.mjs';
 const root=resolve(dirname(fileURLToPath(import.meta.url)),'..');
-const cli=join(root,'node_modules','.bin',process.platform==='win32'?'remotion.cmd':'remotion');
+// Execute the Remotion JS CLI through Node, not a .cmd shell wrapper.
+// On Windows this avoids DEP0190 and argument quoting issues.
+const cli=join(root,'node_modules','@remotion','cli','remotion-cli.js');
 const args=['studio','src/index.ts','--port','3000'];
 if(process.env.MOTION_STUDIO_LAUNCHER==='1')args.push('--no-open');
 console.log('[REMOTION STUDIO] Satu editor: http://127.0.0.1:3000');
 console.log('[REMOTION STUDIO] Tidak menjalankan Hub, Visual Editor, atau Easy Editor.');
-const child=spawn(cli,args,{cwd:root,stdio:'inherit',shell:process.platform==='win32'});
+const child=spawn(process.execPath,[cli,...args],{cwd:root,stdio:'inherit',windowsHide:false});
 const watcher=startAutoSync({root});
 console.log('[AUTO SYNC] Aktif: copy folder ke projects/ atau ZIP ke library/masuk, segmen didaftarkan otomatis.');
 let stopping=false;

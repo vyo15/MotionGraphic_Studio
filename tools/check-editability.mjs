@@ -15,8 +15,8 @@ if(/<Interactive\./.test(s)&&/style=\{\{[\s\S]{0,90}?\.\.\./.test(s))warnings.pu
 for(const v of Object.values(m.defaultProps?.sceneEditor||{}))sceneLayers+=Object.keys(v.layers||{}).length;
 cursor=Object.keys(m.defaultProps?.cursorEditor||{}).length;
 console.log(`• ${m.title} [${m.id}]`);console.log(`  ${interactive} JSX Interactive · ${sceneLayers} layer manifest · ${cursor} track kursor`);
-if(!interactive&&!sceneLayers){warnings.push('Tidak ada layer editable; buat Interactive.Div / sceneEditor');if(strict&&m.editableContract==='visual-v1')critical++}
-if(m.editableContract==='visual-v1'){
+if(!interactive&&!sceneLayers){warnings.push('Tidak ada layer editable; buat Interactive.Div / sceneEditor');if(strict&&['visual-v1','studio-direct-v4'].includes(m.editableContract))critical++}
+if(['visual-v1','studio-direct-v4'].includes(m.editableContract)){
  const required=['README.md','PANDUAN-EDIT-ASSET.md','src/Video.tsx'];
  for(const f of required)if(!existsSync(join(folder,f))){warnings.push('Kontrak file wajib hilang: '+f);if(strict)critical++}
  if(!existsSync(join(folder,'EDITABLE-LAYER-MAP.md'))){warnings.push('Buat EDITABLE-LAYER-MAP.md untuk melabel layer');if(strict)critical++}
@@ -25,5 +25,5 @@ if(m.editableContract==='visual-v1'){
 if(computed)warnings.push(computed+' gaya memuat CSS var; gunakan layer Interactive atau props asli Remotion agar dapat dipilih di Studio');
 for(const w of warnings.slice(0,5))console.log('  [INFO] '+w);
 }
-console.log('Aturan pengembangan: STANDAR-EDITABLE-STUDIO.md | Studio: http://127.0.0.1:3000');
+console.log('Ini hanya hitungan source, tidak membuktikan drag/teks/keyframe/Save/reload. Aturan: docs/EDITABLE-CONTRACT.md');
 if(strict&&critical){console.error('[KONTRAK] '+critical+' pelanggaran pada project dengan editableContract=visual-v1');process.exitCode=1;}

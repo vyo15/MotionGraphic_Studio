@@ -6,114 +6,81 @@ import path from 'node:path';
 import {ROOT} from '../tools/menu-helper.mjs';
 import {parseCompositions,captureStudioProps,saveGeneratedState} from '../tools/studio-props-bridge.mjs';
 const read=f=>fs.readFileSync(f,'utf8');
-const source=read(path.join(ROOT,'src','Root.tsx'));
-const mfName='motiongraphic-video.json';
-function fixture(){
- const tmp=fs.mkdtempSync(path.join(os.tmpdir(),'remotion-props-test-'));
- fs.mkdirSync(path.join(tmp,'src'),{recursive:true});
- fs.mkdirSync(path.join(tmp,'library'),{recursive:true});
- const entries=[];
- for(const slug of ['ip-address','windows-hacks-5-shortcut-lengkap']){
-  const src=path.join(ROOT,'projects',slug,mfName),dst=path.join(tmp,'projects',slug,mfName);
-  fs.mkdirSync(path.dirname(dst),{recursive:true});fs.copyFileSync(src,dst);
-  const m=JSON.parse(read(dst));entries.push({id:m.id,ownerId:m.id,defaultProps:m.defaultProps});
-  for(const seg of m.segments||[])entries.push({id:seg.id,ownerId:m.id,defaultProps:m.defaultProps});
- }
- fs.writeFileSync(path.join(tmp,'src','Root.tsx'),source);
- saveGeneratedState(tmp,source,entries);
- return tmp;
-}
-test('only one native Studio is started; no separate editor routes remain',()=>{
+
+test('one Remotion Studio and registrations match the active catalog, not old video examples',()=>{
  const start=read(path.join(ROOT,'tools','start-studio.mjs'));
- assert.match(start,/spawn\(cli/);
+ assert.match(start,/spawn\(process\.execPath/);
  assert.match(start,/--port/);
- assert.doesNotMatch(start,/import.*easy-editor-server/);
- for(const p of ['tools/studio-hub-server.mjs','tools/easy-editor-server.mjs','tools/universal-visual-editor.mjs','projects/windows-hacks-5-shortcut-lengkap/BUKA-EDITOR-KURSOR.bat']){
-  assert.equal(fs.existsSync(path.join(ROOT,p)),false,p);
+ assert.doesNotMatch(start,/easy-editor-server/);
+ for(const f of ['tools/studio-hub-server.mjs','tools/easy-editor-server.mjs','tools/universal-visual-editor.mjs']){
+  assert.ok(!fs.existsSync(path.join(ROOT,f)),f);
  }
- const registered=[...parseCompositions(source).props.keys()];
+ const registered=[...parseCompositions(read(path.join(ROOT,'src','Root.tsx'))).props.keys()];
  const catalog=JSON.parse(read(path.join(ROOT,'library/catalog.json')));
  const expected=catalog.videos.reduce((n,v)=>n+1+(v.segments||[]).length+(v.voiceGuideCompositionId?1:0),0);
  assert.equal(registered.length,expected);
- assert.ok(registered.includes('IPAddressReels'));
- assert.ok(registered.includes('WindowsHacks5ShortcutLengkap'));
- assert.ok(registered.includes('WinHacks-01-CtrlShiftT'));
- assert.match(source,/<Folder name="Belajar-IP-Address">/);
- assert.match(source,/<Folder name="Windows-Hacks-5-Shortcut">/);
+ for(const v of catalog.videos){
+  assert.ok(registered.includes(v.id),v.id);
+  for(const seg of v.segments||[])assert.ok(registered.includes(seg.id),seg.id);
+  if(v.voiceGuideCompositionId)assert.ok(registered.includes(v.voiceGuideCompositionId));
+ }
 });
-test('native Remotion Save Props is safely promoted to folder-first manifest',()=>{
- const tmp=fixture();try{
-  const src=path.join(tmp,'src','Root.tsx');
-  assert.match(read(src),/"backgroundColor":"#071429"/);
-  fs.writeFileSync(src,read(src).replace('"backgroundColor":"#071429"','"backgroundColor":"#ABCDEF"'));
-  assert.equal(captureStudioProps(tmp),1);
-  const m=JSON.parse(read(path.join(tmp,'projects','ip-address',mfName)));
-  assert.equal(m.defaultProps.backgroundColor,'#ABCDEF');
-  const b=path.join(tmp,'library','backups','studio-props');
-  assert.equal(fs.readdirSync(b).length,1);
- }finally{fs.rmSync(tmp,{recursive:true,force:true})}
-});
-test('source/manifest conflicts stop sync and do not overwrite user data',()=>{
- const tmp=fixture();try{
-  const src=path.join(tmp,'src','Root.tsx');
-  fs.writeFileSync(src,read(src).replace('"backgroundColor":"#071429"','"backgroundColor":"#ABCDEF"'));
-  const mf=path.join(tmp,'projects','ip-address',mfName),m=JSON.parse(read(mf));
-  m.defaultProps.backgroundColor='#123456';fs.writeFileSync(mf,JSON.stringify(m));
-  assert.throws(()=>captureStudioProps(tmp),/sama-sama diubah/);
-  assert.equal(JSON.parse(read(mf)).defaultProps.backgroundColor,'#123456');
- }finally{fs.rmSync(tmp,{recursive:true,force:true})}
-});
-test('non-props source modifications are protected from root regeneration',()=>{
- const tmp=fixture();try{
-  const f=path.join(tmp,'src','Root.tsx');fs.writeFileSync(f,read(f).replace('<Folder name="Videos">','<Folder name="Changed">'));
-  assert.throws(()=>captureStudioProps(tmp),/berubah selain Props/);
- }finally{fs.rmSync(tmp,{recursive:true,force:true})}
-});
-
-test('segment props change is promoted to master manifest (without touching other videos)',()=>{
- const tmp=fixture();try{
-  const src=path.join(tmp,'src','Root.tsx');
-  const before=read(src);
-  const id='WinHacks-01-CtrlShiftT';
-  const line=before.split('\n').find(l=>l.includes(`id="${id}"`));
-  assert.ok(line);
-  const replacement=line.replace('"showTimingGuide":false','"showTimingGuide":true');
-  assert.notEqual(replacement,line);
-  fs.writeFileSync(src,before.replace(line,replacement));
-  assert.equal(captureStudioProps(tmp),1);
-  const m=JSON.parse(read(path.join(tmp,'projects','windows-hacks-5-shortcut-lengkap',mfName)));
-  assert.equal(m.defaultProps.showTimingGuide,true);
-  const ip=JSON.parse(read(path.join(tmp,'projects','ip-address',mfName)));
-  assert.equal(ip.defaultProps.backgroundColor,'#071429');
- }finally{fs.rmSync(tmp,{recursive:true,force:true})}
-});
-test('non-overlapping changes across two segments merge safely',()=>{
- const tmp=fixture();try{
-  const src=path.join(tmp,'src','Root.tsx');
-  const lines=read(src).split('\n');
-  const a=lines.findIndex(x=>x.includes('id="WinHacks-01-CtrlShiftT"'));
-  const b=lines.findIndex(x=>x.includes('id="WinHacks-02-TaskManager"'));
-  assert.ok(a>=0&&b>=0);
-  lines[a]=lines[a].replace('"showTimingGuide":false','"showTimingGuide":true');
-  lines[b]=lines[b].replace('"enabled":false,"volume":1','"enabled":true,"volume":1');
-  fs.writeFileSync(src,lines.join('\n'));
-  assert.equal(captureStudioProps(tmp),1);
-  const m=JSON.parse(read(path.join(tmp,'projects','windows-hacks-5-shortcut-lengkap',mfName)));
-  assert.equal(m.defaultProps.showTimingGuide,true);
-  assert.equal(m.defaultProps.voice.enabled,true);
- }finally{fs.rmSync(tmp,{recursive:true,force:true})}
-});
-test('conflicting changes in two segment props fail without data loss',()=>{
- const tmp=fixture();try{
-  const src=path.join(tmp,'src','Root.tsx');
-  const lines=read(src).split('\n');
-  const a=lines.findIndex(x=>x.includes('id="WinHacks-01-CtrlShiftT"'));
-  const b=lines.findIndex(x=>x.includes('id="WinHacks-02-TaskManager"'));
-  lines[a]=lines[a].replace('"showTimingGuide":false','"showTimingGuide":true');
-  lines[b]=lines[b].replace('"showTimingGuide":false','"showTimingGuide":"test"');
-  fs.writeFileSync(src,lines.join('\n'));
-  assert.throws(()=>captureStudioProps(tmp),/mengubah Props yang sama/);
-  const m=JSON.parse(read(path.join(tmp,'projects','windows-hacks-5-shortcut-lengkap',mfName)));
-  assert.equal(m.defaultProps.showTimingGuide,false);
- }finally{fs.rmSync(tmp,{recursive:true,force:true})}
-});
+function fixture(){
+ const tmp=fs.mkdtempSync(path.join(os.tmpdir(),'remotion-studio-props-'));
+ fs.mkdirSync(path.join(tmp,'src'),{recursive:true});
+ fs.mkdirSync(path.join(tmp,'library'),{recursive:true});
+ const mf=path.join(tmp,'projects','demo','motiongraphic-video.json');
+ fs.mkdirSync(path.dirname(mf),{recursive:true});
+ const props={title:'Original',enabled:false,volume:1,color:'#112233'};
+ fs.writeFileSync(mf,JSON.stringify({id:'DemoReels',slug:'demo',title:'Demo',entry:'src/Video.tsx',exportName:'Video',width:1080,height:1920,fps:30,durationInFrames:90,defaultProps:props}));
+ const attrs=[['DemoReels',props],['DemoScene01',props],['DemoScene02',props]].map(([id,p])=>`<Composition id="${id}" component={Video} width={1080} height={1920} fps={30} durationInFrames={90} defaultProps={${JSON.stringify(p)}} />`).join('\n');
+ const source=`import React from 'react';\nimport {Composition} from 'remotion';\nconst Video=()=>null;\nexport const Root=()=> <>{/* registrations */}\n${attrs}\n</>;`;
+ const rootFile=path.join(tmp,'src','Root.tsx');
+ fs.writeFileSync(rootFile,source);
+ saveGeneratedState(tmp,source,['DemoReels','DemoScene01','DemoScene02'].map(id=>({id,ownerId:'DemoReels',defaultProps:props})));
+ return {tmp,mf,rootFile,source,props};
+}
+function replaceProp(source,id,oldToken,newToken){
+ const line=source.split('\n').find(l=>l.includes(`id="${id}"`));
+ assert.ok(line,'Missing id '+id);
+ const changed=line.replace(oldToken,newToken);
+ assert.notEqual(changed,line);
+ return source.replace(line,changed);
+}
+const withFixture=fn=>()=>{const x=fixture();try{fn(x)}finally{fs.rmSync(x.tmp,{recursive:true,force:true})}};
+test('Studio Save Props is merged into the project manifest safely',withFixture(({tmp,mf,rootFile,source})=>{
+ fs.writeFileSync(rootFile,replaceProp(source,'DemoReels','"title":"Original"','"title":"Edited"'));
+ assert.equal(captureStudioProps(tmp),1);
+ assert.equal(JSON.parse(read(mf)).defaultProps.title,'Edited');
+ assert.equal(fs.readdirSync(path.join(tmp,'library','backups','studio-props')).length,1);
+}));
+test('conflicting edits in manifest and Studio are rejected',withFixture(({tmp,mf,rootFile,source})=>{
+ fs.writeFileSync(rootFile,replaceProp(source,'DemoReels','"title":"Original"','"title":"Studio"'));
+ const m=JSON.parse(read(mf));m.defaultProps.title='Local';fs.writeFileSync(mf,JSON.stringify(m));
+ assert.throws(()=>captureStudioProps(tmp),/sama-sama diubah/);
+ assert.equal(JSON.parse(read(mf)).defaultProps.title,'Local');
+}));
+test('Root structural edits are rejected without touching source',withFixture(({tmp,rootFile,source})=>{
+ fs.writeFileSync(rootFile,source.replace('{/* registrations */}','{/* external changes */}'));
+ assert.throws(()=>captureStudioProps(tmp),/berubah selain Props/);
+ assert.match(read(rootFile),/external changes/);
+}));
+test('segment Save Props modifies the same project manifest',withFixture(({tmp,mf,rootFile,source})=>{
+ fs.writeFileSync(rootFile,replaceProp(source,'DemoScene01','"enabled":false','"enabled":true'));
+ assert.equal(captureStudioProps(tmp),1);
+ assert.equal(JSON.parse(read(mf)).defaultProps.enabled,true);
+}));
+test('nonoverlapping edits from two scene compositions merge',withFixture(({tmp,mf,rootFile,source})=>{
+ let changed=replaceProp(source,'DemoScene01','"enabled":false','"enabled":true');
+ changed=replaceProp(changed,'DemoScene02','"volume":1','"volume":0.4');
+ fs.writeFileSync(rootFile,changed);
+ assert.equal(captureStudioProps(tmp),1);
+ const m=JSON.parse(read(mf));assert.equal(m.defaultProps.enabled,true);assert.equal(m.defaultProps.volume,0.4);
+}));
+test('conflicting edits on the same prop in two scenes fail atomically',withFixture(({tmp,mf,rootFile,source})=>{
+ let changed=replaceProp(source,'DemoScene01','"color":"#112233"','"color":"#FF0000"');
+ changed=replaceProp(changed,'DemoScene02','"color":"#112233"','"color":"#00FF00"');
+ fs.writeFileSync(rootFile,changed);
+ assert.throws(()=>captureStudioProps(tmp),/mengubah Props yang sama/);
+ assert.equal(JSON.parse(read(mf)).defaultProps.color,'#112233');
+}));

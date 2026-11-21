@@ -40,18 +40,37 @@ function completedZip(file){
     return false;
   }finally{fs.closeSync(fd)}
 }
-function snapshot(root){
+// Only changes that affect registration, Props, asset mirrors or VO Guide require sync.
+// Editing scene TSX is owned by Remotion HMR and MUST NOT restart sync.
+export function registrySignature(root){
   const {projects,inbox}=getPaths(root),pieces=[];
   pieces.push('native-props:'+metadata(path.join(root,'src','Root.tsx')));
   if(fs.existsSync(projects))for(const dir of fs.readdirSync(projects,{withFileTypes:true}).sort((a,b)=>a.name.localeCompare(b.name))){
     if(!dir.isDirectory()||dir.name.startsWith('_')||dir.name.startsWith('.'))continue;
-    const folder=path.join(projects,dir.name),manifest=path.join(folder,'motiongraphic-video.json');
-    pieces.push(`folder:${dir.name}:${metadata(manifest)}:${metadata(path.join(folder,'src'))}`);
-    let entry='src/Video.tsx';
-    try{entry=JSON.parse(fs.readFileSync(manifest,'utf8')).entry||entry}catch{}
-    for(const rel of [entry,'src/SegmentVideo.tsx','src/config/narration.json','src/config/segments.json','src/config/segments.ts','src/config/scenes.ts','src/config/series.ts']){
+    const folder=path.join(projects,dir.name);
+    pieces.push(`folder:${dir.name}`);
+    // Register a new entry or switch to native segment view if files appear.
+    // Their content edits are handled by Remotion HMR, not a fresh sync.
+    let entryRel='src/Video.tsx';
+    try{entryRel=JSON.parse(fs.readFileSync(path.join(folder,'motiongraphic-video.json'),'utf8')).entry||entryRel}catch{}
+    const safeEntry=typeof entryRel==='string'&&entryRel.startsWith('src/')&&!entryRel.includes('..')&&!entryRel.includes('\\');
+    pieces.push(`entry-exists:${dir.name}:${safeEntry&&fs.existsSync(path.join(folder,entryRel))}`);
+    pieces.push(`segment-component-exists:${dir.name}:${fs.existsSync(path.join(folder,'src','SegmentVideo.tsx'))}`);
+    for(const rel of ['motiongraphic-video.json','src/config/narration.json','src/config/segments.json','src/config/segments.ts','src/config/scenes.ts','src/config/series.ts']){
       pieces.push(`${dir.name}/${rel}:${metadata(path.join(folder,rel))}`);
     }
+    // Public assets must be mirrored after edits, including changes to nested files.
+    const assets=path.join(folder,'public');
+    function visit(directory,prefix=''){
+      if(!fs.existsSync(directory))return;
+      for(const entry of fs.readdirSync(directory,{withFileTypes:true}).sort((a,b)=>a.name.localeCompare(b.name))){
+        if(entry.isSymbolicLink())continue;
+        const next=path.join(directory,entry.name),name=prefix+entry.name;
+        if(entry.isDirectory())visit(next,name+'/');
+        else if(entry.isFile())pieces.push(`asset:${dir.name}/${name}:${metadata(next)}`);
+      }
+    }
+    visit(assets);
   }
   if(fs.existsSync(inbox))for(const entry of fs.readdirSync(inbox).filter(x=>x.toLowerCase().endsWith('.zip')).sort())pieces.push('zip:'+entry+':'+metadata(path.join(inbox,entry)));
   return pieces.join('|');
@@ -74,11 +93,11 @@ export function startAutoSync({
   if(!root)throw new Error('startAutoSync memerlukan root Master');
   const {projects,inbox}=getPaths(root);
   for(const dir of [projects,inbox])fs.mkdirSync(dir,{recursive:true});
-  let closed=false,busy=false,queued=false,timer=null,lastSignature=snapshot(root);
+  let closed=false,busy=false,timer=null,lastSignature=registrySignature(root);
   const watchers=[];
   async function execute(){
     if(closed){return}
-    if(busy){queued=true;return}
+    if(busy)return
     busy=true;
     try{
       const pendingZips=fs.readdirSync(inbox).filter(name=>name.toLowerCase().endsWith('.zip'));
@@ -89,14 +108,17 @@ export function startAutoSync({
         console.log(`[AUTO SYNC] ${toImport.length} ZIP selesai disalin; import otomatis...`);
         await runImport();
       }
+      // A ZIP in the middle of being copied must not trigger expensive sync.
+      if(pendingZips.length && toImport.length!==pendingZips.length)return;
       await runSync();
-      lastSignature=snapshot(root);
-      console.log('[AUTO SYNC] Folder dan segmen baru sudah terdaftar. Refresh sidebar jika perlu.');
+      lastSignature=registrySignature(root);
+      console.log('[AUTO SYNC] Registrasi/VO/aset diperbarui. Edit TSX biasa hanya hot reload.');
     }catch(e){
       console.error('[AUTO SYNC] '+e.message+' (video lama tidak dihapus; periksa project yang baru disalin)');
     }finally{
       busy=false;
-      if(queued&&!closed){queued=false;schedule()}
+      // Ignore self-generated Root/mirror events; the next poll catches any
+      // meaningful user edit not represented by the completed signature.
     }
   }
   function schedule(){
@@ -104,27 +126,33 @@ export function startAutoSync({
     clearTimeout(timer);
     timer=setTimeout(()=>{timer=null;void execute()},debounceMs);
   }
+  function onWatchChange(){
+    // Ignore Remotion Save-to-code of ordinary TSX layers.  Only the
+    // registrations/VO/asset/Root signature can trigger a sync.
+    if(closed||busy)return;
+    if(registrySignature(root)!==lastSignature)schedule();
+  }
   function attach(dir){
     // Windows / Node terbaru: recursive memantau semua folder baru dan lama.
     // Jika tidak tersedia, polling signature tetap mendeteksi copy project.
-    try{const w=fs.watch(dir,{recursive:true},schedule);w.on('error',e=>console.warn('[AUTO SYNC] Watcher error: '+e.message+'; polling tetap berjalan.'));watchers.push(w)}
+    try{const w=fs.watch(dir,{recursive:true},onWatchChange);w.on('error',e=>console.warn('[AUTO SYNC] Watcher error: '+e.message+'; polling tetap berjalan.'));watchers.push(w)}
     catch{
-      try{const w=fs.watch(dir,schedule);w.on('error',e=>console.warn('[AUTO SYNC] Watcher error: '+e.message+'; polling tetap berjalan.'));watchers.push(w)}catch(e){console.warn('[AUTO SYNC] Watcher tidak tersedia: '+e.message)}
+      try{const w=fs.watch(dir,onWatchChange);w.on('error',e=>console.warn('[AUTO SYNC] Watcher error: '+e.message+'; polling tetap berjalan.'));watchers.push(w)}catch(e){console.warn('[AUTO SYNC] Watcher tidak tersedia: '+e.message)}
     }
   }
   attach(projects);attach(inbox);
   // Save to Code in Remotion Studio modifies generated Root defaultProps.
   // Watch it so changed VO Guide/Props can be merged into manifest/narration.
   const nativePropsFile=path.join(root,'src','Root.tsx');
-  if(fs.existsSync(nativePropsFile))try{const w=fs.watch(nativePropsFile,schedule);w.on('error',()=>{});watchers.push(w)}catch{}
+  if(fs.existsSync(nativePropsFile))try{const w=fs.watch(nativePropsFile,onWatchChange);w.on('error',()=>{});watchers.push(w)}catch{}
   const interval=setInterval(()=>{
     if(closed)return;
-    const next=snapshot(root);
+    const next=registrySignature(root);
     if(next!==lastSignature){lastSignature=next;schedule()}
     else if(stableFiles(inbox,zipAgeMs).length)schedule();
   },pollMs);
   return {
     close(){closed=true;clearTimeout(timer);clearInterval(interval);for(const w of watchers)w.close()},
-    check(){if(snapshot(root)!==lastSignature)schedule()},
+    check(){if(registrySignature(root)!==lastSignature)schedule()},
   };
 }

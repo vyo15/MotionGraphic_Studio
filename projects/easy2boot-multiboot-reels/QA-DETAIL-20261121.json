@@ -1,0 +1,57 @@
+{
+  "base": "MotionGraphic-Studio-Master-v1.8.1-20261121-031419.zip",
+  "projectId": "Easy2BootMultibootReels",
+  "slug": "easy2boot-multiboot-reels",
+  "scope": "Add-on Easy2Boot only: Scene 05 source built; structural granular editability for Scene 01/02/03/06, no intentional redesign of approved visuals",
+  "status": {
+    "Scene01": "ACC visual retained; source refactored per subcomponent",
+    "Scene02": "ACC visual retained; source refactored per subcomponent",
+    "bridge02to03": "ACC untouched",
+    "Scene03": "ACC visual retained; SVG DOM text/objects split; source frame timeline untouched",
+    "Scene04": "Review editable unchanged",
+    "Scene05": "New preview-matched source — review in Studio",
+    "Scene06": "Original style retained; editable atom nodes"
+  },
+  "checks": {
+    "manifestValidation": "PASS: 0 FAIL 0 WARN with source validator",
+    "typescriptSyntax": "PASS: no parser diagnostics, 175 master files via tools/check-source-syntax.mjs",
+    "inlineEditableStaticAudit": "PASS: 247 Interactive elements, 0 computed/spread style warnings (legacy check)",
+    "nativeRender": "NOT TESTED: no React/Remotion runtime dependencies here",
+    "WindowsStudioDragSaveReload": "NOT TESTED: requires user PC and Studio",
+    "sourceParityWithPreview": "NOT VERIFIED: prior reference MP4 is a visual direction, not native render of final source",
+    "durationFrames": 2701,
+    "segmentFramesSum": 2701,
+    "audioFilesRetained": [
+      "public/audio/VOICEOVER-README.txt",
+      "public/audio/scene01_impact_stamp.wav",
+      "public/audio/scene01_sfx.wav",
+      "public/audio/scene02_card_break.wav",
+      "public/audio/scene02_sfx.wav",
+      "public/audio/scene03_sfx.wav",
+      "public/audio/scene04_sfx.wav",
+      "public/audio/scene05_sfx.wav",
+      "public/audio/scene06_sfx.wav"
+    ]
+  },
+  "changedFiles": [
+    "EDITABLE-PER-ELEMEN-20261121.md",
+    "PANDUAN-EDIT-ASSET.md",
+    "QA-DETAIL-20261121.json",
+    "README.md",
+    "SCENE05-LAYER-REVISION-20261121.md",
+    "motiongraphic-video.json",
+    "src/components/EditableSvgLayer.tsx",
+    "src/components/EditableTransform.ts",
+    "src/components/FrameSvgRenderer.ts",
+    "src/components/NativeSceneLayers.tsx",
+    "src/config/SCENE-ATOMS-INDEX.json",
+    "src/config/narration.json",
+    "src/config/props.ts",
+    "src/config/subtitles.ts",
+    "src/config/timings.ts",
+    "src/scenes/Scene01Problem.tsx",
+    "src/scenes/Scene02Solution.tsx",
+    "src/scenes/Scene05Boot.tsx"
+  ],
+  "retainedFilesCount": 71
+}

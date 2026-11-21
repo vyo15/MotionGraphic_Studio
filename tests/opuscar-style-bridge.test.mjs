@@ -1,0 +1,24 @@
+import {test} from 'node:test';
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import path from 'node:path';
+import {fileURLToPath} from 'node:url';
+import {spawnSync} from 'node:child_process';
+const ROOT=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
+const read=file=>fs.readFileSync(path.join(ROOT,file),'utf8');
+test('Opuscar style bridge is optional, lightweight and preserves Remotion as the sole renderer',()=>{
+ const profile=JSON.parse(read('contracts/creative-style-profiles.json'));
+ assert.equal(profile.default,'minimal-editorial');
+ assert.equal(JSON.parse(read('contracts/studio-capabilities.json')).creativeStyleBridge.default,'minimal-editorial');
+ assert.ok(profile.styles.length>=4);
+ assert.equal(new Set(profile.styles.map(s=>s.id)).size,profile.styles.length);
+ assert.ok(profile.styles.every(s=>s.reference===null||s.reference.startsWith('styles/')));
+ assert.ok(read('skills/opuscar-remotion-bridge/SKILL.md').includes('Remotion'));
+ const pkg=JSON.parse(read('package.json'));
+ assert.ok(!pkg.dependencies?.three&&!pkg.dependencies?.['playwright-core']);
+ const r=spawnSync(process.execPath,[path.join(ROOT,'tools/opuscar-style.mjs'),'living-screencast','--json'],{encoding:'utf8'});
+ assert.equal(r.status,0,r.stderr);
+ const data=JSON.parse(r.stdout);
+ assert.equal(data.id,'living-screencast');
+ assert.match(data.sourceUrl,/github.com\/lemomo-ai\/lemo-opuscar/);
+});

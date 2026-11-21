@@ -50,7 +50,7 @@ try{
   try{
     const manifest=JSON.parse(fs.readFileSync(path.join(dir,'motiongraphic-video.json'),'utf8'));
     const m=manifest;
-    const verdict=validateAddon(dir,{root:ROOT,matchFolder:true});
+    const verdict=validateAddon(dir,{root:ROOT,matchFolder:true,strict:manifest.contractVersion==='1.0.0',requireSyntax:manifest.contractVersion==='1.0.0'});
     assert(verdict.ok,'Add-on gagal validasi: '+verdict.errors.join('; '));
     verdict.warnings.forEach(x=>console.warn('[IMPORT WARN] '+x));
     assert(/^[a-z][a-z0-9-]{1,48}$/.test(m.slug||''),'slug tidak valid');
@@ -79,6 +79,8 @@ try{
         return true;
       }});
       normalizeProjectAssets(staging,m.slug); // only on staged new project
+      const stagedVerdict=validateAddon(staging,{root:ROOT,matchFolder:false,strict:m.contractVersion==='1.0.0',requireSyntax:m.contractVersion==='1.0.0'});
+      assert(stagedVerdict.ok,'Paket setelah normalisasi gagal validasi: '+stagedVerdict.errors.join('; '));
       fs.renameSync(staging,target);committed=target;staging=null;
       const r=spawnSync(process.execPath,[path.join(ROOT,'tools/sync-projects.mjs')],{cwd:ROOT,stdio:'inherit'});
       if(r.status!==0){fs.renameSync(target,path.join(ROOT,'projects','_failed-'+m.slug));committed=null;throw Error('Sync gagal; source dipindah ke projects/_failed-'+m.slug+' untuk diperbaiki, video lain aman.');}

@@ -4,7 +4,7 @@ import type {Easy2BootScene03Props,LayerOverride} from '../config/props';
 import {clamp01,ease5,lerp} from '../animations/scene04Clean';
 
 export type SvgLayerProps={
-  id:string;name:string;props:Easy2BootScene03Props;scene?:'S03'|'S04';
+  id:string;name:string;props:Easy2BootScene03Props;scene?:'S03'|'S04'|'S05';
   basePosition?:{x:number;y:number};animationTransform?:string;
   opacity?:number;fill?:string;children:React.ReactNode;
   assetSize?:{w:number;h:number};

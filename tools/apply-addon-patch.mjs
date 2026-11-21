@@ -60,7 +60,7 @@ function applyDirectoryPatch(folder,{root,dryRun}){
   const plan=[],seen=new Set();
   for(const f of patch.files){
     assert(f&&typeof f==='object','Item patch harus object');
-    assert(!seen.has(f.path),`Duplikat file di patch: ${f.path}`);seen.add(f.path);
+    const key=String(f.path).toLowerCase();assert(!seen.has(key),`Duplikat/case-collision di patch: ${f.path}`);seen.add(key);
     assert(f.path!=='motiongraphic-video.json' || f.operation==='write','Manifest tidak boleh dihapus');
     assert(f.operation==='write'||f.operation==='delete','Operasi patch tidak dikenal');
     const dest=safePath(project,f.path);const exists=fs.existsSync(dest);
@@ -76,12 +76,36 @@ function applyDirectoryPatch(folder,{root,dryRun}){
     }else assert(exists,'File yang ingin dihapus tidak ditemukan');
     plan.push({...f,dest,source,exists});
   }
-  if(dryRun)return {slug:patch.slug,files:plan.map(p=>({operation:p.operation,path:p.path})),applied:false};
+  // Validate the complete *resulting* project in a disposable directory BEFORE editing an active project.
+  // This also makes --dry-run a real validation (not merely a hash preview).
+  const sandbox=fs.mkdtempSync(path.join(os.tmpdir(),'mg-patch-preflight-'));
+  try{
+    const candidate=path.join(sandbox,patch.slug);
+    fs.cpSync(project,candidate,{recursive:true,filter:(p)=>{
+      if(fs.lstatSync(p).isSymbolicLink())throw Error('Symlink di project aktif: '+p);
+      return true;
+    }});
+    for(const item of plan){
+      const output=safePath(candidate,item.path);
+      if(item.operation==='delete')fs.unlinkSync(output);
+      else{fs.mkdirSync(path.dirname(output),{recursive:true});fs.copyFileSync(item.source,output)}
+    }
+    const verdict=validateAddon(candidate,{root,matchFolder:true,sourceCheck:true,requireSyntax:mf.contractVersion==='1.0.0'});
+    assert(verdict.ok,'Preflight hasil patch gagal sebelum menyentuh project: '+verdict.errors.join('; '));
+  }finally{fs.rmSync(sandbox,{recursive:true,force:true})}
+  if(dryRun)return {slug:patch.slug,files:plan.map(p=>({operation:p.operation,path:p.path})),applied:false,validated:true};
   const tag=new Date().toISOString().replace(/[:.]/g,'-')+'-'+process.pid;
   const backup=path.join(root,'library/backups/addon-patches',`${patch.slug}-${tag}`);
   const staging=fs.mkdtempSync(path.join(os.tmpdir(),'mg-patch-'));
   const done=[];
   try{
+    // Recheck hashes after potentially lengthy preflight, immediately before mutation.
+    for(const p of plan){
+      const exists=fs.existsSync(p.dest);
+      assert((p.expectedSha256===null&&!exists)||
+        (typeof p.expectedSha256==='string'&&exists&&sha(p.dest)===p.expectedSha256),
+        `KONFLIK BARU: ${p.path} berubah selama proses preflight; dibatalkan.`);
+    }
     // Pre-stage all payload before writing to a project.
     for(const [i,p] of plan.entries())if(p.source){p.staged=path.join(staging,String(i));fs.copyFileSync(p.source,p.staged)}
     // Backup all originals outside the target project for reversal.

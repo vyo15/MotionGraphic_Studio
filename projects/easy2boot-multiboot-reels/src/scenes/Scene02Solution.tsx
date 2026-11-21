@@ -1,6 +1,7 @@
 import React from 'react';
 import {AbsoluteFill,Audio,Interactive,Sequence,staticFile,useCurrentFrame} from 'remotion';
 import type {Easy2BootScene03Props,LayerOverride} from '../config/props';
+import {getEditableTransform} from '../components/EditableTransform';
 import {CARD_BREAK} from '../config/scene02CardBreak';
 import {fade,between,smooth01,outCubic,outBack,lerp} from '../animations/scene02CardBreak';
 
@@ -25,15 +26,35 @@ const Layer:React.FC<{id:string;name:string;p:Easy2BootScene03Props;children:Rea
 };
 const Txt:React.FC<{x:number;y:number;v:string;size?:number;weight?:number;color?:string;anchor?:'start'|'middle'}>=
 ({x,y,v,size=24,weight=800,color=COL.ink,anchor='middle'})=><text x={x} y={y} textAnchor={anchor??'middle'} dominantBaseline="middle" fontFamily={font} fontWeight={weight} fontSize={size} fill={color}>{v}</text>;
-const Usb:React.FC<{x:number;y:number;scale?:number;lights?:number}> = ({x,y,scale=1,lights=0})=><g transform={`translate(${x} ${y}) scale(${scale})`}>
- <rect x={24} y={0} width={60} height={49} rx={7} fill="#9BACB5"/><rect x={37} y={12} width={8} height={13} rx={1} fill="#6E818B"/><rect x={63} y={12} width={8} height={13} rx={1} fill="#6E818B"/>
- <rect x={8} y={42} width={92} height={195} rx={14} fill="#29363D"/>
- <rect x={14} y={51} width={80} height={174} rx={9} fill="#31464F"/>
- <rect x={23} y={63} width={62} height={39} rx={6} fill={COL.coral}/>
- <Txt x={54} y={83} v="USB" size={23} color="#FFFFFF"/>
- <rect x={42} y={216} width={24} height={9} rx={3} fill="#83969F"/>
- {[0,1,2].map((i)=><rect key={i} x={24+i*20} y={147} width={15} height={17} rx={3} stroke={i<lights?'#FFFFFF':'#647780'} strokeWidth={2} fill={i<lights?'#E2F3FA':'#31464F'}/>)}
- </g>;
+const Part:React.FC<{id:string;name:string;p:Easy2BootScene03Props;children:React.ReactNode}>=({id,name,p,children})=>{
+ const f=useCurrentFrame();const u:LayerOverride=p.layerOverrides?.[`S02:${id}`]??{};
+ const edit=getEditableTransform(u,f);
+ if(!edit.visible)return null;
+ return <Interactive.G name={`S02 — ${name}`} style={{translate:'0px 0px',scale:1,rotate:'0deg',opacity:1}}>
+  <g transform={edit.transform} opacity={edit.opacity} fill={u.fill}>{children}</g>
+ </Interactive.G>;
+};
+const Usb:React.FC<{x:number;y:number;scale?:number;lights?:number;p:Easy2BootScene03Props}> = ({x,y,scale=1,lights=0,p})=><g transform={`translate(${x} ${y}) scale(${scale})`}>
+ <Part id="hero-usb-connector" name="USB hero — konektor" p={p}>
+  <rect x={24} y={0} width={60} height={49} rx={7} fill="#9BACB5"/>
+  <rect x={37} y={12} width={8} height={13} rx={1} fill="#6E818B"/>
+  <rect x={63} y={12} width={8} height={13} rx={1} fill="#6E818B"/>
+ </Part>
+ <Part id="hero-usb-body" name="USB hero — bodi" p={p}>
+  <rect x={8} y={42} width={92} height={195} rx={14} fill="#29363D"/>
+  <rect x={14} y={51} width={80} height={174} rx={9} fill="#31464F"/>
+ </Part>
+ <Part id="hero-usb-label" name="USB hero — warna label" p={p}>
+  <rect x={23} y={63} width={62} height={39} rx={6} fill={COL.coral}/>
+ </Part>
+ <Part id="hero-usb-name" name="USB hero — tulisan USB" p={p}>
+  <Txt x={54} y={83} v={p.layerOverrides?.['S02:hero-usb-name']?.text??'USB'} size={23} color="#FFFFFF"/>
+ </Part>
+ <Part id="hero-usb-leds" name="USB hero — indikator tiga ISO" p={p}>
+  <rect x={42} y={216} width={24} height={9} rx={3} fill="#83969F"/>
+  {[0,1,2].map((i)=><rect key={i} x={24+i*20} y={147} width={15} height={17} rx={3} stroke={i<lights?'#FFFFFF':'#647780'} strokeWidth={2} fill={i<lights?'#E2F3FA':'#31464F'}/>)}
+ </Part>
+</g>;
 /** Old scene-1 boot window as editable vector, never a flattened screenshot. */
 const OldWindow:React.FC =()=> <g>
  <rect x={62} y={488} width={416} height={210} rx={15} fill="#C5CAC9" opacity={.38}/>
@@ -116,7 +137,7 @@ export const Scene02Solution:React.FC<Easy2BootScene03Props>=(p)=>{
     <Txt x={270} y={346} v={title('solutionLine2',p.scene02SolutionLine2)} size={size('solutionLine2',51)} color={color('solutionLine2',COL.coral)}/>
    </Layer>
    <Layer id="solutionUsb" name="USB yang sama: solusi sampai tiga ISO" p={p} opacity={fade(t,2.96,3.42)} motion={`translate(0 ${72*(1-outCubic((t-2.96)/.55))})`}>
-    <Usb x={204} y={447} scale={1.2} lights={stored}/>
+    <Usb p={p} x={204} y={447} scale={1.2} lights={stored}/>
    </Layer>
    <Layer id="solutionCaption" name="Teks VO: Mending pakai Easy2Boot" p={p} opacity={between(t,3.35,3.56,5.30,5.60)}>
     <Txt x={270} y={750} size={19} weight={620} v={title('solutionCaption','Mending pakai Easy2Boot aja.')}/>

@@ -1,1 +1,0 @@
-VOICE OVER BELUM TERSEDIA. Jika memiliki rekaman final, simpan sebagai voiceover.wav di folder ini lalu jalankan npm run sync dari Master. Sesuaikan timing di src/config/voice.ts. Jangan klaim VO ESTIMASI sebagai lip-sync.

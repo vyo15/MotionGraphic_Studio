@@ -84,3 +84,10 @@ Bila script di dokumen berbeda dari implementasi, laporkan dua-duanya: **TARGET 
 - Jika ada teks non-kosong, `npm run sync` mendaftarkan komposisi `IDVideoVOGuide`. Komposisi utama tidak berubah. `npm run render` atau `npx remotion render` dapat mengekspor VO Guide sebagai MP4 referensi rekaman.
 - Subtitle final dan file voice-over asli dibuat **setelah** rekaman; jangan mengira teks VO Guide sudah menjadi subtitle tersinkron.
 - Sinkronisasi akan **menolak kehilangan project lama tanpa arsip resmi** untuk mencegah ZIP parsial merusak katalog; `npm run delete` mengarsipkan lewat `library/sampah` secara resmi.
+
+
+## Kontrak editable modern dan distribusi engine
+
+Add-on BARU mengikuti `editableContract: studio-direct-v4` dan `docs/EDITABLE-CONTRACT.md`: lapisan penting dinamai dan dapat dipilih langsung lewat native `Interactive`, style penting inline, animasi/keyframe mudah diuji, dan ada `EDITABLE-LAYER-MAP.md`. Lolos static QA saja bukan bukti semua fungsi edit di GUI; uji Save/reload/render sebelum klaim 100%. Video lama tetap tidak diubah tanpa izin.
+
+Ekspor Master default `npm run zip -- --studio` adalah **ENGINE ONLY** tanpa `projects/` lama; gunakan `--studio --with-projects` atau `--studio --full` untuk backup. Ini tidak menghapus video dari PC.

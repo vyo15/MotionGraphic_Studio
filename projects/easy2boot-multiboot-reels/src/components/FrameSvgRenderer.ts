@@ -92,7 +92,7 @@ export const frameSvg=(source:string,scene:string,frame:number,tracks:FrameTrack
   if(p.letterSpacing!==undefined)el.setAttribute('letter-spacing',String(p.letterSpacing));
   if(p.fontFamily){const oldStyle=el.getAttribute('style')??'';el.setAttribute('style',`${oldStyle};font-family:${p.fontFamily.replace(/[;{}<>]/g,'')} !important`);}
   // On deliberate text edits, replace its original tspan fragments, not on ordinary render.
-  if(typeof p.text==='string'&&el.tagName.toLowerCase()==='text')el.textContent=p.text;
+  if(typeof p.text==='string'&&p.text.length>0&&el.tagName.toLowerCase()==='text')el.textContent=p.text;
   if(typeof p.asset==='string'&&p.asset&&box&&box.w>0&&box.h>0){
    const href=assetBase+encodeURIComponent(p.asset);
    while(el.firstChild)el.removeChild(el.firstChild);

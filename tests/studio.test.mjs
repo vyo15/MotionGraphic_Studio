@@ -12,18 +12,24 @@ const slug='test-studio-'+randomBytes(6).toString('hex');
 const temp=path.join(ROOT,'projects',slug);
 const source=path.join(temp,'src','Video.tsx');
 const historyFile=path.join(exportPaths().root,'Editor-History',slug+'.json');
+const hasLegacy=fs.existsSync(path.join(ROOT,'projects/ip-address/motiongraphic-video.json')) && fs.existsSync(path.join(ROOT,'projects/windows-hacks-5-shortcut-lengkap/motiongraphic-video.json'));
+const legacyTest=hasLegacy?test:test.skip;
 fs.mkdirSync(path.dirname(source),{recursive:true});
 fs.writeFileSync(source,'initial');
 fs.writeFileSync(path.join(temp,'motiongraphic-video.json'),JSON.stringify({id:'TestStudioX',slug,title:'Test Studio',entry:'src/Video.tsx',exportName:'Video',width:1080,height:1920,fps:30,durationInFrames:90,defaultProps:{}},null,2));
 process.on('exit',()=>{try{fs.rmSync(temp,{recursive:true,force:true});fs.rmSync(historyFile,{force:true})}catch{}});
 
-test('original projects remain in the master',()=>{
- const projects=readCatalog().videos;
- const known=['aomei-drive-c-scene-01','debloat-windows11-opening','easy2boot-multiboot-reels','ip-address','windows-hacks-5-shortcut-lengkap'];
- for(const slug of known)assert.ok(projects.some(v=>v.slug===slug),'Project existing hilang: '+slug);
- assert.equal(projects.find(v=>v.slug==='ip-address').id,'IPAddressReels');
- assert.equal(projects.find(v=>v.slug.startsWith('windows')).durationInFrames,2205);
+test('active catalog projects still exist, without requiring retired examples',()=>{
+ const active=readCatalog().videos;
+ for(const v of active){
+  assert.ok(v.projectDir,'Missing projectDir for '+v.id);
+  const mf=path.join(ROOT,v.projectDir,'motiongraphic-video.json');
+  assert.ok(fs.existsSync(mf),'Active project is missing: '+v.slug);
+  const source=JSON.parse(fs.readFileSync(mf,'utf8'));
+  assert.equal(source.id,v.id);assert.equal(source.slug,v.slug);
+ }
 });
+
 test('transaction history keeps all edit steps, undo, redo, and detects external modifications',()=>{
  applyEdit(slug,[{file:source,before:'initial',after:'first'}]);
  applyEdit(slug,[{file:source,before:'first',after:'second'}]);
@@ -43,7 +49,7 @@ test('QA detects injected overflow and overlap with timecode',()=>{
  assert.ok(qa.issues.some(x=>x.code==='overlap'));
  assert.deepEqual(qa.summary.framesToReview,[0,45,89]);
 });
-test('output package has stable source audio references',()=>{
+legacyTest('output package has stable source audio references',()=>{
  for(const slug of ['ip-address','windows-hacks-5-shortcut-lengkap']){
   const m=JSON.parse(fs.readFileSync(path.join(ROOT,'projects',slug,'motiongraphic-video.json'),'utf8'));
   assert.ok(m.defaultProps.audioTimeline.length>=1);

@@ -6,6 +6,9 @@ import {createZip,collectEntries} from '../tools/zip-core.mjs';
 import {inspectZip} from '../tools/zip-preflight.mjs';
 import {fileURLToPath} from 'node:url';
 const ROOT=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
+// The isolated host has no node_modules. Use the parent project's installed parser,
+// not a silently downgraded syntax-validation mode.
+const fixtureEnv={...process.env,NODE_PATH:[path.join(ROOT,'node_modules'),process.env.NODE_PATH].filter(Boolean).join(path.delimiter)};
 const fixture=cb=>{const dir=fs.mkdtempSync(path.join(os.tmpdir(),'mg-import-fixture-'));return Promise.resolve().then(()=>cb(dir)).finally(()=>fs.rmSync(dir,{recursive:true,force:true}))};
 function host(dir){
  for(const n of ['tools','projects','src','library'])fs.mkdirSync(path.join(dir,n),{recursive:true});
@@ -15,10 +18,12 @@ function host(dir){
 }
 function addon(dir){
  const source=path.join(dir,'incoming/demo-addon');fs.mkdirSync(path.join(source,'src/config'),{recursive:true});
+ for(const x of ['src/scenes','src/components','src/animations'])fs.mkdirSync(path.join(source,x),{recursive:true});
+ fs.writeFileSync(path.join(source,'README.md'),'Test fixture');fs.writeFileSync(path.join(source,'PANDUAN-EDIT-ASSET.md'),'Fixture');
  fs.mkdirSync(path.join(source,'public/audio'),{recursive:true});fs.writeFileSync(path.join(source,'public/audio/voice.wav'),'mock asset');
  const m={contractVersion:'1.0.0',id:'DemoAddon',slug:'demo-addon',title:'Demo',entry:'src/Video.tsx',exportName:'Video',width:1080,height:1920,fps:30,durationInFrames:60,defaultProps:{}};
  fs.writeFileSync(path.join(source,'motiongraphic-video.json'),JSON.stringify(m));
- fs.writeFileSync(path.join(source,'src/Video.tsx'),"import {staticFile} from 'remotion'; export const Video=()=>staticFile('audio/voice.wav');\n");
+ fs.writeFileSync(path.join(source,'src/Video.tsx'),"import {staticFile} from 'remotion'; export const Video=()=>staticFile('videos/demo-addon/audio/voice.wav');\n");
  return source;
 }
 test('real add-on ZIP imports and syncs without touching other active projects',()=>fixture(async dir=>{
@@ -26,7 +31,7 @@ test('real add-on ZIP imports and syncs without touching other active projects',
  const entries=await collectEntries([{absolute:source,name:'demo-addon'}]);
  const zip=path.join(dir,'test-addon.zip');await createZip(entries,zip);
  assert.ok(inspectZip(zip).paths.includes('demo-addon/motiongraphic-video.json'));
- const r=spawnSync(process.execPath,[path.join(dir,'tools/import-video.mjs'),zip],{cwd:dir,encoding:'utf8'});
+ const r=spawnSync(process.execPath,[path.join(dir,'tools/import-video.mjs'),zip],{cwd:dir,encoding:'utf8',env:fixtureEnv});
  assert.equal(r.status,0,r.stderr+'\n'+r.stdout);
  assert.ok(fs.existsSync(path.join(dir,'projects/demo-addon/src/config/narration.json')));
  const imported=fs.readFileSync(path.join(dir,'projects/demo-addon/src/Video.tsx'),'utf8');
@@ -34,7 +39,7 @@ test('real add-on ZIP imports and syncs without touching other active projects',
  const catalog=JSON.parse(fs.readFileSync(path.join(dir,'library/catalog.json'),'utf8'));
  assert.equal(catalog.videos.length,1);
  assert.equal(catalog.videos[0].voiceGuideCompositionId,'DemoAddonVOGuide');
- const again=spawnSync(process.execPath,[path.join(dir,'tools/import-video.mjs'),zip],{cwd:dir,encoding:'utf8'});
+ const again=spawnSync(process.execPath,[path.join(dir,'tools/import-video.mjs'),zip],{cwd:dir,encoding:'utf8',env:fixtureEnv});
  assert.equal(again.status,0,again.stderr);
  assert.match(again.stdout,/LEWATI/);
 }));

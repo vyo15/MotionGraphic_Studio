@@ -1,5 +1,8 @@
 import React from 'react';
-import {AbsoluteFill} from 'remotion';
-import {DESIGN} from '../config/design';
-/** Decorative and deliberately non-interactive. Foreground layers belong to the scene. */
-export const EditorialBackground:React.FC=()=> <AbsoluteFill style={{background:DESIGN.background}}/>;
+import {Interactive} from 'remotion';
+/** Background is also an editable native Studio layer. */
+export const EditorialBackground: React.FC = () => (
+  <Interactive.Div name="S00 — Background" style={{
+    position: 'absolute', inset: 0, backgroundColor: '#F7F7F5',
+  }}/>
+);

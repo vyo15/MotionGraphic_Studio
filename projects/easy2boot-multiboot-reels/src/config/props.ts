@@ -27,6 +27,9 @@ export interface Easy2BootScene03Props {
   scene03CleanLayout:boolean;
   scene03ShowTextVO:boolean;
   scene04ShowTextVO:boolean;
+  scene05ShowTextVO:boolean;
+  scene05ShowIntro:boolean;
+  scene05SubtitleLines:string[];
   scene04CleanLayout:boolean;
   scene04IsoFiles:string[];
   scene04InstallerLabels:string[];
@@ -130,6 +133,9 @@ export const DEFAULT_PROPS: Easy2BootScene03Props = {
   scene03CleanLayout:true,
   scene03ShowTextVO:true,
   scene04ShowTextVO:true,
+  scene05ShowTextVO:true,
+  scene05ShowIntro:true,
+  scene05SubtitleLines:['Sekarang, boot dari flashdisk.','Di Boot Menu, pilih USB.','Buka menu agFM.','Pilih ISO Windows 11, lalu jalankan.','Installer Windows pun terbuka.'],
   scene04CleanLayout:true,
   scene04IsoFiles:['Win8_64.iso','Win10_22H2.iso','Win11_24H2.iso','Ubuntu_24.04.iso'],
   scene04InstallerLabels:['WINDOWS 8','WINDOWS 10','WINDOWS 11','LINUX'],

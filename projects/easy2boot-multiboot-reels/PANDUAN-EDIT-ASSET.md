@@ -103,3 +103,7 @@ Override layer menyediakan `x`, `y`, `scale`, `rotation`, `opacity`, `visible`, 
 3. Ubah salah satu Props (mis. `scene04IsoFiles[0]`) dan verifikasi tampilan. Simpan, reload, lalu pastikan perubahan tetap tersimpan sebelum mengandalkan edit visual.
 4. Jalankan `npm run check` dan `npm run render` dari Master.
 5. Jika menemukan masalah pada Scene 04, revisi hanya file Scene 04 dan konfigurasi terkait; jangan sentuh source Scene 01/02.
+
+
+## Panduan baru: kontrol per elemen (21 November 2026)
+Baca `EDITABLE-PER-ELEMEN-20261121.md` untuk daftar lengkap ID teks S03/S06 dan bagian UI S05. Props `layerOverrides` terisi key eksplisit agar teks/posisi bisa diperiksa dalam Studio. Teks `""` berarti menggunakan teks bawaan dan tidak mengubah animasi.

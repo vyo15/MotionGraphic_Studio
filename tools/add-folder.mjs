@@ -38,7 +38,7 @@ try{
   }
   if(!fs.existsSync(manifest))throw Error('Folder bukan add-on: tidak ada motiongraphic-video.json. Pilih folder VIDEO, bukan folder Master.');
   const m=JSON.parse(fs.readFileSync(manifest,'utf8'));
-  const verdict=validateAddon(source,{root,matchFolder:true});
+  const verdict=validateAddon(source,{root,matchFolder:true,strict:m.contractVersion==='1.0.0',requireSyntax:m.contractVersion==='1.0.0'});
   if(!verdict.ok)throw Error('Add-on gagal validasi: '+verdict.errors.join('; '));
   verdict.warnings.forEach(x=>console.warn('[ADDFOLDER WARN] '+x));
   if(!validSlug(m.slug))throw Error('Slug pada manifest tidak valid: '+m.slug);
@@ -62,6 +62,8 @@ try{
     return true;
   }});
   normalizeProjectAssets(temp,m.slug);
+  const stagedVerdict=validateAddon(temp,{root,matchFolder:false,strict:m.contractVersion==='1.0.0',requireSyntax:m.contractVersion==='1.0.0'});
+  if(!stagedVerdict.ok)throw Error('Paket setelah normalisasi gagal validasi: '+stagedVerdict.errors.join('; '));
   fs.renameSync(temp,dest);
   cleanup.pop();
   const result=spawnSync(process.execPath,[path.join(root,'tools','sync-projects.mjs')],{cwd:root,stdio:'inherit'});

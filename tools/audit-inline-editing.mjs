@@ -5,7 +5,7 @@ const T=createRequire(import.meta.url)('typescript'),ROOT=resolve(dirname(fileUR
 const dirs=readdirSync(join(ROOT,'projects'),{withFileTypes:true}).filter(x=>x.isDirectory()&&!x.isSymbolicLink());
 const walk=d=>!existsSync(d)?[]:readdirSync(d,{withFileTypes:true}).flatMap(x=>x.isSymbolicLink()?[]:x.isDirectory()?walk(join(d,x.name)):x.isFile()&&x.name.endsWith('.tsx')?[join(d,x.name)]:[]);
 let bad=0;console.log('\n[EDITABLE CHECK] Memeriksa struktur Interactive setiap project...');
-for(const d of dirs){const root=join(ROOT,'projects',d.name);const mf=join(root,'motiongraphic-video.json');if(!existsSync(mf))continue;const manifest=JSON.parse(readFileSync(mf,'utf8'));const strict=manifest.editableContract==='studio-inline-v2';let count=0,computed=0,editable=0,details=[];
+for(const d of dirs){const root=join(ROOT,'projects',d.name);const mf=join(root,'motiongraphic-video.json');if(!existsSync(mf))continue;const manifest=JSON.parse(readFileSync(mf,'utf8'));const strict=['studio-inline-v2','studio-direct-v4'].includes(manifest.editableContract);let count=0,computed=0,editable=0,details=[];
  for(const file of walk(join(root,'src'))){const s=readFileSync(file,'utf8'),sf=T.createSourceFile(file,s,T.ScriptTarget.Latest,true,T.ScriptKind.TSX);const visit=n=>{if(T.isJsxOpeningElement(n)||T.isJsxSelfClosingElement(n))if(n.tagName.getText(sf).startsWith('Interactive.')){
  count++;const style=n.attributes.properties.find(x=>T.isJsxAttribute(x)&&x.name.text==='style'),expr=style?.initializer&&T.isJsxExpression(style.initializer)?style.initializer.expression:null;
  if(!expr||!T.isObjectLiteralExpression(expr)){computed++;details.push('Bukan inline JSX object: '+file.slice(root.length+1));}
@@ -22,4 +22,4 @@ for(const d of dirs){const root=join(ROOT,'projects',d.name);const mf=join(root,
  else if(!strict&&computed)console.log('  [LEGACY] Tidak diubah otomatis; gunakan pola studio-inline-v2 untuk project baru.');
 }
 if(bad){console.error(`[EDITABLE CHECK] ${bad} kontrol computed pada project berkontrak studio-inline-v2. Perbaiki source atau jalankan repair-computed-layers.mjs sesuai panduan.`);process.exit(1)}
-console.log('[EDITABLE CHECK] Pemeriksaan selesai.');
+console.log('[EDITABLE CHECK] Pemeriksaan source saja, BUKAN bukti drag/Save/reload atau teks langsung editable.');

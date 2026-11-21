@@ -8,8 +8,10 @@ import {fileURLToPath} from 'node:url';
 const ROOT=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const read=f=>fs.readFileSync(path.join(ROOT,f),'utf8');
 const root=read('src/Root.tsx');
+const hasLegacy=fs.existsSync(path.join(ROOT,'projects/windows-hacks-5-shortcut-lengkap/src/SegmentVideo.tsx')) && fs.existsSync(path.join(ROOT,'projects/ip-address/src/SegmentVideo.tsx'));
+const legacyTest=hasLegacy?test:test.skip;
 
-test('all segment compositions use their respective direct editor when available',()=>{
+legacyTest('all segment compositions use their respective direct editor when available',()=>{
  const catalog=JSON.parse(read('library/catalog.json'));
  const directCount=catalog.videos.filter(v=>fs.existsSync(path.join(ROOT,v.projectDir,'src/SegmentVideo.tsx')))
   .reduce((n,v)=>n+v.segments.length,0);
@@ -23,7 +25,7 @@ test('all segment compositions use their respective direct editor when available
  assert.doesNotMatch(read('projects/windows-hacks-5-shortcut-lengkap/src/SegmentVideo.tsx'),/<Sequence/);
 });
 
-test('segment source uses same renderer as full video, not a screenshot or flattened video',()=>{
+legacyTest('segment source uses same renderer as full video, not a screenshot or flattened video',()=>{
  const w=read('projects/windows-hacks-5-shortcut-lengkap/src/Video.tsx');
  const v=read('projects/windows-hacks-5-shortcut-lengkap/src/SegmentVideo.tsx');
  for(const key of ['HOOK','CTRL_SHIFT_T','CTRL_SHIFT_ESC','WIN_SHIFT_S','WIN_E','CTRL_SHIFT_N','CTA']){

@@ -1,6 +1,7 @@
 import React from 'react';
 import {AbsoluteFill,Audio,Interactive,Sequence,staticFile,useCurrentFrame} from 'remotion';
 import type {Easy2BootScene03Props,LayerOverride} from '../config/props';
+import {getEditableTransform} from '../components/EditableTransform';
 import {SCENE01_IMPACT,SCENE01_PALETTE} from '../config/scene01Impact';
 import {clamp,smooth,easeOut,lerp,impactStamp} from '../animations/scene01Impact';
 
@@ -32,11 +33,13 @@ const Layer:React.FC<{
   const translate=`translate(${userAt('x',u.x??0)} ${userAt('y',u.y??0)})`;
   const rotate=`rotate(${userAt('rotation',u.rotation??0)})`;
   const scale=`scale(${userAt('scale',u.scale??1)})`;
-  return <Interactive.G name={`S01 — ${name}`} style={{translate:'0px 0px',scale:1,rotate:'0deg',opacity:1}}>
-    <g id={`S01-${id}`} opacity={f} transform={`${translate} ${rotate} ${scale}`} fill={u.fill??fill}>
-      <g transform={animated}>{children}</g>
-    </g>
-  </Interactive.G>;
+  const visual=<g id={`S01-${id}`} opacity={f} transform={`${translate} ${rotate} ${scale}`} fill={u.fill??fill}>
+   <g transform={animated}>{children}</g>
+  </g>;
+  // Laptop and USB contain their own native interactive vector pieces.
+  // Do not create a competing selectable parent outline around every detail.
+  if(id==='laptop'||id==='usb')return visual;
+  return <Interactive.G name={`S01 — ${name}`} style={{translate:'0px 0px',scale:1,rotate:'0deg',opacity:1}}>{visual}</Interactive.G>;
 };
 const Text:React.FC<{x:number;y:number;size:number;value:string;color?:string;weight?:number}> =
   ({x,y,size,value,color=P.ink,weight=800})=><text x={x} y={y} fontFamily={font} fontSize={size} fontWeight={weight}
@@ -44,29 +47,62 @@ const Text:React.FC<{x:number;y:number;size:number;value:string;color?:string;we
 const WindowsLogo:React.FC<{x:number;y:number;u:number}> = ({x,y,u})=><g fill={P.blue}>
   {[0,1].flatMap(yy=>[0,1].map(xx=><rect key={`${xx}-${yy}`} x={x+xx*(u+3)} y={y+yy*(u+3)} width={u} height={u}/>))}
 </g>;
-const Laptop:React.FC<{x:number;y:number;w:number;h:number}> =({x,y,w,h})=>{
-  const sx=w/410,sy=h/255;
-  return <g transform={`translate(${x} ${y}) scale(${sx} ${sy})`}>
-    <rect x={18} y={243} width={374} height={19} rx={8} fill="#CED4D5" opacity={.4}/>
-    <rect x={10} y={0} width={390} height={220} rx={12} fill="#282D35"/>
-    <rect x={15} y={7} width={380} height={206} rx={8} fill="#E2EEF7"/>
-    <path d="M230 7H379V212H286Z" fill="#D4E5F4" opacity={.55}/>
-    <WindowsLogo x={168} y={78} u={34}/>
-    <Text x={205} y={172} value="Windows 11" size={20} color="#25323E" weight={600}/>
-    <path d="M5 220H405L418 237H-8Z" fill="#C8CFD3"/>
-    <path d="M-8 237H418L406 240H4Z" fill="#A8B0B6"/>
-    <rect x={168} y={223} width={75} height={6} rx={3} fill="#9AA5AD"/>
-  </g>;
+/** One independent native Studio item per meaningful piece; geometry identical to approved S01. */
+const Part:React.FC<{id:string;label:string;p:Easy2BootScene03Props;children:React.ReactNode}> =({id,label,p,children})=>{
+ const frame=useCurrentFrame();const u:LayerOverride=p.layerOverrides?.[`S01:${id}`]??{};
+ const edit=getEditableTransform(u,frame);
+ if(!edit.visible)return null;
+ return <Interactive.G name={`S01 — ${label}`} style={{translate:'0px 0px',scale:1,rotate:'0deg',opacity:1}}>
+  <g id={`S01-${id}`} transform={edit.transform} opacity={edit.opacity} fill={u.fill}>{children}</g>
+ </Interactive.G>;
 };
-const FlashDisk:React.FC<{x:number;y:number;w?:number;h?:number}> =({x,y,w=97,h=201})=><g transform={`translate(${x} ${y}) scale(${w/97} ${h/201})`}>
+const Laptop:React.FC<{x:number;y:number;w:number;h:number;p:Easy2BootScene03Props}> =({x,y,w,h,p})=>{
+ const sx=w/410,sy=h/255;
+ const screenLabel=p.layerOverrides?.['S01:laptop-os-name']?.text??'Windows 11';
+ return <g transform={`translate(${x} ${y}) scale(${sx} ${sy})`}>
+  <Part id="laptop-shadow" label="Laptop — bayangan" p={p}>
+   <rect x={18} y={243} width={374} height={19} rx={8} fill="#CED4D5" opacity={.4}/>
+  </Part>
+  <Part id="laptop-bezel" label="Laptop — bingkai hitam" p={p}>
+   <rect x={10} y={0} width={390} height={220} rx={12} fill="#282D35"/>
+  </Part>
+  <Part id="laptop-screen" label="Laptop — layar biru muda" p={p}>
+   <rect x={15} y={7} width={380} height={206} rx={8} fill="#E2EEF7"/>
+   <path d="M230 7H379V212H286Z" fill="#D4E5F4" opacity={.55}/>
+  </Part>
+  <Part id="laptop-windows-logo" label="Laptop — logo Windows 11" p={p}>
+   <WindowsLogo x={168} y={78} u={34}/>
+  </Part>
+  <Part id="laptop-os-name" label="Laptop — teks Windows 11" p={p}>
+   <Text x={205} y={172} value={screenLabel} size={p.layerOverrides?.['S01:laptop-os-name']?.fontSize??20}
+     color={p.layerOverrides?.['S01:laptop-os-name']?.fill??'#25323E'} weight={600}/>
+  </Part>
+  <Part id="laptop-silver-base" label="Laptop — alas silver" p={p}>
+   <path d="M5 220H405L418 237H-8Z" fill="#C8CFD3"/>
+   <path d="M-8 237H418L406 240H4Z" fill="#A8B0B6"/>
+   <rect x={168} y={223} width={75} height={6} rx={3} fill="#9AA5AD"/>
+  </Part>
+ </g>;
+};
+const FlashDisk:React.FC<{x:number;y:number;w?:number;h?:number;p:Easy2BootScene03Props}> =({x,y,w=97,h=201,p})=><g transform={`translate(${x} ${y}) scale(${w/97} ${h/201})`}>
+ <Part id="usb-metal" label="USB — konektor logam" p={p}>
   <rect x={18} y={0} width={61} height={45} rx={6} fill="#A4B2BB"/>
   <rect x={31} y={12} width={8} height={9} rx={1} fill="#637780"/>
   <rect x={57} y={12} width={8} height={9} rx={1} fill="#637780"/>
+ </Part>
+ <Part id="usb-body" label="USB — badan flashdisk" p={p}>
   <rect x={2} y={38} width={93} height={162} rx={13} fill="#2A343A"/>
   <rect x={7} y={45} width={83} height={147} rx={9} fill="#2F4248"/>
+ </Part>
+ <Part id="usb-coral-label" label="USB — badge coral" p={p}>
   <rect x={16} y={53} width={66} height={33} rx={7} fill={P.coral}/>
-  <Text x={49} y={70} size={22} value="USB" color="#FFFFFF"/>
+ </Part>
+ <Part id="usb-label-text" label="USB — tulisan USB" p={p}>
+  <Text x={49} y={70} size={22} value={p.layerOverrides?.['S01:usb-label-text']?.text??'USB'} color="#FFFFFF"/>
+ </Part>
+ <Part id="usb-indicator" label="USB — indikator bawah" p={p}>
   <rect x={39} y={176} width={20} height={9} rx={2} fill="#71848A"/>
+ </Part>
 </g>;
 const Caption:React.FC<{lines:readonly string[];color:string}> = ({lines,color})=><g>
   {lines.map((line,i)=><Text key={line} x={270} y={lines.length===1?769:754+i*32} size={20} color={color} weight={650} value={line}/>)}
@@ -100,7 +136,7 @@ export const Scene01Problem:React.FC<Easy2BootScene03Props>=(props)=>{
       </Layer>
       {/* Same laptop travels from opening to comparison, no duplicate overlapping slide. */}
       <Layer id="laptop" name="Laptop dan Windows 11" props={props} opacity={Math.min(1,a+b)*easeOut((t-.28)/.55)}>
-        <Laptop x={lerp(65,40,move)} y={lerp(466+28*(1-easeOut((t-.48)/.69)),501,move)}
+        <Laptop p={props} x={lerp(65,40,move)} y={lerp(466+28*(1-easeOut((t-.48)/.69)),501,move)}
           w={lerp(410,226,move)} h={lerp(255,166,move)}/>
       </Layer>
       <Layer id="headlineMismatch" name="Headline perbandingan USB" props={props} opacity={b*smooth((t-3.91)/.58)} animated={`translate(0 ${22*(1-smooth((t-3.91)/.58))})`}>
@@ -110,7 +146,7 @@ export const Scene01Problem:React.FC<Easy2BootScene03Props>=(props)=>{
         <Text x={270} y={323} size={editSize('headlineWin10',46)} value={editText('headlineWin10',props.scene01MismatchValue)} color={editColor('headlineWin10',P.coral)}/>
       </Layer>
       <Layer id="usb" name="USB Bootable Windows 10" props={props} opacity={b*usbArrival}>
-        <FlashDisk x={lerp(560,341,usbArrival)} y={463}/>
+        <FlashDisk p={props} x={lerp(560,341,usbArrival)} y={463}/>
       </Layer>
       <Layer id="number11" name="Angka 11: rolling reveal" props={props} opacity={b*showNumber11} animated={`translate(0 ${(1-easeOut((t-4.48)/.54))*45})`}>
         <Text x={148} y={707} size={64} value="11" color={P.blue} weight={900}/>

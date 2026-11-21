@@ -35,7 +35,13 @@
     "capabilities": "node tools/export-capabilities.mjs",
     "vo:edit": "node tools/vo-edit.mjs",
     "qa:render": "node tools/qa-render.mjs",
-    "check:syntax": "node tools/check-source-syntax.mjs"
+    "check:syntax": "node tools/check-source-syntax.mjs",
+    "qa:smoke": "node tools/smoke-remotion.mjs",
+    "check:sync": "node tools/check-sync-state.mjs",
+    "flow": "node tools/project-flow.mjs",
+    "clean": "node tools/clean-master.mjs",
+    "backup:editing": "node tools/studio-session-backup.mjs",
+    "retire:unregistered": "node tools/retire-unregistered.mjs"
   },
   "dependencies": {
     "@remotion/cli": "4.0.538",

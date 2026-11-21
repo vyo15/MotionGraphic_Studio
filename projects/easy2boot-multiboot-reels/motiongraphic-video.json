@@ -7,7 +7,7 @@
   "width": 1080,
   "height": 1920,
   "fps": 30,
-  "durationInFrames": 2641,
+  "durationInFrames": 2701,
   "defaultProps": {
     "title01Need": "MAU INSTAL",
     "title01Target": "WINDOWS 11?",
@@ -23,7 +23,1138 @@
     "voiceOverFileName": "",
     "showMusic": false,
     "musicFileName": "",
-    "layerOverrides": {},
+    "layerOverrides": {
+      "S03:element_006": {
+        "text": "",
+        "x": 0,
+        "y": 0,
+        "scale": 1,
+        "rotation": 0,
+        "opacity": 1
+      },
+      "S03:element_007": {
+        "text": "",
+        "x": 0,
+        "y": 0,
+        "scale": 1,
+        "rotation": 0,
+        "opacity": 1
+      },
+      "S03:element_009": {
+        "text": "",
+        "x": 0,
+        "y": 0,
+        "scale": 1,
+        "rotation": 0,
+        "opacity": 1
+      },
+      "S03:element_010": {
+        "text": "",
+        "x": 0,
+        "y": 0,
+        "scale": 1,
+        "rotation": 0,
+        "opacity": 1
+      },
+      "S03:element_011": {
+        "text": "",
+        "x": 0,
+        "y": 0,
+        "scale": 1,
+        "rotation": 0,
+        "opacity": 1
+      },
+      "S03:element_012": {
+        "text": "",
+        "x": 0,
+        "y": 0,
+        "scale": 1,
+        "rotation": 0,
+        "opacity": 1
+      },
+      "S03:element_019": {
+        "text": "",
+        "x": 0,
+        "y": 0,
+        "scale": 1,
+        "rotation": 0,
+        "opacity": 1
+      },
+      "S03:element_023": {
+        "text": "",
+        "x": 0,
+        "y": 0,
+        "scale": 1,
+        "rotation": 0,
+        "opacity": 1
+      },
+      "S03:element_029": {
+        "text": "",
+        "x": 0,
+        "y": 0,
+        "scale": 1,
+        "rotation": 0,
+        "opacity": 1
+      },
+      "S03:element_035": {
+        "text": "",
+        "x": 0,
+        "y": 0,
+        "scale": 1,
+        "rotation": 0,
+        "opacity": 1
+      },
+      "S03:element_039": {
+        "text": "",
+        "x": 0,
+        "y": 0,
+        "scale": 1,
+        "rotation": 0,
+        "opacity": 1
+      },
+      "S03:element_040": {
+        "text": "",
+        "x": 0,
+        "y": 0,
+        "scale": 1,
+        "rotation": 0,
+        "opacity": 1
+      },
+      "S03:element_041": {
+        "text": "",
+        "x": 0,
+        "y": 0,
+        "scale": 1,
+        "rotation": 0,
+        "opacity": 1
+      },
+      "S03:element_047": {
+        "text": "",
+        "x": 0,
+        "y": 0,
+        "scale": 1,
+        "rotation": 0,
+        "opacity": 1
+      },
+      "S03:element_048": {
+        "text": "",
+        "x": 0,
+        "y": 0,
+        "scale": 1,
+        "rotation": 0,
+        "opacity": 1
+      },
+      "S03:element_052": {
+        "text": "",
+        "x": 0,
+        "y": 0,
+        "scale": 1,
+        "rotation": 0,
+        "opacity": 1
+      },
+      "S03:element_062": {
+        "text": "",
+        "x": 0,
+        "y": 0,
+        "scale": 1,
+        "rotation": 0,
+        "opacity": 1
+      },
+      "S03:element_063": {
+        "text": "",
+        "x": 0,
+        "y": 0,
+        "scale": 1,
+        "rotation": 0,
+        "opacity": 1
+      },
+      "S03:element_064": {
+        "text": "",
+        "x": 0,
+        "y": 0,
+        "scale": 1,
+        "rotation": 0,
+        "opacity": 1
+      },
+      "S03:element_068": {
+        "text": "",
+        "x": 0,
+        "y": 0,
+        "scale": 1,
+        "rotation": 0,
+        "opacity": 1
+      },
+      "S03:element_069": {
+        "text": "",
+        "x": 0,
+        "y": 0,
+        "scale": 1,
+        "rotation": 0,
+        "opacity": 1
+      },
+      "S03:element_071": {
+        "text": "",
+        "x": 0,
+        "y": 0,
+        "scale": 1,
+        "rotation": 0,
+        "opacity": 1
+      },
+      "S03:element_072": {
+        "text": "",
+        "x": 0,
+        "y": 0,
+        "scale": 1,
+        "rotation": 0,
+        "opacity": 1
+      },
+      "S03:element_076": {
+        "text": "",
+        "x": 0,
+        "y": 0,
+        "scale": 1,
+        "rotation": 0,
+        "opacity": 1
+      },
+      "S03:element_077": {
+        "text": "",
+        "x": 0,
+        "y": 0,
+        "scale": 1,
+        "rotation": 0,
+        "opacity": 1
+      },
+      "S03:element_078": {
+        "text": "",
+        "x": 0,
+        "y": 0,
+        "scale": 1,
+        "rotation": 0,
+        "opacity": 1
+      },
+      "S03:element_081": {
+        "text": "",
+        "x": 0,
+        "y": 0,
+        "scale": 1,
+        "rotation": 0,
+        "opacity": 1
+      },
+      "S03:element_085": {
+        "text": "",
+        "x": 0,
+        "y": 0,
+        "scale": 1,
+        "rotation": 0,
+        "opacity": 1
+      },
+      "S03:element_086": {
+        "text": "",
+        "x": 0,
+        "y": 0,
+        "scale": 1,
+        "rotation": 0,
+        "opacity": 1
+      },
+      "S03:element_091": {
+        "text": "",
+        "x": 0,
+        "y": 0,
+        "scale": 1,
+        "rotation": 0,
+        "opacity": 1
+      },
+      "S03:element_092": {
+        "text": "",
+        "x": 0,
+        "y": 0,
+        "scale": 1,
+        "rotation": 0,
+        "opacity": 1
+      },
+      "S03:element_093": {
+        "text": "",
+        "x": 0,
+        "y": 0,
+        "scale": 1,
+        "rotation": 0,
+        "opacity": 1
+      },
+      "S03:element_094": {
+        "text": "",
+        "x": 0,
+        "y": 0,
+        "scale": 1,
+        "rotation": 0,
+        "opacity": 1
+      },
+      "S03:element_097": {
+        "text": "",
+        "x": 0,
+        "y": 0,
+        "scale": 1,
+        "rotation": 0,
+        "opacity": 1
+      },
+      "S03:element_101": {
+        "text": "",
+        "x": 0,
+        "y": 0,
+        "scale": 1,
+        "rotation": 0,
+        "opacity": 1
+      },
+      "S03:element_105": {
+        "text": "",
+        "x": 0,
+        "y": 0,
+        "scale": 1,
+        "rotation": 0,
+        "opacity": 1
+      },
+      "S03:element_106": {
+        "text": "",
+        "x": 0,
+        "y": 0,
+        "scale": 1,
+        "rotation": 0,
+        "opacity": 1
+      },
+      "S03:element_107": {
+        "text": "",
+        "x": 0,
+        "y": 0,
+        "scale": 1,
+        "rotation": 0,
+        "opacity": 1
+      },
+      "S03:element_108": {
+        "text": "",
+        "x": 0,
+        "y": 0,
+        "scale": 1,
+        "rotation": 0,
+        "opacity": 1
+      },
+      "S03:element_111": {
+        "text": "",
+        "x": 0,
+        "y": 0,
+        "scale": 1,
+        "rotation": 0,
+        "opacity": 1
+      },
+      "S03:element_116": {
+        "text": "",
+        "x": 0,
+        "y": 0,
+        "scale": 1,
+        "rotation": 0,
+        "opacity": 1
+      },
+      "S03:element_117": {
+        "text": "",
+        "x": 0,
+        "y": 0,
+        "scale": 1,
+        "rotation": 0,
+        "opacity": 1
+      },
+      "S03:element_120": {
+        "text": "",
+        "x": 0,
+        "y": 0,
+        "scale": 1,
+        "rotation": 0,
+        "opacity": 1
+      },
+      "S03:element_124": {
+        "text": "",
+        "x": 0,
+        "y": 0,
+        "scale": 1,
+        "rotation": 0,
+        "opacity": 1
+      },
+      "S03:element_128": {
+        "text": "",
+        "x": 0,
+        "y": 0,
+        "scale": 1,
+        "rotation": 0,
+        "opacity": 1
+      },
+      "S03:element_129": {
+        "text": "",
+        "x": 0,
+        "y": 0,
+        "scale": 1,
+        "rotation": 0,
+        "opacity": 1
+      },
+      "S03:element_133": {
+        "text": "",
+        "x": 0,
+        "y": 0,
+        "scale": 1,
+        "rotation": 0,
+        "opacity": 1
+      },
+      "S03:element_134": {
+        "text": "",
+        "x": 0,
+        "y": 0,
+        "scale": 1,
+        "rotation": 0,
+        "opacity": 1
+      },
+      "S03:element_138": {
+        "text": "",
+        "x": 0,
+        "y": 0,
+        "scale": 1,
+        "rotation": 0,
+        "opacity": 1
+      },
+      "S03:element_139": {
+        "text": "",
+        "x": 0,
+        "y": 0,
+        "scale": 1,
+        "rotation": 0,
+        "opacity": 1
+      },
+      "S03:element_142": {
+        "text": "",
+        "x": 0,
+        "y": 0,
+        "scale": 1,
+        "rotation": 0,
+        "opacity": 1
+      },
+      "S03:element_143": {
+        "text": "",
+        "x": 0,
+        "y": 0,
+        "scale": 1,
+        "rotation": 0,
+        "opacity": 1
+      },
+      "S03:element_146": {
+        "text": "",
+        "x": 0,
+        "y": 0,
+        "scale": 1,
+        "rotation": 0,
+        "opacity": 1
+      },
+      "S06:element_006": {
+        "text": "",
+        "x": 0,
+        "y": 0,
+        "scale": 1,
+        "rotation": 0,
+        "opacity": 1
+      },
+      "S06:element_007": {
+        "text": "",
+        "x": 0,
+        "y": 0,
+        "scale": 1,
+        "rotation": 0,
+        "opacity": 1
+      },
+      "S06:element_009": {
+        "text": "",
+        "x": 0,
+        "y": 0,
+        "scale": 1,
+        "rotation": 0,
+        "opacity": 1
+      },
+      "S06:element_010": {
+        "text": "",
+        "x": 0,
+        "y": 0,
+        "scale": 1,
+        "rotation": 0,
+        "opacity": 1
+      },
+      "S06:element_011": {
+        "text": "",
+        "x": 0,
+        "y": 0,
+        "scale": 1,
+        "rotation": 0,
+        "opacity": 1
+      },
+      "S06:element_012": {
+        "text": "",
+        "x": 0,
+        "y": 0,
+        "scale": 1,
+        "rotation": 0,
+        "opacity": 1
+      },
+      "S06:element_018": {
+        "text": "",
+        "x": 0,
+        "y": 0,
+        "scale": 1,
+        "rotation": 0,
+        "opacity": 1
+      },
+      "S06:element_020": {
+        "text": "",
+        "x": 0,
+        "y": 0,
+        "scale": 1,
+        "rotation": 0,
+        "opacity": 1
+      },
+      "S06:element_021": {
+        "text": "",
+        "x": 0,
+        "y": 0,
+        "scale": 1,
+        "rotation": 0,
+        "opacity": 1
+      },
+      "S06:element_022": {
+        "text": "",
+        "x": 0,
+        "y": 0,
+        "scale": 1,
+        "rotation": 0,
+        "opacity": 1
+      },
+      "S06:element_026": {
+        "text": "",
+        "x": 0,
+        "y": 0,
+        "scale": 1,
+        "rotation": 0,
+        "opacity": 1
+      },
+      "S06:element_027": {
+        "text": "",
+        "x": 0,
+        "y": 0,
+        "scale": 1,
+        "rotation": 0,
+        "opacity": 1
+      },
+      "S06:element_029": {
+        "text": "",
+        "x": 0,
+        "y": 0,
+        "scale": 1,
+        "rotation": 0,
+        "opacity": 1
+      },
+      "S06:element_033": {
+        "text": "",
+        "x": 0,
+        "y": 0,
+        "scale": 1,
+        "rotation": 0,
+        "opacity": 1
+      },
+      "S06:element_034": {
+        "text": "",
+        "x": 0,
+        "y": 0,
+        "scale": 1,
+        "rotation": 0,
+        "opacity": 1
+      },
+      "S06:element_038": {
+        "text": "",
+        "x": 0,
+        "y": 0,
+        "scale": 1,
+        "rotation": 0,
+        "opacity": 1
+      },
+      "S06:element_040": {
+        "text": "",
+        "x": 0,
+        "y": 0,
+        "scale": 1,
+        "rotation": 0,
+        "opacity": 1
+      },
+      "S06:element_041": {
+        "text": "",
+        "x": 0,
+        "y": 0,
+        "scale": 1,
+        "rotation": 0,
+        "opacity": 1
+      },
+      "S06:element_042": {
+        "text": "",
+        "x": 0,
+        "y": 0,
+        "scale": 1,
+        "rotation": 0,
+        "opacity": 1
+      },
+      "S06:element_049": {
+        "text": "",
+        "x": 0,
+        "y": 0,
+        "scale": 1,
+        "rotation": 0,
+        "opacity": 1
+      },
+      "S06:element_050": {
+        "text": "",
+        "x": 0,
+        "y": 0,
+        "scale": 1,
+        "rotation": 0,
+        "opacity": 1
+      },
+      "S06:element_053": {
+        "text": "",
+        "x": 0,
+        "y": 0,
+        "scale": 1,
+        "rotation": 0,
+        "opacity": 1
+      },
+      "S06:element_054": {
+        "text": "",
+        "x": 0,
+        "y": 0,
+        "scale": 1,
+        "rotation": 0,
+        "opacity": 1
+      },
+      "S06:element_055": {
+        "text": "",
+        "x": 0,
+        "y": 0,
+        "scale": 1,
+        "rotation": 0,
+        "opacity": 1
+      },
+      "S06:element_058": {
+        "text": "",
+        "x": 0,
+        "y": 0,
+        "scale": 1,
+        "rotation": 0,
+        "opacity": 1
+      },
+      "S06:element_059": {
+        "text": "",
+        "x": 0,
+        "y": 0,
+        "scale": 1,
+        "rotation": 0,
+        "opacity": 1
+      },
+      "S06:element_060": {
+        "text": "",
+        "x": 0,
+        "y": 0,
+        "scale": 1,
+        "rotation": 0,
+        "opacity": 1
+      },
+      "S06:element_063": {
+        "text": "",
+        "x": 0,
+        "y": 0,
+        "scale": 1,
+        "rotation": 0,
+        "opacity": 1
+      },
+      "S06:element_064": {
+        "text": "",
+        "x": 0,
+        "y": 0,
+        "scale": 1,
+        "rotation": 0,
+        "opacity": 1
+      },
+      "S06:element_067": {
+        "text": "",
+        "x": 0,
+        "y": 0,
+        "scale": 1,
+        "rotation": 0,
+        "opacity": 1
+      },
+      "S06:element_068": {
+        "text": "",
+        "x": 0,
+        "y": 0,
+        "scale": 1,
+        "rotation": 0,
+        "opacity": 1
+      },
+      "S06:element_069": {
+        "text": "",
+        "x": 0,
+        "y": 0,
+        "scale": 1,
+        "rotation": 0,
+        "opacity": 1
+      },
+      "S06:element_070": {
+        "text": "",
+        "x": 0,
+        "y": 0,
+        "scale": 1,
+        "rotation": 0,
+        "opacity": 1
+      },
+      "S06:element_077": {
+        "text": "",
+        "x": 0,
+        "y": 0,
+        "scale": 1,
+        "rotation": 0,
+        "opacity": 1
+      },
+      "S06:element_078": {
+        "text": "",
+        "x": 0,
+        "y": 0,
+        "scale": 1,
+        "rotation": 0,
+        "opacity": 1
+      },
+      "S06:element_080": {
+        "text": "",
+        "x": 0,
+        "y": 0,
+        "scale": 1,
+        "rotation": 0,
+        "opacity": 1
+      },
+      "S06:element_081": {
+        "text": "",
+        "x": 0,
+        "y": 0,
+        "scale": 1,
+        "rotation": 0,
+        "opacity": 1
+      },
+      "S06:element_083": {
+        "text": "",
+        "x": 0,
+        "y": 0,
+        "scale": 1,
+        "rotation": 0,
+        "opacity": 1
+      },
+      "S06:element_084": {
+        "text": "",
+        "x": 0,
+        "y": 0,
+        "scale": 1,
+        "rotation": 0,
+        "opacity": 1
+      },
+      "S06:element_086": {
+        "text": "",
+        "x": 0,
+        "y": 0,
+        "scale": 1,
+        "rotation": 0,
+        "opacity": 1
+      },
+      "S06:element_088": {
+        "text": "",
+        "x": 0,
+        "y": 0,
+        "scale": 1,
+        "rotation": 0,
+        "opacity": 1
+      },
+      "S01:laptop-bezel": {
+        "x": 0,
+        "y": 0,
+        "scale": 1,
+        "rotation": 0,
+        "opacity": 1
+      },
+      "S01:laptop-screen": {
+        "x": 0,
+        "y": 0,
+        "scale": 1,
+        "rotation": 0,
+        "opacity": 1
+      },
+      "S01:laptop-os-name": {
+        "x": 0,
+        "y": 0,
+        "scale": 1,
+        "rotation": 0,
+        "opacity": 1,
+        "text": "Windows 11"
+      },
+      "S01:laptop-silver-base": {
+        "x": 0,
+        "y": 0,
+        "scale": 1,
+        "rotation": 0,
+        "opacity": 1
+      },
+      "S01:laptop-windows-logo": {
+        "x": 0,
+        "y": 0,
+        "scale": 1,
+        "rotation": 0,
+        "opacity": 1
+      },
+      "S01:usb-metal": {
+        "x": 0,
+        "y": 0,
+        "scale": 1,
+        "rotation": 0,
+        "opacity": 1
+      },
+      "S01:usb-body": {
+        "x": 0,
+        "y": 0,
+        "scale": 1,
+        "rotation": 0,
+        "opacity": 1
+      },
+      "S01:usb-label-text": {
+        "x": 0,
+        "y": 0,
+        "scale": 1,
+        "rotation": 0,
+        "opacity": 1,
+        "text": "USB"
+      },
+      "S01:headlineNeed": {
+        "x": 0,
+        "y": 0,
+        "scale": 1,
+        "rotation": 0,
+        "opacity": 1
+      },
+      "S01:headlineWin11": {
+        "x": 0,
+        "y": 0,
+        "scale": 1,
+        "rotation": 0,
+        "opacity": 1
+      },
+      "S01:headlineWin10": {
+        "x": 0,
+        "y": 0,
+        "scale": 1,
+        "rotation": 0,
+        "opacity": 1
+      },
+      "S02:hero-usb-connector": {
+        "x": 0,
+        "y": 0,
+        "scale": 1,
+        "rotation": 0,
+        "opacity": 1
+      },
+      "S02:hero-usb-body": {
+        "x": 0,
+        "y": 0,
+        "scale": 1,
+        "rotation": 0,
+        "opacity": 1
+      },
+      "S02:hero-usb-label": {
+        "x": 0,
+        "y": 0,
+        "scale": 1,
+        "rotation": 0,
+        "opacity": 1
+      },
+      "S02:hero-usb-name": {
+        "x": 0,
+        "y": 0,
+        "scale": 1,
+        "rotation": 0,
+        "opacity": 1,
+        "text": "USB"
+      },
+      "S02:hero-usb-leds": {
+        "x": 0,
+        "y": 0,
+        "scale": 1,
+        "rotation": 0,
+        "opacity": 1
+      },
+      "S02:reaction": {
+        "x": 0,
+        "y": 0,
+        "scale": 1,
+        "rotation": 0,
+        "opacity": 1
+      },
+      "S02:reactionSecond": {
+        "x": 0,
+        "y": 0,
+        "scale": 1,
+        "rotation": 0,
+        "opacity": 1
+      },
+      "S02:manyLine1": {
+        "x": 0,
+        "y": 0,
+        "scale": 1,
+        "rotation": 0,
+        "opacity": 1
+      },
+      "S02:manyLine2": {
+        "x": 0,
+        "y": 0,
+        "scale": 1,
+        "rotation": 0,
+        "opacity": 1
+      },
+      "S05:laptop-bezel": {
+        "x": 0,
+        "y": 0,
+        "scale": 1,
+        "rotation": 0,
+        "opacity": 1
+      },
+      "S05:laptop-base": {
+        "x": 0,
+        "y": 0,
+        "scale": 1,
+        "rotation": 0,
+        "opacity": 1
+      },
+      "S05:laptop-shadow": {
+        "x": 0,
+        "y": 0,
+        "scale": 1,
+        "rotation": 0,
+        "opacity": 1
+      },
+      "S05:boot-menu-background": {
+        "x": 0,
+        "y": 0,
+        "scale": 1,
+        "rotation": 0,
+        "opacity": 1
+      },
+      "S05:boot-option-usb": {
+        "x": 0,
+        "y": 0,
+        "scale": 1,
+        "rotation": 0,
+        "opacity": 1
+      },
+      "S05:boot-option-usb-text": {
+        "x": 0,
+        "y": 0,
+        "scale": 1,
+        "rotation": 0,
+        "opacity": 1
+      },
+      "S05:agfm-folder-panel": {
+        "x": 0,
+        "y": 0,
+        "scale": 1,
+        "rotation": 0,
+        "opacity": 1
+      },
+      "S05:agfm-folder-win11": {
+        "x": 0,
+        "y": 0,
+        "scale": 1,
+        "rotation": 0,
+        "opacity": 1
+      },
+      "S05:agfm-folder-win11-name": {
+        "x": 0,
+        "y": 0,
+        "scale": 1,
+        "rotation": 0,
+        "opacity": 1
+      },
+      "S05:agfm-iso-panel": {
+        "x": 0,
+        "y": 0,
+        "scale": 1,
+        "rotation": 0,
+        "opacity": 1
+      },
+      "S05:agfm-iso-filename": {
+        "x": 0,
+        "y": 0,
+        "scale": 1,
+        "rotation": 0,
+        "opacity": 1
+      },
+      "S05:setup-screen": {
+        "x": 0,
+        "y": 0,
+        "scale": 1,
+        "rotation": 0,
+        "opacity": 1
+      },
+      "S05:setup-title": {
+        "x": 0,
+        "y": 0,
+        "scale": 1,
+        "rotation": 0,
+        "opacity": 1,
+        "text": "Windows Setup"
+      },
+      "S05:usb-body": {
+        "x": 0,
+        "y": 0,
+        "scale": 1,
+        "rotation": 0,
+        "opacity": 1
+      },
+      "S05:intro-line-1": {
+        "x": 0,
+        "y": 0,
+        "scale": 1,
+        "rotation": 0,
+        "opacity": 1,
+        "text": "BOOT DARI"
+      },
+      "S05:intro-line-2": {
+        "x": 0,
+        "y": 0,
+        "scale": 1,
+        "rotation": 0,
+        "opacity": 1,
+        "text": "FLASHDISK"
+      },
+      "S05:screen-system-name": {
+        "x": 0,
+        "y": 0,
+        "scale": 1,
+        "rotation": 0,
+        "opacity": 1,
+        "text": "Windows 11"
+      },
+      "S05:boot-menu-heading": {
+        "x": 0,
+        "y": 0,
+        "scale": 1,
+        "rotation": 0,
+        "opacity": 1,
+        "text": "Boot Menu"
+      },
+      "S05:boot-option-manager-text": {
+        "x": 0,
+        "y": 0,
+        "scale": 1,
+        "rotation": 0,
+        "opacity": 1,
+        "text": "Windows Boot Manager"
+      },
+      "S05:boot-navigation": {
+        "x": 0,
+        "y": 0,
+        "scale": 1,
+        "rotation": 0,
+        "opacity": 1,
+        "text": "↑ ↓  Select    Enter  Confirm"
+      },
+      "S05:loading-agfm-text": {
+        "x": 0,
+        "y": 0,
+        "scale": 1,
+        "rotation": 0,
+        "opacity": 1,
+        "text": "Loading agFM..."
+      },
+      "S05:agfm-folder-heading": {
+        "x": 0,
+        "y": 0,
+        "scale": 1,
+        "rotation": 0,
+        "opacity": 1,
+        "text": "agFM · File Manager"
+      },
+      "S05:agfm-folder-path": {
+        "x": 0,
+        "y": 0,
+        "scale": 1,
+        "rotation": 0,
+        "opacity": 1,
+        "text": "/_ISO/WINDOWS"
+      },
+      "S05:agfm-folder-navigation": {
+        "x": 0,
+        "y": 0,
+        "scale": 1,
+        "rotation": 0,
+        "opacity": 1,
+        "text": "↑ ↓   Enter — open"
+      },
+      "S05:agfm-iso-heading": {
+        "x": 0,
+        "y": 0,
+        "scale": 1,
+        "rotation": 0,
+        "opacity": 1,
+        "text": "agFM · File Manager"
+      },
+      "S05:agfm-iso-path": {
+        "x": 0,
+        "y": 0,
+        "scale": 1,
+        "rotation": 0,
+        "opacity": 1,
+        "text": "/_ISO/WINDOWS/WIN11"
+      },
+      "S05:agfm-iso-filetype": {
+        "x": 0,
+        "y": 0,
+        "scale": 1,
+        "rotation": 0,
+        "opacity": 1,
+        "text": "ISO INSTALLER"
+      },
+      "S05:agfm-iso-navigation": {
+        "x": 0,
+        "y": 0,
+        "scale": 1,
+        "rotation": 0,
+        "opacity": 1,
+        "text": "Enter — boot selected ISO"
+      },
+      "S05:loading-setup-text": {
+        "x": 0,
+        "y": 0,
+        "scale": 1,
+        "rotation": 0,
+        "opacity": 1,
+        "text": "Starting Windows Setup..."
+      },
+      "S05:setup-button-text": {
+        "x": 0,
+        "y": 0,
+        "scale": 1,
+        "rotation": 0,
+        "opacity": 1,
+        "text": "Install now"
+      },
+      "S05:usb-label": {
+        "x": 0,
+        "y": 0,
+        "scale": 1,
+        "rotation": 0,
+        "opacity": 1,
+        "text": "USB"
+      }
+    },
     "titleBackup": "BACKUP DATA.",
     "titleOpen": "EASY2BOOT.",
     "titleSelect": "PILIH USB.",
@@ -132,7 +1263,16 @@
     "scene04SuccessLabel": "4 ISO TERSIMPAN",
     "scene04UsbLabel": "USB",
     "scene04HeroTitle": "4 INSTALLER",
-    "scene04HeroSupport": "SATU FLASHDISK"
+    "scene04HeroSupport": "SATU FLASHDISK",
+    "scene05ShowTextVO": true,
+    "scene05ShowIntro": true,
+    "scene05SubtitleLines": [
+      "Sekarang, boot dari flashdisk.",
+      "Di Boot Menu, pilih USB.",
+      "Buka menu agFM.",
+      "Pilih ISO Windows 11, lalu jalankan.",
+      "Installer Windows pun terbuka."
+    ]
   },
   "editableContract": "studio-inline-v2",
   "segments": [
@@ -164,12 +1304,12 @@
       "id": "Easy2BootMultibootReels-S05",
       "title": "05 — Booting Windows 11",
       "startFrame": 1831,
-      "durationInFrames": 420
+      "durationInFrames": 480
     },
     {
       "id": "Easy2BootMultibootReels-S06",
       "title": "06 — CTA + Cover",
-      "startFrame": 2251,
+      "startFrame": 2311,
       "durationInFrames": 390
     }
   ]

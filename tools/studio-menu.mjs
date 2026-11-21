@@ -31,6 +31,7 @@ const menuItems=[
   ['11','Validasi add-on dari ChatGPT'],
   ['12','Edit panduan rekaman VO'],
   ['13','Terapkan patch revisi aman'],
+  ['14','Panduan alur ChatGPT → MotionGraphic Studio'],
 ];
 // Satu sesi input untuk semua menu: tidak berganti readline antar proses.
 const rl=createInterface({input:process.stdin,output:process.stdout});
@@ -80,9 +81,10 @@ async function doZip(){
   console.log('\n=== ZIP OTOMATIS — PILIH JENIS EXPORT ===');
   console.log('  1. Satu video (ZIP editable)');
   console.log('  2. Semua video (ZIP masing-masing)');
-  console.log('  3. MASTER STUDIO lengkap (di luar folder Studio)');
-  console.log('  4. MASTER STUDIO LEAN (tanpa backup historis di ZIP)');
-  const mode=await ask('\nPilih 1/2/3/4 (Enter = kembali): ');
+  console.log('  3. MASTER ENGINE ONLY (tanpa video — default)');
+  console.log('  4. Master + video (tanpa backup historis)');
+  console.log('  5. Backup Master penuh + riwayat');
+  const mode=await ask('\nPilih 1/2/3/4/5 (Enter = kembali): ');
   if(!mode)return console.log('[MENU] Ekspor dibatalkan tanpa perubahan.');
   if(mode==='1'){
     const video=await chooseVideo();
@@ -90,7 +92,8 @@ async function doZip(){
   }else if(mode==='2'){
     if(catalogVideos().length)runScript('zip-video.mjs',['--all']);
   }else if(mode==='3')runScript('zip-video.mjs',['--studio']);
-  else if(mode==='4')runScript('zip-video.mjs',['--studio','--lean']);
+  else if(mode==='4')runScript('zip-video.mjs',['--studio','--with-projects']);
+  else if(mode==='5')runScript('zip-video.mjs',['--studio','--full']);
   else console.log('[MENU] Pilihan ekspor tidak dikenal: '+mode);
 }
 async function doRender(){
@@ -127,7 +130,7 @@ async function doRename(){
   console.log('  2. Ganti judul + slug + folder + path aset');
   console.log('  3. Sesuaikan slug ke nama folder saat ini');
   console.log('  4. Sesuaikan nama folder ke slug saat ini');
-  const mode=await ask('Pilih 1/2/3/4 (Enter = kembali): ');
+  const mode=await ask('Pilih 1/2/3/4/5 (Enter = kembali): ');
   if(!mode)return console.log('[MENU] Rename dibatalkan.');
   if(!['1','2','3','4'].includes(mode))return console.log('[MENU] Mode tidak valid.');
   let args=[project.id];
@@ -178,7 +181,7 @@ async function doAddFolder(){
 async function doValidateAddon(){
  const folder=await ask('Path folder add-on ChatGPT (Enter = kembali): ');
  if(!folder)return;
- runScript('validate-addon.mjs',[folder.replace(/^['"]|['"]$/g,''),'--strict']);
+ runScript('validate-addon.mjs',[folder.replace(/^['"]|['"]$/g,''),'--strict','--syntax']);
 }
 async function doEditVO(){
  const project=await choose(catalogVideos().filter(v=>fs.existsSync(path.join(ROOT,v.projectDir,'src/config/narration.json'))),
@@ -218,6 +221,13 @@ async function handle(choice){
     case '11': await doValidateAddon();break;
     case '12': await doEditVO();break;
     case '13': await doPatch();break;
+    case '14': {
+      console.log('\n[ALUR] Mulai dari judul, pilih langkah berikutnya dan buat prompt siap salin.');
+      const title=await ask('Judul video baru (Enter untuk melihat alur saja): ');
+      if(title)runScript('project-flow.mjs',['--new',title]);
+      else runScript('project-flow.mjs',['--steps']);
+      break;
+    }
     default: console.log('[MENU] Pilihan tidak dikenal.');
   }
 }

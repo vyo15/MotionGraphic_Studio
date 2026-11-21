@@ -30,4 +30,5 @@ runNode('check-editability.mjs');
 runNode('audit-inline-editing.mjs');
 runNode('check-direct-studio-text.mjs');
 runNode('check-layout-flow.mjs');
+runNode('studio-session-backup.mjs');
 console.log('[STUDIO] Library siap.\n');

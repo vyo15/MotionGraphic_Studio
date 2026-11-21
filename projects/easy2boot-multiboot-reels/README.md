@@ -44,3 +44,18 @@ Lihat `PANDUAN-EDIT-ASSET.md`, `REVISION-STATUS-CLEAN.md`, dan `QA-REVISION-CLEA
 Empat ISO bergerak sekaligus merupakan **penyingkatan visual** empat penyalinan, bukan fungsi File Explorer yang dapat mengelompokkan berbagai ISO otomatis dengan satu klik. Tujuan folder masih perlu disesuaikan dengan konfigurasi Easy2Boot aktual pada komputer pengguna.
 
 Preview MP4 lokal dibuat melalui pengujian JSX/SVG dengan renderer uji, **bukan** hasil render native Remotion Studio. Kemampuan menyimpan perubahan setelah drag-and-drop di editor PC belum diuji. Source dan konfigurasi sudah disertakan untuk dilakukan pengujian tersebut pada master terpasang.
+
+
+## Revisi editabilitas 21 November 2026
+
+- Scene 05 sekarang laptop bergaya sama seperti Scene 01, UI boot dan elemen SVG individu (480 frame, 16 s).
+- Scene 01/02: komponen laptop/USB dipisahkan; Scene 03/06: SVG lama dipecah per node interaktif bernama dengan animasi frame sumber tetap; Scene 04 tetap native vector editable.
+- Nama video/ID/slug dipertahankan; Master tidak diikutkan dalam ZIP ini.
+- Detail cara mengedit lihat `PANDUAN-EDIT-ASSET.md` dan `EDITABLE-PER-ELEMEN-20261121.md`.
+- Belum diujikan interaksi drag/save/reload dengan Remotion Studio pada Windows (harus dicek).
+
+## Pemasangan revisi per-elemen
+
+Untuk Master Studio 1.8.1: buat backup `projects/easy2boot-multiboot-reels`, lalu ekstrak ZIP add-on dan salin folder `easy2boot-multiboot-reels` secara utuh ke `projects/` (jangan menyalin src ke root master). Jalankan `npm run sync` / `npm run dev`. Patch only ditujukan untuk proyek dengan baseline ZIP Master 20261121-031419; gunakan full add-on bila ragu.
+
+Uji editor: coba drag satu judul S01, satu teks S03, dan satu label agFM S05; ubah teks lewat Props, Save Props to Code, reload Studio, dan render cuplikan. Catat hasilnya sebelum menandai pengujian Windows lulus.

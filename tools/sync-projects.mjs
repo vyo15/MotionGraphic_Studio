@@ -136,8 +136,22 @@ function main(){
  assert(Array.isArray(old.videos),'library/catalog.json tidak valid');
  assert(!old.videos.some(v=>!v.projectDir),'Katalog masih berisi project legacy; migrasikan dulu ke projects/<slug>/');
  preflightProjectSafety(old);
- preflightAllProjects(); // before any capture, auto-registration or source/catalog/asset mutation
- captureStudioProps(ROOT);
+  preflightAllProjects(); // before any capture, auto-registration or source/catalog/asset mutation
+  // Empty Master imports can legitimately contain a stale generated-state snapshot from an old
+  // Master backup. Only bypass props capture if BOTH catalog and projects are empty, and Root
+  // is the exact known empty registry. Never bypass the guard for a real/editable composition.
+  const activeFolders=fs.readdirSync(PROJECTS,{withFileTypes:true})
+    .filter(e=>e.isDirectory()&&!e.name.startsWith('_')&&!e.name.startsWith('.'));
+  const initialEmptyRoot=[
+    "import React from 'react';",
+    "import {Folder} from 'remotion';",
+    '/** Initial empty registry. npm run sync generates the actual Root. */',
+    'export const Root: React.FC = () => <Folder name="Videos">{null}</Folder>;',
+  ].join('\n');
+  const rootNow=fs.existsSync(ROOT_FILE)?fs.readFileSync(ROOT_FILE,'utf8').replace(/\r\n/g,'\n').trim():'';
+  const safeEmptyReset=old.videos.length===0&&activeFolders.length===0&&rootNow===initialEmptyRoot;
+  if(safeEmptyReset)console.log('[SYNC] Master kosong terverifikasi; generated state lama akan diperbarui tanpa memulihkan video yang sudah dihapus.');
+  else captureStudioProps(ROOT);
  registerMissingSceneSegments(ROOT);
  const dirs=fs.readdirSync(PROJECTS,{withFileTypes:true}).filter(x=>x.isDirectory()&&!x.name.startsWith('_')&&!x.name.startsWith('.')).sort((a,b)=>a.name.localeCompare(b.name));
  const entries=[],imports=[],segmentDeclarations=[],comps=[],ids=new Set(),slugs=new Set(),folderNames=new Set(),allCompositions=[];

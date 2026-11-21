@@ -10,8 +10,8 @@ Satu Master, tanpa editor alternatif. ChatGPT menghasilkan add-on sesuai `contra
 4. Pengguna jalankan `npm run addon:validate -- "C:\\path\\slug" --strict`, lalu `npm run addfolder -- "C:\\path\\slug"` (atau masukkan ZIP ke `library/masuk/` kemudian `npm run import`). Tidak perlu mengedit `src/Root.tsx`, `src/index.ts`, `library/catalog.json`.
 5. `npm run dev` atau `npm run sync`. Preview/revisi sampai visual disetujui. VO Guide pada `<ID>VOGuide` memakai draft `src/config/narration.json`; teks dapat diubah di Props komposisi guide lalu pilih **Save to code** dan sync. Alternatif: `npm run vo:edit -- <slug>`.
 6. **Rekam VO setelah motion disetujui.** Tempel audio asli ke `<slug>/public/audio/`, edit source/Props audio sesuai scene, sinkron timing visual dan subtitle, jangan asal mempercepat narasi.
-7. Uji `npm test`, `npm run check`, render MP4, `npm run qa:render -- out/video.mp4 --src projects/<slug>`. Review manual frame, subtitle, kursor, keselamatan layar HP dan lip-sync.
-8. Arsipkan hasil dengan `npm run zip -- --all` atau ZIP Master lengkap `npm run zip -- --studio`. `--studio --lean` mengecualikan riwayat backup dari ZIP saja, tanpa menghapus backup di disk.
+7. Uji `npm test`, `npm run check:sync`, `npm run check` (tanpa sync otomatis), `npm run qa:smoke -- --still <IDVideo>` setelah `npm ci`, render MP4, `npm run qa:render -- out/video.mp4 --src projects/<slug>`. Review manual frame, subtitle, kursor, keselamatan layar HP dan lip-sync.
+8. Arsipkan hasil dengan `npm run zip -- --all` atau ZIP Master Engine Only `npm run zip -- --studio`. Gunakan `--studio --with-projects` hanya untuk backup semua video; `--studio --full` menambah riwayat backup. Tidak satu pun menghapus file di PC.
 
 ## Kontrak add-on ChatGPT
 - Manifest: `id`, `slug`, `title`, `entry`, `exportName`, `width`, `height`, `fps`, `durationInFrames`, `defaultProps`, opsional `segments`.
@@ -42,3 +42,16 @@ Satu Master, tanpa editor alternatif. ChatGPT menghasilkan add-on sesuai `contra
 - https://www.remotion.dev/docs/studio/interactivity-best-practices
 - https://www.remotion.dev/docs/interactive
 - https://www.remotion.dev/docs/cli/render
+
+
+## Quality gate tambahan (v1.1)
+- `--strict` menolak `defaultProps` yang hilang, aset `staticFile` yang hilang, import dinamis tidak dapat diverifikasi, serta import relatif yang menuju file tak ada.
+- `--syntax` mensyaratkan parser TypeScript tersedia. Tanpa dependensi, ini FAIL, bukan PASS palsu.
+- Untuk add-on baru, validator kontrak wajib lulus sebelum import. Add-on lawas tetap dibaca dengan validasi non-strict saat sync agar scene lama tidak rusak.
+- Revisi `addon:patch --dry-run` membangun salinan proyek **sementara** dan memvalidasi hasil akhirnya sebelum file aktif disentuh. Hash tetap dicek ulang sebelum menulis.
+- `npm run check` sekarang READ-ONLY: bila belum sinkron, jalankan `npm run sync` secara eksplisit, lalu ulangi check.
+- Smoke Remotion memerlukan `npm ci`, browser, dan CLI yang benar-benar tersedia. Ia memeriksa bundling dan frame pertama; bukan sertifikasi seluruh audio/MP4.
+- Lihat `docs/MAINTENANCE-AND-RECOVERY.md` untuk verifikasi dan pembersihan aman.
+
+
+Alur entry point dan penanganan error terbaru: [USER-FLOW-CHATGPT.md](USER-FLOW-CHATGPT.md). Kontrak editing native: [EDITABLE-CONTRACT.md](EDITABLE-CONTRACT.md).
