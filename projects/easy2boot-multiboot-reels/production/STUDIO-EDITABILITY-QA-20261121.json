@@ -1,0 +1,40 @@
+{
+  "project_id": "Easy2BootMultibootReels",
+  "slug": "easy2boot-multiboot-reels",
+  "master": "MotionGraphic-Studio-FULL-v1.8.1-20261121-051004.zip",
+  "tested": {
+    "syntax_scanned": 62,
+    "syntax_errors": 0,
+    "addon_validator_errors": 0,
+    "addon_validator_warnings": 0,
+    "sync_full_compositions": 1,
+    "sync_segments": 6,
+    "node_tests_total": 84,
+    "node_tests_passed": 77,
+    "node_tests_skipped": 7,
+    "node_tests_failed": 0
+  },
+  "not_tested": [
+    "full TypeScript typecheck with Remotion deps installed",
+    "native Remotion MP4 render",
+    "Studio click/drag/doubleclick",
+    "Save-to-code",
+    "reload persistence",
+    "pixel-perfect approved scene visual parity"
+  ],
+  "implementation": "Interactive.Text literals and independent Interactive.G vector parts. Some Props/complex tspan elements still source/Props-only.",
+  "locked_visual_status": {
+    "scene_01": "ACC: visually preserve",
+    "scene_02": "ACC: visually preserve",
+    "bridge_02_03": "ACC: visually preserve",
+    "scene_03": "ACC parts preserved",
+    "scene_04": "review",
+    "scene_05": "review",
+    "scene_06": "not ACC"
+  },
+  "frame_count": 2467,
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "scene06_new_approved": "S06 CTA Mix matchmove 390f: native Interactive SVG & Text, independent text/layers; not GUI tested"
+}

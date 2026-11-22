@@ -1,0 +1,262 @@
+{
+  "schemaVersion": 1,
+  "status": "review",
+  "notes": "15 mikro-SFX ringan hanya pada aksi penting; tanpa musik dan tanpa VO. Sinkronisasi akhir dan gain dinilai lagi setelah rekaman VO. | Offset +135 frames from former S03 onward after inserting question scene. | Scene 04 ACC v15 extended to 8s (+30 frames thereafter). | v56: 4 cue pembatalan dipetakan ke native S09 (timing v55).",
+  "cues": [
+    {
+      "id": "sd-01-01",
+      "scene": "S01",
+      "action": "Judul masalah awal masuk",
+      "kind": "action",
+      "startFrame": 12,
+      "impactFrame": 13,
+      "endFrame": 26,
+      "sceneFrame": 12,
+      "status": "ready",
+      "file": "audio/sfx/soft_reveal.wav",
+      "gainDb": -20,
+      "source": {
+        "kind": "own",
+        "title": "Micro-SFX synthesized for MotionGraphic Studio, reused from local Easy2Boot project"
+      }
+    },
+    {
+      "id": "sd-01-02",
+      "scene": "S01",
+      "action": "Situasi laptop menyala semalaman",
+      "kind": "action",
+      "startFrame": 139,
+      "impactFrame": 140,
+      "endFrame": 153,
+      "sceneFrame": 139,
+      "status": "ready",
+      "file": "audio/sfx/micro_click.wav",
+      "gainDb": -19,
+      "source": {
+        "kind": "own",
+        "title": "Micro-SFX synthesized for MotionGraphic Studio, reused from local Easy2Boot project"
+      }
+    },
+    {
+      "id": "sd-02-03",
+      "scene": "S02",
+      "action": "Perpindahan fokus ke download belum selesai",
+      "kind": "action",
+      "startFrame": 261,
+      "impactFrame": 262,
+      "endFrame": 275,
+      "sceneFrame": 21,
+      "status": "ready",
+      "file": "audio/sfx/soft_reveal.wav",
+      "gainDb": -21,
+      "source": {
+        "kind": "own",
+        "title": "Micro-SFX synthesized for MotionGraphic Studio, reused from local Easy2Boot project"
+      }
+    },
+    {
+      "id": "sd-02-04",
+      "scene": "S02",
+      "action": "Status download menjadi fokus",
+      "kind": "action",
+      "startFrame": 338,
+      "impactFrame": 339,
+      "endFrame": 352,
+      "sceneFrame": 98,
+      "status": "ready",
+      "file": "audio/sfx/micro_click.wav",
+      "gainDb": -19,
+      "source": {
+        "kind": "own",
+        "title": "Micro-SFX synthesized for MotionGraphic Studio, reused from local Easy2Boot project"
+      }
+    },
+    {
+      "id": "sd-03-05",
+      "scene": "S03",
+      "action": "Jam analog menjadi fokus",
+      "kind": "action",
+      "startFrame": 602,
+      "impactFrame": 603,
+      "endFrame": 616,
+      "sceneFrame": 62,
+      "status": "ready",
+      "file": "audio/sfx/soft_reveal.wav",
+      "gainDb": -20,
+      "source": {
+        "kind": "own",
+        "title": "Micro-SFX synthesized for MotionGraphic Studio, reused from local Easy2Boot project"
+      }
+    },
+    {
+      "id": "sd-03-06",
+      "scene": "S03",
+      "action": "Hasil penjadwalan shutdown ditampilkan",
+      "kind": "action",
+      "startFrame": 702,
+      "impactFrame": 703,
+      "endFrame": 716,
+      "sceneFrame": 162,
+      "status": "ready",
+      "file": "audio/sfx/confirm.wav",
+      "gainDb": -18,
+      "source": {
+        "kind": "own",
+        "title": "Micro-SFX synthesized for MotionGraphic Studio, reused from local Easy2Boot project"
+      }
+    },
+    {
+      "id": "sd-04-07",
+      "scene": "S04",
+      "action": "Tekan shortcut Windows + R",
+      "kind": "action",
+      "startFrame": 852,
+      "impactFrame": 853,
+      "endFrame": 866,
+      "sceneFrame": 72,
+      "status": "ready",
+      "file": "audio/sfx/micro_click.wav",
+      "gainDb": -17,
+      "source": {
+        "kind": "own",
+        "title": "Micro-SFX synthesized for MotionGraphic Studio, reused from local Easy2Boot project"
+      }
+    },
+    {
+      "id": "sd-04-08",
+      "scene": "S04",
+      "action": "Mulai mengetik perintah Run",
+      "kind": "action",
+      "startFrame": 912,
+      "impactFrame": 913,
+      "endFrame": 926,
+      "sceneFrame": 132,
+      "status": "ready",
+      "file": "audio/sfx/micro_click.wav",
+      "gainDb": -20,
+      "source": {
+        "kind": "own",
+        "title": "Micro-SFX synthesized for MotionGraphic Studio, reused from local Easy2Boot project"
+      }
+    },
+    {
+      "id": "sd-04-09",
+      "scene": "S04",
+      "action": "Klik tombol OK pada Run",
+      "kind": "action",
+      "startFrame": 1055,
+      "impactFrame": 1056,
+      "endFrame": 1069,
+      "sceneFrame": 275,
+      "status": "ready",
+      "file": "audio/sfx/micro_click.wav",
+      "gainDb": -17,
+      "source": {
+        "kind": "own",
+        "title": "Micro-SFX synthesized for MotionGraphic Studio, reused from local Easy2Boot project"
+      }
+    },
+    {
+      "id": "sd-05-10",
+      "scene": "S05",
+      "action": "Countdown mulai berjalan cepat",
+      "kind": "action",
+      "startFrame": 1205,
+      "impactFrame": 1206,
+      "endFrame": 1219,
+      "sceneFrame": 125,
+      "status": "ready",
+      "file": "audio/sfx/soft_reveal.wav",
+      "gainDb": -21,
+      "source": {
+        "kind": "own",
+        "title": "Micro-SFX synthesized for MotionGraphic Studio, reused from local Easy2Boot project"
+      }
+    },
+    {
+      "id": "sd-05-11",
+      "scene": "S05",
+      "action": "Waktu habis dan laptop mati",
+      "kind": "action",
+      "startFrame": 1275,
+      "impactFrame": 1276,
+      "endFrame": 1289,
+      "sceneFrame": 195,
+      "status": "ready",
+      "file": "audio/sfx/confirm.wav",
+      "gainDb": -19,
+      "source": {
+        "kind": "own",
+        "title": "Micro-SFX synthesized for MotionGraphic Studio, reused from local Easy2Boot project"
+      }
+    },
+    {
+      "id": "sd-06-12",
+      "scene": "S09",
+      "action": "Jendela Run pembatalan muncul perlahan",
+      "kind": "action",
+      "startFrame": 1723,
+      "impactFrame": 1724,
+      "endFrame": 1737,
+      "sceneFrame": 28,
+      "status": "ready",
+      "file": "audio/sfx/soft_reveal.wav",
+      "gainDb": -20,
+      "source": {
+        "kind": "own",
+        "title": "Micro-SFX synthesized for MotionGraphic Studio, reused from local Easy2Boot project"
+      }
+    },
+    {
+      "id": "sd-06-13",
+      "scene": "S09",
+      "action": "Perintah shutdown /a sedang diketik",
+      "kind": "action",
+      "startFrame": 1783,
+      "impactFrame": 1784,
+      "endFrame": 1797,
+      "sceneFrame": 88,
+      "status": "ready",
+      "file": "audio/sfx/micro_click.wav",
+      "gainDb": -21,
+      "source": {
+        "kind": "own",
+        "title": "Micro-SFX synthesized for MotionGraphic Studio, reused from local Easy2Boot project"
+      }
+    },
+    {
+      "id": "sd-06-14",
+      "scene": "S09",
+      "action": "Tekan OK untuk membatalkan",
+      "kind": "action",
+      "startFrame": 1868,
+      "impactFrame": 1869,
+      "endFrame": 1882,
+      "sceneFrame": 173,
+      "status": "ready",
+      "file": "audio/sfx/micro_click.wav",
+      "gainDb": -17,
+      "source": {
+        "kind": "own",
+        "title": "Micro-SFX synthesized for MotionGraphic Studio, reused from local Easy2Boot project"
+      }
+    },
+    {
+      "id": "sd-06-15",
+      "scene": "S09",
+      "action": "Jadwal shutdown dibatalkan",
+      "kind": "action",
+      "startFrame": 1923,
+      "impactFrame": 1924,
+      "endFrame": 1937,
+      "sceneFrame": 228,
+      "status": "ready",
+      "file": "audio/sfx/confirm.wav",
+      "gainDb": -17,
+      "source": {
+        "kind": "own",
+        "title": "Micro-SFX synthesized for MotionGraphic Studio, reused from local Easy2Boot project"
+      }
+    }
+  ]
+}

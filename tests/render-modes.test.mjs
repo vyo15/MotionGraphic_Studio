@@ -48,7 +48,7 @@ function fixture(){
  const home=fs.mkdtempSync(path.join(os.tmpdir(),'mg-render-fixture-'));
  const root=path.join(home,'MotionGraphic-Studio');
  for(const folder of ['tools','library','node_modules/@remotion/cli'])fs.mkdirSync(path.join(root,folder),{recursive:true});
- for(const filename of ['render-menu.mjs','render-plan.mjs','menu-helper.mjs','render-progress.mjs','export-paths.mjs']){
+ for(const filename of ['render-menu.mjs','render-plan.mjs','menu-helper.mjs','render-progress.mjs','export-paths.mjs','render-profiles.mjs']){
   fs.copyFileSync(path.join(ROOT,'tools',filename),path.join(root,'tools',filename));
  }
  const project={id:'DemoVideo',slug:'demo',title:'Demo Video',width:720,height:1280,fps:30,durationInFrames:9,

@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 1,
+  "review": "Shutdown Scene 01-05 editable audit v16",
+  "sourceMaster": "MotionGraphic-Studio-FULL-v1.8.1-20261122-052107.zip",
+  "scope": "Shutdown only; Easy2Boot preserved bit-identical at project path",
+  "timing": {
+    "fps": 30,
+    "durationFrames": 1950,
+    "durationSeconds": 65,
+    "scene04Frames": 240,
+    "scene04Seconds": 8
+  },
+  "scenes": [
+    {
+      "index": 1,
+      "composition": "S01Ketiduran",
+      "status": "preserved",
+      "source": "src/scenes/Scene01.tsx",
+      "editable": "Native Interactive + SceneSet; film, scene, clock, captions"
+    },
+    {
+      "index": 2,
+      "composition": "S02Download",
+      "status": "preserved",
+      "source": "src/scenes/Scene02.tsx",
+      "editable": "Native Interactive + SceneSet; figure, download panel and Props percent"
+    },
+    {
+      "index": 3,
+      "composition": "S03Pertanyaan",
+      "status": "preserved",
+      "source": "src/scenes/SceneQuestion.tsx",
+      "editable": "Native Interactive question text + ornaments + clock"
+    },
+    {
+      "index": 4,
+      "composition": "S04Solusi",
+      "status": "rebuilt",
+      "source": "src/scenes/Scene03.tsx",
+      "editable": "Native title, clock, 2 separate activity cards, progress bars, statuses, timeline, OFF; Props controls"
+    },
+    {
+      "index": 5,
+      "composition": "S05RunKlikOK",
+      "status": "preserved",
+      "source": "src/scenes/Scene04.tsx",
+      "editable": "Native shortcuts, Run window, command, pointer + captions"
+    }
+  ],
+  "verification": {
+    "nativeEditable": "pass 168 targets 0 errors",
+    "syntax": "pass",
+    "timeline": "pass",
+    "SFX": "pass 15 cues",
+    "sync": "pass 19 compositions",
+    "GUI_SaveReload": "not tested",
+    "officialRender": "not tested"
+  },
+  "important": "Simulation shows film and download done before shutdown. Windows scheduled shutdown is time-based and cannot guarantee downloads finish."
+}

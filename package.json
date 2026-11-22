@@ -41,7 +41,10 @@
     "flow": "node tools/project-flow.mjs",
     "clean": "node tools/clean-master.mjs",
     "backup:editing": "node tools/studio-session-backup.mjs",
-    "retire:unregistered": "node tools/retire-unregistered.mjs"
+    "retire:unregistered": "node tools/retire-unregistered.mjs",
+    "qa:sound": "node tools/qa-sound-cues.mjs",
+    "qa:layers": "node tools/check-layer-instances.mjs",
+    "qa:native": "node tools/qa-native-editable.mjs --strict"
   },
   "dependencies": {
     "@remotion/cli": "4.0.538",

@@ -6,25 +6,29 @@
  */
 import fs from 'node:fs';
 import path from 'node:path';
+import os from 'node:os';
 import {spawn} from 'node:child_process';
 import {createInterface} from 'node:readline/promises';
 import {ROOT,readCatalog} from './menu-helper.mjs';
 import {renderChoices,resolveMode,printSceneList,makeRenderPlan} from './render-plan.mjs';
 import {removeAnsi,duration,progressBar,parseRenderUpdate,newProgressTracker} from './render-progress.mjs';
 import {ensureExportDirs,exportPaths,availableFile,timestamp} from './export-paths.mjs';
+import {RENDER_PROFILES,resolveRenderProfile,renderProfileChoices,encoderFlags,capcutOverrides} from './render-profiles.mjs';
 
 const MAX_LOG_LINES=16;
 const now=()=>Date.now();
 const usage=()=>{
- console.log(`\nRENDER MP4 — MotionGraphic Studio\n\n  npm run render                          Pilih project & mode interaktif\n  npm run render -- IDVideo               Full video (kompatibel dengan perintah lama)\n  npm run render -- IDVideo --mode scene --scene 3\n  npm run render -- IDVideo --mode selected --scenes 1,3,5\n  npm run render -- IDVideo --mode all\n  node tools/render-menu.mjs IDVideo --mode all --dry-run\n\nMode: full | scene | selected | all. Nomor scene mulai dari 1.\nFile MP4 dan log berada di MotionGraphic-Studio-Backups (di luar Master).\n`);
+ console.log(`\nRENDER MP4 — MotionGraphic Studio\n\n  npm run render                          Pilih project & mode interaktif\n  npm run render -- IDVideo               Full video high quality (Props asli)
+  npm run render -- IDVideo --profile capcut   Motion + SFX untuk CapCut\n  npm run render -- IDVideo --mode scene --scene 3\n  npm run render -- IDVideo --mode selected --scenes 1,3,5\n  npm run render -- IDVideo --mode all\n  node tools/render-menu.mjs IDVideo --mode all --dry-run\n\nMode: full | scene | selected | all. Profil: capcut | high | preview.
+Default CLI tanpa --profile = high (Props asli). Menu dapat memilih CapCut HQ.\nFile MP4 dan log berada di MotionGraphic-Studio-Backups (di luar Master).\n`);
 };
 function parseArgs(args){
- const o={video:null,mode:null,scene:null,scenes:null,dryRun:false,help:false};
+ const o={video:null,mode:null,scene:null,scenes:null,profile:null,dryRun:false,help:false};
  for(let i=0;i<args.length;i++){
   const arg=args[i];
   if(arg==='--help'||arg==='-h'){o.help=true;continue}
   if(arg==='--dry-run'){o.dryRun=true;continue}
-  if(['--mode','--scene','--scenes'].includes(arg)){
+  if(['--mode','--scene','--scenes','--profile'].includes(arg)){
    const key=arg.slice(2);
    if(o[key]!==null)throw Error(`Opsi ${arg} hanya boleh sekali.`);
    const value=args[++i];
@@ -88,26 +92,38 @@ async function choosePlan(args){
    throw Error(mode==='scene'?'Mode scene harus memakai --scene.':'Mode selected harus memakai --scenes.');
   }
   const plan=makeRenderPlan(video,mode,selection);
-  return {video,mode,plan};
+  let profile=args.profile?resolveRenderProfile(args.profile):null;
+  if(!profile){
+   if(!interactive)profile='high'; // compatible dengan otomasi lama
+   else{
+    console.log('\nPROFIL KUALITAS:');
+    renderProfileChoices().forEach(([num,,label])=>console.log(`  ${num}. ${label}`));
+    profile=resolveRenderProfile((await ask('Pilih 1/2/3 (Enter = CapCut HQ): '))||'capcut');
+   }
+  }
+  return {video,mode,plan,profile};
  }finally{rl?.close()}
 }
 function targetDir(exports,video,mode){
  const branch=mode==='full'?'full':mode==='selected'?'selected-scenes':'scenes';
  return path.join(exports.mp4,video.slug,branch);
 }
-function printPlan({video,mode,plan},dest){
+function printPlan({video,mode,plan,profile},dest){
  console.log(`\n========== RENCANA RENDER ==========`);
  console.log(`Project : ${video.title}\nID      : ${video.id}\nMode    : ${mode.toUpperCase()}`);
  console.log(`Output  : ${dest}`);
+ console.log(`Profil  : ${RENDER_PROFILES[profile].label}`);
+ console.log(`Resolusi: ${video.width} × ${video.height} | ${video.fps} FPS (mengikuti komposisi asli)`);
  for(const [i,job] of plan.entries()){
   const seconds=(job.frames/video.fps).toFixed(2);
   console.log(`  ${i+1}/${plan.length}. ${job.title} [${job.id}] — ${seconds} detik`);
  }
  console.log(`Total: ${plan.length} file MP4 terpisah.\n`);
 }
-async function renderOne({video,job,output,logPath,cli,concurrency,index,count}){
+async function renderOne({video,job,output,logPath,cli,concurrency,index,count,profile,propsPath}){
  const started=now();const total=job.frames;
- const args=[cli,'render','src/index.ts',job.id,output,'--codec=h264','--log=info',`--concurrency=${concurrency}`];
+ const args=[cli,'render','src/index.ts',job.id,output,...encoderFlags(profile),'--log=info',`--concurrency=${concurrency}`];
+ if(propsPath)args.push(`--props=${propsPath}`);
  const log=fs.createWriteStream(logPath,{flags:'wx'});
  log.write(`[START] ${new Date().toISOString()}\n[PROJECT] ${video.id}\n[COMPOSITION] ${job.id}\n[FRAMES] ${total}\n[COMMAND] node ${args.slice(1).join(' ')}\n`);
  console.log(`\n[${index}/${count}] Render ${job.title} [${job.id}]`);
@@ -214,7 +230,7 @@ async function main(){
  if(args.help){usage();return}
  const chosen=await choosePlan(args);
  if(!chosen){console.log('[RENDER] Dibatalkan tanpa perubahan.');return}
- const {video,mode,plan}=chosen;
+ const {video,mode,plan,profile}=chosen;
  const dest=targetDir(exportPaths(),video,mode);
  printPlan(chosen,dest);
  if(args.dryRun){console.log('[DRY RUN] Tidak menjalankan Remotion dan tidak membuat file.');return}
@@ -227,11 +243,22 @@ async function main(){
  const logsDir=path.join(folders.logs,'Render',video.slug);
  fs.mkdirSync(outputDir,{recursive:true});fs.mkdirSync(logsDir,{recursive:true});
  let completed=0;const outputs=[];
- for(const [i,job] of plan.entries()){
-  const stem=`${job.id}-${timestamp()}`;
+ let propsDir=null,propsPath=null;
+ if(profile==='capcut'){
+  // Gunakan props sementara, bukan mengedit manifest/Root.tsx/ACC.
+  const {props,changed}=capcutOverrides(video.defaultProps);
+  propsDir=fs.mkdtempSync(path.join(os.tmpdir(),'mg-capcut-render-'));
+  propsPath=path.join(propsDir,'props.json');
+  fs.writeFileSync(propsPath,JSON.stringify(props),'utf8');
+  console.log(`[CAPCUT] Override sementara: ${changed.length?changed.join(', '):'(sudah sesuai)'}`);
+  if(!Object.hasOwn(video.defaultProps,'showSfx'))console.warn('[CAPCUT] Tidak ada showSfx di Props; cek SFX pada output.');
+ }
+ try{
+ for(const [i,job] of plan.entries()){ 
+  const stem=`${job.id}-${profile}-${timestamp()}`;
   const output=availableFile(outputDir,stem,'.mp4');
   const logPath=availableFile(logsDir,stem,'.log');
-  const result=await renderOne({video,job,output,logPath,cli,concurrency,index:i+1,count:plan.length});
+  const result=await renderOne({video,job,output,logPath,cli,concurrency,index:i+1,count:plan.length,profile,propsPath});
   if(!result.ok){
    console.error(`\n[BATCH TERHENTI] ${completed}/${plan.length} MP4 berhasil. Yang sudah jadi tetap tersimpan.`);
    process.exitCode=result.code||1;return;
@@ -241,5 +268,6 @@ async function main(){
  console.log(`\n========= RENDER SELESAI (${completed}/${plan.length}) =========`);
  for(const file of outputs)console.log('  '+file);
  console.log('\n[INFO] MP4 tersimpan di luar folder Master, tidak ikut ZIP source.');
+ }finally{if(propsDir)fs.rmSync(propsDir,{recursive:true,force:true})}
 }
 main().catch(error=>{console.error('\n[ERROR RENDER] '+error.message);process.exitCode=1});

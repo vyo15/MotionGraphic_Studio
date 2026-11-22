@@ -1,0 +1,551 @@
+{
+  "schemaVersion": 1,
+  "status": "review",
+  "notes": "SFX cue awal bridge dan cover diselaraskan dengan reveal teks aktual. 32 cue tetap; level dan 7 aset asli tidak diubah. Review mixing akhir setelah VO natural direkam.",
+  "cues": [
+    {
+      "id": "s01-01",
+      "scene": "S01",
+      "action": "Headline awal masuk",
+      "kind": "reveal",
+      "startFrame": 12,
+      "impactFrame": 13,
+      "endFrame": 22,
+      "sceneFrame": 12,
+      "status": "ready",
+      "file": "audio/sfx/soft_reveal.wav",
+      "gainDb": -18,
+      "source": {
+        "kind": "own",
+        "title": "Synthesized original motion UI cue"
+      }
+    },
+    {
+      "id": "s01-02",
+      "scene": "S01",
+      "action": "Teks perbandingan muncul",
+      "kind": "reveal",
+      "startFrame": 112,
+      "impactFrame": 113,
+      "endFrame": 122,
+      "sceneFrame": 112,
+      "status": "ready",
+      "file": "audio/sfx/soft_reveal.wav",
+      "gainDb": -18,
+      "source": {
+        "kind": "own",
+        "title": "Synthesized original motion UI cue"
+      }
+    },
+    {
+      "id": "s01-03",
+      "scene": "S01",
+      "action": "Flashdisk muncul",
+      "kind": "action",
+      "startFrame": 127,
+      "impactFrame": 128,
+      "endFrame": 134,
+      "sceneFrame": 127,
+      "status": "ready",
+      "file": "audio/sfx/usb_place.wav",
+      "gainDb": -15,
+      "source": {
+        "kind": "own",
+        "title": "Synthesized original motion UI cue"
+      }
+    },
+    {
+      "id": "s01-04",
+      "scene": "S01",
+      "action": "Angka 11 muncul",
+      "kind": "action",
+      "startFrame": 136,
+      "impactFrame": 137,
+      "endFrame": 141,
+      "sceneFrame": 136,
+      "status": "ready",
+      "file": "audio/sfx/micro_click.wav",
+      "gainDb": -15,
+      "source": {
+        "kind": "own",
+        "title": "Synthesized original motion UI cue"
+      }
+    },
+    {
+      "id": "s01-05",
+      "scene": "S01",
+      "action": "Angka 10 muncul",
+      "kind": "action",
+      "startFrame": 151,
+      "impactFrame": 152,
+      "endFrame": 156,
+      "sceneFrame": 151,
+      "status": "ready",
+      "file": "audio/sfx/micro_click.wav",
+      "gainDb": -15,
+      "source": {
+        "kind": "own",
+        "title": "Synthesized original motion UI cue"
+      }
+    },
+    {
+      "id": "s01-06",
+      "scene": "S01",
+      "action": "Tanda X pada USB bootable",
+      "kind": "impact",
+      "startFrame": 332,
+      "impactFrame": 333,
+      "endFrame": 343,
+      "sceneFrame": 332,
+      "status": "ready",
+      "file": "audio/sfx/warning_stump.wav",
+      "gainDb": -13,
+      "source": {
+        "kind": "own",
+        "title": "Synthesized original motion UI cue"
+      }
+    },
+    {
+      "id": "s02-01",
+      "scene": "S02",
+      "action": "Kartu lama pecah",
+      "kind": "impact",
+      "startFrame": 386,
+      "impactFrame": 387,
+      "endFrame": 397,
+      "sceneFrame": 5,
+      "status": "ready",
+      "file": "audio/sfx/soft_break.wav",
+      "gainDb": -13,
+      "source": {
+        "kind": "own",
+        "title": "Synthesized original motion UI cue"
+      }
+    },
+    {
+      "id": "s02-02",
+      "scene": "S02",
+      "action": "Solusi Easy2Boot muncul",
+      "kind": "reveal",
+      "startFrame": 473,
+      "impactFrame": 474,
+      "endFrame": 483,
+      "sceneFrame": 92,
+      "status": "ready",
+      "file": "audio/sfx/soft_reveal.wav",
+      "gainDb": -18,
+      "source": {
+        "kind": "own",
+        "title": "Synthesized original motion UI cue"
+      }
+    },
+    {
+      "id": "s02-03",
+      "scene": "S02",
+      "action": "Flashdisk hero tampil",
+      "kind": "action",
+      "startFrame": 567,
+      "impactFrame": 568,
+      "endFrame": 574,
+      "sceneFrame": 186,
+      "status": "ready",
+      "file": "audio/sfx/usb_place.wav",
+      "gainDb": -15,
+      "source": {
+        "kind": "own",
+        "title": "Synthesized original motion UI cue"
+      }
+    },
+    {
+      "id": "s02-04",
+      "scene": "S02",
+      "action": "Installer pertama masuk",
+      "kind": "action",
+      "startFrame": 591,
+      "impactFrame": 592,
+      "endFrame": 603,
+      "sceneFrame": 210,
+      "status": "ready",
+      "file": "audio/sfx/iso_transfer.wav",
+      "gainDb": -15,
+      "source": {
+        "kind": "own",
+        "title": "Synthesized original motion UI cue"
+      }
+    },
+    {
+      "id": "s02-05",
+      "scene": "S02",
+      "action": "Installer kedua masuk",
+      "kind": "action",
+      "startFrame": 627,
+      "impactFrame": 628,
+      "endFrame": 639,
+      "sceneFrame": 246,
+      "status": "ready",
+      "file": "audio/sfx/iso_transfer.wav",
+      "gainDb": -15,
+      "source": {
+        "kind": "own",
+        "title": "Synthesized original motion UI cue"
+      }
+    },
+    {
+      "id": "s02-06",
+      "scene": "S02",
+      "action": "Installer ketiga masuk",
+      "kind": "action",
+      "startFrame": 663,
+      "impactFrame": 664,
+      "endFrame": 675,
+      "sceneFrame": 282,
+      "status": "ready",
+      "file": "audio/sfx/iso_transfer.wav",
+      "gainDb": -15,
+      "source": {
+        "kind": "own",
+        "title": "Synthesized original motion UI cue"
+      }
+    },
+    {
+      "id": "s02-07",
+      "scene": "S02",
+      "action": "Pertanyaan GIMANA CARA BIKINNYA mulai muncul",
+      "kind": "reveal",
+      "startFrame": 828,
+      "impactFrame": 829,
+      "endFrame": 838,
+      "sceneFrame": 447,
+      "status": "ready",
+      "file": "audio/sfx/soft_reveal.wav",
+      "gainDb": -18,
+      "source": {
+        "kind": "own",
+        "title": "Synthesized original motion UI cue"
+      }
+    },
+    {
+      "id": "s03-01",
+      "scene": "S03",
+      "action": "Pengingat backup ditampilkan",
+      "kind": "action",
+      "startFrame": 924,
+      "impactFrame": 925,
+      "endFrame": 929,
+      "sceneFrame": 45,
+      "status": "ready",
+      "file": "audio/sfx/micro_click.wav",
+      "gainDb": -15,
+      "source": {
+        "kind": "own",
+        "title": "Synthesized original motion UI cue"
+      }
+    },
+    {
+      "id": "s03-02",
+      "scene": "S03",
+      "action": "Easy2Boot dibuka",
+      "kind": "reveal",
+      "startFrame": 1131,
+      "impactFrame": 1132,
+      "endFrame": 1141,
+      "sceneFrame": 252,
+      "status": "ready",
+      "file": "audio/sfx/soft_reveal.wav",
+      "gainDb": -18,
+      "source": {
+        "kind": "own",
+        "title": "Synthesized original motion UI cue"
+      }
+    },
+    {
+      "id": "s03-03",
+      "scene": "S03",
+      "action": "Pilih USB yang tepat",
+      "kind": "action",
+      "startFrame": 1174,
+      "impactFrame": 1175,
+      "endFrame": 1179,
+      "sceneFrame": 295,
+      "status": "ready",
+      "file": "audio/sfx/micro_click.wav",
+      "gainDb": -15,
+      "source": {
+        "kind": "own",
+        "title": "Synthesized original motion UI cue"
+      }
+    },
+    {
+      "id": "s03-04",
+      "scene": "S03",
+      "action": "Buat USB multiboot",
+      "kind": "action",
+      "startFrame": 1227,
+      "impactFrame": 1228,
+      "endFrame": 1232,
+      "sceneFrame": 348,
+      "status": "ready",
+      "file": "audio/sfx/micro_click.wav",
+      "gainDb": -15,
+      "source": {
+        "kind": "own",
+        "title": "Synthesized original motion UI cue"
+      }
+    },
+    {
+      "id": "s03-05",
+      "scene": "S03",
+      "action": "USB siap",
+      "kind": "result",
+      "startFrame": 1324,
+      "impactFrame": 1325,
+      "endFrame": 1337,
+      "sceneFrame": 445,
+      "status": "ready",
+      "file": "audio/sfx/confirm.wav",
+      "gainDb": -14,
+      "source": {
+        "kind": "own",
+        "title": "Synthesized original motion UI cue"
+      }
+    },
+    {
+      "id": "s04-01",
+      "scene": "S04",
+      "action": "File Explorer terbuka",
+      "kind": "reveal",
+      "startFrame": 1377,
+      "impactFrame": 1378,
+      "endFrame": 1388,
+      "sceneFrame": 26,
+      "status": "ready",
+      "file": "audio/sfx/soft_reveal.wav",
+      "gainDb": -18,
+      "source": {
+        "kind": "own",
+        "title": "Synthesized original motion UI cue"
+      }
+    },
+    {
+      "id": "s04-02",
+      "scene": "S04",
+      "action": "Win8 ISO berpindah dari kotak WIN8",
+      "kind": "action",
+      "startFrame": 1398,
+      "impactFrame": 1399,
+      "endFrame": 1409,
+      "sceneFrame": 47,
+      "status": "ready",
+      "file": "audio/sfx/iso_transfer.wav",
+      "gainDb": -15,
+      "source": {
+        "kind": "own",
+        "title": "Synthesized original motion UI cue"
+      }
+    },
+    {
+      "id": "s04-03",
+      "scene": "S04",
+      "action": "Win11 ISO berpindah dari kotak WIN11",
+      "kind": "action",
+      "startFrame": 1445,
+      "impactFrame": 1446,
+      "endFrame": 1456,
+      "sceneFrame": 94,
+      "status": "ready",
+      "file": "audio/sfx/iso_transfer.wav",
+      "gainDb": -15,
+      "source": {
+        "kind": "own",
+        "title": "Synthesized original motion UI cue"
+      }
+    },
+    {
+      "id": "s04-04",
+      "scene": "S04",
+      "action": "Linux ISO masuk; empat transfer selesai",
+      "kind": "result",
+      "startFrame": 1487,
+      "impactFrame": 1488,
+      "endFrame": 1498,
+      "sceneFrame": 136,
+      "status": "ready",
+      "file": "audio/sfx/confirm.wav",
+      "gainDb": -14,
+      "source": {
+        "kind": "own",
+        "title": "Synthesized original motion UI cue"
+      }
+    },
+    {
+      "id": "s04-05",
+      "scene": "S04",
+      "action": "USB hasil empat installer muncul",
+      "kind": "result",
+      "startFrame": 1511,
+      "impactFrame": 1512,
+      "endFrame": 1518,
+      "sceneFrame": 160,
+      "status": "ready",
+      "file": "audio/sfx/usb_place.wav",
+      "gainDb": -14,
+      "source": {
+        "kind": "own",
+        "title": "Synthesized original motion UI cue"
+      }
+    },
+    {
+      "id": "s05-01",
+      "scene": "S05",
+      "action": "USB mendekati laptop",
+      "kind": "action",
+      "startFrame": 1616,
+      "impactFrame": 1617,
+      "endFrame": 1623,
+      "sceneFrame": 25,
+      "status": "ready",
+      "file": "audio/sfx/usb_place.wav",
+      "gainDb": -15,
+      "source": {
+        "kind": "own",
+        "title": "Synthesized original motion UI cue"
+      }
+    },
+    {
+      "id": "s05-02",
+      "scene": "S05",
+      "action": "Pilihan USB Boot Menu aktif",
+      "kind": "action",
+      "startFrame": 1700,
+      "impactFrame": 1701,
+      "endFrame": 1705,
+      "sceneFrame": 109,
+      "status": "ready",
+      "file": "audio/sfx/micro_click.wav",
+      "gainDb": -15,
+      "source": {
+        "kind": "own",
+        "title": "Synthesized original motion UI cue"
+      }
+    },
+    {
+      "id": "s05-03",
+      "scene": "S05",
+      "action": "agFM kategori Windows dipilih",
+      "kind": "action",
+      "startFrame": 1779,
+      "impactFrame": 1780,
+      "endFrame": 1784,
+      "sceneFrame": 188,
+      "status": "ready",
+      "file": "audio/sfx/micro_click.wav",
+      "gainDb": -15,
+      "source": {
+        "kind": "own",
+        "title": "Synthesized original motion UI cue"
+      }
+    },
+    {
+      "id": "s05-04",
+      "scene": "S05",
+      "action": "Pilih ISO Windows 11",
+      "kind": "action",
+      "startFrame": 1857,
+      "impactFrame": 1858,
+      "endFrame": 1862,
+      "sceneFrame": 266,
+      "status": "ready",
+      "file": "audio/sfx/micro_click.wav",
+      "gainDb": -15,
+      "source": {
+        "kind": "own",
+        "title": "Synthesized original motion UI cue"
+      }
+    },
+    {
+      "id": "s05-05",
+      "scene": "S05",
+      "action": "Windows Setup terbuka",
+      "kind": "result",
+      "startFrame": 2012,
+      "impactFrame": 2013,
+      "endFrame": 2026,
+      "sceneFrame": 421,
+      "status": "ready",
+      "file": "audio/sfx/confirm.wav",
+      "gainDb": -14,
+      "source": {
+        "kind": "own",
+        "title": "Synthesized original motion UI cue"
+      }
+    },
+    {
+      "id": "s06-01",
+      "scene": "S06",
+      "action": "Pertanyaan penutup muncul",
+      "kind": "reveal",
+      "startFrame": 2117,
+      "impactFrame": 2118,
+      "endFrame": 2127,
+      "sceneFrame": 40,
+      "status": "ready",
+      "file": "audio/sfx/soft_reveal.wav",
+      "gainDb": -18,
+      "source": {
+        "kind": "own",
+        "title": "Synthesized original motion UI cue"
+      }
+    },
+    {
+      "id": "s06-02",
+      "scene": "S06",
+      "action": "Pilihan multiboot muncul",
+      "kind": "reveal",
+      "startFrame": 2229,
+      "impactFrame": 2230,
+      "endFrame": 2239,
+      "sceneFrame": 152,
+      "status": "ready",
+      "file": "audio/sfx/soft_reveal.wav",
+      "gainDb": -18,
+      "source": {
+        "kind": "own",
+        "title": "Synthesized original motion UI cue"
+      }
+    },
+    {
+      "id": "s06-03",
+      "scene": "S06",
+      "action": "CTA kolom komentar",
+      "kind": "action",
+      "startFrame": 2336,
+      "impactFrame": 2337,
+      "endFrame": 2341,
+      "sceneFrame": 259,
+      "status": "ready",
+      "file": "audio/sfx/micro_click.wav",
+      "gainDb": -15,
+      "source": {
+        "kind": "own",
+        "title": "Synthesized original motion UI cue"
+      }
+    },
+    {
+      "id": "s06-04",
+      "scene": "S06",
+      "action": "Judul cover final mulai muncul setelah Match Move",
+      "kind": "result",
+      "startFrame": 2412,
+      "impactFrame": 2413,
+      "endFrame": 2426,
+      "sceneFrame": 335,
+      "status": "ready",
+      "file": "audio/sfx/confirm.wav",
+      "gainDb": -14,
+      "source": {
+        "kind": "own",
+        "title": "Synthesized original motion UI cue"
+      }
+    }
+  ]
+}

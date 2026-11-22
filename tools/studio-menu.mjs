@@ -11,6 +11,7 @@ import {createInterface} from 'node:readline/promises';
 import {spawnSync} from 'node:child_process';
 import {ROOT,readCatalog} from './menu-helper.mjs';
 import {renderChoices,resolveMode,printSceneList,makeRenderPlan} from './render-plan.mjs';
+import {renderProfileChoices,resolveRenderProfile,RENDER_PROFILES} from './render-profiles.mjs';
 
 if(!process.stdin.isTTY){
   console.error('[MENU] Gunakan terminal interaktif untuk npm run menu. Untuk otomatisasi gunakan npm run zip -- --all / --studio / IDVideo.');
@@ -119,9 +120,14 @@ async function doRender(){
   // Validasi sebelum anak proses berjalan. Tidak ada input di child (Git Bash aman).
   let plan;
   try{plan=makeRenderPlan(video,mode,selection)}catch(e){return console.log('[MENU] '+e.message)}
-  console.log(`\n[RENDER] ${video.title} | ${mode.toUpperCase()} | ${plan.length} MP4`);
+  console.log('\n=== PILIH KUALITAS VIDEO ===');
+  renderProfileChoices().forEach(([num,,label])=>console.log(`  ${num}. ${label}`));
+  const picked=await ask('Pilih 1/2/3 (Enter = 1 CapCut HQ): ');
+  let profile;
+  try{profile=resolveRenderProfile(picked||'capcut')}catch(e){return console.log('[MENU] '+e.message)}
+  console.log(`\n[RENDER] ${video.title} | ${mode.toUpperCase()} | ${plan.length} MP4 | ${RENDER_PROFILES[profile].label}`);
   for(const job of plan)console.log(`  • ${job.title} [${job.id}]`);
-  runScript('render-menu.mjs',[video.id,'--mode',mode,...(selection?[mode==='scene'?'--scene':'--scenes',selection]:[])]);
+  runScript('render-menu.mjs',[video.id,'--mode',mode,'--profile',profile,...(selection?[mode==='scene'?'--scene':'--scenes',selection]:[])]);
 }
 async function doRename(){
   const project=await choose(currentProjects(),'PROJECT TERSEDIA:',p=>`${p.title} [${p.id}] (projects/${p.folder})`,p=>[p.id,p.slug,p.folder]);

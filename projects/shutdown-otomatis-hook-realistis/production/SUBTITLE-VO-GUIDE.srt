@@ -1,0 +1,87 @@
+1
+00:00:00,067 --> 00:00:04,267
+Pernah nggak sih ketiduran pas lagi nonton,
+
+2
+00:00:04,267 --> 00:00:08,000
+tapi laptopnya masih nyala semalaman?
+
+3
+00:00:08,267 --> 00:00:10,867
+Atau malah sebaliknya, udah ngantuk,
+
+4
+00:00:10,867 --> 00:00:13,500
+tapi download belum selesai?
+
+5
+00:00:15,000 --> 00:00:17,500
+Emang ada solusinya?
+
+6
+00:00:18,400 --> 00:00:19,567
+Tenang,
+
+7
+00:00:19,633 --> 00:00:21,967
+kamu bisa atur laptop
+
+8
+00:00:22,033 --> 00:00:25,733
+biar mati sendiri secara otomatis.
+
+9
+00:00:26,000 --> 00:00:28,067
+Caranya gampang.
+
+10
+00:00:28,100 --> 00:00:30,233
+Tekan Windows + R,
+
+11
+00:00:30,267 --> 00:00:33,967
+lalu ketik perintah ini,
+
+12
+00:00:34,033 --> 00:00:36,000
+lalu klik OK.
+
+13
+00:00:36,133 --> 00:00:39,467
+Angka 3600 itu artinya satu jam.
+
+14
+00:00:39,500 --> 00:00:41,133
+Kalau waktunya habis,
+
+15
+00:00:41,167 --> 00:00:43,500
+laptop bakal mati sendiri.
+
+16
+00:00:43,500 --> 00:00:45,267
+Kalau mau batalin,
+
+17
+00:00:45,300 --> 00:00:47,167
+tinggal buka Run lagi,
+
+18
+00:00:47,200 --> 00:00:50,233
+ketik perintah ini,
+
+19
+00:00:50,267 --> 00:00:51,967
+lalu Enter.
+
+20
+00:00:52,100 --> 00:00:54,833
+Kalau kamu punya cara lain
+
+21
+00:00:54,867 --> 00:00:56,833
+yang lebih praktis,
+
+22
+00:00:56,867 --> 00:01:00,000
+coba share di kolom komentar!

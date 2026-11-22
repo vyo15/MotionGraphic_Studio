@@ -47,3 +47,6 @@
 - Render Remotion native dan interaksi GUI Windows tidak dilakukan (dependensi Remotion belum terpasang pada lingkungan uji).
 
 Detail lebih lengkap di `QA-MASTER-1.8.1.md`.
+
+
+> Pembaruan ACC Scene04 (21 November 2026): timeline total **2461 frame / 30 FPS** (Scene04: **240 frame / 8 detik**), berkas `production/SCENE04-ACC-20261121.md` dan `README-SCENE04-ACC.md` adalah rujukan lebih baru daripada angka atau status Scene04 di atas. Scene05–06 masih review.

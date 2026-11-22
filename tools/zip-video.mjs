@@ -53,7 +53,7 @@ async function engineOnlyZip(){
   };
   try{
     for(const dir of ['src','tools','contracts','templates','docs','skills'])copy(dir);
-    for(const file of ['package.json','package-lock.json','tsconfig.json','.gitignore','README.md','PROMPT-PROYEK-CHATGPT.md','PRODUCTION-RULES.md','AGENTS.md','PANDUAN-REMOTION-STUDIO.md','public/README.txt','01-BUKA-STUDIO.bat','02-CEK-STUDIO.bat','03-STOP-STUDIO.bat','tests/engine-smoke.test.mjs'])copy(file);
+    for(const file of ['package.json','package-lock.json','tsconfig.json','.gitignore','README.md','CHATGPT-READ-FIRST.md','PROMPT-PROYEK-CHATGPT.md','PRODUCTION-RULES.md','AGENTS.md','PANDUAN-REMOTION-STUDIO.md','public/README.txt','01-BUKA-STUDIO.bat','02-CEK-STUDIO.bat','03-STOP-STUDIO.bat','tests/engine-smoke.test.mjs'])copy(file);
     fs.mkdirSync(path.join(target,'projects'),{recursive:true});
     fs.mkdirSync(path.join(target,'library/masuk'),{recursive:true});
     const inbox='library/masuk/TARUH-ZIP-VIDEO-DI-SINI.txt';
@@ -77,7 +77,7 @@ async function engineOnlyZip(){
 }
 async function studioZip({full=false}={}){
   const dirs=['projects','src','tools','library','tests','contracts','templates','docs','skills'];
-  const files=['package.json','package-lock.json','tsconfig.json','.gitignore','README.md','PROMPT-PROYEK-CHATGPT.md','PRODUCTION-RULES.md','AGENTS.md','PANDUAN-REMOTION-STUDIO.md','public/README.txt','01-BUKA-STUDIO.bat','02-CEK-STUDIO.bat','03-STOP-STUDIO.bat'];
+  const files=['package.json','package-lock.json','tsconfig.json','.gitignore','README.md','CHATGPT-READ-FIRST.md','PROMPT-PROYEK-CHATGPT.md','PRODUCTION-RULES.md','AGENTS.md','PANDUAN-REMOTION-STUDIO.md','public/README.txt','01-BUKA-STUDIO.bat','02-CEK-STUDIO.bat','03-STOP-STUDIO.bat'];
   const sources=[...dirs,...files].filter(name=>fs.existsSync(path.join(ROOT,name))).map(name=>({absolute:path.join(ROOT,name),name:'MotionGraphic-Studio/'+name}));
   const pkg=JSON.parse(fs.readFileSync(path.join(ROOT,'package.json'),'utf8'));
   const out=availableFile(exportDirs().master,`MotionGraphic-Studio-${full?'FULL':'WITH-PROJECTS'}-v${pkg.version}-${timestamp()}`,'.zip');

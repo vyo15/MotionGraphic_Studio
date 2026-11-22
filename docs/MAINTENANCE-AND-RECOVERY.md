@@ -10,6 +10,10 @@
 - Tidak ada perintah cleanup otomatis yang menghapus backup. Untuk penghapusan, verifikasi cadangan dan pilih file spesifik, jangan massal berdasarkan nama `backup` atau `frames`.
 
 
+## Kebersihan artefak dan perlindungan scene ACC
+
+Baca `docs/ARTIFACT-HYGIENE.md` sebelum menghapus file. `npm run clean` preview-only secara default dan hanya melaporkan file pada allowlist. Jangan menafsirkan file historis/backup/komponen dynamic sebagai sampah. Jangan hapus `PRODUCTION-STATE.json`, `src/config/narration.json`, ataupun `production/SCENE-VO-ACC-BOARD.md` dari ZIP Master bersama project. Jika memang ada penghapusan aman, berikan daftar file manual; ZIP FILE CHANGE ONLY dengan Replace tidak menghapus file lama.
+
 ## Pembersihan yang disengaja
 
 1. Jalankan `npm run clean` untuk preview daftar file sistem lama yang diketahui aman.

@@ -56,7 +56,7 @@ export function registrySignature(root){
     const safeEntry=typeof entryRel==='string'&&entryRel.startsWith('src/')&&!entryRel.includes('..')&&!entryRel.includes('\\');
     pieces.push(`entry-exists:${dir.name}:${safeEntry&&fs.existsSync(path.join(folder,entryRel))}`);
     pieces.push(`segment-component-exists:${dir.name}:${fs.existsSync(path.join(folder,'src','SegmentVideo.tsx'))}`);
-    for(const rel of ['motiongraphic-video.json','src/config/narration.json','src/config/segments.json','src/config/segments.ts','src/config/scenes.ts','src/config/series.ts']){
+    for(const rel of ['motiongraphic-video.json','src/config/narration.json','PRODUCTION-STATE.json','src/config/segments.json','src/config/segments.ts','src/config/scenes.ts','src/config/series.ts']){
       pieces.push(`${dir.name}/${rel}:${metadata(path.join(folder,rel))}`);
     }
     // Public assets must be mirrored after edits, including changes to nested files.

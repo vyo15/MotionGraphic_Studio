@@ -28,6 +28,10 @@ export interface Easy2BootScene03Props {
   scene03ShowTextVO:boolean;
   scene04ShowTextVO:boolean;
   scene05ShowTextVO:boolean;
+  /** S06 approved CTA: native text VO guide, set false to hide. */
+  scene06ShowTextVO?:boolean;
+  scene06Question?:string;
+  scene06Prompt?:string;
   scene05ShowIntro:boolean;
   scene05SubtitleLines:string[];
   scene04CleanLayout:boolean;
@@ -95,6 +99,8 @@ export interface Easy2BootScene03Props {
   showMusic: boolean;
   musicFileName: string;
   layerOverrides: LayerOverrides;
+  /** Render subtitle / VO text on the video canvas. False hides draft and final subtitles. */
+  showOnScreenCaptions: boolean;
   showSubtitles: boolean;
   subtitleColor: string;
 
@@ -134,8 +140,11 @@ export const DEFAULT_PROPS: Easy2BootScene03Props = {
   scene03ShowTextVO:true,
   scene04ShowTextVO:true,
   scene05ShowTextVO:true,
+  scene06ShowTextVO:true,
+  scene06Question:'KAMU TIM MANA?',
+  scene06Prompt:'TULIS PILIHANMU',
   scene05ShowIntro:true,
-  scene05SubtitleLines:['Sekarang, boot dari flashdisk.','Di Boot Menu, pilih USB.','Buka menu agFM.','Pilih ISO Windows 11, lalu jalankan.','Installer Windows pun terbuka.'],
+  scene05SubtitleLines:['Sekarang, booting seperti biasa, Pilih booting USB.','Begitu muncul, kamu tinggal pilih ISO yang kamu butuhkan.','Jalankan, dan beberapa saat kemudian, Windows Setup pun terbuka.'],
   scene04CleanLayout:true,
   scene04IsoFiles:['Win8_64.iso','Win10_22H2.iso','Win11_24H2.iso','Ubuntu_24.04.iso'],
   scene04InstallerLabels:['WINDOWS 8','WINDOWS 10','WINDOWS 11','LINUX'],
@@ -199,6 +208,7 @@ export const DEFAULT_PROPS: Easy2BootScene03Props = {
   showMusic:false,
   musicFileName:'',
   layerOverrides:{},
+  showOnScreenCaptions:false,
   showSubtitles:false,
   subtitleColor:'#202020',
 

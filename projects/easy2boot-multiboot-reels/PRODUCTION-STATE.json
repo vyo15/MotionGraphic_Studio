@@ -3,14 +3,56 @@
   "projectId": "Easy2BootMultibootReels",
   "slug": "easy2boot-multiboot-reels",
   "workflow": "guided-approval-first-scene",
-  "phase": "script-review",
-  "scriptApproval": "pending",
-  "storyboardApproval": "pending",
-  "referenceSceneId": null,
-  "referenceSceneApproval": "pending",
+  "phase": "motion-approved-vo-guide",
+  "scriptApproval": "visual-narration-draft",
+  "storyboardApproval": "approved",
+  "referenceSceneId": "Easy2BootMultibootReels-S01",
+  "referenceSceneApproval": "approved",
   "voiceOverStatus": "not-recorded",
-  "fullVideoApproval": "pending",
-  "scenes": [],
-  "decisionLog": [],
-  "notes": "Dokumen dibuat otomatis saat sync. Status approval tidak boleh diubah menjadi approved tanpa persetujuan pengguna."
+  "fullVideoApproval": "visual-approved-2026-11-21",
+  "scenes": [
+    {
+      "sceneId": "S01",
+      "status": "approved-locked",
+      "startFrame": 0,
+      "endFrameExclusive": 381
+    },
+    {
+      "sceneId": "S02",
+      "status": "approved-locked",
+      "startFrame": 381,
+      "endFrameExclusive": 879
+    },
+    {
+      "sceneId": "S03",
+      "status": "approved-locked",
+      "startFrame": 879,
+      "endFrameExclusive": 1351
+    },
+    {
+      "sceneId": "S04",
+      "status": "approved-locked",
+      "startFrame": 1351,
+      "endFrameExclusive": 1591
+    },
+    {
+      "sceneId": "S05",
+      "status": "approved-locked",
+      "startFrame": 1591,
+      "endFrameExclusive": 2077
+    },
+    {
+      "sceneId": "S06",
+      "status": "approved-locked",
+      "startFrame": 2077,
+      "endFrameExclusive": 2467
+    }
+  ],
+  "decisionLog": [
+    {
+      "date": "2026-11-21",
+      "decision": "Seluruh Scene 01–06 ACC. Scene 06 CTA Mix dua USB dengan ikon Windows 8/10/11/Linux, Match Move ke cover, tanpa background ornament, cover compact untuk Reels. Tidak ada perubahan visual Scene01–05."
+    }
+  ],
+  "notes": "Status ACC hanya visual+timing draft; rekaman VO belum tersedia dan fungsi drag/Save/reload native Remotion di Windows belum diverifikasi."
 }

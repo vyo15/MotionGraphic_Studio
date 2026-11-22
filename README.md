@@ -1,6 +1,14 @@
 # MotionGraphic Studio Master v1.8.1 — Remotion Only
 
+> **Untuk ChatGPT saat menerima ZIP Master:** buka dan baca [`CHATGPT-READ-FIRST.md`](CHATGPT-READ-FIRST.md) terlebih dahulu, kemudian `AGENTS.md`, `PRODUCTION-RULES.md`, dan [`Template Storyboard Universal`](docs/STORYBOARD-TEMPLATE-UNIVERSAL.md). Agar aturan diikuti **sejak awal chat baru**, salin [`Project Instructions siap tempel`](docs/CHATGPT-PROJECT-INSTRUCTIONS.md) ke pengaturan Project ChatGPT. File ZIP tidak memasang instruksi akun otomatis. Semua revisi = ZIP **FILE CHANGE ONLY** untuk ekstrak → copy–paste–Replace.
+
+**Standar kreatif video baru:** [`Design System v2.0`](docs/MOTIONGRAPHIC-DESIGN-SYSTEM.md) · [`Motion Direction`](docs/MOTION-DIRECTION-RULES.md) · [`QA Visual & Motion`](docs/QA-VISUAL-MOTION-CHECKLIST.md). Semua file termasuk saat `npm run zip -- --studio` atau `--studio --with-projects` karena berada di `docs/`. Project/scene ACC tidak dimodifikasi otomatis.
+
 **Satu Master, satu Studio: Remotion.** Paket ini adalah pembersihan terhadap Master v1.8.1 yang sama, **bukan Master baru** dan bukan perpindahan proyek. Tidak ada Concat, launcher aplikasi kedua, Easy Editor, atau Studio Hub.
+
+### Scene VO & ACC Board (otomatis)
+
+Setiap `npm run dev`/`npm run sync`, Master membangun ulang `projects/<slug>/production/SCENE-VO-ACC-BOARD.md` dari `src/config/narration.json`, `PRODUCTION-STATE.json`, dan manifest, tanpa mengubah video/ACC. Untuk menampilkan: `node tools/scene-approval-board.mjs --all`; untuk cek stale: `node tools/scene-approval-board.mjs --all --check`. Gunakan board dalam setiap chat diskusi video. Baca `docs/SCENE-VO-ACC-WORKFLOW.md`. Aturan preview video: `docs/PREVIEW-VIDEO-OUTPUT-CONTRACT.md`. Cleanup konservatif: `docs/ARTIFACT-HYGIENE.md` dan `npm run clean` (default preview).
 
 ## Mulai di Windows
 
@@ -20,7 +28,7 @@
 | `npm run list` | Menampilkan semua video aktif |
 | `npm run check` | Audit manifest, editability, layout, TypeScript |
 | `npm test` | Jalankan pengujian otomatis |
-| `npm run render` | Render full/segmen ke MP4 |
+| `npm run render` | Render full/segmen ke MP4; profil HQ/CapCut/preview, lihat `docs/RENDER-HQ-CAPCUT.md` |
 | `npm run zip` | Menu ekspor ZIP video editable / Master |
 | `npm run zip -- --studio` | Ekspor Master Engine Only (tanpa video) |
 | `npm run zip -- --all` | Ekspor semua video satu per satu |
@@ -55,7 +63,13 @@ MotionGraphic-Studio/
 └── package.json
 ```
 
+**Render CapCut HQ:** dari `npm run menu` pilih Render MP4 → video → mode → `1. CapCut HQ` (Enter default). Bahan memakai H.264 CRF 16, PNG frames, BT.709, AAC 48 kHz; audio SFX dipertahankan, VO dan panduan subtitle diatur melalui Props sementara bila tersedia. Import MP4 ke CapCut tetap manual. [Panduan kualitas render dan finishing](docs/RENDER-HQ-CAPCUT.md).
+
 ## Audio, editability, dan batas yang benar
+
+**Sound Direction v2.1:** semua video baru menggunakan [`docs/SOUND-DIRECTION-RULES.md`](docs/SOUND-DIRECTION-RULES.md) untuk sound planning, efek relevan per aksi/transisi, kontinuitas antar-scene, voice-first mixing, SFX berlisensi, dan QA mendengar. Template baru memuat `templates/addon-starter/production/SOUND-PLAN.md`; ini tidak mengganti sound pada video ACC.
+
+
 
 Audio sumber dipertahankan di masing-masing `projects/<slug>/public/`. Untuk mengatur voice-over dan musik, lihat [Panduan Operasional](docs/OPERASIONAL-STUDIO.md). Untuk impor, preview, props, render dan ekspor, baca [Panduan Remotion Studio](PANDUAN-REMOTION-STUDIO.md). Aturan produksi ada di [PRODUCTION-RULES.md](PRODUCTION-RULES.md).
 

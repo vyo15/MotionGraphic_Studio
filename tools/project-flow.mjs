@@ -11,6 +11,7 @@ const stages=[
  ['02','Bangun add-on','ChatGPT membuat projects/<slug>/ tanpa mengubah Master'],
  ['03','Validasi & import','Validasi ZIP/folder lalu masukkan ke projects/<slug>/'],
  ['04','Review motion','Preview dan revisi sampai ACC; cek editabilitas Save/reload'],
+ ['04A','VO & ACC Board','Tampilkan seluruh VO asli dan status scene: node tools/scene-approval-board.mjs --all'],
  ['05','VO Guide','Tampilkan panduan teks setelah motion disetujui'],
  ['06','Rekam & sinkronkan','Rekam suara sendiri, sesuaikan timing, subtitle dan SFX'],
  ['07','QA & render','Periksa source, MP4, audio, safe zone dan ekspor'],
@@ -32,7 +33,7 @@ Slug usulan: ${slug}
 Audiens: ${audience.trim()}
 CTA: ${cta.trim()}
 
-Buatkan motion graphic edukasi Remotion untuk judul di atas menggunakan Custom Skill MotionGraphic Studio Director serta Project Rules Motion-Graphic yang berlaku. Satu Master folder-first; jangan membuat Remotion Studio baru atau mengubah file registrasi Master. Periksa contracts/studio-capabilities.json Master terbaru jika disediakan; jangan mengarang kompatibilitas.
+Pada setiap diskusi video aktif, tampilkan VO lengkap seluruh scene dan status ACC dari production/SCENE-VO-ACC-BOARD.md (generated saat sync). Buatkan motion graphic edukasi Remotion untuk judul di atas menggunakan Custom Skill MotionGraphic Studio Director serta Project Rules Motion-Graphic yang berlaku. Satu Master folder-first; jangan membuat Remotion Studio baru atau mengubah file registrasi Master. Periksa contracts/studio-capabilities.json Master terbaru jika disediakan; jangan mengarang kompatibilitas.
 
 Pilih teknik Lemo-Opuscar sesuai materi, hanya sebagai teknik visual. Pertahankan Minimal Editorial: #F7F7F5, #202020, #DF805F, grid samar dan UI clean. Default 1080x1920, 30 FPS, 15–30 detik, safe zone 250/350/50 px. Visual harus memperagakan SEBAB → AKSI → REAKSI → HASIL → HOLD, bukan dekorasi atau mengulang seluruh VO.
 
@@ -49,6 +50,7 @@ function status(){
  let videos=[];
  try{videos=JSON.parse(fs.readFileSync(f,'utf8')).videos||[]}catch{}
  console.log(`[FLOW] ${videos.length} project aktif di Master. Semua pembuatan video baru tetap melalui ChatGPT dan add-on mandiri.`);
+ console.log('[FLOW] Baca VO/ACC: node tools/scene-approval-board.mjs --all');
  console.log('[FLOW] Berikutnya: npm run flow -- --new "Judul video"');
 }
 function savePrompt(prompt,title){

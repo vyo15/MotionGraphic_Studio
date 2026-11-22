@@ -1,0 +1,91 @@
+{
+  "base_original_file_count": 94,
+  "full_addon_file_count": 97,
+  "patch_changed_or_added_count_without_report": 16,
+  "original_deleted_files": [],
+  "unchanged_files": 81,
+  "changed_files": [
+    {
+      "path": "README-STUDIO-EDITABLE-20261121.md",
+      "previous_sha256": null,
+      "new_sha256": "3c0900a7592f6bd58c58696d7ae85f9a06b1faa0a75bde4f895d2716bb29450c"
+    },
+    {
+      "path": "motiongraphic-video.json",
+      "previous_sha256": "0efb94d4f00390b8ee74a33094f69f09f41344ea3c86df5389ed8ee8c13b47a4",
+      "new_sha256": "eae6daf44479ff29fb3c62271d2c0fb2695f71790b03ad2e5a6ce01817e16968"
+    },
+    {
+      "path": "production/STUDIO-DIRECT-TEXT-INVENTORY.json",
+      "previous_sha256": null,
+      "new_sha256": "373c6cce4b73e54a0b4a968e880ec6962a65eac587b41a75c8a4dfe0ecc0bf7a"
+    },
+    {
+      "path": "production/STUDIO-EDITABILITY-QA-20261121.json",
+      "previous_sha256": null,
+      "new_sha256": "c466b1dfc95dd38de9ebb169ea21c95352f676d02efc5812087da25153303062"
+    },
+    {
+      "path": "src/SegmentVideo.tsx",
+      "previous_sha256": "7bd3127a9db90ba68ee850b59a3436bab5479f143a023bada7fa4aa5135d865d",
+      "new_sha256": "9edb44fc46b587afedce7321b2c05fe6f14024d4aa065582f474c4b9e2225b5f"
+    },
+    {
+      "path": "src/Video.tsx",
+      "previous_sha256": "df8176ac5e1566a1f761c52aaeb66e0dad0f187197fc1a97265b475d4ce0cdb3",
+      "new_sha256": "48b526626d415fb6924dc00a4655bae6daff064b3ef8e2f8aa4ef21a17fc8771"
+    },
+    {
+      "path": "src/components/EditableSvgLayer.tsx",
+      "previous_sha256": "8ed31e0f1f61e2bdd448794b8dd31fcdf639ac4b91c3ea7466b46dc6f5465f83",
+      "new_sha256": "0080305564ab39d67e8d871f481751c40dee7139967c963ddf2f00e2ac817c93"
+    },
+    {
+      "path": "src/components/NativeSceneLayers.tsx",
+      "previous_sha256": "f0a31b1e34e0ecad34606f9757dd65d05501f0f7d80bf4b63aa252d2c3bb27c7",
+      "new_sha256": "eecd1097ebc04f4f7a52b9fa06b6a7c734642c5a413cdbc477d232cd11cdf98b"
+    },
+    {
+      "path": "src/components/SceneTextVO.tsx",
+      "previous_sha256": "7e3105803124ed9c45b00d35762ff710030dc4ecc8a509cfe9829f3283c3c8b4",
+      "new_sha256": "677aa6e406eeefcf3ef422dde5e6af9bc159855492304e4ef2679943d157653a"
+    },
+    {
+      "path": "src/scenes/Scene01Problem.tsx",
+      "previous_sha256": "e7911144daa0b922ae2efd770cb2a79832452f470a283c7544dffcadc9124909",
+      "new_sha256": "f86d428ca4a658597696ae0634b2f99b8a2a6d1eab0ccb1ce018fced83e1d939"
+    },
+    {
+      "path": "src/scenes/Scene02Solution.tsx",
+      "previous_sha256": "e35b67cd25b4943bff4335cfa7305aade638e5663fde1648efe50730a45ea985",
+      "new_sha256": "95720077f3574e4c05682cf101419dfff00db2cd72b76e333186693aeac55e64"
+    },
+    {
+      "path": "src/scenes/Scene02To03MatchMove.tsx",
+      "previous_sha256": "7163de68d1ce0b884a405f1f6596dcc5f35c44330bd0bf15447dd8be5e03b0ed",
+      "new_sha256": "2db83aa48ae8a4c93c4432427f2d1afd93982ab84974ce58894f1b077282bccb"
+    },
+    {
+      "path": "src/scenes/Scene03Preparation.tsx",
+      "previous_sha256": "303206fd1754de4fff204e2bdbceac7800193c69885d9d4f0b090ca67cde80ef",
+      "new_sha256": "e6594be21ac563d82e712ee46c83ef15270f77cf16dc821b2368aec37469595d"
+    },
+    {
+      "path": "src/scenes/Scene04CopyIso.tsx",
+      "previous_sha256": "704cff9e2a403022fc1af33f6af2ad6ab9b6663fc2c189b18e939bb5394cab9b",
+      "new_sha256": "8dbbf4f90d1f790b5ab5c5226e929b43affb809e41770d38a0e089cf69852f72"
+    },
+    {
+      "path": "src/scenes/Scene05Boot.tsx",
+      "previous_sha256": "24f0e1c1b8c7aeb41bde8ee625a4bd9717cdb5e369b4545539919a3f3274cc4f",
+      "new_sha256": "e2cb37b060e1cb1f31c76f2600248712a0ea6446465653f2558c2dfcbae2aef3"
+    },
+    {
+      "path": "src/scenes/Scene06Closing.tsx",
+      "previous_sha256": "19fd4e24e28cc2bb06794b7e3a06ccab542bb6429f0a5bb525b8434f73aa7ae4",
+      "new_sha256": "a5eccf943b5d53060c39dfe00523d4d7de090ba3b14b1338dba8e9dbab136215"
+    }
+  ],
+  "root_master_files_touched": 0,
+  "note": "Compared against uploaded Master ZIP. Differences are only within projects/easy2boot-multiboot-reels."
+}

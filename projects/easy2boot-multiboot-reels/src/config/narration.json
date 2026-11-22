@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "status": "draft",
-  "notes": "Timing draft mengikuti 2701 frame; scene 05 menggunakan laptop Scene 01 selama 480 frame. VO final belum ada.",
+  "notes": "VO GUIDE draft untuk 2467 frame; semua visual S01–S06 ACC/LOCKED 21 Nov 2026. Belum tersedia rekaman suara final; segmentasi VO S06 mengikuti gerakan CTA Match Move.",
   "beats": [
     {
       "scene": "S01",
@@ -72,62 +72,62 @@
     {
       "scene": "S04",
       "startFrame": 1351,
-      "endFrame": 1494,
+      "endFrame": 1411,
       "text": "Salin file ISO installer"
     },
     {
       "scene": "S04",
-      "startFrame": 1494,
-      "endFrame": 1659,
+      "startFrame": 1411,
+      "endFrame": 1504,
       "text": "ke folder masing-masing."
     },
     {
       "scene": "S04",
-      "startFrame": 1659,
-      "endFrame": 1831,
+      "startFrame": 1504,
+      "endFrame": 1591,
       "text": "Sesuai sistem operasinya."
     },
     {
       "scene": "S05",
-      "startFrame": 1831,
-      "endFrame": 1939,
-      "text": "Sekarang, boot dari flashdisk."
+      "startFrame": 1591,
+      "endFrame": 1735,
+      "text": "Sekarang, booting seperti biasa, Pilih booting USB."
     },
     {
       "scene": "S05",
-      "startFrame": 1939,
-      "endFrame": 2033,
-      "text": "Di Boot Menu, pilih USB."
+      "startFrame": 1735,
+      "endFrame": 1900,
+      "text": "Begitu muncul, kamu tinggal pilih ISO yang kamu butuhkan."
     },
     {
       "scene": "S05",
-      "startFrame": 2033,
-      "endFrame": 2116,
-      "text": "Buka menu agFM."
-    },
-    {
-      "scene": "S05",
-      "startFrame": 2116,
-      "endFrame": 2218,
-      "text": "Pilih ISO Windows 11, lalu jalankan."
-    },
-    {
-      "scene": "S05",
-      "startFrame": 2218,
-      "endFrame": 2311,
-      "text": "Installer Windows pun terbuka."
+      "startFrame": 1900,
+      "endFrame": 2077,
+      "text": "Jalankan, dan beberapa saat kemudian, Windows Setup pun terbuka."
     },
     {
       "scene": "S06",
-      "startFrame": 2311,
-      "endFrame": 2500,
-      "text": "Kalau kamu, biasanya bikin bootable ulang atau pakai multiboot?"
+      "startFrame": 2077,
+      "endFrame": 2200,
+      "text": "Kalau kamu, biasanya bikin bootable ulang"
     },
     {
       "scene": "S06",
-      "startFrame": 2500,
-      "endFrame": 2701,
+      "startFrame": 2200,
+      "endFrame": 2317,
+      "text": "atau pakai multiboot?"
+    },
+    {
+      "scene": "S06",
+      "startFrame": 2317,
+      "endFrame": 2399,
       "text": "Coba tulis di kolom komentar!"
+    },
+    {
+      "scene": "S06",
+      "startFrame": 2399,
+      "endFrame": 2467,
+      "text": "(visual hold cover Reels; tidak ada VO)"
     }
   ]
 }

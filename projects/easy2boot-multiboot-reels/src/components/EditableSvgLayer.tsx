@@ -8,8 +8,12 @@ export type SvgLayerProps={
   basePosition?:{x:number;y:number};animationTransform?:string;
   opacity?:number;fill?:string;children:React.ReactNode;
   assetSize?:{w:number;h:number};
+  /** If child is a native Interactive.Text, outer group must not hijack its selection. */
+  interactive?:boolean;
 };
 
+const IMAGE_DIR=staticFile('videos/easy2boot-multiboot-reels/images/.gitkeep').replace(/\.gitkeep$/,'');
+const imageSource=(name:string)=>IMAGE_DIR+encodeURIComponent(name.replaceAll('\\','/').split('/').pop()??'');
 const readFrame=(p:LayerOverride,frame:number,key:'x'|'y'|'scale'|'rotation'|'opacity',fallback:number)=>{
  const points=(p.keyframes??[]).filter(k=>k[key]!==undefined).sort((a,b)=>a.frame-b.frame);
  if(!points.length)return fallback;
@@ -27,7 +31,7 @@ const readFrame=(p:LayerOverride,frame:number,key:'x'|'y'|'scale'|'rotation'|'op
 
 /** basePosition -> userTransform -> animationTransform, independently editable. */
 export const EditableSvgLayer:React.FC<SvgLayerProps>=({
- id,name,props,scene='S04',basePosition={x:0,y:0},animationTransform='',opacity=1,fill,children,assetSize
+ id,name,props,scene='S04',basePosition={x:0,y:0},animationTransform='',opacity=1,fill,children,assetSize,interactive=true
 })=>{
  const frame=useCurrentFrame();
  const user:LayerOverride=props.layerOverrides?.[`${scene}:${id}`]??{};
@@ -48,15 +52,15 @@ export const EditableSvgLayer:React.FC<SvgLayerProps>=({
  const sx=scale*animationScale*(assetSize?.w&&user.width?user.width/assetSize.w:1);
  const sy=scale*animationScale*(assetSize?.h&&user.height?user.height/assetSize.h:1);
  const effectiveFill=user.fill??fill;
- const localAsset=user.asset?staticFile(`videos/easy2boot-multiboot-reels/images/${user.asset}`):null;
- return <Interactive.G name={`${scene} — ${name}`} style={{translate:'0px 0px',scale:1,rotate:'0deg',opacity:1}}>
-   <g id={`${scene}-${id}`} transform={`translate(${basePosition.x} ${basePosition.y})`}>
+ const localAsset=user.asset?imageSource(user.asset):null;
+ const content=<g id={`${scene}-${id}`} transform={`translate(${basePosition.x} ${basePosition.y})`}>
     <g data-user-transform={`${id}`} transform={`translate(${x} ${y}) rotate(${rotation}) scale(${sx} ${sy})`}
       opacity={clamp01(alpha*animationOpacity)} fill={effectiveFill}>
       <g data-animation-transform={`${id}`} transform={`translate(0 ${animationOffset}) ${animationTransform}`}>
         {localAsset&&assetSize ? <image x={-assetSize.w/2} y={-assetSize.h/2} width={assetSize.w} height={assetSize.h} href={localAsset} preserveAspectRatio="xMidYMid meet"/> : children}
       </g>
     </g>
-   </g>
- </Interactive.G>;
+   </g>;
+ if(!interactive)return content;
+ return <Interactive.G name={`${scene} — ${name}`} style={{translate:'0px 0px',scale:1,rotate:'0deg',opacity:1}}>{content}</Interactive.G>;
 };

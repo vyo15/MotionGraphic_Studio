@@ -1,0 +1,89 @@
+{
+  "schemaVersion": 1,
+  "projectId": "ShutdownOtomatisHookRealistis",
+  "slug": "shutdown-otomatis-hook-realistis",
+  "workflow": "guided-approval-first-scene",
+  "phase": "eleven-scene-native-editable-v56; 05-09 v55 accepted; GUI verification pending",
+  "scriptApproval": "scenes-01-07-vo-approved",
+  "storyboardApproval": "S01-S05 ACC; S06-S07 native Easy2Boot-style match move and /s /t 3600 ACC; S08 pemisah and S09 pembatalan lebih santai ACC v55; CTA and cover pending full audit",
+  "referenceSceneId": "S01Ketiduran",
+  "referenceSceneApproval": "approved-by-user",
+  "voiceOverStatus": "not-recorded",
+  "fullVideoApproval": "pending-cta-cover-vo-final-and-gui-testing",
+  "scenes": [
+    {
+      "id": "S01Ketiduran",
+      "status": "visual-approved",
+      "notes": "Motion V2 and subtitle updates from VO approved; source geometry preserved."
+    },
+    {
+      "id": "S02Download",
+      "status": "visual-approved",
+      "notes": "S01→S02 V3 transition preserved, still 75→76% download."
+    },
+    {
+      "id": "S03Pertanyaan",
+      "status": "visual-approved",
+      "notes": "Centered typography no underline, five orbiting question marks, animated analog clock carried into solution; 4.5s."
+    },
+    {
+      "id": "S04Solusi",
+      "status": "visual-approved",
+      "notes": "v15 user ACC: center two-line heading without line, shared moving clock, film 62→100%, download 76→100%, both selesai, timer to OFF; native 8s 240f."
+    },
+    {
+      "id": "S05RunKlikOK",
+      "status": "visual-approved",
+      "notes": "Original approved tutorial Windows+R kept source identical; start shifted +30 frames for 8s Scene04."
+    },
+    {
+      "id": "S06MatchMove",
+      "status": "visual-approved",
+      "notes": "Match move 3600+DETIK dari S05, berbagi source Scene05To06Flow; user ACC berdasarkan v54/v55."
+    },
+    {
+      "id": "S07CaraKerjanya",
+      "status": "visual-approved",
+      "notes": "Penjelasan /s, /t, 3600 dan 01:00:00 asli v47/v55, source continuous, subtitle guide tersedia."
+    },
+    {
+      "id": "S08KalauNggakJadi",
+      "status": "visual-approved",
+      "notes": "Pemisah KALAU NGGAK JADI? membawa timer dari S07; preview v54/v55 ACC."
+    },
+    {
+      "id": "S09BatalkanShutdown",
+      "status": "visual-approved",
+      "notes": "Run shutdown /a, klik OK, jadwal dibatalkan; perlambatan v55 dinyatakan mantap pengguna."
+    },
+    {
+      "id": "S10CTA",
+      "status": "visual-selected",
+      "notes": "Source lama dipertahankan; VO final dan sambungan penutup belum diaudit."
+    },
+    {
+      "id": "S11CoverReels",
+      "status": "visual-selected",
+      "notes": "Source lama dipertahankan, tanpa VO; belum audit lengkap sesudah S09."
+    }
+  ],
+  "decisionLog": [
+    "Scene 01–03 preview gabungan 20,5 detik ACC.",
+    "Scene01/02 logic and geometry unchanged except S01 caption wording.",
+    "Scene 03 timer animation from approved React/SVG preview source.",
+    "No black subtitle panel. VO 01–07 locked; duration currently guide.",
+    "Only modify this addon; leave Easy2Boot/other projects untouched.",
+    "Scene 04 V6 preview 10 detik ACC. Tidak membangun Scene05/06 pada paket ini.",
+    "Scene05 user selected preview 02 Swiss Motion (3600 → 60 → 1); preserve selected choreography, no redesign.",
+    "Scene06 user chose preview 02 Swiss Motion; native SVG/React added without touching Scene 01–05.",
+    "Scene 07 V3 is included as source because latest Master has only S01–S06; Scene 08 V2 requires continuous timeline.",
+    "No existing source Scene 01–06 changed. Scene 08 contains no VO and is kept within central profile grid.",
+    "2026-11-22 user ACC v6 Question Motion. Insert 135 frames after Scene 02; shift all following scenes and cues without redesign.",
+    "2026-11-22: user ACC Scene04 style 05 v15 (film & download bars complete before laptop OFF), 240 frames. v16 rebuilt natively from JSX/SVG, exposed timing Props, shifted subsequent timeline +30 frames.",
+    "2026-11-22: user ACC v54 preview setelah revisi natural typing + pusat 3600 detik = 1 jam + pemisah KalAU NGGAK JADI?.",
+    "2026-11-22: user ACC v55 untuk pembatalan yang diperlambat, tanpa perubahan scene lain; integrasi dibuat via satu flow React/SVG dengan frame mapping, bukan gabungan MP4.",
+    "2026-11-23: terapkan pada master 20261122-170154; 11 scene, 2385f; S10 CTA & S11 cover source tetap. UI Save/reload belum diuji."
+  ],
+  "notes": "Data approval berasal dari percakapan; native Save/reload/render belum diuji.",
+  "lastEditNote": "11-scene editable source: v55 approved separator/cancellation, preservation of other scenes; render/UI QA pending"
+}

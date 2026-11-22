@@ -20,6 +20,13 @@ export const Scene01: React.FC = () => {
         opacity: interpolate(frame, [16, 29], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'}),
         translate: interpolate(frame, [16, 31], ['0px 40px', '0px 0px'], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'}),
       }}/>
+      {/* One direct Studio text node per editable caption cue. Never loop a shared Interactive wrapper. */}
+      {frame>=38 && frame<122 ? <Interactive.Div name="S01 — Subtitle 01" style={{
+        position:'absolute',left:110,top:1460,width:860,
+        fontFamily:'Arial, sans-serif',fontSize:42,fontWeight:700,
+        color:'#202020',textAlign:'center',
+        translate:'0px 0px',scale:1,rotate:'0deg',opacity:1,
+      }}>Ini contoh subtitle yang bisa diklik.</Interactive.Div> : null}
       <Interactive.Div name="S01 — Isi kartu" style={{
         position: 'absolute', left: 185, top: 902, width: 710,
         color: '#202020', fontFamily: 'Arial, sans-serif', fontSize: 53,

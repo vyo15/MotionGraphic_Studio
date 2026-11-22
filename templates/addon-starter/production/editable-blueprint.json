@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "nativeTextTargets": [
+    {"name": "S01 — Judul", "source": "src/scenes/Scene01.tsx"},
+    {"name": "S01 — Isi kartu", "source": "src/scenes/Scene01.tsx"},
+    {"name": "S01 — Subtitle 01", "source": "src/scenes/Scene01.tsx"}
+  ],
+  "nativeVisualTargets": [
+    {"name": "S01 — Kartu informasi", "source": "src/scenes/Scene01.tsx"}
+  ],
+  "propsTextTargets": [],
+  "guiVerification": "unverified"
+}

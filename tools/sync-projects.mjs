@@ -8,6 +8,7 @@ import {fileURLToPath} from 'node:url';
 import {captureStudioProps,saveGeneratedState} from './studio-props-bridge.mjs';
 import {registerMissingSceneSegments} from './register-scene-segments.mjs';
 import {ensureProjectProductionDocs} from './production-scope.mjs';
+import {spawnSync} from 'node:child_process';
 const ROOT=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const PROJECTS=path.join(ROOT,'projects');
 const ROOT_FILE=path.join(ROOT,'src','Root.tsx');
@@ -151,7 +152,19 @@ function main(){
   const rootNow=fs.existsSync(ROOT_FILE)?fs.readFileSync(ROOT_FILE,'utf8').replace(/\r\n/g,'\n').trim():'';
   const safeEmptyReset=old.videos.length===0&&activeFolders.length===0&&rootNow===initialEmptyRoot;
   if(safeEmptyReset)console.log('[SYNC] Master kosong terverifikasi; generated state lama akan diperbarui tanpa memulihkan video yang sudah dihapus.');
-  else captureStudioProps(ROOT);
+  else {
+    try {captureStudioProps(ROOT)}
+    catch(error){
+      const recovery=path.join(ROOT,'tools/reconcile-generated-state.mjs');
+      if(!/Root.tsx berubah selain Props/.test(String(error.message)) || !fs.existsSync(recovery))throw error;
+      // Reconciliation does not waive protection: exact canonical rebuild in a
+      // sandbox is mandatory. An arbitrary Root edit still causes a hard fail.
+      const proof=spawnSync(process.execPath,[recovery,'--repair'],{cwd:ROOT,encoding:'utf8',timeout:60000});
+      if(proof.status!==0){console.warn('[SYNC STATE] Recovery ditolak: '+(proof.stderr||proof.stdout||'tidak cocok').trim().slice(-800));throw error}
+      console.log((proof.stdout||'').trim());
+      captureStudioProps(ROOT);
+    }
+  }
  registerMissingSceneSegments(ROOT);
  const dirs=fs.readdirSync(PROJECTS,{withFileTypes:true}).filter(x=>x.isDirectory()&&!x.name.startsWith('_')&&!x.name.startsWith('.')).sort((a,b)=>a.name.localeCompare(b.name));
  const entries=[],imports=[],segmentDeclarations=[],comps=[],ids=new Set(),slugs=new Set(),folderNames=new Set(),allCompositions=[];
@@ -265,6 +278,16 @@ function main(){
   const manifest=js(path.join(dir,'motiongraphic-video.json'));
   const added=ensureProjectProductionDocs(dir,manifest);
   if(added.length)console.log(`[PRODUCTION SCOPE] ${slug}: ${added.length} file panduan produksi dibuat (tanpa overwrite).`);
+  // Derived VO/ACC board: no new approval source, always reflects project metadata.
+
+ }
+ // Optional derived dashboard helper. Legacy test fixtures / older Master copies
+ // may not include this tool; normal Remotion sync must still work safely.
+ const boardTool=path.join(ROOT,'tools','scene-approval-board.mjs');
+ if(fs.existsSync(boardTool)) {
+  const board=spawnSync(process.execPath,[boardTool,'--all','--write'],{cwd:ROOT,encoding:'utf8',timeout:20000});
+  if(board.status===0){if(board.stdout?.trim())console.log(board.stdout.trim());}
+  else console.warn('[SCENE BOARD WARNING] '+(board.stderr||board.stdout||'generator failed').trim());
  }
  console.log(`[FOLDER SYNC] ${entries.length} folder video, ${allCompositions.length} komposisi (lengkap + segmen); ${changed?'registrasi diperbarui':'sudah sinkron'}.`);
 }

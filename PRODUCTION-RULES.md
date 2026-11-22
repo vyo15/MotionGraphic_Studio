@@ -27,17 +27,17 @@ Bila script di dokumen berbeda dari implementasi, laporkan dua-duanya: **TARGET 
 
 **G0 Project recognition** — Baca manifest, source, media, voice-over, semua catatan keputusan dan status. Ringkas perubahan yang diminta, segment yang boleh diubah, status lock, mismatch source/target.
 
-**G1 Brief & naskah draft (rekaman VO selalu setelah motion)** — Buat script utuh HOOK → MASALAH → SOLUSI/DEMO → RANGKUMAN → CTA. Gaya bahasa natural, tempo santai sesuai permintaan, jeda untuk demonstrasi. Tidak boleh mempercepat voice-over demi mengejar durasi default. Minta approval script sebelum build besar.
+**G1 Brief & naskah draft (rekaman VO selalu setelah motion)** — Rancang hook dan alur baku delapan tahap cerita: MASALAH → KONFLIK → REAKSI → SOLUSI → DEMONSTRASI → HASIL → INTERAKSI/CTA → COVER REELS. Tahap bukan scene fisik; jika diperlukan gabungkan tahap agar tempo tidak bertele-tele. Gaya narasi natural dengan jeda untuk demo, jangan mempercepat VO demi durasi. **Approval script hanya diperlukan pada mode review bertahap**, bukan saat user eksplisit meminta build lengkap. Cover penutup merupakan visual ringkasan, bisa tanpa VO.
 
-**G2 Storyboard & visual mapping** — Tabel `Scene | Durasi | Narasi | Teks Layar | Visual | Animasi | Editable Assets`, termasuk beat yang memicu visual dan durasi *sementara*. User menyetujui storyboard dan arah visual (brand kit, komposisi, pacing) sebelum produksi.
+**G2 Storyboard & visual mapping** — Gunakan `docs/STORYBOARD-TEMPLATE-UNIVERSAL.md`. Setiap scene harus mempunyai `Scene | Durasi (detik/frame) | Tahap cerita | Narasi/Beat | Teks Layar | Objek/Posisi | Pemicu→Aksi→Reaksi→Hasil | Hold | Transisi/Objek Penghubung | Editable Assets | Status ACC`. Detail per detik ketika audit scene. Pastikan adegan final **COVER REELS** muncul **setelah CTA** pada video baru, memperagakan ringkasan konten, lalu menghasilkan hero frame stabil untuk thumbnail. **Mode review bertahap menunggu ACC; mode langsung build membuat storyboard sebagai artefak pendamping tanpa menjadi blocker.**
 
-**G3 Golden scene FIRST** — Bangun **satu scene referensi pertama saja** (biasanya Hook/Opening), preview, review, revisi, kemudian **minta approval jelas**. Simpan persetujuan di `PRODUCTION-STATE.json` dan keputusan gaya di `PROJECT-SCOPE.md`. Hanya setelah approved lanjut build scene lain. Jika Hook adalah greenscreen/presenter, scene demo UI pertama juga perlu verifikasi realisme terpisah; jangan menganggap Hook membuktikan kualitas UI.
+**G3 Golden scene bila mode review** — Jika pengguna meminta proses scene-per-scene, bangun satu scene referensi dahulu (biasanya Hook), preview/review dan tunggu ACC. Simpan persetujuan aktual dalam `PRODUCTION-STATE.json`. **Jika user eksplisit meminta video langsung selesai, lakukan pemeriksaan referensi scene secara internal dan build seluruh scene pada respons yang sama; jangan memaksa gate ACC sementara.** Tidak boleh otomatis menganggap hasilnya sudah ACC; laporkan visual/GUI QA yang belum diuji. Untuk UI/software, uji realisme demo terpisah bila memungkinkan.
 
 **G4 Other segments** — Scene berikut mengikuti visual reference yang terkunci: warna, font, typography density, safe zone, transisi, komponen UI, cursor, framing, dan tempo. Bisa direvisi per scene; jangan merombak semua jika hanya satu yang bermasalah.
 
 **G5 VO GUIDE → REKAM → Audio sync (workflow WAJIB)** — Motion graphic lengkap dan revisi visual selesai terlebih dahulu. Naskah VO draft dan timing disimpan di `src/config/narration.json`; komposisi `IDVideoVOGuide` menampilkan teks panduan untuk rekaman, sementara `IDVideo` tetap tanpa overlay. Rekam voice-over **setelah** motion disetujui; bukan VO-first dalam arti audio direkam di awal. Saat VO belum ada, scene memiliki timing estimasi, tanda jeda, marker beats dan placeholder yang diberi label. **Jangan mengklaim audio placeholder sebagai voice-over.** Setelah VO direkam, ukur timing kata/hasil demonstrasi dan sesuaikan frame. Render dan preview memakai data konfigurasi sama.
 
-**G6 Full QA & render** — Uji transisi antar-segmen, lip-sync/caption, posisi teks, visual Windows asli, cursor target, editability, safe zone, asset path, audio, save/reload dan render. Jika tidak teruji, tulis keterbatasan secara eksplisit. Setelah approval, ekspor MP4 jika memang berhasil dirender.
+**G6 Full QA & render** — Gunakan checklist `docs/QA-VISUAL-MOTION-CHECKLIST.md` untuk uji transisi antar-segmen, lip-sync/caption, posisi teks, font render, crop cover 3:4, kontras, visual Windows asli, cursor target, editability, safe zone, asset path, audio, save/reload dan render. Jika tidak teruji, tulis keterbatasan secara eksplisit. Setelah approval, ekspor MP4 jika memang berhasil dirender.
 
 ## 3. Creative & visual style default
 
@@ -46,7 +46,7 @@ Bila script di dokumen berbeda dari implementasi, laporkan dua-duanya: **TARGET 
 - **Narration explains → motion demonstrates → text emphasizes.** Jangan tuliskan semua kalimat voice-over di layar. Teks label dan shortcut saja kecuali subtitle eksplisit diperlukan.
 - Main text 6–8 kata per tampilan bila relevan; zona penting dari y = 250 sampai 1570 px (safe 250 atas, 350 bawah). Jangan memindahkan UI penting ke pinggir layar.
 - Transisi halus ~0.3–0.6 detik; animasi deterministik berbasis frame; UI Windows realistis dengan kursor dan highlight sesuai aksi yang dijelaskan.
-- Usulkan 3 warna dan 1–2 font jika tidak ada brand kit. **Jangan mengganti brand kit existing tanpa persetujuan.**
+- **STYLE LOCK v2.0:** gunakan token dan kebijakan font dari `docs/MOTIONGRAPHIC-DESIGN-SYSTEM.md` (default `#F7F7F5`, `#202020`, `#DF805F`, teks sekunder `#646464`; Arial baseline sampai Inter benar-benar tersedia). Aturan motion/transisi dari `docs/MOTION-DIRECTION-RULES.md`, kualitas dari `docs/QA-VISUAL-MOTION-CHECKLIST.md`. **Jangan mengarang palet/font baru tanpa alasan atau mengubah brand kit/ACC existing.**
 
 ## 4. Penerapan Remotion Studio yang jujur
 
@@ -69,12 +69,19 @@ Bila script di dokumen berbeda dari implementasi, laporkan dua-duanya: **TARGET 
 
 ## 6. Pengiriman
 
-- **Master fix/revisi existing**: kirim **FILE CHANGE ONLY** dengan path yang sama seperti Master (mis. `tools/...`, `projects/<slug>/...`). User tinggal ekstrak lalu copy–paste/Replace. **Tanpa installer/BAT/patcher**.
-- **Video baru**: kirim folder `<slug>/` utuh atau ZIP add-on, tidak perlu Master baru.
+- **Master fix/revisi existing = FILE CHANGE ONLY WAJIB**: sediakan satu ZIP dengan **hanya file baru atau yang isinya benar-benar berubah**; setiap file di dalamnya utuh dan mempunyai path persis relatif terhadap root `MotionGraphic-Studio/` (mis. `tools/...`, `projects/<slug>/src/scenes/Scene03.tsx`). User mengekstrak lalu menyalin isi ZIP **ke dalam folder root `MotionGraphic-Studio/`** dengan Merge/Replace. Jangan sertakan seluruh Master, seluruh project, file lain yang tak berubah, installer/BAT/patcher atau instruksi tempel fragmen kode manual. Sebutkan daftar file berubah dan tujuan masing-masing pada respons ChatGPT. Tidak boleh ada file delete diam-diam.
+- **Video baru (bukan revisi)**: kirim folder `<slug>/` utuh atau ZIP add-on untuk ditempatkan di `projects/`, tidak perlu Master baru. Jika user minta audit/storyboard saja, **jangan** menghasilkan atau mengganti source sampai ada instruksi build/revisi.
+- **Keselamatan Replace**: pencocokan file path saja tidak mendeteksi konflik isi lokal. Saat Master hasil edit user mungkin berbeda, bandingkan sumber yang tersedia dan sarankan backup/diff. CLI `npm run addon:patch -- <patch> --dry-run` adalah jalur opsional yang mengecek checksum bila pengguna memilih patch terstruktur; **jangan mewajibkannya** pada jalur sederhana copy–Replace.
 - Jangan klaim MP4, preview visual, edit-visual, atau Windows smoke test berhasil bila belum dilaksanakan. Jangan mengklaim dokumen rules mengubah UI Remotion dengan sendirinya.
 - Uji `node tools/production-scope.mjs --check`, `npm run check`, test otomatis yang relevan, dan preview/render bila lingkungan tersedia.
 
 **CREATE ONCE — APPROVE FIRST SCENE — EDIT NATIVELY — REUSE FOREVER.**
+
+## 6A. Scene VO/ACC dashboard & review tidak kehilangan konteks
+
+`docs/SCENE-VO-ACC-WORKFLOW.md` menetapkan bahwa **setiap respons diskusi video aktif memuat VO persis dan status seluruh scene**, dilanjutkan detail scene fokus. Sumber tunggal: `src/config/narration.json` untuk teks/beat, `PRODUCTION-STATE.json` untuk ACC, manifest untuk durasi. Generated `production/SCENE-VO-ACC-BOARD.md` dibuat saat `npm run sync`, tidak boleh diedit untuk mengubah keputusan. Empat status terpisah: VO teks / visual / rekaman-sync / final. Bridge dan silent cover harus terlihat; visual ACC tidak mengunci VO otomatis.
+
+Preview animasi wajib MP4/GIF yang benar-benar bergerak jika tools tersedia; jangan diam-diam memberi 5 gambar saat pengguna meminta 5 alternatif animasi (baca `docs/PREVIEW-VIDEO-OUTPUT-CONTRACT.md`). File hygiene mengikuti `docs/ARTIFACT-HYGIENE.md`, default non-destruktif. Tidak menghapus project, scene ACC, backup atau data generated state secara otomatis.
 
 ## 7. VO Guide universal / source of truth (semua video baru)
 
@@ -91,3 +98,23 @@ Bila script di dokumen berbeda dari implementasi, laporkan dua-duanya: **TARGET 
 Add-on BARU mengikuti `editableContract: studio-direct-v4` dan `docs/EDITABLE-CONTRACT.md`: lapisan penting dinamai dan dapat dipilih langsung lewat native `Interactive`, style penting inline, animasi/keyframe mudah diuji, dan ada `EDITABLE-LAYER-MAP.md`. Lolos static QA saja bukan bukti semua fungsi edit di GUI; uji Save/reload/render sebelum klaim 100%. Video lama tetap tidak diubah tanpa izin.
 
 Ekspor Master default `npm run zip -- --studio` adalah **ENGINE ONLY** tanpa `projects/` lama; gunakan `--studio --with-projects` atau `--studio --full` untuk backup. Ini tidak menghapus video dari PC.
+
+**SOUND DIRECTION v2.1 (BACA WAJIB UNTUK AUDIO):** `docs/SOUND-DIRECTION-RULES.md` menetapkan evaluasi SFX atau `omit` pada tiap aksi/transisi, mapping click/impact/morph/reveal/status, audio continuity, anti-duplikasi, mixing voice-first, sound CTA→Cover, serta QA listening. Sound plan dibuat saat storyboard; cue dan aset definitive setelah ACC motion; VO setelah visual ACC; mix final baru setelah rekaman natural. JSON cue bukan bukti audio terdengar. Jangan ubah SFX/VO/scene ACC tanpa permintaan.
+
+## Sound design (motion dahulu, mixing belakangan)
+Per scene yang sudah ACC, tentukan SFX dari **aksi → sound cue → impact frame → hold**, bukan dari daftar efek acak. Cek `docs/SOUND-DESIGN-WORKFLOW.md` dan skill audio terpusat. Rekaman Openverse/perpustakaan asli dipilih dengan izin jelas; metode Real SFX menempatkan rekaman pas di frame; earshot opsional untuk suara berbasis kode yang belum ada. Simpan source audio, metadata lisensi, cue dan versi hasil pada folder slug. VO asli baru direkam setelah semua visual ACC; mix/duck menyesuaikan VO natural. Sound QA source tidak menggantikan listening dan loudness test render.
+
+
+## 8. TEMPLATE STORYBOARD UNIVERSAL — EASY2BOOT DNA (semua video baru)
+
+**Acuan resmi:** `docs/STORYBOARD-TEMPLATE-UNIVERSAL.md` dan `CHATGPT-READ-FIRST.md`. Pelajari *prinsip* dari Easy2Boot yang ACC: masalah dan konflik terlihat, objek bereaksi, solusi langsung didemonstrasikan, langkah UI punya sebab-akibat, hasil dibuktikan, transisi meneruskan objek/arah/komposisi bila logis. **Jangan menyalin efek Easy2Boot secara seragam atau mengubah project Easy2Boot yang terkunci.**
+
+- **8 tahap cerita:** (1) MASALAH, (2) KONFLIK, (3) REAKSI, (4) SOLUSI, (5) DEMONSTRASI, (6) HASIL, (7) INTERAKSI/CTA, (8) COVER REELS. Delapan tahap **tidak sama dengan delapan scene**. Gabungkan tahap 1–3 atau lainnya bila baik untuk storytelling; cover menjadi scene penutup mandiri setelah CTA pada proyek baru, kecuali user meminta berbeda.
+- **Scene cover wajib default:** continuity dari CTA bila masuk akal → mini-explainer objek (1–3 aksi bermakna) → judul 3–6 kata → objek/hasil jelas → hold stabil 1–2 detik untuk still. Target 4–6 detik fleksibel. Safe crop 9:16 dan grid profil 3:4, tanpa subtitle/CTA menghalangi judul. Metadata frame thumbnail harus tercatat; jangan klaim PNG sudah diekspor bila belum.
+- **Rumus per beat:** PESAN → OBJEK → PEMICU → AKSI → REAKSI → HASIL → HOLD → TRANSISI. Rencanakan scene berikutnya saat menyusun scene saat ini; gunakan Match Move/Object Morph/Match Cut bila logis, bukan semua transisi harus memperpanjang objek.
+- **Status & keselamatan:** tandai `DRAFT/REVISI/ACC/LOCKED`, bedakan source aktual dari rencana. Aturan ini hanya default video baru, **tidak mengubah video existing dan semua keputusan ACC**.
+- **Chat baru:** file aturan dalam Master ZIP hanya dapat dipakai setelah ZIP benar-benar dibaca. Untuk aktif sejak awal chat, salin `docs/CHATGPT-PROJECT-INSTRUCTIONS.md` ke pengaturan Project Instructions, unggah dokumen referensi sebagai Project Sources, lalu lampirkan ZIP Master terbaru untuk audit source aktual.
+
+## Profil Render HQ untuk finishing CapCut
+
+Untuk pengguna yang memilih workflow hybrid, Remotion membangun motion, transisi dan SFX, lalu dari `npm run menu` → Render MP4 → CapCut HQ menghasilkan bahan H.264 CRF16/Png frame/BT.709/AAC 48k. Pindahkan MP4 ke CapCut manual untuk VO rekaman, trim hold aman, dan subtitle final. Jangan memindahkan SFX ke CapCut atau memaksa cover PNG: cover adalah scene paling akhir. Prioritaskan profil render di `tools/render-profiles.mjs` dan kontrak `docs/RENDER-HQ-CAPCUT.md`, bukan flags acak atau renderer lain. Profil bersifat sementara, ACC/Props sumber jangan ditimpa. QA hasil MP4/CapCut wajib diuji terpisah.

@@ -3,7 +3,19 @@
 **TUJUAN:** satu acuan untuk semua obrolan baru dalam Project **Motion-Graphic**, sebagai pelengkap Project Rules v1.7 dan Custom Skill MotionGraphic Studio Director. Bukan klaim bahwa ChatGPT mengakses PC pengguna secara otomatis. Diperbarui 21 November 2026 dari ZIP Master terakhir yang dibagikan.
 
 ## Aturan keputusan
-Permintaan terbaru user dan item ACC > kontrak/version Master aktual > Project Rules > panduan Skill > referensi kreatif. Hindari tafsir dari nama file jika source aktual tersedia. Jika user meminta langsung build, buat add-on selesai tanpa approval storyboard tambahan; untuk diskusi judul, cukup konsep/storyboard. VO **selalu direkam setelah motion disetujui**.
+Permintaan terbaru user dan item ACC > kontrak/version Master aktual > Project Rules > panduan Skill > referensi kreatif. Hindari tafsir dari nama file jika source aktual tersedia. **Empat mode tegas**: hanya judul = konsep/storyboard; meminta audit = audit tanpa mengubah source; meminta review scene = kerjakan scene tersebut dan tunggu ACC; meminta langsung build = add-on selesai tanpa gate approval tambahan. VO **selalu direkam setelah motion disetujui**.
+
+## Kontrak pengiriman yang wajib dibawa ke chat baru
+- **Video baru**: satu ZIP add-on utuh `<slug>/` untuk `projects/`.
+- **Semua revisi (video existing maupun Master fix)**: satu **ZIP FILE CHANGE ONLY**, hanya file baru/benar-benar berubah, isi lengkap, path relatif terhadap **root `MotionGraphic-Studio/`** (contoh `projects/<slug>/src/scenes/Scene03.tsx`). Ekstrak ZIP dan copy seluruh isinya ke dalam root Master → Merge/Replace; jangan ikut mengirim Master/project penuh atau file tak berubah. Daftar file berubah, area yang dijaga/ACC, serta QA yang diuji pada respons. Jangan gunakan file BAT/installer/patcher untuk jalur sederhana ini.
+- **Perubahan di PC yang belum tercakup ZIP ChatGPT**: minta ZIP terbaru atau source relevan dan cek konflik sebelum Replace; copy manual tidak punya checksum otomatis.
+- **Konsistensi chat baru**: dokumen dalam Master ZIP **tidak otomatis** menjadi instruksi akun ChatGPT. Letakkan aturan ringkas ini di **Project Instructions** dan simpan file rujukannya di **Project Sources**; ZIP terbaru tetap diperlukan ketika audit keadaan source aktual. Jangan meminta ulang detail yang sudah tersedia di percakapan/Project Sources.
+
+## Aturan storyboard universal terbaru — video BARU
+
+**Acuan wajib:** `CHATGPT-READ-FIRST.md` dan `docs/STORYBOARD-TEMPLATE-UNIVERSAL.md`. Gunakan delapan **tahap cerita**: MASALAH → KONFLIK → REAKSI → SOLUSI → DEMONSTRASI → HASIL → INTERAKSI/CTA → COVER REELS. Tahap boleh digabung; jangan memaksa 8 scene. **Setelah CTA, scene terakhir khusus COVER REELS animatif** yang memperlihatkan inti materi dalam 1–3 aksi, membentuk hero composition dan hold 1–2 detik agar ada frame thumbnail 9:16 yang aman untuk crop grid 3:4. Scene lama/ACC dikecualikan kecuali user meminta revisi.
+
+Jika Master ZIP baru diunggah, **baca file ZIP dan entrypoint `CHATGPT-READ-FIRST.md` terlebih dahulu**, baru aturan, manifest, source, dan status ACC aktual. Jika ZIP belum dibaca, jangan klaim sudah memeriksa. Dokumen di dalam ZIP **tidak otomatis** menjadi pengaturan instruksi ChatGPT Project. Gunakan `docs/CHATGPT-PROJECT-INSTRUCTIONS.md` untuk pengaturan yang berlaku sebelum ZIP ditelaah.
 
 ## Master aktual (terverifikasi dari ZIP)
 - MotionGraphic Studio `1.8.1`; `remotion` dan `@remotion/cli` `4.0.538`, React 19, TypeScript devDependency. Tidak perlu membuat Remotion app baru.
@@ -21,6 +33,9 @@ Proses naskah draft, storyboard, pilihan teknik, template, validasi, dan organis
 Gunakan satu folder `projects/<slug>/`. Kelompokkan brief, storyboard, approval/status di `production/`, dan VO Guide/naskah di `src/config/narration.json`, aset VO di `public/audio/voiceover/`, SFX di `public/audio/sfx/`, musik di `public/audio/music/` **bila Master terverifikasi mendukung path tersebut**. Utamakan manifest, scene, dan README sesuai kontrak. Jangan buat `exports/briefs` sebagai sumber data utama. Source video tiap judul berdiri sendiri.
 
 **Target output eksternal (rencana, belum boleh dianggap terpasang):** `MotionGraphic-Studio-Outputs/<slug>/previews,renders,qa,logs`. Master ZIP engine-only tidak membawa `projects/`; arsip video per project harus tetap tersedia bila diminta.
+
+## Design System v2.0 — default untuk video BARU
+Baca `docs/MOTIONGRAPHIC-DESIGN-SYSTEM.md`, `docs/MOTION-DIRECTION-RULES.md`, dan `docs/QA-VISUAL-MOTION-CHECKLIST.md` dari ZIP Master aktual. Palet default `#F7F7F5` / `#202020` / `#DF805F`, teks sekunder penting `#646464`, font Arial/Helvetica **baseline yang konsisten** (Inter hanya bila aset tersedia dan teruji), skala font/hierarki, crop 3:4, aksesibilitas/kontras, UI realistis, SFX semantik, hold dan continuity. Style existing/ACC tidak dirombak karena dokumen ini. Baru bisa menyatakan lolos QA jika ada bukti frame/render/GUI yang sesuai.
 
 ## Visual & directing
 Minimal Editorial: off-white `#F7F7F5`, tinta `#202020`, coral `#DF805F`, grid samar, kartu UI clean. Default Reels 1080×1920, 30 FPS, 15–30 detik, maksimal 5–6 scene, hook 1–2 dtk, safe zone 250/350/50. Setiap beat: PESAN → OBJEK → PEMICU → AKSI → REAKSI → HASIL → HOLD → TRANSISI. Teknik sesuai topik: Living Screencast, Instruction Manual, Data Storytelling, Precise Mechanism, Swiss Motion. Ambil prinsip kreatif Lemo-Opuscar, **bukan renderer, demo atau asetnya**. Referensi pengguna tetap diprioritaskan.
@@ -66,10 +81,19 @@ Naskah DRAFT dan storyboard bisa dibuat sebelum rekaman. Prototype scene kunci j
 
 **Kamu cukup memberi judul. ChatGPT memakai aturan/Skill untuk menghasilkan satu ZIP add-on, sedangkan Master Remotion menjalankan import dan preview di PC.**
 
-## Status Master kosong (ZIP 20261121-043709)
-Master ini saat diaudit memiliki `library/catalog.json` berisi `videos: []` dan folder `projects/` kosong.
-`library/.studio-generated-state.json` masih berisi registrasi lama dari sebelum project dihapus;
-patch ini memperbaiki rekonsiliasi tersebut ketika `src/Root.tsx` memang registry kosong standar.
-Dokumen ini adalah sumber rujukan bagi ChatGPT, bukan pemasangan otomatis ke ChatGPT Project.
-Untuk menambahkannya ke Project ChatGPT, unggah file ini sekali melalui tab Sumber;
-perubahan file di PC tidak tersinkron otomatis ke akun ChatGPT.
+## Status snapshot dan kewaspadaan sumber lama
+Catatan ZIP 20261121-043709 yang menyebut Master kosong adalah **historis**, bukan keadaan Master saat ini. Dalam ZIP **20261122-024918** yang diaudit untuk pembaruan aturan ini, folder `projects/` berisi `easy2boot-multiboot-reels` dan `shutdown-otomatis-hook-realistis`. Status scene/ACC harus diperiksa dari file project serta source aktual; jangan mengikuti catatan kosong yang kedaluwarsa.
+Dokumen ini adalah rujukan, bukan pemasangan otomatis ke ChatGPT Project. Salin aturan operasional ke Project Instructions; unggah file rujukan ke Project Sources. Perubahan file PC tidak tersinkron otomatis ke akun ChatGPT.
+
+## Audio motion graphic: Sound Design Director
+Video referensi `Download (2)(2).mp4` menampilkan tiga pendekatan: **Openverse** (pencarian audio terbuka berlisensi, bukan Skill), **Real SFX** (metode/Skill Claude Code untuk penempatan rekaman nyata tepat frame), **earshot** (tool berbasis kode & pemeriksaan audio, opsional). Untuk semua scene motion, gunakan `skills/sound-design-director/SKILL.md` dan `docs/SOUND-DESIGN-WORKFLOW.md` secara selektif; tidak otomatis menginstal layanan/Skill pihak ketiga. Cue dan asal aset dikelola per project, record VO setelah motion ACC, mixing setelah VO tersedia. Gunakan `node tools/qa-sound-cues.mjs projects/<slug> --strict` untuk validasi cue; final QA audio harus didengar/diukur pada MP4.
+
+## Native layer per scene & sound design (update 2026-11-21)
+
+- Untuk setiap video baru, pastikan layer visual yang akan diubah sendiri memiliki deklarasi JSX `Interactive.G` / `.Div` / `.Text` langsung per objek, **bukan satu komponen pembungkus `<Layer>` yang mengembalikan `<Interactive.G>` lalu dipanggil berulang**. Itu menyebabkan Remotion Studio menampilkan `+N instances`.
+- Detail pemisahan layer dan source audio ada di `docs/SCENE-LAYER-AND-SOUND-STANDARD.md`. Jalankan `npm run qa:layers -- --strict <project-folder>` sebelum mengirim add-on, dan uji perubahan visual lalu Save/reload secara nyata bila bisa mengakses GUI.
+- Selama build scene, rencanakan sound cue untuk aksi yang bermakna, bukan whoosh generik. Setelah scene motion ACC, tandai frame pemicu/impact, buat SFX pendek dan satu sumber `production/sound-cues.json`, file di `public/audio/sfx/`, cek `npm run qa:sound`. Hindari main ulang satu WAV sepanjang scene dan efek tambahan yang berbenturan.
+- Untuk konten lama, bedakan apakah validasi hanya memperingatkan sumber legacy atau memastikan editing native teruji. Jangan migrasi animasi baked yang sudah ACC tanpa review frame/preview.
+
+## Native Editable First (aturan terbaru)
+Saat ChatGPT membuat scene baru, gunakan `studio-direct-v4` + `production/editable-blueprint.json`, deklarasi `Interactive.Text/Div` terpisah untuk setiap subtitle/teks yang dijanjikan bisa diklik, `name` dan teks child literal, style inline. Hindari `.map()` wrapper generik untuk native text; bedakan Props-editable. Jalankan `npm run qa:native`; video lama dengan frame bake tidak otomatis 100% editable. Review per-scene → ACC → VO Guide → rekam → sinkronkan subtitle → QA render; periksa Save/reload Windows sebelum membuat klaim.

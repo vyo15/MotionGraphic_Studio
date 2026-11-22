@@ -18,11 +18,11 @@ const Layer:React.FC<{id:string;name:string;p:Easy2BootScene03Props;children:Rea
   if(!a)return b?.[key]??def;if(!b)return a[key]??def;
   const t=smooth01((f-a.frame)/(b.frame-a.frame));return lerp(a[key]??def,b[key]??def,t);
  };
- return <Interactive.G name={`S02 — ${name}`} style={{translate:'0px 0px',rotate:'0deg',scale:1,opacity:1}}>
-  <g id={`S02-${id}`} opacity={opacity*value('opacity',u.opacity??1)}
+ if(id==='solutionLine2'||id==='reaction'||id==='manyLine2'||id==='reactionSecond'||id==='solutionLine1'||id==='manyLine1')return <g id={`S02-text-${id}`} opacity={opacity*value('opacity',u.opacity??1)}
+  transform={`translate(${value('x',u.x??0)} ${value('y',u.y??0)}) rotate(${value('rotation',u.rotation??0)}) scale(${value('scale',u.scale??1)})`}><g transform={motion}>{children}</g></g>;
+ return <g id={`S02-${id}`} opacity={opacity*value('opacity',u.opacity??1)}
    transform={`translate(${value('x',u.x??0)} ${value('y',u.y??0)}) rotate(${value('rotation',u.rotation??0)}) scale(${value('scale',u.scale??1)})`}
-   fill={u.fill}><g transform={motion}>{children}</g></g>
- </Interactive.G>;
+   fill={u.fill}><g transform={motion}>{children}</g></g>;
 };
 const Txt:React.FC<{x:number;y:number;v:string;size?:number;weight?:number;color?:string;anchor?:'start'|'middle'}>=
 ({x,y,v,size=24,weight=800,color=COL.ink,anchor='middle'})=><text x={x} y={y} textAnchor={anchor??'middle'} dominantBaseline="middle" fontFamily={font} fontWeight={weight} fontSize={size} fill={color}>{v}</text>;
@@ -30,30 +30,28 @@ const Part:React.FC<{id:string;name:string;p:Easy2BootScene03Props;children:Reac
  const f=useCurrentFrame();const u:LayerOverride=p.layerOverrides?.[`S02:${id}`]??{};
  const edit=getEditableTransform(u,f);
  if(!edit.visible)return null;
- return <Interactive.G name={`S02 — ${name}`} style={{translate:'0px 0px',scale:1,rotate:'0deg',opacity:1}}>
-  <g transform={edit.transform} opacity={edit.opacity} fill={u.fill}>{children}</g>
- </Interactive.G>;
+ return <g transform={edit.transform} opacity={edit.opacity} fill={u.fill}>{children}</g>;
 };
 const Usb:React.FC<{x:number;y:number;scale?:number;lights?:number;p:Easy2BootScene03Props}> = ({x,y,scale=1,lights=0,p})=><g transform={`translate(${x} ${y}) scale(${scale})`}>
- <Part id="hero-usb-connector" name="USB hero — konektor" p={p}>
+ <Interactive.G name="S02 — USB hero — konektor" style={{translate:'0px 0px',scale:1,rotate:'0deg',opacity:1}}><Part id="hero-usb-connector" name="USB hero — konektor" p={p}>
   <rect x={24} y={0} width={60} height={49} rx={7} fill="#9BACB5"/>
   <rect x={37} y={12} width={8} height={13} rx={1} fill="#6E818B"/>
   <rect x={63} y={12} width={8} height={13} rx={1} fill="#6E818B"/>
- </Part>
- <Part id="hero-usb-body" name="USB hero — bodi" p={p}>
+ </Part></Interactive.G>
+ <Interactive.G name="S02 — USB hero — bodi" style={{translate:'0px 0px',scale:1,rotate:'0deg',opacity:1}}><Part id="hero-usb-body" name="USB hero — bodi" p={p}>
   <rect x={8} y={42} width={92} height={195} rx={14} fill="#29363D"/>
   <rect x={14} y={51} width={80} height={174} rx={9} fill="#31464F"/>
- </Part>
- <Part id="hero-usb-label" name="USB hero — warna label" p={p}>
+ </Part></Interactive.G>
+ <Interactive.G name="S02 — USB hero — warna label" style={{translate:'0px 0px',scale:1,rotate:'0deg',opacity:1}}><Part id="hero-usb-label" name="USB hero — warna label" p={p}>
   <rect x={23} y={63} width={62} height={39} rx={6} fill={COL.coral}/>
- </Part>
- <Part id="hero-usb-name" name="USB hero — tulisan USB" p={p}>
+ </Part></Interactive.G>
+ <Interactive.G name="S02 — USB hero — tulisan USB" style={{translate:'0px 0px',scale:1,rotate:'0deg',opacity:1}}><Part id="hero-usb-name" name="USB hero — tulisan USB" p={p}>
   <Txt x={54} y={83} v={p.layerOverrides?.['S02:hero-usb-name']?.text??'USB'} size={23} color="#FFFFFF"/>
- </Part>
- <Part id="hero-usb-leds" name="USB hero — indikator tiga ISO" p={p}>
+ </Part></Interactive.G>
+ <Interactive.G name="S02 — USB hero — indikator tiga ISO" style={{translate:'0px 0px',scale:1,rotate:'0deg',opacity:1}}><Part id="hero-usb-leds" name="USB hero — indikator tiga ISO" p={p}>
   <rect x={42} y={216} width={24} height={9} rx={3} fill="#83969F"/>
   {[0,1,2].map((i)=><rect key={i} x={24+i*20} y={147} width={15} height={17} rx={3} stroke={i<lights?'#FFFFFF':'#647780'} strokeWidth={2} fill={i<lights?'#E2F3FA':'#31464F'}/>)}
- </Part>
+ </Part></Interactive.G>
 </g>;
 /** Old scene-1 boot window as editable vector, never a flattened screenshot. */
 const OldWindow:React.FC =()=> <g>
@@ -96,13 +94,13 @@ export const Scene02Solution:React.FC<Easy2BootScene03Props>=(p)=>{
    </defs>
    {/* Continuity: start exactly with S01's final X-window, then break its actual pieces. */}
    {p.scene02ShowBreak&&shardOpacity>0? <>
-    <Layer id="oldTitle1" name="Card Break — pertanyaan lama 1" p={p} opacity={oldTitle}>
+    <Interactive.G name="S02 — Card Break — pertanyaan lama 1" style={{translate:'0px 0px',scale:1,rotate:'0deg',opacity:1}}><Layer id="oldTitle1" name="Card Break — pertanyaan lama 1" p={p} opacity={oldTitle}>
      <Txt x={270} y={251} v={p.scene01FinalLine1} size={40}/>
-    </Layer>
-    <Layer id="oldTitle2" name="Card Break — pertanyaan lama 2" p={p} opacity={oldTitle}>
+    </Layer></Interactive.G>
+    <Interactive.G name="S02 — Card Break — pertanyaan lama 2" style={{translate:'0px 0px',scale:1,rotate:'0deg',opacity:1}}><Layer id="oldTitle2" name="Card Break — pertanyaan lama 2" p={p} opacity={oldTitle}>
      <Txt x={270} y={318} v={p.scene01FinalLine2} size={42} color={COL.coral}/>
-    </Layer>
-    {CARD_BREAK.shards.map((s,i)=>{
+    </Layer></Interactive.G>
+    <Interactive.G name="S02 — Card Break: semua kepingan" style={{translate:'0px 0px',scale:1,rotate:'0deg',opacity:1}}>{CARD_BREAK.shards.map((s,i)=>{
       const delay=i%3*1.2; const move=outCubic((f-brStart-delay)/(brDur-delay));
       const spread=p.scene02BreakSpread,rot=p.scene02BreakRotation;
       const wobble=(1-move)*Math.sin(Math.max(0,f-brStart)*1.1+i*2)*2;
@@ -110,46 +108,104 @@ export const Scene02Solution:React.FC<Easy2BootScene03Props>=(p)=>{
         opacity={shardOpacity} motion={`translate(${s.dx*spread*move+wobble} ${s.dy*spread*move}) rotate(${s.rot*rot*move} ${s.pivotX} ${s.pivotY})`}>
         <g clipPath={`url(#s02-shard-${s.id})`}><OldWindow/></g>
       </Layer>;
-    })}
-    <Layer id="breakDust" name="Card Break — percikan benturan" p={p} opacity={breaking*(1-fade(f,brStart+4,brStart+13))}>
+    })}</Interactive.G>
+    <Interactive.G name="S02 — Card Break — percikan benturan" style={{translate:'0px 0px',scale:1,rotate:'0deg',opacity:1}}><Layer id="breakDust" name="Card Break — percikan benturan" p={p} opacity={breaking*(1-fade(f,brStart+4,brStart+13))}>
      <path d="M160 491L146 477M389 494L409 474M168 687L149 704M385 680L401 699" stroke={p.scene02BreakColor} strokeWidth={4} fill="none" strokeLinecap="round"/>
-    </Layer>
+    </Layer></Interactive.G>
    </>:null}
    {/* Single message during reaction; no duplicate headline or presentation card. */}
    <Layer id="reaction" name="Ah, ribet — baris 1" p={p} opacity={reaction}
      motion={`translate(0 ${lerp(35,0,outBack((t-.64)/.55))})`}>
-    <Txt x={270} y={308} size={size('reaction',38)} color={color('reaction',COL.ink)} v={title('reaction',p.scene02ReactionLine1)}/>
+    {title('reaction',p.scene02ReactionLine1) !== 'AH, RIBET' || size('reaction',38) !== 38 || color('reaction',COL.ink) !== COL.ink ? <Txt x={270} y={308} size={size('reaction',38)} color={color('reaction',COL.ink)} v={title('reaction',p.scene02ReactionLine1)}/> : <Interactive.Text
+     name="S02 — reaction"
+     x={270}
+     y={308}
+     textAnchor="middle"
+     dominantBaseline="middle"
+     fontFamily="Inter, Arial, sans-serif"
+     fontWeight={800}
+     fontSize={38}
+     fill={COL.ink}
+     style={{
+      translate: '0px 145px',
+      scale: 1,
+      rotate: '0deg',
+      opacity: 1
+     }}
+    >AH, RIBET</Interactive.Text>}
    </Layer>
    <Layer id="reactionSecond" name="Banget — baris 2" p={p} opacity={reaction}
      motion={`translate(0 ${lerp(38,0,outBack((t-.69)/.55))})`}>
-    <Txt x={270} y={363} size={size('reactionSecond',46)} color={color('reactionSecond',p.scene02BreakColor)} v={title('reactionSecond',p.scene02ReactionLine2)}/>
+    {title('reactionSecond',p.scene02ReactionLine2) !== 'BANGET.' || size('reactionSecond',46) !== 46 || color('reactionSecond',p.scene02BreakColor) !== p.scene02BreakColor ? <Txt x={270} y={363} size={size('reactionSecond',46)} color={color('reactionSecond',p.scene02BreakColor)} v={title('reactionSecond',p.scene02ReactionLine2)}/> : <Interactive.Text
+     name="S02 — reactionSecond"
+     x={270}
+     y={363}
+     textAnchor="middle"
+     dominantBaseline="middle"
+     fontFamily="Inter, Arial, sans-serif"
+     fontWeight={800}
+     fontSize={46}
+     fill={p.scene02BreakColor}
+     style={{
+      translate: '0px 145px',
+      scale: 1,
+      rotate: '0deg',
+      opacity: 1
+     }}
+    >BANGET.</Interactive.Text>}
    </Layer>
-   <Layer id="reactionCaption" name="Teks VO: Ah, ribet banget" p={p} opacity={between(t,.85,1.14,2.50,2.8)}>
-    <Txt x={270} y={750} v={title('reactionCaption','Ah, ribet banget.')} color={COL.ink} size={20} weight={620}/>
-   </Layer>
+   {!p.showSubtitles ? <Interactive.G name="S02 — Teks VO: Ah, ribet banget" style={{translate:'0px 0px',scale:1,rotate:'0deg',opacity:1}}><Layer id="reactionCaption" name="Teks VO: Ah, ribet banget" p={p} opacity={between(t,.85,1.14,2.50,2.8)}>
+    {title('reactionCaption','Ah, ribet banget.')==='Ah, ribet banget.' ?
+      <Interactive.Text
+       name="S02 — Subtitle draft 01 — Ah ribet"
+       x={270}
+       y={750}
+       textAnchor="middle"
+       dominantBaseline="middle"
+       fontFamily="Inter, Arial, sans-serif"
+       fontSize={20}
+       fontWeight={620}
+       fill="#202327"
+       style={{translate:'0px 0px',scale:1,rotate:'0deg',opacity:1}}
+      ></Interactive.Text> :
+      <Txt x={270} y={750} v={title('reactionCaption','Ah, ribet banget.')} color={COL.ink} size={20} weight={620}/>}
+   </Layer></Interactive.G>:null}
    {/* Solution appears after reaction exits. */}
    <Layer id="solutionLine1" name="Mending pakai — headline" p={p} opacity={sol}
     motion={`translate(0 ${26*(1-outCubic((t-2.95)/.64))})`}>
-    <Txt x={270} y={288} v={title('solutionLine1',p.scene02SolutionLine1)} size={size('solutionLine1',35)} color={color('solutionLine1',COL.ink)}/>
+    {title('solutionLine1',p.scene02SolutionLine1) !== 'MENDING PAKAI' || size('solutionLine1',35) !== 35 || color('solutionLine1',COL.ink) !== COL.ink ? <Txt x={270} y={288} v={title('solutionLine1',p.scene02SolutionLine1)} size={size('solutionLine1',35)} color={color('solutionLine1',COL.ink)}/> : <Interactive.Text name="S02 — solutionLine1" x={270} y={288} textAnchor="middle" dominantBaseline="middle" fontFamily="Inter, Arial, sans-serif" fontWeight={800} fontSize={35} fill={COL.ink} style={{translate:'0px 0px',scale:1,rotate:'0deg',opacity:1}}>MENDING PAKAI</Interactive.Text>}
    </Layer>
    <Layer id="solutionLine2" name="Easy2Boot — headline" p={p} opacity={sol}
     motion={`translate(0 ${26*(1-outCubic((t-3.06)/.65))})`}>
-    <Txt x={270} y={346} v={title('solutionLine2',p.scene02SolutionLine2)} size={size('solutionLine2',51)} color={color('solutionLine2',COL.coral)}/>
+    {title('solutionLine2',p.scene02SolutionLine2) !== 'EASY2BOOT.' || size('solutionLine2',51) !== 51 || color('solutionLine2',COL.coral) !== COL.coral ? <Txt x={270} y={346} v={title('solutionLine2',p.scene02SolutionLine2)} size={size('solutionLine2',51)} color={color('solutionLine2',COL.coral)}/> : <Interactive.Text name="S02 — solutionLine2" x={270} y={346} textAnchor="middle" dominantBaseline="middle" fontFamily="Inter, Arial, sans-serif" fontWeight={800} fontSize={51} fill={COL.coral} style={{translate:'0px 0px',scale:1,rotate:'0deg',opacity:1}}>EASY2BOOT.</Interactive.Text>}
    </Layer>
-   <Layer id="solutionUsb" name="USB yang sama: solusi sampai tiga ISO" p={p} opacity={fade(t,2.96,3.42)} motion={`translate(0 ${72*(1-outCubic((t-2.96)/.55))})`}>
+   <Interactive.G name="S02 — USB yang sama: solusi sampai tiga ISO" style={{translate:'0px 0px',scale:1,rotate:'0deg',opacity:1}}><Layer id="solutionUsb" name="USB yang sama: solusi sampai tiga ISO" p={p} opacity={fade(t,2.96,3.42)} motion={`translate(0 ${72*(1-outCubic((t-2.96)/.55))})`}>
     <Usb p={p} x={204} y={447} scale={1.2} lights={stored}/>
-   </Layer>
-   <Layer id="solutionCaption" name="Teks VO: Mending pakai Easy2Boot" p={p} opacity={between(t,3.35,3.56,5.30,5.60)}>
-    <Txt x={270} y={750} size={19} weight={620} v={title('solutionCaption','Mending pakai Easy2Boot aja.')}/>
-   </Layer>
+   </Layer></Interactive.G>
+   {!p.showSubtitles ? <Interactive.G name="S02 — Teks VO: Mending pakai Easy2Boot" style={{translate:'0px 0px',scale:1,rotate:'0deg',opacity:1}}><Layer id="solutionCaption" name="Teks VO: Mending pakai Easy2Boot" p={p} opacity={between(t,3.35,3.56,5.30,5.60)}>
+    {title('solutionCaption','Mending pakai Easy2Boot aja.')==='Mending pakai Easy2Boot aja.' ?
+      <Interactive.Text
+       name="S02 — Subtitle draft 02 — Easy2Boot"
+       x={270}
+       y={750}
+       textAnchor="middle"
+       dominantBaseline="middle"
+       fontFamily="Inter, Arial, sans-serif"
+       fontSize={19}
+       fontWeight={620}
+       fill="#202327"
+       style={{translate:'0px 0px',scale:1,rotate:'0deg',opacity:1}}
+      ></Interactive.Text> :
+      <Txt x={270} y={750} size={19} weight={620} v={title('solutionCaption','Mending pakai Easy2Boot aja.')}/>}
+   </Layer></Interactive.G>:null}
    {/* Files visibly enter one USB, not three independent slides. */}
    <Layer id="manyLine1" name="Satu flashdisk — headline" p={p} opacity={menu} motion={`translate(0 ${30*(1-outCubic((t-6.03)/.55))})`}>
-    <Txt x={270} y={274} v={title('manyLine1',p.scene02ManyLine1)} size={size('manyLine1',32)} color={color('manyLine1',COL.ink)}/>
+    {title('manyLine1',p.scene02ManyLine1) !== 'SATU FLASHDISK' || size('manyLine1',32) !== 32 || color('manyLine1',COL.ink) !== COL.ink ? <Txt x={270} y={274} v={title('manyLine1',p.scene02ManyLine1)} size={size('manyLine1',32)} color={color('manyLine1',COL.ink)}/> : <Interactive.Text name="S02 — manyLine1" x={270} y={274} textAnchor="middle" dominantBaseline="middle" fontFamily="Inter, Arial, sans-serif" fontWeight={800} fontSize={32} fill={COL.ink} style={{translate:'0px 0px',scale:1,rotate:'0deg',opacity:1}}>SATU FLASHDISK</Interactive.Text>}
    </Layer>
    <Layer id="manyLine2" name="Banyak installer — headline" p={p} opacity={menu} motion={`translate(0 ${32*(1-outCubic((t-6.13)/.55))})`}>
-    <Txt x={270} y={326} v={title('manyLine2',p.scene02ManyLine2)} size={size('manyLine2',36)} color={color('manyLine2',COL.coral)}/>
+    {title('manyLine2',p.scene02ManyLine2) !== 'BANYAK INSTALLER' || size('manyLine2',36) !== 36 || color('manyLine2',COL.coral) !== COL.coral ? <Txt x={270} y={326} v={title('manyLine2',p.scene02ManyLine2)} size={size('manyLine2',36)} color={color('manyLine2',COL.coral)}/> : <Interactive.Text name="S02 — manyLine2" x={270} y={326} textAnchor="middle" dominantBaseline="middle" fontFamily="Inter, Arial, sans-serif" fontWeight={800} fontSize={36} fill={COL.coral} style={{translate:'0px 0px',scale:1,rotate:'0deg',opacity:1}}>BANYAK INSTALLER</Interactive.Text>}
    </Layer>
-   {[0,1,2].map(i=>{
+   <Interactive.G name="S02 — ISO: 3 kartu installer" style={{translate:'0px 0px',scale:1,rotate:'0deg',opacity:1}}>{[0,1,2].map(i=>{
       const start=cardStarts[i];const pct=outCubic((t-start)/.82);
       const appear=between(t,start-.06,start+.15,start+.68,start+.85)*menu;
       const names=['WIN 10','WIN 11','LINUX'];
@@ -157,10 +213,40 @@ export const Scene02Solution:React.FC<Easy2BootScene03Props>=(p)=>{
        motion={`translate(${lerp(-135,210,pct)} ${lerp(545,570,pct)}) scale(${lerp(1,.25,pct)})`}>
        <FileCard v={names[i]} accent={i===2?'#D18454':COL.blue}/>
       </Layer>;
-   })}
-   <Layer id="manyCaption" name="Teks VO: satu flashdisk banyak installer" p={p} opacity={between(t,6.45,6.7,12.55,12.87)}>
-    <Txt x={270} y={750} size={19} weight={620} v={title('manyCaption',t<8?'Satu flashdisk bisa nyimpen installer.':t<9.15?'Windows 10, Windows 11,':'Sampai Linux sekaligus.')}/>
-   </Layer>
+   })}</Interactive.G>
+   {!p.showSubtitles ? <Interactive.G name="S02 — Teks VO: satu flashdisk banyak installer" style={{translate:'0px 0px',scale:1,rotate:'0deg',opacity:1}}><Layer id="manyCaption" name="Teks VO: satu flashdisk banyak installer" p={p} opacity={between(t,6.45,6.7,12.55,12.87)}>
+    {t<8 ? (title('manyCaption','Satu flashdisk bisa nyimpen installer.')==='Satu flashdisk bisa nyimpen installer.' ?
+      <Interactive.Text
+       name="S02 — Subtitle draft 03A — Satu flashdisk"
+       x={270}
+       y={750}
+       textAnchor="middle"
+       dominantBaseline="middle"
+       fontFamily="Inter, Arial, sans-serif"
+       fontSize={19}
+       fontWeight={620}
+       fill="#202327"
+       style={{translate:'0px 0px',scale:1,rotate:'0deg',opacity:1}}
+      ></Interactive.Text> :
+      <Txt x={270} y={750} size={19} weight={620} v={title('manyCaption','Satu flashdisk bisa nyimpen installer.')}/>) :
+     t<9.15 ? (title('manyCaption','Windows 10, Windows 11,')==='Windows 10, Windows 11,' ?
+      <Interactive.Text name="S02 — Subtitle draft 03B — Windows" x={270} y={750} textAnchor="middle" dominantBaseline="middle" fontFamily="Inter, Arial, sans-serif" fontSize={19} fontWeight={620} fill="#202327" style={{translate:'0px 0px',scale:1,rotate:'0deg',opacity:1}}>Windows 10, Windows 11,</Interactive.Text> :
+      <Txt x={270} y={750} size={19} weight={620} v={title('manyCaption','Windows 10, Windows 11,')}/>) :
+      (title('manyCaption','Sampai Linux sekaligus.')==='Sampai Linux sekaligus.' ?
+      <Interactive.Text
+       name="S02 — Subtitle draft 03C — Linux"
+       x={270}
+       y={750}
+       textAnchor="middle"
+       dominantBaseline="middle"
+       fontFamily="Inter, Arial, sans-serif"
+       fontSize={19}
+       fontWeight={620}
+       fill="#202327"
+       style={{translate:'0px 0px',scale:1,rotate:'0deg',opacity:1}}
+      ></Interactive.Text> :
+      <Txt x={270} y={750} size={19} weight={620} v={title('manyCaption','Sampai Linux sekaligus.')}/>)}
+   </Layer></Interactive.G>:null}
   </svg>
   {p.showSfx&&p.scene02ShowBreak?<Sequence from={p.scene02BreakStartFrame} durationInFrames={CARD_BREAK.durationInFrames-p.scene02BreakStartFrame}>
     <Audio src={staticFile('videos/easy2boot-multiboot-reels/audio/scene02_card_break.wav')} volume={0.72}/>

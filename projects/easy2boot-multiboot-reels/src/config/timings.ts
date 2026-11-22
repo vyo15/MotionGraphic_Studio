@@ -24,27 +24,24 @@ export const SCENE03 = {
 } as const;
 
 export const SCENE04={
-  fps:30,
-  durationInFrames:480,
-  /** Draft VO/visual mapping, each copy uses the SAME transfer window. */
-  beats:{
-    setup:{from:0,to:138,vo:'Salin file ISO installer'},
-    transfer:{from:138,to:218,vo:'ke folder masing-masing.'},
-    result:{from:218,to:345,vo:'Sesuai sistem operasinya.'},
-    carry:{from:345,to:480,vo:'(USB membawa installer ke scene booting)'},
-  },
+ fps:30,
+ durationInFrames:240,
+ /** ACC 2026-11-21: fast staggered ISO from four source tiles; 8 seconds. */
+ beats:{
+  setup:{from:0,to:60,vo:'Salin file ISO installer'},
+  transfer:{from:60,to:153,vo:'ke folder masing-masing.'},
+  result:{from:153,to:240,vo:'Sesuai sistem operasinya.'},
+ },
 } as const;
 
 export const SCENE05={
  fps:30,
- durationInFrames:480, // ACC visual preview laptop sama Scene01: 16 s
+ durationInFrames:486, // Scene05 ACC: 16.2 s, voiceover simplified without changing words
  beats:{
-  connection:{from:0,to:108,vo:'Sekarang, boot dari flashdisk.'},
-  bootMenu:{from:108,to:202,vo:'Di Boot Menu, pilih USB.'},
-  agfm:{from:202,to:285,vo:'Buka menu agFM.'},
-  iso:{from:285,to:387,vo:'Pilih ISO Windows 11, lalu jalankan.'},
-  setup:{from:387,to:480,vo:'Installer Windows pun terbuka.'},
- }
+  boot:{from:0,to:144,vo:'Sekarang, booting seperti biasa, Pilih booting USB.'},
+  iso:{from:144,to:309,vo:'Begitu muncul, kamu tinggal pilih ISO yang kamu butuhkan.'},
+  setup:{from:309,to:486,vo:'Jalankan, dan beberapa saat kemudian, Windows Setup pun terbuka.'},
+ },
 } as const;
 
 

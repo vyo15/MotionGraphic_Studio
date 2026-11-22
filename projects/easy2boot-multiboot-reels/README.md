@@ -1,61 +1,29 @@
-# Easy2Boot — 1 Flashdisk Banyak Installer (Editable Source)
+# Easy2Boot — 1 Flashdisk Banyak Installer (MotionGraphic Studio v1.8.1)
 
-**Project ID tetap:** `Easy2BootMultibootReels`  
-**Slug tetap:** `easy2boot-multiboot-reels`  
-**Format:** 1080×1920, 30 FPS, 2641 frame (88,03 detik), enam scene + pengantar.
+**ID:** `Easy2BootMultibootReels` · **slug:** `easy2boot-multiboot-reels` · **1080×1920 · 30 FPS · 2467 frame (82,23 dtk)**.
 
-## Revisi clean / source 20 November 2026
+## Status produksi
 
-Add-on ini berasal dari ZIP **MotionGraphic-Studio-Master-v1.8.1-20261120-075345(1).zip** milik pengguna. Hanya folder project Easy2Boot yang dikemas; tidak berisi dan tidak mengubah Master ataupun project video lain.
+**Scene 01–06 dan pengantar 02→03 = ACC/LOCKED visual** (21 November 2026). Pertahankan hook Impact Stamp, Card Break, USB Match Move, persiapan Make_E2B, copy ISO serentak, laptop Boot Menu/agFM dan CTA Mix. **Satu-satunya source visual baru di revisi ini adalah Scene 06.** Rekaman VO final belum ada; VO Guide tetap draft.
 
-- **S01 dan S02 serta bridge 02→03:** seluruh berkas source aslinya dipertahankan. Status ACC sebelumnya tetap berlaku.
-- **S03:** UI Make_E2B satu jendela (pilih USB lalu klik), metadata header/footer dan judul berulang disembunyikan saat render. Subtitle VO berupa **teks langsung tanpa kotak** di layer independen. Pengeditan ini atas permintaan terbaru, sehingga perlu review visual pada PC sebelum status ACC baru.
-- **S04:** Scene berisi empat ISO (Windows 8, 10, 11, Linux) disalin **serentak secara simulasi** ke empat folder tujuan. Empat kartu ISO, folder, nama file, nama OS, jalur, animasi salin, centang dan USB hero berupa layer SVG/React terpisah. Tidak ada header/footer/nomor scene atau headline dekoratif. Subtitle VO teks langsung di bawah.
-- **S05/S06:** tidak diubah, belum ACC.
+Lihat `STORYBOARD.md`, `production/ALL-SCENES-ACC-20261121.json`, `production/SCENE06-ACC-20261121.md`.
 
-## Cara memasang (satu Master saja)
+## Instal di satu Master
 
-1. Cadangkan folder `MotionGraphic-Studio/projects/easy2boot-multiboot-reels` yang sudah ada agar revisi lama aman.
-2. Ekstrak ZIP hingga terlihat **folder `easy2boot-multiboot-reels`** (bukan hanya isi foldernya).
-3. Salin folder tersebut ke `MotionGraphic-Studio/projects/`, gabungkan/replace **hanya folder video ini**.
-4. Dari folder Master Studio (berisi `package.json`), jalankan `npm run sync` lalu `npm run dev`.
-5. Buka komposisi `Easy2BootMultibootReels` atau segmen S03/S04 yang diregistrasi otomatis Master.
-6. Jalankan `npm run check`, review di Studio, kemudian `npm run render` untuk MP4 final.
+1. Backup `MotionGraphic-Studio/projects/easy2boot-multiboot-reels/` yang ada.
+2. Salin folder `easy2boot-multiboot-reels/` lengkap dari ZIP ke `MotionGraphic-Studio/projects/` (jangan salin `src` atau `public` ke root).
+3. Jalankan `npm run sync`, lalu `npm run dev` dari folder Master.
+4. Buka `Easy2BootMultibootReels` atau komposisi Scene 06.
+5. Setelah merekam VO sendiri, sinkronkan audio/subtitle, baru QA dan render final.
 
-Jangan menyalin `src/` atau `public/` add-on ke root Master, dan jangan mengedit `src/Root.tsx`, `package.json`, atau katalog Master secara manual.
+Jangan mengedit manual Master `src/Root.tsx`, `src/index.ts`, `package.json`, `library/catalog.json`, atau mirror `public/videos/`.
 
-## Struktur penting
+## Editabilitas
 
-- `motiongraphic-video.json` — manifest/Props default (ID dan slug lama).
-- `src/Video.tsx` dan `src/SegmentVideo.tsx` — komposisi penuh dan per segmen, tidak berubah.
-- `src/scenes/Scene03Preparation.tsx` + `Scene03ReadableEntrance.tsx` — UI S03 dari SVG sumber, hanya dirapikan.
-- `src/scenes/Scene04CopyIso.tsx` — scene ISO serentak, SVG/React yang bisa diedit.
-- `src/components/EditableSvgLayer.tsx` — transform posisi pengguna terpisah dari animasi.
-- `src/components/SceneTextVO.tsx` — subtitle teks biasa, bukan gambar.
-- `src/config/scene04Clean.ts` — daftar posisi/palet/timing dan empat key OS.
-- `src/config/sceneTextVO.ts` — timing draft subtitle S03–S04.
-- `src/config/props.ts` + `defaultProps` manifest — pilihan teks, posisi/warna override dan layer.
-- `public/audio/` — SFX asli master dipertahankan; VO rekaman final belum tersedia.
+Scene06 disusun ulang sebagai layer React/SVG dan native `Interactive` bernama, **bukan screenshot/MP4**: dua USB (konektor, badan, label terpisah), lima tile OS (latar, logo, teks), headline, komentar, subtitle teks, cover. `scene06ShowTextVO` mematikan/menyalakan VO guide; `scene06Question`, `scene06Prompt`, `coverBrand`, `coverLine1`, `coverLine2` dapat diubah di Props. `layerOverrides` mendukung offset/scale/opacity/teks pada layer tertentu.
 
-Lihat `PANDUAN-EDIT-ASSET.md`, `REVISION-STATUS-CLEAN.md`, dan `QA-REVISION-CLEAN.md` untuk daftar layer, kontrol dan hasil validasi.
+Lihat `PANDUAN-EDIT-ASSET.md` untuk contoh. **Source editable tidak sama dengan GUI Save/reload teruji**; pengujian interaksi di Studio Windows dan render native belum dilakukan di lingkungan ini. Pengecekan source dan render pengujian SVG bukan bukti 100% drag-editable.
 
-## Batasan yang penting
+## QA
 
-Empat ISO bergerak sekaligus merupakan **penyingkatan visual** empat penyalinan, bukan fungsi File Explorer yang dapat mengelompokkan berbagai ISO otomatis dengan satu klik. Tujuan folder masih perlu disesuaikan dengan konfigurasi Easy2Boot aktual pada komputer pengguna.
-
-Preview MP4 lokal dibuat melalui pengujian JSX/SVG dengan renderer uji, **bukan** hasil render native Remotion Studio. Kemampuan menyimpan perubahan setelah drag-and-drop di editor PC belum diuji. Source dan konfigurasi sudah disertakan untuk dilakukan pengujian tersebut pada master terpasang.
-
-
-## Revisi editabilitas 21 November 2026
-
-- Scene 05 sekarang laptop bergaya sama seperti Scene 01, UI boot dan elemen SVG individu (480 frame, 16 s).
-- Scene 01/02: komponen laptop/USB dipisahkan; Scene 03/06: SVG lama dipecah per node interaktif bernama dengan animasi frame sumber tetap; Scene 04 tetap native vector editable.
-- Nama video/ID/slug dipertahankan; Master tidak diikutkan dalam ZIP ini.
-- Detail cara mengedit lihat `PANDUAN-EDIT-ASSET.md` dan `EDITABLE-PER-ELEMEN-20261121.md`.
-- Belum diujikan interaksi drag/save/reload dengan Remotion Studio pada Windows (harus dicek).
-
-## Pemasangan revisi per-elemen
-
-Untuk Master Studio 1.8.1: buat backup `projects/easy2boot-multiboot-reels`, lalu ekstrak ZIP add-on dan salin folder `easy2boot-multiboot-reels` secara utuh ke `projects/` (jangan menyalin src ke root master). Jalankan `npm run sync` / `npm run dev`. Patch only ditujukan untuk proyek dengan baseline ZIP Master 20261121-031419; gunakan full add-on bila ragu.
-
-Uji editor: coba drag satu judul S01, satu teks S03, dan satu label agFM S05; ubah teks lewat Props, Save Props to Code, reload Studio, dan render cuplikan. Catat hasilnya sebelum menandai pengujian Windows lulus.
+Manifest, import, lint aset literal, sintaks sumber dan kebersihan ZIP diperiksa. Preview CTA yang disetujui ada sebagai video review terpisah, tidak dibundel ke source editable. Pengujian source offline dilakukan untuk beberapa frame Scene06; belum dijalankan render native Remotion.

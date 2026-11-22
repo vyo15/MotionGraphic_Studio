@@ -1,3 +1,5 @@
+**Catatan terbaru 21 November 2026:** referensi lama di bawah digantikan Scene05 yang sudah ACC. Rujukan aktif: `production/SCENE05-ACC-20261121.md` dan `src/scenes/Scene05Boot.tsx`.
+
 # Scene 05 — Laptop konsisten Scene 01 (editable)
 
 Tanggal 21 November 2026. Keputusan: gunakan laptop dari Scene 01 sebagai acuan visual, bukan 3D/3-4-angle. Implementasi yang disusun ulang berupa SVG/React, bukan rekaman video sebagai satu layer.

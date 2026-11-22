@@ -1,4 +1,5 @@
 {
+  "contractVersion": "1.0.0",
   "id": "Easy2BootMultibootReels",
   "slug": "easy2boot-multiboot-reels",
   "title": "Easy2Boot — 1 Flashdisk Banyak Installer (Native Remotion Studio)",
@@ -7,7 +8,7 @@
   "width": 1080,
   "height": 1920,
   "fps": 30,
-  "durationInFrames": 2701,
+  "durationInFrames": 2467,
   "defaultProps": {
     "title01Need": "MAU INSTAL",
     "title01Target": "WINDOWS 11?",
@@ -1185,6 +1186,7 @@
     "coverBrand": "EASY2BOOT",
     "coverLine1": "1 FLASHDISK",
     "coverLine2": "BANYAK INSTALLER",
+    "showOnScreenCaptions": false,
     "showSubtitles": false,
     "subtitleColor": "#202020",
     "fontFamily": "Inter, Arial, sans-serif",
@@ -1272,7 +1274,10 @@
       "Buka menu agFM.",
       "Pilih ISO Windows 11, lalu jalankan.",
       "Installer Windows pun terbuka."
-    ]
+    ],
+    "scene06ShowTextVO": true,
+    "scene06Question": "KAMU TIM MANA?",
+    "scene06Prompt": "TULIS PILIHANMU"
   },
   "editableContract": "studio-inline-v2",
   "segments": [
@@ -1298,18 +1303,18 @@
       "id": "Easy2BootMultibootReels-S04",
       "title": "04 — Salin ISO",
       "startFrame": 1351,
-      "durationInFrames": 480
+      "durationInFrames": 240
     },
     {
       "id": "Easy2BootMultibootReels-S05",
       "title": "05 — Booting Windows 11",
-      "startFrame": 1831,
-      "durationInFrames": 480
+      "startFrame": 1591,
+      "durationInFrames": 486
     },
     {
       "id": "Easy2BootMultibootReels-S06",
       "title": "06 — CTA + Cover",
-      "startFrame": 2311,
+      "startFrame": 2077,
       "durationInFrames": 390
     }
   ]

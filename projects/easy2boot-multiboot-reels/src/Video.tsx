@@ -4,7 +4,7 @@ import {AbsoluteFill, Audio, Sequence, staticFile} from 'remotion';
 import {Scene01Problem} from './scenes/Scene01Problem';
 import {Scene02WithBridge} from './scenes/Scene02WithBridge';
 import {Scene03ReadableEntrance} from './scenes/Scene03ReadableEntrance';
-import {Scene03ReadableSfx} from './components/Scene03ReadableSfx';
+import {SceneSoundCues} from './components/SceneSoundCues';
 import {Scene04CopyIso} from './scenes/Scene04CopyIso';
 import {Scene05Boot} from './scenes/Scene05Boot';
 import {Scene06Closing} from './scenes/Scene06Closing';
@@ -12,14 +12,9 @@ import {SCENE01,SCENE02,SCENE03,SCENE04,SCENE05,SCENE06} from './config/timings'
 import {DEFAULT_PROPS} from './config/props';
 import type {Easy2BootScene03Props} from './config/props';
 const slug='easy2boot-multiboot-reels';
-const paths=[
-  `videos/${slug}/audio/scene01_sfx.wav`,
-  `videos/${slug}/audio/scene02_sfx.wav`,
-  `videos/${slug}/audio/scene03_sfx.wav`,
-  `videos/${slug}/audio/scene04_sfx.wav`,
-  `videos/${slug}/audio/scene05_sfx.wav`,
-  `videos/${slug}/audio/scene06_sfx.wav`,
-];
+const audioDir=staticFile('videos/easy2boot-multiboot-reels/audio/VOICEOVER-README.txt').replace(/VOICEOVER-README\.txt$/,'');
+/** Encode a basename, never accept a traversal path from editable Props. */
+const optionalAudio=(filename:string)=>audioDir+encodeURIComponent(filename.replaceAll('\\','/').split('/').pop()??'');
 const sceneData=[
  {frames:SCENE01.durationInFrames,name:'S01 — Masalah'},
  {frames:SCENE02.durationInFrames,name:'S02 — Easy2Boot'},
@@ -31,13 +26,16 @@ const sceneData=[
 /** Scene01 Impact, Scene02 Card Break unchanged; Opsi01 Match Move appended; scene03–06 unchanged. */
 export const Video:React.FC<Partial<Easy2BootScene03Props>>=(input)=>{
  const p={...DEFAULT_PROPS,...input};
+ // Draft VO lines in Scenes 01–06 use !showSubtitles, while final subtitles use
+ // SubtitleTrack. Suppress both without touching approved scene source/motion.
+ const sceneProps=p.showOnScreenCaptions?p:{...p,showSubtitles:true,scene01ShowCaptions:false};
  const segments=[
-  <Scene01Problem {...p}/>,
-  <Scene02WithBridge {...p}/>,
-  <Scene03ReadableEntrance {...p}/>,
-  <Scene04CopyIso {...p}/>,
-  <Scene05Boot {...p}/>,
-  <Scene06Closing {...p}/>,
+  <Scene01Problem {...sceneProps} scene01ShowCaptions={sceneProps.showSubtitles?false:sceneProps.scene01ShowCaptions} showSfx={false}/>,
+  <Scene02WithBridge {...sceneProps} showSfx={false}/>,
+  <Scene03ReadableEntrance {...sceneProps}/>,
+  <Scene04CopyIso {...sceneProps}/>,
+  <Scene05Boot {...sceneProps}/>,
+  <Scene06Closing {...sceneProps}/>,
  ];
  let offset=0;
  return <AbsoluteFill style={{background:p.backgroundColor}}>
@@ -45,13 +43,13 @@ export const Video:React.FC<Partial<Easy2BootScene03Props>>=(input)=>{
    const item=sceneData[i]; const from=offset;offset+=item.frames;
    return <Sequence key={item.name} name={item.name} from={from} durationInFrames={item.frames}>
     {segment}
-    {p.showSfx && i===2 ? <Scene03ReadableSfx {...p}/> : p.showSfx && (i!==1 || !p.scene02ShowBreak)?<Audio src={staticFile(paths[i])} volume={0.82}/>:null}
+    <SceneSoundCues sceneIndex={i} enabled={p.showSfx} timing={p}/>
    </Sequence>;
   })}
   {p.showVoiceOver&&p.voiceOverFileName?
-    <Audio src={staticFile(`videos/${slug}/audio/${p.voiceOverFileName}`)} volume={1}/>:null}
-  {p.showSubtitles?<SubtitleTrack color={p.subtitleColor}/>:null}
+    <Audio src={optionalAudio(p.voiceOverFileName)} volume={1}/>:null}
+  {p.showOnScreenCaptions&&p.showSubtitles?<SubtitleTrack color={p.subtitleColor}/>:null}
   {p.showMusic&&p.musicFileName?
-    <Audio src={staticFile(`videos/${slug}/audio/${p.musicFileName}`)} volume={0.17}/>:null}
+    <Audio src={optionalAudio(p.musicFileName)} volume={0.17}/>:null}
  </AbsoluteFill>;
 };

@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 1,
+  "status": "Visual v55 ACC; guide VO provisional, no recorded audio provided",
+  "beats": [
+    {
+      "scene": "Scene 01 — Ketiduran saat nonton (ACC)",
+      "startFrame": 0,
+      "endFrame": 240,
+      "text": "Pernah nggak sih ketiduran pas lagi nonton, tapi laptopnya masih nyala semalaman?"
+    },
+    {
+      "scene": "Scene 02 — Download belum selesai (ACC)",
+      "startFrame": 240,
+      "endFrame": 405,
+      "text": "Atau malah sebaliknya, udah ngantuk, tapi download belum selesai?"
+    },
+    {
+      "scene": "Scene 03 — Emang ada solusinya? (ACC)",
+      "startFrame": 405,
+      "endFrame": 540,
+      "text": "Emang ada solusinya?"
+    },
+    {
+      "scene": "Scene 04 — Solusi shutdown otomatis (ACC v15)",
+      "startFrame": 540,
+      "endFrame": 780,
+      "text": "Tenang, kamu bisa atur laptop biar mati sendiri secara otomatis."
+    },
+    {
+      "scene": "Scene 05 — Windows Run, natural typewriter (ACC v54)",
+      "startFrame": 780,
+      "endFrame": 1080,
+      "text": "Caranya gampang. Tekan Windows + R, lalu ketik perintah ini, lalu klik OK."
+    },
+    {
+      "scene": "Scene 06 — 3600 native match move",
+      "startFrame": 1080,
+      "endFrame": 1170,
+      "text": "Nah, sekarang kita lihat cara kerjanya."
+    },
+    {
+      "scene": "Scene 07 — Cara kerjanya: /s /t 3600 (ACC)",
+      "startFrame": 1170,
+      "endFrame": 1545,
+      "text": "Slash es artinya shutdown. Slash te untuk timer. Nah, kalau mau atur waktunya, tiga ribu enam ratus berarti satu jam, karena satuannya detik."
+    },
+    {
+      "scene": "Scene 08 — Kalau nggak jadi? (ACC v54)",
+      "startFrame": 1545,
+      "endFrame": 1695,
+      "text": "Kalau nggak jadi? Tenang, shutdown-nya bisa dibatalkan."
+    },
+    {
+      "scene": "Scene 09 — Batalkan shutdown /a santai (ACC v55)",
+      "startFrame": 1695,
+      "endFrame": 1995,
+      "text": "Buka Run lagi, ketik shutdown slash a. Jadwal shutdown berhasil dibatalkan."
+    },
+    {
+      "scene": "Scene 10 — CTA komentar (source lama)",
+      "startFrame": 1995,
+      "endFrame": 2235,
+      "text": "Kalau kamu punya cara lain yang lebih praktis, coba share di kolom komentar!"
+    },
+    {
+      "scene": "Scene 11 — Cover penutup (source lama)",
+      "startFrame": 2235,
+      "endFrame": 2385,
+      "text": ""
+    }
+  ]
+}

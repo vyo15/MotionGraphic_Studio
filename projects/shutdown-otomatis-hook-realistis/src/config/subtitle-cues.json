@@ -1,0 +1,153 @@
+{
+  "schemaVersion": 1,
+  "status": "v56 guide timestamps (not a final VO alignment)",
+  "fps": 30,
+  "textStyle": "navy on transparent background, no rectangle",
+  "subtitles": [
+    {
+      "scene": "S01",
+      "startFrame": 2,
+      "endFrame": 128,
+      "text": "Pernah nggak sih ketiduran pas lagi nonton,"
+    },
+    {
+      "scene": "S01",
+      "startFrame": 128,
+      "endFrame": 240,
+      "text": "tapi laptopnya masih nyala semalaman?"
+    },
+    {
+      "scene": "S02",
+      "startFrame": 248,
+      "endFrame": 326,
+      "text": "Atau malah sebaliknya, udah ngantuk,"
+    },
+    {
+      "scene": "S02",
+      "startFrame": 326,
+      "endFrame": 405,
+      "text": "tapi download belum selesai?"
+    },
+    {
+      "scene": "S03Question",
+      "startFrame": 450,
+      "endFrame": 525,
+      "text": "Emang ada solusinya?",
+      "rendering": "VO guide only; centered scene typography already carries same words"
+    },
+    {
+      "scene": "S03",
+      "startFrame": 553,
+      "endFrame": 603,
+      "text": "Tenang,"
+    },
+    {
+      "scene": "S03",
+      "startFrame": 603,
+      "endFrame": 649,
+      "text": "kamu bisa atur laptop"
+    },
+    {
+      "scene": "S03",
+      "startFrame": 649,
+      "endFrame": 770,
+      "text": "biar mati sendiri secara otomatis."
+    },
+    {
+      "scene": "S04",
+      "startFrame": 780,
+      "endFrame": 842,
+      "text": "Caranya gampang."
+    },
+    {
+      "scene": "S04",
+      "startFrame": 843,
+      "endFrame": 907,
+      "text": "Tekan Windows + R,"
+    },
+    {
+      "scene": "S04",
+      "startFrame": 908,
+      "endFrame": 1019,
+      "text": "lalu ketik perintah ini,"
+    },
+    {
+      "scene": "S04",
+      "startFrame": 1021,
+      "endFrame": 1080,
+      "text": "lalu klik OK."
+    },
+    {
+      "scene": "S06MatchMove",
+      "startFrame": 1139,
+      "endFrame": 1170,
+      "text": "Nah, sekarang kita lihat cara kerjanya."
+    },
+    {
+      "scene": "S07CaraKerjanya",
+      "startFrame": 1185,
+      "endFrame": 1370,
+      "text": "Slash es artinya shutdown."
+    },
+    {
+      "scene": "S07CaraKerjanya",
+      "startFrame": 1375,
+      "endFrame": 1460,
+      "text": "Slash te untuk timer."
+    },
+    {
+      "scene": "S07CaraKerjanya",
+      "startFrame": 1460,
+      "endFrame": 1515,
+      "text": "3600 berarti satu jam,"
+    },
+    {
+      "scene": "S07CaraKerjanya",
+      "startFrame": 1515,
+      "endFrame": 1545,
+      "text": "karena satuannya detik."
+    },
+    {
+      "scene": "S08KalauNggakJadi",
+      "startFrame": 1555,
+      "endFrame": 1620,
+      "text": "Kalau nggak jadi?"
+    },
+    {
+      "scene": "S08KalauNggakJadi",
+      "startFrame": 1620,
+      "endFrame": 1695,
+      "text": "Tenang, shutdown-nya bisa dibatalkan."
+    },
+    {
+      "scene": "S09BatalkanShutdown",
+      "startFrame": 1715,
+      "endFrame": 1910,
+      "text": "Buka Run lagi, ketik shutdown slash a."
+    },
+    {
+      "scene": "S09BatalkanShutdown",
+      "startFrame": 1910,
+      "endFrame": 1995,
+      "text": "Jadwal shutdown berhasil dibatalkan."
+    },
+    {
+      "scene": "S10CTA",
+      "startFrame": 1998,
+      "endFrame": 2080,
+      "text": "Kalau kamu punya cara lain"
+    },
+    {
+      "scene": "S10CTA",
+      "startFrame": 2080,
+      "endFrame": 2140,
+      "text": "yang lebih praktis,"
+    },
+    {
+      "scene": "S10CTA",
+      "startFrame": 2140,
+      "endFrame": 2235,
+      "text": "coba share di kolom komentar!"
+    }
+  ]
+}

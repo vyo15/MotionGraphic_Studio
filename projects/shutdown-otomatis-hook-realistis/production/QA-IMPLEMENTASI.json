@@ -1,0 +1,67 @@
+{
+  "date": "2026-11-21",
+  "targetMaster": "1.8.1",
+  "projectId": "ShutdownOtomatisHookRealistis",
+  "slug": "shutdown-otomatis-hook-realistis",
+  "durationInFrames": 615,
+  "fps": 30,
+  "resolution": "1080x1920",
+  "staticAddon": {
+    "status": "PASS",
+    "errorCount": 0,
+    "warningCount": 1,
+    "warning": "Keyframe custom tween() deterministik, bukan interpolate/spring langsung (advisory)"
+  },
+  "sourceSyntax": {
+    "status": "PASS",
+    "files": 73,
+    "errors": 0
+  },
+  "nativeTargetInspection": {
+    "status": "PASS",
+    "targets": 56,
+    "errors": 0,
+    "warnings": 0
+  },
+  "registration": {
+    "status": "PASS",
+    "projects": 2,
+    "segments": 9,
+    "compositions": 13
+  },
+  "library": {
+    "status": "PASS",
+    "errors": 0
+  },
+  "visualParityScene03": {
+    "status": "PASS",
+    "sampledFramesRelative": [
+      0,
+      15,
+      38,
+      64,
+      96,
+      125,
+      153,
+      180,
+      209
+    ],
+    "meanAbsoluteErrorPerPixel": 0.0,
+    "method": "identical PNG pixels against approved Scene03 SVG diagnostic source frames at scaled 720x1280; not Remotion GUI render"
+  },
+  "baselinePreservation": {
+    "sceneSetGeometryUnchanged": true,
+    "scene01Scene02MotionUnchanged": true,
+    "scene01Scene02OnlySubtitleTextChanges": true
+  },
+  "vo": {
+    "source": "locked conversation script",
+    "recordingBundled": false,
+    "subtitles": "No black box; frame cues guide only"
+  },
+  "untested": [
+    "Remotion Studio real GUI edit drag Save/reload",
+    "Full Remotion MP4 render with actual node_modules",
+    "Final recorded VO timing"
+  ]
+}

@@ -124,6 +124,11 @@ export function validateAddon(dir,{root=ROOT,strict=false,sourceCheck=true,match
    for(const p of cat.videos||[])if((p.id===manifest.id&&p.slug!==manifest.slug)||(p.slug===manifest.slug&&p.id!==manifest.id))issue('FAIL','Bentrok ID/slug dengan project lain: '+p.id);
   }
   if(manifest.editableContract==='studio-direct-v4'){
+    // Native edit gate requires an explicit blueprint so "Interactive count" is not a false PASS.
+    const native=inspectNativeEditable(base,{strict:true});
+    for(const msg of native.errors)issue('FAIL','Native editable: '+msg);
+    for(const msg of native.warnings)issue('WARN','Native editable: '+msg);
+
     for(const rel of ['EDITABLE-LAYER-MAP.md','src/config/narration.json']){
       if(!fs.existsSync(path.join(base,rel)))issue('FAIL','Kontrak studio-direct-v4: '+rel+' wajib');
     }
@@ -180,6 +185,124 @@ export function validateAddon(dir,{root=ROOT,strict=false,sourceCheck=true,match
  }catch(e){issue('FAIL',e.message)}
  return {ok:errors.length===0,errors,warnings,manifest,files:files.length,dir:base,verification:{static:errors.length?'FAIL':'PASS',syntax:sourceCheck?(requireSyntax?'REQUIRED':'BEST_EFFORT'):'SKIPPED',bundle:'NOT_RUN',render:'NOT_RUN'}};
 }
+const blueprintValidRel=(s)=>typeof s==='string'&&/^(src\/)[A-Za-z0-9_./-]+\.(tsx|jsx)$/.test(s)&&
+  s.split('/').every(x=>x!=='.'&&x!=='..');
+const blueprintValidLabel=(s)=>typeof s==='string'&&s.trim().length>=4;
+const blueprintTagOf=(n,sf)=>n.tagName?.getText(sf)??'';
+const blueprintGetAttr=(attrs,name,ts)=>attrs.find(a=>ts.isJsxAttribute(a)&&a.name.text===name);
+function blueprintWalk(dir){
+ if(!fs.existsSync(dir))return [];
+ return fs.readdirSync(dir,{withFileTypes:true}).flatMap(e=>e.isSymbolicLink()?[]:
+  e.isDirectory()?blueprintWalk(path.join(dir,e.name)):e.isFile()&&/\.tsx$/.test(e.name)?[path.join(dir,e.name)]:[]);
+}
+/** @returns {{errors:string[],warnings:string[],targets:number}} */
+export function inspectNativeEditable(base,{strict=true}={}){
+ const errors=[],warnings=[];
+ const fail=s=>errors.push(s);
+ const advise=s=>warnings.push(s);
+ const file=path.join(base,'production','editable-blueprint.json');
+ if(!fs.existsSync(file)){
+  (strict?fail:advise)('production/editable-blueprint.json belum tersedia; target editing tidak dapat dibuktikan');
+  return {errors,warnings,targets:0};
+ }
+ let blueprint;
+ try{blueprint=JSON.parse(fs.readFileSync(file,'utf8'));}catch(e){return {errors:['Blueprint JSON tidak valid: '+e.message],warnings,targets:0}}
+ if(blueprint.schemaVersion!==1)fail('schemaVersion blueprint harus 1');
+ const kinds=['nativeTextTargets','nativeVisualTargets','propsTextTargets'];
+ for(const key of kinds)if(!Array.isArray(blueprint[key]))fail('Blueprint wajib memuat array '+key);
+ if(errors.length)return {errors,warnings,targets:0};
+ const targets=[...blueprint.nativeTextTargets.map(x=>({...x,type:'text'})),...blueprint.nativeVisualTargets.map(x=>({...x,type:'visual'}))];
+ const seen=new Set();
+ for(const t of targets){
+  if(!blueprintValidLabel(t.name))fail('Nama layer tidak valid: '+String(t.name));
+  if(!blueprintValidRel(t.source))fail('Path JSX tidak valid untuk '+t.name);
+  if(seen.has(t.name))fail('Nama layer ganda dalam blueprint: '+t.name);
+  seen.add(t.name);
+ }
+ // No changes to active legacy video: only audit an opted-in blueprint.
+ let ts=null;
+ try{ts=require('typescript')}catch{
+  fail('TypeScript parser belum tersedia; npm ci diperlukan untuk gate native editable');
+  return {errors,warnings,targets:targets.length};
+ }
+ const nodes=new Map(),callsiteNames=new Map(),componentCallsites=new Set(),jsxUsages=new Map();
+ for(const source of blueprintWalk(path.join(base,'src'))){
+  const rel=path.relative(base,source).replaceAll('\\','/');
+  const ast=ts.createSourceFile(source,fs.readFileSync(source,'utf8'),ts.ScriptTarget.Latest,true,ts.ScriptKind.TSX);
+  for(const d of ast.parseDiagnostics)fail('Sintaks JSX: '+rel+' '+ts.flattenDiagnosticMessageText(d.messageText,' '));
+  const visit=(node)=>{
+   if(ts.isJsxOpeningElement(node)||ts.isJsxSelfClosingElement(node)){
+    const tag=blueprintTagOf(node,ast);
+    if(/^[A-Z][A-Za-z0-9_]*$/.test(tag)){
+      const key=rel+'\u0000'+tag;
+      jsxUsages.set(key,(jsxUsages.get(key)||0)+1);
+    }
+    if(tag.startsWith('Interactive.')){
+      let owner=node.parent;
+      while(owner){
+        if(ts.isFunctionDeclaration(owner)&&owner.name){componentCallsites.add(owner.name.text);break;}
+        if(ts.isVariableDeclaration(owner)&&ts.isIdentifier(owner.name)&&owner.initializer&&
+          (ts.isArrowFunction(owner.initializer)||ts.isFunctionExpression(owner.initializer))){
+          componentCallsites.add(owner.name.text);break;
+        }
+        owner=owner.parent;
+      }
+     // A callsite instantiated inside array.map() is not one independent Studio track.
+     let ancestor=node.parent;
+     while(ancestor){
+       if(ts.isCallExpression(ancestor)&&ts.isPropertyAccessExpression(ancestor.expression)&&ancestor.expression.name.text==='map'){
+         fail(rel+': Interactive dari .map() dapat tergabung +N instances; deklarasikan node independen atau tandai kelompok Props-editable');
+         break;
+       }
+       ancestor=ancestor.parent;
+     }
+     const labelAttr=blueprintGetAttr(node.attributes.properties,'name',ts);
+     const name=labelAttr?.initializer&&ts.isStringLiteral(labelAttr.initializer)?labelAttr.initializer.text:null;
+     const styleAttr=blueprintGetAttr(node.attributes.properties,'style',ts);
+     const style=styleAttr?.initializer&&ts.isJsxExpression(styleAttr.initializer)?styleAttr.initializer.expression:null;
+     const literalStyle=!!style&&ts.isObjectLiteralExpression(style)&&!style.properties.some(p=>ts.isSpreadAssignment(p));
+     if(!name)fail(rel+': Interactive harus mempunyai name literal');
+     if(!literalStyle)fail(rel+': '+(name||tag)+' memerlukan style literal inline, tanpa spread');
+     if(name){
+      callsiteNames.set(name,(callsiteNames.get(name)||0)+1);
+      const key=rel+'\u0000'+name;
+      let literal=false,dynamic=false;
+      const parent=node.parent;
+      if(ts.isJsxElement(parent)){
+       literal=parent.children.some(c=>ts.isJsxText(c)&&c.getText(ast).trim().length>0);
+       dynamic=parent.children.some(c=>ts.isJsxExpression(c)&&c.expression!==undefined);
+      }
+      nodes.set(key,{tag,literal,dynamic,source:rel});
+     }
+    }
+   }
+   ts.forEachChild(node,visit);
+  };visit(ast);
+ }
+ for(const [name,count] of callsiteNames)if(count>1)fail('Nama Interactive ganda: '+name+' ('+count+' callsite).');
+ for(const component of componentCallsites){
+   const maxPerCaller=Math.max(0,...[...jsxUsages.entries()]
+     .filter(([key])=>key.endsWith('\u0000'+component)).map(([,n])=>n));
+   if(maxPerCaller>1)fail('Komponen '+component+' memiliki Interactive callsite dan dipakai '+maxPerCaller+
+     ' kali dalam satu source; bisa muncul +N instances. Pecah JSX atau gunakan satu grup semantik Props-editable.');
+ }
+ for(const item of targets){
+  const target=nodes.get(item.source+'\u0000'+item.name);
+  if(!target){fail('Target native hilang: '+item.source+' → '+item.name);continue;}
+  if(item.type==='text'){
+   if(!['Interactive.Text','Interactive.Div','Interactive.Span','Interactive.P'].includes(target.tag))fail('Target teks '+item.name+' memakai '+target.tag+', bukan Interactive.Text/Div/Span/P');
+   if(!target.literal||target.dynamic)fail('Teks '+item.name+' harus berupa child JSX literal, bukan computed expression atau teks kosong');
+  }
+ }
+ // Correct metadata must not claim test results before user verifies GUI.
+ if(blueprint.guiVerification==='passed'&&!fs.existsSync(path.join(base,'production','studio-editability-verification.json')))
+  fail('guiVerification=passed tanpa bukti production/studio-editability-verification.json');
+ // Some UI objects are intentionally Props-editable rather than direct-editable.
+ for(const item of blueprint.propsTextTargets)if(!blueprintValidLabel(item.name))fail('Nama Props target tidak valid');
+ if(!targets.length)fail('Blueprint tidak mempunyai native edit target');
+ return {errors,warnings,targets:targets.length};
+}
+
 if(process.argv[1]&&path.resolve(process.argv[1])===fileURLToPath(import.meta.url)){
  const argv=process.argv.slice(2),dir=argv.find(x=>!x.startsWith('--'));
  if(!dir){console.error('Pakai: node tools/validate-addon.mjs <folder-addon> [--strict] [--syntax]');process.exit(2)}

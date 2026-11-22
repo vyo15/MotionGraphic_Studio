@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 1,
+  "projectId": "Easy2BootMultibootReels",
+  "slug": "easy2boot-multiboot-reels",
+  "masterSource": "MotionGraphic-Studio-FULL-v1.8.1-20261121-103247.zip",
+  "decisionDate": "2026-11-21",
+  "status": "ALL VISUAL SCENES ACC LOCKED",
+  "durationInFrames": 2467,
+  "fps": 30,
+  "scenes": {
+    "S01": {
+      "startFrame": 0,
+      "endFrameExclusive": 381,
+      "status": "locked"
+    },
+    "S02": {
+      "startFrame": 381,
+      "endFrameExclusive": 771,
+      "status": "locked"
+    },
+    "Pengantar 02→03": {
+      "startFrame": 771,
+      "endFrameExclusive": 879,
+      "status": "locked"
+    },
+    "S03": {
+      "startFrame": 879,
+      "endFrameExclusive": 1351,
+      "status": "locked"
+    },
+    "S04": {
+      "startFrame": 1351,
+      "endFrameExclusive": 1591,
+      "status": "locked"
+    },
+    "S05": {
+      "startFrame": 1591,
+      "endFrameExclusive": 2077,
+      "status": "locked"
+    },
+    "S06": {
+      "startFrame": 2077,
+      "endFrameExclusive": 2467,
+      "status": "locked"
+    }
+  },
+  "hashes": {
+    "src/scenes/Scene01Problem.tsx": "054fc6976828e644c3b59802edd23878f6998a93d49e3c50f2fd4ba4bd4639af",
+    "src/scenes/Scene02Solution.tsx": "08b25d90f885a8f369ee588b4b0e4dfe3aba1e496fa950473ec8f17eed41c77d",
+    "src/scenes/Scene02WithBridge.tsx": "b0005ca1f4f984afac394636158366969527a2c20fb52d76b643945460a4d372",
+    "src/scenes/Scene02To03MatchMove.tsx": "45b81bf6a8ab343c7512b01dec83a34fba4f00c2e2fcaa44eae0b3cee50f977a",
+    "src/scenes/Scene03ReadableEntrance.tsx": "374c40ff35a44163718fed2c862fc415b5a8baef146012fb6cb53d6d0fd273a6",
+    "src/scenes/Scene03Preparation.tsx": "adf69ae7d02918b477b760855cfa7c0e1fd4cc80b5bd661399e0c8aef8947d1f",
+    "src/scenes/Scene04CopyIso.tsx": "b88f906089178c8c9bd62b0d78e1914f45013b0c391d5f9ddbce8207a3ab2296",
+    "src/scenes/Scene05Boot.tsx": "f9cbf01394f1817c8d76971e43bc50eaf690918a60a604f21a22e4f2280835b0",
+    "src/scenes/Scene06Closing.tsx": "410739ffd958d7181b6e6a2100911ed24c95cd8a40738d98017fb691b7a06e0d"
+  },
+  "voiceOverStatus": "guide-only-not-recorded",
+  "editorQA": "source-editable validated; drag/save/reload not yet tested in Windows"
+}

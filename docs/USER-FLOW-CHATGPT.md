@@ -51,6 +51,10 @@ flowchart TD
 - **Error handling:** kembalikan source yang gagal ke ChatGPT; revisi patch dicek dengan `--dry-run`.
 - **Retention:** simpan ZIP tiap video terpisah dan bagikan Master Engine Only; jangan membawa puluhan video di paket engine.
 
+## Review VO dan ACC setiap berpindah chat
+
+`npm run sync` otomatis memperbarui `production/SCENE-VO-ACC-BOARD.md` per video (tanpa mengubah state/VO). Jalankan `node tools/scene-approval-board.mjs --all --check` untuk cek. Saat mengunggah ZIP Master yang menyertakan project, ChatGPT wajib menampilkan semua scene+VO asli+status ACC di awal pembahasan. Revisi ACC diperbarui pada `PRODUCTION-STATE.json` (dengan decisionLog), bukan pada board. Video preview gerak wajib format video, bukan rangkaian screenshot. Untuk cleanup jalankan `npm run clean` dulu; hapus hanya kandidat terbukti aman.
+
 ## Dua jalur penting
 
 **Video baru:** `npm run flow -- --new "Judul"` → salin brief ke ChatGPT → terima add-on → validate/import → preview.

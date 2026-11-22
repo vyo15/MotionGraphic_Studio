@@ -30,3 +30,31 @@ Tidak semua component JSX otomatis draggable. Jangan memaksa refaktor video yang
 - `studio-direct-v4` harus mengikuti **teks literal langsung** pada JSX Interactive untuk editing teks via Studio, dan style objek inline. Teks dari `result.elements[...]`, `DOMParser`, SVG frame bake, atau ekspresi dinamis **hanya editable via source/Props** sampai terbukti lain.
 - Gate `check-direct-studio-text.mjs` dan `audit-inline-editing.mjs` kini mengecek `studio-direct-v4` selain kontrak terdahulu. Output PASS statis tidak menggantikan uji edit → Save → reload → render.
 - Lihat [Studio Editing & Recovery](STUDIO-EDITABILITY-AND-RECOVERY.md) untuk pesan `Deleted <Interactive.G>`, snapshot source dan folder video tidak terdaftar.
+
+
+## Aturan wajib subtitle/caption native untuk add-on baru
+
+- Bila user diminta mengklik teks subtitle pada canvas, buat **satu node langsung**
+  `<Interactive.Text>` (SVG) atau `<Interactive.Div>` (HTML) per baris/cue yang harus
+  dapat dipilih. `name` harus unik dan menunjukkan scene + urutan cue.
+- Jangan memakai loop `.map()` yang memanggil satu komponen `Caption` berisi
+  satu callsite `Interactive.Text` untuk banyak cue: Studio bisa mengelompokkan
+  semua instance menjadi `+N`, bukan pilihan per baris. Jangan bungkus teks
+  di `<text>` biasa lalu mengklaim editable dengan klik.
+- Gunakan **teks literal JSX** untuk native Save-to-code, beserta style langsung
+  dan posisi deterministik; versi dari Props/JSON harus dinyatakan sebagai
+  **Props-editable**, bukan otomatis native text-editable.
+- Cue subtitle final dihasilkan **setelah VO direkam**; caption draft untuk
+  review motion boleh berbeda dari subtitle final dan harus diberi label jelas.
+- QA wajib klik teks pada frame aktif → ubah teks → Save → reload → cek render.
+  Jangan mengklaim lulus sebelum uji aktual di Studio Windows.
+
+## Native Editable First — kontrak preventif untuk semua add-on baru
+
+- Source baru dengan `editableContract: "studio-direct-v4"` wajib menyertakan `production/editable-blueprint.json`. Metadata ini mendeklarasikan tiap objek yang **dijanjikan** editable via Studio: `nativeTextTargets`, `nativeVisualTargets`, dan `propsTextTargets` (kontrol berbeda).
+- Setiap target native harus mempunyai **satu callsite JSX** `Interactive.Text`, `Interactive.Div` dll dengan `name` **literal unik**, `style={{...}}` langsung tanpa spread, dan child teks berupa JSX literal (bukan `{value}` dari data `.map()`).
+- Jangan menyebut semua objek editable bila label hanya melalui `SVG <text>` biasa, `frameSvg`, `DOMParser`, atau pembungkus `Interactive` dengan instance berulang. Gunakan blueprint dan beri status `Props-editable` untuk desain data-driven.
+- Subtitle draft saat motion review berbeda dari **subtitle final** setelah rekaman VO. Jika subtitle akhir perlu edit langsung di Studio, deklarasikan satu node per cue; source teks final ada pada JSX, data timing di config. Perbarui keduanya saat sinkronisasi VO; jangan munculkan dua track sekaligus.
+- Jalankan `npm run addon:validate -- <folder> --strict` dan `npm run qa:native`; QA ini hanya AST statis, bukan pembuktian native Save/reload. Untuk ACC wajib test manual: pilih subtitle, ubah teks, drag, ubah keyframe yang tersedia, Save, reload Studio, sync, render frame/MP4.
+- Scene lama yang `studio-inline-v2` **tidak otomatis dinaikkan statusnya** ke v4, karena masih ada animasi/teks bake; jangan mengubah scene/visual terkunci untuk mengejar skor semu.
+- Remotion 4.0.538: `Interactive` sejak 4.0.475, `Interactive.childrenSchema` sejak 4.0.535. Ikuti dokumentasi `studio/interactivity-best-practices` dan `interactive` sesuai versi.

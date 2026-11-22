@@ -1,0 +1,48 @@
+{
+  "status": "ACC",
+  "sceneId": "Easy2BootMultibootReels-S06",
+  "startFrame": 2077,
+  "durationInFrames": 390,
+  "layerNameLiterals": [
+    "S06 — Background polos",
+    "S06 — CTA: TULIS PILIHANMU",
+    "S06 — Cover: 1 FLASHDISK",
+    "S06 — Cover: BANYAK INSTALLER",
+    "S06 — Cover: EASY2BOOT",
+    "S06 — Cover: Windows 8 · 10 · 11 · Linux",
+    "S06 — Garis aksen bawah Multiboot",
+    "S06 — Headline A: BOOTABLE",
+    "S06 — Headline A: ULANG?",
+    "S06 — Headline B: ATAU MULTIBOOT?",
+    "S06 — Ikon komentar",
+    "S06 — Jumlah installer bootable ulang",
+    "S06 — Jumlah installer multiboot",
+    "S06 — Multiboot — Linux",
+    "S06 — Multiboot — Windows 10",
+    "S06 — Multiboot — Windows 11",
+    "S06 — Multiboot — Windows 8",
+    "S06 — Pertanyaan: KAMU TIM MANA?",
+    "S06 — Pita CTA halus",
+    "S06 — USB biasa — tile Windows 10",
+    "S06 — VO: Coba tulis",
+    "S06 — VO: Kalau kamu, biasanya",
+    "S06 — VO: atau pakai multiboot?",
+    "S06 — VO: bikin bootable ulang",
+    "S06 — VO: di kolom komentar!"
+  ],
+  "dynamicTileNames": [
+    "S06 — Multiboot — Windows 8",
+    "S06 — Multiboot — Windows 10",
+    "S06 — Multiboot — Windows 11",
+    "S06 — Multiboot — Linux"
+  ],
+  "overrideKeys": [
+    "S06:usb-old",
+    "S06:usb-multi",
+    "S06:headline-a-bootable",
+    "S06:cover-easy2boot",
+    "S06:cover-1-flashdisk",
+    "S06:cover-banyak-installer"
+  ],
+  "directGUIEditable": "not-verified"
+}

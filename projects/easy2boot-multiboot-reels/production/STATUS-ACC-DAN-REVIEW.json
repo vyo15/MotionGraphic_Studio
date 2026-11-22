@@ -1,11 +1,11 @@
 {
-  "sourceMaster": "MotionGraphic-Studio-FULL-v1.8.1-20261121-044452.zip",
-  "sourceAddon": "Easy2Boot-ADDON-Editable-PerElemen-Scene05.zip",
+  "sourceMaster": "MotionGraphic-Studio-FULL-v1.8.1-20261121-103247.zip",
+  "sourceAddon": "Revisi S06 CTA Mix MatchMove, tanpa perubahan file visual S01–S05",
   "id": "Easy2BootMultibootReels",
   "slug": "easy2boot-multiboot-reels",
-  "masterArchiveContainsProjects": false,
+  "masterArchiveContainsProjects": true,
   "fps": 30,
-  "durationInFrames": 2701,
+  "durationInFrames": 2467,
   "status": [
     {
       "scene": "01",
@@ -24,25 +24,25 @@
     },
     {
       "scene": "03",
-      "visual": "Versi clean + pilih USB dan Make_E2B satu jendela; revisi setelah ACC lama — PERLU REVIEW",
-      "sourceChanged": false
+      "visual": "ACC 2026-11-21 — Fold & Unfold + loading inline + satu jendela proses 0–100%; file EXE, UI, pointer, loader dan progress native SVG/Interactive",
+      "sourceChanged": true
     },
     {
       "scene": "04",
-      "visual": "ISO Folder Stack serentak — REVIEW",
-      "sourceChanged": false
+      "visual": "ACC 2026-11-21 — 8 detik, ISO berangkat dari tile masing-masing menuju folder fokus; Tux; penutup USB awal, background polos tanpa lingkaran",
+      "sourceChanged": true
     },
     {
       "scene": "05",
-      "visual": "Laptop disamakan dengan opening Scene 01; dipilih sebagai arah desain, BELUM ACC final",
-      "sourceChanged": false
+      "visual": "ACC 2026-11-21 — laptop Boot Menu → agFM → folder Windows → ISO → metode boot → Windows Setup; VO 3 beat tepat 486f/16.2s",
+      "sourceChanged": true
     },
     {
       "scene": "06",
-      "visual": "CTA/cover lama — BELUM ACC",
-      "sourceChanged": false
+      "visual": "ACC LOCKED 2026-11-21 — dua USB Bootable Ulang vs Multiboot, 4 OS tiles, KAMU TIM MANA?, CTA komentar, USB Match Move ke cover Reels compact polos",
+      "sourceChanged": true
     }
   ],
   "voiceOver": "DRAFT only; no final VO file included",
-  "editableQA": "source/Props and named Interactive components verified statically; GUI drag, inline text edit, Save/reload and native Remotion render not verified"
+  "editableQA": "S06 source SVG/React granular (badan/konektor/logo tiap USB, 5 tile OS, judul, VO, CTA, cover). Studi GUI drag/Save/reload belum terverifikasi. S01–S05 file source identik."
 }

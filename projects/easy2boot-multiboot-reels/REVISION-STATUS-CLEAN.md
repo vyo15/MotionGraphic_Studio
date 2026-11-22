@@ -13,3 +13,6 @@
 **Penting:** berkas `APPROVAL-LOCK-20261120.json` tetap disimpan sebagai histori persetujuan sebelum revisi clean. Jangan membaca checksum lama untuk S03 sebagai checksum final terbaru; perubahan S03 pada tanggal ini diminta sendiri oleh pengguna. S01/S02/bridge tidak disentuh.
 
 Perubahan yang dapat memengaruhi VO: subtitle adalah teks draft berbasis timeline. Belum dikunci per kata sampai tersedia rekaman asli. Preview visual tidak membuktikan sinkronisasi audio VO yang belum ada.
+
+
+> Pembaruan ACC Scene04 (21 November 2026): timeline total **2461 frame / 30 FPS** (Scene04: **240 frame / 8 detik**), berkas `production/SCENE04-ACC-20261121.md` dan `README-SCENE04-ACC.md` adalah rujukan lebih baru daripada angka atau status Scene04 di atas. Scene05–06 masih review.
