@@ -50,6 +50,20 @@ Mulai dengan `line-height` sekitar 1.08–1.18 untuk judul dan 1.16–1.3 untuk 
 - Gunakan teks **center** saat ia benar-benar fokus tunggal; alignment kiri untuk langkah teknis/daftar. Jangan membuat border, underline, badge atau tanda tanya hanya sebagai pemanis generik. Ornamen harus menegaskan pertanyaan, status, atau arah perhatian.
 - Kursor/hotspot, target klik, dan zoom UI harus realistis. Gunakan sorotan pada aksi aktual, bukan pointer menyilang layar; jangan tampilkan menu/hasil teknis yang tak benar.
 
+## 4A. CLEAN FOCUS v2.1 — anti *template chrome* (default video BARU)
+
+**Scene bukan slide presentasi.** Desain harus membantu penonton memahami **aksi nyata pada objek utama**. Area yang kosong lebih baik daripada elemen pemanis. Gunakan aturan ini pada proses generasi, storyboard, build dan QA. **Jangan mengubah project lama/scene ACC** tanpa permintaan. Tidak membatasi headline/label yang memang diperlukan untuk memahami topik.
+
+- **DILARANG secara default pada video yang diekspor:** running header/footer (contoh `WINDOWS / WORKFLOW`, `WINDOWS TIPS / STARTUP`), badge `01 — HOOK`, nomor scene untuk kebutuhan produksi, garis pemisah sepanjang tepi, progress bar dekoratif, garis aksen bergerak di bagian atas/bawah, border halaman, watermark/template label, metadata scene, serta label ``hero``/``headline`` yang tidak menambah pemahaman. Semua penanda produksi hanya ada pada storyboard, timeline editor, atau VO Guide — **bukan** visual final.
+- **Headline kontekstual, bukan judul yang selalu menetap:** maksimal satu pesan utama ketika perlu (hook singkat, petunjuk aksi, atau cover). Saat demo layar/software berjalan, biasanya **tidak perlu** headline tambahan; nama aplikasi/shortcut/hasil tampil hanya ketika penonton perlu membacanya. Jangan memasang judul besar di atas, caption yang mengulang judul di bawah, plus subtitle VO sekaligus.
+- **Objek dulu:** pada tutorial Windows, desktop/jendela/kursor/hasil tindakan mengambil area visual dominan dan cukup besar untuk HP. Jangan mengecilkan desktop demi memberi ruang untuk label dekoratif. Taskbar Windows, title bar aplikasi, progress asli software, dan penunjuk tahap yang diperlukan **tetap boleh** karena bagian dari demonstrasi; bedakan dari bar palsu milik template.
+- **Latar sederhana:** off-white polos `#F7F7F5` sebagai awal. Grid bukan kewajiban; default **tanpa grid** pada visual demonstrasi, dan hanya gunakan grid sangat samar bila benar-benar membantu alignment dan tak bersaing dengan UI. Coral dipakai untuk menekankan trigger/hasil, bukan menggarisi tepi scene.
+- **Teks layar sesuai VO:** pilih nol atau satu frasa penegas pendek pada suatu beat, tidak perlu semua elemen informasi aktif bersamaan. Fade out teks yang tidak relevan **sebelum** demo/kursor menjadi fokus. Subtitle opsional disinkronkan dengan rekaman, jangan duplikasi tulisan besar.
+- **Transisi bermakna:** lanjutkan objek, gerakan kursor, atau perubahan UI; tidak perlu garis, headline, label chapter maupun progress bar untuk menandai pindah scene. Tahan hasil tindakan cukup lama supaya penonton paham.
+- **Pengecualian terkendali:** progress bar yang merepresentasikan proses sungguhan, menu asli software, state/status data, label keselamatan wajib, atau arahan brand yang diminta pengguna boleh ditampilkan; catat tujuan fungsionalnya. Jangan menambahkan elemen dekoratif hanya demi mengisi ruang kosong.
+
+**Pertanyaan QA tiap elemen:** “Kalau elemen ini dihapus, apakah penonton kehilangan informasi atau sulit mengikuti aksi?” Jika **tidak**, hapus dari render. Periksa terutama frame awal, saat aksi utama, akhir scene, dan cover: apakah ada lebih dari satu *focal point* atau chrome yang masih menempel?
+
 ## 5. Subtitle, audio, ritme, dan keterbacaan
 
 **Sound identity terkunci:** gunakan `docs/SOUND-DIRECTION-RULES.md` untuk tonal palette audio Minimal Editorial (ringan, presisi, bukan agresif), mapping cue/`omit` per beat, continuity lintas scene, CTA→Cover, dan voice-first mixing. Visual style boleh konsisten tanpa setiap gerak/slide menghasilkan whoosh.

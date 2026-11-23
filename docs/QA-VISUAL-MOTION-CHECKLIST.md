@@ -20,6 +20,14 @@ Checklist untuk **video baru dan revisi yang diminta**. Bukan janji semua penguj
 - [ ] Kartu, shadow, radius, ikon, background grid, stroke, perspektif dan alignment konsisten, tetapi UI software tetap meniru aslinya.
 - [ ] Screenshot/aset tidak pecah, stretched, watermarked, atau melanggar lisensi; catat provenance bila ada.
 
+### CLEAN FOCUS v2.1 — gate wajib untuk video BARU
+
+- [ ] Pada frame hook, aksi utama, hasil, CTA dan cover, **tidak ada** running header/footer, badge `01 — HOOK`, label produksi, progress bar dekoratif, garis coral melintang, border halaman atau metadata template yang tak punya makna bagi penonton.
+- [ ] Tiap elemen overlay punya **fungsi yang bisa dijelaskan** (petunjuk, target klik, hasil, status asli); yang hanya memanis dihapus. Progress/taskbar Windows yang asli **tidak dianggap** clutter.
+- [ ] Demo/objek utama berukuran dominan dan terbaca pada HP; **headline tidak menetap selama demonstrasi** dan tidak ada duplikasi headline + caption + subtitle untuk ucapan yang sama.
+- [ ] Latar awal off-white polos; jika grid/tekstur/ornamen dipakai, ada alasan fungsi dan tidak bersaing dengan UI. Teks yang sudah selesai fungsinya hilang tepat waktu.
+- [ ] Audit **contact sheet semua scene** untuk overlay persisten, bukan hanya cek still pertama; source-only tidak boleh diberi status PASS render/visual.
+
 ## C. Gerak, continuity, dan layar software
 
 - [ ] Ada trigger yang jelas sebelum aksi, reaksi setelahnya, serta hasil yang bertahan cukup lama.

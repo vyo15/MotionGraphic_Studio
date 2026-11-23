@@ -48,6 +48,8 @@ Gunakan default bila rincian tidak krusial. Jangan meminta pengguna mengulang ju
 
 **STYLE LOCK v2.0:** baca `docs/MOTIONGRAPHIC-DESIGN-SYSTEM.md` sebelum menentukan warna/font/layout/typography/subtitle, dan `docs/MOTION-DIRECTION-RULES.md` untuk timing/easing/transisi; QA mengikuti `docs/QA-VISUAL-MOTION-CHECKLIST.md`. Minimal Editorial `#F7F7F5`/`#202020`/`#DF805F`, teks sekunder terbaca `#646464`, safe zone 250/350/50. **Font Inter tidak otomatis tersedia**; gunakan Arial baseline atau Inter yang benar-benar di-load/diuji. Tidak mengubah style proyek ACC. Gaya yang disetujui pengguna atau UI asli mengalahkan default.
 
+**CLEAN FOCUS v2.1 (untuk semua VIDEO BARU):** video tidak boleh terlihat seperti slide presentasi. Dilarang default elemen template seperti `WINDOWS / WORKFLOW`, `WINDOWS TIPS / STARTUP`, `01 — HOOK`, garis progress coral atas/bawah, running header/footer, headline duplikat/persisten, dan badge produksi. Fokus satu objek demo dan hasil, latar off-white polos. Boleh mempertahankan indikator dan taskbar **asli** Windows; hook/cover boleh berjudul kontekstual. Baca `docs/MOTIONGRAPHIC-DESIGN-SYSTEM.md` §4A dan gate QA. Tidak mengubah proyek ACC.
+
 ## D. Aturan produksi dan delivery yang tidak boleh terlewat
 
 - **SATU MASTER**, add-on video baru `projects/<slug>/` lengkap dan mandiri; jangan bikin Remotion app baru. Jangan sentuh manual `src/Root.tsx`, `src/index.ts`, `package.json`, `library/catalog.json`, atau mirror `public/videos/` untuk registrasi video.

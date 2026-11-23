@@ -39,6 +39,10 @@ Bila script di dokumen berbeda dari implementasi, laporkan dua-duanya: **TARGET 
 
 **G6 Full QA & render** — Gunakan checklist `docs/QA-VISUAL-MOTION-CHECKLIST.md` untuk uji transisi antar-segmen, lip-sync/caption, posisi teks, font render, crop cover 3:4, kontras, visual Windows asli, cursor target, editability, safe zone, asset path, audio, save/reload dan render. Jika tidak teruji, tulis keterbatasan secara eksplisit. Setelah approval, ekspor MP4 jika memang berhasil dirender.
 
+### CLEAN FOCUS v2.1 — standar output generasi baru
+
+Generasi video bukan mengisi template dengan ornamen. Jangan tampilkan running header/footer, bar atas/bawah, progress dekoratif, badge nomor scene, *label hook*, atau headline permanen. Setiap overlay harus mengarahkan perhatian ke aksi/hasil aktual; selebihnya dibuang. Urutkan storyboard dengan **objek dan tindakan dulu**, lalu teks opsional. Hook boleh memakai satu kalimat kuat yang singkat, cover boleh punya judul untuk thumbnail; selama demo Windows, prioritaskan UI yang besar dan realistik (termasuk taskbar Windows yang asli). Latar default off-white **polos**, grid bukan wajib. Baca `docs/MOTIONGRAPHIC-DESIGN-SYSTEM.md` §4A dan jalankan gate CLEAN FOCUS di `docs/QA-VISUAL-MOTION-CHECKLIST.md` sebelum menyebut preview layak. Tidak memaksa revisi project/scene ACC.
+
 ## 3. Creative & visual style default
 
 - Edukasi vertikal 1080 × 1920, 30 FPS. Durasi default hanya acuan; keputusan project dan rekaman natural lebih utama.

@@ -55,6 +55,12 @@
 
 Untuk tiap beat dan sambungan scene, tentukan `SFX / omit`, peran terhadap VO, jenis bunyi, awal/impact/tail, dan continuity. **Setiap transisi diperiksa, bukan setiap transisi dipaksa mengeluarkan whoosh.** Gunakan `docs/SOUND-DIRECTION-RULES.md` sebagai acuan; isi `production/SOUND-PLAN.md` saat draft. Setelah motion ACC, jadikan cue berbasis frame absolut di `production/sound-cues.json`. VO asli direkam setelah motion ACC; hasil audio baru dianggap lulus sesudah di-preview/didengar. CTA→Cover tidak boleh memotong kalimat CTA dan cover akhir perlu hold tenang.
 
+### CLEAN FOCUS v2.1 — budget visual sebelum menggambar storyboard
+
+Pada setiap beat, rancang **objek utama yang bekerja** sebelum menentukan copy. Urutan prioritas: aksi UI/objek → hasil yang terlihat → satu teks penjelas bila perlu → subtitle sesuai kebutuhan. Tidak ada keharusan memasang judul scene, running header/footer, badge nomor hook, garis progres, garis aksen atas/bawah, atau border halaman. Penanda produksi `Scene 01`, `HOOK`, `STARTUP`, `WINDOWS TIPS`, durasi, dan nama kategori cukup di storyboard atau timeline — jangan terlihat pada render final. **Headline hanya muncul bila konten membutuhkannya**, bukan karena scene baru. Pertahankan UI asli seperti taskbar Windows dan progress software yang memang sedang didemokan.
+
+Sebelum build, buat satu kolom catatan internal `Elemen yang dibuang` dan hapus dekorasi tanpa makna. Pastikan visual prioritas dapat dipahami saat headline/caption dilepas. Aturan pengecualian hanya untuk brand/brief atau kebutuhan fungsi nyata; hormati ACC/LOCKED.
+
 ## 4. Desain SCENE TERAKHIR: COVER REELS ANIMATIF
 
 Tujuan cover ialah **(1) penutup cerita yang terasa menyatu dan (2) still frame thumbnail**. Bukan hanya kartu judul statis, bukan mengulang seluruh tutorial.
