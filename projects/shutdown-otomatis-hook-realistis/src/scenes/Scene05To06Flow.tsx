@@ -51,15 +51,15 @@ export const Scene05To06Flow:React.FC<FlowProps>=({frameOffset=0,...input})=>{
  const f=mapCancellationFrame(clock);
  // One continuous source number. Begin IDENTICALLY to the last frame of S05.
  const move=step(f,9,71);
- const numberX=lerp(540,851,move);
+ const numberX=lerp(540,800,move);
  const numberY=lerp(1040,841,move);
  const numberSize=lerp(146,49,move);
  const unitY=numberY+94*(numberSize/146);
  const unitSize=48*(numberSize/146);
  const unitAlpha=1-step(f,11,38);
  const titleAlpha=step(f,72,89);
- // Prepare the command before the number lands; no delayed row pop-in.
- const rowAlpha=step(f,38,58);
+ // Reveal the row only after 3600 clears the /t column; no token collision.
+ const rowAlpha=step(f,67,83);
  const ef=f-15; // Explanation waits until 3600 lands, then stays on one shared frame clock.
  // Copy-down animation — main command remains stable while one token is explained.
  const sMove=step(ef,84,113);
@@ -75,6 +75,14 @@ export const Scene05To06Flow:React.FC<FlowProps>=({frameOffset=0,...input})=>{
  const nAlpha=step(ef,301,310);
  // The meaning remains centered ABOVE the timer; do not slide it below.
  const meaningY=1080;
+ // Optical centering at 1080px: every part shares one visual center (x=540).
+ // Original S05 number remains at x=540 until the match move starts.
+ // Measured using Inter ExtraBold at the current SVG font sizes:
+ // command row x=215..865; conversion x≈309..772. No CSS translate hacks.
+ const commandRootX=215;
+ const commandSlashSX=521;
+ const commandSlashTX=632;
+ const conversionJoinX=463;
  const nType=p.scene05ExplainDurationMeaning;
  // Type the complete unit conversion before the timer takes focus.
  const nTyped=nType.slice(0,countChars(ef,325,1.0,nType.length));
@@ -138,31 +146,32 @@ export const Scene05To06Flow:React.FC<FlowProps>=({frameOffset=0,...input})=>{
       inkColor={p.inkColor} coralColor={p.coralColor}/></g>
    {/* Rest of the command appears around the same number only after it moves. */}
    <g opacity={rowAlpha*(1-outExplanation)}>
-    <Interactive.Text name="S07 / Command token shutdown editable" x={102} y={841} fontSize={49} fontWeight={800} fill={p.navyColor} style={{translate:'0px 0px',scale:1,rotate:'0deg',opacity:1}}>{p.scene05ExplainCommandRoot}</Interactive.Text>
-    <Interactive.Text name="S07 / Command token slash s editable" x={459} y={841} fontSize={49} fontWeight={800} fill={active==='s'?p.coralColor:p.inkColor} style={{translate:'0px 0px',scale:1,rotate:'0deg',opacity:1}}>/s</Interactive.Text>
-    <Interactive.Text name="S07 / Command token slash t editable" x={606} y={841} fontSize={49} fontWeight={800} fill={active==='t'?p.coralColor:p.inkColor} style={{translate:'0px 0px',scale:1,rotate:'0deg',opacity:1}}>/t</Interactive.Text>
+    <Interactive.Text name="S07 / Command token shutdown editable" x={commandRootX} y={841} fontSize={49} fontWeight={800} fill={p.navyColor} style={{translate:'0px 0px',scale:1,rotate:'0deg',opacity:1}}>{p.scene05ExplainCommandRoot}</Interactive.Text>
+    <Interactive.Text name="S07 / Command token slash s editable" x={commandSlashSX} y={841} fontSize={49} fontWeight={800} fill={active==='s'?p.coralColor:p.inkColor} style={{translate:'0px 0px',scale:1,rotate:'0deg',opacity:1}}>/s</Interactive.Text>
+    <Interactive.Text name="S07 / Command token slash t editable" x={commandSlashTX} y={841} fontSize={49} fontWeight={800} fill={active==='t'?p.coralColor:p.inkColor} style={{translate:'0px 0px',scale:1,rotate:'0deg',opacity:1}}>/t</Interactive.Text>
    </g>
    {/* slash-s is visually copied down, then the meaning is typed. */}
    <g opacity={sAlpha*(1-outExplanation)}>
-    <Interactive.Text name="S07 / Slash S copy motion" x={lerp(459,332,sMove)} y={lerp(841,1110,sMove)} fontSize={58} fontWeight={800} fill={p.coralColor} style={{translate:'0px 0px',scale:1,rotate:'0deg',opacity:1}}>/s</Interactive.Text>
-    <Interactive.Text name="S07 / Slash S meaning typed" x={lerp(459,390,sMove)} y={1110} fontSize={58} fontWeight={740} fill={p.inkColor} style={{translate:'0px 0px',scale:1,rotate:'0deg',opacity:1}}>{sTyped}</Interactive.Text>
+    <Interactive.Text name="S07 / Slash S copy motion" x={lerp(commandSlashSX,332,sMove)} y={lerp(841,1110,sMove)} fontSize={58} fontWeight={800} fill={p.coralColor} style={{translate:'0px 0px',scale:1,rotate:'0deg',opacity:1}}>/s</Interactive.Text>
+    <Interactive.Text name="S07 / Slash S meaning typed" x={lerp(commandSlashSX,390,sMove)} y={1110} fontSize={58} fontWeight={740} fill={p.inkColor} style={{translate:'0px 0px',scale:1,rotate:'0deg',opacity:1}}>{sTyped}</Interactive.Text>
    </g>
    {/* slash-t gets the exact same copy -> type treatment. */}
    <g opacity={tAlpha*(1-outExplanation)}>
-    <Interactive.Text name="S07 / Slash T copy motion" x={lerp(606,366,tMove)} y={lerp(841,1110,tMove)} fontSize={58} fontWeight={800} fill={p.coralColor} style={{translate:'0px 0px',scale:1,rotate:'0deg',opacity:1}}>/t</Interactive.Text>
-    <Interactive.Text name="S07 / Slash T meaning typed" x={lerp(606,433,tMove)} y={1110} fontSize={58} fontWeight={740} fill={p.inkColor} style={{translate:'0px 0px',scale:1,rotate:'0deg',opacity:1}}>{tTyped}</Interactive.Text>
+    <Interactive.Text name="S07 / Slash T copy motion" x={lerp(commandSlashTX,366,tMove)} y={lerp(841,1110,tMove)} fontSize={58} fontWeight={800} fill={p.coralColor} style={{translate:'0px 0px',scale:1,rotate:'0deg',opacity:1}}>/t</Interactive.Text>
+    <Interactive.Text name="S07 / Slash T meaning typed" x={lerp(commandSlashTX,433,tMove)} y={1110} fontSize={58} fontWeight={740} fill={p.inkColor} style={{translate:'0px 0px',scale:1,rotate:'0deg',opacity:1}}>{tTyped}</Interactive.Text>
    </g>
    {/* 3600 copy joins into a seconds conversion, while main 3600 stays fixed. */}
    <g opacity={nAlpha*(1-outExplanation)}>
     <Interactive.Text
      name="S07 / 3600 copy down"
-     x={lerp(851,208,nMove)}
+     x={lerp(877,conversionJoinX,nMove)}
+     textAnchor="end"
      y={lerp(841,meaningY,nMove)}
      fontSize={57}
      fontWeight={800}
      fill={p.coralColor}
      style={{
-      translate: '-62.4px 0px',
+      translate: '0px 0px',
       scale: 1,
       rotate: '0deg',
       opacity: 1
@@ -170,13 +179,13 @@ export const Scene05To06Flow:React.FC<FlowProps>=({frameOffset=0,...input})=>{
     >3600</Interactive.Text>
     <Interactive.Text
      name="S07 / Seconds equals one hour typed"
-     x={lerp(851,374,nMove)}
+     x={lerp(877,conversionJoinX,nMove)}
      y={meaningY}
      fontSize={49}
      fontWeight={740}
      fill={p.inkColor}
      style={{
-      translate: '-62.4px 0px',
+      translate: '0px 0px',
       scale: 1,
       rotate: '0deg',
       opacity: 1

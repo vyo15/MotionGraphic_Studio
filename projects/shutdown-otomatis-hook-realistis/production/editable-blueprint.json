@@ -6,23 +6,7 @@
       "source": "src/scenes/Scene01.tsx"
     },
     {
-      "name": "S01 — Subtitle VO A · Pernah ketiduran pas lagi nonton",
-      "source": "src/scenes/Scene01.tsx"
-    },
-    {
-      "name": "S01 — Subtitle VO B · Tapi laptop masih nyala semalaman",
-      "source": "src/scenes/Scene01.tsx"
-    },
-    {
       "name": "S02 — Judul Download belum selesai",
-      "source": "src/scenes/Scene02.tsx"
-    },
-    {
-      "name": "S02 — Subtitle VO A · Atau malah sebaliknya",
-      "source": "src/scenes/Scene02.tsx"
-    },
-    {
-      "name": "S02 — Subtitle VO B · Tapi download belum selesai",
       "source": "src/scenes/Scene02.tsx"
     },
     {
@@ -43,10 +27,6 @@
     },
     {
       "name": "S02 Bridge — Judul outgoing ketiduran",
-      "source": "src/scenes/Scene02.tsx"
-    },
-    {
-      "name": "S02 Bridge — Subtitle VO S01 keluar",
       "source": "src/scenes/Scene02.tsx"
     },
     {
@@ -194,10 +174,6 @@
       "source": "src/scenes/SceneQuestion.tsx"
     },
     {
-      "name": "S03-B — Outgoing subtitle",
-      "source": "src/scenes/SceneQuestion.tsx"
-    },
-    {
       "name": "S03-B — Center typography EMANG ADA",
       "source": "src/scenes/SceneQuestion.tsx"
     },
@@ -306,14 +282,6 @@
       "source": "src/scenes/Scene03.tsx"
     },
     {
-      "name": "S04 — VO 1 Tenang kamu bisa atur laptop",
-      "source": "src/scenes/Scene03.tsx"
-    },
-    {
-      "name": "S04 — VO 2 Biar mati sendiri otomatis",
-      "source": "src/scenes/Scene03.tsx"
-    },
-    {
       "name": "S05 / Heading / Buka Run",
       "source": "src/scenes/Scene04.tsx"
     },
@@ -362,22 +330,6 @@
       "source": "src/scenes/Scene04.tsx"
     },
     {
-      "name": "S05 / Subtitle / Caranya gampang",
-      "source": "src/scenes/Scene04.tsx"
-    },
-    {
-      "name": "S05 / Subtitle / Tekan Windows R",
-      "source": "src/scenes/Scene04.tsx"
-    },
-    {
-      "name": "S05 / Subtitle / Ketik perintah",
-      "source": "src/scenes/Scene04.tsx"
-    },
-    {
-      "name": "S05 / Subtitle / Lalu klik OK",
-      "source": "src/scenes/Scene04.tsx"
-    },
-    {
       "name": "S05 / R / Letter editable",
       "source": "src/scenes/Scene04.tsx"
     },
@@ -388,42 +340,6 @@
     {
       "name": "MATCH / DETIK — same native source S05 to S06",
       "source": "src/components/Matched3600.tsx"
-    },
-    {
-      "name": "S06 / Subtitle pembuka explanation",
-      "source": "src/scenes/Scene05To06Flow.tsx"
-    },
-    {
-      "name": "S07 / Subtitle slash es",
-      "source": "src/scenes/Scene05To06Flow.tsx"
-    },
-    {
-      "name": "S07 / Subtitle slash te",
-      "source": "src/scenes/Scene05To06Flow.tsx"
-    },
-    {
-      "name": "S07 / Subtitle angka 3600",
-      "source": "src/scenes/Scene05To06Flow.tsx"
-    },
-    {
-      "name": "S07 / Subtitle karena detik",
-      "source": "src/scenes/Scene05To06Flow.tsx"
-    },
-    {
-      "name": "S08 / Subtitle / Kalau nggak jadi",
-      "source": "src/scenes/Scene05To06Flow.tsx"
-    },
-    {
-      "name": "S08 / Subtitle / bisa dibatalkan",
-      "source": "src/scenes/Scene05To06Flow.tsx"
-    },
-    {
-      "name": "S09 / Subtitle / Buka Run ketik shutdown slash a",
-      "source": "src/scenes/Scene05To06Flow.tsx"
-    },
-    {
-      "name": "S09 / Subtitle / Dibatalkan",
-      "source": "src/scenes/Scene05To06Flow.tsx"
     },
     {
       "name": "S10 CTA / Title top",
@@ -451,18 +367,6 @@
     },
     {
       "name": "S11 Cover / Summary",
-      "source": "src/scenes/Scene10To11Flow.tsx"
-    },
-    {
-      "name": "S10 CTA / Subtitle VO 01",
-      "source": "src/scenes/Scene10To11Flow.tsx"
-    },
-    {
-      "name": "S10 CTA / Subtitle VO 02",
-      "source": "src/scenes/Scene10To11Flow.tsx"
-    },
-    {
-      "name": "S10 CTA / Subtitle VO 03",
       "source": "src/scenes/Scene10To11Flow.tsx"
     }
   ],
@@ -849,10 +753,6 @@
     },
     {
       "name": "S05 / Outro / 3600 seconds matched to Scene 06",
-      "source": "src/scenes/Scene04.tsx"
-    },
-    {
-      "name": "S05 / Subtitle / All voice-over cues",
       "source": "src/scenes/Scene04.tsx"
     },
     {

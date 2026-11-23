@@ -1,0 +1,1073 @@
+{
+  "schemaVersion": 1,
+  "nativeTextTargets": [
+    {
+      "name": "S01 — Judul Ketiduran pas nonton",
+      "source": "src/scenes/Scene01.tsx"
+    },
+    {
+      "name": "S01 — Subtitle VO A · Pernah ketiduran pas lagi nonton",
+      "source": "src/scenes/Scene01.tsx"
+    },
+    {
+      "name": "S01 — Subtitle VO B · Tapi laptop masih nyala semalaman",
+      "source": "src/scenes/Scene01.tsx"
+    },
+    {
+      "name": "S02 — Judul Download belum selesai",
+      "source": "src/scenes/Scene02.tsx"
+    },
+    {
+      "name": "S02 — Subtitle VO A · Atau malah sebaliknya",
+      "source": "src/scenes/Scene02.tsx"
+    },
+    {
+      "name": "S02 — Subtitle VO B · Tapi download belum selesai",
+      "source": "src/scenes/Scene02.tsx"
+    },
+    {
+      "name": "SET — Label DOWNLOAD",
+      "source": "src/components/SceneSet.tsx"
+    },
+    {
+      "name": "SET — Nama file video-lengkap.mp4",
+      "source": "src/components/SceneSet.tsx"
+    },
+    {
+      "name": "SET — Status sedang diunduh",
+      "source": "src/components/SceneSet.tsx"
+    },
+    {
+      "name": "SET — Label belum selesai",
+      "source": "src/components/SceneSet.tsx"
+    },
+    {
+      "name": "S02 Bridge — Judul outgoing ketiduran",
+      "source": "src/scenes/Scene02.tsx"
+    },
+    {
+      "name": "S02 Bridge — Subtitle VO S01 keluar",
+      "source": "src/scenes/Scene02.tsx"
+    },
+    {
+      "name": "S05 — Header 3600 to 60 to 1",
+      "source": "src/scenes/Scene05.tsx"
+    },
+    {
+      "name": "S05 — Main number 3600",
+      "source": "src/scenes/Scene05.tsx"
+    },
+    {
+      "name": "S05 — Unit DETIK",
+      "source": "src/scenes/Scene05.tsx"
+    },
+    {
+      "name": "S05 — Conversion number 60",
+      "source": "src/scenes/Scene05.tsx"
+    },
+    {
+      "name": "S05 — Unit MENIT",
+      "source": "src/scenes/Scene05.tsx"
+    },
+    {
+      "name": "S05 — Conversion number 1",
+      "source": "src/scenes/Scene05.tsx"
+    },
+    {
+      "name": "S05 — Unit JAM",
+      "source": "src/scenes/Scene05.tsx"
+    },
+    {
+      "name": "S05 — TIMER label",
+      "source": "src/scenes/Scene05.tsx"
+    },
+    {
+      "name": "S05 — Laptop OFF",
+      "source": "src/scenes/Scene05.tsx"
+    },
+    {
+      "name": "S05 — Subtitle 01 Angka 3600 itu artinya satu jam",
+      "source": "src/scenes/Scene05.tsx"
+    },
+    {
+      "name": "S05 — Subtitle 02 Kalau waktunya habis",
+      "source": "src/scenes/Scene05.tsx"
+    },
+    {
+      "name": "S05 — Subtitle 03 Laptop bakal mati sendiri",
+      "source": "src/scenes/Scene05.tsx"
+    },
+    {
+      "name": "S06 · Judul Batalkan shutdown otomatis",
+      "source": "src/scenes/Scene06.tsx"
+    },
+    {
+      "name": "S06 · Nama gaya 02 Swiss Motion",
+      "source": "src/scenes/Scene06.tsx"
+    },
+    {
+      "name": "S06 · Status JADWAL AKTIF",
+      "source": "src/scenes/Scene06.tsx"
+    },
+    {
+      "name": "S06 · Countdown 00 59 42",
+      "source": "src/scenes/Scene06.tsx"
+    },
+    {
+      "name": "S06 · Title Run",
+      "source": "src/scenes/Scene06.tsx"
+    },
+    {
+      "name": "S06 · Instruksi Run baris 1",
+      "source": "src/scenes/Scene06.tsx"
+    },
+    {
+      "name": "S06 · Instruksi Run baris 2",
+      "source": "src/scenes/Scene06.tsx"
+    },
+    {
+      "name": "S06 · Instruksi Run baris 3",
+      "source": "src/scenes/Scene06.tsx"
+    },
+    {
+      "name": "S06 · Label Open",
+      "source": "src/scenes/Scene06.tsx"
+    },
+    {
+      "name": "S06 · Label OK",
+      "source": "src/scenes/Scene06.tsx"
+    },
+    {
+      "name": "S06 · Label Cancel",
+      "source": "src/scenes/Scene06.tsx"
+    },
+    {
+      "name": "S06 · Label Browse",
+      "source": "src/scenes/Scene06.tsx"
+    },
+    {
+      "name": "S06 · Label hasil JADWAL SHUTDOWN",
+      "source": "src/scenes/Scene06.tsx"
+    },
+    {
+      "name": "S06 · Laptop tetap menyala",
+      "source": "src/scenes/Scene06.tsx"
+    },
+    {
+      "name": "S06 · Subtitle VO 01 Kalau mau batalin",
+      "source": "src/scenes/Scene06.tsx"
+    },
+    {
+      "name": "S06 · Subtitle VO 02 buka Run lagi",
+      "source": "src/scenes/Scene06.tsx"
+    },
+    {
+      "name": "S06 · Subtitle VO 03 ketik perintah ini",
+      "source": "src/scenes/Scene06.tsx"
+    },
+    {
+      "name": "S06 · Subtitle VO 04 lalu Enter",
+      "source": "src/scenes/Scene06.tsx"
+    },
+    {
+      "name": "S07 — Header label PENUTUP 07",
+      "source": "src/scenes/Scene07.tsx"
+    },
+    {
+      "name": "S07 — Header Bagikan caramu",
+      "source": "src/scenes/Scene07.tsx"
+    },
+    {
+      "name": "S08 — Label WINDOWS TIPS",
+      "source": "src/scenes/Scene08.tsx"
+    },
+    {
+      "name": "S08 — Label Ringkasan tutorial",
+      "source": "src/scenes/Scene08.tsx"
+    },
+    {
+      "name": "S08 — Laptop OFF text",
+      "source": "src/scenes/Scene08.tsx"
+    },
+    {
+      "name": "S03-B — Outgoing heading download",
+      "source": "src/scenes/SceneQuestion.tsx"
+    },
+    {
+      "name": "S03-B — Outgoing subtitle",
+      "source": "src/scenes/SceneQuestion.tsx"
+    },
+    {
+      "name": "S03-B — Center typography EMANG ADA",
+      "source": "src/scenes/SceneQuestion.tsx"
+    },
+    {
+      "name": "S03-B — Center typography SOLUSINYA",
+      "source": "src/scenes/SceneQuestion.tsx"
+    },
+    {
+      "name": "QUESTION — Tanda tanya kiri atas",
+      "source": "src/components/QuestionOrnaments.tsx"
+    },
+    {
+      "name": "QUESTION — Tanda tanya kanan atas",
+      "source": "src/components/QuestionOrnaments.tsx"
+    },
+    {
+      "name": "QUESTION — Tanda tanya kiri bawah",
+      "source": "src/components/QuestionOrnaments.tsx"
+    },
+    {
+      "name": "QUESTION — Tanda tanya kanan bawah",
+      "source": "src/components/QuestionOrnaments.tsx"
+    },
+    {
+      "name": "QUESTION — Tanda tanya bawah tengah",
+      "source": "src/components/QuestionOrnaments.tsx"
+    },
+    {
+      "name": "TRANSISI — Jam: 01:00:00",
+      "source": "src/components/EditorialClock.tsx"
+    },
+    {
+      "name": "S04 — Kartu film: judul Nonton film",
+      "source": "src/scenes/Scene03.tsx"
+    },
+    {
+      "name": "S04 — Film: label sedang diputar",
+      "source": "src/scenes/Scene03.tsx"
+    },
+    {
+      "name": "S04 — Film: selesai 100 persen",
+      "source": "src/scenes/Scene03.tsx"
+    },
+    {
+      "name": "S04 — Kartu download: judul Download",
+      "source": "src/scenes/Scene03.tsx"
+    },
+    {
+      "name": "S04 — Download: label sedang diunduh",
+      "source": "src/scenes/Scene03.tsx"
+    },
+    {
+      "name": "S04 — Download: selesai 100 persen",
+      "source": "src/scenes/Scene03.tsx"
+    },
+    {
+      "name": "S04 — Bridge pertanyaan EMANG ADA",
+      "source": "src/scenes/Scene03.tsx"
+    },
+    {
+      "name": "S04 — Bridge pertanyaan SOLUSINYA",
+      "source": "src/scenes/Scene03.tsx"
+    },
+    {
+      "name": "S04 — Judul center Atur waktunya",
+      "source": "src/scenes/Scene03.tsx"
+    },
+    {
+      "name": "S04 — Judul center lalu istirahat",
+      "source": "src/scenes/Scene03.tsx"
+    },
+    {
+      "name": "S04 — Timer: label simulasi",
+      "source": "src/scenes/Scene03.tsx"
+    },
+    {
+      "name": "S04 — Timer: label waktu habis",
+      "source": "src/scenes/Scene03.tsx"
+    },
+    {
+      "name": "S04 — Dua aktivitas selesai",
+      "source": "src/scenes/Scene03.tsx"
+    },
+    {
+      "name": "S04 — Timeline AKTIF",
+      "source": "src/scenes/Scene03.tsx"
+    },
+    {
+      "name": "S04 — Timeline TIMER",
+      "source": "src/scenes/Scene03.tsx"
+    },
+    {
+      "name": "S04 — Timeline OFF",
+      "source": "src/scenes/Scene03.tsx"
+    },
+    {
+      "name": "S04 — Laptop OFF: judul LAPTOP MATI",
+      "source": "src/scenes/Scene03.tsx"
+    },
+    {
+      "name": "S04 — Laptop OFF: judul OTOMATIS",
+      "source": "src/scenes/Scene03.tsx"
+    },
+    {
+      "name": "S04 — Laptop OFF: keterangan setelah waktu diatur",
+      "source": "src/scenes/Scene03.tsx"
+    },
+    {
+      "name": "S04 — VO 1 Tenang kamu bisa atur laptop",
+      "source": "src/scenes/Scene03.tsx"
+    },
+    {
+      "name": "S04 — VO 2 Biar mati sendiri otomatis",
+      "source": "src/scenes/Scene03.tsx"
+    },
+    {
+      "name": "S05 / Heading / Buka Run",
+      "source": "src/scenes/Scene04.tsx"
+    },
+    {
+      "name": "S05 / Heading / Lalu jalankan perintah",
+      "source": "src/scenes/Scene04.tsx"
+    },
+    {
+      "name": "S05 / Keyboard / Plus symbol",
+      "source": "src/scenes/Scene04.tsx"
+    },
+    {
+      "name": "S05 / Run / Title text",
+      "source": "src/scenes/Scene04.tsx"
+    },
+    {
+      "name": "S05 / Run / Close symbol",
+      "source": "src/scenes/Scene04.tsx"
+    },
+    {
+      "name": "S05 / Run / Help line 1",
+      "source": "src/scenes/Scene04.tsx"
+    },
+    {
+      "name": "S05 / Run / Help line 2",
+      "source": "src/scenes/Scene04.tsx"
+    },
+    {
+      "name": "S05 / Run / Help line 3",
+      "source": "src/scenes/Scene04.tsx"
+    },
+    {
+      "name": "S05 / Run / Open label",
+      "source": "src/scenes/Scene04.tsx"
+    },
+    {
+      "name": "S05 / Run / OK button label",
+      "source": "src/scenes/Scene04.tsx"
+    },
+    {
+      "name": "S05 / Run / Cancel button label",
+      "source": "src/scenes/Scene04.tsx"
+    },
+    {
+      "name": "S05 / Run / Browse button label",
+      "source": "src/scenes/Scene04.tsx"
+    },
+    {
+      "name": "S05 / Subtitle / Caranya gampang",
+      "source": "src/scenes/Scene04.tsx"
+    },
+    {
+      "name": "S05 / Subtitle / Tekan Windows R",
+      "source": "src/scenes/Scene04.tsx"
+    },
+    {
+      "name": "S05 / Subtitle / Ketik perintah",
+      "source": "src/scenes/Scene04.tsx"
+    },
+    {
+      "name": "S05 / Subtitle / Lalu klik OK",
+      "source": "src/scenes/Scene04.tsx"
+    },
+    {
+      "name": "S05 / R / Letter editable",
+      "source": "src/scenes/Scene04.tsx"
+    },
+    {
+      "name": "MATCH / 3600 — same native source S05 to S06",
+      "source": "src/components/Matched3600.tsx"
+    },
+    {
+      "name": "MATCH / DETIK — same native source S05 to S06",
+      "source": "src/components/Matched3600.tsx"
+    },
+    {
+      "name": "S06 / Subtitle pembuka explanation",
+      "source": "src/scenes/Scene05To06Flow.tsx"
+    },
+    {
+      "name": "S07 / Subtitle slash es",
+      "source": "src/scenes/Scene05To06Flow.tsx"
+    },
+    {
+      "name": "S07 / Subtitle slash te",
+      "source": "src/scenes/Scene05To06Flow.tsx"
+    },
+    {
+      "name": "S07 / Subtitle angka 3600",
+      "source": "src/scenes/Scene05To06Flow.tsx"
+    },
+    {
+      "name": "S07 / Subtitle karena detik",
+      "source": "src/scenes/Scene05To06Flow.tsx"
+    },
+    {
+      "name": "S08 / Subtitle / Kalau nggak jadi",
+      "source": "src/scenes/Scene05To06Flow.tsx"
+    },
+    {
+      "name": "S08 / Subtitle / bisa dibatalkan",
+      "source": "src/scenes/Scene05To06Flow.tsx"
+    },
+    {
+      "name": "S09 / Subtitle / Buka Run ketik shutdown slash a",
+      "source": "src/scenes/Scene05To06Flow.tsx"
+    },
+    {
+      "name": "S09 / Subtitle / Dibatalkan",
+      "source": "src/scenes/Scene05To06Flow.tsx"
+    },
+    {
+      "name": "S10 CTA / Title top",
+      "source": "src/scenes/Scene10To11Flow.tsx"
+    },
+    {
+      "name": "S10 CTA / Title bottom",
+      "source": "src/scenes/Scene10To11Flow.tsx"
+    },
+    {
+      "name": "S10 CTA / Additional question",
+      "source": "src/scenes/Scene10To11Flow.tsx"
+    },
+    {
+      "name": "S11 Cover / Title top",
+      "source": "src/scenes/Scene10To11Flow.tsx"
+    },
+    {
+      "name": "S11 Cover / Title bottom",
+      "source": "src/scenes/Scene10To11Flow.tsx"
+    },
+    {
+      "name": "S11 Cover / Timer value",
+      "source": "src/scenes/Scene10To11Flow.tsx"
+    },
+    {
+      "name": "S11 Cover / Summary",
+      "source": "src/scenes/Scene10To11Flow.tsx"
+    },
+    {
+      "name": "S10 CTA / Subtitle VO 01",
+      "source": "src/scenes/Scene10To11Flow.tsx"
+    },
+    {
+      "name": "S10 CTA / Subtitle VO 02",
+      "source": "src/scenes/Scene10To11Flow.tsx"
+    },
+    {
+      "name": "S10 CTA / Subtitle VO 03",
+      "source": "src/scenes/Scene10To11Flow.tsx"
+    }
+  ],
+  "nativeVisualTargets": [
+    {
+      "name": "SET — Grid latar samar",
+      "source": "src/components/SceneSet.tsx"
+    },
+    {
+      "name": "SET — Jendela malam dan bulan",
+      "source": "src/components/SceneSet.tsx"
+    },
+    {
+      "name": "SET — Kursi stickman",
+      "source": "src/components/SceneSet.tsx"
+    },
+    {
+      "name": "SET — Meja dan kaki meja",
+      "source": "src/components/SceneSet.tsx"
+    },
+    {
+      "name": "SET — Kaki stickman",
+      "source": "src/components/SceneSet.tsx"
+    },
+    {
+      "name": "SET — Tubuh dan tangan kiri stickman",
+      "source": "src/components/SceneSet.tsx"
+    },
+    {
+      "name": "SET — Tangan ke laptop",
+      "source": "src/components/SceneSet.tsx"
+    },
+    {
+      "name": "SET — Kepala stickman (animasi mengantuk)",
+      "source": "src/components/SceneSet.tsx"
+    },
+    {
+      "name": "SET — Laptop body dan keyboard",
+      "source": "src/components/SceneSet.tsx"
+    },
+    {
+      "name": "SET — Download panel (75–76 persen)",
+      "source": "src/components/SceneSet.tsx"
+    },
+    {
+      "name": "SET — Jam sebagai bukti semalaman",
+      "source": "src/components/SceneSet.tsx"
+    },
+    {
+      "name": "S05 — Divider top",
+      "source": "src/scenes/Scene05.tsx"
+    },
+    {
+      "name": "S05 — Background editorial grid",
+      "source": "src/scenes/Scene05.tsx"
+    },
+    {
+      "name": "S05 — Main thin horizontal separator",
+      "source": "src/scenes/Scene05.tsx"
+    },
+    {
+      "name": "S05 — Coral arrow to conversion",
+      "source": "src/scenes/Scene05.tsx"
+    },
+    {
+      "name": "S05 — Timer card surface and shadow",
+      "source": "src/scenes/Scene05.tsx"
+    },
+    {
+      "name": "S05 — Laptop screen and bezel",
+      "source": "src/scenes/Scene05.tsx"
+    },
+    {
+      "name": "S05 — Laptop keyboard and stand",
+      "source": "src/scenes/Scene05.tsx"
+    },
+    {
+      "name": "S06 · Grid tipis editorial",
+      "source": "src/scenes/Scene06.tsx"
+    },
+    {
+      "name": "S06 · Garis editorial header",
+      "source": "src/scenes/Scene06.tsx"
+    },
+    {
+      "name": "S06 · Rel timer dasar",
+      "source": "src/scenes/Scene06.tsx"
+    },
+    {
+      "name": "S06 · Rel timer coral",
+      "source": "src/scenes/Scene06.tsx"
+    },
+    {
+      "name": "S06 · Jendela Run shadow dan background",
+      "source": "src/scenes/Scene06.tsx"
+    },
+    {
+      "name": "S06 · Icon Run",
+      "source": "src/scenes/Scene06.tsx"
+    },
+    {
+      "name": "S06 · Close icon",
+      "source": "src/scenes/Scene06.tsx"
+    },
+    {
+      "name": "S06 · Ikon dialog Run",
+      "source": "src/scenes/Scene06.tsx"
+    },
+    {
+      "name": "S06 · Kolom input perintah",
+      "source": "src/scenes/Scene06.tsx"
+    },
+    {
+      "name": "S06 · Caret ketik",
+      "source": "src/scenes/Scene06.tsx"
+    },
+    {
+      "name": "S06 · Tombol OK dan status ditekan",
+      "source": "src/scenes/Scene06.tsx"
+    },
+    {
+      "name": "S06 · Tombol Cancel",
+      "source": "src/scenes/Scene06.tsx"
+    },
+    {
+      "name": "S06 · Tombol Browse",
+      "source": "src/scenes/Scene06.tsx"
+    },
+    {
+      "name": "S06 · Underline coral hasil",
+      "source": "src/scenes/Scene06.tsx"
+    },
+    {
+      "name": "S06 · Lingkaran hijau sukses",
+      "source": "src/scenes/Scene06.tsx"
+    },
+    {
+      "name": "S06 · Check mark hasil pembatalan",
+      "source": "src/scenes/Scene06.tsx"
+    },
+    {
+      "name": "S07 — Editorial faint grid",
+      "source": "src/scenes/Scene07.tsx"
+    },
+    {
+      "name": "S07 — Header divider",
+      "source": "src/scenes/Scene07.tsx"
+    },
+    {
+      "name": "S07 — Continuity scene06 success check",
+      "source": "src/scenes/Scene07.tsx"
+    },
+    {
+      "name": "S07 — Coral kinetic underline",
+      "source": "src/scenes/Scene07.tsx"
+    },
+    {
+      "name": "S07 — Comment input box shadow and surface",
+      "source": "src/scenes/Scene07.tsx"
+    },
+    {
+      "name": "S07 — Coral comment icon",
+      "source": "src/scenes/Scene07.tsx"
+    },
+    {
+      "name": "S07 — Comment card tiny corner highlight",
+      "source": "src/scenes/Scene07.tsx"
+    },
+    {
+      "name": "S07 — Input caret after click",
+      "source": "src/scenes/Scene07.tsx"
+    },
+    {
+      "name": "S07 — Smoothed interactive cursor",
+      "source": "src/scenes/Scene07.tsx"
+    },
+    {
+      "name": "S07 — Cursor click ring",
+      "source": "src/scenes/Scene07.tsx"
+    },
+    {
+      "name": "S08 — Minimal Editorial grid",
+      "source": "src/scenes/Scene08.tsx"
+    },
+    {
+      "name": "S08 — Header divider",
+      "source": "src/scenes/Scene08.tsx"
+    },
+    {
+      "name": "S08 — Coral underline moving",
+      "source": "src/scenes/Scene08.tsx"
+    },
+    {
+      "name": "S08 — Cover panel surface and shadow",
+      "source": "src/scenes/Scene08.tsx"
+    },
+    {
+      "name": "S08 — Timer badge ring",
+      "source": "src/scenes/Scene08.tsx"
+    },
+    {
+      "name": "S08 — Timer to laptop arrow",
+      "source": "src/scenes/Scene08.tsx"
+    },
+    {
+      "name": "S08 — Laptop bezel and screen",
+      "source": "src/scenes/Scene08.tsx"
+    },
+    {
+      "name": "S08 — Laptop base and keyboard",
+      "source": "src/scenes/Scene08.tsx"
+    },
+    {
+      "name": "S03-B — Editorial background grid",
+      "source": "src/scenes/SceneQuestion.tsx"
+    },
+    {
+      "name": "QUESTION — Radial marks, independently editable",
+      "source": "src/components/QuestionOrnaments.tsx"
+    },
+    {
+      "name": "TRANSISI — Jam yang sama: badan dan bingkai",
+      "source": "src/components/EditorialClock.tsx"
+    },
+    {
+      "name": "TRANSISI — Jam: 12 penanda",
+      "source": "src/components/EditorialClock.tsx"
+    },
+    {
+      "name": "SET — Mata sayu menunggu download (S02)",
+      "source": "src/components/SceneSet.tsx"
+    },
+    {
+      "name": "SET — Mulut dan ekspresi mengantuk (S01–S02)",
+      "source": "src/components/SceneSet.tsx"
+    },
+    {
+      "name": "S04 — Kartu film: permukaan dan bayangan",
+      "source": "src/scenes/Scene03.tsx"
+    },
+    {
+      "name": "S04 — Kartu film: ikon putar",
+      "source": "src/scenes/Scene03.tsx"
+    },
+    {
+      "name": "S04 — Film: centang selesai",
+      "source": "src/scenes/Scene03.tsx"
+    },
+    {
+      "name": "S04 — Film: progress 62 ke 100 persen",
+      "source": "src/scenes/Scene03.tsx"
+    },
+    {
+      "name": "S04 — Film: status LED",
+      "source": "src/scenes/Scene03.tsx"
+    },
+    {
+      "name": "S04 — Kartu download: permukaan dan bayangan",
+      "source": "src/scenes/Scene03.tsx"
+    },
+    {
+      "name": "S04 — Kartu download: ikon panah",
+      "source": "src/scenes/Scene03.tsx"
+    },
+    {
+      "name": "S04 — Download: centang selesai",
+      "source": "src/scenes/Scene03.tsx"
+    },
+    {
+      "name": "S04 — Download: progress 76 ke 100 persen",
+      "source": "src/scenes/Scene03.tsx"
+    },
+    {
+      "name": "S04 — Download: status LED",
+      "source": "src/scenes/Scene03.tsx"
+    },
+    {
+      "name": "S04 — Background editorial putih",
+      "source": "src/scenes/Scene03.tsx"
+    },
+    {
+      "name": "S04 — Timer: permukaan jam dan 12 tanda waktu",
+      "source": "src/scenes/Scene03.tsx"
+    },
+    {
+      "name": "S04 — Timer: progress lingkaran coral",
+      "source": "src/scenes/Scene03.tsx"
+    },
+    {
+      "name": "S04 — Timer: angka hitung mundur editable sebagai grup",
+      "source": "src/scenes/Scene03.tsx"
+    },
+    {
+      "name": "S04 — Timeline AKTIF TIMER OFF: alur dan titik",
+      "source": "src/scenes/Scene03.tsx"
+    },
+    {
+      "name": "S04 — Laptop OFF: permukaan kartu dan ikon power",
+      "source": "src/scenes/Scene03.tsx"
+    },
+    {
+      "name": "S05 / Heading / Centered typography group",
+      "source": "src/scenes/Scene04.tsx"
+    },
+    {
+      "name": "S05 / Keyboard / Shortcut whole group",
+      "source": "src/scenes/Scene04.tsx"
+    },
+    {
+      "name": "S05 / Keyboard / Windows key independent",
+      "source": "src/scenes/Scene04.tsx"
+    },
+    {
+      "name": "S05 / Keyboard / R key independent",
+      "source": "src/scenes/Scene04.tsx"
+    },
+    {
+      "name": "S05 / Windows / Soft underlay and shadow",
+      "source": "src/scenes/Scene04.tsx"
+    },
+    {
+      "name": "S05 / Windows / Key surface, press changes color",
+      "source": "src/scenes/Scene04.tsx"
+    },
+    {
+      "name": "S05 / Windows / Key symbol",
+      "source": "src/scenes/Scene04.tsx"
+    },
+    {
+      "name": "S05 / R / Soft underlay and shadow",
+      "source": "src/scenes/Scene04.tsx"
+    },
+    {
+      "name": "S05 / R / Key surface, press changes color",
+      "source": "src/scenes/Scene04.tsx"
+    },
+    {
+      "name": "S05 / R / Key symbol",
+      "source": "src/scenes/Scene04.tsx"
+    },
+    {
+      "name": "S05 / Run / Whole window — drag and resize",
+      "source": "src/scenes/Scene04.tsx"
+    },
+    {
+      "name": "S05 / Run / Body soft shadow and white surface",
+      "source": "src/scenes/Scene04.tsx"
+    },
+    {
+      "name": "S05 / Run / Titlebar surface",
+      "source": "src/scenes/Scene04.tsx"
+    },
+    {
+      "name": "S05 / Run / Information icon",
+      "source": "src/scenes/Scene04.tsx"
+    },
+    {
+      "name": "S05 / Run / Open input surface",
+      "source": "src/scenes/Scene04.tsx"
+    },
+    {
+      "name": "S05 / Run / Action separator",
+      "source": "src/scenes/Scene04.tsx"
+    },
+    {
+      "name": "S05 / Run / OK button surface and press",
+      "source": "src/scenes/Scene04.tsx"
+    },
+    {
+      "name": "S05 / Run / Cancel button surface",
+      "source": "src/scenes/Scene04.tsx"
+    },
+    {
+      "name": "S05 / Run / Browse button surface",
+      "source": "src/scenes/Scene04.tsx"
+    },
+    {
+      "name": "S05 / Cursor / Pointer hotspot editable",
+      "source": "src/scenes/Scene04.tsx"
+    },
+    {
+      "name": "S05 / Cursor / Click indicator",
+      "source": "src/scenes/Scene04.tsx"
+    },
+    {
+      "name": "S05 / Outro / 3600 seconds matched to Scene 06",
+      "source": "src/scenes/Scene04.tsx"
+    },
+    {
+      "name": "S05 / Subtitle / All voice-over cues",
+      "source": "src/scenes/Scene04.tsx"
+    },
+    {
+      "name": "S09 / Cancellation / Windows Run card preview",
+      "source": "src/scenes/Scene05To06Flow.tsx"
+    },
+    {
+      "name": "S09 / Window / Open input field",
+      "source": "src/scenes/Scene05To06Flow.tsx"
+    },
+    {
+      "name": "S09 / Window / OK button surface",
+      "source": "src/scenes/Scene05To06Flow.tsx"
+    },
+    {
+      "name": "S09 / Window / Cancel button surface",
+      "source": "src/scenes/Scene05To06Flow.tsx"
+    },
+    {
+      "name": "S09 / Window / Browse button surface",
+      "source": "src/scenes/Scene05To06Flow.tsx"
+    },
+    {
+      "name": "S09 / Canceled / Check mark",
+      "source": "src/scenes/Scene05To06Flow.tsx"
+    },
+    {
+      "name": "S10 CTA / Card surface",
+      "source": "src/scenes/Scene10To11Flow.tsx"
+    },
+    {
+      "name": "S10 CTA / Animated comment placeholder",
+      "source": "src/scenes/Scene10To11Flow.tsx"
+    },
+    {
+      "name": "S10 CTA / Send arrow",
+      "source": "src/scenes/Scene10To11Flow.tsx"
+    },
+    {
+      "name": "Shared success to comment to clock — moving circle",
+      "source": "src/scenes/Scene10To11Flow.tsx"
+    },
+    {
+      "name": "S11 Cover / Animated clock face, ticks and hands",
+      "source": "src/scenes/Scene10To11Flow.tsx"
+    },
+    {
+      "name": "S11 Cover / Clock tick marks",
+      "source": "src/scenes/Scene10To11Flow.tsx"
+    },
+    {
+      "name": "S11 Cover / Clock minute hand",
+      "source": "src/scenes/Scene10To11Flow.tsx"
+    },
+    {
+      "name": "S11 Cover / Clock hour hand",
+      "source": "src/scenes/Scene10To11Flow.tsx"
+    },
+    {
+      "name": "S11 Cover / Clock center",
+      "source": "src/scenes/Scene10To11Flow.tsx"
+    },
+    {
+      "name": "S11 Cover / Coral progress ring",
+      "source": "src/scenes/Scene10To11Flow.tsx"
+    }
+  ],
+  "propsTextTargets": [
+    {
+      "name": "S05 — Countdown value dynamic Props",
+      "source": "src/scenes/Scene05.tsx"
+    },
+    {
+      "name": "S06 · Teks ketik shutdown slash a",
+      "source": "src/scenes/Scene06.tsx"
+    },
+    {
+      "name": "S06 · Hasil DIBATALKAN",
+      "source": "src/scenes/Scene06.tsx"
+    },
+    {
+      "name": "S07 — CTA headline CARA LAIN",
+      "source": "src/scenes/Scene07.tsx"
+    },
+    {
+      "name": "S07 — CTA line LEBIH PRAKTIS",
+      "source": "src/scenes/Scene07.tsx"
+    },
+    {
+      "name": "S07 — Comment placeholder text",
+      "source": "src/scenes/Scene07.tsx"
+    },
+    {
+      "name": "S07 — CTA VO caption no black box",
+      "source": "src/scenes/Scene07.tsx"
+    },
+    {
+      "name": "S08 — Title first line SHUTDOWN",
+      "source": "src/scenes/Scene08.tsx"
+    },
+    {
+      "name": "S08 — Title second line OTOMATIS",
+      "source": "src/scenes/Scene08.tsx"
+    },
+    {
+      "name": "S08 — Subtitle Laptop mati sendiri",
+      "source": "src/scenes/Scene08.tsx"
+    },
+    {
+      "name": "S08 — Timer status within card",
+      "source": "src/scenes/Scene08.tsx"
+    },
+    {
+      "name": "scene04HeadlineLine1",
+      "prop": "scene04HeadlineLine1",
+      "source": "src/config/props.ts"
+    },
+    {
+      "name": "scene04HeadlineLine2",
+      "prop": "scene04HeadlineLine2",
+      "source": "src/config/props.ts"
+    },
+    {
+      "name": "scene04RunCommand",
+      "prop": "scene04RunCommand",
+      "source": "src/config/props.ts"
+    },
+    {
+      "name": "scene09CancelTitleTop",
+      "source": "src/config/props.ts"
+    },
+    {
+      "name": "scene09CancelTitleBottom",
+      "source": "src/config/props.ts"
+    },
+    {
+      "name": "scene09CancelCommand",
+      "source": "src/config/props.ts"
+    },
+    {
+      "name": "scene09CancelSuccessText",
+      "source": "src/config/props.ts"
+    },
+    {
+      "name": "scene08SeparatorTitleTop",
+      "source": "src/config/props.ts"
+    },
+    {
+      "name": "scene08SeparatorTitleBottom",
+      "source": "src/config/props.ts"
+    },
+    {
+      "name": "scene08SeparatorStatus",
+      "source": "src/config/props.ts"
+    },
+    {
+      "name": "scene08SeparatorMessage",
+      "source": "src/config/props.ts"
+    },
+    {
+      "name": "scene07TimerInitialText",
+      "source": "src/config/props.ts"
+    },
+    {
+      "name": "scene07TimerRunningText",
+      "source": "src/config/props.ts"
+    },
+    {
+      "name": "scene09CancelRunTitle",
+      "source": "src/config/props.ts"
+    },
+    {
+      "name": "scene09CancelOpenLabel",
+      "source": "src/config/props.ts"
+    },
+    {
+      "name": "scene09CancelInstructionLine1",
+      "source": "src/config/props.ts"
+    },
+    {
+      "name": "scene09CancelInstructionLine2",
+      "source": "src/config/props.ts"
+    },
+    {
+      "name": "scene09CancelInstructionLine3",
+      "source": "src/config/props.ts"
+    },
+    {
+      "name": "scene09CancelOkLabel",
+      "source": "src/config/props.ts"
+    },
+    {
+      "name": "scene09CancelCancelLabel",
+      "source": "src/config/props.ts"
+    },
+    {
+      "name": "scene09CancelBrowseLabel",
+      "source": "src/config/props.ts"
+    },
+    {
+      "name": "S10 Animated typed comment",
+      "prop": "scene10CommentPlaceholder"
+    },
+    {
+      "name": "S10 Subtitle VO 01 property",
+      "prop": "scene10SubtitlePart1"
+    },
+    {
+      "name": "S10 Subtitle VO 02 property",
+      "prop": "scene10SubtitlePart2"
+    },
+    {
+      "name": "S10 Subtitle VO 03 property",
+      "prop": "scene10SubtitlePart3"
+    }
+  ],
+  "guiVerification": "unverified"
+}
