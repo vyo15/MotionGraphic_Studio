@@ -1,0 +1,95 @@
+{
+  "contractVersion": "1.0.0",
+  "id": "PCUnlockerRecoveryReels",
+  "slug": "pcunlocker-recovery-reels",
+  "title": "PCUnlocker \u2014 Reset Password Windows",
+  "entry": "src/Video.tsx",
+  "exportName": "Video",
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "durationInFrames": 1950,
+  "defaultProps": {
+    "showSubtitles": true,
+    "showVoGuide": true,
+    "showSfx": true,
+    "backgroundColor": "#F7F7F5",
+    "sfxVolume": 0.85
+  },
+  "editableContract": "studio-direct-v4",
+  "segments": [
+    {
+      "id": "PCUnlockerRecoveryReels-S01",
+      "title": "Masalah & konflik",
+      "startFrame": 0,
+      "durationInFrames": 150
+    },
+    {
+      "id": "PCUnlockerRecoveryReels-S02",
+      "title": "Memory Gallery",
+      "startFrame": 150,
+      "durationInFrames": 180
+    },
+    {
+      "id": "PCUnlockerRecoveryReels-S03",
+      "title": "Respons",
+      "startFrame": 330,
+      "durationInFrames": 120
+    },
+    {
+      "id": "PCUnlockerRecoveryReels-S04",
+      "title": "Solusi",
+      "startFrame": 450,
+      "durationInFrames": 150
+    },
+    {
+      "id": "PCUnlockerRecoveryReels-S05",
+      "title": "Persiapan",
+      "startFrame": 600,
+      "durationInFrames": 240
+    },
+    {
+      "id": "PCUnlockerRecoveryReels-S06",
+      "title": "Demonstrasi",
+      "startFrame": 840,
+      "durationInFrames": 180
+    },
+    {
+      "id": "PCUnlockerRecoveryReels-S07",
+      "title": "Pemulihan",
+      "startFrame": 1020,
+      "durationInFrames": 180
+    },
+    {
+      "id": "PCUnlockerRecoveryReels-S08",
+      "title": "Konfirmasi",
+      "startFrame": 1200,
+      "durationInFrames": 150
+    },
+    {
+      "id": "PCUnlockerRecoveryReels-S09",
+      "title": "Restart",
+      "startFrame": 1350,
+      "durationInFrames": 150
+    },
+    {
+      "id": "PCUnlockerRecoveryReels-S10",
+      "title": "Hasil",
+      "startFrame": 1500,
+      "durationInFrames": 180
+    },
+    {
+      "id": "PCUnlockerRecoveryReels-S11",
+      "title": "CTA",
+      "startFrame": 1680,
+      "durationInFrames": 150
+    },
+    {
+      "id": "PCUnlockerRecoveryReels-S12",
+      "title": "Cover Reels",
+      "startFrame": 1830,
+      "durationInFrames": 120
+    }
+  ],
+  "coverFrame": 1920
+}

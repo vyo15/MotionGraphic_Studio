@@ -1,0 +1,27 @@
+1
+00:00:00,000 --> 00:00:02,533
+Pertama, siapkan shortcut
+
+2
+00:00:02,533 --> 00:00:04,733
+aplikasi atau file yang mau
+
+3
+00:00:04,733 --> 00:00:06,833
+dibuka otomatis.
+
+4
+00:00:06,833 --> 00:00:09,033
+Kalau belum ada, cari aplikasi
+
+5
+00:00:09,033 --> 00:00:11,167
+atau filenya di File Explorer,
+
+6
+00:00:11,167 --> 00:00:13,500
+klik kanan, pilih Send to,
+
+7
+00:00:13,500 --> 00:00:16,000
+lalu Desktop.

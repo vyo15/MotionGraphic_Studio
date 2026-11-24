@@ -1,0 +1,58 @@
+{
+  "contractVersion": "1.0.0",
+  "id": "SampleStartupWindowsDirector",
+  "slug": "sample-startup-windows-director",
+  "title": "SAMPLE • Buka File & Aplikasi Otomatis Saat Login Windows",
+  "entry": "src/Video.tsx",
+  "exportName": "Video",
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "durationInFrames": 2445,
+  "defaultProps": {
+    "showVoGuide": true,
+    "showDraftCaptions": false,
+    "backgroundColor": "#F7F7F5",
+    "showSubtitles": true
+  },
+  "editableContract": "studio-direct-v4",
+  "segments": [
+    {
+      "id": "S01",
+      "title": "Hook — Buka satu-satu?",
+      "startFrame": 0,
+      "durationInFrames": 855
+    },
+    {
+      "id": "S02",
+      "title": "Membuat shortcut",
+      "startFrame": 855,
+      "durationInFrames": 480
+    },
+    {
+      "id": "S03",
+      "title": "Membuka folder Startup",
+      "startFrame": 1335,
+      "durationInFrames": 300
+    },
+    {
+      "id": "S04",
+      "title": "Salin shortcut ke Startup",
+      "startFrame": 1635,
+      "durationInFrames": 270
+    },
+    {
+      "id": "S05",
+      "title": "Hasil & CTA",
+      "startFrame": 1905,
+      "durationInFrames": 390
+    },
+    {
+      "id": "S06",
+      "title": "Cover Reels",
+      "startFrame": 2295,
+      "durationInFrames": 150
+    }
+  ],
+  "coverFrame": 2395
+}

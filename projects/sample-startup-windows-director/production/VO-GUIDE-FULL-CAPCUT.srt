@@ -1,0 +1,99 @@
+1
+00:00:00,000 --> 00:00:03,133
+Pernah nggak sih kepikiran,
+
+2
+00:00:03,133 --> 00:00:06,700
+gimana kalau setiap mulai kerja,
+
+3
+00:00:06,700 --> 00:00:11,833
+semua aplikasi langsung kebuka sendiri
+
+4
+00:00:11,833 --> 00:00:17,000
+tanpa harus buka satu-satu?
+
+5
+00:00:17,000 --> 00:00:19,267
+Kayaknya praktis banget, kan?
+
+6
+00:00:19,267 --> 00:00:21,033
+Tapi... emang bisa?
+
+7
+00:00:21,033 --> 00:00:23,700
+Jawabannya bisa!
+
+8
+00:00:28,500 --> 00:00:31,033
+Pertama, siapkan shortcut
+
+9
+00:00:31,033 --> 00:00:33,233
+aplikasi atau file yang mau
+
+10
+00:00:33,233 --> 00:00:35,333
+dibuka otomatis.
+
+11
+00:00:35,333 --> 00:00:37,533
+Kalau belum ada, cari aplikasi
+
+12
+00:00:37,533 --> 00:00:39,667
+atau filenya di File Explorer,
+
+13
+00:00:39,667 --> 00:00:42,000
+klik kanan, pilih Send to,
+
+14
+00:00:42,000 --> 00:00:44,500
+lalu Desktop.
+
+15
+00:00:44,500 --> 00:00:47,333
+Selanjutnya, tekan Windows + R,
+
+16
+00:00:47,333 --> 00:00:51,200
+ketik shell titik dua startup,
+
+17
+00:00:51,200 --> 00:00:54,500
+lalu Enter.
+
+18
+00:00:54,500 --> 00:00:57,700
+Nah, tinggal copy shortcut tadi,
+
+19
+00:00:57,700 --> 00:01:00,900
+lalu paste ke folder Startup
+
+20
+00:01:00,900 --> 00:01:03,500
+yang terbuka.
+
+21
+00:01:03,500 --> 00:01:06,867
+Selesai! Sekarang, setiap kali login Windows,
+
+22
+00:01:06,867 --> 00:01:09,667
+aplikasi atau file tadi bakal kebuka sendiri.
+
+23
+00:01:09,667 --> 00:01:12,200
+Nah, kalau kamu, aplikasi apa
+
+24
+00:01:12,200 --> 00:01:14,667
+yang paling sering dibuka pas mulai kerja?
+
+25
+00:01:14,667 --> 00:01:16,500
+Coba tulis di komentar!

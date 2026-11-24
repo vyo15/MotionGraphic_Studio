@@ -1,0 +1,158 @@
+{
+  "schemaVersion": 1,
+  "fps": 30,
+  "source": "src/config/narration.json",
+  "note": "S03 plain text ACC; S04 plain text subtitle ACC following approved copy-paste preview. Other scenes preserved.",
+  "cues": [
+    {
+      "scene": "S01",
+      "startFrame": 0,
+      "endFrame": 94,
+      "text": "Pernah nggak sih kepikiran,"
+    },
+    {
+      "scene": "S01",
+      "startFrame": 94,
+      "endFrame": 201,
+      "text": "gimana kalau setiap mulai kerja,"
+    },
+    {
+      "scene": "S01",
+      "startFrame": 201,
+      "endFrame": 355,
+      "text": "semua aplikasi langsung kebuka sendiri"
+    },
+    {
+      "scene": "S01",
+      "startFrame": 355,
+      "endFrame": 510,
+      "text": "tanpa harus buka satu-satu?"
+    },
+    {
+      "scene": "S01",
+      "startFrame": 510,
+      "endFrame": 578,
+      "text": "Kayaknya praktis banget, kan?"
+    },
+    {
+      "scene": "S01",
+      "startFrame": 578,
+      "endFrame": 631,
+      "text": "Tapi... emang bisa?"
+    },
+    {
+      "scene": "S01",
+      "startFrame": 631,
+      "endFrame": 711,
+      "text": "Jawabannya bisa!"
+    },
+    {
+      "scene": "S02",
+      "startFrame": 855,
+      "endFrame": 931,
+      "text": "Pertama, siapkan shortcut"
+    },
+    {
+      "scene": "S02",
+      "startFrame": 931,
+      "endFrame": 997,
+      "text": "aplikasi atau file yang mau"
+    },
+    {
+      "scene": "S02",
+      "startFrame": 997,
+      "endFrame": 1060,
+      "text": "dibuka otomatis."
+    },
+    {
+      "scene": "S02",
+      "startFrame": 1060,
+      "endFrame": 1126,
+      "text": "Kalau belum ada, cari aplikasi"
+    },
+    {
+      "scene": "S02",
+      "startFrame": 1126,
+      "endFrame": 1190,
+      "text": "atau filenya di File Explorer,"
+    },
+    {
+      "scene": "S02",
+      "startFrame": 1190,
+      "endFrame": 1260,
+      "text": "klik kanan, pilih Send to,"
+    },
+    {
+      "scene": "S02",
+      "startFrame": 1260,
+      "endFrame": 1335,
+      "text": "lalu Desktop."
+    },
+    {
+      "scene": "S03",
+      "startFrame": 1335,
+      "endFrame": 1420,
+      "text": "Selanjutnya, tekan Windows + R,"
+    },
+    {
+      "scene": "S03",
+      "startFrame": 1420,
+      "endFrame": 1536,
+      "text": "ketik shell titik dua startup,"
+    },
+    {
+      "scene": "S03",
+      "startFrame": 1536,
+      "endFrame": 1635,
+      "text": "lalu Enter."
+    },
+    {
+      "scene": "S04",
+      "startFrame": 1635,
+      "endFrame": 1731,
+      "text": "Nah, tinggal copy shortcut tadi,"
+    },
+    {
+      "scene": "S04",
+      "startFrame": 1731,
+      "endFrame": 1827,
+      "text": "lalu paste ke folder Startup"
+    },
+    {
+      "scene": "S04",
+      "startFrame": 1827,
+      "endFrame": 1905,
+      "text": "yang terbuka."
+    },
+    {
+      "scene": "S05",
+      "startFrame": 1905,
+      "endFrame": 2006,
+      "text": "Selesai! Sekarang, setiap kali login Windows,"
+    },
+    {
+      "scene": "S05",
+      "startFrame": 2006,
+      "endFrame": 2090,
+      "text": "aplikasi atau file tadi bakal kebuka sendiri."
+    },
+    {
+      "scene": "S05",
+      "startFrame": 2090,
+      "endFrame": 2166,
+      "text": "Nah, kalau kamu, aplikasi apa"
+    },
+    {
+      "scene": "S05",
+      "startFrame": 2166,
+      "endFrame": 2240,
+      "text": "yang paling sering dibuka pas mulai kerja?"
+    },
+    {
+      "scene": "S05",
+      "startFrame": 2240,
+      "endFrame": 2295,
+      "text": "Coba tulis di komentar!"
+    }
+  ]
+}

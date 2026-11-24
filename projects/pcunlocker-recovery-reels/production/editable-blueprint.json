@@ -1,0 +1,921 @@
+{
+  "schemaVersion": 1,
+  "nativeTextTargets": [
+    {
+      "name": "S01 — Nama akun lokal",
+      "source": "src/scenes/Scene01.tsx"
+    },
+    {
+      "name": "S01 — Pesan gagal 1",
+      "source": "src/scenes/Scene01.tsx"
+    },
+    {
+      "name": "S01 — Indikator gagal 1",
+      "source": "src/scenes/Scene01.tsx"
+    },
+    {
+      "name": "S01 — Pesan gagal 2",
+      "source": "src/scenes/Scene01.tsx"
+    },
+    {
+      "name": "S01 — Indikator gagal 2",
+      "source": "src/scenes/Scene01.tsx"
+    },
+    {
+      "name": "S01 — Pesan account lockout",
+      "source": "src/scenes/Scene01.tsx"
+    },
+    {
+      "name": "S01 — OK lockout",
+      "source": "src/scenes/Scene01.tsx"
+    },
+    {
+      "name": "S01 — Indikator gagal 3",
+      "source": "src/scenes/Scene01.tsx"
+    },
+    {
+      "name": "S01 — Subtitle 01",
+      "source": "src/scenes/Scene01.tsx"
+    },
+    {
+      "name": "S01 — Subtitle 02",
+      "source": "src/scenes/Scene01.tsx"
+    },
+    {
+      "name": "S02 — Foto 1 — label",
+      "source": "src/scenes/Scene02.tsx"
+    },
+    {
+      "name": "S02 — Foto 2 — label",
+      "source": "src/scenes/Scene02.tsx"
+    },
+    {
+      "name": "S02 — Foto 3 — label",
+      "source": "src/scenes/Scene02.tsx"
+    },
+    {
+      "name": "S02 — File 1 — label",
+      "source": "src/scenes/Scene02.tsx"
+    },
+    {
+      "name": "S02 — File 2 — label",
+      "source": "src/scenes/Scene02.tsx"
+    },
+    {
+      "name": "S02 — Windows Setup — judul",
+      "source": "src/scenes/Scene02.tsx"
+    },
+    {
+      "name": "S02 — Pertanyaan install ulang",
+      "source": "src/scenes/Scene02.tsx"
+    },
+    {
+      "name": "S02 — Pertanyaan file penting",
+      "source": "src/scenes/Scene02.tsx"
+    },
+    {
+      "name": "S02 — Subtitle 01",
+      "source": "src/scenes/Scene02.tsx"
+    },
+    {
+      "name": "S02 — Subtitle 02",
+      "source": "src/scenes/Scene02.tsx"
+    },
+    {
+      "name": "S03 — Instalasi ulang",
+      "source": "src/scenes/Scene03.tsx"
+    },
+    {
+      "name": "S03 — Subtitle 01",
+      "source": "src/scenes/Scene03.tsx"
+    },
+    {
+      "name": "S03 — Subtitle 02",
+      "source": "src/scenes/Scene03.tsx"
+    },
+    {
+      "name": "S04 — Nama aplikasi",
+      "source": "src/scenes/Scene04.tsx"
+    },
+    {
+      "name": "S04 — Fungsi aplikasi",
+      "source": "src/scenes/Scene04.tsx"
+    },
+    {
+      "name": "S04 — Subtitle 01",
+      "source": "src/scenes/Scene04.tsx"
+    },
+    {
+      "name": "S04 — Subtitle 02",
+      "source": "src/scenes/Scene04.tsx"
+    },
+    {
+      "name": "S05 — Label ISO",
+      "source": "src/scenes/Scene05.tsx"
+    },
+    {
+      "name": "S05 — Label flashdisk",
+      "source": "src/scenes/Scene05.tsx"
+    },
+    {
+      "name": "S05 — Recovery environment",
+      "source": "src/scenes/Scene05.tsx"
+    },
+    {
+      "name": "S05 — Subtitle 01",
+      "source": "src/scenes/Scene05.tsx"
+    },
+    {
+      "name": "S05 — Subtitle 02",
+      "source": "src/scenes/Scene05.tsx"
+    },
+    {
+      "name": "S05 — Subtitle 03",
+      "source": "src/scenes/Scene05.tsx"
+    },
+    {
+      "name": "S05 — Subtitle 04",
+      "source": "src/scenes/Scene05.tsx"
+    },
+    {
+      "name": "S06 — Recovery UI — title",
+      "source": "src/scenes/Scene06.tsx"
+    },
+    {
+      "name": "S06 — Recovery UI — mode",
+      "source": "src/scenes/Scene06.tsx"
+    },
+    {
+      "name": "S06 — Windows installation",
+      "source": "src/scenes/Scene06.tsx"
+    },
+    {
+      "name": "S06 — Kolom user name",
+      "source": "src/scenes/Scene06.tsx"
+    },
+    {
+      "name": "S06 — Kolom status",
+      "source": "src/scenes/Scene06.tsx"
+    },
+    {
+      "name": "S06 — Akun 1",
+      "source": "src/scenes/Scene06.tsx"
+    },
+    {
+      "name": "S06 — Status akun 1",
+      "source": "src/scenes/Scene06.tsx"
+    },
+    {
+      "name": "S06 — Akun 2",
+      "source": "src/scenes/Scene06.tsx"
+    },
+    {
+      "name": "S06 — Status akun 2",
+      "source": "src/scenes/Scene06.tsx"
+    },
+    {
+      "name": "S06 — Akun 3",
+      "source": "src/scenes/Scene06.tsx"
+    },
+    {
+      "name": "S06 — Status akun 3",
+      "source": "src/scenes/Scene06.tsx"
+    },
+    {
+      "name": "S06 — Tombol Reset Password",
+      "source": "src/scenes/Scene06.tsx"
+    },
+    {
+      "name": "S06 — Tombol Restart",
+      "source": "src/scenes/Scene06.tsx"
+    },
+    {
+      "name": "S06 — Keterangan akun lokal",
+      "source": "src/scenes/Scene06.tsx"
+    },
+    {
+      "name": "S06 — Subtitle 01",
+      "source": "src/scenes/Scene06.tsx"
+    },
+    {
+      "name": "S06 — Subtitle 02",
+      "source": "src/scenes/Scene06.tsx"
+    },
+    {
+      "name": "S07 — Recovery UI — title",
+      "source": "src/scenes/Scene07.tsx"
+    },
+    {
+      "name": "S07 — Recovery UI — mode",
+      "source": "src/scenes/Scene07.tsx"
+    },
+    {
+      "name": "S07 — Windows installation",
+      "source": "src/scenes/Scene07.tsx"
+    },
+    {
+      "name": "S07 — Kolom user name",
+      "source": "src/scenes/Scene07.tsx"
+    },
+    {
+      "name": "S07 — Kolom status",
+      "source": "src/scenes/Scene07.tsx"
+    },
+    {
+      "name": "S07 — Akun 1",
+      "source": "src/scenes/Scene07.tsx"
+    },
+    {
+      "name": "S07 — Status akun 1",
+      "source": "src/scenes/Scene07.tsx"
+    },
+    {
+      "name": "S07 — Akun 2",
+      "source": "src/scenes/Scene07.tsx"
+    },
+    {
+      "name": "S07 — Status akun 2",
+      "source": "src/scenes/Scene07.tsx"
+    },
+    {
+      "name": "S07 — Akun 3",
+      "source": "src/scenes/Scene07.tsx"
+    },
+    {
+      "name": "S07 — Status akun 3",
+      "source": "src/scenes/Scene07.tsx"
+    },
+    {
+      "name": "S07 — Tombol Reset Password",
+      "source": "src/scenes/Scene07.tsx"
+    },
+    {
+      "name": "S07 — Tombol Restart",
+      "source": "src/scenes/Scene07.tsx"
+    },
+    {
+      "name": "S07 — Keterangan pemulihan",
+      "source": "src/scenes/Scene07.tsx"
+    },
+    {
+      "name": "S07 — Subtitle 01",
+      "source": "src/scenes/Scene07.tsx"
+    },
+    {
+      "name": "S07 — Subtitle 02",
+      "source": "src/scenes/Scene07.tsx"
+    },
+    {
+      "name": "S08 — Recovery UI — title",
+      "source": "src/scenes/Scene08.tsx"
+    },
+    {
+      "name": "S08 — Recovery UI — mode",
+      "source": "src/scenes/Scene08.tsx"
+    },
+    {
+      "name": "S08 — Windows installation",
+      "source": "src/scenes/Scene08.tsx"
+    },
+    {
+      "name": "S08 — Kolom user name",
+      "source": "src/scenes/Scene08.tsx"
+    },
+    {
+      "name": "S08 — Kolom status",
+      "source": "src/scenes/Scene08.tsx"
+    },
+    {
+      "name": "S08 — Akun 1",
+      "source": "src/scenes/Scene08.tsx"
+    },
+    {
+      "name": "S08 — Status akun 1",
+      "source": "src/scenes/Scene08.tsx"
+    },
+    {
+      "name": "S08 — Akun 2",
+      "source": "src/scenes/Scene08.tsx"
+    },
+    {
+      "name": "S08 — Status akun 2",
+      "source": "src/scenes/Scene08.tsx"
+    },
+    {
+      "name": "S08 — Akun 3",
+      "source": "src/scenes/Scene08.tsx"
+    },
+    {
+      "name": "S08 — Status akun 3",
+      "source": "src/scenes/Scene08.tsx"
+    },
+    {
+      "name": "S08 — Tombol Reset Password",
+      "source": "src/scenes/Scene08.tsx"
+    },
+    {
+      "name": "S08 — Tombol Restart",
+      "source": "src/scenes/Scene08.tsx"
+    },
+    {
+      "name": "S08 — Dialog title",
+      "source": "src/scenes/Scene08.tsx"
+    },
+    {
+      "name": "S08 — Password label",
+      "source": "src/scenes/Scene08.tsx"
+    },
+    {
+      "name": "S08 — Tombol OK",
+      "source": "src/scenes/Scene08.tsx"
+    },
+    {
+      "name": "S08 — Tombol Cancel",
+      "source": "src/scenes/Scene08.tsx"
+    },
+    {
+      "name": "S08 — Keterangan password",
+      "source": "src/scenes/Scene08.tsx"
+    },
+    {
+      "name": "S08 — Subtitle 01",
+      "source": "src/scenes/Scene08.tsx"
+    },
+    {
+      "name": "S08 — Subtitle 02",
+      "source": "src/scenes/Scene08.tsx"
+    },
+    {
+      "name": "S08 — Subtitle 03",
+      "source": "src/scenes/Scene08.tsx"
+    },
+    {
+      "name": "S09 — Recovery UI — title",
+      "source": "src/scenes/Scene09.tsx"
+    },
+    {
+      "name": "S09 — Recovery UI — mode",
+      "source": "src/scenes/Scene09.tsx"
+    },
+    {
+      "name": "S09 — Windows installation",
+      "source": "src/scenes/Scene09.tsx"
+    },
+    {
+      "name": "S09 — Kolom user name",
+      "source": "src/scenes/Scene09.tsx"
+    },
+    {
+      "name": "S09 — Kolom status",
+      "source": "src/scenes/Scene09.tsx"
+    },
+    {
+      "name": "S09 — Akun 1",
+      "source": "src/scenes/Scene09.tsx"
+    },
+    {
+      "name": "S09 — Status akun 1",
+      "source": "src/scenes/Scene09.tsx"
+    },
+    {
+      "name": "S09 — Akun 2",
+      "source": "src/scenes/Scene09.tsx"
+    },
+    {
+      "name": "S09 — Status akun 2",
+      "source": "src/scenes/Scene09.tsx"
+    },
+    {
+      "name": "S09 — Akun 3",
+      "source": "src/scenes/Scene09.tsx"
+    },
+    {
+      "name": "S09 — Status akun 3",
+      "source": "src/scenes/Scene09.tsx"
+    },
+    {
+      "name": "S09 — Tombol Reset Password",
+      "source": "src/scenes/Scene09.tsx"
+    },
+    {
+      "name": "S09 — Tombol Restart",
+      "source": "src/scenes/Scene09.tsx"
+    },
+    {
+      "name": "S09 — Restarting",
+      "source": "src/scenes/Scene09.tsx"
+    },
+    {
+      "name": "S09 — Subtitle 01",
+      "source": "src/scenes/Scene09.tsx"
+    },
+    {
+      "name": "S09 — Subtitle 02",
+      "source": "src/scenes/Scene09.tsx"
+    },
+    {
+      "name": "S10 — Label Documents",
+      "source": "src/scenes/Scene10.tsx"
+    },
+    {
+      "name": "S10 — Label Pictures",
+      "source": "src/scenes/Scene10.tsx"
+    },
+    {
+      "name": "S10 — Label Work",
+      "source": "src/scenes/Scene10.tsx"
+    },
+    {
+      "name": "S10 — Login akun",
+      "source": "src/scenes/Scene10.tsx"
+    },
+    {
+      "name": "S10 — Label folder Dokumen",
+      "source": "src/scenes/Scene10.tsx"
+    },
+    {
+      "name": "S10 — Label folder Foto",
+      "source": "src/scenes/Scene10.tsx"
+    },
+    {
+      "name": "S10 — Label folder Pekerjaan",
+      "source": "src/scenes/Scene10.tsx"
+    },
+    {
+      "name": "S10 — Subtitle 01",
+      "source": "src/scenes/Scene10.tsx"
+    },
+    {
+      "name": "S10 — Subtitle 02",
+      "source": "src/scenes/Scene10.tsx"
+    },
+    {
+      "name": "S11 — Label Documents",
+      "source": "src/scenes/Scene11.tsx"
+    },
+    {
+      "name": "S11 — Label Pictures",
+      "source": "src/scenes/Scene11.tsx"
+    },
+    {
+      "name": "S11 — Label Work",
+      "source": "src/scenes/Scene11.tsx"
+    },
+    {
+      "name": "S11 — Titik komentar",
+      "source": "src/scenes/Scene11.tsx"
+    },
+    {
+      "name": "S11 — Subtitle 01",
+      "source": "src/scenes/Scene11.tsx"
+    },
+    {
+      "name": "S11 — Subtitle 02",
+      "source": "src/scenes/Scene11.tsx"
+    },
+    {
+      "name": "S12 — Label Documents",
+      "source": "src/scenes/Scene12.tsx"
+    },
+    {
+      "name": "S12 — Label Pictures",
+      "source": "src/scenes/Scene12.tsx"
+    },
+    {
+      "name": "S12 — Label Work",
+      "source": "src/scenes/Scene12.tsx"
+    },
+    {
+      "name": "S12 — Cover judul",
+      "source": "src/scenes/Scene12.tsx"
+    },
+    {
+      "name": "S12 — Cover Windows",
+      "source": "src/scenes/Scene12.tsx"
+    },
+    {
+      "name": "S12 — Cover nama aplikasi",
+      "source": "src/scenes/Scene12.tsx"
+    }
+  ],
+  "nativeVisualTargets": [
+    {
+      "name": "S01 — Laptop — body",
+      "source": "src/scenes/Scene01.tsx"
+    },
+    {
+      "name": "S01 — Layar Windows",
+      "source": "src/scenes/Scene01.tsx"
+    },
+    {
+      "name": "S01 — Avatar pengguna",
+      "source": "src/scenes/Scene01.tsx"
+    },
+    {
+      "name": "S01 — Password input percobaan 1",
+      "source": "src/scenes/Scene01.tsx"
+    },
+    {
+      "name": "S01 — Tombol OK gagal 1",
+      "source": "src/scenes/Scene01.tsx"
+    },
+    {
+      "name": "S01 — Password input percobaan 2",
+      "source": "src/scenes/Scene01.tsx"
+    },
+    {
+      "name": "S01 — Tombol OK gagal 2",
+      "source": "src/scenes/Scene01.tsx"
+    },
+    {
+      "name": "S01 — Password input percobaan 3",
+      "source": "src/scenes/Scene01.tsx"
+    },
+    {
+      "name": "S02 — Foto 1 — kartu dan artwork",
+      "source": "src/scenes/Scene02.tsx"
+    },
+    {
+      "name": "S02 — Foto 2 — kartu dan artwork",
+      "source": "src/scenes/Scene02.tsx"
+    },
+    {
+      "name": "S02 — Foto 3 — kartu dan artwork",
+      "source": "src/scenes/Scene02.tsx"
+    },
+    {
+      "name": "S02 — File 1 — kartu",
+      "source": "src/scenes/Scene02.tsx"
+    },
+    {
+      "name": "S02 — File 2 — kartu",
+      "source": "src/scenes/Scene02.tsx"
+    },
+    {
+      "name": "S02 — Windows Setup — panel",
+      "source": "src/scenes/Scene02.tsx"
+    },
+    {
+      "name": "S02 — Windows Setup — ikon",
+      "source": "src/scenes/Scene02.tsx"
+    },
+    {
+      "name": "S02 — Windows Setup — pemisah",
+      "source": "src/scenes/Scene02.tsx"
+    },
+    {
+      "name": "S03 — Laptop — body",
+      "source": "src/scenes/Scene03.tsx"
+    },
+    {
+      "name": "S03 — Layar Windows",
+      "source": "src/scenes/Scene03.tsx"
+    },
+    {
+      "name": "S03 — Windows setup icon card",
+      "source": "src/scenes/Scene03.tsx"
+    },
+    {
+      "name": "S03 — Windows setup mark",
+      "source": "src/scenes/Scene03.tsx"
+    },
+    {
+      "name": "S03 — Coret instalasi",
+      "source": "src/scenes/Scene03.tsx"
+    },
+    {
+      "name": "S04 — Laptop — body",
+      "source": "src/scenes/Scene04.tsx"
+    },
+    {
+      "name": "S04 — Layar Windows",
+      "source": "src/scenes/Scene04.tsx"
+    },
+    {
+      "name": "S04 — Kartu PCUnlocker",
+      "source": "src/scenes/Scene04.tsx"
+    },
+    {
+      "name": "S04 — Ikon pemulihan",
+      "source": "src/scenes/Scene04.tsx"
+    },
+    {
+      "name": "S05 — Laptop — body",
+      "source": "src/scenes/Scene05.tsx"
+    },
+    {
+      "name": "S05 — Layar Windows",
+      "source": "src/scenes/Scene05.tsx"
+    },
+    {
+      "name": "S05 — File ISO",
+      "source": "src/scenes/Scene05.tsx"
+    },
+    {
+      "name": "S05 — Flashdisk bootable",
+      "source": "src/scenes/Scene05.tsx"
+    },
+    {
+      "name": "S05 — Arah transfer file",
+      "source": "src/scenes/Scene05.tsx"
+    },
+    {
+      "name": "S05 — Layar loading",
+      "source": "src/scenes/Scene05.tsx"
+    },
+    {
+      "name": "S05 — Progress track",
+      "source": "src/scenes/Scene05.tsx"
+    },
+    {
+      "name": "S05 — Progress isi",
+      "source": "src/scenes/Scene05.tsx"
+    },
+    {
+      "name": "S06 — Laptop — body",
+      "source": "src/scenes/Scene06.tsx"
+    },
+    {
+      "name": "S06 — Layar Windows",
+      "source": "src/scenes/Scene06.tsx"
+    },
+    {
+      "name": "S06 — Recovery UI — window",
+      "source": "src/scenes/Scene06.tsx"
+    },
+    {
+      "name": "S06 — Recovery UI — title bar",
+      "source": "src/scenes/Scene06.tsx"
+    },
+    {
+      "name": "S06 — Windows installation field",
+      "source": "src/scenes/Scene06.tsx"
+    },
+    {
+      "name": "S06 — Daftar akun — tabel",
+      "source": "src/scenes/Scene06.tsx"
+    },
+    {
+      "name": "S06 — Daftar akun — header",
+      "source": "src/scenes/Scene06.tsx"
+    },
+    {
+      "name": "S07 — Laptop — body",
+      "source": "src/scenes/Scene07.tsx"
+    },
+    {
+      "name": "S07 — Layar Windows",
+      "source": "src/scenes/Scene07.tsx"
+    },
+    {
+      "name": "S07 — Recovery UI — window",
+      "source": "src/scenes/Scene07.tsx"
+    },
+    {
+      "name": "S07 — Recovery UI — title bar",
+      "source": "src/scenes/Scene07.tsx"
+    },
+    {
+      "name": "S07 — Windows installation field",
+      "source": "src/scenes/Scene07.tsx"
+    },
+    {
+      "name": "S07 — Daftar akun — tabel",
+      "source": "src/scenes/Scene07.tsx"
+    },
+    {
+      "name": "S07 — Daftar akun — header",
+      "source": "src/scenes/Scene07.tsx"
+    },
+    {
+      "name": "S07 — Sorotan akun",
+      "source": "src/scenes/Scene07.tsx"
+    },
+    {
+      "name": "S07 — Kursor demo",
+      "source": "src/scenes/Scene07.tsx"
+    },
+    {
+      "name": "S08 — Laptop — body",
+      "source": "src/scenes/Scene08.tsx"
+    },
+    {
+      "name": "S08 — Layar Windows",
+      "source": "src/scenes/Scene08.tsx"
+    },
+    {
+      "name": "S08 — Recovery UI — window",
+      "source": "src/scenes/Scene08.tsx"
+    },
+    {
+      "name": "S08 — Recovery UI — title bar",
+      "source": "src/scenes/Scene08.tsx"
+    },
+    {
+      "name": "S08 — Windows installation field",
+      "source": "src/scenes/Scene08.tsx"
+    },
+    {
+      "name": "S08 — Daftar akun — tabel",
+      "source": "src/scenes/Scene08.tsx"
+    },
+    {
+      "name": "S08 — Daftar akun — header",
+      "source": "src/scenes/Scene08.tsx"
+    },
+    {
+      "name": "S08 — Sorotan akun",
+      "source": "src/scenes/Scene08.tsx"
+    },
+    {
+      "name": "S08 — Dialog Change Password",
+      "source": "src/scenes/Scene08.tsx"
+    },
+    {
+      "name": "S08 — Dialog title bar",
+      "source": "src/scenes/Scene08.tsx"
+    },
+    {
+      "name": "S08 — Password field",
+      "source": "src/scenes/Scene08.tsx"
+    },
+    {
+      "name": "S08 — Kursor konfirmasi",
+      "source": "src/scenes/Scene08.tsx"
+    },
+    {
+      "name": "S09 — Laptop — body",
+      "source": "src/scenes/Scene09.tsx"
+    },
+    {
+      "name": "S09 — Layar Windows",
+      "source": "src/scenes/Scene09.tsx"
+    },
+    {
+      "name": "S09 — Recovery UI — window",
+      "source": "src/scenes/Scene09.tsx"
+    },
+    {
+      "name": "S09 — Recovery UI — title bar",
+      "source": "src/scenes/Scene09.tsx"
+    },
+    {
+      "name": "S09 — Windows installation field",
+      "source": "src/scenes/Scene09.tsx"
+    },
+    {
+      "name": "S09 — Daftar akun — tabel",
+      "source": "src/scenes/Scene09.tsx"
+    },
+    {
+      "name": "S09 — Daftar akun — header",
+      "source": "src/scenes/Scene09.tsx"
+    },
+    {
+      "name": "S09 — Sorotan akun",
+      "source": "src/scenes/Scene09.tsx"
+    },
+    {
+      "name": "S09 — Layar restart",
+      "source": "src/scenes/Scene09.tsx"
+    },
+    {
+      "name": "S09 — Spinner restart",
+      "source": "src/scenes/Scene09.tsx"
+    },
+    {
+      "name": "S10 — Laptop — body",
+      "source": "src/scenes/Scene10.tsx"
+    },
+    {
+      "name": "S10 — Layar Windows",
+      "source": "src/scenes/Scene10.tsx"
+    },
+    {
+      "name": "S10 — Desktop wallpaper",
+      "source": "src/scenes/Scene10.tsx"
+    },
+    {
+      "name": "S10 — Windows taskbar",
+      "source": "src/scenes/Scene10.tsx"
+    },
+    {
+      "name": "S10 — Windows Start",
+      "source": "src/scenes/Scene10.tsx"
+    },
+    {
+      "name": "S10 — Folder Documents",
+      "source": "src/scenes/Scene10.tsx"
+    },
+    {
+      "name": "S10 — Folder Pictures",
+      "source": "src/scenes/Scene10.tsx"
+    },
+    {
+      "name": "S10 — Folder Work",
+      "source": "src/scenes/Scene10.tsx"
+    },
+    {
+      "name": "S10 — Login wallpaper",
+      "source": "src/scenes/Scene10.tsx"
+    },
+    {
+      "name": "S10 — Login avatar",
+      "source": "src/scenes/Scene10.tsx"
+    },
+    {
+      "name": "S10 — Login field",
+      "source": "src/scenes/Scene10.tsx"
+    },
+    {
+      "name": "S10 — Folder pulih Dokumen",
+      "source": "src/scenes/Scene10.tsx"
+    },
+    {
+      "name": "S10 — Folder pulih Foto",
+      "source": "src/scenes/Scene10.tsx"
+    },
+    {
+      "name": "S10 — Folder pulih Pekerjaan",
+      "source": "src/scenes/Scene10.tsx"
+    },
+    {
+      "name": "S11 — Laptop — body",
+      "source": "src/scenes/Scene11.tsx"
+    },
+    {
+      "name": "S11 — Layar Windows",
+      "source": "src/scenes/Scene11.tsx"
+    },
+    {
+      "name": "S11 — Desktop wallpaper",
+      "source": "src/scenes/Scene11.tsx"
+    },
+    {
+      "name": "S11 — Windows taskbar",
+      "source": "src/scenes/Scene11.tsx"
+    },
+    {
+      "name": "S11 — Windows Start",
+      "source": "src/scenes/Scene11.tsx"
+    },
+    {
+      "name": "S11 — Folder Documents",
+      "source": "src/scenes/Scene11.tsx"
+    },
+    {
+      "name": "S11 — Folder Pictures",
+      "source": "src/scenes/Scene11.tsx"
+    },
+    {
+      "name": "S11 — Folder Work",
+      "source": "src/scenes/Scene11.tsx"
+    },
+    {
+      "name": "S11 — Bubble komentar",
+      "source": "src/scenes/Scene11.tsx"
+    },
+    {
+      "name": "S12 — Laptop — body",
+      "source": "src/scenes/Scene12.tsx"
+    },
+    {
+      "name": "S12 — Layar Windows",
+      "source": "src/scenes/Scene12.tsx"
+    },
+    {
+      "name": "S12 — Desktop wallpaper",
+      "source": "src/scenes/Scene12.tsx"
+    },
+    {
+      "name": "S12 — Windows taskbar",
+      "source": "src/scenes/Scene12.tsx"
+    },
+    {
+      "name": "S12 — Windows Start",
+      "source": "src/scenes/Scene12.tsx"
+    },
+    {
+      "name": "S12 — Folder Documents",
+      "source": "src/scenes/Scene12.tsx"
+    },
+    {
+      "name": "S12 — Folder Pictures",
+      "source": "src/scenes/Scene12.tsx"
+    },
+    {
+      "name": "S12 — Folder Work",
+      "source": "src/scenes/Scene12.tsx"
+    },
+    {
+      "name": "S12 — Cover ikon card",
+      "source": "src/scenes/Scene12.tsx"
+    },
+    {
+      "name": "S12 — Cover lock",
+      "source": "src/scenes/Scene12.tsx"
+    }
+  ],
+  "propsTextTargets": [],
+  "guiVerification": "unverified"
+}

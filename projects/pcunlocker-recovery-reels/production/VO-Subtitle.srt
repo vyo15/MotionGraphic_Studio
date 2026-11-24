@@ -1,0 +1,99 @@
+1
+00:00:00,133 --> 00:00:02,600
+Password lupa,
+
+2
+00:00:03,900 --> 00:00:05,000
+akun terkunci.
+
+3
+00:00:05,000 --> 00:00:07,867
+Mana banyak file penting di dalamnya.
+
+4
+00:00:07,867 --> 00:00:11,000
+Masa iya harus install ulang Windows?
+
+5
+00:00:11,000 --> 00:00:12,700
+Eits, tenang dulu.
+
+6
+00:00:12,700 --> 00:00:15,000
+Jangan buru-buru install ulang.
+
+7
+00:00:15,000 --> 00:00:17,700
+Kamu bisa coba aplikasi yang satu ini,
+
+8
+00:00:17,700 --> 00:00:20,000
+namanya PCUnlocker.
+
+9
+00:00:20,000 --> 00:00:21,500
+Caranya cukup simpel.
+
+10
+00:00:21,500 --> 00:00:23,700
+Kamu tinggal download PCUnlocker,
+
+11
+00:00:23,700 --> 00:00:25,300
+buat flashdisk bootable,
+
+12
+00:00:25,300 --> 00:00:28,000
+lalu booting seperti biasa menggunakan flashdisk tadi.
+
+13
+00:00:28,000 --> 00:00:30,500
+Setelah aplikasinya terbuka,
+
+14
+00:00:30,500 --> 00:00:34,000
+kamu bakal melihat daftar akun lokal Windows yang terdeteksi.
+
+15
+00:00:34,000 --> 00:00:37,600
+Pilih akun milik kamu yang lupa password,
+
+16
+00:00:37,600 --> 00:00:40,000
+lalu klik Reset Password.
+
+17
+00:00:40,000 --> 00:00:41,400
+Di bagian ini,
+
+18
+00:00:41,400 --> 00:00:43,600
+kamu bisa masukin password baru,
+
+19
+00:00:43,600 --> 00:00:45,000
+lalu klik OK.
+
+20
+00:00:45,000 --> 00:00:46,600
+Kalau sudah berhasil,
+
+21
+00:00:46,600 --> 00:00:50,000
+restart komputer dan cabut flashdisknya.
+
+22
+00:00:50,000 --> 00:00:52,200
+Nah, kalau prosesnya berhasil,
+
+23
+00:00:52,200 --> 00:00:56,000
+kamu bisa login kembali menggunakan password yang baru.
+
+24
+00:00:56,000 --> 00:00:58,000
+Kalau kamu sendiri,
+
+25
+00:00:58,000 --> 00:01:01,000
+pernah ngalamin masalah kayak gini nggak?

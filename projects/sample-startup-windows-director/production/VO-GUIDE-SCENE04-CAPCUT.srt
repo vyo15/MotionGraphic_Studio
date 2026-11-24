@@ -1,0 +1,11 @@
+1
+00:00:00,000 --> 00:00:03,200
+Nah, tinggal copy shortcut tadi,
+
+2
+00:00:03,200 --> 00:00:06,400
+lalu paste ke folder Startup
+
+3
+00:00:06,400 --> 00:00:09,000
+yang terbuka.

@@ -1,0 +1,124 @@
+{
+  "schemaVersion": 1,
+  "projectId": "SampleStartupWindowsDirector",
+  "updatedAt": "2026-11-24",
+  "notes": "Sampel baru; tidak mengubah proyek lain. Naskah hook dan CTA diperoleh dari persetujuan sebelumnya.",
+  "scenes": [
+    {
+      "id": "S01",
+      "voText": "ACC",
+      "visual": "ACC_REFERENCE_PENDING_NATIVE_QA",
+      "recordingSync": "NOT_RECORDED",
+      "final": "NOT_FINAL",
+      "sceneId": "S01",
+      "startFrame": 0,
+      "endFrameExclusive": 855,
+      "status": "approved",
+      "visualApproval": "approved",
+      "voTextApproval": "approved",
+      "notes": "Hook ACC tidak diubah. Clean Motion v3 (detik 17–26) ACC: tanpa ikon tanda tanya, folder, chips ERP/Excel/Gmail; pertanyaan dan jawaban terhubung ke title tutorial melalui aksen coral; native render/GUI edit belum diuji."
+    },
+    {
+      "id": "S02",
+      "voText": "DRAFT",
+      "visual": "ACC_REFERENCE_PENDING_NATIVE_QA",
+      "recordingSync": "NOT_RECORDED",
+      "final": "NOT_FINAL",
+      "sceneId": "S02",
+      "startFrame": 855,
+      "endFrameExclusive": 1335,
+      "status": "approved",
+      "visualApproval": "approved",
+      "voTextApproval": "draft",
+      "notes": "Preview Scene 02 Windows 11 Familiar v4 dipilih/ACC untuk implementasi. Realisme wallpaper, File Explorer, taskbar, menu dan cursor mengikuti preview browser; render native dan GUI masih perlu QA. VO teks tetap draft, tidak direkam."
+    },
+    {
+      "id": "S03",
+      "voText": "DRAFT",
+      "visual": "ACC_REFERENCE_PENDING_NATIVE_QA",
+      "recordingSync": "NOT_RECORDED",
+      "final": "NOT_FINAL",
+      "sceneId": "S03",
+      "startFrame": 1335,
+      "endFrameExclusive": 1635,
+      "status": "approved",
+      "visualApproval": "approved",
+      "voTextApproval": "draft",
+      "notes": "Scene03 preview Subtitle Teks Saja v2 ACC (10s). Windows11 Familiar, Win+R → shell:startup → Enter → folder Startup. 3 subtitle VO cue teks biasa tanpa background; native GUI Save/reload dan render Remotion belum diuji."
+    },
+    {
+      "id": "S04",
+      "voText": "DRAFT",
+      "visual": "ACC_REFERENCE_PENDING_NATIVE_QA",
+      "recordingSync": "NOT_RECORDED",
+      "final": "NOT_FINAL",
+      "sceneId": "S04",
+      "startFrame": 1635,
+      "endFrameExclusive": 1905,
+      "status": "approved",
+      "visualApproval": "approved",
+      "voTextApproval": "draft",
+      "notes": "Scene04 preview copy & paste Startup with Windows11 Familiar and plain text VO cues ACC. Native GUI/render not tested. S01-S03 unchanged."
+    },
+    {
+      "id": "S05",
+      "voText": "CTA ACC / hasil DRAFT",
+      "visual": "DRAFT",
+      "recordingSync": "NOT_RECORDED",
+      "final": "NOT_FINAL",
+      "sceneId": "S05",
+      "startFrame": 1905,
+      "endFrameExclusive": 2295,
+      "status": "draft",
+      "visualApproval": "draft",
+      "voTextApproval": "draft",
+      "notes": "CTA teks ACC, hasil tutorial visual draft"
+    },
+    {
+      "id": "S06",
+      "voText": "none",
+      "visual": "DRAFT",
+      "recordingSync": "NOT_RECORDED",
+      "final": "NOT_FINAL",
+      "sceneId": "S06",
+      "startFrame": 2295,
+      "endFrameExclusive": 2445,
+      "status": "draft",
+      "visualApproval": "draft",
+      "voTextApproval": "draft",
+      "notes": "Draft visual; tidak termasuk revisi S01"
+    }
+  ],
+  "currentReview": "S01–S04 visual approved; S05 preview draft",
+  "slug": "sample-startup-windows-director",
+  "workflow": "guided-approval-first-scene",
+  "phase": "scene04-approved-scene05-preview",
+  "scriptApproval": "partial-hook-and-cta",
+  "storyboardApproval": "draft",
+  "referenceSceneId": "SampleStartupWindowsDirector-S01",
+  "referenceSceneApproval": "approved",
+  "voiceOverStatus": "not-recorded",
+  "fullVideoApproval": "draft",
+  "decisionLog": [
+    {
+      "date": "2026-11-24",
+      "decision": "Pengguna menyetujui opening Living Windows versi tanda tanya menyatu teks, mini Excel data, Gmail Chrome dan ERP di desktop; setelah login tiga aplikasi terbuka. Audio dan visual lainnya belum final. Source editable baru diproduksi mengikuti preview; kesamaan render native belum diuji."
+    },
+    {
+      "date": "2026-11-24",
+      "decision": "User menyetujui visual Clean Motion v3 untuk lanjutan S01: teks Emang bisa? tanpa ikon, Jawabannya BISA! tegas, aksen coral morph ke teks Oke sekarang kita coba caranya (garis coral tipis, keterangan kecil). Implementasi source menjaga S01 855 frames, S02–S06 unchanged; native GUI belum diuji."
+    },
+    {
+      "date": "2026-11-24",
+      "decision": "Pengguna menyetujui preview Scene 02 Windows 11 Familiar v4 dan meminta source editable, audit konsistensi, serta subtitle VO di bawah untuk alignment di CapCut. Scene 01 ACC tidak dimodifikasi secara kreatif; SRT dan VO Guide ditambahkan. Voice-over belum direkam."
+    },
+    {
+      "date": "2026-11-24",
+      "decision": "Pengguna ACC Scene03 dengan VO subtitle teks-saja tanpa kotak dan Windows 11 Familiar. Implementasi terbatas S03; S01/S02 tidak diubah. Scene04 belum ACC."
+    },
+    {
+      "date": "2026-11-24",
+      "decision": "User approved Scene04 9s copy shortcut -> paste Startup, with VO guide as plain text; source updated only S04 and metadata."
+    }
+  ]
+}

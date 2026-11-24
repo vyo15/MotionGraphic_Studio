@@ -1,0 +1,60 @@
+/* S02 Windows 11 Familiar v4 — scoped UI drawing. Native JSX nodes remain separately editable. */
+.s02w11 { width:960px; height:540px; position:relative; overflow:hidden; border-radius:10px; background:#AFCBE1; border:1px solid #CDD9E3; color:#273542; font-family:'Segoe UI', Arial, sans-serif; box-shadow:0 25px 70px #17364A30; }
+.s02w11 * { box-sizing:border-box; }
+.s02w11 .wall { position:absolute; inset:0; overflow:hidden; background:linear-gradient(115deg,#A4CDE4 0%,#B2D5E8 28%,#88B5D9 55%,#466EA9 100%); }
+.s02w11 .wall svg { position:absolute; inset:0; width:100%;height:100%; }
+.s02w11 .desktop-icon { position:absolute; left:19px; width:95px; text-align:center; color:white; text-shadow:0 1px 3px #000B; font-size:13px; font-weight:550; line-height:1.15; display:flex;align-items:center;flex-direction:column;gap:4px; }
+.s02w11 .desktop-icon .ico { height:42px;width:42px;display:grid;place-items:center;position:relative; }
+.s02w11 .desktop-icon .label {max-width:96px}
+.s02w11 .small-arrow {position:absolute;bottom:-2px;left:-7px;background:white;border:1px solid #A8A8A8;color:#202020;text-shadow:none;font-size:13px;width:15px;height:14px;line-height:11px;border-radius:2px;font-weight:900}
+.s02w11 .chrome {height:36px;width:36px;border-radius:50%;background:conic-gradient(from -25deg,#EB4439 0 122deg,#F9C132 122deg 200deg,#2DA75D 200deg 320deg);display:grid;place-items:center;position:relative; }
+.s02w11 .chrome:after {content:'';width:15px;height:15px;border-radius:50%;background:#4285F4;border:3px solid white}
+.s02w11 .excel {width:38px;height:36px;position:relative;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.s02w11 .excel:before {content:'';position:absolute;right:0;top:0;width:29px;height:36px;border-radius:3px;background:#1A985E;box-shadow:inset -6px 0 #128353}
+.s02w11 .excel:after {content:'X';position:absolute;left:0;top:7px;width:25px;height:23px;display:grid;place-items:center;color:white;font-size:18px;font-weight:760;background:#116A42;box-shadow:1px 2px 2px #092F2677}
+.s02w11 .erpicon {background:#226AB4;color:white;border-radius:6px;width:37px;height:37px;display:grid;place-items:center;font-weight:760;letter-spacing:-.5px;font-size:12px;box-shadow:inset -4px -4px #15508A}
+.s02w11 .folder {width:34px;height:26px;background:linear-gradient(#F8D87D,#EFC04F);border-radius:3px 4px 4px 4px;position:relative;box-shadow:inset 0 -5px #E1AA31;flex-shrink:0}
+.s02w11 .folder:before {content:'';position:absolute;left:1px;top:-6px;width:15px;height:8px;background:#EDC457;border-radius:3px 3px 0 0}
+.s02w11 .taskbar {position:absolute;bottom:0;left:0;right:0;height:49px;background:#F1F5F9DD;backdrop-filter:blur(18px);border-top:1px solid #E5EFF6;display:flex;justify-content:center;align-items:center;gap:16px;color:#364A5A;z-index:2}
+.s02w11 .win-logo {width:27px;height:27px;display:grid;grid-template-columns:1fr 1fr;gap:2px;transform:perspective(90px) rotateY(-3deg)}
+.s02w11 .win-logo span {background:#0078D4;border-radius:.6px}
+.s02w11 .search {height:30px;width:138px;border-radius:17px;background:#FDFDFE;display:flex;align-items:center;gap:9px;padding:0 12px;font-size:12px;color:#7D8B94;border:1px solid #DFE6EB}
+.s02w11 .mag {width:12px;height:12px;border:2px solid #87939F;border-radius:50%;position:relative}
+.s02w11 .mag:after {content:'';position:absolute;width:6px;height:2px;background:#87939F;right:-5px;bottom:-3px;transform:rotate(44deg)}
+.s02w11 .task-item {height:34px;width:34px;display:grid;place-items:center;border-radius:6px;position:relative}
+.s02w11 .task-item.active:after {content:'';position:absolute;bottom:-3px;left:9px;width:16px;height:3px;background:#0086D8;border-radius:3px}
+.s02w11 .system-tray {position:absolute;right:16px;display:flex;align-items:center;gap:9px;font-size:11px;color:#404D57;line-height:1.1}
+.s02w11 .explorer {position:absolute;left:132px;top:40px;width:772px;height:447px;background:#FEFEFF;border:1px solid #BAC6D1;border-radius:9px;overflow:hidden;box-shadow:0 14px 45px #112B4C56;transform-origin:center;z-index:6}
+.s02w11 .explorer-title {height:42px;display:flex;align-items:center;background:#F9FAFB;padding-left:13px;gap:8px;font-size:12px;color:#37434A}
+.s02w11 .tab {background:#fff;border-radius:7px 7px 0 0;display:flex;align-items:center;gap:8px;padding:11px 16px;width:204px;height:37px;box-shadow:0 -1px 4px #6661;margin-top:5px}
+.s02w11 .tab .folder{transform:scale(.58);margin-right:-6px}
+.s02w11 .window-controls {margin-left:auto;display:flex;height:100%;align-items:center}
+.s02w11 .window-control {width:43px;height:100%;display:grid;place-items:center;font-size:15px;color:#54606B}
+.s02w11 .explorer-address{height:51px;border-top:1px solid #F0F1F2;border-bottom:1px solid #ECEEF0;display:flex;align-items:center;gap:14px;padding:6px 16px;font-size:18px;color:#64737C}
+.s02w11 .crumb{height:33px;border:1px solid #E2E5E9;background:white;border-radius:6px;display:flex;align-items:center;gap:11px;padding:0 14px;flex:1;font-size:12px;color:#47545C}
+.s02w11 .explorer-search{height:33px;border:1px solid #E2E6E9;width:144px;display:flex;align-items:center;padding:0 12px;border-radius:6px;color:#7A838B;font-size:12px;flex-shrink:0}
+.s02w11 .command-bar{height:48px;display:flex;align-items:center;gap:18px;border-bottom:1px solid #EBECED;padding:0 18px;font-size:12px;color:#4D5963}
+.s02w11 .command{display:flex;align-items:center;gap:6px}
+.s02w11 .explorer-main{display:flex;height:304px}
+.s02w11 .nav{width:150px;border-right:1px solid #F0F1F2;padding:12px 9px 0;font-size:12px;color:#5A6871;line-height:1.65;flex-shrink:0}
+.s02w11 .nav-item{display:flex;align-items:center;gap:11px;padding:7px 11px;border-radius:5px}
+.s02w11 .nav-item.selected{background:#E9F3FB;color:#203746}
+.s02w11 .file-area{flex:1;position:relative;padding:12px 11px}
+.s02w11 .cols{display:grid;grid-template-columns:235px 116px 1fr;gap:8px;height:33px;border-bottom:1px solid #E8EAEC;font-size:11px;color:#68747D;padding:9px 7px}
+.s02w11 .file-row{height:35px;display:grid;grid-template-columns:235px 116px 1fr;gap:8px;align-items:center;font-size:12px;padding:0 7px;border:1px solid transparent;border-radius:4px;color:#253442}
+.s02w11 .file-row>span{overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+.s02w11 .file-name{display:flex;align-items:center;gap:9px}
+.s02w11 .file-name .excel{transform:scale(.58);width:25px;height:25px;transform-origin:left center;margin-right:-5px}
+.s02w11 .context-menu,.s02w11 .legacy-menu,.s02w11 .sub-menu {position:absolute;z-index:30;background:#FCFCFD;box-shadow:0 15px 40px #162A3B40;border:1px solid #D2D8DE;color:#303B44;pointer-events:none}
+.s02w11 .context-menu {left:478px;top:170px;width:256px;padding:7px;border-radius:9px}
+.s02w11 .context-tools {height:39px;display:flex;justify-content:space-around;align-items:center;border-bottom:1px solid #E7E8EA;font-size:17px;margin-bottom:4px}
+.s02w11 .item {height:34px;display:flex;align-items:center;padding:0 12px;border-radius:5px;font-size:12px;gap:11px}
+.s02w11 .line {height:1px;background:#E8EAED;margin:3px 3px}
+.s02w11 .legacy-menu {left:462px;top:131px;width:238px;padding:6px;border-radius:6px}
+.s02w11 .legacy-menu .item {height:30px;padding:0 10px;border-radius:3px}
+.s02w11 .sub-menu {left:696px;top:315px;width:238px;padding:5px;border-radius:5px}
+.s02w11 .sub-menu .item {height:30px;padding:0 10px;border-radius:3px;font-size:11px}
+.s02w11 .item.highlighted {background:#E7F2FB}
+.s02w11 .cursor{position:absolute;z-index:60;width:40px;height:47px;pointer-events:none;filter:drop-shadow(0 1px 2px #0006)}
+.s02w11 .cursor svg{width:100%;height:100%}
+.s02w11 .flash{position:absolute;z-index:61;border:2px solid #DF805F;border-radius:50%;width:30px;height:30px;pointer-events:none}

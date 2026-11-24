@@ -1,0 +1,80 @@
+{
+  "schemaVersion": 1,
+  "status": "hook-cta-locked-scene01-reference-approved-erp",
+  "voiceRecorded": false,
+  "beats": [
+    {
+      "scene": "S01",
+      "startFrame": 0,
+      "endFrame": 510,
+      "text": "Pernah nggak sih kepikiran, gimana kalau setiap mulai kerja, semua aplikasi langsung kebuka sendiri tanpa harus buka satu-satu?",
+      "approval": "locked"
+    },
+    {
+      "scene": "S01",
+      "startFrame": 510,
+      "endFrame": 631,
+      "text": "Kayaknya praktis banget, kan? Tapi... emang bisa?",
+      "approval": "locked"
+    },
+    {
+      "scene": "S01",
+      "startFrame": 631,
+      "endFrame": 711,
+      "text": "Jawabannya bisa!",
+      "approval": "text-approved",
+      "note": "Jawabannya bisa! — teks solusi tetap, dipindah sebagai respons pada akhir opening"
+    },
+    {
+      "scene": "S01",
+      "startFrame": 711,
+      "endFrame": 855,
+      "text": "",
+      "note": "Title cara + visual pengantar langkah 1. Tanpa tambahan VO agar tidak mengubah naskah ACC."
+    },
+    {
+      "scene": "S02",
+      "startFrame": 855,
+      "endFrame": 1060,
+      "text": "Pertama, siapkan shortcut aplikasi atau file yang mau dibuka otomatis."
+    },
+    {
+      "scene": "S02",
+      "startFrame": 1060,
+      "endFrame": 1335,
+      "text": "Kalau belum ada, cari aplikasi atau filenya di File Explorer, klik kanan, pilih Send to, lalu Desktop."
+    },
+    {
+      "scene": "S03",
+      "startFrame": 1335,
+      "endFrame": 1635,
+      "text": "Selanjutnya, tekan Windows + R, ketik shell titik dua startup, lalu Enter."
+    },
+    {
+      "scene": "S04",
+      "startFrame": 1635,
+      "endFrame": 1905,
+      "text": "Nah, tinggal copy shortcut tadi, lalu paste ke folder Startup yang terbuka."
+    },
+    {
+      "scene": "S05",
+      "startFrame": 1905,
+      "endFrame": 2090,
+      "text": "Selesai! Sekarang, setiap kali login Windows, aplikasi atau file tadi bakal kebuka sendiri."
+    },
+    {
+      "scene": "S05",
+      "startFrame": 2090,
+      "endFrame": 2295,
+      "text": "Nah, kalau kamu, aplikasi apa yang paling sering dibuka pas mulai kerja? Coba tulis di komentar!",
+      "approval": "locked"
+    },
+    {
+      "scene": "S06",
+      "startFrame": 2295,
+      "endFrame": 2445,
+      "text": "",
+      "note": "Cover tanpa VO"
+    }
+  ]
+}

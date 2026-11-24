@@ -1,0 +1,506 @@
+{
+  "schemaVersion": 1,
+  "nativeTextTargets": [
+    {
+      "name": "S05 — Judul hasil",
+      "source": "src/scenes/Scene05.tsx"
+    },
+    {
+      "name": "S05 — Label tanpa klik",
+      "source": "src/scenes/Scene05.tsx"
+    },
+    {
+      "name": "S05 — CTA komentar",
+      "source": "src/scenes/Scene05.tsx"
+    },
+    {
+      "name": "S06 — Judul cover",
+      "source": "src/scenes/Scene06.tsx"
+    },
+    {
+      "name": "S06 — Subjudul cover",
+      "source": "src/scenes/Scene06.tsx"
+    },
+    {
+      "name": "S05 — CTA ajakan",
+      "source": "src/scenes/Scene05.tsx"
+    },
+    {
+      "name": "S01 Teks — Pernah nggak sih kepikiran",
+      "source": "src/scenes/Scene01.tsx"
+    },
+    {
+      "name": "S01 Teks — Gimana kalau mulai kerja",
+      "source": "src/scenes/Scene01.tsx"
+    },
+    {
+      "name": "S01 Teks — Aplikasi otomatis",
+      "source": "src/scenes/Scene01.tsx"
+    },
+    {
+      "name": "S01 Teks — Tanpa buka satu satu",
+      "source": "src/scenes/Scene01.tsx"
+    },
+    {
+      "name": "S01 Teks — Kayaknya praktis banget",
+      "source": "src/scenes/Scene01.tsx"
+    },
+    {
+      "name": "S01 Teks — Emang bisa",
+      "source": "src/scenes/Scene01.tsx"
+    },
+    {
+      "name": "S01 Teks — Jawabannya bisa",
+      "source": "src/scenes/Scene01.tsx"
+    },
+    {
+      "name": "S01 Teks — Masuk ke cara",
+      "source": "src/scenes/Scene01.tsx"
+    },
+    {
+      "name": "S01 Teks — Siapkan shortcut",
+      "source": "src/scenes/Scene01.tsx"
+    },
+    {
+      "name": "S01 Teks — Nama contoh file",
+      "source": "src/scenes/Scene01.tsx"
+    },
+    {
+      "name": "S01 Excel — Header Tanggal",
+      "source": "src/components/WorkWindows.tsx"
+    },
+    {
+      "name": "S01 Excel — Header Aktivitas",
+      "source": "src/components/WorkWindows.tsx"
+    },
+    {
+      "name": "S01 Excel — Header Status",
+      "source": "src/components/WorkWindows.tsx"
+    },
+    {
+      "name": "S01 Excel — Header PIC",
+      "source": "src/components/WorkWindows.tsx"
+    },
+    {
+      "name": "S01 Excel — Aktivitas laporan",
+      "source": "src/components/WorkWindows.tsx"
+    },
+    {
+      "name": "S01 Excel — Aktivitas stok",
+      "source": "src/components/WorkWindows.tsx"
+    },
+    {
+      "name": "S01 Excel — Aktivitas meeting",
+      "source": "src/components/WorkWindows.tsx"
+    },
+    {
+      "name": "S01 Excel — Aktivitas rekap",
+      "source": "src/components/WorkWindows.tsx"
+    },
+    {
+      "name": "S01 Excel — Nama file",
+      "source": "src/components/WorkWindows.tsx"
+    },
+    {
+      "name": "S01 Gmail — Judul inbox",
+      "source": "src/components/WorkWindows.tsx"
+    },
+    {
+      "name": "S01 Gmail — Pesan 1",
+      "source": "src/components/WorkWindows.tsx"
+    },
+    {
+      "name": "S01 Gmail — Pesan 2",
+      "source": "src/components/WorkWindows.tsx"
+    },
+    {
+      "name": "S01 Gmail — Pesan 3",
+      "source": "src/components/WorkWindows.tsx"
+    },
+    {
+      "name": "S01 ERP — Judul aplikasi",
+      "source": "src/components/WorkWindows.tsx"
+    },
+    {
+      "name": "S01 ERP — Orders",
+      "source": "src/components/WorkWindows.tsx"
+    },
+    {
+      "name": "S01 ERP — Stock",
+      "source": "src/components/WorkWindows.tsx"
+    },
+    {
+      "name": "S01 ERP — Pending",
+      "source": "src/components/WorkWindows.tsx"
+    },
+    {
+      "name": "S01 Windows — Pengguna",
+      "source": "src/components/WorkWindows.tsx"
+    },
+    {
+      "name": "S01 Teks — Masuk ke langkah pertama",
+      "source": "src/scenes/Scene01.tsx"
+    },
+    {
+      "name": "S02 Teks — Siapkan shortcut",
+      "source": "src/scenes/Scene02.tsx"
+    },
+    {
+      "name": "S02 Teks — Pilih file",
+      "source": "src/scenes/Scene02.tsx"
+    },
+    {
+      "name": "S02 Teks — Klik kanan",
+      "source": "src/scenes/Scene02.tsx"
+    },
+    {
+      "name": "S02 Teks — Send to Desktop",
+      "source": "src/scenes/Scene02.tsx"
+    },
+    {
+      "name": "S02 Teks — Shortcut siap",
+      "source": "src/scenes/Scene02.tsx"
+    },
+    {
+      "name": "S02 Teks — Hasil shortcut",
+      "source": "src/scenes/Scene02.tsx"
+    },
+    {
+      "name": "S03 Teks — Buka folder Startup",
+      "source": "src/scenes/Scene03.tsx"
+    },
+    {
+      "name": "S03 Teks — Tekan Windows R",
+      "source": "src/scenes/Scene03.tsx"
+    },
+    {
+      "name": "S03 Teks — Ketik perintah",
+      "source": "src/scenes/Scene03.tsx"
+    },
+    {
+      "name": "S03 Teks — Lalu Enter",
+      "source": "src/scenes/Scene03.tsx"
+    },
+    {
+      "name": "S03 Teks — Folder terbuka",
+      "source": "src/scenes/Scene03.tsx"
+    },
+    {
+      "name": "S03 VO — Selanjutnya tekan Windows R",
+      "source": "src/scenes/Scene03.tsx"
+    },
+    {
+      "name": "S03 VO — Ketik shell titik dua startup",
+      "source": "src/scenes/Scene03.tsx"
+    },
+    {
+      "name": "S03 VO — Lalu Enter",
+      "source": "src/scenes/Scene03.tsx"
+    },
+    {
+      "name": "S03 Explorer — Nama Startup",
+      "source": "src/components/Scene03Windows11.tsx"
+    },
+    {
+      "name": "S03 Explorer — Folder kosong",
+      "source": "src/components/Scene03Windows11.tsx"
+    },
+    {
+      "name": "S04 Teks — Copy shortcut tadi",
+      "source": "src/scenes/Scene04.tsx"
+    },
+    {
+      "name": "S04 Teks — Buka folder Startup",
+      "source": "src/scenes/Scene04.tsx"
+    },
+    {
+      "name": "S04 Teks — Paste shortcut",
+      "source": "src/scenes/Scene04.tsx"
+    },
+    {
+      "name": "S04 Teks — Hasil shortcut berhasil",
+      "source": "src/scenes/Scene04.tsx"
+    },
+    {
+      "name": "S04 VO — Nah tinggal copy shortcut tadi",
+      "source": "src/scenes/Scene04.tsx"
+    },
+    {
+      "name": "S04 VO — lalu paste ke folder Startup",
+      "source": "src/scenes/Scene04.tsx"
+    },
+    {
+      "name": "S04 VO — yang terbuka",
+      "source": "src/scenes/Scene04.tsx"
+    },
+    {
+      "name": "S04 Explorer — nama shortcut",
+      "source": "src/components/Scene04Windows11.tsx"
+    },
+    {
+      "name": "S04 Explorer — nama folder",
+      "source": "src/components/Scene04Windows11.tsx"
+    },
+    {
+      "name": "S04 Explorer — 0 items",
+      "source": "src/components/Scene04Windows11.tsx"
+    },
+    {
+      "name": "S04 Explorer — 1 item",
+      "source": "src/components/Scene04Windows11.tsx"
+    },
+    {
+      "name": "S01 VO — Cue 01",
+      "source": "src/components/SceneBase.tsx"
+    },
+    {
+      "name": "S01 VO — Cue 02",
+      "source": "src/components/SceneBase.tsx"
+    },
+    {
+      "name": "S01 VO — Cue 03",
+      "source": "src/components/SceneBase.tsx"
+    },
+    {
+      "name": "S01 VO — Cue 04",
+      "source": "src/components/SceneBase.tsx"
+    },
+    {
+      "name": "S01 VO — Cue 05",
+      "source": "src/components/SceneBase.tsx"
+    },
+    {
+      "name": "S01 VO — Cue 06",
+      "source": "src/components/SceneBase.tsx"
+    },
+    {
+      "name": "S01 VO — Cue 07",
+      "source": "src/components/SceneBase.tsx"
+    },
+    {
+      "name": "S02 VO — Cue 01",
+      "source": "src/components/SceneBase.tsx"
+    },
+    {
+      "name": "S02 VO — Cue 02",
+      "source": "src/components/SceneBase.tsx"
+    },
+    {
+      "name": "S02 VO — Cue 03",
+      "source": "src/components/SceneBase.tsx"
+    },
+    {
+      "name": "S02 VO — Cue 04",
+      "source": "src/components/SceneBase.tsx"
+    },
+    {
+      "name": "S02 VO — Cue 05",
+      "source": "src/components/SceneBase.tsx"
+    },
+    {
+      "name": "S02 VO — Cue 06",
+      "source": "src/components/SceneBase.tsx"
+    },
+    {
+      "name": "S02 VO — Cue 07",
+      "source": "src/components/SceneBase.tsx"
+    },
+    {
+      "name": "S05 VO — Cue 01",
+      "source": "src/components/SceneBase.tsx"
+    },
+    {
+      "name": "S05 VO — Cue 02",
+      "source": "src/components/SceneBase.tsx"
+    },
+    {
+      "name": "S05 VO — Cue 03",
+      "source": "src/components/SceneBase.tsx"
+    },
+    {
+      "name": "S05 VO — Cue 04",
+      "source": "src/components/SceneBase.tsx"
+    },
+    {
+      "name": "S05 VO — Cue 05",
+      "source": "src/components/SceneBase.tsx"
+    }
+  ],
+  "nativeVisualTargets": [
+    {
+      "name": "S05 — Login dan hasil",
+      "source": "src/scenes/Scene05.tsx"
+    },
+    {
+      "name": "S06 — Mini demo cover",
+      "source": "src/scenes/Scene06.tsx"
+    },
+    {
+      "name": "S01 Visual — File explorer pengantar",
+      "source": "src/scenes/Scene01.tsx"
+    },
+    {
+      "name": "S01 Mini — Chrome Gmail",
+      "source": "src/components/WorkWindows.tsx"
+    },
+    {
+      "name": "S01 Mini — Excel data laporan",
+      "source": "src/components/WorkWindows.tsx"
+    },
+    {
+      "name": "S01 Desktop — layar Windows 11",
+      "source": "src/components/WorkWindows.tsx"
+    },
+    {
+      "name": "S01 Shortcut — Excel",
+      "source": "src/components/WorkWindows.tsx"
+    },
+    {
+      "name": "S01 Shortcut — Chrome",
+      "source": "src/components/WorkWindows.tsx"
+    },
+    {
+      "name": "S01 Shortcut — ERP System",
+      "source": "src/components/WorkWindows.tsx"
+    },
+    {
+      "name": "S01 Jendela — Excel data kerja",
+      "source": "src/components/WorkWindows.tsx"
+    },
+    {
+      "name": "S01 Jendela — Chrome Gmail",
+      "source": "src/components/WorkWindows.tsx"
+    },
+    {
+      "name": "S01 Jendela — ERP Dashboard",
+      "source": "src/components/WorkWindows.tsx"
+    },
+    {
+      "name": "S01 Windows — Welcome",
+      "source": "src/components/WorkWindows.tsx"
+    },
+    {
+      "name": "S01 Visual — Aksen coral menyambung ke tutorial",
+      "source": "src/scenes/Scene01.tsx"
+    },
+    {
+      "name": "S02 Desktop — simulasi Windows 11",
+      "source": "src/components/Scene02Windows11.tsx"
+    },
+    {
+      "name": "S02 Background — Windows 11 Bloom style",
+      "source": "src/components/Scene02Windows11.tsx"
+    },
+    {
+      "name": "S02 Desktop — shortcut Chrome",
+      "source": "src/components/Scene02Windows11.tsx"
+    },
+    {
+      "name": "S02 Desktop — shortcut ERP",
+      "source": "src/components/Scene02Windows11.tsx"
+    },
+    {
+      "name": "S02 Desktop — shortcut baru Excel",
+      "source": "src/components/Scene02Windows11.tsx"
+    },
+    {
+      "name": "S02 Windows — taskbar Windows 11",
+      "source": "src/components/Scene02Windows11.tsx"
+    },
+    {
+      "name": "S02 Explorer — jendela Kerja",
+      "source": "src/components/Scene02Windows11.tsx"
+    },
+    {
+      "name": "S02 Explorer — alamat folder",
+      "source": "src/components/Scene02Windows11.tsx"
+    },
+    {
+      "name": "S02 Explorer — Laporan Kerja.xlsx",
+      "source": "src/components/Scene02Windows11.tsx"
+    },
+    {
+      "name": "S02 Menu — klik kanan modern",
+      "source": "src/components/Scene02Windows11.tsx"
+    },
+    {
+      "name": "S02 Menu — Show more options",
+      "source": "src/components/Scene02Windows11.tsx"
+    },
+    {
+      "name": "S02 Menu — klasik Windows",
+      "source": "src/components/Scene02Windows11.tsx"
+    },
+    {
+      "name": "S02 Menu — Send to",
+      "source": "src/components/Scene02Windows11.tsx"
+    },
+    {
+      "name": "S02 Menu — pilihan Send to",
+      "source": "src/components/Scene02Windows11.tsx"
+    },
+    {
+      "name": "S02 Menu — Desktop create shortcut",
+      "source": "src/components/Scene02Windows11.tsx"
+    },
+    {
+      "name": "S02 Cursor — posisi dan gerakan",
+      "source": "src/components/Scene02Windows11.tsx"
+    },
+    {
+      "name": "S03 Visual — Tombol Windows R",
+      "source": "src/scenes/Scene03.tsx"
+    },
+    {
+      "name": "S03 Background — Windows 11 Bloom style",
+      "source": "src/components/Scene03Windows11.tsx"
+    },
+    {
+      "name": "S03 Windows — taskbar",
+      "source": "src/components/Scene03Windows11.tsx"
+    },
+    {
+      "name": "S03 Dialog — Run Windows",
+      "source": "src/components/Scene03Windows11.tsx"
+    },
+    {
+      "name": "S03 Explorer — folder Startup",
+      "source": "src/components/Scene03Windows11.tsx"
+    },
+    {
+      "name": "S03 Desktop — layar Windows 11",
+      "source": "src/components/Scene03Windows11.tsx"
+    },
+    {
+      "name": "S03 Desktop — shortcut Chrome",
+      "source": "src/components/Scene03Windows11.tsx"
+    },
+    {
+      "name": "S03 Desktop — shortcut ERP",
+      "source": "src/components/Scene03Windows11.tsx"
+    },
+    {
+      "name": "S03 Desktop — shortcut Excel",
+      "source": "src/components/Scene03Windows11.tsx"
+    },
+    {
+      "name": "S04 Desktop — Windows 11 familiar",
+      "source": "src/components/Scene04Windows11.tsx"
+    },
+    {
+      "name": "S04 Explorer — folder Startup",
+      "source": "src/components/Scene04Windows11.tsx"
+    },
+    {
+      "name": "S04 Cursor — hotspot",
+      "source": "src/components/Scene04Windows11.tsx"
+    },
+    {
+      "name": "S04 Keyboard — Ctrl C atau Ctrl V",
+      "source": "src/scenes/Scene04.tsx"
+    }
+  ],
+  "propsTextTargets": [],
+  "guiVerification": "not tested",
+  "notes": "S01/S02/S05: 19 independent literal JSX VO reference cues (native text callsites), no black box. Timing from vo-subtitle-cues.json; GUI Save/reload untested. Scene03/04 ACC unchanged."
+}

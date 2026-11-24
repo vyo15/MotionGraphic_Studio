@@ -1,0 +1,151 @@
+{
+  "schemaVersion": 1,
+  "status": "review",
+  "notes": "S01+S02 preserved. S03 includes gentle synthesized keyboard cues at Win+R and Enter in a standalone 10s audio layer; user-recorded VO pending.",
+  "cues": [
+    {
+      "id": "s01-answer",
+      "scene": "S01",
+      "kind": "emphasis",
+      "action": "Jawabannya BISA! muncul",
+      "startFrame": 643,
+      "impactFrame": 643,
+      "endFrame": 655,
+      "status": "ready",
+      "file": "audio/sfx/soft_editorial_tick.wav",
+      "gainDb": -19,
+      "source": {
+        "kind": "own",
+        "title": "original subtle accent tick"
+      }
+    },
+    {
+      "id": "s01-tutorial",
+      "scene": "S01",
+      "kind": "transition",
+      "action": "Slide cara tutorial masuk",
+      "startFrame": 712,
+      "impactFrame": 712,
+      "endFrame": 724,
+      "status": "ready",
+      "file": "audio/sfx/soft_editorial_tick.wav",
+      "gainDb": -21,
+      "source": {
+        "kind": "own",
+        "title": "original subtle accent tick"
+      }
+    },
+    {
+      "id": "s02-right_click",
+      "scene": "S02",
+      "kind": "click",
+      "action": "Klik kanan file Excel",
+      "startFrame": 984,
+      "impactFrame": 984,
+      "endFrame": 988,
+      "status": "ready",
+      "file": "audio/sfx/single_click_realistic.wav",
+      "gainDb": -22,
+      "source": {
+        "kind": "own",
+        "title": "single click derived from bundled double-click SFX"
+      }
+    },
+    {
+      "id": "s02-more",
+      "scene": "S02",
+      "kind": "click",
+      "action": "Show more options",
+      "startFrame": 1069,
+      "impactFrame": 1069,
+      "endFrame": 1073,
+      "status": "ready",
+      "file": "audio/sfx/single_click_realistic.wav",
+      "gainDb": -24,
+      "source": {
+        "kind": "own",
+        "title": "single click derived from bundled double-click SFX"
+      }
+    },
+    {
+      "id": "s02-desktop",
+      "scene": "S02",
+      "kind": "click",
+      "action": "Desktop create shortcut",
+      "startFrame": 1208,
+      "impactFrame": 1208,
+      "endFrame": 1212,
+      "status": "ready",
+      "file": "audio/sfx/single_click_realistic.wav",
+      "gainDb": -22,
+      "source": {
+        "kind": "own",
+        "title": "single click derived from bundled double-click SFX"
+      }
+    },
+    {
+      "id": "s02-minimize",
+      "scene": "S02",
+      "kind": "click",
+      "action": "Minimize Explorer",
+      "startFrame": 1265,
+      "impactFrame": 1265,
+      "endFrame": 1269,
+      "status": "ready",
+      "file": "audio/sfx/single_click_realistic.wav",
+      "gainDb": -25,
+      "source": {
+        "kind": "own",
+        "title": "single click derived from bundled double-click SFX"
+      }
+    },
+    {
+      "id": "s03-win-r",
+      "scene": "S03",
+      "kind": "keyboard",
+      "action": "Windows+R opens Run dialog",
+      "startFrame": 1409,
+      "impactFrame": 1409,
+      "endFrame": 1416,
+      "status": "ready",
+      "file": "audio/sfx/scene03-preview-cues.wav",
+      "gainDb": -26,
+      "source": {
+        "kind": "own",
+        "title": "Scene03 original preview keyboard sound track"
+      }
+    },
+    {
+      "id": "s03-enter",
+      "scene": "S03",
+      "kind": "keyboard",
+      "action": "Enter opens Startup folder",
+      "startFrame": 1540,
+      "impactFrame": 1540,
+      "endFrame": 1547,
+      "status": "ready",
+      "file": "audio/sfx/scene03-preview-cues.wav",
+      "gainDb": -26,
+      "source": {
+        "kind": "own",
+        "title": "Scene03 original preview keyboard sound track"
+      }
+    },
+    {
+      "id": "s04-vo-copy-paste",
+      "scene": "S04",
+      "kind": "keyboard",
+      "action": "Keyboard copy and paste shortcut into Startup (composite 9s track)",
+      "startFrame": 1635,
+      "impactFrame": 1693,
+      "endFrame": 1904,
+      "status": "ready",
+      "file": "audio/sfx/scene04-preview-cues.wav",
+      "gainDb": -26,
+      "source": {
+        "kind": "own",
+        "title": "Scene04 preview original keyboard cue track"
+      }
+    }
+  ]
+}

@@ -1324,6 +1324,159 @@
       "voiceGuideCompositionId": "Easy2BootMultibootReelsVOGuide"
     },
     {
+      "id": "PCUnlockerRecoveryReels",
+      "slug": "pcunlocker-recovery-reels",
+      "title": "PCUnlocker — Reset Password Windows",
+      "width": 1080,
+      "height": 1920,
+      "fps": 30,
+      "durationInFrames": 1950,
+      "assetPrefix": "videos/pcunlocker-recovery-reels",
+      "source": "projects/pcunlocker-recovery-reels/src/Video.tsx",
+      "projectDir": "projects/pcunlocker-recovery-reels",
+      "exportName": "Video",
+      "defaultProps": {
+        "showSubtitles": true,
+        "showVoGuide": true,
+        "showSfx": true,
+        "backgroundColor": "#F7F7F5",
+        "sfxVolume": 0.85
+      },
+      "segments": [
+        {
+          "id": "PCUnlockerRecoveryReels-S01",
+          "title": "Masalah & konflik",
+          "startFrame": 0,
+          "durationInFrames": 150
+        },
+        {
+          "id": "PCUnlockerRecoveryReels-S02",
+          "title": "Memory Gallery",
+          "startFrame": 150,
+          "durationInFrames": 180
+        },
+        {
+          "id": "PCUnlockerRecoveryReels-S03",
+          "title": "Respons",
+          "startFrame": 330,
+          "durationInFrames": 120
+        },
+        {
+          "id": "PCUnlockerRecoveryReels-S04",
+          "title": "Solusi",
+          "startFrame": 450,
+          "durationInFrames": 150
+        },
+        {
+          "id": "PCUnlockerRecoveryReels-S05",
+          "title": "Persiapan",
+          "startFrame": 600,
+          "durationInFrames": 240
+        },
+        {
+          "id": "PCUnlockerRecoveryReels-S06",
+          "title": "Demonstrasi",
+          "startFrame": 840,
+          "durationInFrames": 180
+        },
+        {
+          "id": "PCUnlockerRecoveryReels-S07",
+          "title": "Pemulihan",
+          "startFrame": 1020,
+          "durationInFrames": 180
+        },
+        {
+          "id": "PCUnlockerRecoveryReels-S08",
+          "title": "Konfirmasi",
+          "startFrame": 1200,
+          "durationInFrames": 150
+        },
+        {
+          "id": "PCUnlockerRecoveryReels-S09",
+          "title": "Restart",
+          "startFrame": 1350,
+          "durationInFrames": 150
+        },
+        {
+          "id": "PCUnlockerRecoveryReels-S10",
+          "title": "Hasil",
+          "startFrame": 1500,
+          "durationInFrames": 180
+        },
+        {
+          "id": "PCUnlockerRecoveryReels-S11",
+          "title": "CTA",
+          "startFrame": 1680,
+          "durationInFrames": 150
+        },
+        {
+          "id": "PCUnlockerRecoveryReels-S12",
+          "title": "Cover Reels",
+          "startFrame": 1830,
+          "durationInFrames": 120
+        }
+      ],
+      "voiceGuideCompositionId": "PCUnlockerRecoveryReelsVOGuide"
+    },
+    {
+      "id": "SampleStartupWindowsDirector",
+      "slug": "sample-startup-windows-director",
+      "title": "SAMPLE • Buka File & Aplikasi Otomatis Saat Login Windows",
+      "width": 1080,
+      "height": 1920,
+      "fps": 30,
+      "durationInFrames": 2445,
+      "assetPrefix": "videos/sample-startup-windows-director",
+      "source": "projects/sample-startup-windows-director/src/Video.tsx",
+      "projectDir": "projects/sample-startup-windows-director",
+      "exportName": "Video",
+      "defaultProps": {
+        "showVoGuide": true,
+        "showDraftCaptions": false,
+        "backgroundColor": "#F7F7F5",
+        "showSubtitles": true
+      },
+      "segments": [
+        {
+          "id": "S01",
+          "title": "Hook — Buka satu-satu?",
+          "startFrame": 0,
+          "durationInFrames": 855
+        },
+        {
+          "id": "S02",
+          "title": "Membuat shortcut",
+          "startFrame": 855,
+          "durationInFrames": 480
+        },
+        {
+          "id": "S03",
+          "title": "Membuka folder Startup",
+          "startFrame": 1335,
+          "durationInFrames": 300
+        },
+        {
+          "id": "S04",
+          "title": "Salin shortcut ke Startup",
+          "startFrame": 1635,
+          "durationInFrames": 270
+        },
+        {
+          "id": "S05",
+          "title": "Hasil & CTA",
+          "startFrame": 1905,
+          "durationInFrames": 390
+        },
+        {
+          "id": "S06",
+          "title": "Cover Reels",
+          "startFrame": 2295,
+          "durationInFrames": 150
+        }
+      ],
+      "voiceGuideCompositionId": "SampleStartupWindowsDirectorVOGuide"
+    },
+    {
       "id": "ShutdownOtomatisHookRealistis",
       "slug": "shutdown-otomatis-hook-realistis",
       "title": "Shutdown Otomatis — 11 Scene · CTA v57 + Cover v58 · Editable",

@@ -1,0 +1,174 @@
+{
+  "schemaVersion": 1,
+  "status": "review",
+  "cues": [
+    {
+      "id": "S01-preview-bed",
+      "scene": "S01",
+      "action": "SFX preview lama per scene (belum mix final)",
+      "startFrame": 0,
+      "impactFrame": 32,
+      "endFrame": 149,
+      "status": "ready",
+      "file": "audio/sfx/s01-preview.wav",
+      "source": {
+        "kind": "own",
+        "title": "SFX sintetis dari preview sebelumnya"
+      },
+      "gainDb": -1.41
+    },
+    {
+      "id": "S02-preview-bed",
+      "scene": "S02",
+      "action": "SFX preview lama per scene (belum mix final)",
+      "startFrame": 150,
+      "impactFrame": 159,
+      "endFrame": 329,
+      "status": "ready",
+      "file": "audio/sfx/s02-preview.wav",
+      "source": {
+        "kind": "own",
+        "title": "SFX sintetis dari preview sebelumnya"
+      },
+      "gainDb": -1.41
+    },
+    {
+      "id": "S03-preview-bed",
+      "scene": "S03",
+      "action": "SFX preview lama per scene (belum mix final)",
+      "startFrame": 330,
+      "impactFrame": 348,
+      "endFrame": 449,
+      "status": "ready",
+      "file": "audio/sfx/s03-preview.wav",
+      "source": {
+        "kind": "own",
+        "title": "SFX sintetis dari preview sebelumnya"
+      },
+      "gainDb": -1.41
+    },
+    {
+      "id": "S04-preview-bed",
+      "scene": "S04",
+      "action": "SFX preview lama per scene (belum mix final)",
+      "startFrame": 450,
+      "impactFrame": 471,
+      "endFrame": 599,
+      "status": "ready",
+      "file": "audio/sfx/s04-preview.wav",
+      "source": {
+        "kind": "own",
+        "title": "SFX sintetis dari preview sebelumnya"
+      },
+      "gainDb": -1.41
+    },
+    {
+      "id": "S05-preview-bed",
+      "scene": "S05",
+      "action": "SFX preview lama per scene (belum mix final)",
+      "startFrame": 600,
+      "impactFrame": 642,
+      "endFrame": 839,
+      "status": "ready",
+      "file": "audio/sfx/s05-preview.wav",
+      "source": {
+        "kind": "own",
+        "title": "SFX sintetis dari preview sebelumnya"
+      },
+      "gainDb": -1.41
+    },
+    {
+      "id": "S06-preview-bed",
+      "scene": "S06",
+      "action": "SFX preview lama per scene (belum mix final)",
+      "startFrame": 840,
+      "impactFrame": 840,
+      "endFrame": 1019,
+      "status": "omit"
+    },
+    {
+      "id": "S07-preview-bed",
+      "scene": "S07",
+      "action": "SFX preview lama per scene (belum mix final)",
+      "startFrame": 1020,
+      "impactFrame": 1047,
+      "endFrame": 1199,
+      "status": "ready",
+      "file": "audio/sfx/s07-preview.wav",
+      "source": {
+        "kind": "own",
+        "title": "SFX sintetis dari preview sebelumnya"
+      },
+      "gainDb": -1.41
+    },
+    {
+      "id": "S08-preview-bed",
+      "scene": "S08",
+      "action": "SFX preview lama per scene (belum mix final)",
+      "startFrame": 1200,
+      "impactFrame": 1278,
+      "endFrame": 1349,
+      "status": "ready",
+      "file": "audio/sfx/s08-preview.wav",
+      "source": {
+        "kind": "own",
+        "title": "SFX sintetis dari preview sebelumnya"
+      },
+      "gainDb": -1.41
+    },
+    {
+      "id": "S09-preview-bed",
+      "scene": "S09",
+      "action": "SFX preview lama per scene (belum mix final)",
+      "startFrame": 1350,
+      "impactFrame": 1365,
+      "endFrame": 1499,
+      "status": "ready",
+      "file": "audio/sfx/s09-preview.wav",
+      "source": {
+        "kind": "own",
+        "title": "SFX sintetis dari preview sebelumnya"
+      },
+      "gainDb": -1.41
+    },
+    {
+      "id": "S10-preview-bed",
+      "scene": "S10",
+      "action": "SFX preview lama per scene (belum mix final)",
+      "startFrame": 1500,
+      "impactFrame": 1569,
+      "endFrame": 1679,
+      "status": "ready",
+      "file": "audio/sfx/s10-preview.wav",
+      "source": {
+        "kind": "own",
+        "title": "SFX sintetis dari preview sebelumnya"
+      },
+      "gainDb": -1.41
+    },
+    {
+      "id": "S11-preview-bed",
+      "scene": "S11",
+      "action": "SFX preview lama per scene (belum mix final)",
+      "startFrame": 1680,
+      "impactFrame": 1698,
+      "endFrame": 1829,
+      "status": "ready",
+      "file": "audio/sfx/s11-preview.wav",
+      "source": {
+        "kind": "own",
+        "title": "SFX sintetis dari preview sebelumnya"
+      },
+      "gainDb": -1.41
+    },
+    {
+      "id": "S12-preview-bed",
+      "scene": "S12",
+      "action": "SFX preview lama per scene (belum mix final)",
+      "startFrame": 1830,
+      "impactFrame": 1830,
+      "endFrame": 1949,
+      "status": "omit"
+    }
+  ]
+}
