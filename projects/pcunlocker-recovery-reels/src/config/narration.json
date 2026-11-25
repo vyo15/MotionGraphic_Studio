@@ -118,13 +118,13 @@
     {
       "scene": "S07",
       "startFrame": 1020,
-      "endFrame": 1128,
-      "text": "Pilih akun milik kamu yang lupa password,",
+      "endFrame": 1127,
+      "text": "Nah, di sini kamu tinggal pilih akun Windows kamu yang lupa password,",
       "approval": "draft"
     },
     {
       "scene": "S07",
-      "startFrame": 1128,
+      "startFrame": 1127,
       "endFrame": 1200,
       "text": "lalu klik Reset Password.",
       "approval": "draft"
@@ -132,20 +132,13 @@
     {
       "scene": "S08",
       "startFrame": 1200,
-      "endFrame": 1242,
-      "text": "Di bagian ini,",
+      "endFrame": 1292,
+      "text": "Setelah itu, kamu bisa masukin password baru,",
       "approval": "draft"
     },
     {
       "scene": "S08",
-      "startFrame": 1242,
-      "endFrame": 1308,
-      "text": "kamu bisa masukin password baru,",
-      "approval": "draft"
-    },
-    {
-      "scene": "S08",
-      "startFrame": 1308,
+      "startFrame": 1292,
       "endFrame": 1350,
       "text": "lalu klik OK.",
       "approval": "draft"
@@ -153,29 +146,22 @@
     {
       "scene": "S09",
       "startFrame": 1350,
-      "endFrame": 1398,
-      "text": "Kalau sudah berhasil,",
-      "approval": "draft"
-    },
-    {
-      "scene": "S09",
-      "startFrame": 1398,
       "endFrame": 1500,
-      "text": "restart komputer dan cabut flashdisknya.",
+      "text": "Kalau sudah berhasil, tinggal restart komputernya.",
       "approval": "draft"
     },
     {
       "scene": "S10",
       "startFrame": 1500,
-      "endFrame": 1566,
-      "text": "Nah, kalau prosesnya berhasil,",
+      "endFrame": 1605,
+      "text": "Nah, sekarang kamu bisa coba login lagi.",
       "approval": "draft"
     },
     {
       "scene": "S10",
-      "startFrame": 1566,
+      "startFrame": 1605,
       "endFrame": 1680,
-      "text": "kamu bisa login kembali menggunakan password yang baru.",
+      "text": "Nggak perlu install ulang, kan?",
       "approval": "draft"
     },
     {

@@ -1,0 +1,12 @@
+import React from 'react';
+import {Interactive,useCurrentFrame,useVideoConfig} from 'remotion';
+import {Stage} from '../components/Stage';
+import {Explorer,Run,Terminal,Pointer,Key,Folder,Disk,INK,CORAL} from '../components/Windows';
+import {ProjectIcon,Clipboard,CenterText} from '../components/AccLayers';
+import {ramp,mix,move,pulse} from '../animations/motion';
+import {VideoProps,defaults,motionTime,motionPath} from '../config/props';
+import {starts} from '../config/timing';
+export const Scene03:React.FC<VideoProps>=(input)=>{const p={...defaults,...input};const f=useCurrentFrame();const {fps}=useVideoConfig();const t=motionTime(f,fps,2,p);
+const typed=p.runCommand.slice(0,Math.floor(p.runCommand.length*[2.45,2.66,2.89].filter(x=>t>=x).length/3));
+return <Stage props={p} start={starts[2]}><g opacity={1-ramp(t,0,.32)}><Interactive.G name="S03 Explorer background" style={{translate:"0px 0px",scale:1,rotate:"0deg",opacity:1}}><Explorer settings={p} view="project" selected folderPath={p.folderPath} drive={p.drive}/></Interactive.G></g><g opacity={1}><Interactive.G name="S03 Clipboard" style={{translate:"0px 0px",scale:1,rotate:"0deg",opacity:1}}><Clipboard path={p.folderPath}/></Interactive.G></g><g opacity={ramp(t,.34,.65)*(1-ramp(t,1.35,1.57))}><Interactive.G name="S03 Keyboard Win R" style={{translate:"0px 0px",scale:1,rotate:"0deg",opacity:1}}><Key x={328} y={825} w={184} label="⊞" pressed={t>.8&&t<1.22}/><CenterText y={876} text="+"/><Key x={568} y={825} w={184} label="R" pressed={t>.8&&t<1.22}/></Interactive.G></g><g opacity={ramp(t,1.58,1.9)*(1-ramp(t,4.22,4.48))}><Interactive.G name="S03 Run dialog" style={{translate:"0px 0px",scale:1,rotate:"0deg",opacity:1}}><g transform="translate(-45 -220) scale(1.10)"><Run typed={typed}/></g></Interactive.G></g><g opacity={ramp(t,3.35,3.65)*(1-ramp(t,4.22,4.46))}><Interactive.G name="S03 Enter" style={{translate:"0px 0px",scale:1,rotate:"0deg",opacity:1}}><Key x={430} y={1160} w={220} label="Enter" pressed={t>3.85&&t<4.22}/></Interactive.G></g><g opacity={ramp(t,4.5,4.84)}><Interactive.G name="S03 Terminal incoming" style={{translate:"0px 0px",scale:1,rotate:"0deg",opacity:1}}><Terminal settings={p}/></Interactive.G></g></Stage>;
+};

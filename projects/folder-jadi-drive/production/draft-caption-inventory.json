@@ -1,0 +1,218 @@
+{
+  "status": "draft",
+  "source": "src/components/DraftCaptions.tsx",
+  "timing": "src/config/narration.json",
+  "lines": [
+    {
+      "name": "S01 Subtitle 01.1.1",
+      "beat": 0,
+      "cut": 0,
+      "line": 0,
+      "text": "Punya folder kerjaan"
+    },
+    {
+      "name": "S01 Subtitle 01.1.2",
+      "beat": 0,
+      "cut": 0,
+      "line": 1,
+      "text": "atau project"
+    },
+    {
+      "name": "S01 Subtitle 02.1.1",
+      "beat": 1,
+      "cut": 0,
+      "line": 0,
+      "text": "yang hampir setiap hari"
+    },
+    {
+      "name": "S01 Subtitle 02.1.2",
+      "beat": 1,
+      "cut": 0,
+      "line": 1,
+      "text": "kamu buka?"
+    },
+    {
+      "name": "S01 Subtitle 03.1.1",
+      "beat": 2,
+      "cut": 0,
+      "line": 0,
+      "text": "Tapi, pernah kepikiran"
+    },
+    {
+      "name": "S01 Subtitle 03.1.2",
+      "beat": 2,
+      "cut": 0,
+      "line": 1,
+      "text": "nggak sih,"
+    },
+    {
+      "name": "S01 Subtitle 04.1.1",
+      "beat": 3,
+      "cut": 0,
+      "line": 0,
+      "text": "kalau folder itu bisa"
+    },
+    {
+      "name": "S01 Subtitle 04.1.2",
+      "beat": 3,
+      "cut": 0,
+      "line": 1,
+      "text": "dijadiin drive sendiri,"
+    },
+    {
+      "name": "S01 Subtitle 05.1.1",
+      "beat": 4,
+      "cut": 0,
+      "line": 0,
+      "text": "kayak drive C atau D?"
+    },
+    {
+      "name": "S02 Subtitle 07.1.1",
+      "beat": 6,
+      "cut": 0,
+      "line": 0,
+      "text": "Pertama, buka folder yang"
+    },
+    {
+      "name": "S02 Subtitle 07.1.2",
+      "beat": 6,
+      "cut": 0,
+      "line": 1,
+      "text": "mau kamu jadiin drive,"
+    },
+    {
+      "name": "S02 Subtitle 08.1.1",
+      "beat": 7,
+      "cut": 0,
+      "line": 0,
+      "text": "terus copy alamat foldernya."
+    },
+    {
+      "name": "S03 Subtitle 09.1.1",
+      "beat": 8,
+      "cut": 0,
+      "line": 0,
+      "text": "Setelah itu, tekan Windows R,"
+    },
+    {
+      "name": "S03 Subtitle 10.1.1",
+      "beat": 9,
+      "cut": 0,
+      "line": 0,
+      "text": "ketik CMD, lalu Enter."
+    },
+    {
+      "name": "S04 Subtitle 11.1.1",
+      "beat": 10,
+      "cut": 0,
+      "line": 0,
+      "text": "Ketik SUBST,"
+    },
+    {
+      "name": "S04 Subtitle 12.1.1",
+      "beat": 11,
+      "cut": 0,
+      "line": 0,
+      "text": "kasih huruf drive yang"
+    },
+    {
+      "name": "S04 Subtitle 12.1.2",
+      "beat": 11,
+      "cut": 0,
+      "line": 1,
+      "text": "belum dipakai,"
+    },
+    {
+      "name": "S04 Subtitle 13.1.1",
+      "beat": 12,
+      "cut": 0,
+      "line": 0,
+      "text": "misalnya Z titik dua."
+    },
+    {
+      "name": "S04 Subtitle 14.1.1",
+      "beat": 13,
+      "cut": 0,
+      "line": 0,
+      "text": "Terus, paste alamat folder tadi"
+    },
+    {
+      "name": "S04 Subtitle 15.1.1",
+      "beat": 14,
+      "cut": 0,
+      "line": 0,
+      "text": "di dalam tanda kutip,"
+    },
+    {
+      "name": "S04 Subtitle 16.1.1",
+      "beat": 15,
+      "cut": 0,
+      "line": 0,
+      "text": "lalu Enter."
+    },
+    {
+      "name": "S05 Subtitle 17.1.1",
+      "beat": 16,
+      "cut": 0,
+      "line": 0,
+      "text": "Sekarang, coba buka This PC."
+    },
+    {
+      "name": "S05 Subtitle 18.1.1",
+      "beat": 17,
+      "cut": 0,
+      "line": 0,
+      "text": "Nah, folder tadi udah muncul"
+    },
+    {
+      "name": "S05 Subtitle 18.1.2",
+      "beat": 17,
+      "cut": 0,
+      "line": 1,
+      "text": "sebagai drive Z."
+    },
+    {
+      "name": "S05 Subtitle 19.1.1",
+      "beat": 18,
+      "cut": 0,
+      "line": 0,
+      "text": "Jadi, kamu nggak perlu masuk"
+    },
+    {
+      "name": "S05 Subtitle 19.1.2",
+      "beat": 18,
+      "cut": 0,
+      "line": 1,
+      "text": "ke banyak folder lagi."
+    },
+    {
+      "name": "S05 Subtitle 20.1.1",
+      "beat": 19,
+      "cut": 0,
+      "line": 0,
+      "text": "Oh iya, drive ini bakal hilang"
+    },
+    {
+      "name": "S05 Subtitle 21.1.1",
+      "beat": 20,
+      "cut": 0,
+      "line": 0,
+      "text": "kalau komputer di-restart,"
+    },
+    {
+      "name": "S05 Subtitle 22.1.1",
+      "beat": 21,
+      "cut": 0,
+      "line": 0,
+      "text": "tapi data aslinya tetap aman."
+    },
+    {
+      "name": "S05 Subtitle 23.1.1",
+      "beat": 22,
+      "cut": 0,
+      "line": 0,
+      "text": "Gimana? Lebih praktis, kan?"
+    }
+  ],
+  "note": "Swiss beat 348–414 uses approved two typography layers instead. S06 silent."
+}

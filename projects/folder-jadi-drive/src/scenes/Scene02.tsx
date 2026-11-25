@@ -1,0 +1,12 @@
+import React from 'react';
+import {Interactive,useCurrentFrame,useVideoConfig} from 'remotion';
+import {Stage} from '../components/Stage';
+import {Explorer,Run,Terminal,Pointer,Key,Folder,Disk,INK,CORAL} from '../components/Windows';
+import {ProjectIcon,Clipboard,CenterText} from '../components/AccLayers';
+import {ramp,mix,move,pulse} from '../animations/motion';
+import {VideoProps,defaults,motionTime,motionPath} from '../config/props';
+import {starts} from '../config/timing';
+export const Scene02:React.FC<VideoProps>=(input)=>{const p={...defaults,...input};const f=useCurrentFrame();const {fps}=useVideoConfig();const t=motionTime(f,fps,1,p);
+const zoom=1+.035*ramp(t,1.1,2.1)-.035*ramp(t,4.6,5.3);const cursor=move(t,motionPath(p.cursorPathS02,defaults.cursorPathS02));const select=t>=1.65;
+return <Stage props={p} start={starts[1]}><g opacity={ramp(t,0,.35)}><Interactive.G name="S02 Explorer" style={{translate:"0px 0px",scale:1,rotate:"0deg",opacity:1}}><g transform={`translate(540 910) scale(${zoom}) translate(-540 -910)`}><Explorer settings={p} view="project" selected={select} folderPath={p.folderPath} drive={p.drive}/></g></Interactive.G></g><g opacity={ramp(t,.4,.7)*(1-ramp(t,3.9,4.3))}><Interactive.G name="S02 Pointer address" style={{translate:"0px 0px",scale:1,rotate:"0deg",opacity:1}}><Pointer x={cursor[0]} y={cursor[1]} click={pulse(t,1.65)}/></Interactive.G></g><g opacity={ramp(t,3.2,3.5)*(1-ramp(t,4.6,4.9))}><Interactive.G name="S02 Keyboard Ctrl C" style={{translate:"0px 0px",scale:1,rotate:"0deg",opacity:1}}><Key x={380} y={1280} w={145} label="Ctrl" pressed={t>3.8&&t<4.1}/><Key x={555} y={1280} label="C" pressed={t>3.8&&t<4.1}/></Interactive.G></g><g opacity={ramp(t,4.9,5.3)}><Interactive.G name="S02 Clipboard" style={{translate:"0px 0px",scale:1,rotate:"0deg",opacity:1}}><Clipboard path={p.folderPath}/></Interactive.G></g></Stage>;
+};

@@ -55,45 +55,41 @@ Setelah aplikasinya terbuka,
 kamu bakal melihat daftar akun lokal Windows yang terdeteksi.
 
 15
-00:00:34,000 --> 00:00:37,600
-Pilih akun milik kamu yang lupa password,
+00:00:34,000 --> 00:00:37,567
+Nah, di sini kamu tinggal pilih akun Windows kamu yang lupa password,
 
 16
-00:00:37,600 --> 00:00:40,000
+00:00:37,567 --> 00:00:40,000
 lalu klik Reset Password.
 
 17
-00:00:40,000 --> 00:00:41,400
-Di bagian ini,
+00:00:40,000 --> 00:00:43,067
+Setelah itu, kamu bisa masukin password baru,
 
 18
-00:00:41,400 --> 00:00:43,600
-kamu bisa masukin password baru,
-
-19
-00:00:43,600 --> 00:00:45,000
+00:00:43,067 --> 00:00:45,000
 lalu klik OK.
 
+19
+00:00:45,000 --> 00:00:50,000
+Kalau sudah berhasil, tinggal restart komputernya.
+
 20
-00:00:45,000 --> 00:00:46,600
-Kalau sudah berhasil,
+00:00:50,000 --> 00:00:53,500
+Nah, sekarang kamu bisa coba login lagi.
 
 21
-00:00:46,600 --> 00:00:50,000
-restart komputer dan cabut flashdisknya.
+00:00:53,500 --> 00:00:56,000
+Nggak perlu install ulang, kan?
 
 22
-00:00:50,000 --> 00:00:52,200
-Nah, kalau prosesnya berhasil,
-
-23
-00:00:52,200 --> 00:00:56,000
-kamu bisa login kembali menggunakan password yang baru.
-
-24
 00:00:56,000 --> 00:00:58,000
 Kalau kamu sendiri,
 
-25
+23
 00:00:58,000 --> 00:01:01,000
 pernah ngalamin masalah kayak gini nggak?
+
+24
+00:01:01,000 --> 00:01:05,000
+

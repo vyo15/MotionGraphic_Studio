@@ -7,7 +7,7 @@
 - `showSubtitles`, `showVoGuide`, `showSfx`, `backgroundColor`, `sfxVolume` tersedia sebagai props. Audio SFX preview dipotong per scene di `public/audio/sfx/`. Tidak ada VO rekaman.
 - Uji pilih layer → ubah posisi atau teks → Save → reload → preview → render sebelum menganggap native editability teruji.
 
-Layer native dideklarasikan: 171 teks + 136 visual. Status GUI belum diuji. Revisi per scene; tidak ada master file yang diganti.
+Layer native dideklarasikan: 268 teks + 175 visual. Status GUI belum diuji. Revisi per scene; tidak ada master file yang diganti.
 
 ### Scene 03 — Panel Alert (05)
 Buka `PCUnlockerRecoveryReels-S03`. Foto, label, file, panel, ikon, outline, badge merah, kedua garis silang dan dua subtitle merupakan target tersendiri. Badge memuat dua garis silang; transform badge memindahkan keduanya. Ubah onset di keyframe opacity/scale dan `Sequence from={51}` bersamaan untuk menjaga sinkron tetot. Audio `s03-panel-alert.wav` berdurasi 12 frame; SFX bisa dimatikan lewat showSfx. Tidak ada VO rekaman.
@@ -18,5 +18,5 @@ Buka `PCUnlockerRecoveryReels-S04`. 8 target independen: background, spotlight, 
 ### Scene 05 — Soft Connected
 Buka `PCUnlockerRecoveryReels-S05`. 14 teks dan 15 visual independen dideklarasikan. Ikon kontinu mengacu SVG yang sama dengan S04; di frame 0 ukuran/posisi cocok dengan pose S04 final. Jika posisi S04 diedit lagi, samakan pose awal S05. Edit body laptop 720×434 dan layar 640×366 secara selaras agar screen tidak keluar bezel. File ISO, lipatan, ikon, judul, flashdisk, label, panah, indikator, laptop, layar, ilustrasi recovery dan subtitle mempunyai target bernama. Path internal SVG editable dari source, bukan handle GUI tiap path. Timing animasi inline interpolate; audio cue mengikuti WAV dan props. Jangan mengubah VO Guide tanpa menyamakan narration JSON.
 
-### Scene 06 — Realistic UI
-Buka `PCUnlockerRecoveryReels-S06`. Laptop dan layar tetap 720×434 / 640×366, posisi sama dengan S05. Header, field, label, setiap sel tabel, tombol ilustratif, scrollbar, loading dan subtitle adalah Interactive.Div bernama, style inline. Kontrol tidak fungsional; data contoh. Untuk menjaga fade, samakan keyframe 0–24 untuk layer UI dan loading. Path internal laptop/logo editable melalui source SVG, bukan handle per path. VO Guide dan timing tidak berubah.
+### Scene 06–10 — Fullscreen UI
+Buka segmen S06–S10. Layar PCUnlocker / Windows merupakan simulasi editorial, tanpa bingkai laptop setelah S05. Setiap elemen tabel, label, dialog, tombol, subtitle dan pointer memiliki target independen; tidak memakai MP4 sebagai layer. Jendela aplikasi 960 px, tombol tidak berubah ukuran ketika diklik. S07/S08: hotspot pointer SVG ada di ujung panah; koordinat, ukuran dan keyframe inline dapat diedit. Selaraskan posisi UI dan dialog antar scene bila menggeser layer. S07–08 menggunakan audio dari preview yang di-ACC; S09–10 masih review. Jika mengubah VO, samakan subtitle dan narration.json. Sumber SVG internal dapat diedit sebagai source, bukan setiap path sebagai handle GUI.

@@ -1,0 +1,512 @@
+{
+  "schemaVersion": 1,
+  "nativeTextTargets": [
+    {
+      "name": "S01 Subtitle 01.1.1",
+      "source": "src/components/DraftCaptions.tsx"
+    },
+    {
+      "name": "S01 Subtitle 01.1.2",
+      "source": "src/components/DraftCaptions.tsx"
+    },
+    {
+      "name": "S01 Subtitle 02.1.1",
+      "source": "src/components/DraftCaptions.tsx"
+    },
+    {
+      "name": "S01 Subtitle 02.1.2",
+      "source": "src/components/DraftCaptions.tsx"
+    },
+    {
+      "name": "S01 Subtitle 03.1.1",
+      "source": "src/components/DraftCaptions.tsx"
+    },
+    {
+      "name": "S01 Subtitle 03.1.2",
+      "source": "src/components/DraftCaptions.tsx"
+    },
+    {
+      "name": "S01 Subtitle 04.1.1",
+      "source": "src/components/DraftCaptions.tsx"
+    },
+    {
+      "name": "S01 Subtitle 04.1.2",
+      "source": "src/components/DraftCaptions.tsx"
+    },
+    {
+      "name": "S01 Subtitle 05.1.1",
+      "source": "src/components/DraftCaptions.tsx"
+    },
+    {
+      "name": "S02 Subtitle 07.1.1",
+      "source": "src/components/DraftCaptions.tsx"
+    },
+    {
+      "name": "S02 Subtitle 07.1.2",
+      "source": "src/components/DraftCaptions.tsx"
+    },
+    {
+      "name": "S02 Subtitle 08.1.1",
+      "source": "src/components/DraftCaptions.tsx"
+    },
+    {
+      "name": "S03 Subtitle 09.1.1",
+      "source": "src/components/DraftCaptions.tsx"
+    },
+    {
+      "name": "S03 Subtitle 10.1.1",
+      "source": "src/components/DraftCaptions.tsx"
+    },
+    {
+      "name": "S04 Subtitle 11.1.1",
+      "source": "src/components/DraftCaptions.tsx"
+    },
+    {
+      "name": "S04 Subtitle 12.1.1",
+      "source": "src/components/DraftCaptions.tsx"
+    },
+    {
+      "name": "S04 Subtitle 12.1.2",
+      "source": "src/components/DraftCaptions.tsx"
+    },
+    {
+      "name": "S04 Subtitle 13.1.1",
+      "source": "src/components/DraftCaptions.tsx"
+    },
+    {
+      "name": "S04 Subtitle 14.1.1",
+      "source": "src/components/DraftCaptions.tsx"
+    },
+    {
+      "name": "S04 Subtitle 15.1.1",
+      "source": "src/components/DraftCaptions.tsx"
+    },
+    {
+      "name": "S04 Subtitle 16.1.1",
+      "source": "src/components/DraftCaptions.tsx"
+    },
+    {
+      "name": "S05 Subtitle 17.1.1",
+      "source": "src/components/DraftCaptions.tsx"
+    },
+    {
+      "name": "S05 Subtitle 18.1.1",
+      "source": "src/components/DraftCaptions.tsx"
+    },
+    {
+      "name": "S05 Subtitle 18.1.2",
+      "source": "src/components/DraftCaptions.tsx"
+    },
+    {
+      "name": "S05 Subtitle 19.1.1",
+      "source": "src/components/DraftCaptions.tsx"
+    },
+    {
+      "name": "S05 Subtitle 19.1.2",
+      "source": "src/components/DraftCaptions.tsx"
+    },
+    {
+      "name": "S05 Subtitle 20.1.1",
+      "source": "src/components/DraftCaptions.tsx"
+    },
+    {
+      "name": "S05 Subtitle 21.1.1",
+      "source": "src/components/DraftCaptions.tsx"
+    },
+    {
+      "name": "S05 Subtitle 22.1.1",
+      "source": "src/components/DraftCaptions.tsx"
+    },
+    {
+      "name": "S05 Subtitle 23.1.1",
+      "source": "src/components/DraftCaptions.tsx"
+    },
+    {
+      "name": "S01 Empat langkah",
+      "source": "src/scenes/Scene01.tsx"
+    },
+    {
+      "name": "S01 Label C",
+      "source": "src/scenes/Scene01.tsx"
+    },
+    {
+      "name": "S01 Label D",
+      "source": "src/scenes/Scene01.tsx"
+    },
+    {
+      "name": "S01 Nah ternyata",
+      "source": "src/scenes/Scene01.tsx"
+    },
+    {
+      "name": "S01 Bisa loh",
+      "source": "src/scenes/Scene01.tsx"
+    },
+    {
+      "name": "S04 Pemetaan",
+      "source": "src/scenes/Scene04.tsx"
+    },
+    {
+      "name": "S04 Folder sumber",
+      "source": "src/scenes/Scene04.tsx"
+    },
+    {
+      "name": "S04 Alamat dalam kutip",
+      "source": "src/scenes/Scene04.tsx"
+    },
+    {
+      "name": "S04 Ctrl V",
+      "source": "src/scenes/Scene04.tsx"
+    },
+    {
+      "name": "S05 Restart",
+      "source": "src/scenes/Scene05.tsx"
+    },
+    {
+      "name": "S05 Keterangan data tetap",
+      "source": "src/scenes/Scene05.tsx"
+    },
+    {
+      "name": "S06 Cover judul",
+      "source": "src/scenes/Scene06.tsx"
+    },
+    {
+      "name": "S06 Cover penekanan",
+      "source": "src/scenes/Scene06.tsx"
+    },
+    {
+      "name": "S06 Cover keterangan",
+      "source": "src/scenes/Scene06.tsx"
+    }
+  ],
+  "nativeVisualTargets": [
+    {
+      "name": "S01 Struktur folder",
+      "source": "src/scenes/Scene01.tsx"
+    },
+    {
+      "name": "S01 Struktur D",
+      "source": "src/scenes/Scene01.tsx"
+    },
+    {
+      "name": "S01 Struktur pekerjaan",
+      "source": "src/scenes/Scene01.tsx"
+    },
+    {
+      "name": "S01 Struktur tahun",
+      "source": "src/scenes/Scene01.tsx"
+    },
+    {
+      "name": "S01 This PC diagram",
+      "source": "src/scenes/Scene01.tsx"
+    },
+    {
+      "name": "S01 Drive C D",
+      "source": "src/scenes/Scene01.tsx"
+    },
+    {
+      "name": "S01 Drive C",
+      "source": "src/scenes/Scene01.tsx"
+    },
+    {
+      "name": "S01 Drive D",
+      "source": "src/scenes/Scene01.tsx"
+    },
+    {
+      "name": "S01 Project card",
+      "source": "src/scenes/Scene01.tsx"
+    },
+    {
+      "name": "S01 Project kartu dasar",
+      "source": "src/scenes/Scene01.tsx"
+    },
+    {
+      "name": "S01 Project ikon",
+      "source": "src/scenes/Scene01.tsx"
+    },
+    {
+      "name": "S01 Project label",
+      "source": "src/scenes/Scene01.tsx"
+    },
+    {
+      "name": "S01 Swiss underline",
+      "source": "src/scenes/Scene01.tsx"
+    },
+    {
+      "name": "S02 Explorer",
+      "source": "src/scenes/Scene02.tsx"
+    },
+    {
+      "name": "S02 Pointer address",
+      "source": "src/scenes/Scene02.tsx"
+    },
+    {
+      "name": "S02 Keyboard Ctrl C",
+      "source": "src/scenes/Scene02.tsx"
+    },
+    {
+      "name": "S02 Clipboard",
+      "source": "src/scenes/Scene02.tsx"
+    },
+    {
+      "name": "S03 Explorer background",
+      "source": "src/scenes/Scene03.tsx"
+    },
+    {
+      "name": "S03 Clipboard",
+      "source": "src/scenes/Scene03.tsx"
+    },
+    {
+      "name": "S03 Keyboard Win R",
+      "source": "src/scenes/Scene03.tsx"
+    },
+    {
+      "name": "S03 Run dialog",
+      "source": "src/scenes/Scene03.tsx"
+    },
+    {
+      "name": "S03 Enter",
+      "source": "src/scenes/Scene03.tsx"
+    },
+    {
+      "name": "S03 Terminal incoming",
+      "source": "src/scenes/Scene03.tsx"
+    },
+    {
+      "name": "S04 Command Prompt",
+      "source": "src/scenes/Scene04.tsx"
+    },
+    {
+      "name": "S04 Huruf drive",
+      "source": "src/scenes/Scene04.tsx"
+    },
+    {
+      "name": "S04 Parameter underline",
+      "source": "src/scenes/Scene04.tsx"
+    },
+    {
+      "name": "S04 Clipboard",
+      "source": "src/scenes/Scene04.tsx"
+    },
+    {
+      "name": "S04 Enter",
+      "source": "src/scenes/Scene04.tsx"
+    },
+    {
+      "name": "S05 Terminal outgoing",
+      "source": "src/scenes/Scene05.tsx"
+    },
+    {
+      "name": "S05 Explorer hasil",
+      "source": "src/scenes/Scene05.tsx"
+    },
+    {
+      "name": "S05 Kursor drive",
+      "source": "src/scenes/Scene05.tsx"
+    },
+    {
+      "name": "S05 Folder asli",
+      "source": "src/scenes/Scene05.tsx"
+    },
+    {
+      "name": "S05 Folder asli ikon",
+      "source": "src/scenes/Scene05.tsx"
+    },
+    {
+      "name": "S05 Folder asli nama",
+      "source": "src/scenes/Scene05.tsx"
+    },
+    {
+      "name": "S05 Folder asli alamat",
+      "source": "src/scenes/Scene05.tsx"
+    },
+    {
+      "name": "S05 Data tetap",
+      "source": "src/scenes/Scene05.tsx"
+    },
+    {
+      "name": "S05 CTA hero",
+      "source": "src/scenes/Scene05.tsx"
+    },
+    {
+      "name": "S06 Folder hero",
+      "source": "src/scenes/Scene06.tsx"
+    },
+    {
+      "name": "S06 Ikon folder",
+      "source": "src/scenes/Scene06.tsx"
+    },
+    {
+      "name": "S06 Nama folder",
+      "source": "src/scenes/Scene06.tsx"
+    },
+    {
+      "name": "S06 Drive hero",
+      "source": "src/scenes/Scene06.tsx"
+    },
+    {
+      "name": "S06 Ikon Project drive",
+      "source": "src/scenes/Scene06.tsx"
+    },
+    {
+      "name": "S06 Label Project drive",
+      "source": "src/scenes/Scene06.tsx"
+    },
+    {
+      "name": "S06 Arrow",
+      "source": "src/scenes/Scene06.tsx"
+    }
+  ],
+  "propsTextTargets": [
+    {
+      "name": "Props projectName",
+      "source": "src/config/props.ts",
+      "prop": "projectName"
+    },
+    {
+      "name": "Props workFolderName",
+      "source": "src/config/props.ts",
+      "prop": "workFolderName"
+    },
+    {
+      "name": "Props yearFolderName",
+      "source": "src/config/props.ts",
+      "prop": "yearFolderName"
+    },
+    {
+      "name": "Props systemDriveName",
+      "source": "src/config/props.ts",
+      "prop": "systemDriveName"
+    },
+    {
+      "name": "Props sourceDriveName",
+      "source": "src/config/props.ts",
+      "prop": "sourceDriveName"
+    },
+    {
+      "name": "Props fileReport",
+      "source": "src/config/props.ts",
+      "prop": "fileReport"
+    },
+    {
+      "name": "Props fileDocuments",
+      "source": "src/config/props.ts",
+      "prop": "fileDocuments"
+    },
+    {
+      "name": "Props filePresentation",
+      "source": "src/config/props.ts",
+      "prop": "filePresentation"
+    },
+    {
+      "name": "Props runCommand",
+      "source": "src/config/props.ts",
+      "prop": "runCommand"
+    },
+    {
+      "name": "Props terminalPrompt",
+      "source": "src/config/props.ts",
+      "prop": "terminalPrompt"
+    },
+    {
+      "name": "Props terminalVersion",
+      "source": "src/config/props.ts",
+      "prop": "terminalVersion"
+    },
+    {
+      "name": "Props terminalCopyright",
+      "source": "src/config/props.ts",
+      "prop": "terminalCopyright"
+    },
+    {
+      "name": "Props drive",
+      "source": "src/config/props.ts",
+      "prop": "drive"
+    },
+    {
+      "name": "Props folderPath",
+      "source": "src/config/props.ts",
+      "prop": "folderPath"
+    },
+    {
+      "name": "Props subtitleX",
+      "source": "src/config/props.ts",
+      "prop": "subtitleX"
+    },
+    {
+      "name": "Props subtitleY",
+      "source": "src/config/props.ts",
+      "prop": "subtitleY"
+    },
+    {
+      "name": "Props subtitleFontSize",
+      "source": "src/config/props.ts",
+      "prop": "subtitleFontSize"
+    },
+    {
+      "name": "Props subtitleColor",
+      "source": "src/config/props.ts",
+      "prop": "subtitleColor"
+    },
+    {
+      "name": "Props backgroundColor",
+      "source": "src/config/props.ts",
+      "prop": "backgroundColor"
+    },
+    {
+      "name": "Props fontFamily",
+      "source": "src/config/props.ts",
+      "prop": "fontFamily"
+    },
+    {
+      "name": "Props uiFontFamily",
+      "source": "src/config/props.ts",
+      "prop": "uiFontFamily"
+    },
+    {
+      "name": "Props subtitleFontWeight",
+      "source": "src/config/props.ts",
+      "prop": "subtitleFontWeight"
+    },
+    {
+      "name": "Props projectIconUrl",
+      "source": "src/config/props.ts",
+      "prop": "projectIconUrl"
+    },
+    {
+      "name": "Props captionSource",
+      "source": "src/config/props.ts",
+      "prop": "captionSource"
+    }
+  ],
+  "guiVerification": "not-tested",
+  "propsControlTargets": [
+    {
+      "name": "showSubtitles",
+      "source": "src/config/props.ts"
+    },
+    {
+      "name": "showVoGuide",
+      "source": "src/config/props.ts"
+    },
+    {
+      "name": "motionRates",
+      "source": "src/config/props.ts"
+    },
+    {
+      "name": "motionOffsets",
+      "source": "src/config/props.ts"
+    },
+    {
+      "name": "mainLayouts",
+      "source": "src/config/props.ts"
+    },
+    {
+      "name": "cursorPathS02",
+      "source": "src/config/props.ts"
+    },
+    {
+      "name": "cursorPathS05",
+      "source": "src/config/props.ts"
+    }
+  ]
+}

@@ -1324,6 +1324,193 @@
       "voiceGuideCompositionId": "Easy2BootMultibootReelsVOGuide"
     },
     {
+      "id": "FolderJadiDrive",
+      "slug": "folder-jadi-drive",
+      "title": "Mengubah Folder Menjadi Drive Baru",
+      "width": 1080,
+      "height": 1920,
+      "fps": 30,
+      "durationInFrames": 1854,
+      "assetPrefix": "videos/folder-jadi-drive",
+      "source": "projects/folder-jadi-drive/src/Video.tsx",
+      "projectDir": "projects/folder-jadi-drive",
+      "exportName": "Video",
+      "defaultProps": {
+        "showVoGuide": false,
+        "backgroundColor": "#F3F3F0",
+        "drive": "Z:",
+        "folderPath": "D:\\Pekerjaan\\2026\\Project",
+        "showSubtitles": true,
+        "subtitleX": 540,
+        "subtitleY": 1510,
+        "subtitleFontSize": 42,
+        "subtitleColor": "#202020",
+        "projectName": "Project",
+        "workFolderName": "Pekerjaan",
+        "yearFolderName": "2026",
+        "systemDriveName": "Local Disk (C:)",
+        "sourceDriveName": "Local Disk (D:)",
+        "fileReport": "Laporan.xlsx",
+        "fileDocuments": "Dokumen",
+        "filePresentation": "Presentasi.pptx",
+        "runCommand": "cmd",
+        "fontFamily": "Inter, Segoe UI, Arial, sans-serif",
+        "uiFontFamily": "Arial, sans-serif",
+        "subtitleFontWeight": 600,
+        "captionSource": "native",
+        "terminalPrompt": "C:\\Users\\User>",
+        "terminalVersion": "Microsoft Windows [Version 10.0.19045.5487]",
+        "terminalCopyright": "(c) Microsoft Corporation. All rights reserved.",
+        "projectIconUrl": "",
+        "motionRates": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "motionOffsets": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "mainLayouts": [
+          {
+            "x": 0,
+            "y": 0,
+            "scale": 1
+          },
+          {
+            "x": 0,
+            "y": 0,
+            "scale": 1
+          },
+          {
+            "x": 0,
+            "y": 0,
+            "scale": 1
+          },
+          {
+            "x": 0,
+            "y": 0,
+            "scale": 1
+          },
+          {
+            "x": 0,
+            "y": 0,
+            "scale": 1
+          },
+          {
+            "x": 0,
+            "y": 0,
+            "scale": 1
+          }
+        ],
+        "cursorPathS02": [
+          [
+            0,
+            715,
+            1020
+          ],
+          [
+            0.7,
+            715,
+            1020
+          ],
+          [
+            1.65,
+            455,
+            746
+          ],
+          [
+            3.5,
+            455,
+            746
+          ],
+          [
+            4.1,
+            455,
+            746
+          ]
+        ],
+        "cursorPathS05": [
+          [
+            0,
+            570,
+            900
+          ],
+          [
+            2.5,
+            570,
+            900
+          ],
+          [
+            3.4,
+            345,
+            1040
+          ],
+          [
+            5.35,
+            345,
+            1040
+          ],
+          [
+            6,
+            345,
+            1040
+          ],
+          [
+            6.45,
+            390,
+            902
+          ]
+        ]
+      },
+      "segments": [
+        {
+          "id": "FolderJadiDrive-S01",
+          "title": "Hook — Akses folder kerja",
+          "startFrame": 0,
+          "durationInFrames": 414
+        },
+        {
+          "id": "FolderJadiDrive-S02",
+          "title": "Copy alamat folder",
+          "startFrame": 414,
+          "durationInFrames": 195
+        },
+        {
+          "id": "FolderJadiDrive-S03",
+          "title": "Buka CMD",
+          "startFrame": 609,
+          "durationInFrames": 165
+        },
+        {
+          "id": "FolderJadiDrive-S04",
+          "title": "Perintah SUBST",
+          "startFrame": 774,
+          "durationInFrames": 360
+        },
+        {
+          "id": "FolderJadiDrive-S05",
+          "title": "Hasil dan CTA",
+          "startFrame": 1134,
+          "durationInFrames": 570
+        },
+        {
+          "id": "FolderJadiDrive-S06",
+          "title": "Cover Reels",
+          "startFrame": 1704,
+          "durationInFrames": 150
+        }
+      ],
+      "voiceGuideCompositionId": "FolderJadiDriveVOGuide"
+    },
+    {
       "id": "PCUnlockerRecoveryReels",
       "slug": "pcunlocker-recovery-reels",
       "title": "PCUnlocker — Reset Password Windows",

@@ -48,8 +48,7 @@ const DesktopShortcut:React.FC<{kind:'chrome'|'erp'|'excel';top:number;selected?
 
 const StartupExplorer:React.FC<{t:number}>=({t})=>{
  const pasted=r(t,6.25,6.75);
- const folderIntro=r(t,0,.70);
- return <Interactive.Div name="S04 Explorer — folder Startup" className="s03-startup" style={{position:'absolute',left:103,top:40,width:764,height:444,opacity:1,transform:`translateX(${-52*(1-folderIntro)}px)`,zIndex:10}}>
+ return <Interactive.Div name="S04 Explorer — folder Startup" className="s03-startup" style={{position:'absolute',left:103,top:40,width:764,height:444,opacity:1,zIndex:10}}>
   <div className="s03-startup-title"><div className="s03-startup-tab"><FolderIcon/><Interactive.Div name="S04 Explorer — nama folder" style={{fontSize:13,color:'#3B4955'}}>Startup</Interactive.Div><span style={{marginLeft:'auto'}}>×</span></div><span style={{fontSize:19}}>＋</span><span className="s03-controls">─　□　×</span></div>
   <div className="s03-startup-address">‹　›　⌃　↻　<div className="s03-startup-crumb"><FolderIcon/>Startup</div><div className="s03-startup-search">⌕　Search Startup</div></div>
   <div className="s03-startup-toolbar">＋ New　　▤ Sort　　☷ View <span style={{marginLeft:'auto'}}>•••</span></div>
@@ -79,7 +78,7 @@ const Cursor:React.FC<{t:number}>=({t})=>{
 
 export const Scene04Windows11:React.FC<{frame:number}>=({frame})=>{
  const t=frame/30;
- return <Interactive.Div name="S04 Desktop — Windows 11 familiar" className="s03w11" style={{position:'absolute',left:60,top:656,width:960,height:540,overflow:'hidden',borderRadius:10}}>
+ return <Interactive.Div name="S04 Desktop — Windows 11 familiar" className="s03w11" style={{position:'absolute',left:60,top:654,width:960,height:540,overflow:'hidden',borderRadius:10}}>
   <S04Bloom/>
   <Interactive.Div name="S04 Desktop — shortcut Chrome" style={{position:'absolute',inset:0,pointerEvents:'none'}}><DesktopShortcut kind="chrome" top={21}/></Interactive.Div>
   <Interactive.Div name="S04 Desktop — shortcut ERP" style={{position:'absolute',inset:0,pointerEvents:'none'}}><DesktopShortcut kind="erp" top={103}/></Interactive.Div>

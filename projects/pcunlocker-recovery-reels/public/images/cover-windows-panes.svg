@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 200 200" role="img" aria-labelledby="title desc">
+  <title id="title">PCUnlocker reference icon — vector redraw</title>
+  <desc id="desc">Four curved Windows-colored panes, a golden key, and a blue recovery arrow. Independent vector paths with transparent background. Illustrative reconstruction, not an official vendor asset.</desc>
+  <defs>
+    <linearGradient id="red" x1="0" y1="0" x2=".22" y2="1" gradientUnits="objectBoundingBox"><stop stop-color="#F06B52" /><stop offset="1" stop-color="#D13D27" /></linearGradient>
+    <linearGradient id="green" x1="0" y1="0" x2=".3" y2="1" gradientUnits="objectBoundingBox"><stop stop-color="#A9D55C" /><stop offset="1" stop-color="#70A832" /></linearGradient>
+    <linearGradient id="blue" x1="0" y1="0" x2=".2" y2="1" gradientUnits="objectBoundingBox"><stop stop-color="#48B9EE" /><stop offset="1" stop-color="#087BC9" /></linearGradient>
+    <linearGradient id="yellow" x1="0" y1="0" x2=".3" y2="1" gradientUnits="objectBoundingBox"><stop stop-color="#FFDC76" /><stop offset="1" stop-color="#F1AC27" /></linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#FFE49C" /><stop offset=".48" stop-color="#F7C44D" /><stop offset="1" stop-color="#D99A24" /></linearGradient>
+    <linearGradient id="arrow" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#36A1E5" /><stop offset="1" stop-color="#176AC1" /></linearGradient>
+  </defs>
+  <g id="windows-panes" transform="translate(5 7)">
+    <path id="red-pane" d="M48 32 C69 17 89 18 107 30 L89 90 C70 77 51 77 30 89 Z" fill="url(#red)" />
+    <path id="green-pane" d="M113 33 C133 46 152 47 174 33 L156 92 C135 105 115 104 95 93 Z" fill="url(#green)" />
+    <path id="blue-pane" d="M28 96 C49 83 68 83 87 96 L69 156 C50 143 30 143 10 155 Z" fill="url(#blue)" />
+    <path id="yellow-pane" d="M93 99 C114 113 135 113 154 99 L137 159 C116 172 96 170 75 159 Z" fill="url(#yellow)" />
+    <path id="red-highlight" d="M51 34 C69 22 88 23 103 33 L96 56 C79 45 60 45 43 57 Z" fill="#FFF" opacity=".16" />
+    <path id="blue-highlight" d="M31 98 C49 88 67 88 83 99 L76 122 C59 111 41 111 23 122 Z" fill="#FFF" opacity=".15" />
+  </g>
+  </svg>

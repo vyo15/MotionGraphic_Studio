@@ -40,3 +40,20 @@ Base: MotionGraphic-Studio-FULL-v1.8.1-20261125-044057.zip.
 - S06 only: 49 text + 25 visual targets; project total 307. Static addon strict + syntax, AST native, 12 sound cues PASS.
 - Browser alternative sample frames 0,12,24,90,179: stationary 720 px laptop; visual simulated from approved preview. Native Remotion bundle/render and GUI Save/reload not verified.
 - S07 preview only, conceptual narration proposed separately; source and narration unchanged.
+
+## Revisi S06–10 — Fullscreen / Stable Click / Clean Pointer — 2026-11-25
+Base: MotionGraphic-Studio-FULL-v1.8.1-20261125-065611.zip.
+- S06–10 saja: laptop tidak tampil setelah S05; UI simulasi 960 px; S07–08 stable click, pointer panah standar dan dialog sebagai layer independen, tanpa zoom pada teks tombol. S07–08 ACC visual referensi; S09–10 masih review. Scene 01–05, 11–12, manifest dan master core tidak masuk patch.
+- Naskah draft, cue subtitle, SRT dan SFX preview terkait diselaraskan; durasi keseluruhan tetap 1950 frame pada 30 fps.
+- Addon validator dengan syntax: 0 FAIL / 0 WARN; Native Editable AST: 443 target (268 teks + 175 visual), 0 FAIL / 0 WARN; QA SFX: PASS, 12 cue; sync salinan Master: 4 project / 43 komposisi.
+- Pemeriksaan layer global menemukan 4 FAIL di project Easy2Boot yang sudah ada; tidak diubah dalam patch ini.
+- Belum diuji: render native Remotion dari patch, GUI Windows, drag/Save/reload, kecocokan piksel dengan MP4 referensi, sinkronisasi rekaman VO. Preview sebelumnya merupakan rekonstruksi/simulasi dan bukan bukti native render. UI tidak fungsional.
+- File change only berbasis ZIP di atas; backup perubahan lokal sebelum Replace. Generated board diperbarui melalui npm run sync.
+
+## Unified background + ending motion — 2026-11-25
+Base: MotionGraphic-Studio-FULL-v1.8.1-20261125-082040(2).zip.
+- S01–09: hanya backgroundImage radial .82 → .32, dasar #F7F7F5; verifikasi diff persis satu penggantian per scene. S10–12: rekonstruksi Connected Gallery, CTA tanpa laptop, cover vektor 3 layer. Seluruh durasi, narasi, cue subtitle, sound-cues, manifest, entry dan core Master tetap byte-identik.
+- Add-on static --strict --syntax PASS; native editable AST 437 targets (267 teks + 170 visual), 0 FAIL / 0 WARN; QA SFX PASS 12 cue.
+- Browser alternatif: 18 sampel 1080×1920, 0 page error; sampel 12 scene di (10,10) dan (20,800) = RGB 247,247,245. Cover frame 60 dan 119 identik pada sampel browser, crop 3:4 diperiksa. Tidak mengklaim render native atau GUI.
+- Global npm run sync gagal preflight karena folder-jadi-drive/src/Video.tsx tidak ada di ZIP asli (manifest menunjuk path itu). Tidak diperbaiki karena di luar scope; restore entry project tersebut dari backup valid sebelum sync.
+- Belum diuji: native Remotion bundle/render, GUI Windows drag/Save/reload, audio playback dan kecocokan piksel dengan preview lama. S10–12 tetap review; ilustrasi hasil bukan jaminan akses data.

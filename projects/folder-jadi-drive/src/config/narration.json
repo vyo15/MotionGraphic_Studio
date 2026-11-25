@@ -1,0 +1,312 @@
+{
+  "schemaVersion": 1,
+  "status": "draft",
+  "beats": [
+    {
+      "scene": "S01",
+      "startFrame": 0,
+      "endFrame": 66,
+      "text": "Punya folder kerjaan atau project",
+      "captionCuts": [
+        {
+          "endFrame": 66,
+          "wordCount": 5,
+          "lineBreakAfter": 3
+        }
+      ]
+    },
+    {
+      "scene": "S01",
+      "startFrame": 66,
+      "endFrame": 135,
+      "text": "yang hampir setiap hari kamu buka?",
+      "captionCuts": [
+        {
+          "endFrame": 135,
+          "wordCount": 6,
+          "lineBreakAfter": 4
+        }
+      ]
+    },
+    {
+      "scene": "S01",
+      "startFrame": 135,
+      "endFrame": 204,
+      "text": "Tapi, pernah kepikiran nggak sih,",
+      "captionCuts": [
+        {
+          "endFrame": 204,
+          "wordCount": 5,
+          "lineBreakAfter": 3
+        }
+      ]
+    },
+    {
+      "scene": "S01",
+      "startFrame": 204,
+      "endFrame": 279,
+      "text": "kalau folder itu bisa dijadiin drive sendiri,",
+      "captionCuts": [
+        {
+          "endFrame": 279,
+          "wordCount": 7,
+          "lineBreakAfter": 4
+        }
+      ]
+    },
+    {
+      "scene": "S01",
+      "startFrame": 279,
+      "endFrame": 348,
+      "text": "kayak drive C atau D?",
+      "captionCuts": [
+        {
+          "endFrame": 348,
+          "wordCount": 5,
+          "lineBreakAfter": 0
+        }
+      ]
+    },
+    {
+      "scene": "S01",
+      "startFrame": 348,
+      "endFrame": 414,
+      "text": "Nah, ternyata bisa, loh!",
+      "captionCuts": [
+        {
+          "endFrame": 414,
+          "wordCount": 4,
+          "lineBreakAfter": 0
+        }
+      ]
+    },
+    {
+      "scene": "S02",
+      "startFrame": 414,
+      "endFrame": 512,
+      "text": "Pertama, buka folder yang mau kamu jadiin drive,",
+      "captionCuts": [
+        {
+          "endFrame": 512,
+          "wordCount": 8,
+          "lineBreakAfter": 4
+        }
+      ]
+    },
+    {
+      "scene": "S02",
+      "startFrame": 512,
+      "endFrame": 609,
+      "text": "terus copy alamat foldernya.",
+      "captionCuts": [
+        {
+          "endFrame": 609,
+          "wordCount": 4,
+          "lineBreakAfter": 0
+        }
+      ]
+    },
+    {
+      "scene": "S03",
+      "startFrame": 609,
+      "endFrame": 678,
+      "text": "Setelah itu, tekan Windows R,",
+      "captionCuts": [
+        {
+          "endFrame": 678,
+          "wordCount": 5,
+          "lineBreakAfter": 0
+        }
+      ]
+    },
+    {
+      "scene": "S03",
+      "startFrame": 678,
+      "endFrame": 774,
+      "text": "ketik CMD, lalu Enter.",
+      "captionCuts": [
+        {
+          "endFrame": 774,
+          "wordCount": 4,
+          "lineBreakAfter": 0
+        }
+      ]
+    },
+    {
+      "scene": "S04",
+      "startFrame": 774,
+      "endFrame": 824,
+      "text": "Ketik SUBST,",
+      "captionCuts": [
+        {
+          "endFrame": 824,
+          "wordCount": 2,
+          "lineBreakAfter": 0
+        }
+      ]
+    },
+    {
+      "scene": "S04",
+      "startFrame": 824,
+      "endFrame": 898,
+      "text": "kasih huruf drive yang belum dipakai,",
+      "captionCuts": [
+        {
+          "endFrame": 898,
+          "wordCount": 6,
+          "lineBreakAfter": 4
+        }
+      ]
+    },
+    {
+      "scene": "S04",
+      "startFrame": 898,
+      "endFrame": 947,
+      "text": "misalnya Z titik dua.",
+      "captionCuts": [
+        {
+          "endFrame": 947,
+          "wordCount": 4,
+          "lineBreakAfter": 0
+        }
+      ]
+    },
+    {
+      "scene": "S04",
+      "startFrame": 947,
+      "endFrame": 1023,
+      "text": "Terus, paste alamat folder tadi",
+      "captionCuts": [
+        {
+          "endFrame": 1023,
+          "wordCount": 5,
+          "lineBreakAfter": 0
+        }
+      ]
+    },
+    {
+      "scene": "S04",
+      "startFrame": 1023,
+      "endFrame": 1076,
+      "text": "di dalam tanda kutip,",
+      "captionCuts": [
+        {
+          "endFrame": 1076,
+          "wordCount": 4,
+          "lineBreakAfter": 0
+        }
+      ]
+    },
+    {
+      "scene": "S04",
+      "startFrame": 1076,
+      "endFrame": 1134,
+      "text": "lalu Enter.",
+      "captionCuts": [
+        {
+          "endFrame": 1134,
+          "wordCount": 2,
+          "lineBreakAfter": 0
+        }
+      ]
+    },
+    {
+      "scene": "S05",
+      "startFrame": 1134,
+      "endFrame": 1209,
+      "text": "Sekarang, coba buka This PC.",
+      "captionCuts": [
+        {
+          "endFrame": 1209,
+          "wordCount": 5,
+          "lineBreakAfter": 0
+        }
+      ]
+    },
+    {
+      "scene": "S05",
+      "startFrame": 1209,
+      "endFrame": 1299,
+      "text": "Nah, folder tadi udah muncul sebagai drive Z.",
+      "captionCuts": [
+        {
+          "endFrame": 1299,
+          "wordCount": 8,
+          "lineBreakAfter": 5
+        }
+      ]
+    },
+    {
+      "scene": "S05",
+      "startFrame": 1299,
+      "endFrame": 1407,
+      "text": "Jadi, kamu nggak perlu masuk ke banyak folder lagi.",
+      "captionCuts": [
+        {
+          "endFrame": 1407,
+          "wordCount": 9,
+          "lineBreakAfter": 5
+        }
+      ]
+    },
+    {
+      "scene": "S05",
+      "startFrame": 1407,
+      "endFrame": 1509,
+      "text": "Oh iya, drive ini bakal hilang",
+      "captionCuts": [
+        {
+          "endFrame": 1509,
+          "wordCount": 6,
+          "lineBreakAfter": 0
+        }
+      ]
+    },
+    {
+      "scene": "S05",
+      "startFrame": 1509,
+      "endFrame": 1572,
+      "text": "kalau komputer di-restart,",
+      "captionCuts": [
+        {
+          "endFrame": 1572,
+          "wordCount": 3,
+          "lineBreakAfter": 0
+        }
+      ]
+    },
+    {
+      "scene": "S05",
+      "startFrame": 1572,
+      "endFrame": 1644,
+      "text": "tapi data aslinya tetap aman.",
+      "captionCuts": [
+        {
+          "endFrame": 1644,
+          "wordCount": 5,
+          "lineBreakAfter": 0
+        }
+      ]
+    },
+    {
+      "scene": "S05",
+      "startFrame": 1644,
+      "endFrame": 1704,
+      "text": "Gimana? Lebih praktis, kan?",
+      "captionCuts": [
+        {
+          "endFrame": 1704,
+          "wordCount": 4,
+          "lineBreakAfter": 0
+        }
+      ]
+    },
+    {
+      "scene": "S06",
+      "startFrame": 1704,
+      "endFrame": 1854,
+      "text": "",
+      "captionCuts": []
+    }
+  ]
+}

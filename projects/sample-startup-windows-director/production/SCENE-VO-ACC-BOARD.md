@@ -39,7 +39,7 @@
 
 **VO asli:** “Pertama, siapkan shortcut aplikasi atau file yang mau dibuka otomatis. Kalau belum ada, cari aplikasi atau filenya di File Explorer, klik kanan, pilih Send to, lalu Desktop.”
 
-**Catatan dari state:** Preview Scene 02 Windows 11 Familiar v4 dipilih/ACC untuk implementasi. Realisme wallpaper, File Explorer, taskbar, menu dan cursor mengikuti preview browser; render native dan GUI masih perlu QA. VO teks tetap draft, tidak direkam.
+**Catatan dari state:** Preview Scene 02 Smooth v5, kursor natural v6, dan highlight shortcut v7 ACC pada 2026-11-25. Implementasi menjaga desktop stabil, gerakan cursor Bezier tetap, tanpa lompatan akibat menu tersembunyi, serta fokus ringan pada shortcut Excel setelah Explorer diminimalkan. Native GUI/render belum diuji.
 
 ### S03 — Membuka folder Startup
 

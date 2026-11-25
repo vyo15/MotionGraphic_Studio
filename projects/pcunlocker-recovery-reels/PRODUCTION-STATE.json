@@ -4,7 +4,7 @@
   "slug": "pcunlocker-recovery-reels",
   "updatedAt": "2026-11-25",
   "workflow": "guided-approval-first-scene",
-  "phase": "scenes-02-06-visual-locked-pending-native-qa",
+  "phase": "scenes-02-08-visual-locked-pending-native-qa",
   "voiceOverStatus": "not-recorded",
   "fullVideoApproval": "draft",
   "scenes": [
@@ -20,7 +20,7 @@
       "status": "in-review",
       "voTextApproval": "approved",
       "visualApproval": "draft",
-      "notes": "Visual preview dipertahankan sebagai referensi; native source belum diuji."
+      "notes": "Visual preview dipertahankan sebagai referensi; native source belum diuji. Background kanvas diseragamkan (#F7F7F5, radial putih 32%), sesuai instruksi pengguna; tidak membuka lock isi scene."
     },
     {
       "id": "S02",
@@ -34,7 +34,7 @@
       "status": "approved",
       "voTextApproval": "approved",
       "visualApproval": "locked",
-      "notes": "Pilihan 09 ACC untuk visual referensi; native source belum render. Visual LOCKED 2026-11-25; pertahankan source dan layer editable; perubahan hanya bila user membuka lock."
+      "notes": "Pilihan 09 ACC untuk visual referensi; native source belum render. Visual LOCKED 2026-11-25; pertahankan source dan layer editable; perubahan hanya bila user membuka lock. Background kanvas diseragamkan (#F7F7F5, radial putih 32%), sesuai instruksi pengguna; tidak membuka lock isi scene."
     },
     {
       "id": "S03",
@@ -48,7 +48,7 @@
       "status": "approved",
       "voTextApproval": "approved",
       "visualApproval": "locked",
-      "notes": "Pilihan 05 Panel Alert ACC sebagai referensi visual; 2D, Memory Gallery tetap, outline merah dan silang putih besar, SFX tetot; native render/GUI belum diuji. Visual LOCKED 2026-11-25; pertahankan source dan layer editable; perubahan hanya bila user membuka lock."
+      "notes": "Pilihan 05 Panel Alert ACC sebagai referensi visual; 2D, Memory Gallery tetap, outline merah dan silang putih besar, SFX tetot; native render/GUI belum diuji. Visual LOCKED 2026-11-25; pertahankan source dan layer editable; perubahan hanya bila user membuka lock. Background kanvas diseragamkan (#F7F7F5, radial putih 32%), sesuai instruksi pengguna; tidak membuka lock isi scene."
     },
     {
       "id": "S04",
@@ -62,7 +62,7 @@
       "status": "approved",
       "voTextApproval": "approved",
       "visualApproval": "locked",
-      "notes": "Style 02 Icon Spotlight + Soft Scale-Up ACC; logo vektor rekonstruksi ACC, posisi dipusatkan sesuai permintaan. Native GUI/render belum diuji. Visual LOCKED 2026-11-25; pertahankan source dan layer editable; perubahan hanya bila user membuka lock."
+      "notes": "Style 02 Icon Spotlight + Soft Scale-Up ACC; logo vektor rekonstruksi ACC, posisi dipusatkan sesuai permintaan. Native GUI/render belum diuji. Visual LOCKED 2026-11-25; pertahankan source dan layer editable; perubahan hanya bila user membuka lock. Background kanvas diseragamkan (#F7F7F5, radial putih 32%), sesuai instruksi pengguna; tidak membuka lock isi scene."
     },
     {
       "id": "S05",
@@ -76,7 +76,7 @@
       "status": "approved",
       "voTextApproval": "draft",
       "visualApproval": "locked",
-      "notes": "Soft Connected visual ACC; penyesuaian laptop 720 px, tanpa zoom. VO draft dan timing tetap; native render/GUI belum diuji. Visual LOCKED 2026-11-25; pertahankan source dan layer editable; perubahan hanya bila user membuka lock."
+      "notes": "Soft Connected visual ACC; penyesuaian laptop 720 px, tanpa zoom. VO draft dan timing tetap; native render/GUI belum diuji. Visual LOCKED 2026-11-25; pertahankan source dan layer editable; perubahan hanya bila user membuka lock. Background kanvas diseragamkan (#F7F7F5, radial putih 32%), sesuai instruksi pengguna; tidak membuka lock isi scene."
     },
     {
       "id": "S06",
@@ -90,7 +90,7 @@
       "status": "approved",
       "voTextApproval": "draft",
       "visualApproval": "locked",
-      "notes": "User ACC tampilan UI realistis S06 (referensi Enterprise Edition v4.5; akun contoh, UI pasif). Source direkonstruksi sebagai layer independen, laptop 720 px selaras S05; native render/GUI belum diuji. VO draft tetap."
+      "notes": "User ACC tampilan UI realistis S06 (referensi Enterprise Edition v4.5; akun contoh, UI pasif). Source direkonstruksi sebagai layer independen, laptop 720 px selaras S05; native render/GUI belum diuji. VO draft tetap. Revisi pengguna: UI 960 px tanpa bingkai laptop. Background kanvas diseragamkan (#F7F7F5, radial putih 32%), sesuai instruksi pengguna; tidak membuka lock isi scene."
     },
     {
       "id": "S07",
@@ -98,13 +98,13 @@
       "startFrame": 1020,
       "endFrameExclusive": 1200,
       "voText": "DRAFT",
-      "visual": "REVIEW",
+      "visual": "ACC_LOCKED_PENDING_NATIVE_QA",
       "recordingSync": "NOT_RECORDED",
       "final": "NOT_FINAL",
-      "status": "in-review",
+      "status": "approved",
       "voTextApproval": "draft",
-      "visualApproval": "draft",
-      "notes": "Visual preview dipertahankan sebagai referensi; native source belum diuji."
+      "visualApproval": "locked",
+      "notes": "ACC referensi fullscreen dan stable click / clean pointer; rekonstruksi layer independen; native render dan GUI belum diuji. VO masih draft. Background kanvas diseragamkan (#F7F7F5, radial putih 32%), sesuai instruksi pengguna; tidak membuka lock isi scene."
     },
     {
       "id": "S08",
@@ -112,13 +112,13 @@
       "startFrame": 1200,
       "endFrameExclusive": 1350,
       "voText": "DRAFT",
-      "visual": "REVIEW",
+      "visual": "ACC_LOCKED_PENDING_NATIVE_QA",
       "recordingSync": "NOT_RECORDED",
       "final": "NOT_FINAL",
-      "status": "in-review",
+      "status": "approved",
       "voTextApproval": "draft",
-      "visualApproval": "draft",
-      "notes": "Visual preview dipertahankan sebagai referensi; native source belum diuji."
+      "visualApproval": "locked",
+      "notes": "ACC referensi fullscreen dan stable click / clean pointer; rekonstruksi layer independen; native render dan GUI belum diuji. VO masih draft. Background kanvas diseragamkan (#F7F7F5, radial putih 32%), sesuai instruksi pengguna; tidak membuka lock isi scene."
     },
     {
       "id": "S09",
@@ -132,7 +132,7 @@
       "status": "in-review",
       "voTextApproval": "draft",
       "visualApproval": "draft",
-      "notes": "Visual preview dipertahankan sebagai referensi; native source belum diuji."
+      "notes": "Visual preview dipertahankan sebagai referensi; native source belum diuji. Revisi layout fullscreen dan VO draft sesuai preview; review lanjut, belum lock. Background kanvas diseragamkan (#F7F7F5, radial putih 32%), sesuai instruksi pengguna; tidak membuka lock isi scene."
     },
     {
       "id": "S10",
@@ -146,7 +146,7 @@
       "status": "in-review",
       "voTextApproval": "draft",
       "visualApproval": "draft",
-      "notes": "Visual preview dipertahankan sebagai referensi; native source belum diuji."
+      "notes": "Visual preview dipertahankan sebagai referensi; native source belum diuji. Revisi layout fullscreen dan VO draft sesuai preview; review lanjut, belum lock. Background kanvas diseragamkan (#F7F7F5, radial putih 32%), sesuai instruksi pengguna; tidak membuka lock isi scene. Rekonstruksi penutup sesuai preview: Connected Gallery / CTA bubble / cover motion; menunggu QA native."
     },
     {
       "id": "S11",
@@ -160,7 +160,7 @@
       "status": "in-review",
       "voTextApproval": "draft",
       "visualApproval": "draft",
-      "notes": "Visual preview dipertahankan sebagai referensi; native source belum diuji."
+      "notes": "Visual preview dipertahankan sebagai referensi; native source belum diuji. Background kanvas diseragamkan (#F7F7F5, radial putih 32%), sesuai instruksi pengguna; tidak membuka lock isi scene. Rekonstruksi penutup sesuai preview: Connected Gallery / CTA bubble / cover motion; menunggu QA native."
     },
     {
       "id": "S12",
@@ -174,7 +174,7 @@
       "status": "in-review",
       "voTextApproval": "draft",
       "visualApproval": "draft",
-      "notes": "Visual preview dipertahankan sebagai referensi; native source belum diuji."
+      "notes": "Visual preview dipertahankan sebagai referensi; native source belum diuji. Background kanvas diseragamkan (#F7F7F5, radial putih 32%), sesuai instruksi pengguna; tidak membuka lock isi scene. Rekonstruksi penutup sesuai preview: Connected Gallery / CTA bubble / cover motion; menunggu QA native."
     }
   ],
   "decisionLog": [

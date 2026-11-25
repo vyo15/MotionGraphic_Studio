@@ -1,0 +1,11 @@
+import React from 'react';
+import {AbsoluteFill,Sequence} from 'remotion';
+import {VideoProps} from './config/props';
+import {starts,durations} from './config/timing';
+import {Scene01} from './scenes/Scene01';
+import {Scene02} from './scenes/Scene02';
+import {Scene03} from './scenes/Scene03';
+import {Scene04} from './scenes/Scene04';
+import {Scene05} from './scenes/Scene05';
+import {Scene06} from './scenes/Scene06';
+export const Video:React.FC<VideoProps>=(p)=><AbsoluteFill><Sequence name="S01" from={starts[0]} durationInFrames={durations[0]}><Scene01 {...p}/></Sequence><Sequence name="S02" from={starts[1]} durationInFrames={durations[1]}><Scene02 {...p}/></Sequence><Sequence name="S03" from={starts[2]} durationInFrames={durations[2]}><Scene03 {...p}/></Sequence><Sequence name="S04" from={starts[3]} durationInFrames={durations[3]}><Scene04 {...p}/></Sequence><Sequence name="S05" from={starts[4]} durationInFrames={durations[4]}><Scene05 {...p}/></Sequence><Sequence name="S06" from={starts[5]} durationInFrames={durations[5]}><Scene06 {...p}/></Sequence></AbsoluteFill>;

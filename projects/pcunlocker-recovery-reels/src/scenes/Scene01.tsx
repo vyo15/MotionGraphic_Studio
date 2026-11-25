@@ -2,7 +2,7 @@ import React from 'react';
 import {AbsoluteFill,Interactive,interpolate,Easing,useCurrentFrame,Sequence,Audio,staticFile} from 'remotion';
 import {VideoProps} from '../config/props';
 import {PhotoArt,FileArt,WinMark,LockArt,Avatar,Cursor,FolderArt,UsbArt,LaptopFrame} from '../components/Artwork';
-export const Scene01:React.FC<VideoProps>=(p)=>{const frame=useCurrentFrame();return <AbsoluteFill style={{backgroundColor:p.backgroundColor??'#F7F7F5',backgroundImage:'radial-gradient(ellipse at 50% 42%,rgba(255,255,255,.82),rgba(255,255,255,0) 70%)',fontFamily:'Arial, Helvetica, sans-serif'}}>
+export const Scene01:React.FC<VideoProps>=(p)=>{const frame=useCurrentFrame();return <AbsoluteFill style={{backgroundColor:p.backgroundColor??'#F7F7F5',backgroundImage:'radial-gradient(ellipse at 50% 42%,rgba(255,255,255,.32) 0%,rgba(255,255,255,0) 70%)',fontFamily:'Arial, Helvetica, sans-serif'}}>
 <Interactive.Div name="S01 — Laptop — body" style={{position:'absolute',left:150,top:600,width:780,height:470,filter:'drop-shadow(0px 14px 10px rgba(32,32,32,0.15))'}}><LaptopFrame/></Interactive.Div>
 <Interactive.Div name="S01 — Layar Windows" style={{position:'absolute',left:193,top:620,width:694,height:396,backgroundColor:"#193F5D",borderRadius:4,boxShadow:'none',background:'radial-gradient(ellipse at 65% 45%,#306E9A,#11324E 85%)'}}></Interactive.Div>
 <Interactive.Div name="S01 — Avatar pengguna" style={{position:'absolute',left:501,top:686,width:78,height:78}}><Avatar/></Interactive.Div>

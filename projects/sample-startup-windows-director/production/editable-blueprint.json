@@ -2,28 +2,20 @@
   "schemaVersion": 1,
   "nativeTextTargets": [
     {
-      "name": "S05 — Judul hasil",
+      "name": "S05 Teks — Excel terbuka otomatis",
       "source": "src/scenes/Scene05.tsx"
     },
     {
-      "name": "S05 — Label tanpa klik",
+      "name": "S05 Hasil — Tanpa perlu klik",
       "source": "src/scenes/Scene05.tsx"
     },
     {
-      "name": "S05 — CTA komentar",
+      "name": "S05 CTA — pertanyaan terkunci",
       "source": "src/scenes/Scene05.tsx"
     },
     {
-      "name": "S06 — Judul cover",
+      "name": "S06 Cover — ringkasan yang mudah dibaca",
       "source": "src/scenes/Scene06.tsx"
-    },
-    {
-      "name": "S06 — Subjudul cover",
-      "source": "src/scenes/Scene06.tsx"
-    },
-    {
-      "name": "S05 — CTA ajakan",
-      "source": "src/scenes/Scene05.tsx"
     },
     {
       "name": "S01 Teks — Pernah nggak sih kepikiran",
@@ -364,15 +356,51 @@
     {
       "name": "S02 Fokus — centang shortcut",
       "source": "src/components/Scene02Windows11.tsx"
+    },
+    {
+      "name": "S05 Teks — Selesai tinggal login",
+      "source": "src/scenes/Scene05.tsx"
+    },
+    {
+      "name": "S06 Cover — label tutorial",
+      "source": "src/scenes/Scene06.tsx"
+    },
+    {
+      "name": "S05 CTA — label Excel",
+      "source": "src/scenes/Scene05.tsx"
+    },
+    {
+      "name": "S05 CTA — label Browser",
+      "source": "src/scenes/Scene05.tsx"
+    },
+    {
+      "name": "S05 CTA — label Explorer",
+      "source": "src/scenes/Scene05.tsx"
+    },
+    {
+      "name": "S05 CTA — teks ajakan komentar",
+      "source": "src/scenes/Scene05.tsx"
+    },
+    {
+      "name": "S05 Excel — nama file",
+      "source": "src/components/Scene05Windows11.tsx"
+    },
+    {
+      "name": "S06 Cover — judul BUKA APLIKASI",
+      "source": "src/scenes/Scene06.tsx"
+    },
+    {
+      "name": "S06 Cover — judul OTOMATIS",
+      "source": "src/scenes/Scene06.tsx"
     }
   ],
   "nativeVisualTargets": [
     {
-      "name": "S05 — Login dan hasil",
+      "name": "S05 Hasil — Windows 11 next login and Excel",
       "source": "src/scenes/Scene05.tsx"
     },
     {
-      "name": "S06 — Mini demo cover",
+      "name": "S06 Cover — screen demonstration",
       "source": "src/scenes/Scene06.tsx"
     },
     {
@@ -578,6 +606,46 @@
     {
       "name": "S02 Fokus — garis penghubung",
       "source": "src/components/Scene02Windows11.tsx"
+    },
+    {
+      "name": "S05 CTA — tulis di komentar",
+      "source": "src/scenes/Scene05.tsx"
+    },
+    {
+      "name": "S05 CTA — kartu Excel",
+      "source": "src/scenes/Scene05.tsx"
+    },
+    {
+      "name": "S05 CTA — kartu Browser",
+      "source": "src/scenes/Scene05.tsx"
+    },
+    {
+      "name": "S05 CTA — kartu Explorer",
+      "source": "src/scenes/Scene05.tsx"
+    },
+    {
+      "name": "S05 CTA — ikon Excel",
+      "source": "src/scenes/Scene05.tsx"
+    },
+    {
+      "name": "S05 CTA — ikon Browser",
+      "source": "src/scenes/Scene05.tsx"
+    },
+    {
+      "name": "S05 CTA — ikon Explorer",
+      "source": "src/scenes/Scene05.tsx"
+    },
+    {
+      "name": "S05 Windows — Windows 11 wallpaper",
+      "source": "src/components/Scene05Windows11.tsx"
+    },
+    {
+      "name": "S05 Excel — window opens after sign in",
+      "source": "src/components/Scene05Windows11.tsx"
+    },
+    {
+      "name": "S05 Windows — next sign-in (no clicks)",
+      "source": "src/components/Scene05Windows11.tsx"
     }
   ],
   "propsTextTargets": [],

@@ -194,11 +194,7 @@
       "source": "src/scenes/Scene05.tsx"
     },
     {
-      "name": "S06 — Loading — Recovery environment",
-      "source": "src/scenes/Scene06.tsx"
-    },
-    {
-      "name": "S06 — Loading — Keterangan simulasi",
+      "name": "S06 — Label simulasi",
       "source": "src/scenes/Scene06.tsx"
     },
     {
@@ -378,10 +374,6 @@
       "source": "src/scenes/Scene06.tsx"
     },
     {
-      "name": "S06 — Keterangan akun lokal",
-      "source": "src/scenes/Scene06.tsx"
-    },
-    {
       "name": "S06 — Subtitle 01",
       "source": "src/scenes/Scene06.tsx"
     },
@@ -390,59 +382,199 @@
       "source": "src/scenes/Scene06.tsx"
     },
     {
-      "name": "S07 — Recovery UI — title",
+      "name": "S07 — Label simulasi",
       "source": "src/scenes/Scene07.tsx"
     },
     {
-      "name": "S07 — Recovery UI — mode",
+      "name": "S07 — Edition title",
       "source": "src/scenes/Scene07.tsx"
     },
     {
-      "name": "S07 — Windows installation",
+      "name": "S07 — Close button",
       "source": "src/scenes/Scene07.tsx"
     },
     {
-      "name": "S07 — Kolom user name",
+      "name": "S07 — PCUnlocker header",
       "source": "src/scenes/Scene07.tsx"
     },
     {
-      "name": "S07 — Kolom status",
+      "name": "S07 — Label Recovery mode",
       "source": "src/scenes/Scene07.tsx"
     },
     {
-      "name": "S07 — Akun 1",
+      "name": "S07 — Label Windows installation",
       "source": "src/scenes/Scene07.tsx"
     },
     {
-      "name": "S07 — Status akun 1",
+      "name": "S07 — Label Local account",
       "source": "src/scenes/Scene07.tsx"
     },
     {
-      "name": "S07 — Akun 2",
+      "name": "S07 — Label Active Directory",
       "source": "src/scenes/Scene07.tsx"
     },
     {
-      "name": "S07 — Status akun 2",
+      "name": "S07 — Sample installation",
       "source": "src/scenes/Scene07.tsx"
     },
     {
-      "name": "S07 — Akun 3",
+      "name": "S07 — Button Browse",
       "source": "src/scenes/Scene07.tsx"
     },
     {
-      "name": "S07 — Status akun 3",
+      "name": "S07 — Column User Name",
       "source": "src/scenes/Scene07.tsx"
     },
     {
-      "name": "S07 — Tombol Reset Password",
+      "name": "S07 — Account 1 — User Name",
       "source": "src/scenes/Scene07.tsx"
     },
     {
-      "name": "S07 — Tombol Restart",
+      "name": "S07 — Account 2 — User Name",
       "source": "src/scenes/Scene07.tsx"
     },
     {
-      "name": "S07 — Keterangan pemulihan",
+      "name": "S07 — Account 3 — User Name",
+      "source": "src/scenes/Scene07.tsx"
+    },
+    {
+      "name": "S07 — Account 4 — User Name",
+      "source": "src/scenes/Scene07.tsx"
+    },
+    {
+      "name": "S07 — Column Password",
+      "source": "src/scenes/Scene07.tsx"
+    },
+    {
+      "name": "S07 — Account 1 — Password",
+      "source": "src/scenes/Scene07.tsx"
+    },
+    {
+      "name": "S07 — Account 2 — Password",
+      "source": "src/scenes/Scene07.tsx"
+    },
+    {
+      "name": "S07 — Account 3 — Password",
+      "source": "src/scenes/Scene07.tsx"
+    },
+    {
+      "name": "S07 — Account 4 — Password",
+      "source": "src/scenes/Scene07.tsx"
+    },
+    {
+      "name": "S07 — Column Locked Out",
+      "source": "src/scenes/Scene07.tsx"
+    },
+    {
+      "name": "S07 — Account 1 — Locked Out",
+      "source": "src/scenes/Scene07.tsx"
+    },
+    {
+      "name": "S07 — Account 2 — Locked Out",
+      "source": "src/scenes/Scene07.tsx"
+    },
+    {
+      "name": "S07 — Account 3 — Locked Out",
+      "source": "src/scenes/Scene07.tsx"
+    },
+    {
+      "name": "S07 — Account 4 — Locked Out",
+      "source": "src/scenes/Scene07.tsx"
+    },
+    {
+      "name": "S07 — Column Disabled",
+      "source": "src/scenes/Scene07.tsx"
+    },
+    {
+      "name": "S07 — Account 1 — Disabled",
+      "source": "src/scenes/Scene07.tsx"
+    },
+    {
+      "name": "S07 — Account 2 — Disabled",
+      "source": "src/scenes/Scene07.tsx"
+    },
+    {
+      "name": "S07 — Account 3 — Disabled",
+      "source": "src/scenes/Scene07.tsx"
+    },
+    {
+      "name": "S07 — Account 4 — Disabled",
+      "source": "src/scenes/Scene07.tsx"
+    },
+    {
+      "name": "S07 — Column Never Expire",
+      "source": "src/scenes/Scene07.tsx"
+    },
+    {
+      "name": "S07 — Account 1 — Never Expire",
+      "source": "src/scenes/Scene07.tsx"
+    },
+    {
+      "name": "S07 — Account 2 — Never Expire",
+      "source": "src/scenes/Scene07.tsx"
+    },
+    {
+      "name": "S07 — Account 3 — Never Expire",
+      "source": "src/scenes/Scene07.tsx"
+    },
+    {
+      "name": "S07 — Account 4 — Never Expire",
+      "source": "src/scenes/Scene07.tsx"
+    },
+    {
+      "name": "S07 — Column Description",
+      "source": "src/scenes/Scene07.tsx"
+    },
+    {
+      "name": "S07 — Account 1 — Description",
+      "source": "src/scenes/Scene07.tsx"
+    },
+    {
+      "name": "S07 — Account 2 — Description",
+      "source": "src/scenes/Scene07.tsx"
+    },
+    {
+      "name": "S07 — Account 3 — Description",
+      "source": "src/scenes/Scene07.tsx"
+    },
+    {
+      "name": "S07 — Account 4 — Description",
+      "source": "src/scenes/Scene07.tsx"
+    },
+    {
+      "name": "S07 — Scrollbar left",
+      "source": "src/scenes/Scene07.tsx"
+    },
+    {
+      "name": "S07 — Scrollbar right",
+      "source": "src/scenes/Scene07.tsx"
+    },
+    {
+      "name": "S07 — Button Options",
+      "source": "src/scenes/Scene07.tsx"
+    },
+    {
+      "name": "S07 — Button Reset Password",
+      "source": "src/scenes/Scene07.tsx"
+    },
+    {
+      "name": "S07 — Button Restart",
+      "source": "src/scenes/Scene07.tsx"
+    },
+    {
+      "name": "S07 — Dialog title",
+      "source": "src/scenes/Scene07.tsx"
+    },
+    {
+      "name": "S07 — Password label",
+      "source": "src/scenes/Scene07.tsx"
+    },
+    {
+      "name": "S07 — Tombol OK",
+      "source": "src/scenes/Scene07.tsx"
+    },
+    {
+      "name": "S07 — Tombol Cancel",
       "source": "src/scenes/Scene07.tsx"
     },
     {
@@ -454,55 +586,187 @@
       "source": "src/scenes/Scene07.tsx"
     },
     {
-      "name": "S08 — Recovery UI — title",
+      "name": "S08 — Label simulasi",
       "source": "src/scenes/Scene08.tsx"
     },
     {
-      "name": "S08 — Recovery UI — mode",
+      "name": "S08 — Edition title",
       "source": "src/scenes/Scene08.tsx"
     },
     {
-      "name": "S08 — Windows installation",
+      "name": "S08 — Close button",
       "source": "src/scenes/Scene08.tsx"
     },
     {
-      "name": "S08 — Kolom user name",
+      "name": "S08 — PCUnlocker header",
       "source": "src/scenes/Scene08.tsx"
     },
     {
-      "name": "S08 — Kolom status",
+      "name": "S08 — Label Recovery mode",
       "source": "src/scenes/Scene08.tsx"
     },
     {
-      "name": "S08 — Akun 1",
+      "name": "S08 — Label Windows installation",
       "source": "src/scenes/Scene08.tsx"
     },
     {
-      "name": "S08 — Status akun 1",
+      "name": "S08 — Label Local account",
       "source": "src/scenes/Scene08.tsx"
     },
     {
-      "name": "S08 — Akun 2",
+      "name": "S08 — Label Active Directory",
       "source": "src/scenes/Scene08.tsx"
     },
     {
-      "name": "S08 — Status akun 2",
+      "name": "S08 — Sample installation",
       "source": "src/scenes/Scene08.tsx"
     },
     {
-      "name": "S08 — Akun 3",
+      "name": "S08 — Button Browse",
       "source": "src/scenes/Scene08.tsx"
     },
     {
-      "name": "S08 — Status akun 3",
+      "name": "S08 — Column User Name",
       "source": "src/scenes/Scene08.tsx"
     },
     {
-      "name": "S08 — Tombol Reset Password",
+      "name": "S08 — Account 1 — User Name",
       "source": "src/scenes/Scene08.tsx"
     },
     {
-      "name": "S08 — Tombol Restart",
+      "name": "S08 — Account 2 — User Name",
+      "source": "src/scenes/Scene08.tsx"
+    },
+    {
+      "name": "S08 — Account 3 — User Name",
+      "source": "src/scenes/Scene08.tsx"
+    },
+    {
+      "name": "S08 — Account 4 — User Name",
+      "source": "src/scenes/Scene08.tsx"
+    },
+    {
+      "name": "S08 — Column Password",
+      "source": "src/scenes/Scene08.tsx"
+    },
+    {
+      "name": "S08 — Account 1 — Password",
+      "source": "src/scenes/Scene08.tsx"
+    },
+    {
+      "name": "S08 — Account 2 — Password",
+      "source": "src/scenes/Scene08.tsx"
+    },
+    {
+      "name": "S08 — Account 3 — Password",
+      "source": "src/scenes/Scene08.tsx"
+    },
+    {
+      "name": "S08 — Account 4 — Password",
+      "source": "src/scenes/Scene08.tsx"
+    },
+    {
+      "name": "S08 — Column Locked Out",
+      "source": "src/scenes/Scene08.tsx"
+    },
+    {
+      "name": "S08 — Account 1 — Locked Out",
+      "source": "src/scenes/Scene08.tsx"
+    },
+    {
+      "name": "S08 — Account 2 — Locked Out",
+      "source": "src/scenes/Scene08.tsx"
+    },
+    {
+      "name": "S08 — Account 3 — Locked Out",
+      "source": "src/scenes/Scene08.tsx"
+    },
+    {
+      "name": "S08 — Account 4 — Locked Out",
+      "source": "src/scenes/Scene08.tsx"
+    },
+    {
+      "name": "S08 — Account 4 — Status sesudah pemulihan",
+      "source": "src/scenes/Scene08.tsx"
+    },
+    {
+      "name": "S08 — Column Disabled",
+      "source": "src/scenes/Scene08.tsx"
+    },
+    {
+      "name": "S08 — Account 1 — Disabled",
+      "source": "src/scenes/Scene08.tsx"
+    },
+    {
+      "name": "S08 — Account 2 — Disabled",
+      "source": "src/scenes/Scene08.tsx"
+    },
+    {
+      "name": "S08 — Account 3 — Disabled",
+      "source": "src/scenes/Scene08.tsx"
+    },
+    {
+      "name": "S08 — Account 4 — Disabled",
+      "source": "src/scenes/Scene08.tsx"
+    },
+    {
+      "name": "S08 — Column Never Expire",
+      "source": "src/scenes/Scene08.tsx"
+    },
+    {
+      "name": "S08 — Account 1 — Never Expire",
+      "source": "src/scenes/Scene08.tsx"
+    },
+    {
+      "name": "S08 — Account 2 — Never Expire",
+      "source": "src/scenes/Scene08.tsx"
+    },
+    {
+      "name": "S08 — Account 3 — Never Expire",
+      "source": "src/scenes/Scene08.tsx"
+    },
+    {
+      "name": "S08 — Account 4 — Never Expire",
+      "source": "src/scenes/Scene08.tsx"
+    },
+    {
+      "name": "S08 — Column Description",
+      "source": "src/scenes/Scene08.tsx"
+    },
+    {
+      "name": "S08 — Account 1 — Description",
+      "source": "src/scenes/Scene08.tsx"
+    },
+    {
+      "name": "S08 — Account 2 — Description",
+      "source": "src/scenes/Scene08.tsx"
+    },
+    {
+      "name": "S08 — Account 3 — Description",
+      "source": "src/scenes/Scene08.tsx"
+    },
+    {
+      "name": "S08 — Account 4 — Description",
+      "source": "src/scenes/Scene08.tsx"
+    },
+    {
+      "name": "S08 — Scrollbar left",
+      "source": "src/scenes/Scene08.tsx"
+    },
+    {
+      "name": "S08 — Scrollbar right",
+      "source": "src/scenes/Scene08.tsx"
+    },
+    {
+      "name": "S08 — Button Options",
+      "source": "src/scenes/Scene08.tsx"
+    },
+    {
+      "name": "S08 — Button Reset Password",
+      "source": "src/scenes/Scene08.tsx"
+    },
+    {
+      "name": "S08 — Button Restart",
       "source": "src/scenes/Scene08.tsx"
     },
     {
@@ -522,10 +786,6 @@
       "source": "src/scenes/Scene08.tsx"
     },
     {
-      "name": "S08 — Keterangan password",
-      "source": "src/scenes/Scene08.tsx"
-    },
-    {
       "name": "S08 — Subtitle 01",
       "source": "src/scenes/Scene08.tsx"
     },
@@ -534,59 +794,183 @@
       "source": "src/scenes/Scene08.tsx"
     },
     {
-      "name": "S08 — Subtitle 03",
-      "source": "src/scenes/Scene08.tsx"
-    },
-    {
-      "name": "S09 — Recovery UI — title",
+      "name": "S09 — Label simulasi",
       "source": "src/scenes/Scene09.tsx"
     },
     {
-      "name": "S09 — Recovery UI — mode",
+      "name": "S09 — Edition title",
       "source": "src/scenes/Scene09.tsx"
     },
     {
-      "name": "S09 — Windows installation",
+      "name": "S09 — Close button",
       "source": "src/scenes/Scene09.tsx"
     },
     {
-      "name": "S09 — Kolom user name",
+      "name": "S09 — PCUnlocker header",
       "source": "src/scenes/Scene09.tsx"
     },
     {
-      "name": "S09 — Kolom status",
+      "name": "S09 — Label Recovery mode",
       "source": "src/scenes/Scene09.tsx"
     },
     {
-      "name": "S09 — Akun 1",
+      "name": "S09 — Label Windows installation",
       "source": "src/scenes/Scene09.tsx"
     },
     {
-      "name": "S09 — Status akun 1",
+      "name": "S09 — Label Local account",
       "source": "src/scenes/Scene09.tsx"
     },
     {
-      "name": "S09 — Akun 2",
+      "name": "S09 — Label Active Directory",
       "source": "src/scenes/Scene09.tsx"
     },
     {
-      "name": "S09 — Status akun 2",
+      "name": "S09 — Sample installation",
       "source": "src/scenes/Scene09.tsx"
     },
     {
-      "name": "S09 — Akun 3",
+      "name": "S09 — Button Browse",
       "source": "src/scenes/Scene09.tsx"
     },
     {
-      "name": "S09 — Status akun 3",
+      "name": "S09 — Column User Name",
       "source": "src/scenes/Scene09.tsx"
     },
     {
-      "name": "S09 — Tombol Reset Password",
+      "name": "S09 — Account 1 — User Name",
       "source": "src/scenes/Scene09.tsx"
     },
     {
-      "name": "S09 — Tombol Restart",
+      "name": "S09 — Account 2 — User Name",
+      "source": "src/scenes/Scene09.tsx"
+    },
+    {
+      "name": "S09 — Account 3 — User Name",
+      "source": "src/scenes/Scene09.tsx"
+    },
+    {
+      "name": "S09 — Account 4 — User Name",
+      "source": "src/scenes/Scene09.tsx"
+    },
+    {
+      "name": "S09 — Column Password",
+      "source": "src/scenes/Scene09.tsx"
+    },
+    {
+      "name": "S09 — Account 1 — Password",
+      "source": "src/scenes/Scene09.tsx"
+    },
+    {
+      "name": "S09 — Account 2 — Password",
+      "source": "src/scenes/Scene09.tsx"
+    },
+    {
+      "name": "S09 — Account 3 — Password",
+      "source": "src/scenes/Scene09.tsx"
+    },
+    {
+      "name": "S09 — Account 4 — Password",
+      "source": "src/scenes/Scene09.tsx"
+    },
+    {
+      "name": "S09 — Column Locked Out",
+      "source": "src/scenes/Scene09.tsx"
+    },
+    {
+      "name": "S09 — Account 1 — Locked Out",
+      "source": "src/scenes/Scene09.tsx"
+    },
+    {
+      "name": "S09 — Account 2 — Locked Out",
+      "source": "src/scenes/Scene09.tsx"
+    },
+    {
+      "name": "S09 — Account 3 — Locked Out",
+      "source": "src/scenes/Scene09.tsx"
+    },
+    {
+      "name": "S09 — Account 4 — Locked Out",
+      "source": "src/scenes/Scene09.tsx"
+    },
+    {
+      "name": "S09 — Column Disabled",
+      "source": "src/scenes/Scene09.tsx"
+    },
+    {
+      "name": "S09 — Account 1 — Disabled",
+      "source": "src/scenes/Scene09.tsx"
+    },
+    {
+      "name": "S09 — Account 2 — Disabled",
+      "source": "src/scenes/Scene09.tsx"
+    },
+    {
+      "name": "S09 — Account 3 — Disabled",
+      "source": "src/scenes/Scene09.tsx"
+    },
+    {
+      "name": "S09 — Account 4 — Disabled",
+      "source": "src/scenes/Scene09.tsx"
+    },
+    {
+      "name": "S09 — Column Never Expire",
+      "source": "src/scenes/Scene09.tsx"
+    },
+    {
+      "name": "S09 — Account 1 — Never Expire",
+      "source": "src/scenes/Scene09.tsx"
+    },
+    {
+      "name": "S09 — Account 2 — Never Expire",
+      "source": "src/scenes/Scene09.tsx"
+    },
+    {
+      "name": "S09 — Account 3 — Never Expire",
+      "source": "src/scenes/Scene09.tsx"
+    },
+    {
+      "name": "S09 — Account 4 — Never Expire",
+      "source": "src/scenes/Scene09.tsx"
+    },
+    {
+      "name": "S09 — Column Description",
+      "source": "src/scenes/Scene09.tsx"
+    },
+    {
+      "name": "S09 — Account 1 — Description",
+      "source": "src/scenes/Scene09.tsx"
+    },
+    {
+      "name": "S09 — Account 2 — Description",
+      "source": "src/scenes/Scene09.tsx"
+    },
+    {
+      "name": "S09 — Account 3 — Description",
+      "source": "src/scenes/Scene09.tsx"
+    },
+    {
+      "name": "S09 — Account 4 — Description",
+      "source": "src/scenes/Scene09.tsx"
+    },
+    {
+      "name": "S09 — Scrollbar left",
+      "source": "src/scenes/Scene09.tsx"
+    },
+    {
+      "name": "S09 — Scrollbar right",
+      "source": "src/scenes/Scene09.tsx"
+    },
+    {
+      "name": "S09 — Button Options",
+      "source": "src/scenes/Scene09.tsx"
+    },
+    {
+      "name": "S09 — Button Reset Password",
+      "source": "src/scenes/Scene09.tsx"
+    },
+    {
+      "name": "S09 — Button Restart",
       "source": "src/scenes/Scene09.tsx"
     },
     {
@@ -594,11 +978,11 @@
       "source": "src/scenes/Scene09.tsx"
     },
     {
-      "name": "S09 — Subtitle 01",
+      "name": "S09 — Login akun",
       "source": "src/scenes/Scene09.tsx"
     },
     {
-      "name": "S09 — Subtitle 02",
+      "name": "S09 — Subtitle 01",
       "source": "src/scenes/Scene09.tsx"
     },
     {
@@ -614,19 +998,43 @@
       "source": "src/scenes/Scene10.tsx"
     },
     {
+      "name": "S10 — Explorer title",
+      "source": "src/scenes/Scene10.tsx"
+    },
+    {
+      "name": "S10 — Explorer path",
+      "source": "src/scenes/Scene10.tsx"
+    },
+    {
       "name": "S10 — Login akun",
       "source": "src/scenes/Scene10.tsx"
     },
     {
-      "name": "S10 — Label folder Dokumen",
+      "name": "S10 — Label simulasi",
       "source": "src/scenes/Scene10.tsx"
     },
     {
-      "name": "S10 — Label folder Foto",
+      "name": "S10 — Gallery label Foto keluarga",
       "source": "src/scenes/Scene10.tsx"
     },
     {
-      "name": "S10 — Label folder Pekerjaan",
+      "name": "S10 — Gallery label Kenangan",
+      "source": "src/scenes/Scene10.tsx"
+    },
+    {
+      "name": "S10 — Gallery label Dokumentasi",
+      "source": "src/scenes/Scene10.tsx"
+    },
+    {
+      "name": "S10 — Gallery label DOCX",
+      "source": "src/scenes/Scene10.tsx"
+    },
+    {
+      "name": "S10 — Gallery label XLSX",
+      "source": "src/scenes/Scene10.tsx"
+    },
+    {
+      "name": "S10 — Login berhasil label",
       "source": "src/scenes/Scene10.tsx"
     },
     {
@@ -638,19 +1046,7 @@
       "source": "src/scenes/Scene10.tsx"
     },
     {
-      "name": "S11 — Label Documents",
-      "source": "src/scenes/Scene11.tsx"
-    },
-    {
-      "name": "S11 — Label Pictures",
-      "source": "src/scenes/Scene11.tsx"
-    },
-    {
-      "name": "S11 — Label Work",
-      "source": "src/scenes/Scene11.tsx"
-    },
-    {
-      "name": "S11 — Titik komentar",
+      "name": "S11 — Ajakan komentar",
       "source": "src/scenes/Scene11.tsx"
     },
     {
@@ -660,18 +1056,6 @@
     {
       "name": "S11 — Subtitle 02",
       "source": "src/scenes/Scene11.tsx"
-    },
-    {
-      "name": "S12 — Label Documents",
-      "source": "src/scenes/Scene12.tsx"
-    },
-    {
-      "name": "S12 — Label Pictures",
-      "source": "src/scenes/Scene12.tsx"
-    },
-    {
-      "name": "S12 — Label Work",
-      "source": "src/scenes/Scene12.tsx"
     },
     {
       "name": "S12 — Cover judul",
@@ -876,30 +1260,6 @@
       "source": "src/scenes/Scene05.tsx"
     },
     {
-      "name": "S06 — Laptop — body",
-      "source": "src/scenes/Scene06.tsx"
-    },
-    {
-      "name": "S06 — Layar Windows",
-      "source": "src/scenes/Scene06.tsx"
-    },
-    {
-      "name": "S06 — Loading — Ikon recovery",
-      "source": "src/scenes/Scene06.tsx"
-    },
-    {
-      "name": "S06 — Loading — Progress track",
-      "source": "src/scenes/Scene06.tsx"
-    },
-    {
-      "name": "S06 — Loading — Progress isi",
-      "source": "src/scenes/Scene06.tsx"
-    },
-    {
-      "name": "S06 — Desktop recovery",
-      "source": "src/scenes/Scene06.tsx"
-    },
-    {
       "name": "S06 — Window shadow",
       "source": "src/scenes/Scene06.tsx"
     },
@@ -976,71 +1336,191 @@
       "source": "src/scenes/Scene06.tsx"
     },
     {
-      "name": "S07 — Laptop — body",
+      "name": "S07 — Window shadow",
       "source": "src/scenes/Scene07.tsx"
     },
     {
-      "name": "S07 — Layar Windows",
+      "name": "S07 — Window panel",
       "source": "src/scenes/Scene07.tsx"
     },
     {
-      "name": "S07 — Recovery UI — window",
+      "name": "S07 — Title bar",
       "source": "src/scenes/Scene07.tsx"
     },
     {
-      "name": "S07 — Recovery UI — title bar",
+      "name": "S07 — Header blue",
       "source": "src/scenes/Scene07.tsx"
     },
     {
-      "name": "S07 — Windows installation field",
+      "name": "S07 — Logo header",
       "source": "src/scenes/Scene07.tsx"
     },
     {
-      "name": "S07 — Daftar akun — tabel",
+      "name": "S07 — Panel Recovery mode",
       "source": "src/scenes/Scene07.tsx"
     },
     {
-      "name": "S07 — Daftar akun — header",
+      "name": "S07 — Panel Windows installation",
       "source": "src/scenes/Scene07.tsx"
     },
     {
-      "name": "S07 — Sorotan akun",
+      "name": "S07 — Radio Local account",
       "source": "src/scenes/Scene07.tsx"
     },
     {
-      "name": "S07 — Kursor demo",
+      "name": "S07 — Radio Active Directory",
       "source": "src/scenes/Scene07.tsx"
     },
     {
-      "name": "S08 — Laptop — body",
+      "name": "S07 — Installation field",
+      "source": "src/scenes/Scene07.tsx"
+    },
+    {
+      "name": "S07 — Account table",
+      "source": "src/scenes/Scene07.tsx"
+    },
+    {
+      "name": "S07 — Table header",
+      "source": "src/scenes/Scene07.tsx"
+    },
+    {
+      "name": "S07 — Divider User Name",
+      "source": "src/scenes/Scene07.tsx"
+    },
+    {
+      "name": "S07 — Sorotan akun contoh",
+      "source": "src/scenes/Scene07.tsx"
+    },
+    {
+      "name": "S07 — Divider Password",
+      "source": "src/scenes/Scene07.tsx"
+    },
+    {
+      "name": "S07 — Divider Locked Out",
+      "source": "src/scenes/Scene07.tsx"
+    },
+    {
+      "name": "S07 — Divider Disabled",
+      "source": "src/scenes/Scene07.tsx"
+    },
+    {
+      "name": "S07 — Divider Never Expire",
+      "source": "src/scenes/Scene07.tsx"
+    },
+    {
+      "name": "S07 — Scrollbar track",
+      "source": "src/scenes/Scene07.tsx"
+    },
+    {
+      "name": "S07 — Scrollbar thumb",
+      "source": "src/scenes/Scene07.tsx"
+    },
+    {
+      "name": "S07 — Feedback tombol",
+      "source": "src/scenes/Scene07.tsx"
+    },
+    {
+      "name": "S07 — Kursor Windows",
+      "source": "src/scenes/Scene07.tsx"
+    },
+    {
+      "name": "S07 — Dialog shadow",
+      "source": "src/scenes/Scene07.tsx"
+    },
+    {
+      "name": "S07 — Dialog Change Password",
+      "source": "src/scenes/Scene07.tsx"
+    },
+    {
+      "name": "S07 — Dialog title bar",
+      "source": "src/scenes/Scene07.tsx"
+    },
+    {
+      "name": "S07 — Password field",
+      "source": "src/scenes/Scene07.tsx"
+    },
+    {
+      "name": "S08 — Window shadow",
       "source": "src/scenes/Scene08.tsx"
     },
     {
-      "name": "S08 — Layar Windows",
+      "name": "S08 — Window panel",
       "source": "src/scenes/Scene08.tsx"
     },
     {
-      "name": "S08 — Recovery UI — window",
+      "name": "S08 — Title bar",
       "source": "src/scenes/Scene08.tsx"
     },
     {
-      "name": "S08 — Recovery UI — title bar",
+      "name": "S08 — Header blue",
       "source": "src/scenes/Scene08.tsx"
     },
     {
-      "name": "S08 — Windows installation field",
+      "name": "S08 — Logo header",
       "source": "src/scenes/Scene08.tsx"
     },
     {
-      "name": "S08 — Daftar akun — tabel",
+      "name": "S08 — Panel Recovery mode",
       "source": "src/scenes/Scene08.tsx"
     },
     {
-      "name": "S08 — Daftar akun — header",
+      "name": "S08 — Panel Windows installation",
       "source": "src/scenes/Scene08.tsx"
     },
     {
-      "name": "S08 — Sorotan akun",
+      "name": "S08 — Radio Local account",
+      "source": "src/scenes/Scene08.tsx"
+    },
+    {
+      "name": "S08 — Radio Active Directory",
+      "source": "src/scenes/Scene08.tsx"
+    },
+    {
+      "name": "S08 — Installation field",
+      "source": "src/scenes/Scene08.tsx"
+    },
+    {
+      "name": "S08 — Account table",
+      "source": "src/scenes/Scene08.tsx"
+    },
+    {
+      "name": "S08 — Table header",
+      "source": "src/scenes/Scene08.tsx"
+    },
+    {
+      "name": "S08 — Divider User Name",
+      "source": "src/scenes/Scene08.tsx"
+    },
+    {
+      "name": "S08 — Sorotan akun contoh",
+      "source": "src/scenes/Scene08.tsx"
+    },
+    {
+      "name": "S08 — Divider Password",
+      "source": "src/scenes/Scene08.tsx"
+    },
+    {
+      "name": "S08 — Divider Locked Out",
+      "source": "src/scenes/Scene08.tsx"
+    },
+    {
+      "name": "S08 — Divider Disabled",
+      "source": "src/scenes/Scene08.tsx"
+    },
+    {
+      "name": "S08 — Divider Never Expire",
+      "source": "src/scenes/Scene08.tsx"
+    },
+    {
+      "name": "S08 — Scrollbar track",
+      "source": "src/scenes/Scene08.tsx"
+    },
+    {
+      "name": "S08 — Scrollbar thumb",
+      "source": "src/scenes/Scene08.tsx"
+    },
+    {
+      "name": "S08 — Dialog shadow",
       "source": "src/scenes/Scene08.tsx"
     },
     {
@@ -1056,39 +1536,91 @@
       "source": "src/scenes/Scene08.tsx"
     },
     {
-      "name": "S08 — Kursor konfirmasi",
+      "name": "S08 — Password dots",
       "source": "src/scenes/Scene08.tsx"
     },
     {
-      "name": "S09 — Laptop — body",
+      "name": "S08 — Kursor Windows",
+      "source": "src/scenes/Scene08.tsx"
+    },
+    {
+      "name": "S09 — Window shadow",
       "source": "src/scenes/Scene09.tsx"
     },
     {
-      "name": "S09 — Layar Windows",
+      "name": "S09 — Window panel",
       "source": "src/scenes/Scene09.tsx"
     },
     {
-      "name": "S09 — Recovery UI — window",
+      "name": "S09 — Title bar",
       "source": "src/scenes/Scene09.tsx"
     },
     {
-      "name": "S09 — Recovery UI — title bar",
+      "name": "S09 — Header blue",
       "source": "src/scenes/Scene09.tsx"
     },
     {
-      "name": "S09 — Windows installation field",
+      "name": "S09 — Logo header",
       "source": "src/scenes/Scene09.tsx"
     },
     {
-      "name": "S09 — Daftar akun — tabel",
+      "name": "S09 — Panel Recovery mode",
       "source": "src/scenes/Scene09.tsx"
     },
     {
-      "name": "S09 — Daftar akun — header",
+      "name": "S09 — Panel Windows installation",
       "source": "src/scenes/Scene09.tsx"
     },
     {
-      "name": "S09 — Sorotan akun",
+      "name": "S09 — Radio Local account",
+      "source": "src/scenes/Scene09.tsx"
+    },
+    {
+      "name": "S09 — Radio Active Directory",
+      "source": "src/scenes/Scene09.tsx"
+    },
+    {
+      "name": "S09 — Installation field",
+      "source": "src/scenes/Scene09.tsx"
+    },
+    {
+      "name": "S09 — Account table",
+      "source": "src/scenes/Scene09.tsx"
+    },
+    {
+      "name": "S09 — Table header",
+      "source": "src/scenes/Scene09.tsx"
+    },
+    {
+      "name": "S09 — Divider User Name",
+      "source": "src/scenes/Scene09.tsx"
+    },
+    {
+      "name": "S09 — Sorotan akun contoh",
+      "source": "src/scenes/Scene09.tsx"
+    },
+    {
+      "name": "S09 — Divider Password",
+      "source": "src/scenes/Scene09.tsx"
+    },
+    {
+      "name": "S09 — Divider Locked Out",
+      "source": "src/scenes/Scene09.tsx"
+    },
+    {
+      "name": "S09 — Divider Disabled",
+      "source": "src/scenes/Scene09.tsx"
+    },
+    {
+      "name": "S09 — Divider Never Expire",
+      "source": "src/scenes/Scene09.tsx"
+    },
+    {
+      "name": "S09 — Scrollbar track",
+      "source": "src/scenes/Scene09.tsx"
+    },
+    {
+      "name": "S09 — Scrollbar thumb",
       "source": "src/scenes/Scene09.tsx"
     },
     {
@@ -1100,12 +1632,20 @@
       "source": "src/scenes/Scene09.tsx"
     },
     {
-      "name": "S10 — Laptop — body",
-      "source": "src/scenes/Scene10.tsx"
+      "name": "S09 — Kursor Windows",
+      "source": "src/scenes/Scene09.tsx"
     },
     {
-      "name": "S10 — Layar Windows",
-      "source": "src/scenes/Scene10.tsx"
+      "name": "S09 — Login wallpaper",
+      "source": "src/scenes/Scene09.tsx"
+    },
+    {
+      "name": "S09 — Login avatar",
+      "source": "src/scenes/Scene09.tsx"
+    },
+    {
+      "name": "S09 — Login field",
+      "source": "src/scenes/Scene09.tsx"
     },
     {
       "name": "S10 — Desktop wallpaper",
@@ -1132,6 +1672,14 @@
       "source": "src/scenes/Scene10.tsx"
     },
     {
+      "name": "S10 — Explorer window",
+      "source": "src/scenes/Scene10.tsx"
+    },
+    {
+      "name": "S10 — Explorer title bar",
+      "source": "src/scenes/Scene10.tsx"
+    },
+    {
       "name": "S10 — Login wallpaper",
       "source": "src/scenes/Scene10.tsx"
     },
@@ -1144,91 +1692,63 @@
       "source": "src/scenes/Scene10.tsx"
     },
     {
-      "name": "S10 — Folder pulih Dokumen",
+      "name": "S10 — Gallery card Foto keluarga",
       "source": "src/scenes/Scene10.tsx"
     },
     {
-      "name": "S10 — Folder pulih Foto",
+      "name": "S10 — Gallery card Kenangan",
       "source": "src/scenes/Scene10.tsx"
     },
     {
-      "name": "S10 — Folder pulih Pekerjaan",
+      "name": "S10 — Gallery card Dokumentasi",
       "source": "src/scenes/Scene10.tsx"
     },
     {
-      "name": "S11 — Laptop — body",
-      "source": "src/scenes/Scene11.tsx"
+      "name": "S10 — Gallery card DOCX",
+      "source": "src/scenes/Scene10.tsx"
     },
     {
-      "name": "S11 — Layar Windows",
-      "source": "src/scenes/Scene11.tsx"
+      "name": "S10 — Gallery card XLSX",
+      "source": "src/scenes/Scene10.tsx"
     },
     {
-      "name": "S11 — Desktop wallpaper",
-      "source": "src/scenes/Scene11.tsx"
+      "name": "S10 — Login berhasil panel",
+      "source": "src/scenes/Scene10.tsx"
     },
     {
-      "name": "S11 — Windows taskbar",
-      "source": "src/scenes/Scene11.tsx"
-    },
-    {
-      "name": "S11 — Windows Start",
-      "source": "src/scenes/Scene11.tsx"
-    },
-    {
-      "name": "S11 — Folder Documents",
-      "source": "src/scenes/Scene11.tsx"
-    },
-    {
-      "name": "S11 — Folder Pictures",
-      "source": "src/scenes/Scene11.tsx"
-    },
-    {
-      "name": "S11 — Folder Work",
-      "source": "src/scenes/Scene11.tsx"
+      "name": "S10 — Login berhasil centang",
+      "source": "src/scenes/Scene10.tsx"
     },
     {
       "name": "S11 — Bubble komentar",
       "source": "src/scenes/Scene11.tsx"
     },
     {
-      "name": "S12 — Laptop — body",
+      "name": "S11 — Ekor bubble",
+      "source": "src/scenes/Scene11.tsx"
+    },
+    {
+      "name": "S11 — Titik komentar 1",
+      "source": "src/scenes/Scene11.tsx"
+    },
+    {
+      "name": "S11 — Titik komentar 2",
+      "source": "src/scenes/Scene11.tsx"
+    },
+    {
+      "name": "S11 — Titik komentar 3",
+      "source": "src/scenes/Scene11.tsx"
+    },
+    {
+      "name": "S12 — Cover Windows panes",
       "source": "src/scenes/Scene12.tsx"
     },
     {
-      "name": "S12 — Layar Windows",
+      "name": "S12 — Cover Panah",
       "source": "src/scenes/Scene12.tsx"
     },
     {
-      "name": "S12 — Desktop wallpaper",
-      "source": "src/scenes/Scene12.tsx"
-    },
-    {
-      "name": "S12 — Windows taskbar",
-      "source": "src/scenes/Scene12.tsx"
-    },
-    {
-      "name": "S12 — Windows Start",
-      "source": "src/scenes/Scene12.tsx"
-    },
-    {
-      "name": "S12 — Folder Documents",
-      "source": "src/scenes/Scene12.tsx"
-    },
-    {
-      "name": "S12 — Folder Pictures",
-      "source": "src/scenes/Scene12.tsx"
-    },
-    {
-      "name": "S12 — Folder Work",
-      "source": "src/scenes/Scene12.tsx"
-    },
-    {
-      "name": "S12 — Cover ikon card",
-      "source": "src/scenes/Scene12.tsx"
-    },
-    {
-      "name": "S12 — Cover lock",
+      "name": "S12 — Cover Kunci",
       "source": "src/scenes/Scene12.tsx"
     }
   ],

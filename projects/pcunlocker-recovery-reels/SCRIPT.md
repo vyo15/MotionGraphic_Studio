@@ -19,16 +19,16 @@ Caranya cukup simpel. Kamu tinggal download PCUnlocker, buat flashdisk bootable,
 Setelah aplikasinya terbuka, kamu bakal melihat daftar akun lokal Windows yang terdeteksi.
 
 ## S07 Pemulihan
-Pilih akun milik kamu yang lupa password, lalu klik Reset Password.
+Nah, di sini kamu tinggal pilih akun Windows kamu yang lupa password, lalu klik Reset Password.
 
 ## S08 Konfirmasi
-Di bagian ini, kamu bisa masukin password baru, lalu klik OK.
+Setelah itu, kamu bisa masukin password baru, lalu klik OK.
 
 ## S09 Restart
-Kalau sudah berhasil, restart komputer dan cabut flashdisknya.
+Kalau sudah berhasil, tinggal restart komputernya.
 
 ## S10 Hasil
-Nah, kalau prosesnya berhasil, kamu bisa login kembali menggunakan password yang baru.
+Nah, sekarang kamu bisa coba login lagi. Nggak perlu install ulang, kan?
 
 ## S11 CTA
 Kalau kamu sendiri, pernah ngalamin masalah kayak gini nggak?

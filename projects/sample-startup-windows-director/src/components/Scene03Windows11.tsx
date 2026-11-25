@@ -42,10 +42,10 @@ const S03Taskbar:React.FC=()=> <Interactive.Div name="S03 Windows — taskbar" c
 </Interactive.Div>;
 
 const S03Run:React.FC<{t:number}>=({t})=>{
- const o=band(t,2.52,2.92,6.99,7.2);
+ const o=band(t,2.52,2.92,7.08,7.42);
  const chars=Math.floor(ramp(t,3.9,6.4)*'shell:startup'.length);
  const word=t<3.9?'':'shell:startup'.slice(0,chars);
- return <Interactive.Div name="S03 Dialog — Run Windows" className="s03-run" style={{position:'absolute',left:235,top:133,width:505,height:272,opacity:o,transform:`translateY(${Math.round((1-ramp(t,2.52,2.92))*14-ramp(t,6.99,7.2)*8)}px) scale(${.98+.02*ramp(t,2.52,2.92)})`}}>
+ return <Interactive.Div name="S03 Dialog — Run Windows" className="s03-run" style={{position:'absolute',left:235,top:133,width:505,height:272,opacity:o,transform:`translateY(${Math.round((1-ramp(t,2.52,2.92))*14-ramp(t,7.08,7.42)*8)}px) scale(${.98+.02*ramp(t,2.52,2.92)})`}}>
   <div className="s03-run-title"><div className="s03-run-icon">▤</div><span>Run</span><span style={{marginLeft:'auto'}}>×</span></div>
   <div className="s03-run-body">
    <div className="s03-run-description">Type the name of a program, folder, document, or Internet resource, and Windows will open it for you.</div>
@@ -56,7 +56,7 @@ const S03Run:React.FC<{t:number}>=({t})=>{
 };
 
 const S03StartupExplorer:React.FC<{t:number}>=({t})=>{
- const o=ramp(t,7.2,7.7);
+ const o=ramp(t,7.45,8.07);
  return <Interactive.Div name="S03 Explorer — folder Startup" className="s03-startup" style={{position:'absolute',left:103,top:40,width:764,height:444,opacity:o,transform:`translateY(${Math.round(12*(1-o))}px) scale(${.98+.02*o})`}}>
   <div className="s03-startup-title"><div className="s03-startup-tab"><FolderIcon scale={.56}/><Interactive.Div name="S03 Explorer — Nama Startup" style={{fontSize:13,color:'#3B4955'}}>Startup</Interactive.Div><span style={{marginLeft:'auto'}}>×</span></div><span style={{fontSize:19}}>＋</span><span className="s03-controls">─　□　×</span></div>
   <div className="s03-startup-address">‹　›　⌃　↻　<div className="s03-startup-crumb"><FolderIcon scale={.56}/>Startup</div><div className="s03-startup-search">⌕　Search Startup</div></div>
@@ -68,7 +68,7 @@ const S03StartupExplorer:React.FC<{t:number}>=({t})=>{
 
 export const Scene03Windows11:React.FC<{frame:number}>=({frame})=>{
  const t=frame/30;
- return <Interactive.Div name="S03 Desktop — layar Windows 11" className="s03w11" style={{position:'absolute',left:60,top:656,width:960,height:540,borderRadius:10,overflow:'hidden'}}>
+ return <Interactive.Div name="S03 Desktop — layar Windows 11" className="s03w11" style={{position:'absolute',left:60,top:654,width:960,height:540,borderRadius:10,overflow:'hidden'}}>
   <S03Bloom/>
   <Interactive.Div name="S03 Desktop — shortcut Chrome" className="desktop-icon" style={{position:'absolute',left:19,top:21,width:95,color:'#fff',textAlign:'center'}}><div className="ico"><ChromeIcon/><span className="small-arrow">↗</span></div>Google Chrome</Interactive.Div>
   <Interactive.Div name="S03 Desktop — shortcut ERP" className="desktop-icon" style={{position:'absolute',left:19,top:103,width:95,color:'#fff',textAlign:'center'}}><div className="ico"><ErpIcon/><span className="small-arrow">↗</span></div>ERP System</Interactive.Div>

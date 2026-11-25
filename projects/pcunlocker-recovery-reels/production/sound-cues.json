@@ -89,62 +89,62 @@
     {
       "id": "S07-preview-bed",
       "scene": "S07",
-      "action": "SFX preview lama per scene (belum mix final)",
+      "action": "SFX klik sintetis dari preview fullscreen yang direview",
       "startFrame": 1020,
-      "impactFrame": 1047,
+      "impactFrame": 1073,
       "endFrame": 1199,
       "status": "ready",
       "file": "audio/sfx/s07-preview.wav",
       "source": {
         "kind": "own",
-        "title": "SFX sintetis dari preview sebelumnya"
+        "title": "SFX sintetis preview Scene07–10 (split tanpa perubahan timing)"
       },
-      "gainDb": -1.41
+      "gainDb": 0
     },
     {
       "id": "S08-preview-bed",
       "scene": "S08",
-      "action": "SFX preview lama per scene (belum mix final)",
+      "action": "SFX klik sintetis dari preview fullscreen yang direview",
       "startFrame": 1200,
-      "impactFrame": 1278,
+      "impactFrame": 1319,
       "endFrame": 1349,
       "status": "ready",
       "file": "audio/sfx/s08-preview.wav",
       "source": {
         "kind": "own",
-        "title": "SFX sintetis dari preview sebelumnya"
+        "title": "SFX sintetis preview Scene07–10 (split tanpa perubahan timing)"
       },
-      "gainDb": -1.41
+      "gainDb": 0
     },
     {
       "id": "S09-preview-bed",
       "scene": "S09",
-      "action": "SFX preview lama per scene (belum mix final)",
+      "action": "SFX klik sintetis dari preview fullscreen yang direview",
       "startFrame": 1350,
-      "impactFrame": 1365,
+      "impactFrame": 1401,
       "endFrame": 1499,
       "status": "ready",
       "file": "audio/sfx/s09-preview.wav",
       "source": {
         "kind": "own",
-        "title": "SFX sintetis dari preview sebelumnya"
+        "title": "SFX sintetis preview Scene07–10 (split tanpa perubahan timing)"
       },
-      "gainDb": -1.41
+      "gainDb": 0
     },
     {
       "id": "S10-preview-bed",
       "scene": "S10",
-      "action": "SFX preview lama per scene (belum mix final)",
+      "action": "SFX klik sintetis dari preview fullscreen yang direview",
       "startFrame": 1500,
-      "impactFrame": 1569,
+      "impactFrame": 1572,
       "endFrame": 1679,
       "status": "ready",
       "file": "audio/sfx/s10-preview.wav",
       "source": {
         "kind": "own",
-        "title": "SFX sintetis dari preview sebelumnya"
+        "title": "SFX sintetis preview Scene07–10 (split tanpa perubahan timing)"
       },
-      "gainDb": -1.41
+      "gainDb": 0
     },
     {
       "id": "S11-preview-bed",
