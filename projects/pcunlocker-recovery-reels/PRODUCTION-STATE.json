@@ -2,9 +2,9 @@
   "schemaVersion": 1,
   "projectId": "PCUnlockerRecoveryReels",
   "slug": "pcunlocker-recovery-reels",
-  "updatedAt": "2026-11-24",
+  "updatedAt": "2026-11-25",
   "workflow": "guided-approval-first-scene",
-  "phase": "memory-gallery-reference-approved-native-review",
+  "phase": "scenes-02-06-visual-locked-pending-native-qa",
   "voiceOverStatus": "not-recorded",
   "fullVideoApproval": "draft",
   "scenes": [
@@ -28,13 +28,13 @@
       "startFrame": 150,
       "endFrameExclusive": 330,
       "voText": "ACC",
-      "visual": "ACC_REFERENCE_PENDING_NATIVE_QA",
+      "visual": "ACC_LOCKED_PENDING_NATIVE_QA",
       "recordingSync": "NOT_RECORDED",
       "final": "NOT_FINAL",
       "status": "approved",
       "voTextApproval": "approved",
-      "visualApproval": "approved",
-      "notes": "Pilihan 09 ACC untuk visual referensi; native source belum render."
+      "visualApproval": "locked",
+      "notes": "Pilihan 09 ACC untuk visual referensi; native source belum render. Visual LOCKED 2026-11-25; pertahankan source dan layer editable; perubahan hanya bila user membuka lock."
     },
     {
       "id": "S03",
@@ -42,13 +42,13 @@
       "startFrame": 330,
       "endFrameExclusive": 450,
       "voText": "ACC",
-      "visual": "REVIEW",
+      "visual": "ACC_LOCKED_PENDING_NATIVE_QA",
       "recordingSync": "NOT_RECORDED",
       "final": "NOT_FINAL",
-      "status": "in-review",
+      "status": "approved",
       "voTextApproval": "approved",
-      "visualApproval": "draft",
-      "notes": "Visual preview dipertahankan sebagai referensi; native source belum diuji."
+      "visualApproval": "locked",
+      "notes": "Pilihan 05 Panel Alert ACC sebagai referensi visual; 2D, Memory Gallery tetap, outline merah dan silang putih besar, SFX tetot; native render/GUI belum diuji. Visual LOCKED 2026-11-25; pertahankan source dan layer editable; perubahan hanya bila user membuka lock."
     },
     {
       "id": "S04",
@@ -56,13 +56,13 @@
       "startFrame": 450,
       "endFrameExclusive": 600,
       "voText": "ACC",
-      "visual": "REVIEW",
+      "visual": "ACC_LOCKED_PENDING_NATIVE_QA",
       "recordingSync": "NOT_RECORDED",
       "final": "NOT_FINAL",
-      "status": "in-review",
+      "status": "approved",
       "voTextApproval": "approved",
-      "visualApproval": "draft",
-      "notes": "Visual preview dipertahankan sebagai referensi; native source belum diuji."
+      "visualApproval": "locked",
+      "notes": "Style 02 Icon Spotlight + Soft Scale-Up ACC; logo vektor rekonstruksi ACC, posisi dipusatkan sesuai permintaan. Native GUI/render belum diuji. Visual LOCKED 2026-11-25; pertahankan source dan layer editable; perubahan hanya bila user membuka lock."
     },
     {
       "id": "S05",
@@ -70,13 +70,13 @@
       "startFrame": 600,
       "endFrameExclusive": 840,
       "voText": "DRAFT",
-      "visual": "REVIEW",
+      "visual": "ACC_LOCKED_PENDING_NATIVE_QA",
       "recordingSync": "NOT_RECORDED",
       "final": "NOT_FINAL",
-      "status": "in-review",
+      "status": "approved",
       "voTextApproval": "draft",
-      "visualApproval": "draft",
-      "notes": "Visual preview dipertahankan sebagai referensi; native source belum diuji."
+      "visualApproval": "locked",
+      "notes": "Soft Connected visual ACC; penyesuaian laptop 720 px, tanpa zoom. VO draft dan timing tetap; native render/GUI belum diuji. Visual LOCKED 2026-11-25; pertahankan source dan layer editable; perubahan hanya bila user membuka lock."
     },
     {
       "id": "S06",
@@ -84,13 +84,13 @@
       "startFrame": 840,
       "endFrameExclusive": 1020,
       "voText": "DRAFT",
-      "visual": "REVIEW",
+      "visual": "ACC_LOCKED_PENDING_NATIVE_QA",
       "recordingSync": "NOT_RECORDED",
       "final": "NOT_FINAL",
-      "status": "in-review",
+      "status": "approved",
       "voTextApproval": "draft",
-      "visualApproval": "draft",
-      "notes": "Visual preview dipertahankan sebagai referensi; native source belum diuji."
+      "visualApproval": "locked",
+      "notes": "User ACC tampilan UI realistis S06 (referensi Enterprise Edition v4.5; akun contoh, UI pasif). Source direkonstruksi sebagai layer independen, laptop 720 px selaras S05; native render/GUI belum diuji. VO draft tetap."
     },
     {
       "id": "S07",
@@ -181,6 +181,26 @@
     {
       "date": "2026-11-24",
       "decision": "Opening VO ACC; laptop tidak zoom; tiga percobaan; user memilih visual 09 Memory Gallery untuk S02 tanpa laptop. Source baru direkonstruksi dari preview; native render/GUI belum diuji."
+    },
+    {
+      "date": "2026-11-25",
+      "decision": "User ACC pilihan 05 Panel Alert untuk S03 dan meminta editable. VO dan timing tetap; S02 dan scene lain tidak diubah."
+    },
+    {
+      "date": "2026-11-25",
+      "decision": "User memilih Soft Scale-Up untuk S04, logo vector ACC, meminta komposisi dipusatkan. VO dan durasi tetap. S01–03 dan S05–12 tidak diubah."
+    },
+    {
+      "date": "2026-11-25",
+      "decision": "User ACC visual Soft Connected S04→S05 dan meminta laptop lebih proporsional untuk Reels serta patch editable. Hanya S05 diubah; VO tidak berubah."
+    },
+    {
+      "date": "2026-11-25",
+      "decision": "User menyetujui penguncian pada review pembuka. Scope patch konservatif: visual S02–S05 dikunci; S01 tetap REVIEW karena catatan hook belum ACC eksplisit. VO S01–S04 tetap ACC, S05 tetap draft, S06–S12 tidak diubah. Tidak ada perubahan source render, timing, aset, atau kontrak editable."
+    },
+    {
+      "date": "2026-11-25",
+      "decision": "User ACC visual S06 Realistic UI dan minta patch editable. Source S06 direkonstruksi; VO/timing tetap, S07 hanya preview terpisah dan belum ACC."
     }
   ]
 }

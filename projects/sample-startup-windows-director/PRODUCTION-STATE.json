@@ -30,7 +30,7 @@
       "status": "approved",
       "visualApproval": "approved",
       "voTextApproval": "draft",
-      "notes": "Preview Scene 02 Windows 11 Familiar v4 dipilih/ACC untuk implementasi. Realisme wallpaper, File Explorer, taskbar, menu dan cursor mengikuti preview browser; render native dan GUI masih perlu QA. VO teks tetap draft, tidak direkam."
+      "notes": "Preview Scene 02 Smooth v5, kursor natural v6, dan highlight shortcut v7 ACC pada 2026-11-25. Implementasi menjaga desktop stabil, gerakan cursor Bezier tetap, tanpa lompatan akibat menu tersembunyi, serta fokus ringan pada shortcut Excel setelah Explorer diminimalkan. Native GUI/render belum diuji."
     },
     {
       "id": "S03",
@@ -119,6 +119,10 @@
     {
       "date": "2026-11-24",
       "decision": "User approved Scene04 9s copy shortcut -> paste Startup, with VO guide as plain text; source updated only S04 and metadata."
+    },
+    {
+      "date": "2026-11-25",
+      "decision": "Scene02 preview v7 ACC: cursor natural v6 + hasil shortcut baru fokus tipis/label/coralline; perbaikan terbatas Scene02 tanpa perubahan S01, S03-S06, atau Master."
     }
   ]
 }

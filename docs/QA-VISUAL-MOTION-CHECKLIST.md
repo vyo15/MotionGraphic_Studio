@@ -28,6 +28,14 @@ Checklist untuk **video baru dan revisi yang diminta**. Bukan janji semua penguj
 - [ ] Latar awal off-white polos; jika grid/tekstur/ornamen dipakai, ada alasan fungsi dan tidak bersaing dengan UI. Teks yang sudah selesai fungsinya hilang tepat waktu.
 - [ ] Audit **contact sheet semua scene** untuk overlay persisten, bukan hanya cek still pertama; source-only tidak boleh diberi status PASS render/visual.
 
+### TEXT HIERARCHY & SUBTITLE LOCK v1.0 — gate wajib video baru
+
+- [ ] Setiap beat bernarasi memiliki cue subtitle draft aktif default; seluruh kata VO sesuai naskah/ACC, urut dan tanpa pengulangan/gap yang tidak disengaja. Cue silent/cover kosong. Timing draft tidak disebut sinkron rekaman.
+- [ ] Supporting text memiliki fungsi tambahan yang dicatat (parameter, arti, nilai, status, batasan atau `omit`); tidak ada headline yang mengulang subtitle/UI. Jika subtitle+demo cukup, hapus teks atas.
+- [ ] Periksa render hook, tiap cue, aksi utama, transisi, CTA dan cover: posisi subtitle stabil, maksimal dua baris, bounding box dan backing dalam safe zone, tidak bertabrakan dengan UI/label; terbaca pada ukuran HP.
+- [ ] `showSubtitles: true` default preview dan `false` benar-benar menyembunyikan track tanpa menghapus UI/supporting text. Full dan segment memakai timing yang sama; final/draft/VO Guide tidak menumpuk. CapCut HQ bersih dari subtitle narasi (cek MP4).
+- [ ] Cue native memiliki nama unik, literal dan target blueprint sesuai kontrak; edit teks/timing konsisten dengan naskah. Uji Save/reload jika GUI tersedia; source-only bukan PASS visual/GUI.
+
 ## C. Gerak, continuity, dan layar software
 
 - [ ] Ada trigger yang jelas sebelum aksi, reaksi setelahnya, serta hasil yang bertahan cukup lama.

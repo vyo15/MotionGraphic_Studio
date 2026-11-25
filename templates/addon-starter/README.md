@@ -14,3 +14,7 @@ Jangan salin desain placeholder Scene01 sebagai shell yang dipasang ke semua ade
 
 ### Editable First
 Template telah berisi `production/editable-blueprint.json` dengan target teks/headline/subtitle dan objek utama. Setiap scene baru harus memperbarui daftar ini. Hindari `.map()` yang membuat satu callsite `Interactive` untuk banyak teks. Jalankan validator ketat dan `npm run qa:native`; uji Save/reload langsung di Studio sebelum mengklaim native editable.
+
+**TEXT HIERARCHY & SUBTITLE LOCK v1.0 (video baru):** subtitle draft VO wajib aktif secara default pada preview bernarasi; teks pendukung atas/dekat objek hanya jika memberi fungsi tambahan (parameter, arti, nilai, status atau batasan), bukan mengulang subtitle atau UI. Visual utama mendemonstrasikan aksi/hasil. Maksimal satu penegasan relevan per beat, boleh kosong; subtitle bawah maksimal dua baris, aman, konsisten dan editable per cue. Cover silent tanpa subtitle. Setelah motion ACC, rekam VO dan sinkronkan subtitle final; tampilkan hanya satu track. CapCut HQ menonaktifkan subtitle melalui Props sementara. Baca `docs/MOTIONGRAPHIC-DESIGN-SYSTEM.md` §5A dan gate `docs/QA-VISUAL-MOTION-CHECKLIST.md`. Jangan retrofit project/scene ACC.
+
+Starter mencontohkan satu cue DRAFT (frame 128–218), bukan script lengkap. Isi naskah dan cue untuk seluruh beat bernarasi pada project baru, ganti semua placeholder dan verifikasi `showSubtitles` dengan full/segment serta CapCut HQ. Teks literal cue harus sama dengan naskah; jangan menjadikan sample sebagai video final.

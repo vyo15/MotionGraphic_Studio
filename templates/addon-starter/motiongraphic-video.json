@@ -9,6 +9,6 @@
   "height": 1920,
   "fps": 30,
   "durationInFrames": 600,
-  "defaultProps": {},
+  "defaultProps": {"showSubtitles": true},
   "editableContract": "studio-direct-v4"
 }

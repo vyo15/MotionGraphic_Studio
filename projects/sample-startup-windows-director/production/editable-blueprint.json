@@ -324,6 +324,46 @@
     {
       "name": "S05 VO — Cue 05",
       "source": "src/components/SceneBase.tsx"
+    },
+    {
+      "name": "S01 Teks — Baru login Windows 11",
+      "source": "src/scenes/Scene01.tsx"
+    },
+    {
+      "name": "S01 Teks — Kursor diam",
+      "source": "src/scenes/Scene01.tsx"
+    },
+    {
+      "name": "S01 Teks — BISA tegas",
+      "source": "src/scenes/Scene01.tsx"
+    },
+    {
+      "name": "S01 Gmail — Pesan 4",
+      "source": "src/components/WorkWindows.tsx"
+    },
+    {
+      "name": "S01 Gmail — Pesan 5",
+      "source": "src/components/WorkWindows.tsx"
+    },
+    {
+      "name": "S01 Gmail — Pesan 6",
+      "source": "src/components/WorkWindows.tsx"
+    },
+    {
+      "name": "S01 Gmail — Pesan 7",
+      "source": "src/components/WorkWindows.tsx"
+    },
+    {
+      "name": "S01 Teks — Tutorial baris dua",
+      "source": "src/scenes/Scene01.tsx"
+    },
+    {
+      "name": "S02 Fokus — label Shortcut baru",
+      "source": "src/components/Scene02Windows11.tsx"
+    },
+    {
+      "name": "S02 Fokus — centang shortcut",
+      "source": "src/components/Scene02Windows11.tsx"
     }
   ],
   "nativeVisualTargets": [
@@ -498,6 +538,46 @@
     {
       "name": "S04 Keyboard — Ctrl C atau Ctrl V",
       "source": "src/scenes/Scene04.tsx"
+    },
+    {
+      "name": "S01 Aksen — Tanda tanya kiri atas",
+      "source": "src/scenes/Scene01.tsx"
+    },
+    {
+      "name": "S01 Aksen — Tanda tanya kanan atas",
+      "source": "src/scenes/Scene01.tsx"
+    },
+    {
+      "name": "S01 Aksen — Tanda tanya kiri bawah",
+      "source": "src/scenes/Scene01.tsx"
+    },
+    {
+      "name": "S01 Aksen — Tanda tanya kanan bawah",
+      "source": "src/scenes/Scene01.tsx"
+    },
+    {
+      "name": "S01 Visual — Halo jawaban",
+      "source": "src/scenes/Scene01.tsx"
+    },
+    {
+      "name": "S01 Visual — Aksen jawaban tegas",
+      "source": "src/scenes/Scene01.tsx"
+    },
+    {
+      "name": "S01 Cursor — Tidak bergerak / tidak klik",
+      "source": "src/components/WorkWindows.tsx"
+    },
+    {
+      "name": "S02 Cursor — efek klik halus",
+      "source": "src/components/Scene02Windows11.tsx"
+    },
+    {
+      "name": "S02 Fokus — bingkai shortcut baru",
+      "source": "src/components/Scene02Windows11.tsx"
+    },
+    {
+      "name": "S02 Fokus — garis penghubung",
+      "source": "src/components/Scene02Windows11.tsx"
     }
   ],
   "propsTextTargets": [],

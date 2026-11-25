@@ -24,33 +24,80 @@ Native source targets; GUI verification pending. Internal SVG path geometry sour
 | S02 — Pertanyaan file penting | Text | `src/scenes/Scene02.tsx` |
 | S02 — Subtitle 01 | Text | `src/scenes/Scene02.tsx` |
 | S02 — Subtitle 02 | Text | `src/scenes/Scene02.tsx` |
-| S03 — Instalasi ulang | Text | `src/scenes/Scene03.tsx` |
+| S03 — Foto 1 — label | Text | `src/scenes/Scene03.tsx` |
+| S03 — Foto 2 — label | Text | `src/scenes/Scene03.tsx` |
+| S03 — Foto 3 — label | Text | `src/scenes/Scene03.tsx` |
+| S03 — File 1 — label | Text | `src/scenes/Scene03.tsx` |
+| S03 — File 2 — label | Text | `src/scenes/Scene03.tsx` |
+| S03 — Windows Setup — judul | Text | `src/scenes/Scene03.tsx` |
+| S03 — Pertanyaan install ulang | Text | `src/scenes/Scene03.tsx` |
+| S03 — Pertanyaan file penting | Text | `src/scenes/Scene03.tsx` |
 | S03 — Subtitle 01 | Text | `src/scenes/Scene03.tsx` |
 | S03 — Subtitle 02 | Text | `src/scenes/Scene03.tsx` |
 | S04 — Nama aplikasi | Text | `src/scenes/Scene04.tsx` |
 | S04 — Fungsi aplikasi | Text | `src/scenes/Scene04.tsx` |
 | S04 — Subtitle 01 | Text | `src/scenes/Scene04.tsx` |
 | S04 — Subtitle 02 | Text | `src/scenes/Scene04.tsx` |
+| S05 — Nama aplikasi | Text | `src/scenes/Scene05.tsx` |
+| S05 — Fungsi aplikasi | Text | `src/scenes/Scene05.tsx` |
 | S05 — Label ISO | Text | `src/scenes/Scene05.tsx` |
+| S05 — Nama file ISO | Text | `src/scenes/Scene05.tsx` |
+| S05 — Keterangan file | Text | `src/scenes/Scene05.tsx` |
+| S05 — Label USB | Text | `src/scenes/Scene05.tsx` |
+| S05 — Label file kiri | Text | `src/scenes/Scene05.tsx` |
 | S05 — Label flashdisk | Text | `src/scenes/Scene05.tsx` |
 | S05 — Recovery environment | Text | `src/scenes/Scene05.tsx` |
+| S05 — Keterangan simulasi | Text | `src/scenes/Scene05.tsx` |
 | S05 — Subtitle 01 | Text | `src/scenes/Scene05.tsx` |
 | S05 — Subtitle 02 | Text | `src/scenes/Scene05.tsx` |
 | S05 — Subtitle 03 | Text | `src/scenes/Scene05.tsx` |
 | S05 — Subtitle 04 | Text | `src/scenes/Scene05.tsx` |
-| S06 — Recovery UI — title | Text | `src/scenes/Scene06.tsx` |
-| S06 — Recovery UI — mode | Text | `src/scenes/Scene06.tsx` |
-| S06 — Windows installation | Text | `src/scenes/Scene06.tsx` |
-| S06 — Kolom user name | Text | `src/scenes/Scene06.tsx` |
-| S06 — Kolom status | Text | `src/scenes/Scene06.tsx` |
-| S06 — Akun 1 | Text | `src/scenes/Scene06.tsx` |
-| S06 — Status akun 1 | Text | `src/scenes/Scene06.tsx` |
-| S06 — Akun 2 | Text | `src/scenes/Scene06.tsx` |
-| S06 — Status akun 2 | Text | `src/scenes/Scene06.tsx` |
-| S06 — Akun 3 | Text | `src/scenes/Scene06.tsx` |
-| S06 — Status akun 3 | Text | `src/scenes/Scene06.tsx` |
-| S06 — Tombol Reset Password | Text | `src/scenes/Scene06.tsx` |
-| S06 — Tombol Restart | Text | `src/scenes/Scene06.tsx` |
+| S06 — Loading — Recovery environment | Text | `src/scenes/Scene06.tsx` |
+| S06 — Loading — Keterangan simulasi | Text | `src/scenes/Scene06.tsx` |
+| S06 — Edition title | Text | `src/scenes/Scene06.tsx` |
+| S06 — Close button | Text | `src/scenes/Scene06.tsx` |
+| S06 — PCUnlocker header | Text | `src/scenes/Scene06.tsx` |
+| S06 — Label Recovery mode | Text | `src/scenes/Scene06.tsx` |
+| S06 — Label Windows installation | Text | `src/scenes/Scene06.tsx` |
+| S06 — Label Local account | Text | `src/scenes/Scene06.tsx` |
+| S06 — Label Active Directory | Text | `src/scenes/Scene06.tsx` |
+| S06 — Sample installation | Text | `src/scenes/Scene06.tsx` |
+| S06 — Button Browse | Text | `src/scenes/Scene06.tsx` |
+| S06 — Column User Name | Text | `src/scenes/Scene06.tsx` |
+| S06 — Account 1 — User Name | Text | `src/scenes/Scene06.tsx` |
+| S06 — Account 2 — User Name | Text | `src/scenes/Scene06.tsx` |
+| S06 — Account 3 — User Name | Text | `src/scenes/Scene06.tsx` |
+| S06 — Account 4 — User Name | Text | `src/scenes/Scene06.tsx` |
+| S06 — Column Password | Text | `src/scenes/Scene06.tsx` |
+| S06 — Account 1 — Password | Text | `src/scenes/Scene06.tsx` |
+| S06 — Account 2 — Password | Text | `src/scenes/Scene06.tsx` |
+| S06 — Account 3 — Password | Text | `src/scenes/Scene06.tsx` |
+| S06 — Account 4 — Password | Text | `src/scenes/Scene06.tsx` |
+| S06 — Column Locked Out | Text | `src/scenes/Scene06.tsx` |
+| S06 — Account 1 — Locked Out | Text | `src/scenes/Scene06.tsx` |
+| S06 — Account 2 — Locked Out | Text | `src/scenes/Scene06.tsx` |
+| S06 — Account 3 — Locked Out | Text | `src/scenes/Scene06.tsx` |
+| S06 — Account 4 — Locked Out | Text | `src/scenes/Scene06.tsx` |
+| S06 — Column Disabled | Text | `src/scenes/Scene06.tsx` |
+| S06 — Account 1 — Disabled | Text | `src/scenes/Scene06.tsx` |
+| S06 — Account 2 — Disabled | Text | `src/scenes/Scene06.tsx` |
+| S06 — Account 3 — Disabled | Text | `src/scenes/Scene06.tsx` |
+| S06 — Account 4 — Disabled | Text | `src/scenes/Scene06.tsx` |
+| S06 — Column Never Expire | Text | `src/scenes/Scene06.tsx` |
+| S06 — Account 1 — Never Expire | Text | `src/scenes/Scene06.tsx` |
+| S06 — Account 2 — Never Expire | Text | `src/scenes/Scene06.tsx` |
+| S06 — Account 3 — Never Expire | Text | `src/scenes/Scene06.tsx` |
+| S06 — Account 4 — Never Expire | Text | `src/scenes/Scene06.tsx` |
+| S06 — Column Description | Text | `src/scenes/Scene06.tsx` |
+| S06 — Account 1 — Description | Text | `src/scenes/Scene06.tsx` |
+| S06 — Account 2 — Description | Text | `src/scenes/Scene06.tsx` |
+| S06 — Account 3 — Description | Text | `src/scenes/Scene06.tsx` |
+| S06 — Account 4 — Description | Text | `src/scenes/Scene06.tsx` |
+| S06 — Scrollbar left | Text | `src/scenes/Scene06.tsx` |
+| S06 — Scrollbar right | Text | `src/scenes/Scene06.tsx` |
+| S06 — Button Options | Text | `src/scenes/Scene06.tsx` |
+| S06 — Button Reset Password | Text | `src/scenes/Scene06.tsx` |
+| S06 — Button Restart | Text | `src/scenes/Scene06.tsx` |
 | S06 — Keterangan akun lokal | Text | `src/scenes/Scene06.tsx` |
 | S06 — Subtitle 01 | Text | `src/scenes/Scene06.tsx` |
 | S06 — Subtitle 02 | Text | `src/scenes/Scene06.tsx` |
@@ -144,30 +191,62 @@ Native source targets; GUI verification pending. Internal SVG path geometry sour
 | S02 — Windows Setup — panel | Visual | `src/scenes/Scene02.tsx` |
 | S02 — Windows Setup — ikon | Visual | `src/scenes/Scene02.tsx` |
 | S02 — Windows Setup — pemisah | Visual | `src/scenes/Scene02.tsx` |
-| S03 — Laptop — body | Visual | `src/scenes/Scene03.tsx` |
-| S03 — Layar Windows | Visual | `src/scenes/Scene03.tsx` |
-| S03 — Windows setup icon card | Visual | `src/scenes/Scene03.tsx` |
-| S03 — Windows setup mark | Visual | `src/scenes/Scene03.tsx` |
-| S03 — Coret instalasi | Visual | `src/scenes/Scene03.tsx` |
-| S04 — Laptop — body | Visual | `src/scenes/Scene04.tsx` |
-| S04 — Layar Windows | Visual | `src/scenes/Scene04.tsx` |
-| S04 — Kartu PCUnlocker | Visual | `src/scenes/Scene04.tsx` |
+| S03 — Foto 1 — kartu dan artwork | Visual | `src/scenes/Scene03.tsx` |
+| S03 — Foto 2 — kartu dan artwork | Visual | `src/scenes/Scene03.tsx` |
+| S03 — Foto 3 — kartu dan artwork | Visual | `src/scenes/Scene03.tsx` |
+| S03 — File 1 — kartu | Visual | `src/scenes/Scene03.tsx` |
+| S03 — File 2 — kartu | Visual | `src/scenes/Scene03.tsx` |
+| S03 — Windows Setup — panel | Visual | `src/scenes/Scene03.tsx` |
+| S03 — Windows Setup — ikon | Visual | `src/scenes/Scene03.tsx` |
+| S03 — Windows Setup — pemisah | Visual | `src/scenes/Scene03.tsx` |
+| S03 — Alert outline | Visual | `src/scenes/Scene03.tsx` |
+| S03 — Alert badge merah | Visual | `src/scenes/Scene03.tsx` |
+| S03 — Silang putih diagonal 1 | Visual | `src/scenes/Scene03.tsx` |
+| S03 — Silang putih diagonal 2 | Visual | `src/scenes/Scene03.tsx` |
+| S04 — Background | Visual | `src/scenes/Scene04.tsx` |
+| S04 — Spotlight | Visual | `src/scenes/Scene04.tsx` |
 | S04 — Ikon pemulihan | Visual | `src/scenes/Scene04.tsx` |
-| S05 — Laptop — body | Visual | `src/scenes/Scene05.tsx` |
-| S05 — Layar Windows | Visual | `src/scenes/Scene05.tsx` |
+| S04 — Aksen coral | Visual | `src/scenes/Scene04.tsx` |
+| S05 — Background | Visual | `src/scenes/Scene05.tsx` |
+| S05 — Spotlight | Visual | `src/scenes/Scene05.tsx` |
+| S05 — Aksen pembuka | Visual | `src/scenes/Scene05.tsx` |
 | S05 — File ISO | Visual | `src/scenes/Scene05.tsx` |
+| S05 — Lipatan file ISO | Visual | `src/scenes/Scene05.tsx` |
+| S05 — Ikon pemulihan kontinu | Visual | `src/scenes/Scene05.tsx` |
+| S05 — Aksen file ISO | Visual | `src/scenes/Scene05.tsx` |
 | S05 — Flashdisk bootable | Visual | `src/scenes/Scene05.tsx` |
 | S05 — Arah transfer file | Visual | `src/scenes/Scene05.tsx` |
-| S05 — Layar loading | Visual | `src/scenes/Scene05.tsx` |
+| S05 — Indikator aliran | Visual | `src/scenes/Scene05.tsx` |
+| S05 — Laptop — body | Visual | `src/scenes/Scene05.tsx` |
+| S05 — Layar Windows | Visual | `src/scenes/Scene05.tsx` |
+| S05 — Ikon recovery | Visual | `src/scenes/Scene05.tsx` |
 | S05 — Progress track | Visual | `src/scenes/Scene05.tsx` |
 | S05 — Progress isi | Visual | `src/scenes/Scene05.tsx` |
 | S06 — Laptop — body | Visual | `src/scenes/Scene06.tsx` |
 | S06 — Layar Windows | Visual | `src/scenes/Scene06.tsx` |
-| S06 — Recovery UI — window | Visual | `src/scenes/Scene06.tsx` |
-| S06 — Recovery UI — title bar | Visual | `src/scenes/Scene06.tsx` |
-| S06 — Windows installation field | Visual | `src/scenes/Scene06.tsx` |
-| S06 — Daftar akun — tabel | Visual | `src/scenes/Scene06.tsx` |
-| S06 — Daftar akun — header | Visual | `src/scenes/Scene06.tsx` |
+| S06 — Loading — Ikon recovery | Visual | `src/scenes/Scene06.tsx` |
+| S06 — Loading — Progress track | Visual | `src/scenes/Scene06.tsx` |
+| S06 — Loading — Progress isi | Visual | `src/scenes/Scene06.tsx` |
+| S06 — Desktop recovery | Visual | `src/scenes/Scene06.tsx` |
+| S06 — Window shadow | Visual | `src/scenes/Scene06.tsx` |
+| S06 — Window panel | Visual | `src/scenes/Scene06.tsx` |
+| S06 — Title bar | Visual | `src/scenes/Scene06.tsx` |
+| S06 — Header blue | Visual | `src/scenes/Scene06.tsx` |
+| S06 — Logo header | Visual | `src/scenes/Scene06.tsx` |
+| S06 — Panel Recovery mode | Visual | `src/scenes/Scene06.tsx` |
+| S06 — Panel Windows installation | Visual | `src/scenes/Scene06.tsx` |
+| S06 — Radio Local account | Visual | `src/scenes/Scene06.tsx` |
+| S06 — Radio Active Directory | Visual | `src/scenes/Scene06.tsx` |
+| S06 — Installation field | Visual | `src/scenes/Scene06.tsx` |
+| S06 — Account table | Visual | `src/scenes/Scene06.tsx` |
+| S06 — Table header | Visual | `src/scenes/Scene06.tsx` |
+| S06 — Divider User Name | Visual | `src/scenes/Scene06.tsx` |
+| S06 — Divider Password | Visual | `src/scenes/Scene06.tsx` |
+| S06 — Divider Locked Out | Visual | `src/scenes/Scene06.tsx` |
+| S06 — Divider Disabled | Visual | `src/scenes/Scene06.tsx` |
+| S06 — Divider Never Expire | Visual | `src/scenes/Scene06.tsx` |
+| S06 — Scrollbar track | Visual | `src/scenes/Scene06.tsx` |
+| S06 — Scrollbar thumb | Visual | `src/scenes/Scene06.tsx` |
 | S07 — Laptop — body | Visual | `src/scenes/Scene07.tsx` |
 | S07 — Layar Windows | Visual | `src/scenes/Scene07.tsx` |
 | S07 — Recovery UI — window | Visual | `src/scenes/Scene07.tsx` |

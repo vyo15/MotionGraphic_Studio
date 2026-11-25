@@ -33,17 +33,17 @@
       "gainDb": -1.41
     },
     {
-      "id": "S03-preview-bed",
+      "id": "S03-panel-alert-tetot",
       "scene": "S03",
-      "action": "SFX preview lama per scene (belum mix final)",
-      "startFrame": 330,
-      "impactFrame": 348,
-      "endFrame": 449,
+      "action": "Outline dan silang Panel Alert muncul pada kata Jangan",
+      "startFrame": 381,
+      "impactFrame": 381,
+      "endFrame": 392,
       "status": "ready",
-      "file": "audio/sfx/s03-preview.wav",
+      "file": "audio/sfx/s03-panel-alert.wav",
       "source": {
         "kind": "own",
-        "title": "SFX sintetis dari preview sebelumnya"
+        "title": "SFX sintetis tetot dari preview 05 Panel Alert ACC; dipotong 51–63 frame lokal"
       },
       "gainDb": -1.41
     },
@@ -65,15 +65,15 @@
     {
       "id": "S05-preview-bed",
       "scene": "S05",
-      "action": "SFX preview lama per scene (belum mix final)",
+      "action": "SFX ringan preview Soft Connected; morph file, media, recovery illustration, hold",
       "startFrame": 600,
-      "impactFrame": 642,
+      "impactFrame": 652,
       "endFrame": 839,
       "status": "ready",
       "file": "audio/sfx/s05-preview.wav",
       "source": {
         "kind": "own",
-        "title": "SFX sintetis dari preview sebelumnya"
+        "title": "WAV sintetis dari preview Soft Connected ACC; onset lokal sekitar 52, 125, 176, 224"
       },
       "gainDb": -1.41
     },

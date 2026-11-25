@@ -82,7 +82,35 @@
       "source": "src/scenes/Scene02.tsx"
     },
     {
-      "name": "S03 — Instalasi ulang",
+      "name": "S03 — Foto 1 — label",
+      "source": "src/scenes/Scene03.tsx"
+    },
+    {
+      "name": "S03 — Foto 2 — label",
+      "source": "src/scenes/Scene03.tsx"
+    },
+    {
+      "name": "S03 — Foto 3 — label",
+      "source": "src/scenes/Scene03.tsx"
+    },
+    {
+      "name": "S03 — File 1 — label",
+      "source": "src/scenes/Scene03.tsx"
+    },
+    {
+      "name": "S03 — File 2 — label",
+      "source": "src/scenes/Scene03.tsx"
+    },
+    {
+      "name": "S03 — Windows Setup — judul",
+      "source": "src/scenes/Scene03.tsx"
+    },
+    {
+      "name": "S03 — Pertanyaan install ulang",
+      "source": "src/scenes/Scene03.tsx"
+    },
+    {
+      "name": "S03 — Pertanyaan file penting",
       "source": "src/scenes/Scene03.tsx"
     },
     {
@@ -110,7 +138,31 @@
       "source": "src/scenes/Scene04.tsx"
     },
     {
+      "name": "S05 — Nama aplikasi",
+      "source": "src/scenes/Scene05.tsx"
+    },
+    {
+      "name": "S05 — Fungsi aplikasi",
+      "source": "src/scenes/Scene05.tsx"
+    },
+    {
       "name": "S05 — Label ISO",
+      "source": "src/scenes/Scene05.tsx"
+    },
+    {
+      "name": "S05 — Nama file ISO",
+      "source": "src/scenes/Scene05.tsx"
+    },
+    {
+      "name": "S05 — Keterangan file",
+      "source": "src/scenes/Scene05.tsx"
+    },
+    {
+      "name": "S05 — Label USB",
+      "source": "src/scenes/Scene05.tsx"
+    },
+    {
+      "name": "S05 — Label file kiri",
       "source": "src/scenes/Scene05.tsx"
     },
     {
@@ -119,6 +171,10 @@
     },
     {
       "name": "S05 — Recovery environment",
+      "source": "src/scenes/Scene05.tsx"
+    },
+    {
+      "name": "S05 — Keterangan simulasi",
       "source": "src/scenes/Scene05.tsx"
     },
     {
@@ -138,55 +194,187 @@
       "source": "src/scenes/Scene05.tsx"
     },
     {
-      "name": "S06 — Recovery UI — title",
+      "name": "S06 — Loading — Recovery environment",
       "source": "src/scenes/Scene06.tsx"
     },
     {
-      "name": "S06 — Recovery UI — mode",
+      "name": "S06 — Loading — Keterangan simulasi",
       "source": "src/scenes/Scene06.tsx"
     },
     {
-      "name": "S06 — Windows installation",
+      "name": "S06 — Edition title",
       "source": "src/scenes/Scene06.tsx"
     },
     {
-      "name": "S06 — Kolom user name",
+      "name": "S06 — Close button",
       "source": "src/scenes/Scene06.tsx"
     },
     {
-      "name": "S06 — Kolom status",
+      "name": "S06 — PCUnlocker header",
       "source": "src/scenes/Scene06.tsx"
     },
     {
-      "name": "S06 — Akun 1",
+      "name": "S06 — Label Recovery mode",
       "source": "src/scenes/Scene06.tsx"
     },
     {
-      "name": "S06 — Status akun 1",
+      "name": "S06 — Label Windows installation",
       "source": "src/scenes/Scene06.tsx"
     },
     {
-      "name": "S06 — Akun 2",
+      "name": "S06 — Label Local account",
       "source": "src/scenes/Scene06.tsx"
     },
     {
-      "name": "S06 — Status akun 2",
+      "name": "S06 — Label Active Directory",
       "source": "src/scenes/Scene06.tsx"
     },
     {
-      "name": "S06 — Akun 3",
+      "name": "S06 — Sample installation",
       "source": "src/scenes/Scene06.tsx"
     },
     {
-      "name": "S06 — Status akun 3",
+      "name": "S06 — Button Browse",
       "source": "src/scenes/Scene06.tsx"
     },
     {
-      "name": "S06 — Tombol Reset Password",
+      "name": "S06 — Column User Name",
       "source": "src/scenes/Scene06.tsx"
     },
     {
-      "name": "S06 — Tombol Restart",
+      "name": "S06 — Account 1 — User Name",
+      "source": "src/scenes/Scene06.tsx"
+    },
+    {
+      "name": "S06 — Account 2 — User Name",
+      "source": "src/scenes/Scene06.tsx"
+    },
+    {
+      "name": "S06 — Account 3 — User Name",
+      "source": "src/scenes/Scene06.tsx"
+    },
+    {
+      "name": "S06 — Account 4 — User Name",
+      "source": "src/scenes/Scene06.tsx"
+    },
+    {
+      "name": "S06 — Column Password",
+      "source": "src/scenes/Scene06.tsx"
+    },
+    {
+      "name": "S06 — Account 1 — Password",
+      "source": "src/scenes/Scene06.tsx"
+    },
+    {
+      "name": "S06 — Account 2 — Password",
+      "source": "src/scenes/Scene06.tsx"
+    },
+    {
+      "name": "S06 — Account 3 — Password",
+      "source": "src/scenes/Scene06.tsx"
+    },
+    {
+      "name": "S06 — Account 4 — Password",
+      "source": "src/scenes/Scene06.tsx"
+    },
+    {
+      "name": "S06 — Column Locked Out",
+      "source": "src/scenes/Scene06.tsx"
+    },
+    {
+      "name": "S06 — Account 1 — Locked Out",
+      "source": "src/scenes/Scene06.tsx"
+    },
+    {
+      "name": "S06 — Account 2 — Locked Out",
+      "source": "src/scenes/Scene06.tsx"
+    },
+    {
+      "name": "S06 — Account 3 — Locked Out",
+      "source": "src/scenes/Scene06.tsx"
+    },
+    {
+      "name": "S06 — Account 4 — Locked Out",
+      "source": "src/scenes/Scene06.tsx"
+    },
+    {
+      "name": "S06 — Column Disabled",
+      "source": "src/scenes/Scene06.tsx"
+    },
+    {
+      "name": "S06 — Account 1 — Disabled",
+      "source": "src/scenes/Scene06.tsx"
+    },
+    {
+      "name": "S06 — Account 2 — Disabled",
+      "source": "src/scenes/Scene06.tsx"
+    },
+    {
+      "name": "S06 — Account 3 — Disabled",
+      "source": "src/scenes/Scene06.tsx"
+    },
+    {
+      "name": "S06 — Account 4 — Disabled",
+      "source": "src/scenes/Scene06.tsx"
+    },
+    {
+      "name": "S06 — Column Never Expire",
+      "source": "src/scenes/Scene06.tsx"
+    },
+    {
+      "name": "S06 — Account 1 — Never Expire",
+      "source": "src/scenes/Scene06.tsx"
+    },
+    {
+      "name": "S06 — Account 2 — Never Expire",
+      "source": "src/scenes/Scene06.tsx"
+    },
+    {
+      "name": "S06 — Account 3 — Never Expire",
+      "source": "src/scenes/Scene06.tsx"
+    },
+    {
+      "name": "S06 — Account 4 — Never Expire",
+      "source": "src/scenes/Scene06.tsx"
+    },
+    {
+      "name": "S06 — Column Description",
+      "source": "src/scenes/Scene06.tsx"
+    },
+    {
+      "name": "S06 — Account 1 — Description",
+      "source": "src/scenes/Scene06.tsx"
+    },
+    {
+      "name": "S06 — Account 2 — Description",
+      "source": "src/scenes/Scene06.tsx"
+    },
+    {
+      "name": "S06 — Account 3 — Description",
+      "source": "src/scenes/Scene06.tsx"
+    },
+    {
+      "name": "S06 — Account 4 — Description",
+      "source": "src/scenes/Scene06.tsx"
+    },
+    {
+      "name": "S06 — Scrollbar left",
+      "source": "src/scenes/Scene06.tsx"
+    },
+    {
+      "name": "S06 — Scrollbar right",
+      "source": "src/scenes/Scene06.tsx"
+    },
+    {
+      "name": "S06 — Button Options",
+      "source": "src/scenes/Scene06.tsx"
+    },
+    {
+      "name": "S06 — Button Reset Password",
+      "source": "src/scenes/Scene06.tsx"
+    },
+    {
+      "name": "S06 — Button Restart",
       "source": "src/scenes/Scene06.tsx"
     },
     {
@@ -564,35 +752,59 @@
       "source": "src/scenes/Scene02.tsx"
     },
     {
-      "name": "S03 — Laptop — body",
+      "name": "S03 — Foto 1 — kartu dan artwork",
       "source": "src/scenes/Scene03.tsx"
     },
     {
-      "name": "S03 — Layar Windows",
+      "name": "S03 — Foto 2 — kartu dan artwork",
       "source": "src/scenes/Scene03.tsx"
     },
     {
-      "name": "S03 — Windows setup icon card",
+      "name": "S03 — Foto 3 — kartu dan artwork",
       "source": "src/scenes/Scene03.tsx"
     },
     {
-      "name": "S03 — Windows setup mark",
+      "name": "S03 — File 1 — kartu",
       "source": "src/scenes/Scene03.tsx"
     },
     {
-      "name": "S03 — Coret instalasi",
+      "name": "S03 — File 2 — kartu",
       "source": "src/scenes/Scene03.tsx"
     },
     {
-      "name": "S04 — Laptop — body",
+      "name": "S03 — Windows Setup — panel",
+      "source": "src/scenes/Scene03.tsx"
+    },
+    {
+      "name": "S03 — Windows Setup — ikon",
+      "source": "src/scenes/Scene03.tsx"
+    },
+    {
+      "name": "S03 — Windows Setup — pemisah",
+      "source": "src/scenes/Scene03.tsx"
+    },
+    {
+      "name": "S03 — Alert outline",
+      "source": "src/scenes/Scene03.tsx"
+    },
+    {
+      "name": "S03 — Alert badge merah",
+      "source": "src/scenes/Scene03.tsx"
+    },
+    {
+      "name": "S03 — Silang putih diagonal 1",
+      "source": "src/scenes/Scene03.tsx"
+    },
+    {
+      "name": "S03 — Silang putih diagonal 2",
+      "source": "src/scenes/Scene03.tsx"
+    },
+    {
+      "name": "S04 — Background",
       "source": "src/scenes/Scene04.tsx"
     },
     {
-      "name": "S04 — Layar Windows",
-      "source": "src/scenes/Scene04.tsx"
-    },
-    {
-      "name": "S04 — Kartu PCUnlocker",
+      "name": "S04 — Spotlight",
       "source": "src/scenes/Scene04.tsx"
     },
     {
@@ -600,15 +812,35 @@
       "source": "src/scenes/Scene04.tsx"
     },
     {
-      "name": "S05 — Laptop — body",
+      "name": "S04 — Aksen coral",
+      "source": "src/scenes/Scene04.tsx"
+    },
+    {
+      "name": "S05 — Background",
       "source": "src/scenes/Scene05.tsx"
     },
     {
-      "name": "S05 — Layar Windows",
+      "name": "S05 — Spotlight",
+      "source": "src/scenes/Scene05.tsx"
+    },
+    {
+      "name": "S05 — Aksen pembuka",
       "source": "src/scenes/Scene05.tsx"
     },
     {
       "name": "S05 — File ISO",
+      "source": "src/scenes/Scene05.tsx"
+    },
+    {
+      "name": "S05 — Lipatan file ISO",
+      "source": "src/scenes/Scene05.tsx"
+    },
+    {
+      "name": "S05 — Ikon pemulihan kontinu",
+      "source": "src/scenes/Scene05.tsx"
+    },
+    {
+      "name": "S05 — Aksen file ISO",
       "source": "src/scenes/Scene05.tsx"
     },
     {
@@ -620,7 +852,19 @@
       "source": "src/scenes/Scene05.tsx"
     },
     {
-      "name": "S05 — Layar loading",
+      "name": "S05 — Indikator aliran",
+      "source": "src/scenes/Scene05.tsx"
+    },
+    {
+      "name": "S05 — Laptop — body",
+      "source": "src/scenes/Scene05.tsx"
+    },
+    {
+      "name": "S05 — Layar Windows",
+      "source": "src/scenes/Scene05.tsx"
+    },
+    {
+      "name": "S05 — Ikon recovery",
       "source": "src/scenes/Scene05.tsx"
     },
     {
@@ -640,23 +884,95 @@
       "source": "src/scenes/Scene06.tsx"
     },
     {
-      "name": "S06 — Recovery UI — window",
+      "name": "S06 — Loading — Ikon recovery",
       "source": "src/scenes/Scene06.tsx"
     },
     {
-      "name": "S06 — Recovery UI — title bar",
+      "name": "S06 — Loading — Progress track",
       "source": "src/scenes/Scene06.tsx"
     },
     {
-      "name": "S06 — Windows installation field",
+      "name": "S06 — Loading — Progress isi",
       "source": "src/scenes/Scene06.tsx"
     },
     {
-      "name": "S06 — Daftar akun — tabel",
+      "name": "S06 — Desktop recovery",
       "source": "src/scenes/Scene06.tsx"
     },
     {
-      "name": "S06 — Daftar akun — header",
+      "name": "S06 — Window shadow",
+      "source": "src/scenes/Scene06.tsx"
+    },
+    {
+      "name": "S06 — Window panel",
+      "source": "src/scenes/Scene06.tsx"
+    },
+    {
+      "name": "S06 — Title bar",
+      "source": "src/scenes/Scene06.tsx"
+    },
+    {
+      "name": "S06 — Header blue",
+      "source": "src/scenes/Scene06.tsx"
+    },
+    {
+      "name": "S06 — Logo header",
+      "source": "src/scenes/Scene06.tsx"
+    },
+    {
+      "name": "S06 — Panel Recovery mode",
+      "source": "src/scenes/Scene06.tsx"
+    },
+    {
+      "name": "S06 — Panel Windows installation",
+      "source": "src/scenes/Scene06.tsx"
+    },
+    {
+      "name": "S06 — Radio Local account",
+      "source": "src/scenes/Scene06.tsx"
+    },
+    {
+      "name": "S06 — Radio Active Directory",
+      "source": "src/scenes/Scene06.tsx"
+    },
+    {
+      "name": "S06 — Installation field",
+      "source": "src/scenes/Scene06.tsx"
+    },
+    {
+      "name": "S06 — Account table",
+      "source": "src/scenes/Scene06.tsx"
+    },
+    {
+      "name": "S06 — Table header",
+      "source": "src/scenes/Scene06.tsx"
+    },
+    {
+      "name": "S06 — Divider User Name",
+      "source": "src/scenes/Scene06.tsx"
+    },
+    {
+      "name": "S06 — Divider Password",
+      "source": "src/scenes/Scene06.tsx"
+    },
+    {
+      "name": "S06 — Divider Locked Out",
+      "source": "src/scenes/Scene06.tsx"
+    },
+    {
+      "name": "S06 — Divider Disabled",
+      "source": "src/scenes/Scene06.tsx"
+    },
+    {
+      "name": "S06 — Divider Never Expire",
+      "source": "src/scenes/Scene06.tsx"
+    },
+    {
+      "name": "S06 — Scrollbar track",
+      "source": "src/scenes/Scene06.tsx"
+    },
+    {
+      "name": "S06 — Scrollbar thumb",
       "source": "src/scenes/Scene06.tsx"
     },
     {

@@ -2,13 +2,37 @@ import React from 'react';
 import {Interactive} from 'remotion';
 import './Scene02Windows11.css';
 
-// Scene02 v4 source is native DOM/SVG, not a flattened screenshot.
-// Coordinates are measured in the local 960x540 desktop.
+// Scene02 v7 approved: continuous pointer, stable Windows desktop, and shortcut-result focus.
+// Elements stay native DOM/SVG layers (not a flattened MP4). The desktop is 960x540 at stage (60,654).
 const clamp=(v:number)=>Math.min(1,Math.max(0,v));
 const smooth=(v:number)=>{const x=clamp(v);return x*x*(3-2*x)};
 const rise=(t:number,a:number,b:number)=>smooth((t-a)/(b-a));
 const band=(t:number,a:number,b:number,c:number,d:number)=>rise(t,a,b)*(1-rise(t,c,d));
 const mix=(a:number,b:number,p:number)=>a+(b-a)*p;
+// Cursor control points are in 1080x1920 composition coordinates. They NEVER depend on hidden DOM menus.
+// Edit the points to refine the cursor trajectory without editing the other layers.
+const cursorMoves=[
+ {start:2.62,end:3.49,from:[750,943],c1:[693,930],c2:[505,893],to:[448,900]},
+ {start:4.70,end:6.24,from:[448,900],c1:[468,945],c2:[546,1060],to:[650,1077]},
+ {start:7.51,end:8.28,from:[650,1077],c1:[643,1068],c2:[601,1055],to:[606,1048]},
+ {start:9.84,end:10.72,from:[606,1048],c1:[679,1047],c2:[801,1019],to:[861,1021]},
+ {start:12.30,end:13.53,from:[861,1021],c1:[855,940],c2:[864,787],to:[857,718]},
+] as const;
+const cubic=(a:number,b:number,c:number,d:number,p:number)=>{
+ const q=1-p;return q*q*q*a+3*q*q*p*b+3*q*p*p*c+p*p*p*d;
+};
+const cursorPosition=(t:number):[number,number]=>{
+ let last:[number,number]=[750,943];
+ for(const m of cursorMoves){
+  if(t<m.start)return last;
+  if(t<=m.end){
+   const p=clamp((t-m.start)/(m.end-m.start));
+   return [cubic(m.from[0],m.c1[0],m.c2[0],m.to[0],p),cubic(m.from[1],m.c1[1],m.c2[1],m.to[1],p)];
+  }
+  last=[m.to[0],m.to[1]];
+ }
+ return last;
+};
 
 const FolderIcon:React.FC<{scale?:number}>=({scale=1})=><div className="folder" style={{transform:`scale(${scale})`}}/>;
 const ChromeIcon:React.FC<{scale?:number}>=({scale=1})=><div className="chrome" style={{transform:`scale(${scale})`}}/>;
@@ -46,8 +70,8 @@ const Taskbar:React.FC=()=> <Interactive.Div name="S02 Windows — taskbar Windo
 </Interactive.Div>;
 
 const Explorer:React.FC<{t:number}>=({t})=>{
- const intro=rise(t,0,.85),minimize=rise(t,13.65,14.1);
- return <Interactive.Div name="S02 Explorer — jendela Kerja" className="explorer" style={{opacity:intro*(1-minimize),transform:`translate(${minimize*135}px,${minimize*140}px) scale(${(.97+.03*intro)*(1-.82*minimize)})`}}>
+ const minimize=rise(t,13.78,14.42);
+ return <Interactive.Div name="S02 Explorer — jendela Kerja" className="explorer" style={{opacity:1-rise(t,14.16,14.42),translate:`${-13*minimize}px ${237*minimize}px`,scale:1-.96*minimize,transformOrigin:'center center'}}>
   <div className="explorer-title"><div className="tab"><FolderIcon scale={.58}/> Kerja <span style={{marginLeft:'auto'}}>×</span></div><span style={{fontSize:21,fontWeight:300,marginLeft:5}}>＋</span><div className="window-controls"><div className="window-control">─</div><div className="window-control">□</div><div className="window-control">×</div></div></div>
   <div className="explorer-address"><span>‹</span><span>›</span><span style={{fontSize:15}}>↻</span><Interactive.Div name="S02 Explorer — alamat folder" className="crumb" style={{fontSize:12,backgroundColor:'#FFFFFF'}}>⌂　›　Documents　›　Kerja</Interactive.Div><div className="explorer-search">⌕　Search Kerja</div></div>
   <div className="command-bar"><div className="command"><b style={{fontSize:16}}>＋</b> New</div><div className="command">✂</div><div className="command">▤</div><div className="command">▣</div><div className="command">↗</div><div className="command">▥</div><div className="command">Sort ▾</div><div className="command">View ▾</div><div className="command">⋯</div></div>
@@ -62,78 +86,72 @@ const Explorer:React.FC<{t:number}>=({t})=>{
 };
 
 const ModernMenu:React.FC<{t:number}>=({t})=>{
- const o=band(t,4.25,4.4,7.13,7.23);
- return <Interactive.Div name="S02 Menu — klik kanan modern" className="context-menu" style={{opacity:o,display:o>.001?'block':'none'}}>
+ const o=band(t,4.36,4.56,7.17,7.33);
+ return <Interactive.Div name="S02 Menu — klik kanan modern" className="context-menu" style={{opacity:o,display:o>.001?'block':'none',translate:`0px ${(1-o)*5}px`,scale:.986+.014*o,transformOrigin:'top left'}}>
   <div className="context-tools"><span>✂</span><span>▤</span><span>▣</span><span>↗</span><span>▥</span></div>
   <div className="item">⌂　Open</div><div className="item">▤　Open with</div><div className="item">↗　Share</div><div className="line"/>
   <div className="item">Copy as path</div><div className="item">Properties</div><div className="line"/>
-  <Interactive.Div name="S02 Menu — Show more options" style={{height:34,color:'#303B44'}} className={`item ${t>=6.36&&t<7.2?'highlighted':''}`}>⋯　Show more options</Interactive.Div>
+  <Interactive.Div name="S02 Menu — Show more options" style={{height:34,color:'#303B44'}} className={`item ${t>=6.44&&t<7.32?'highlighted':''}`}>⋯　Show more options</Interactive.Div>
  </Interactive.Div>;
 };
 
 const LegacyMenu:React.FC<{t:number}>=({t})=>{
- const o=band(t,7.16,7.30,11.8,11.96);
- return <Interactive.Div name="S02 Menu — klasik Windows" className="legacy-menu" style={{opacity:o,display:o>.001?'block':'none'}}>
+ const o=band(t,7.26,7.49,12.04,12.24);
+ return <Interactive.Div name="S02 Menu — klasik Windows" className="legacy-menu" style={{opacity:o,display:o>.001?'block':'none',translate:`0px ${(1-o)*5}px`,scale:.986+.014*o,transformOrigin:'top left'}}>
   <div className="item">Open</div><div className="item">Edit</div><div className="item">Print</div><div className="item">Open with　 ›</div><div className="item">Share</div><div className="item">Cut</div><div className="item">Copy</div><div className="item">Create shortcut</div>
-  <Interactive.Div name="S02 Menu — Send to" style={{height:30,color:'#303B44'}} className={`item ${t>=9.0&&t<11.95?'highlighted':''}`}>Send to <span style={{marginLeft:'auto'}}>›</span></Interactive.Div>
+  <Interactive.Div name="S02 Menu — Send to" style={{height:30,color:'#303B44'}} className={`item ${t>=8.80&&t<12.22?'highlighted':''}`}>Send to <span style={{marginLeft:'auto'}}>›</span></Interactive.Div>
   <div className="item">Properties</div>
  </Interactive.Div>;
 };
 
 const SendToMenu:React.FC<{t:number}>=({t})=>{
- const o=band(t,9.52,9.72,11.75,11.96);
- return <Interactive.Div name="S02 Menu — pilihan Send to" className="sub-menu" style={{opacity:o,display:o>.001?'block':'none'}}>
+ const o=band(t,9.64,9.85,12.04,12.24);
+ return <Interactive.Div name="S02 Menu — pilihan Send to" className="sub-menu" style={{opacity:o,display:o>.001?'block':'none',translate:`0px ${(1-o)*5}px`,scale:.986+.014*o,transformOrigin:'top left'}}>
   <div className="item">Bluetooth device</div>
-  <Interactive.Div name="S02 Menu — Desktop create shortcut" style={{height:30,color:'#303B44'}} className={`item ${t>=10.65&&t<11.95?'highlighted':''}`}>Desktop (create shortcut)</Interactive.Div>
+  <Interactive.Div name="S02 Menu — Desktop create shortcut" style={{height:30,color:'#303B44'}} className={`item ${t>=10.98&&t<12.23?'highlighted':''}`}>Desktop (create shortcut)</Interactive.Div>
   <div className="item">Documents</div><div className="item">Compressed (zipped) folder</div>
  </Interactive.Div>;
 };
 
-const Cursor:React.FC<{t:number;zoom:number}>=({t,zoom})=>{
- // The hotspot tracks the actual menu row center as the full desktop zooms.
- const keypoints:[number,number,number][]=[
-  [0,950,570],[2.7,950,570],[3.9,350,245],[4.8,350,245],
-  [6.5,600,413],[7.15,600,413],[8.9,562,392],[9.65,562,392],
-  [10.7,818,365],[11.75,818,365],[12.35,818,365],
-  [13.3,797,62],[13.62,797,62],[14.2,855,575],[16,855,575],
- ];
- let px=950,py=570;
- for(let i=1;i<keypoints.length;i++){
-  if(t<keypoints[i][0]){
-   const [a,ax,ay]=keypoints[i-1], [b,bx,by]=keypoints[i];const s=smooth((t-a)/(b-a));
-   px=mix(ax,bx,s);py=mix(ay,by,s);break;
-  }
- }
- const x=60+480+(px-480)*zoom;
- const y=654+270+(py-270)*zoom;
- const show=band(t,2.1,2.6,14.0,14.3);
- const hits=[4.3,7.13,11.78,13.65];
- const hit=hits.find(v=>Math.abs(t-v)<.10);
- const flash=hit?(.3+.4*(1-Math.abs(t-hit)/.10)):0;
+const Cursor:React.FC<{t:number}>=({t})=>{
+ const [x,y]=cursorPosition(t);
+ const opacity=band(t,2.38,2.72,14.22,14.55);
+ const clicks=[4.33,7.20,11.84,13.76];
+ const hit=clicks.find(k=>Math.abs(t-k)<.13);
+ const clickOpacity=hit ? .30*(1-Math.abs(t-hit)/.13) : 0;
  return <>
-  <Interactive.Div name="S02 Cursor — posisi dan gerakan" className="s02w11-cursor" style={{position:'absolute',left:x,top:y,zIndex:65,opacity:show,width:40,height:47,pointerEvents:'none',filter:'drop-shadow(0 1px 2px #0006)'}}><svg viewBox="0 0 40 47" width="40" height="47"><path d="M2 1L2 39L12.6 30.5L19.7 44L27.1 40.7L20.2 28H34Z" fill="#FFF" stroke="#141414" strokeWidth="2.7" strokeLinejoin="round"/></svg></Interactive.Div>
-  <div style={{position:'absolute',left:x-14,top:y-14,zIndex:66,border:'2px solid #DF805F',borderRadius:'50%',width:30,height:30,opacity:flash,pointerEvents:'none'}}/>
+  <Interactive.Div name="S02 Cursor — posisi dan gerakan" style={{position:'absolute',left:x,top:y,zIndex:65,opacity,width:29,height:34,pointerEvents:'none',filter:'drop-shadow(0 1px 2px #0006)'}}>
+   <svg viewBox="0 0 40 47" width="29" height="34"><path d="M2 1L2 39L12.6 30.5L19.7 44L27.1 40.7L20.2 28H34Z" fill="#FFF" stroke="#141414" strokeWidth="2.7" strokeLinejoin="round"/></svg>
+  </Interactive.Div>
+  <Interactive.Div name="S02 Cursor — efek klik halus" style={{position:'absolute',left:x-13,top:y-13,width:30,height:30,zIndex:66,border:'2px solid #DF805F',borderRadius:'50%',pointerEvents:'none',opacity:clickOpacity}}/>
  </>;
 };
 
-export const Scene02Windows11:React.FC<{frame:number}>=({frame})=>{
- const t=frame/30;
- const zoom=band(t,6.2,7.15,12.2,13.2);
- // Bridge from the small Explorer at the end of S01 without changing locked S01.
- const connectedIntro=rise(t,0,.65);
- const iconOpacity=rise(t,14.07,14.45);
+export const Scene02Windows11:React.FC<{frame:number;fps?:number}>=({frame,fps=30})=>{
+ const t=frame/fps;
+ const iconOpacity=rise(t,12.10,12.56);
+ const focusIn=rise(t,14.46,14.77), focusOut=rise(t,15.63,15.96);
+ const focusOpacity=focusIn*(1-focusOut);
+ const labelOpacity=rise(t,14.61,14.88)*(1-focusOut);
+ const checkIn=rise(t,14.67,14.92);
  return <>
-  <Interactive.Div name="S02 Desktop — simulasi Windows 11" className="s02w11" style={{position:'absolute',left:60,top:654,opacity:connectedIntro,transform:`translateY(${(1-connectedIntro)*26}px) scale(${.96+.04*connectedIntro+.08*zoom})`,transformOrigin:'50% 50%'}}>
+  <Interactive.Div name="S02 Desktop — simulasi Windows 11" className="s02w11" style={{position:'absolute',left:60,top:654,width:960,height:540,opacity:1,scale:1,translate:'0px 0px',transformOrigin:'center center'}}>
    <Bloom/>
-   <Interactive.Div name="S02 Desktop — shortcut Chrome" className="desktop-icon" style={{top:21}}><div className="ico"><ChromeIcon/><span className="small-arrow">↗</span></div><div className="label">Google Chrome</div></Interactive.Div>
-   <Interactive.Div name="S02 Desktop — shortcut ERP" className="desktop-icon" style={{top:103}}><div className="ico"><ErpIcon/><span className="small-arrow">↗</span></div><div className="label">ERP System</div></Interactive.Div>
-   <Interactive.Div name="S02 Desktop — shortcut baru Excel" className="desktop-icon" style={{top:187,opacity:iconOpacity,transform:`translateY(${(1-iconOpacity)*9}px)`}}><div className="ico"><ExcelIcon/><span className="small-arrow">↗</span></div><div className="label">Laporan Kerja.xlsx</div></Interactive.Div>
+   <Interactive.Div name="S02 Desktop — shortcut Chrome" className="desktop-icon" style={{top:21,left:19,width:95}}><div className="ico"><ChromeIcon/><span className="small-arrow">↗</span></div><div className="label">Google Chrome</div></Interactive.Div>
+   <Interactive.Div name="S02 Desktop — shortcut ERP" className="desktop-icon" style={{top:103,left:19,width:95}}><div className="ico"><ErpIcon/><span className="small-arrow">↗</span></div><div className="label">ERP System</div></Interactive.Div>
+   <Interactive.Div name="S02 Desktop — shortcut baru Excel" className="desktop-icon" style={{top:187,left:19,width:95,opacity:iconOpacity,translate:`0px ${(1-iconOpacity)*9}px`}}><div className="ico"><ExcelIcon/><span className="small-arrow">↗</span></div><div className="label">Laporan Kerja.xlsx</div></Interactive.Div>
+
+   {/* Focus overlays appear ONLY after Explorer has finished minimizing; no artificial icon flight. */}
+   <Interactive.Div name="S02 Fokus — bingkai shortcut baru" style={{position:'absolute',left:11,top:180,width:119,height:103,zIndex:16,border:'2.5px solid #DF805F',backgroundColor:'rgba(223,128,95,0.065)',borderRadius:12,boxShadow:'0 0 0 5px rgba(223,128,95,.10), 0 0 23px rgba(223,128,95,.17)',pointerEvents:'none',opacity:focusOpacity,scale:.955+.045*focusIn,transformOrigin:'center center'}}/>
+   <Interactive.Div name="S02 Fokus — garis penghubung" style={{position:'absolute',left:132,top:228,width:13,height:2,zIndex:16,backgroundColor:'#DF805F',pointerEvents:'none',opacity:focusOpacity*.9}}/>
+   <Interactive.Div name="S02 Fokus — label Shortcut baru" style={{position:'absolute',left:146,top:212,zIndex:17,fontFamily:'Segoe UI, Arial, sans-serif',fontSize:19,fontWeight:720,letterSpacing:-.25,color:'#AF5B40',whiteSpace:'nowrap',textShadow:'0 1px 2px rgba(255,255,255,.8)',pointerEvents:'none',opacity:labelOpacity,translate:`${7*(1-focusIn)}px 0px`}}>Shortcut baru</Interactive.Div>
+   <Interactive.Div name="S02 Fokus — centang shortcut" style={{position:'absolute',left:115,top:175,width:23,height:23,zIndex:18,display:'flex',alignItems:'center',justifyContent:'center',borderRadius:'50%',backgroundColor:'#DF805F',color:'#FFFFFF',fontSize:13,fontWeight:800,border:'2px solid #FFFFFF',boxShadow:'0 3px 9px rgba(0,0,0,.18)',pointerEvents:'none',opacity:checkIn*(1-focusOut),scale:.6+.4*checkIn,transformOrigin:'center center'}}>✓</Interactive.Div>
    <Taskbar/>
    <Explorer t={t}/>
    <ModernMenu t={t}/>
    <LegacyMenu t={t}/>
    <SendToMenu t={t}/>
   </Interactive.Div>
-  <Cursor t={t} zoom={1+.08*zoom}/>
+  <Cursor t={t}/>
  </>;
 };

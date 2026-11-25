@@ -5,7 +5,7 @@ import {AbsoluteFill, Interactive, interpolate, useCurrentFrame} from 'remotion'
  * Replace every placeholder with the topic-specific real object; do not copy this mock card to final videos.
  * Editable names and literal inline styles are preserved for native Studio editing.
  */
-export const Scene01: React.FC = () => {
+export const Scene01: React.FC<{showSubtitles?: boolean}> = ({showSubtitles = true}) => {
   const frame = useCurrentFrame();
   return (
     <AbsoluteFill>
@@ -23,11 +23,11 @@ export const Scene01: React.FC = () => {
         opacity: interpolate(frame, [66, 82], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'}),
         translate: interpolate(frame, [66, 86], ['0px 32px', '0px 0px'], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'}),
       }}/>
-      {/* One direct Studio text node per editable caption cue. Never loop a shared Interactive wrapper. */}
-      {frame>=128 && frame<218 ? <Interactive.Div name="S01 — Subtitle 01" style={{
+      {/* One direct Studio text node per editable caption cue. Keep draft text/timing in sync with narration.json; never loop a shared Interactive wrapper. */}
+      {showSubtitles && frame>=128 && frame<218 ? <Interactive.Div name="S01 — Subtitle 01" style={{
         position:'absolute',left:110,top:1400,width:860,
         fontFamily:'Arial, sans-serif',fontSize:42,fontWeight:700,
-        color:'#202020',textAlign:'center',
+        color:'#202020',textAlign:'center',lineHeight:1.2,
         translate:'0px 0px',scale:1,rotate:'0deg',opacity:1,
       }}>Hasilnya langsung terlihat.</Interactive.Div> : null}
       <Interactive.Div name="S01 — Isi kartu" style={{
