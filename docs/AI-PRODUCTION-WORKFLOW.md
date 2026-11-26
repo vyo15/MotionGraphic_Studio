@@ -55,3 +55,13 @@ Satu Master, tanpa editor alternatif. ChatGPT menghasilkan add-on sesuai `contra
 
 
 Alur entry point dan penanganan error terbaru: [USER-FLOW-CHATGPT.md](USER-FLOW-CHATGPT.md). Kontrak editing native: [EDITABLE-CONTRACT.md](EDITABLE-CONTRACT.md).
+
+## MOTION DIRECTION v3.0 — routing otomatis
+
+Untuk tugas motion graphic relevan, gunakan MotionGraphic Studio Director bila tersedia dan baca `skills/motion-continuity-director/SKILL.md`, `docs/MOTION-DECISION-MATRIX.md`, `docs/MOTION-VOCABULARY.md`, `docs/PORTRAIT-CAMERA-STANDARD.md`, `docs/MOTION-PLAN-CONTRACT.md` setelah aturan motion. Pilih gerak berdasarkan makna beat: eye trace, focus handoff, shared element, action/reaction, reflow, hold; tanpa Slide Mask dekoratif sebagai default. UI landscape dalam portrait memakai kamera virtual fit → zoom bila detail → pan/tracking → hold → zoom out bila perlu; world UI/cursor terpisah dari subtitle/background. Periksa collision sepanjang lintasan dan kontinuitas full/segment. Video baru wajib Motion Plan v1 (`motionPlanContract: "focus-driven-v1"`) dan QA metadata, kemudian preview visual. Tidak ada retrofit project lama/ACC. Skill lokal bukan pemasangan otomatis ke akun.
+
+## Gate release 2.0.0
+Untuk video baru jalankan `npm run qa:motion -- <folder-addon>` dan `npm run qa:spatial -- <folder-addon>` lalu `npm run addon:validate -- <folder-addon> --production --syntax` (flag produksi eksplisit; scaffold/legacy tetap dapat memakai `--strict`). `npm run qa:motion -- --all` melewati legacy tanpa kontrak, bukan PASS visual. `npm run release:check` memeriksa konsistensi versi sebelum ekspor Master. Baca `docs/RELEASE-2.0.0-AUDIT.md` (riwayat sebelumnya: `docs/RELEASE-1.9.0-AUDIT.md`).
+
+## Production Toolkit v1.0 — Master 2.0.0
+Baca `docs/PRODUCTION-TOOLKIT.md` sebelum build. Untuk video baru: pilih/copy kamera/asset lokal dari `templates/production-toolkit/` bila relevan; wajib `production/spatial-plan.json` dan `npm run qa:spatial -- <folder-addon>` di gate produksi. Catat world/viewport, focus bounds, track aktif dan collision exemption beralasan, gunakan keyframe yang sama dengan source; cek seluruh frame deklarasi dan tetap inspeksi preview full/segment. Setelah rekaman VO: `vo:align` hanya proposal timestamp, bukan ASR/ACC atau retiming otomatis. `qa:approval` read-only; `qa:render` bedakan declared hold dan kandidat dead zone. Legacy/ACC tidak dipaksa migrasi. Lihat laporan release 2.0.0 untuk batas verifikasi.

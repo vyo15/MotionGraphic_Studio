@@ -31,7 +31,7 @@ Kalau sudah berhasil, tinggal restart komputernya.
 Nah, sekarang kamu bisa coba login lagi. Nggak perlu install ulang, kan?
 
 ## S11 CTA
-Kalau kamu sendiri, pernah ngalamin masalah kayak gini nggak?
+Kalau kamu pernah lupa password Windows, waktu itu ngatasinnya gimana? Coba tulis di kolom komentar.
 
 ## S12 Cover Reels
 Tanpa VO

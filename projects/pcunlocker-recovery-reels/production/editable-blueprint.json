@@ -1046,18 +1046,6 @@
       "source": "src/scenes/Scene10.tsx"
     },
     {
-      "name": "S11 — Ajakan komentar",
-      "source": "src/scenes/Scene11.tsx"
-    },
-    {
-      "name": "S11 — Subtitle 01",
-      "source": "src/scenes/Scene11.tsx"
-    },
-    {
-      "name": "S11 — Subtitle 02",
-      "source": "src/scenes/Scene11.tsx"
-    },
-    {
       "name": "S12 — Cover judul",
       "source": "src/scenes/Scene12.tsx"
     },
@@ -1068,6 +1056,166 @@
     {
       "name": "S12 — Cover nama aplikasi",
       "source": "src/scenes/Scene12.tsx"
+    },
+    {
+      "name": "S02 — Bridge — Nama akun lokal",
+      "source": "src/scenes/Scene02.tsx"
+    },
+    {
+      "name": "S02 — Bridge — Indikator gagal 1",
+      "source": "src/scenes/Scene02.tsx"
+    },
+    {
+      "name": "S02 — Bridge — Indikator gagal 2",
+      "source": "src/scenes/Scene02.tsx"
+    },
+    {
+      "name": "S02 — Bridge — Pesan account lockout",
+      "source": "src/scenes/Scene02.tsx"
+    },
+    {
+      "name": "S02 — Bridge — OK lockout",
+      "source": "src/scenes/Scene02.tsx"
+    },
+    {
+      "name": "S02 — Bridge — Indikator gagal 3",
+      "source": "src/scenes/Scene02.tsx"
+    },
+    {
+      "name": "S01 — Tombol submit password",
+      "source": "src/scenes/Scene01.tsx"
+    },
+    {
+      "name": "S09 — Login submit",
+      "source": "src/scenes/Scene09.tsx"
+    },
+    {
+      "name": "S10 — Taskbar tray",
+      "source": "src/scenes/Scene10.tsx"
+    },
+    {
+      "name": "S10 — Desktop This PC label",
+      "source": "src/scenes/Scene10.tsx"
+    },
+    {
+      "name": "S10 — Explorer window controls",
+      "source": "src/scenes/Scene10.tsx"
+    },
+    {
+      "name": "S10 — Explorer ribbon File",
+      "source": "src/scenes/Scene10.tsx"
+    },
+    {
+      "name": "S10 — Explorer ribbon tabs",
+      "source": "src/scenes/Scene10.tsx"
+    },
+    {
+      "name": "S10 — Explorer arrows",
+      "source": "src/scenes/Scene10.tsx"
+    },
+    {
+      "name": "S10 — Explorer search text",
+      "source": "src/scenes/Scene10.tsx"
+    },
+    {
+      "name": "S10 — Explorer navigation Quick access",
+      "source": "src/scenes/Scene10.tsx"
+    },
+    {
+      "name": "S10 — Explorer navigation Desktop",
+      "source": "src/scenes/Scene10.tsx"
+    },
+    {
+      "name": "S10 — Explorer navigation Downloads",
+      "source": "src/scenes/Scene10.tsx"
+    },
+    {
+      "name": "S10 — Explorer navigation Documents",
+      "source": "src/scenes/Scene10.tsx"
+    },
+    {
+      "name": "S10 — Explorer navigation Pictures",
+      "source": "src/scenes/Scene10.tsx"
+    },
+    {
+      "name": "S10 — Explorer navigation This PC",
+      "source": "src/scenes/Scene10.tsx"
+    },
+    {
+      "name": "S10 — Explorer navigation Local Disk (C:)",
+      "source": "src/scenes/Scene10.tsx"
+    },
+    {
+      "name": "S10 — Explorer column Name",
+      "source": "src/scenes/Scene10.tsx"
+    },
+    {
+      "name": "S10 — Explorer column Type",
+      "source": "src/scenes/Scene10.tsx"
+    },
+    {
+      "name": "S10 — Explorer item 1",
+      "source": "src/scenes/Scene10.tsx"
+    },
+    {
+      "name": "S10 — Explorer item type 1",
+      "source": "src/scenes/Scene10.tsx"
+    },
+    {
+      "name": "S10 — Explorer item 2",
+      "source": "src/scenes/Scene10.tsx"
+    },
+    {
+      "name": "S10 — Explorer item type 2",
+      "source": "src/scenes/Scene10.tsx"
+    },
+    {
+      "name": "S10 — Explorer item 3",
+      "source": "src/scenes/Scene10.tsx"
+    },
+    {
+      "name": "S10 — Explorer item type 3",
+      "source": "src/scenes/Scene10.tsx"
+    },
+    {
+      "name": "S10 — Explorer item 4",
+      "source": "src/scenes/Scene10.tsx"
+    },
+    {
+      "name": "S10 — Explorer item type 4",
+      "source": "src/scenes/Scene10.tsx"
+    },
+    {
+      "name": "S10 — Explorer status",
+      "source": "src/scenes/Scene10.tsx"
+    },
+    {
+      "name": "S10 — Login submit",
+      "source": "src/scenes/Scene10.tsx"
+    },
+    {
+      "name": "S11 — VO 01a",
+      "source": "src/scenes/Scene11.tsx"
+    },
+    {
+      "name": "S11 — VO 01b",
+      "source": "src/scenes/Scene11.tsx"
+    },
+    {
+      "name": "S11 — VO 02a",
+      "source": "src/scenes/Scene11.tsx"
+    },
+    {
+      "name": "S11 — VO 02b",
+      "source": "src/scenes/Scene11.tsx"
+    },
+    {
+      "name": "S11 — VO 03a",
+      "source": "src/scenes/Scene11.tsx"
+    },
+    {
+      "name": "S11 — VO 03b",
+      "source": "src/scenes/Scene11.tsx"
     }
   ],
   "nativeVisualTargets": [
@@ -1720,26 +1868,6 @@
       "source": "src/scenes/Scene10.tsx"
     },
     {
-      "name": "S11 — Bubble komentar",
-      "source": "src/scenes/Scene11.tsx"
-    },
-    {
-      "name": "S11 — Ekor bubble",
-      "source": "src/scenes/Scene11.tsx"
-    },
-    {
-      "name": "S11 — Titik komentar 1",
-      "source": "src/scenes/Scene11.tsx"
-    },
-    {
-      "name": "S11 — Titik komentar 2",
-      "source": "src/scenes/Scene11.tsx"
-    },
-    {
-      "name": "S11 — Titik komentar 3",
-      "source": "src/scenes/Scene11.tsx"
-    },
-    {
       "name": "S12 — Cover Windows panes",
       "source": "src/scenes/Scene12.tsx"
     },
@@ -1750,6 +1878,234 @@
     {
       "name": "S12 — Cover Kunci",
       "source": "src/scenes/Scene12.tsx"
+    },
+    {
+      "name": "S06 — Fokus daftar akun",
+      "source": "src/scenes/Scene06.tsx"
+    },
+    {
+      "name": "S07 — Fokus daftar akun",
+      "source": "src/scenes/Scene07.tsx"
+    },
+    {
+      "name": "S07 — Redup UI belakang dialog",
+      "source": "src/scenes/Scene07.tsx"
+    },
+    {
+      "name": "S08 — Redup UI belakang dialog",
+      "source": "src/scenes/Scene08.tsx"
+    },
+    {
+      "name": "S02 — Bridge — Laptop — body",
+      "source": "src/scenes/Scene02.tsx"
+    },
+    {
+      "name": "S02 — Bridge — Layar Windows",
+      "source": "src/scenes/Scene02.tsx"
+    },
+    {
+      "name": "S02 — Bridge — Avatar pengguna",
+      "source": "src/scenes/Scene02.tsx"
+    },
+    {
+      "name": "S10 — Wallpaper window mark",
+      "source": "src/scenes/Scene10.tsx"
+    },
+    {
+      "name": "S10 — Wallpaper light",
+      "source": "src/scenes/Scene10.tsx"
+    },
+    {
+      "name": "S10 — Taskbar search",
+      "source": "src/scenes/Scene10.tsx"
+    },
+    {
+      "name": "S10 — Taskbar explorer",
+      "source": "src/scenes/Scene10.tsx"
+    },
+    {
+      "name": "S10 — Taskbar view",
+      "source": "src/scenes/Scene10.tsx"
+    },
+    {
+      "name": "S10 — Desktop This PC icon",
+      "source": "src/scenes/Scene10.tsx"
+    },
+    {
+      "name": "S10 — Desktop cursor",
+      "source": "src/scenes/Scene10.tsx"
+    },
+    {
+      "name": "S10 — Explorer title icon",
+      "source": "src/scenes/Scene10.tsx"
+    },
+    {
+      "name": "S10 — Explorer ribbon",
+      "source": "src/scenes/Scene10.tsx"
+    },
+    {
+      "name": "S10 — Explorer address bar",
+      "source": "src/scenes/Scene10.tsx"
+    },
+    {
+      "name": "S10 — Explorer search box",
+      "source": "src/scenes/Scene10.tsx"
+    },
+    {
+      "name": "S10 — Explorer navigation pane",
+      "source": "src/scenes/Scene10.tsx"
+    },
+    {
+      "name": "S10 — Explorer navigation icon Quick access",
+      "source": "src/scenes/Scene10.tsx"
+    },
+    {
+      "name": "S10 — Explorer navigation icon Desktop",
+      "source": "src/scenes/Scene10.tsx"
+    },
+    {
+      "name": "S10 — Explorer navigation icon Downloads",
+      "source": "src/scenes/Scene10.tsx"
+    },
+    {
+      "name": "S10 — Explorer selected navigation",
+      "source": "src/scenes/Scene10.tsx"
+    },
+    {
+      "name": "S10 — Explorer navigation icon Documents",
+      "source": "src/scenes/Scene10.tsx"
+    },
+    {
+      "name": "S10 — Explorer navigation icon Pictures",
+      "source": "src/scenes/Scene10.tsx"
+    },
+    {
+      "name": "S10 — Explorer navigation icon This PC",
+      "source": "src/scenes/Scene10.tsx"
+    },
+    {
+      "name": "S10 — Explorer navigation icon Local Disk (C:)",
+      "source": "src/scenes/Scene10.tsx"
+    },
+    {
+      "name": "S10 — Explorer column header",
+      "source": "src/scenes/Scene10.tsx"
+    },
+    {
+      "name": "S10 — Explorer item icon 1",
+      "source": "src/scenes/Scene10.tsx"
+    },
+    {
+      "name": "S10 — Explorer item icon 2",
+      "source": "src/scenes/Scene10.tsx"
+    },
+    {
+      "name": "S10 — Explorer item icon 3",
+      "source": "src/scenes/Scene10.tsx"
+    },
+    {
+      "name": "S10 — Explorer item icon 4",
+      "source": "src/scenes/Scene10.tsx"
+    },
+    {
+      "name": "S10 — Password bullet 01",
+      "source": "src/scenes/Scene10.tsx"
+    },
+    {
+      "name": "S10 — Password bullet 02",
+      "source": "src/scenes/Scene10.tsx"
+    },
+    {
+      "name": "S10 — Password bullet 03",
+      "source": "src/scenes/Scene10.tsx"
+    },
+    {
+      "name": "S10 — Password bullet 04",
+      "source": "src/scenes/Scene10.tsx"
+    },
+    {
+      "name": "S10 — Password bullet 05",
+      "source": "src/scenes/Scene10.tsx"
+    },
+    {
+      "name": "S10 — Password bullet 06",
+      "source": "src/scenes/Scene10.tsx"
+    },
+    {
+      "name": "S10 — Password bullet 07",
+      "source": "src/scenes/Scene10.tsx"
+    },
+    {
+      "name": "S10 — Password bullet 08",
+      "source": "src/scenes/Scene10.tsx"
+    },
+    {
+      "name": "S10 — Login caret",
+      "source": "src/scenes/Scene10.tsx"
+    },
+    {
+      "name": "S11 — Bubble komentar",
+      "source": "src/scenes/Scene11.tsx"
+    },
+    {
+      "name": "S11 — Ekor bubble — outline",
+      "source": "src/scenes/Scene11.tsx"
+    },
+    {
+      "name": "S11 — Ekor bubble — isi",
+      "source": "src/scenes/Scene11.tsx"
+    },
+    {
+      "name": "S11 — Avatar — lingkaran",
+      "source": "src/scenes/Scene11.tsx"
+    },
+    {
+      "name": "S11 — Avatar — kepala",
+      "source": "src/scenes/Scene11.tsx"
+    },
+    {
+      "name": "S11 — Avatar — badan",
+      "source": "src/scenes/Scene11.tsx"
+    },
+    {
+      "name": "S11 — Garis komentar 1",
+      "source": "src/scenes/Scene11.tsx"
+    },
+    {
+      "name": "S11 — Garis komentar 2",
+      "source": "src/scenes/Scene11.tsx"
+    },
+    {
+      "name": "S11 — Garis komentar 3",
+      "source": "src/scenes/Scene11.tsx"
+    },
+    {
+      "name": "S11 — Pesawat kertas — utama",
+      "source": "src/scenes/Scene11.tsx"
+    },
+    {
+      "name": "S11 — Pesawat kertas — lipatan",
+      "source": "src/scenes/Scene11.tsx"
+    },
+    {
+      "name": "S10 — Gallery artwork Foto keluarga",
+      "source": "src/scenes/Scene10.tsx"
+    },
+    {
+      "name": "S10 — Gallery artwork Kenangan",
+      "source": "src/scenes/Scene10.tsx"
+    },
+    {
+      "name": "S10 — Gallery artwork Dokumentasi",
+      "source": "src/scenes/Scene10.tsx"
+    },
+    {
+      "name": "S10 — Gallery artwork DOCX",
+      "source": "src/scenes/Scene10.tsx"
+    },
+    {
+      "name": "S10 — Gallery artwork XLSX",
+      "source": "src/scenes/Scene10.tsx"
     }
   ],
   "propsTextTargets": [],

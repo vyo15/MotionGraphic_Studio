@@ -46,7 +46,8 @@ test('sync refuses to erase missing registered project BEFORE touching Root or c
  const tmp=fs.mkdtempSync(path.join(os.tmpdir(),'mg-sync-guard-'));
  try{
   for(const dir of ['tools','projects/only-one/src','src','library'])fs.mkdirSync(path.join(tmp,dir),{recursive:true});
-  for(const name of ['sync-projects.mjs','studio-props-bridge.mjs','register-scene-segments.mjs','production-scope.mjs','validate-addon.mjs']){
+  fs.cpSync(path.join(ROOT,'templates/production-toolkit'),path.join(tmp,'templates/production-toolkit'),{recursive:true});
+  for(const name of ['sync-projects.mjs','studio-props-bridge.mjs','register-scene-segments.mjs','production-scope.mjs','validate-addon.mjs','qa-motion-plan.mjs','qa-spatial.mjs','qa-spatial-trace.mjs','approval-identity.mjs']){
    fs.copyFileSync(path.join(ROOT,'tools',name),path.join(tmp,'tools',name));
   }
   fs.writeFileSync(path.join(tmp,'package.json'),JSON.stringify({dependencies:{}}));
@@ -67,7 +68,8 @@ test('official archived project may be removed by sync; surviving project remain
  const tmp=fs.mkdtempSync(path.join(os.tmpdir(),'mg-archive-guard-'));
  try{
   for(const dir of ['tools','projects/active-one/src','src','library/sampah/2026-11-20-LostVid/project'])fs.mkdirSync(path.join(tmp,dir),{recursive:true});
-  for(const name of ['sync-projects.mjs','studio-props-bridge.mjs','register-scene-segments.mjs','production-scope.mjs','validate-addon.mjs']){
+  fs.cpSync(path.join(ROOT,'templates/production-toolkit'),path.join(tmp,'templates/production-toolkit'),{recursive:true});
+  for(const name of ['sync-projects.mjs','studio-props-bridge.mjs','register-scene-segments.mjs','production-scope.mjs','validate-addon.mjs','qa-motion-plan.mjs','qa-spatial.mjs','qa-spatial-trace.mjs','approval-identity.mjs']){
    fs.copyFileSync(path.join(ROOT,'tools',name),path.join(tmp,'tools',name));
   }
   fs.writeFileSync(path.join(tmp,'package.json'),JSON.stringify({dependencies:{}}));

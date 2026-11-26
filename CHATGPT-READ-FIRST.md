@@ -1,12 +1,13 @@
 # CHATGPT — READ FIRST SAAT MASTER ZIP DIUNGGAH
 
-**Versi aturan:** 2026-11-22 · **Lingkup:** MotionGraphic Studio v1.8.1, Remotion, project baru dan revisi.
+**Versi aturan:** 2026-11-26 · Motion Direction v3.0 · **Lingkup:** MotionGraphic Studio v2.0.0, Remotion, project baru dan revisi.
 
 > File ini adalah **pintu masuk dokumentasi** agar ChatGPT mudah menemukan aturan ketika ZIP Master diunggah. File ini bukan skrip yang berjalan dan tidak otomatis menjadi Project Instructions atau Memory akun. ChatGPT perlu benar-benar membuka/membaca ZIP. Instruksi keselamatan/platform tetap berlaku.
 
 ## A. Urutan baca wajib setelah menerima Master ZIP
 1. Identifikasi bahwa ZIP berisi folder `MotionGraphic-Studio/` dan baca `CHATGPT-READ-FIRST.md` ini.
 2. Baca `AGENTS.md`, `PRODUCTION-RULES.md`, `docs/STORYBOARD-TEMPLATE-UNIVERSAL.md`, **`docs/MOTIONGRAPHIC-DESIGN-SYSTEM.md`**, **`docs/MOTION-DIRECTION-RULES.md`**, **`docs/QA-VISUAL-MOTION-CHECKLIST.md`**, **`docs/SOUND-DIRECTION-RULES.md`**, `PROMPT-PROYEK-CHATGPT.md`, `docs/CHATGPT-PROJECT-REFERENCE.md`.
+2a. Untuk motion, baca routing **MOTION DIRECTION v3.0** di bagian akhir file ini dan semua dokumen/skill yang dirujuk sebelum storyboard/build.
 3. Verifikasi `contracts/studio-capabilities.json`, `contracts/addon.schema.json`, `package.json` dan struktur `projects/` pada ZIP yang **baru diunggah**, bukan dari memori/snapshot lama.
 4. Jika pekerjaan menyangkut project existing, baca `projects/<slug>/AGENTS.md`, `PROJECT-SCOPE.md`, `SCRIPT.md`, `STORYBOARD.md`, `PRODUCTION-STATE.json`, manifest `motiongraphic-video.json`, source/scene terkait dan lock/ACC. Untuk Easy2Boot gunakan source ACC hanya sebagai referensi kualitas, **jangan ubah video yang sudah ACC**.
 5. Ringkas **temuan aktual**, status ACC, ruang lingkup, tindakan yang diminta, dan batas QA. Jika file gagal dibuka, katakan yang belum berhasil dibaca. Jangan membuat klaim sudah audit tanpa bukti.
@@ -69,3 +70,13 @@ Salin isi [`docs/CHATGPT-PROJECT-INSTRUCTIONS.md`](docs/CHATGPT-PROJECT-INSTRUCT
 ## Kualitas render untuk CapCut (aturan Master saat ZIP dibuka)
 
 Gunakan render yang telah tersedia dalam `npm run menu` → Render MP4; jangan membangun renderer/launcher kedua. Profil `CapCut HQ` sudah memakai H.264 CRF16, PNG frames, BT.709, 48k AAC untuk bahan yang akan diimpor manual ke CapCut. VO dan subtitle final di CapCut, motion/transisi/SFX di Remotion, cover dari scene video terakhir tanpa PNG wajib. Baca [`docs/RENDER-HQ-CAPCUT.md`](docs/RENDER-HQ-CAPCUT.md) sebelum mengubah workflow atau render. Jangan menyatakan kualitas MP4 sudah lolos sebelum benar-benar dirender dan ditonton.
+
+## MOTION DIRECTION v3.0 — routing otomatis
+
+Untuk tugas motion graphic relevan, gunakan MotionGraphic Studio Director bila tersedia dan baca `skills/motion-continuity-director/SKILL.md`, `docs/MOTION-DECISION-MATRIX.md`, `docs/MOTION-VOCABULARY.md`, `docs/PORTRAIT-CAMERA-STANDARD.md`, `docs/MOTION-PLAN-CONTRACT.md` setelah aturan motion. Pilih gerak berdasarkan makna beat: eye trace, focus handoff, shared element, action/reaction, reflow, hold; tanpa Slide Mask dekoratif sebagai default. UI landscape dalam portrait memakai kamera virtual fit → zoom bila detail → pan/tracking → hold → zoom out bila perlu; world UI/cursor terpisah dari subtitle/background. Periksa collision sepanjang lintasan dan kontinuitas full/segment. Video baru wajib Motion Plan v1 (`motionPlanContract: "focus-driven-v1"`) dan QA metadata, kemudian preview visual. Tidak ada retrofit project lama/ACC. Skill lokal bukan pemasangan otomatis ke akun.
+
+## Gate release 2.0.0
+Untuk video baru jalankan `npm run qa:motion -- <folder-addon>` dan `npm run qa:spatial -- <folder-addon>` lalu `npm run addon:validate -- <folder-addon> --production --syntax` (flag produksi eksplisit; scaffold/legacy tetap dapat memakai `--strict`). `npm run qa:motion -- --all` melewati legacy tanpa kontrak, bukan PASS visual. `npm run release:check` memeriksa konsistensi versi sebelum ekspor Master. Baca `docs/RELEASE-2.0.0-AUDIT.md` (riwayat sebelumnya: `docs/RELEASE-1.9.0-AUDIT.md`).
+
+## Production Toolkit v1.0 — Master 2.0.0
+Baca `docs/PRODUCTION-TOOLKIT.md` sebelum build. Untuk video baru: pilih/copy kamera/asset lokal dari `templates/production-toolkit/` bila relevan; wajib `production/spatial-plan.json` dan `npm run qa:spatial -- <folder-addon>` di gate produksi. Catat world/viewport, focus bounds, track aktif dan collision exemption beralasan, gunakan keyframe yang sama dengan source; cek seluruh frame deklarasi dan tetap inspeksi preview full/segment. Setelah rekaman VO: `vo:align` hanya proposal timestamp, bukan ASR/ACC atau retiming otomatis. `qa:approval` read-only; `qa:render` bedakan declared hold dan kandidat dead zone. Legacy/ACC tidak dipaksa migrasi. Lihat laporan release 2.0.0 untuk batas verifikasi.

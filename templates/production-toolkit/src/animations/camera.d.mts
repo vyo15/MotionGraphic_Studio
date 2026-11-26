@@ -1,0 +1,11 @@
+export type Rect={x:number;y:number;w:number;h:number};
+export type Pose={cx:number;cy:number;zoom:number};
+export type Key<T>={frame:number;value:T;ease?:'linear'|'smooth'|'out'|'hold'};
+export function validRect(r:unknown):r is Rect;
+export function validPose(p:unknown):p is Pose;
+export function fitCamera(target:Rect,viewport:Rect,padding?:number,maxZoom?:number):Pose;
+export function cameraAt(keys:readonly Key<Pose>[],frame:number):Pose;
+export function projectRect(rect:Rect,pose:Pose,viewport:Rect):Rect;
+export function cameraTransform(pose:Pose,viewport:Rect):{x:number;y:number;scale:number};
+export function contains(outer:Rect,inner:Rect,pad?:number):boolean;
+export function overlapArea(a:Rect,b:Rect):number;

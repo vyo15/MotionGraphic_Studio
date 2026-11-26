@@ -2,9 +2,9 @@
   "schemaVersion": 1,
   "projectId": "PCUnlockerRecoveryReels",
   "slug": "pcunlocker-recovery-reels",
-  "updatedAt": "2026-11-25",
+  "updatedAt": "2026-11-26",
   "workflow": "guided-approval-first-scene",
-  "phase": "scenes-02-08-visual-locked-pending-native-qa",
+  "phase": "screen-state-continuity-review-pending-native-qa",
   "voiceOverStatus": "not-recorded",
   "fullVideoApproval": "draft",
   "scenes": [
@@ -14,13 +14,13 @@
       "startFrame": 0,
       "endFrameExclusive": 150,
       "voText": "ACC",
-      "visual": "REVIEW",
+      "visual": "ACC_LOCKED_PENDING_NATIVE_QA",
       "recordingSync": "NOT_RECORDED",
       "final": "NOT_FINAL",
-      "status": "in-review",
+      "status": "approved",
       "voTextApproval": "approved",
-      "visualApproval": "draft",
-      "notes": "Visual preview dipertahankan sebagai referensi; native source belum diuji. Background kanvas diseragamkan (#F7F7F5, radial putih 32%), sesuai instruksi pengguna; tidak membuka lock isi scene."
+      "visualApproval": "locked",
+      "notes": "Visual preview dipertahankan sebagai referensi; native source belum diuji. Background kanvas diseragamkan (#F7F7F5, radial putih 32%), sesuai instruksi pengguna; tidak membuka lock isi scene. User ACC preview 2026-11-26: POV Login Hook dan Connected Storytelling S01–S02. Source direkonstruksi; native render/GUI belum diuji. VO/durasi tetap; SFX lama dipertahankan sementara, perlu review sync."
     },
     {
       "id": "S02",
@@ -34,7 +34,7 @@
       "status": "approved",
       "voTextApproval": "approved",
       "visualApproval": "locked",
-      "notes": "Pilihan 09 ACC untuk visual referensi; native source belum render. Visual LOCKED 2026-11-25; pertahankan source dan layer editable; perubahan hanya bila user membuka lock. Background kanvas diseragamkan (#F7F7F5, radial putih 32%), sesuai instruksi pengguna; tidak membuka lock isi scene."
+      "notes": "Pilihan 09 ACC untuk visual referensi; native source belum render. Visual LOCKED 2026-11-25; pertahankan source dan layer editable; perubahan hanya bila user membuka lock. Background kanvas diseragamkan (#F7F7F5, radial putih 32%), sesuai instruksi pengguna; tidak membuka lock isi scene. User ACC preview 2026-11-26: POV Login Hook dan Connected Storytelling S01–S02. Source direkonstruksi; native render/GUI belum diuji. VO/durasi tetap; SFX lama dipertahankan sementara, perlu review sync."
     },
     {
       "id": "S03",
@@ -62,7 +62,7 @@
       "status": "approved",
       "voTextApproval": "approved",
       "visualApproval": "locked",
-      "notes": "Style 02 Icon Spotlight + Soft Scale-Up ACC; logo vektor rekonstruksi ACC, posisi dipusatkan sesuai permintaan. Native GUI/render belum diuji. Visual LOCKED 2026-11-25; pertahankan source dan layer editable; perubahan hanya bila user membuka lock. Background kanvas diseragamkan (#F7F7F5, radial putih 32%), sesuai instruksi pengguna; tidak membuka lock isi scene."
+      "notes": "Style 02 Icon Spotlight + Soft Scale-Up ACC; logo vektor rekonstruksi ACC, posisi dipusatkan sesuai permintaan. Native GUI/render belum diuji. Visual LOCKED 2026-11-25; pertahankan source dan layer editable; perubahan hanya bila user membuka lock. Background kanvas diseragamkan (#F7F7F5, radial putih 32%), sesuai instruksi pengguna; tidak membuka lock isi scene. Technical audit 2026-11-26: outgoing S03 pose handoff, logo starts at frame 8, original logo and final pose unchanged. Native QA pending. Technical review 2026-11-26 (native QA pending): Shortened outgoing fade to avoid overlapping alert/identity."
     },
     {
       "id": "S05",
@@ -90,7 +90,7 @@
       "status": "approved",
       "voTextApproval": "draft",
       "visualApproval": "locked",
-      "notes": "User ACC tampilan UI realistis S06 (referensi Enterprise Edition v4.5; akun contoh, UI pasif). Source direkonstruksi sebagai layer independen, laptop 720 px selaras S05; native render/GUI belum diuji. VO draft tetap. Revisi pengguna: UI 960 px tanpa bingkai laptop. Background kanvas diseragamkan (#F7F7F5, radial putih 32%), sesuai instruksi pengguna; tidak membuka lock isi scene."
+      "notes": "User ACC tampilan UI realistis S06 (referensi Enterprise Edition v4.5; akun contoh, UI pasif). Source direkonstruksi sebagai layer independen, laptop 720 px selaras S05; native render/GUI belum diuji. VO draft tetap. Revisi pengguna: UI 960 px tanpa bingkai laptop. Background kanvas diseragamkan (#F7F7F5, radial putih 32%), sesuai instruksi pengguna; tidak membuka lock isi scene. Dynamic Focus plan ACC 2026-11-26: kamera world kontinu dan subtitle screen-space; VO, durasi, UI asli dan SFX dipertahankan. Native render/Studio Save belum diverifikasi. Technical audit: outgoing S05 pose carry with soft scale and UI group fade, first 18 frames only. Native QA pending. Technical review 2026-11-26 (native QA pending): Opaque screen-state handoff; app replaces media inside screen, uniform push-in, label delayed until established."
     },
     {
       "id": "S07",
@@ -104,7 +104,7 @@
       "status": "approved",
       "voTextApproval": "draft",
       "visualApproval": "locked",
-      "notes": "ACC referensi fullscreen dan stable click / clean pointer; rekonstruksi layer independen; native render dan GUI belum diuji. VO masih draft. Background kanvas diseragamkan (#F7F7F5, radial putih 32%), sesuai instruksi pengguna; tidak membuka lock isi scene."
+      "notes": "ACC referensi fullscreen dan stable click / clean pointer; rekonstruksi layer independen; native render dan GUI belum diuji. VO masih draft. Background kanvas diseragamkan (#F7F7F5, radial putih 32%), sesuai instruksi pengguna; tidak membuka lock isi scene. Dynamic Focus plan ACC 2026-11-26: kamera world kontinu dan subtitle screen-space; VO, durasi, UI asli dan SFX dipertahankan. Native render/Studio Save belum diverifikasi. Technical review 2026-11-26 (native QA pending): Dialog gated until camera settled; no clipping during reframe. Dialog is opaque; dim starts before its scale-in."
     },
     {
       "id": "S08",
@@ -118,7 +118,7 @@
       "status": "approved",
       "voTextApproval": "draft",
       "visualApproval": "locked",
-      "notes": "ACC referensi fullscreen dan stable click / clean pointer; rekonstruksi layer independen; native render dan GUI belum diuji. VO masih draft. Background kanvas diseragamkan (#F7F7F5, radial putih 32%), sesuai instruksi pengguna; tidak membuka lock isi scene."
+      "notes": "ACC referensi fullscreen dan stable click / clean pointer; rekonstruksi layer independen; native render dan GUI belum diuji. VO masih draft. Background kanvas diseragamkan (#F7F7F5, radial putih 32%), sesuai instruksi pengguna; tidak membuka lock isi scene. Dynamic Focus plan ACC 2026-11-26: kamera world kontinu dan subtitle screen-space; VO, durasi, UI asli dan SFX dipertahankan. Native render/Studio Save belum diverifikasi. Technical review 2026-11-26 (native QA pending): Dialog group closure eased. Dialog remains opaque during short close; dim fades separately."
     },
     {
       "id": "S09",
@@ -132,49 +132,49 @@
       "status": "in-review",
       "voTextApproval": "draft",
       "visualApproval": "draft",
-      "notes": "Visual preview dipertahankan sebagai referensi; native source belum diuji. Revisi layout fullscreen dan VO draft sesuai preview; review lanjut, belum lock. Background kanvas diseragamkan (#F7F7F5, radial putih 32%), sesuai instruksi pengguna; tidak membuka lock isi scene."
+      "notes": "Visual preview dipertahankan sebagai referensi; native source belum diuji. Revisi layout fullscreen dan VO draft sesuai preview; review lanjut, belum lock. Background kanvas diseragamkan (#F7F7F5, radial putih 32%), sesuai instruksi pengguna; tidak membuka lock isi scene. Dynamic Focus plan ACC 2026-11-26: kamera world kontinu dan subtitle screen-space; VO, durasi, UI asli dan SFX dipertahankan. Native render/Studio Save belum diverifikasi. Handoff login S09→S10 disamakan untuk ACC S10 V4; S09 sendiri masih REVIEW. Technical review 2026-11-26 (native QA pending): Exclusive application/restart states; spinner/text fade before login; screen height matches login."
     },
     {
       "id": "S10",
       "sceneId": "S10",
       "startFrame": 1500,
-      "endFrameExclusive": 1680,
+      "endFrameExclusive": 1803,
       "voText": "DRAFT",
-      "visual": "REVIEW",
+      "visual": "ACC_LOCKED_PENDING_NATIVE_QA",
       "recordingSync": "NOT_RECORDED",
       "final": "NOT_FINAL",
-      "status": "in-review",
+      "status": "approved",
       "voTextApproval": "draft",
-      "visualApproval": "draft",
-      "notes": "Visual preview dipertahankan sebagai referensi; native source belum diuji. Revisi layout fullscreen dan VO draft sesuai preview; review lanjut, belum lock. Background kanvas diseragamkan (#F7F7F5, radial putih 32%), sesuai instruksi pengguna; tidak membuka lock isi scene. Rekonstruksi penutup sesuai preview: Connected Gallery / CTA bubble / cover motion; menunggu QA native."
+      "visualApproval": "locked",
+      "notes": "Visual preview dipertahankan sebagai referensi; native source belum diuji. Revisi layout fullscreen dan VO draft sesuai preview; review lanjut, belum lock. Background kanvas diseragamkan (#F7F7F5, radial putih 32%), sesuai instruksi pengguna; tidak membuka lock isi scene. Rekonstruksi penutup sesuai preview: Connected Gallery / CTA bubble / cover motion; menunggu QA native. User ACC preview Relaxed Pacing V4 2026-11-26; 303 frame, login → desktop → Explorer → galeri; source direkonstruksi editable, native render/GUI belum diuji. Technical audit: screenshot global frame 1539 showed premature gallery. Added non-interactive phase gates, 5 separate SVG assets, retimed fade and hold, preserve 303 frames. Original approved design unchanged; revised implementation pending native QA and review. Technical review 2026-11-26 (native QA pending): Opaque login foreground exit, later gallery reveal and stable final hold. Gallery begins at f208 while Explorer exits, avoiding a near-blank beat. Cards grow from nearly zero scale with opaque artwork; desktop shrinks and moves upward before late fade."
     },
     {
       "id": "S11",
       "sceneId": "S11",
-      "startFrame": 1680,
-      "endFrameExclusive": 1830,
-      "voText": "DRAFT",
-      "visual": "REVIEW",
+      "startFrame": 1803,
+      "endFrameExclusive": 2073,
+      "voText": "ACC",
+      "visual": "ACC_LOCKED_PENDING_NATIVE_QA",
       "recordingSync": "NOT_RECORDED",
       "final": "NOT_FINAL",
-      "status": "in-review",
-      "voTextApproval": "draft",
-      "visualApproval": "draft",
-      "notes": "Visual preview dipertahankan sebagai referensi; native source belum diuji. Background kanvas diseragamkan (#F7F7F5, radial putih 32%), sesuai instruksi pengguna; tidak membuka lock isi scene. Rekonstruksi penutup sesuai preview: Connected Gallery / CTA bubble / cover motion; menunggu QA native."
+      "status": "approved",
+      "voTextApproval": "approved",
+      "visualApproval": "locked",
+      "notes": "Visual preview dipertahankan sebagai referensi; native source belum diuji. Background kanvas diseragamkan (#F7F7F5, radial putih 32%), sesuai instruksi pengguna; tidak membuka lock isi scene. Rekonstruksi penutup sesuai preview: Connected Gallery / CTA bubble / cover motion; menunggu QA native. User ACC Style 04, VO baru dan Opening Motion Revision (9 detik); caption tipografi tunggal, audio omit. Source rekonstruksi, native QA pending. Technical audit: preserve opening gallery pose for 12 frames and delay first text reveal until handoff, CTA VO/duration/final pose unchanged. Native QA pending. Technical review 2026-11-26 (native QA pending): Outgoing gallery lifted during short fade; approved CTA content unchanged."
     },
     {
       "id": "S12",
       "sceneId": "S12",
-      "startFrame": 1830,
-      "endFrameExclusive": 1950,
+      "startFrame": 2073,
+      "endFrameExclusive": 2193,
       "voText": "none",
-      "visual": "REVIEW",
+      "visual": "ACC_LOCKED_PENDING_NATIVE_QA",
       "recordingSync": "NOT_RECORDED",
       "final": "NOT_FINAL",
-      "status": "in-review",
+      "status": "approved",
       "voTextApproval": "draft",
-      "visualApproval": "draft",
-      "notes": "Visual preview dipertahankan sebagai referensi; native source belum diuji. Background kanvas diseragamkan (#F7F7F5, radial putih 32%), sesuai instruksi pengguna; tidak membuka lock isi scene. Rekonstruksi penutup sesuai preview: Connected Gallery / CTA bubble / cover motion; menunggu QA native."
+      "visualApproval": "locked",
+      "notes": "Visual preview dipertahankan sebagai referensi; native source belum diuji. Background kanvas diseragamkan (#F7F7F5, radial putih 32%), sesuai instruksi pengguna; tidak membuka lock isi scene. Rekonstruksi penutup sesuai preview: Connected Gallery / CTA bubble / cover motion; menunggu QA native. User ACC cover terhubung dari CTA; tiga SVG asli tidak diubah, silent, hold frame 63–119. Native QA pending. Technical review 2026-11-26 (native QA pending): Reduced outgoing CTA overlap; cover unchanged. Outgoing CTA shifts upward before logo settles."
     }
   ],
   "decisionLog": [
@@ -201,6 +201,26 @@
     {
       "date": "2026-11-25",
       "decision": "User ACC visual S06 Realistic UI dan minta patch editable. Source S06 direkonstruksi; VO/timing tetap, S07 hanya preview terpisah dan belum ACC."
+    },
+    {
+      "date": "2026-11-26",
+      "decision": "User menyetujui plan Dynamic Focus prototype S06–S09 (28–50s) dan meminta FILE CHANGE ONLY. Izin revisi terbatas pada kamera, outline fokus, dim dialog dan pointer saat hold; lock UI S06–S08 tetap, S09 tetap REVIEW sampai native preview dikonfirmasi. VO, timing, SFX, scene lain dan Master tidak berubah."
+    },
+    {
+      "date": "2026-11-26",
+      "decision": "User ACC preview POV Hook dan Connected Storytelling S01–S02 (11 detik), meminta file editable. Revisi hanya S01–S02 dan metadata terkait; S03–S12 tidak diubah. Native QA dan sinkronisasi SFX belum final."
+    },
+    {
+      "date": "2026-11-26",
+      "decision": "User ACC preview S10 Relaxed Pacing V4 (10,1 detik S10); meminta FILE CHANGE ONLY. S10 visual locked pending native QA, S09 handoff diselaraskan; CTA dan cover offset +123 frame, durasi tetap. VO teks draft, rekaman/sync dan final belum ACC. S03–S05 preview ACC pada chat sebelumnya belum diimplementasikan dalam ZIP ini; perubahan source di luar S09–S10 tidak diterapkan."
+    },
+    {
+      "date": "2026-11-26",
+      "decision": "User memilih CTA Style 04, menyetujui VO baru dan preview Opening Motion Revision + connected cover (13 detik), lalu meminta FILE CHANGE ONLY editable. S11 270 frame, S12 120 frame, durasi total 2193 frame. S01–S10 source dan durasi dipertahankan; status rekaman/final tidak berubah. Preview ACC bukan native render. S03–S05 preview ACC tambahan serta preview kontinuitas S06–S09 belum seluruhnya ada di base, tidak diimplementasi pada patch penutup ini."
+    },
+    {
+      "date": "2026-11-26",
+      "decision": "User requested detailed audit and technical correction after screenshot showing overlapping/missing gallery assets at frame 1539 and rushed motion. Technical changes S04, S06, S10, S11 only; preserve VO, all durations, source ACC design and other scenes. No new visual/final ACC inferred. Native render/GUI and listening QA pending."
     }
   ]
 }

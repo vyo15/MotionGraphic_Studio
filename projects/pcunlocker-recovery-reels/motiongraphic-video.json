@@ -2,13 +2,13 @@
   "contractVersion": "1.0.0",
   "id": "PCUnlockerRecoveryReels",
   "slug": "pcunlocker-recovery-reels",
-  "title": "PCUnlocker \u2014 Reset Password Windows",
+  "title": "PCUnlocker — Reset Password Windows",
   "entry": "src/Video.tsx",
   "exportName": "Video",
   "width": 1080,
   "height": 1920,
   "fps": 30,
-  "durationInFrames": 1950,
+  "durationInFrames": 2193,
   "defaultProps": {
     "showSubtitles": true,
     "showVoGuide": true,
@@ -76,20 +76,20 @@
       "id": "PCUnlockerRecoveryReels-S10",
       "title": "Hasil",
       "startFrame": 1500,
-      "durationInFrames": 180
+      "durationInFrames": 303
     },
     {
       "id": "PCUnlockerRecoveryReels-S11",
       "title": "CTA",
-      "startFrame": 1680,
-      "durationInFrames": 150
+      "startFrame": 1803,
+      "durationInFrames": 270
     },
     {
       "id": "PCUnlockerRecoveryReels-S12",
       "title": "Cover Reels",
-      "startFrame": 1830,
+      "startFrame": 2073,
       "durationInFrames": 120
     }
   ],
-  "coverFrame": 1920
+  "coverFrame": 2163
 }

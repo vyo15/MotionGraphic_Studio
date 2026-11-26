@@ -7,7 +7,7 @@ const scene = readFileSync(resolve('projects/easy2boot-multiboot-reels/src/scene
 const contract = readFileSync(resolve('docs/EDITABLE-CONTRACT.md'), 'utf8');
 
 test('S01 subtitle has five distinct direct native-text call sites', () => {
-  const names = [...scene.matchAll(/<Interactive\.Text name="(S01 — Subtitle [^"]+)"/g)].map(x=>x[1]);
+  const names = [...scene.matchAll(/<Interactive\.Text\s+name="(S01 — Subtitle [^"]+)"/g)].map(x=>x[1]);
   assert.equal(names.length, 5, 'one independently declared Interactive.Text per line');
   assert.equal(new Set(names).size, names.length, 'native subtitle names must be unique');
   assert.ok(names.some(n=>n.includes('Subtitle 01')));

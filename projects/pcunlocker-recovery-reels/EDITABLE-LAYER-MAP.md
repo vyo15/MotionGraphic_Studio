@@ -265,9 +265,6 @@ Native source targets; GUI verification pending. Internal SVG path geometry sour
 | S10 — Login berhasil label | Text | `src/scenes/Scene10.tsx` |
 | S10 — Subtitle 01 | Text | `src/scenes/Scene10.tsx` |
 | S10 — Subtitle 02 | Text | `src/scenes/Scene10.tsx` |
-| S11 — Ajakan komentar | Text | `src/scenes/Scene11.tsx` |
-| S11 — Subtitle 01 | Text | `src/scenes/Scene11.tsx` |
-| S11 — Subtitle 02 | Text | `src/scenes/Scene11.tsx` |
 | S12 — Cover judul | Text | `src/scenes/Scene12.tsx` |
 | S12 — Cover Windows | Text | `src/scenes/Scene12.tsx` |
 | S12 — Cover nama aplikasi | Text | `src/scenes/Scene12.tsx` |
@@ -433,11 +430,107 @@ Native source targets; GUI verification pending. Internal SVG path geometry sour
 | S10 — Gallery card XLSX | Visual | `src/scenes/Scene10.tsx` |
 | S10 — Login berhasil panel | Visual | `src/scenes/Scene10.tsx` |
 | S10 — Login berhasil centang | Visual | `src/scenes/Scene10.tsx` |
-| S11 — Bubble komentar | Visual | `src/scenes/Scene11.tsx` |
-| S11 — Ekor bubble | Visual | `src/scenes/Scene11.tsx` |
-| S11 — Titik komentar 1 | Visual | `src/scenes/Scene11.tsx` |
-| S11 — Titik komentar 2 | Visual | `src/scenes/Scene11.tsx` |
-| S11 — Titik komentar 3 | Visual | `src/scenes/Scene11.tsx` |
 | S12 — Cover Windows panes | Visual | `src/scenes/Scene12.tsx` |
 | S12 — Cover Panah | Visual | `src/scenes/Scene12.tsx` |
 | S12 — Cover Kunci | Visual | `src/scenes/Scene12.tsx` |
+
+### Opening POV / Connected Gallery (2026-11-26)
+
+| Target | Type | Source |
+|---|---|---|
+| S02 — Bridge — Nama akun lokal | Text | `src/scenes/Scene02.tsx` |
+| S02 — Bridge — Indikator gagal 1 | Text | `src/scenes/Scene02.tsx` |
+| S02 — Bridge — Indikator gagal 2 | Text | `src/scenes/Scene02.tsx` |
+| S02 — Bridge — Pesan account lockout | Text | `src/scenes/Scene02.tsx` |
+| S02 — Bridge — OK lockout | Text | `src/scenes/Scene02.tsx` |
+| S02 — Bridge — Indikator gagal 3 | Text | `src/scenes/Scene02.tsx` |
+| S01 — Tombol submit password | Text | `src/scenes/Scene01.tsx` |
+| S02 — Bridge — Laptop — body | Visual | `src/scenes/Scene02.tsx` |
+| S02 — Bridge — Layar Windows | Visual | `src/scenes/Scene02.tsx` |
+| S02 — Bridge — Avatar pengguna | Visual | `src/scenes/Scene02.tsx` |
+
+Camera pose/bridge: source-editable `src/components/OpeningCamera.tsx`; Studio Save/reload belum diuji.
+
+### S09–S10 Relaxed Pacing V4 — layer tambahan
+
+| Nama | Jenis | Source |
+|---|---|---|
+| S09 — Login submit | Text | `src/scenes/Scene09.tsx` |
+| S10 — Wallpaper window mark | Visual | `src/scenes/Scene10.tsx` |
+| S10 — Wallpaper light | Visual | `src/scenes/Scene10.tsx` |
+| S10 — Taskbar search | Visual | `src/scenes/Scene10.tsx` |
+| S10 — Taskbar explorer | Visual | `src/scenes/Scene10.tsx` |
+| S10 — Taskbar view | Visual | `src/scenes/Scene10.tsx` |
+| S10 — Taskbar tray | Text | `src/scenes/Scene10.tsx` |
+| S10 — Desktop This PC icon | Visual | `src/scenes/Scene10.tsx` |
+| S10 — Desktop This PC label | Text | `src/scenes/Scene10.tsx` |
+| S10 — Desktop cursor | Visual | `src/scenes/Scene10.tsx` |
+| S10 — Explorer title icon | Visual | `src/scenes/Scene10.tsx` |
+| S10 — Explorer window controls | Text | `src/scenes/Scene10.tsx` |
+| S10 — Explorer ribbon | Visual | `src/scenes/Scene10.tsx` |
+| S10 — Explorer ribbon File | Text | `src/scenes/Scene10.tsx` |
+| S10 — Explorer ribbon tabs | Text | `src/scenes/Scene10.tsx` |
+| S10 — Explorer address bar | Visual | `src/scenes/Scene10.tsx` |
+| S10 — Explorer arrows | Text | `src/scenes/Scene10.tsx` |
+| S10 — Explorer search box | Visual | `src/scenes/Scene10.tsx` |
+| S10 — Explorer search text | Text | `src/scenes/Scene10.tsx` |
+| S10 — Explorer navigation pane | Visual | `src/scenes/Scene10.tsx` |
+| S10 — Explorer navigation icon Quick access | Visual | `src/scenes/Scene10.tsx` |
+| S10 — Explorer navigation Quick access | Text | `src/scenes/Scene10.tsx` |
+| S10 — Explorer navigation icon Desktop | Visual | `src/scenes/Scene10.tsx` |
+| S10 — Explorer navigation Desktop | Text | `src/scenes/Scene10.tsx` |
+| S10 — Explorer navigation icon Downloads | Visual | `src/scenes/Scene10.tsx` |
+| S10 — Explorer navigation Downloads | Text | `src/scenes/Scene10.tsx` |
+| S10 — Explorer selected navigation | Visual | `src/scenes/Scene10.tsx` |
+| S10 — Explorer navigation icon Documents | Visual | `src/scenes/Scene10.tsx` |
+| S10 — Explorer navigation Documents | Text | `src/scenes/Scene10.tsx` |
+| S10 — Explorer navigation icon Pictures | Visual | `src/scenes/Scene10.tsx` |
+| S10 — Explorer navigation Pictures | Text | `src/scenes/Scene10.tsx` |
+| S10 — Explorer navigation icon This PC | Visual | `src/scenes/Scene10.tsx` |
+| S10 — Explorer navigation This PC | Text | `src/scenes/Scene10.tsx` |
+| S10 — Explorer navigation icon Local Disk (C:) | Visual | `src/scenes/Scene10.tsx` |
+| S10 — Explorer navigation Local Disk (C:) | Text | `src/scenes/Scene10.tsx` |
+| S10 — Explorer column header | Visual | `src/scenes/Scene10.tsx` |
+| S10 — Explorer column Name | Text | `src/scenes/Scene10.tsx` |
+| S10 — Explorer column Type | Text | `src/scenes/Scene10.tsx` |
+| S10 — Explorer item icon 1 | Visual | `src/scenes/Scene10.tsx` |
+| S10 — Explorer item 1 | Text | `src/scenes/Scene10.tsx` |
+| S10 — Explorer item type 1 | Text | `src/scenes/Scene10.tsx` |
+| S10 — Explorer item icon 2 | Visual | `src/scenes/Scene10.tsx` |
+| S10 — Explorer item 2 | Text | `src/scenes/Scene10.tsx` |
+| S10 — Explorer item type 2 | Text | `src/scenes/Scene10.tsx` |
+| S10 — Explorer item icon 3 | Visual | `src/scenes/Scene10.tsx` |
+| S10 — Explorer item 3 | Text | `src/scenes/Scene10.tsx` |
+| S10 — Explorer item type 3 | Text | `src/scenes/Scene10.tsx` |
+| S10 — Explorer item icon 4 | Visual | `src/scenes/Scene10.tsx` |
+| S10 — Explorer item 4 | Text | `src/scenes/Scene10.tsx` |
+| S10 — Explorer item type 4 | Text | `src/scenes/Scene10.tsx` |
+| S10 — Explorer status | Text | `src/scenes/Scene10.tsx` |
+| S10 — Login submit | Text | `src/scenes/Scene10.tsx` |
+| S10 — Password bullet 01 | Visual | `src/scenes/Scene10.tsx` |
+| S10 — Password bullet 02 | Visual | `src/scenes/Scene10.tsx` |
+| S10 — Password bullet 03 | Visual | `src/scenes/Scene10.tsx` |
+| S10 — Password bullet 04 | Visual | `src/scenes/Scene10.tsx` |
+| S10 — Password bullet 05 | Visual | `src/scenes/Scene10.tsx` |
+| S10 — Password bullet 06 | Visual | `src/scenes/Scene10.tsx` |
+| S10 — Password bullet 07 | Visual | `src/scenes/Scene10.tsx` |
+| S10 — Password bullet 08 | Visual | `src/scenes/Scene10.tsx` |
+| S10 — Login caret | Visual | `src/scenes/Scene10.tsx` |
+
+| S11 — VO 01a | Text | `src/scenes/Scene11.tsx` |
+| S11 — VO 01b | Text | `src/scenes/Scene11.tsx` |
+| S11 — VO 02a | Text | `src/scenes/Scene11.tsx` |
+| S11 — VO 02b | Text | `src/scenes/Scene11.tsx` |
+| S11 — VO 03a | Text | `src/scenes/Scene11.tsx` |
+| S11 — VO 03b | Text | `src/scenes/Scene11.tsx` |
+| S11 — Bubble komentar | Visual | `src/scenes/Scene11.tsx` |
+| S11 — Ekor bubble — outline | Visual | `src/scenes/Scene11.tsx` |
+| S11 — Ekor bubble — isi | Visual | `src/scenes/Scene11.tsx` |
+| S11 — Avatar — lingkaran | Visual | `src/scenes/Scene11.tsx` |
+| S11 — Avatar — kepala | Visual | `src/scenes/Scene11.tsx` |
+| S11 — Avatar — badan | Visual | `src/scenes/Scene11.tsx` |
+| S11 — Garis komentar 1 | Visual | `src/scenes/Scene11.tsx` |
+| S11 — Garis komentar 2 | Visual | `src/scenes/Scene11.tsx` |
+| S11 — Garis komentar 3 | Visual | `src/scenes/Scene11.tsx` |
+| S11 — Pesawat kertas — utama | Visual | `src/scenes/Scene11.tsx` |
+| S11 — Pesawat kertas — lipatan | Visual | `src/scenes/Scene11.tsx` |

@@ -1,4 +1,4 @@
-# RENDER HQ UNTUK CAPCUT — MotionGraphic Studio v1.8.1
+# RENDER HQ UNTUK CAPCUT — MotionGraphic Studio v2.0.0
 
 ## Tujuan
 

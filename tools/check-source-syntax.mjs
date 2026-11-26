@@ -9,7 +9,7 @@ const files=[];
 function walk(dir){if(!fs.existsSync(dir))return;for(const x of fs.readdirSync(dir,{withFileTypes:true})){
  if(x.name.startsWith('.')||['node_modules','dist','build'].includes(x.name))continue;
  const p=path.join(dir,x.name);
- if(x.isDirectory())walk(p);else if(x.isFile()&&/\.(ts|tsx|js|jsx)$/.test(p))files.push(p);
+ if(x.isDirectory())walk(p);else if(x.isFile()&&/\.(ts|tsx|js|jsx|mjs|mts)$/.test(p))files.push(p);
 }}
 walk(path.join(root,'src'));walk(path.join(root,'projects'));walk(path.join(root,'templates'));
 let failures=0;

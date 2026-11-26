@@ -57,8 +57,9 @@ test('ZIP preflight catches untrusted invalid archive',()=>tmp(root=>{
 test('scaffold creates separate validated add-on without editing projects',()=>tmp(root=>{
  for(const dir of ['tools','templates','exports','projects','library'])fs.mkdirSync(path.join(root,dir),{recursive:true});
  fs.cpSync(path.join(ROOT,'templates/addon-starter'),path.join(root,'templates/addon-starter'),{recursive:true});
- for(const f of ['scaffold-addon.mjs','validate-addon.mjs'])fs.copyFileSync(path.join(ROOT,'tools',f),path.join(root,'tools',f));
+ for(const f of ['scaffold-addon.mjs','validate-addon.mjs','qa-motion-plan.mjs','qa-spatial.mjs','qa-spatial-trace.mjs'])fs.copyFileSync(path.join(ROOT,'tools',f),path.join(root,'tools',f));
  fs.writeFileSync(path.join(root,'package.json'),JSON.stringify({dependencies:{react:'19.0.0',remotion:'4.0.538'}}));
+ fs.cpSync(path.join(ROOT,'templates/production-toolkit'),path.join(root,'templates/production-toolkit'),{recursive:true});
  const r=spawnSync(process.execPath,[path.join(root,'tools/scaffold-addon.mjs'),'tes-video','TesVideo','Tutorial','Test'],{cwd:root,encoding:'utf8'});
  assert.equal(r.status,0,r.stderr);
  assert.equal(fs.readdirSync(path.join(root,'projects')).length,0);

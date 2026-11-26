@@ -30,7 +30,7 @@ Perintah preview animasi berarti **hasil bergerak** (MP4/GIF), bukan mockup gamb
 
 ## Acuan Project ChatGPT terkini
 Baca `docs/CHATGPT-PROJECT-REFERENCE.md` untuk user flow, pemetaan 12 Agent Skills resmi Remotion,
-aturan native editability, VO setelah motion ACC, serta kontrak v1.8.1.
+aturan native editability, VO setelah motion ACC, serta kontrak v2.0.0.
 Gunakan skill resmi secara selektif; `npm run skills:install` hanya memasang pada PC,
 bukan memperbarui Skill yang terinstal pada akun ChatGPT.
 
@@ -52,3 +52,10 @@ Lihat `docs/EDITABLE-CONTRACT.md`.
 
 ## WAJIB — Editable First Gate (video baru)
 Gunakan template `studio-direct-v4`, `production/editable-blueprint.json`, satu `<Interactive.Text/Div>` ber-`name` literal untuk tiap teks/cue penting, **bukan** wrapper reusable yang sama menghasilkan `+N instances`. Pisahkan cue subtitle draft, final, dan VO Guide. QA source melalui `npm run qa:native` dan import validator; QA GUI Save/reload/render tetap diperlukan sebelum klaim 100% editable. Jangan rewrite scene ACC tanpa izin.
+
+## MOTION DIRECTION v3.0 — routing otomatis
+
+Untuk tugas motion graphic relevan, gunakan MotionGraphic Studio Director bila tersedia dan baca `skills/motion-continuity-director/SKILL.md`, `docs/MOTION-DECISION-MATRIX.md`, `docs/MOTION-VOCABULARY.md`, `docs/PORTRAIT-CAMERA-STANDARD.md`, `docs/MOTION-PLAN-CONTRACT.md` setelah aturan motion. Pilih gerak berdasarkan makna beat: eye trace, focus handoff, shared element, action/reaction, reflow, hold; tanpa Slide Mask dekoratif sebagai default. UI landscape dalam portrait memakai kamera virtual fit → zoom bila detail → pan/tracking → hold → zoom out bila perlu; world UI/cursor terpisah dari subtitle/background. Periksa collision sepanjang lintasan dan kontinuitas full/segment. Video baru wajib Motion Plan v1 (`motionPlanContract: "focus-driven-v1"`) dan QA metadata, kemudian preview visual. Tidak ada retrofit project lama/ACC. Skill lokal bukan pemasangan otomatis ke akun.
+
+## Production Toolkit v1.0 — Master 2.0.0
+Baca `docs/PRODUCTION-TOOLKIT.md` sebelum build. Untuk video baru: pilih/copy kamera/asset lokal dari `templates/production-toolkit/` bila relevan; wajib `production/spatial-plan.json` dan `npm run qa:spatial -- <folder-addon>` di gate produksi. Catat world/viewport, focus bounds, track aktif dan collision exemption beralasan, gunakan keyframe yang sama dengan source; cek seluruh frame deklarasi dan tetap inspeksi preview full/segment. Setelah rekaman VO: `vo:align` hanya proposal timestamp, bukan ASR/ACC atau retiming otomatis. `qa:approval` read-only; `qa:render` bedakan declared hold dan kandidat dead zone. Legacy/ACC tidak dipaksa migrasi. Lihat laporan release 2.0.0 untuk batas verifikasi.

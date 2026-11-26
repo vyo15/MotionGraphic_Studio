@@ -58,3 +58,7 @@ Tidak semua component JSX otomatis draggable. Jangan memaksa refaktor video yang
 - Jalankan `npm run addon:validate -- <folder> --strict` dan `npm run qa:native`; QA ini hanya AST statis, bukan pembuktian native Save/reload. Untuk ACC wajib test manual: pilih subtitle, ubah teks, drag, ubah keyframe yang tersedia, Save, reload Studio, sync, render frame/MP4.
 - Scene lama yang `studio-inline-v2` **tidak otomatis dinaikkan statusnya** ke v4, karena masih ada animasi/teks bake; jangan mengubah scene/visual terkunci untuk mengejar skor semu.
 - Remotion 4.0.538: `Interactive` sejak 4.0.475, `Interactive.childrenSchema` sejak 4.0.535. Ikuti dokumentasi `studio/interactivity-best-practices` dan `interactive` sesuai versi.
+
+## Kamera dan continuity v3.0
+
+World/UI/cursor dan screen-space subtitle/background dipisah. Pada carry gunakan pose global/offset scene yang sama pada full dan segment; sumber state awal tidak di-reset. Kamera yang computed bukan otomatis native-draggable; deklarasikan source/Props/native secara jujur, jaga one-callsite `Interactive` untuk tiap target. Uji edit target, camera framing, Save/reload dan render pada frame yang sama. Lihat `docs/PORTRAIT-CAMERA-STANDARD.md`. Motion plan hanya metadata, tidak menggantikan blueprint maupun source.

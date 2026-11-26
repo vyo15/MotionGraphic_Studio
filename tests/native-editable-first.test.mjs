@@ -62,9 +62,10 @@ test('Easy2Boot scene 02 & 05 draft captions no shared dynamic node',()=>{
  const dir=path.resolve('projects/easy2boot-multiboot-reels/src/scenes');
  const s2=fs.readFileSync(path.join(dir,'Scene02Solution.tsx'),'utf8');
  const s5=fs.readFileSync(path.join(dir,'Scene05Boot.tsx'),'utf8');
- assert.equal([...s2.matchAll(/<Interactive.Text name="S02 — Subtitle draft/g)].length,5);
- assert.equal([...s5.matchAll(/<Interactive.Text name="S05 — Subtitle VO/g)].length,5);
+ assert.equal([...s2.matchAll(/<Interactive\.Text\s+name="S02 — Subtitle draft/g)].length,5);
+ assert.equal([...s5.matchAll(/<Interactive\.Text\s+name="S05 — Subtitle VO/g)].length,5);
  assert.doesNotMatch(s5,/timings\.map\(/);
+ for(const [name,src] of [["S02",s2],["S05",s5]]) {const nodes=[...src.matchAll(/<Interactive\.Text\s+name="(S0[25] — Subtitle [^"]+)"[\s\S]*?>([\s\S]*?)<\/Interactive\.Text>/g)];assert.ok(nodes.every(x=>x[2].trim()),name+" contains empty native subtitle(s); possible local edit, review ACC before restoring");}
 });
 
 test('strict add-on import gate rejects promised native captions if blueprint missing or computed',async()=>{
@@ -90,7 +91,7 @@ test('strict add-on import gate rejects promised native captions if blueprint mi
 test('final subtitle mode suppresses S01/S02 draft captions and is present in segment preview',()=>{
  const root=path.resolve('projects/easy2boot-multiboot-reels/src');
  const read=p=>fs.readFileSync(path.join(root,p),'utf8');
- assert.match(read('Video.tsx'),/scene01ShowCaptions=\{p\.showSubtitles\?false:/);
+ assert.match(read('Video.tsx'),/scene01ShowCaptions=\{sceneProps\.showSubtitles\?false:/);
  assert.match(read('SegmentVideo.tsx'),/<SubtitleTrack color=\{p\.subtitleColor\} sceneIndex=\{segmentIndex\}\/>/);
  for (const id of ['reactionCaption','solutionCaption','manyCaption']){
   assert.match(read('scenes/Scene02Solution.tsx'),new RegExp(`!p\\.showSubtitles[\\s\\S]{0,300}id="${id}"`));

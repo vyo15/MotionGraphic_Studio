@@ -9,7 +9,7 @@ const slugify=(v)=>v.normalize('NFKD').replace(/[\u0300-\u036f]/g,'').toLowerCas
 const stages=[
  ['01','Brief di ChatGPT','Tentukan satu pesan, audiens, CTA; buat naskah draft dan storyboard'],
  ['02','Bangun add-on','ChatGPT membuat projects/<slug>/ tanpa mengubah Master'],
- ['03','Validasi & import','Validasi ZIP/folder lalu masukkan ke projects/<slug>/'],
+ ['03','Validasi & import','Video baru: QA Motion Plan + addon:validate --production; lalu masukkan ke projects/<slug>/'],
  ['04','Review motion','Preview dan revisi sampai ACC; cek editabilitas Save/reload'],
  ['04A','VO & ACC Board','Tampilkan seluruh VO asli dan status scene: node tools/scene-approval-board.mjs --all'],
  ['05','VO Guide','Tampilkan panduan teks setelah motion disetujui'],
@@ -36,6 +36,8 @@ CTA: ${cta.trim()}
 Pada setiap diskusi video aktif, tampilkan VO lengkap seluruh scene dan status ACC dari production/SCENE-VO-ACC-BOARD.md (generated saat sync). Buatkan motion graphic edukasi Remotion untuk judul di atas menggunakan Custom Skill MotionGraphic Studio Director serta Project Rules Motion-Graphic yang berlaku. Satu Master folder-first; jangan membuat Remotion Studio baru atau mengubah file registrasi Master. Periksa contracts/studio-capabilities.json Master terbaru jika disediakan; jangan mengarang kompatibilitas.
 
 Pilih teknik Lemo-Opuscar sesuai materi, hanya sebagai teknik visual. Pertahankan Minimal Editorial: #F7F7F5, #202020, #DF805F, grid samar dan UI clean. Default 1080x1920, 30 FPS, 15–30 detik, safe zone 250/350/50 px. Visual harus memperagakan SEBAB → AKSI → REAKSI → HASIL → HOLD, bukan dekorasi atau mengulang seluruh VO.
+
+Motion Direction v3.0: baca Decision Matrix, Vocabulary, Portrait Camera dan Motion Plan Contract. Pilih gerak dari maksud VO, satu fokus, camera carry, tanpa Slide Mask dekoratif; reflow sebelum aset baru, cursor tepat, subtitle stabil. Buat production/motion-plan.json dan deklarasi focus-driven-v1 untuk video baru; npm run qa:motion -- <folder> lalu npm run addon:validate -- <folder> --production --syntax. Jangan retrofit ACC. Master 2.0: baca docs/PRODUCTION-TOOLKIT.md; production/spatial-plan.json wajib untuk gate produksi (cek setiap frame deklarasi); gunakan toolkit kamera lokal bila sesuai. VO alignment dari timestamp rekaman hanya proposal setelah ACC; planned hold dilaporkan terpisah.
 
 Workflow yang tidak boleh diubah: NASKAH DRAFT → STORYBOARD → BUILD MOTION → PREVIEW/REVISI → VO GUIDE → pengguna rekam VO → sinkronisasi → QA → render final. Jangan meminta file rekaman sebelum motion disetujui.
 
@@ -86,7 +88,7 @@ async function interactive(){
    const cta=await ask('CTA (Enter = default): ');
    savePrompt(guide(title,audience||undefined,cta||undefined),title);
   }else if(select==='2'){
-   console.log('\n[VALIDASI] npm run addon:validate -- "PATH_ADDON" --strict --syntax');
+   console.log('\n[VALIDASI] npm run addon:validate -- "PATH_ADDON" --production --syntax');
    console.log('[IMPORT] npm run addfolder -- "PATH_FOLDER_ADDON" (atau letakkan ZIP di library/masuk/)');
    console.log('[SINKRON] npm run sync && npm run dev');
   }else if(select==='3'){

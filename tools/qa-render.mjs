@@ -29,6 +29,7 @@
  */
 import {spawn, spawnSync} from 'node:child_process';
 import fs from 'node:fs';
+import {plannedHolds,classifyStaticRuns} from './planned-holds.mjs';
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
 
@@ -185,19 +186,17 @@ for (let i = 1; i < n; i++) {
 }
 
 // 2a. Dead zone / rasio diam
-let staticCount = 0; const runs = []; let run = 0;
-for (let i = 1; i < n; i++) {
-  if (diff[i] < T.staticDiff) { staticCount++; run++; }
-  else { if (run) runs.push({from: i - run, len: run}); run = 0; }
+let declared=[];
+if(opt.src&&manifestConfig&&Math.abs(fps-manifestConfig.fps)<.001&&n===manifestConfig.durationInFrames){
+ const pf=path.resolve(opt.src,'production/motion-plan.json');
+ if(fs.existsSync(pf)){try{const h=plannedHolds(manifestConfig,JSON.parse(fs.readFileSync(path.resolve(opt.src,'src/config/narration.json'),'utf8')),JSON.parse(fs.readFileSync(pf,'utf8')));declared=h.ranges;if(h.warnings.length)add('WARN','motion-plan','Hold tidak diterapkan: '+h.warnings.join('; '));}catch(e){add('WARN','motion-plan','Hold tidak diterapkan: '+e.message);}}
 }
-if (run) runs.push({from: n - run, len: run});
-const staticRatio = staticCount / (n - 1);
-const longRuns = runs.filter((r) => r.len / fps > T.maxStaticSec).sort((a, b) => b.len - a.len);
-add(staticRatio <= T.maxStaticRatio ? 'OK' : 'WARN', 'gerak',
-  `Frame hampir diam: ${fmt(staticRatio * 100, 0)}% (batas ${T.maxStaticRatio * 100}%)`);
-if (longRuns.length) {
-  add('WARN', 'gerak', `${longRuns.length} dead zone > ${T.maxStaticSec}s. Terlama: ${fmt(longRuns[0].len / fps, 2)}s mulai ${sec(longRuns[0].from, fps)}`);
-} else add('OK', 'gerak', `Tidak ada diam > ${T.maxStaticSec}s`);
+const {planned,unplanned,runs}=classifyStaticRuns(diff,T.staticDiff,declared);
+const staticRatio=unplanned/Math.max(1,n-1);
+const longRuns=runs.filter(r=>r.len/fps>T.maxStaticSec).sort((a,b)=>b.len-a.len);
+add(staticRatio<=T.maxStaticRatio?'OK':'WARN','gerak',`Frame hampir diam tanpa declared hold: ${fmt(staticRatio*100,0)}%; declared hold: ${planned} frame (review visual wajib)`);
+if(longRuns.length)add('WARN','gerak',`${longRuns.length} kandidat dead zone > ${T.maxStaticSec}s. Terlama: ${fmt(longRuns[0].len/fps,2)}s mulai ${sec(longRuns[0].from,fps)}`);
+else add('OK','gerak',`Tidak ada diam tanpa declared hold > ${T.maxStaticSec}s`);
 
 // 2b. Kerapatan peristiwa gerak (beat)
 const sm = (i) => (diff[i] + (diff[i - 1] ?? diff[i]) + (diff[i + 1] ?? diff[i])) / 3;

@@ -105,3 +105,10 @@ Tujuan cover ialah **(1) penutup cerita yang terasa menyatu dan (2) still frame 
 Simpan dalam project baru: alokasi scene dan 8 tahap dalam `STORYBOARD.md`/`production/`, status LOCK dalam `PRODUCTION-STATE.json`, timing VO per beat di config sesuai kontrak, dan `coverFrame` (jika diketahui). Tidak perlu membongkar proyek lama untuk menambahkan data ini.
 
 Untuk Project ChatGPT lintas chat, unggah file template ini ke **Project Sources** serta pasang instruksi ringkas dari `docs/CHATGPT-PROJECT-INSTRUCTIONS.md` pada **Project Instructions**. ZIP Master **hanya bisa dianalisis setelah dibuka**; file di PC bukan sumber instruksi akun ChatGPT secara otomatis.
+
+## Motion Direction v3.0 — keputusan per beat sebelum build
+
+Lengkapi tabel scene dengan: beatIndex (narration), intent, focusTarget, motion choice + alasan, stateIn/stateOut, pose camera/world/viewport start–end bila relevan, aksi/reaksi/hold relatif beat, handoff ke beat berikutnya, protected bounds/reflow, cue/omit dan editable target. Silent/bridge/cover tetap dicatat. Gunakan `docs/MOTION-DECISION-MATRIX.md`, `docs/PORTRAIT-CAMERA-STANDARD.md` dan `docs/MOTION-PLAN-CONTRACT.md`. Untuk build baru simpan `production/motion-plan.json` dan deklarasikan `motionPlanContract: "focus-driven-v1"`. Draft boleh ditampilkan tanpa file saat diskusi. Jangan menambah gerakan untuk setiap frasa; hold juga keputusan. Jangan retrofit ACC.
+
+## Production Toolkit v1.0 — Master 2.0.0
+Baca `docs/PRODUCTION-TOOLKIT.md` sebelum build. Untuk video baru: pilih/copy kamera/asset lokal dari `templates/production-toolkit/` bila relevan; wajib `production/spatial-plan.json` dan `npm run qa:spatial -- <folder-addon>` di gate produksi. Catat world/viewport, focus bounds, track aktif dan collision exemption beralasan, gunakan keyframe yang sama dengan source; cek seluruh frame deklarasi dan tetap inspeksi preview full/segment. Setelah rekaman VO: `vo:align` hanya proposal timestamp, bukan ASR/ACC atau retiming otomatis. `qa:approval` read-only; `qa:render` bedakan declared hold dan kandidat dead zone. Legacy/ACC tidak dipaksa migrasi. Lihat laporan release 2.0.0 untuk batas verifikasi.

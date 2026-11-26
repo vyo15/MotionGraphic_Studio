@@ -6,6 +6,7 @@
  * Tidak membuat/merombak komposisi Remotion.
  */
 import fs from 'node:fs';
+import {resolveSceneId,resolveStateRows} from './approval-identity.mjs';
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
 
@@ -103,10 +104,10 @@ export function validateProjectProduction(projectDir,m){
  try{state=JSON.parse(fs.readFileSync(path.join(projectDir,'PRODUCTION-STATE.json'),'utf8'))}
  catch(e){return {errors:['PRODUCTION-STATE.json tidak valid: '+e.message],warnings}}
  if(state.projectId!==m.id||state.slug!==m.slug)errors.push('ID/slug di PRODUCTION-STATE.json berbeda dari manifest. Jangan otomatis reset status, periksa manual.');
- const scenes=segmentsOf(m),ids=new Set(scenes.map(s=>s.id)),saved=new Set((state.scenes??[]).map(s=>s.id));
- for(const s of scenes)if(!saved.has(s.id))warnings.push(`Segmen baru ${s.id} belum dicatat di state (jangan hilangkan approval segmen lama).`);
- for(const s of state.scenes??[])if(!ids.has(s.id))warnings.push(`Segmen state ${s.id} tidak ada di manifest; review rename/timing sebelum revisi.`);
- if(state.referenceSceneId&&!ids.has(state.referenceSceneId))errors.push('referenceSceneId tidak ada pada manifest.');
+ const scenes=segmentsOf(m),resolved=resolveStateRows(m,state.scenes);
+ warnings.push(...resolved.warnings);
+ for(const s of scenes)if(!resolved.map.has(s.id))warnings.push(`Segmen baru ${s.id} belum dicatat di state (jangan hilangkan approval segmen lama).`);
+ if(state.referenceSceneId&&!resolveSceneId(m,state.referenceSceneId))errors.push('referenceSceneId tidak ada pada manifest.');
  if(state.referenceSceneApproval==='approved'&&(state.scriptApproval!=='approved'||state.storyboardApproval!=='approved')){
   warnings.push('Scene referensi approved sementara script/storyboard belum approved — cek riwayat keputusan.');
  }

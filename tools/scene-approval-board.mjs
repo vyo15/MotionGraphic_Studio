@@ -6,6 +6,7 @@
  * `--write` updates ONLY production/SCENE-VO-ACC-BOARD.md, not source/approval.
  */
 import fs from 'node:fs';
+import {resolveStateRows} from './approval-identity.mjs';
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
 
@@ -22,8 +23,8 @@ const safeMarkdown = text => String(text).replace(/\\/g,'\\\\').replace(/\*/g,'\
 
 function visualStatus(raw) {
   const s = normalized(raw);
-  if (/locked|terkunci/.test(s)) return 'ACC / LOCKED';
-  if (/approved|acc|disetujui/.test(s)) return 'ACC VISUAL (belum otomatis LOCKED)';
+  if (/^(?:locked|terkunci|approved-locked|visual-locked|visual-approved-locked)$/.test(s)) return 'ACC / LOCKED';
+  if (/^(?:approved|visual-approved|acc|disetujui)$/.test(s)) return 'ACC VISUAL (belum otomatis LOCKED)';
   if (/selected|dipilih/.test(s)) return 'DIPILIH / BELUM LOCKED';
   if (/review|revisi/.test(s)) return 'REVIEW';
   return 'BELUM ACC';
@@ -31,24 +32,24 @@ function visualStatus(raw) {
 function voTextStatus(state, sceneNumber, row) {
   const perScene = String(row?.scriptApproval ?? row?.voTextApproval ?? '').toLowerCase();
   if (perScene) {
-    if (/approved|acc|locked/.test(perScene)) return 'ACC TEKS';
+    if (/^(?:approved|acc|locked|vo-approved|approved-locked)$/.test(perScene)) return 'ACC TEKS';
     if (/draft|pending|review/.test(perScene)) return 'DRAFT / REVIEW';
   }
   const global = normalized(state?.scriptApproval);
   const scoped = global.match(/scenes?[-_ ]0?(\d+)[-_ ]0?(\d+)[-_ ]vo[-_ ]approved/);
   if (scoped) return sceneNumber >= +scoped[1] && sceneNumber <= +scoped[2] ? 'ACC TEKS (scope global)' : 'BELUM TERBUKTI ACC';
-  if (/^approved$|^locked$|^acc$|vo-approved-all/.test(global)) return 'ACC TEKS (global)';
+  if (/^(?:approved|locked|acc|vo-approved-all)$/.test(global)) return 'ACC TEKS (global)';
   return 'DRAFT / BELUM TERBUKTI ACC';
 }
 function recordingStatus(state) {
   const s = normalized(state?.voiceOverStatus);
-  if (/not-recorded|belum|draft|guide/.test(s) || !s) return 'VO GUIDE / BELUM DIREKAM';
-  if (/recorded|rekam/.test(s)) return 'REKAMAN ADA; SYNC BELUM TERBUKTI';
+  if (/not[-_ ]?recorded|unrecorded|belum|draft|guide/.test(s) || !s) return 'VO GUIDE / BELUM DIREKAM';
+  if (/^(?:recorded|rekaman-ada|recorded-synced|recorded-not-synced)$/.test(s)) return 'REKAMAN ADA; SYNC BELUM TERBUKTI';
   return `STATUS SUMBER: ${label(state.voiceOverStatus)}`;
 }
 function finalStatus(state) {
   const s = normalized(state?.fullVideoApproval);
-  if (/final-approved|final-acc|published/.test(s)) return 'FINAL ACC (klaim status sumber)';
+  if (/^(?:final-approved|final-acc|published)$/.test(s)) return 'FINAL ACC (klaim status sumber)';
   return 'BELUM FINAL ACC';
 }
 function readBridgeLock(projectDir) {
@@ -81,13 +82,14 @@ function analyze(projectDir) {
     }
     if(cursor<segment.end)slots.push({...segment,start:cursor,end:segment.end});
   }
-  const stateRows=state?.scenes ?? [];
+  const resolved=resolveStateRows(m,state?.scenes ?? []);
+  warnings.push(...resolved.warnings);
+  const stateRows=resolved.map;
   const bridgeLock=readBridgeLock(projectDir);
   const rows=slots.map((slot,index)=>{
     const overlap = beats.filter(b=>b.startFrame<slot.end && b.endFrame>slot.start);
-    const matched = stateRows.find(r=> r.id===slot.id || r.sceneId===slot.id ||
-      (slot.number && ((String(r.id??r.sceneId??'').match(/^S0?(\d+)/i)?.[1] ?? '') === String(slot.number))) );
-    const parent = slot.bridge ? stateRows.find(r=>r.id===slot.parentId || r.sceneId===slot.parentId) : null;
+    const matched = stateRows.get(slot.id);
+    const parent = slot.bridge ? stateRows.get(slot.parentId) : null;
     const rawVisual = slot.bridge ? (bridgeLock?.status ?? parent?.status ?? '') : (matched?.visualApproval ?? matched?.status ?? '');
     const exactVo = overlap.filter(b=>!isSilent(b.text)).map(b=>String(b.text).trim()).join(' ');
     const silent = !exactVo;

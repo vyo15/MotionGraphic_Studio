@@ -9,7 +9,8 @@ const ROOT=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 function fixture(rootText){
  const dir=fs.mkdtempSync(path.join(os.tmpdir(),'mg-empty-recovery-'));
  for(const sub of ['tools','projects','src','library'])fs.mkdirSync(path.join(dir,sub),{recursive:true});
- for(const name of ['sync-projects.mjs','studio-props-bridge.mjs','register-scene-segments.mjs','production-scope.mjs','validate-addon.mjs'])
+ fs.cpSync(path.join(ROOT,'templates/production-toolkit'),path.join(dir,'templates/production-toolkit'),{recursive:true});
+ for(const name of ['sync-projects.mjs','studio-props-bridge.mjs','register-scene-segments.mjs','production-scope.mjs','validate-addon.mjs','qa-motion-plan.mjs','qa-spatial.mjs','qa-spatial-trace.mjs','approval-identity.mjs'])
   fs.copyFileSync(path.join(ROOT,'tools',name),path.join(dir,'tools',name));
  fs.writeFileSync(path.join(dir,'package.json'),'{}');
  fs.writeFileSync(path.join(dir,'library/catalog.json'),JSON.stringify({schemaVersion:1,videos:[]}));

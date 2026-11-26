@@ -137,37 +137,37 @@
     {
       "scene": "S10",
       "startFrame": 1500,
-      "endFrame": 1605,
+      "endFrame": 1650,
       "text": "Nah, sekarang kamu bisa coba login lagi.",
       "approval": "draft"
     },
     {
       "scene": "S10",
-      "startFrame": 1605,
-      "endFrame": 1680,
+      "startFrame": 1650,
+      "endFrame": 1803,
       "text": "Nggak perlu install ulang, kan?",
       "approval": "draft"
     },
     {
       "scene": "S11",
-      "startFrame": 1680,
-      "endFrame": 1740,
-      "text": "Kalau kamu sendiri,",
-      "approval": "draft"
+      "startFrame": 1803,
+      "endFrame": 1899,
+      "text": "Kalau kamu pernah lupa password Windows,",
+      "approval": "locked"
     },
     {
       "scene": "S11",
-      "startFrame": 1740,
-      "endFrame": 1830,
-      "text": "pernah ngalamin masalah kayak gini nggak?",
-      "approval": "draft"
+      "startFrame": 1899,
+      "endFrame": 1977,
+      "text": "waktu itu ngatasinnya gimana?",
+      "approval": "locked"
     },
     {
-      "scene": "S12",
-      "startFrame": 1830,
-      "endFrame": 1950,
-      "text": "",
-      "note": "Cover tanpa VO"
+      "scene": "S11",
+      "startFrame": 1977,
+      "endFrame": 2058,
+      "text": "Coba tulis di kolom komentar.",
+      "approval": "locked"
     }
   ]
 }

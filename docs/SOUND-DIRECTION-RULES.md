@@ -82,7 +82,7 @@ Durasi contoh, **bukan angka wajib**: UI click 40–120 ms; pop 80–250 ms; who
 - WAV PCM berkualitas baik (48 kHz dapat dipilih bila aset baru) atau format yang didukung tool; mono SFX dekat, stereo hanya saat spatial cue/ambience memang diperlukan. **Jangan memaksakan resampling atau format baru untuk project lama.**
 - `source.kind` sesuai skema aktual (`own`, `openverse`, `real-recording`, `earshot`, `licensed-other`); catat judul, pencipta, URL sumber, lisensi, URL lisensi, izin komersial dan atribusi bila diwajibkan. Bukti halaman asal lebih kuat daripada hasil pencarian Openverse.
 - Jangan mengambil SFX/musik dari Easy2Boot, video contoh, CapCut, brand atau internet tanpa hak. Aset original boleh dipakai ulang hanya jika hak, scope dan pengemasannya jelas; **jangan mengubah project lain**.
-- Jangan menambah dependensi baru hanya demi sound; Master v1.8.1 memakai Remotion 4.0.538. `Real SFX` adalah metodologi skill pihak lain, bukan renderer terpasang; `earshot` opsional, tidak diasumsikan tersedia.
+- Jangan menambah dependensi baru hanya demi sound; Master v2.0.0 memakai Remotion 4.0.538. `Real SFX` adalah metodologi skill pihak lain, bukan renderer terpasang; `earshot` opsional, tidak diasumsikan tersedia.
 - Jika file belum dibuat/diunduh dan belum diperiksa, status `planned`; jangan membuat file palsu, mengisi metadata lisensi asal, atau menamai stem placeholder sebagai final.
 
 ## 7. Cue sheet dan implementasi Remotion (kontrak Master aktual)

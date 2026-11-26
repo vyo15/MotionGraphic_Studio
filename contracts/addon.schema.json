@@ -63,6 +63,9 @@
     "defaultProps": {
       "type": "object"
     },
+    "motionPlanContract": {
+      "const": "focus-driven-v1"
+    },
     "segments": {
       "type": "array",
       "items": {

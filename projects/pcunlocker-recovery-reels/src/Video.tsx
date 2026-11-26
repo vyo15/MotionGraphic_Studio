@@ -23,7 +23,7 @@ export const Video:React.FC<VideoProps>=(input)=>{const p={...DEFAULT_PROPS,...i
 <Sequence name="S07 — Pemulihan" from={1020} durationInFrames={180}><Scene07 {...p}/></Sequence>
 <Sequence name="S08 — Konfirmasi" from={1200} durationInFrames={150}><Scene08 {...p}/></Sequence>
 <Sequence name="S09 — Restart" from={1350} durationInFrames={150}><Scene09 {...p}/></Sequence>
-<Sequence name="S10 — Hasil" from={1500} durationInFrames={180}><Scene10 {...p}/></Sequence>
-<Sequence name="S11 — CTA" from={1680} durationInFrames={150}><Scene11 {...p}/></Sequence>
-<Sequence name="S12 — Cover Reels" from={1830} durationInFrames={120}><Scene12 {...p}/></Sequence>
+<Sequence name="S10 — Hasil" from={1500} durationInFrames={303}><Scene10 {...p}/></Sequence>
+<Sequence name="S11 — CTA" from={1803} durationInFrames={270}><Scene11 {...p}/></Sequence>
+<Sequence name="S12 — Cover Reels" from={2073} durationInFrames={120}><Scene12 {...p}/></Sequence>
 </AbsoluteFill>};

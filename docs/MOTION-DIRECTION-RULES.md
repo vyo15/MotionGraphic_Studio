@@ -1,4 +1,4 @@
-# MOTIONGRAPHIC STUDIO — MOTION DIRECTION RULES v2.0
+# MOTIONGRAPHIC STUDIO — MOTION DIRECTION RULES v3.0 — FOCUS-DRIVEN & SEMANTIC CHOREOGRAPHY
 
 **Tujuan:** kualitas motion Easy2Boot menjadi standar *prinsip*, bukan salinan efek. Berlaku default untuk video baru; tidak membuka scene ACC tanpa permintaan.
 
@@ -53,3 +53,15 @@ Teknik boleh dicampur dengan selektif. Impact Stamp/Card Break/Fold & Unfold/Mat
 Sebelum scene diserahkan, tulis: waktu & frame, pesan, naskah/beat, visual masuk, puncak aksi, hasil, hold, visual keluar, objek pembawa continuity, teks penting, layer editable, dan status ACC. Pastikan tidak ada gap/overlap yang menyebabkan flash kosong atau double objek. Simpan keputusan di `STORYBOARD.md` dan status di `PRODUCTION-STATE.json` pada project baru.
 
 **Scene cover terakhir** setelah CTA berisi ringkasan **mini-demo 1–3 aksi**, judul singkat, hero object, hold 1–2 dtk. Simpan nomor still frame jika siap ekspor. Jangan memotong layer CTA/caption dengan transisi cover sebelum VO selesai.
+
+## 6. Motion Decision System v3.0 (wajib pada video baru)
+
+Baca `docs/MOTION-DECISION-MATRIX.md`, `docs/MOTION-VOCABULARY.md`, `docs/PORTRAIT-CAMERA-STANDARD.md`, `docs/MOTION-PLAN-CONTRACT.md` dan `skills/motion-continuity-director/SKILL.md`. Gunakan otomatis berdasarkan tugas, bukan berdasarkan nama skill yang disebut user. Skill lokal adalah adapter instruksi, bukan plugin akun atau engine baru.
+
+- Tafsirkan makna beat VO, bukan kata kunci literal: intent → target fokus → state awal → gerak yang diperlukan (atau `hold`) → aksi → reaksi → hasil → hold → handoff. Satu fokus dominan. Pilih gerakan minimum yang memberi informasi baru.
+- Atur eye trace: titik akhir perhatian A menjadi titik masuk B. Untuk aplikasi yang sama, pertahankan world, UI state, posisi cursor, kamera, dan momentum; jangan reset scene hanya karena batas Sequence. Match/motivated cut jika konteks memang berubah.
+- Portrait UI landscape: establish → zoom in jika detail perlu dibaca → pan/tracking target → aksi dan reaksi → hold → zoom out hanya jika konteks diperlukan. Rasio UI asli; world space terpisah dari subtitle/background screen space. Jangan pan tiap gerak cursor.
+- CLEAN FOCUS MOTION LOCK: tidak memakai Slide Mask dekoratif, full-page slide generik, spin/flip atau bounce berlebihan sebagai default; crop viewport teknis, native OS clipping, dan reveal fungsional berbeda dari Slide Mask dekoratif. Jangan paksa morph atau zoom. Hormati override eksplisit/ACC.
+- Collision-free: sediakan ruang sebelum aset masuk, periksa bounding box termasuk transform, shadow/teks, seluruh lintasan dan z-order. Overlap native UI (menu/dialog) boleh jika fokus aktif dan label penting tidak tertutup. Pisahkan UI, cursor, subtitle dan kamera; jangan meratakan komposisi.
+- Motion plan per beat wajib untuk produksi baru: `production/motion-plan.json` dengan `motionPlanContract: "focus-driven-v1"` pada manifest. Sumber naskah dan rentang beat tetap `src/config/narration.json`; fase memakai offset lokal, bukan timeline VO kedua. Silent cover/bridge direncanakan juga. Draft sebelum VO; setelah audio aktual, sesuaikan onset/hold tanpa mengubah ACC tanpa izin.
+- Jalankan `node tools/qa-motion-plan.mjs projects/<slug>` sebelum preview yang akan diajukan untuk review; strict add-on validator juga memeriksa kontrak bila dideklarasikan. PASS hanya metadata. Inspeksi frame dan MP4, serta uji native editing terpisah. Tidak ada migrasi project lama atau klaim otomatisasi pemilihan gerakan saat runtime.

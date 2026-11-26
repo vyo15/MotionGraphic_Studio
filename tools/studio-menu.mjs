@@ -33,6 +33,11 @@ const menuItems=[
   ['12','Edit panduan rekaman VO'],
   ['13','Terapkan patch revisi aman'],
   ['14','Panduan alur ChatGPT → MotionGraphic Studio'],
+  ['15','QA Motion Plan (read-only, semua project)'],
+  ['16','Cek versi release (read-only)'],
+ ['17','QA Spatial Plan (read-only, satu project)'],
+ ['18','QA Approval & timeline metadata (read-only)'],
+ ['19','VO alignment proposal (timestamp JSON, read-only)'],
 ];
 // Satu sesi input untuk semua menu: tidak berganti readline antar proses.
 const rl=createInterface({input:process.stdin,output:process.stdout});
@@ -187,7 +192,9 @@ async function doAddFolder(){
 async function doValidateAddon(){
  const folder=await ask('Path folder add-on ChatGPT (Enter = kembali): ');
  if(!folder)return;
- runScript('validate-addon.mjs',[folder.replace(/^['"]|['"]$/g,''),'--strict','--syntax']);
+ const mode=await ask('Mode: 1 = video baru (default), 2 = legacy/revisi: ');
+ if(mode&&!['1','2'].includes(mode))return console.log('[MENU] Mode tidak dikenal.');
+ runScript('validate-addon.mjs',[folder.replace(/^['"]|['"]$/g,''),mode==='2'?'--strict':'--production','--syntax']);
 }
 async function doEditVO(){
  const project=await choose(catalogVideos().filter(v=>fs.existsSync(path.join(ROOT,v.projectDir,'src/config/narration.json'))),
@@ -227,6 +234,11 @@ async function handle(choice){
     case '11': await doValidateAddon();break;
     case '12': await doEditVO();break;
     case '13': await doPatch();break;
+    case '15': runScript('qa-motion-plan.mjs',['--all']);break;
+    case '16': runScript('check-release.mjs');break;
+    case '17': {const v=await chooseVideo();if(v)runScript('qa-spatial.mjs',[path.join(ROOT,v.projectDir)]);break;}
+    case '18': runScript('production-scope.mjs');break;
+    case '19': {const v=await chooseVideo();if(!v)break;const f=await ask('Path phrases.json (Enter = kembali): ');if(f)runScript('vo-align.mjs',[path.join(ROOT,v.projectDir),f.replace(/^[\"']|[\"']$/g,'')]);break;}
     case '14': {
       console.log('\n[ALUR] Mulai dari judul, pilih langkah berikutnya dan buat prompt siap salin.');
       const title=await ask('Judul video baru (Enter untuk melihat alur saja): ');

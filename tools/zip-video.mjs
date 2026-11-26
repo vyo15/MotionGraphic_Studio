@@ -8,6 +8,7 @@ import {createInterface} from 'node:readline/promises';
 import {ROOT,readCatalog} from './menu-helper.mjs';
 import {ensureExportDirs,availableFile,timestamp} from './export-paths.mjs';
 import {collectEntries,createZip,progressLogger} from './zip-core.mjs';
+import {inspectRelease} from './check-release.mjs';
 
 const IGNORE=new Set(['node_modules','.git','.cache','dist','build','coverage','.next','tmp','temp','.remotion','out','exports','qa-out']);
 const controller=new AbortController();
@@ -92,6 +93,7 @@ function showVideos(videos){
 async function run(){
   const args=process.argv.slice(2);
   if(args.includes('--studio')||args.includes('--master')){
+    const release=inspectRelease(ROOT);assert(release.ok,'Versi release tidak konsisten: '+release.errors.join('; '));
     if(args.includes('--full'))return studioZip({full:true});
     if(args.includes('--with-projects'))return studioZip({full:false});
     return engineOnlyZip();

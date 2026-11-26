@@ -134,40 +134,34 @@
     {
       "id": "S10-preview-bed",
       "scene": "S10",
-      "action": "SFX klik sintetis dari preview fullscreen yang direview",
+      "action": "SFX preview ACC Relaxed Pacing V4 (ekstrak bagian S10; impact estimasi, perlu listening QA)",
       "startFrame": 1500,
-      "impactFrame": 1572,
-      "endFrame": 1679,
+      "impactFrame": 1621,
+      "endFrame": 1802,
       "status": "ready",
-      "file": "audio/sfx/s10-preview.wav",
+      "file": "audio/sfx/s10-relaxed-pacing.wav",
       "source": {
         "kind": "own",
-        "title": "SFX sintetis preview Scene07–10 (split tanpa perubahan timing)"
+        "title": "Audio sintetis dari preview Relaxed Pacing V4 yang di-ACC; ekstrak 1,0–11,1 detik"
       },
       "gainDb": 0
     },
     {
-      "id": "S11-preview-bed",
+      "id": "S11-comment-omit",
       "scene": "S11",
-      "action": "SFX preview lama per scene (belum mix final)",
-      "startFrame": 1680,
-      "impactFrame": 1698,
-      "endFrame": 1829,
-      "status": "ready",
-      "file": "audio/sfx/s11-preview.wav",
-      "source": {
-        "kind": "own",
-        "title": "SFX sintetis dari preview sebelumnya"
-      },
-      "gainDb": -1.41
+      "action": "Reveal VO dan gerak simbol kirim; omit sesuai preview ACC tanpa audio",
+      "startFrame": 1803,
+      "impactFrame": 1984,
+      "endFrame": 2072,
+      "status": "omit"
     },
     {
-      "id": "S12-preview-bed",
+      "id": "S12-cover-omit",
       "scene": "S12",
-      "action": "SFX preview lama per scene (belum mix final)",
-      "startFrame": 1830,
-      "impactFrame": 1830,
-      "endFrame": 1949,
+      "action": "Crossfade CTA, build vektor cover dan hold; omit sesuai preview ACC tanpa audio",
+      "startFrame": 2073,
+      "impactFrame": 2102,
+      "endFrame": 2192,
       "status": "omit"
     }
   ]

@@ -101,3 +101,18 @@ Checklist untuk **video baru dan revisi yang diminta**. Bukan janji semua penguj
 | Cover thumbnail | ... | ... |
 
 **Aturan keputusan:** bila kriteria keras gagal (mis. source tak valid, hasil demonstrasi keliru, konten di luar frame, file ACC ditimpa, patch berisi file tak diminta), jangan melabeli produk “final siap publikasi”. Laporkan blocker dan perbaikan terarah.
+
+## G. Focus-driven motion v3.0 — gate video baru
+
+- [ ] `node tools/qa-motion-plan.mjs projects/<slug>` PASS metadata; fingerprint sesuai narration aktual. Jangan menyamakan PASS dengan visual.
+- [ ] Satu target dominan per beat, pilihan gerak mempunyai alasan semantik; hold jika tidak ada informasi baru. Tidak ada Slide Mask dekoratif, zoom reset, gerak generik atau efek yang bersaing.
+- [ ] UI landscape fit/zoom uniform, camera pan terencana; target/cursor/hotspot/menu/hasil terbaca saat dibutuhkan. Subtitle/background di screen space stabil. Pose world kontinu pada carry; full/segment cocok pada frame yang sama.
+- [ ] Cek bounds transform selama lintasan: awal/akhir dan frame antara, khususnya ±3 frame sekitar aksi, cut dan overlap; untuk gerak cepat tinjau tiap frame. Tidak ada clipping/occlusion penting atau benturan dengan subtitle, judul, safe area; overlap native UI yang disengaja dicatat. Periksa hasil sebenarnya, bukan hanya deklarasi focusSamples.
+- [ ] VO draft vs rekaman aktual dibedakan; cue, action, reaction, hold dan sound handoff sinkron; cover tetap silent dan hold cukup.
+- [ ] Preview bergerak dan native GUI Save/reload diuji secara terpisah; jika tidak tersedia tandai BELUM DIUJI. Tidak mengubah ACC tanpa izin.
+
+## Gate release 2.0.0
+Untuk video baru jalankan `npm run qa:motion -- <folder-addon>` dan `npm run qa:spatial -- <folder-addon>` lalu `npm run addon:validate -- <folder-addon> --production --syntax` (flag produksi eksplisit; scaffold/legacy tetap dapat memakai `--strict`). `npm run qa:motion -- --all` melewati legacy tanpa kontrak, bukan PASS visual. `npm run release:check` memeriksa konsistensi versi sebelum ekspor Master. Baca `docs/RELEASE-2.0.0-AUDIT.md` (riwayat sebelumnya: `docs/RELEASE-1.9.0-AUDIT.md`).
+
+## Production Toolkit v1.0 — Master 2.0.0
+Baca `docs/PRODUCTION-TOOLKIT.md` sebelum build. Untuk video baru: pilih/copy kamera/asset lokal dari `templates/production-toolkit/` bila relevan; wajib `production/spatial-plan.json` dan `npm run qa:spatial -- <folder-addon>` di gate produksi. Catat world/viewport, focus bounds, track aktif dan collision exemption beralasan, gunakan keyframe yang sama dengan source; cek seluruh frame deklarasi dan tetap inspeksi preview full/segment. Setelah rekaman VO: `vo:align` hanya proposal timestamp, bukan ASR/ACC atau retiming otomatis. `qa:approval` read-only; `qa:render` bedakan declared hold dan kandidat dead zone. Legacy/ACC tidak dipaksa migrasi. Lihat laporan release 2.0.0 untuk batas verifikasi.

@@ -13,7 +13,7 @@ const available=fs.existsSync(path.join(project,'motiongraphic-video.json'));
  const v=read('src/Video.tsx');
  const parts=read('src/SegmentVideo.tsx');
  const timing=read('src/config/timing.ts');
- assert.equal(m.segments.length,9);
+ assert.equal(m.segments.length,11); // v58 includes explicit S06 bridge and S08 question
  assert.match(timing,new RegExp('VIDEO_FRAMES\\s*=\\s*'+m.durationInFrames+'\\b'));
  assert.match(timing,new RegExp('SCENE03_FRAMES\\s*=\\s*'+m.segments[3].durationInFrames+'\\b'));
  assert.equal((v.match(/<Sequence name=/g)||[]).length,m.segments.length);

@@ -7,7 +7,7 @@
 - `showSubtitles`, `showVoGuide`, `showSfx`, `backgroundColor`, `sfxVolume` tersedia sebagai props. Audio SFX preview dipotong per scene di `public/audio/sfx/`. Tidak ada VO rekaman.
 - Uji pilih layer → ubah posisi atau teks → Save → reload → preview → render sebelum menganggap native editability teruji.
 
-Layer native dideklarasikan: 268 teks + 175 visual. Status GUI belum diuji. Revisi per scene; tidak ada master file yang diganti.
+Layer native dideklarasikan: 304 teks + 217 visual. Status GUI belum diuji. Revisi per scene; tidak ada master file yang diganti.
 
 ### Scene 03 — Panel Alert (05)
 Buka `PCUnlockerRecoveryReels-S03`. Foto, label, file, panel, ikon, outline, badge merah, kedua garis silang dan dua subtitle merupakan target tersendiri. Badge memuat dua garis silang; transform badge memindahkan keduanya. Ubah onset di keyframe opacity/scale dan `Sequence from={51}` bersamaan untuk menjaga sinkron tetot. Audio `s03-panel-alert.wav` berdurasi 12 frame; SFX bisa dimatikan lewat showSfx. Tidak ada VO rekaman.
@@ -20,3 +20,15 @@ Buka `PCUnlockerRecoveryReels-S05`. 14 teks dan 15 visual independen dideklarasi
 
 ### Scene 06–10 — Fullscreen UI
 Buka segmen S06–S10. Layar PCUnlocker / Windows merupakan simulasi editorial, tanpa bingkai laptop setelah S05. Setiap elemen tabel, label, dialog, tombol, subtitle dan pointer memiliki target independen; tidak memakai MP4 sebagai layer. Jendela aplikasi 960 px, tombol tidak berubah ukuran ketika diklik. S07/S08: hotspot pointer SVG ada di ujung panah; koordinat, ukuran dan keyframe inline dapat diedit. Selaraskan posisi UI dan dialog antar scene bila menggeser layer. S07–08 menggunakan audio dari preview yang di-ACC; S09–10 masih review. Jika mengubah VO, samakan subtitle dan narration.json. Sumber SVG internal dapat diedit sebagai source, bukan setiap path sebagai handle GUI.
+
+S10 V4: edit layer login, desktop, Explorer dan galeri di Scene10.tsx; pose login akhir S09 harus tetap sama. S10 303 frame; ubah timing subtitle, audio dan manifest secara konsisten bila mengubah durasi. Kamera/grup animasi source-editable; drag/Save/reload belum diverifikasi.
+
+### Scene 11–12 — CTA 04 dan Connected Cover ACC
+Buka `PCUnlockerRecoveryReels-S11` (270 frame) dan `PCUnlockerRecoveryReels-S12` (120 frame). S11: 6 layer teks literal dan 11 visual native bernama (bubble, dua bagian ekor, avatar tiga bagian, tiga garis, dua bagian pesawat kertas). Teks VO tampil di area utama, bukan subtitle tambahan. `showSubtitles` dan `showVoGuide` mematikan tipografi VO; ilustrasi tetap terlihat. Ubah style inline, posisi/warna/ukuran dan keyframe langsung di source/Studio bila didukung. Jika mengubah satu bagian ilustrasi, jaga relasi posisi dengan bagian lain. Samakan teks dan timing dengan `src/config/narration.json`, `src/config/vo-subtitle-cues.json`, SRT; tidak ada rekaman asli.
+S12: tiga SVG cover asli masing-masing punya layer, plus tiga teks terpisah. Path SVG internal source-editable, bukan tiap path handle GUI. Awal S12 membawa pose S11 frame 269 melalui Freeze dan opacity parent (source-editable); setelah frame 17 hanya cover. Full dan segment memakai scene yang sama. Hold hero 63–119, thumbnail frame global 2163. Tidak ada SFX aktif pada penutup sesuai preview. GUI Save/reload belum diuji.
+
+### S10 — Technical continuity fix (2026-11-26)
+- Lima ilustrasi galeri ada di `public/images/gallery-*.svg`. Ganti file SVG sesuai nama dan viewBox; `npm run sync` menyalin ke mirror.
+- Tiap kartu mempunyai 3 target native independen: card, artwork, label. Posisi dan motion grup bersama didefinisikan pada div pembungkus Scene10.tsx (source-editable); posisi/ukuran masing-masing bagian tetap target native. Jangan mengubah opacity grup untuk memaksa layer terlihat sebelum fase aktif.
+- S04/S06/S11 menggunakan pose scene sebelumnya melalui Freeze tanpa subtitle/SFX lama, hanya pada handoff; edit di scene sumber.
+- Durasi S10 tetap 303 frame; jika mengubah durasi lagi, sesuaikan manifest, Video, narration, cue dan sound bersama-sama.

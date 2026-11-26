@@ -7,6 +7,8 @@ import fs from 'node:fs';
 import path from 'node:path';
 import {builtinModules,createRequire} from 'node:module';
 import {fileURLToPath} from 'node:url';
+import {validateMotionPlan} from './qa-motion-plan.mjs';
+import {validateSpatial} from './qa-spatial.mjs';
 const require=createRequire(import.meta.url);
 const ROOT=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 export const validSlug=s=>/^[a-z][a-z0-9-]{1,48}$/.test(s||'');
@@ -14,7 +16,7 @@ export const validRel=s=>typeof s==='string'&&s.length>0&&!path.isAbsolute(s)&&!
   s.split('/').every(t=>t&&t!=='.'&&t!=='..')&&/^[A-Za-z0-9_./-]+$/.test(s);
 const assert=(v,msg)=>{if(!v)throw Error(msg)};
 const inside=(p,base)=>{const r=path.relative(base,p);return r===''||(!r.startsWith('..'+path.sep)&&r!=='..'&&!path.isAbsolute(r))};
-const extensions=['','.ts','.tsx','.js','.jsx','.json','/index.ts','/index.tsx','/index.js','/index.jsx'];
+const extensions=['','.mjs','.mts','.ts','.tsx','.js','.jsx','.json','/index.ts','/index.tsx','/index.js','/index.jsx'];
 const builtins=new Set([...builtinModules,...builtinModules.map(s=>'node:'+s)]);
 const forbiddenDirs=new Set(['node_modules','.git','dist','build','out','.cache']);
 function walk(dir,base,output=[]){
@@ -71,7 +73,7 @@ function refsFromAST(sf,ts){
  };
  visit(sf);return result;
 }
-export function validateAddon(dir,{root=ROOT,strict=false,sourceCheck=true,matchFolder=true,requireSyntax=false}={}){
+export function validateAddon(dir,{root=ROOT,strict=false,sourceCheck=true,matchFolder=true,requireSyntax=false,production=false}={}){
  const errors=[],warnings=[];const issue=(level,msg)=>(level==='FAIL'?errors:warnings).push(msg);
  let manifest=null,files=[];
  const base=path.resolve(dir);
@@ -123,6 +125,20 @@ export function validateAddon(dir,{root=ROOT,strict=false,sourceCheck=true,match
    const cat=JSON.parse(fs.readFileSync(catalog,'utf8'));
    for(const p of cat.videos||[])if((p.id===manifest.id&&p.slug!==manifest.slug)||(p.slug===manifest.slug&&p.id!==manifest.id))issue('FAIL','Bentrok ID/slug dengan project lain: '+p.id);
   }
+  // New opt-in motion plan contract; legacy sync/add-ons are not migrated.
+  if(production && manifest.motionPlanContract!=='focus-driven-v1')issue('FAIL','Video baru: motionPlanContract focus-driven-v1 wajib');
+  if(production && manifest.editableContract!=='studio-direct-v4')issue('FAIL','Video baru: editableContract studio-direct-v4 wajib');
+  if((strict||production) && Object.hasOwn(manifest,'motionPlanContract')){
+    const plan=validateMotionPlan(base);
+    for(const msg of plan.errors)issue('FAIL','Motion plan: '+msg);
+    for(const msg of plan.warnings)issue('WARN','Motion plan: '+msg);
+  }
+  const spatialFile=path.join(base,'production/spatial-plan.json');
+  if(production||((strict)&&fs.existsSync(spatialFile))){
+   const spatial=validateSpatial(base);
+   for(const msg of spatial.errors)issue('FAIL','Spatial plan: '+msg);
+   for(const item of spatial.issues)issue('FAIL',`Spatial ${item.issue}, frame ${item.first}..${item.last} (${item.count})`);
+  }
   if(manifest.editableContract==='studio-direct-v4'){
     // Native edit gate requires an explicit blueprint so "Interactive count" is not a false PASS.
     const native=inspectNativeEditable(base,{strict:true});
@@ -145,7 +161,7 @@ export function validateAddon(dir,{root=ROOT,strict=false,sourceCheck=true,match
     }
     if(!/\binterpolate\s*\(|\bspring\s*\(/.test(body))issue('WARN','Tidak ditemukan keyframe Remotion; cek apakah video memang butuh animasi');
   }
-  const source=files.filter(f=>/\.(tsx?|jsx?)$/.test(f));
+  const source=files.filter(f=>/\.(tsx?|jsx?|mjs|mts)$/.test(f));
   if(sourceCheck){
    let ts=null;
    try{ts=require('typescript')}catch{issue(requireSyntax?'FAIL':'WARN','TypeScript tidak tersedia; parsing sintaks penuh belum terverifikasi (npm ci)')}
@@ -305,8 +321,9 @@ export function inspectNativeEditable(base,{strict=true}={}){
 
 if(process.argv[1]&&path.resolve(process.argv[1])===fileURLToPath(import.meta.url)){
  const argv=process.argv.slice(2),dir=argv.find(x=>!x.startsWith('--'));
- if(!dir){console.error('Pakai: node tools/validate-addon.mjs <folder-addon> [--strict] [--syntax]');process.exit(2)}
- const r=validateAddon(dir,{strict:argv.includes('--strict'),requireSyntax:argv.includes('--syntax')});
+ if(!dir){console.error('Pakai: node tools/validate-addon.mjs <folder-addon> [--strict] [--production] [--syntax]');process.exit(2)}
+ const production=argv.includes('--production');
+ const r=validateAddon(dir,{strict:production||argv.includes('--strict'),production,requireSyntax:argv.includes('--syntax')});
  for(const e of r.errors)console.error('[FAIL] '+e);
  for(const w of r.warnings)console.warn('[WARN] '+w);
  console.log(`[ADDON] ${r.ok?'STATIS VALID':'GAGAL'}: ${r.manifest?.slug||dir}, ${r.files} file; ${r.errors.length} FAIL, ${r.warnings.length} WARN; bundling/render BELUM diuji.`);

@@ -34,7 +34,7 @@ flowchart TD
 |---|---|---|---|
 | 01 Entry | Mulai dari judul | `npm run flow` → buat brief ChatGPT | File `exports/briefs/<slug>-chatgpt.md` jadi; bila judul kosong, tidak mengubah data |
 | 02 Goal | ChatGPT membuat isi | Bagikan brief ke Project ChatGPT Motion-Graphic; minta add-on lengkap | ZIP add-on, bukan ZIP Master; tetap sesuai kontrak |
-| 03 Decision | Periksa kompatibilitas | `npm run addon:validate -- <folder> --strict --syntax` | FAIL berarti perbaiki sumber terlebih dahulu |
+| 03 Decision | Periksa kompatibilitas | `npm run qa:motion -- <folder>` lalu `npm run addon:validate -- <folder> --production --syntax` | FAIL berarti perbaiki sumber terlebih dahulu |
 | 04 Navigation | Import dan preview | `npm run addfolder -- <folder>` lalu `npm run dev` | Komposisi tampil tanpa menimpa project lain |
 | 05 Success gate | Review hasil | Drag/ubah teks/timing → Save → reload → render 1 frame | Ketidaksesuaian = revisi terbatas; jangan klaim 100% editable sebelum lulus |
 | 06 VO | Rekam setelah ACC | Buka `<ID>VOGuide`, baca teks lalu rekam | Panduan hanya untuk rekaman, tidak memenuhi video final |

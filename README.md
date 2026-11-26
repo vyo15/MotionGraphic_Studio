@@ -1,10 +1,10 @@
-# MotionGraphic Studio Master v1.8.1 — Remotion Only
+# MotionGraphic Studio Master v2.0.0 — Remotion Only
 
 > **Untuk ChatGPT saat menerima ZIP Master:** buka dan baca [`CHATGPT-READ-FIRST.md`](CHATGPT-READ-FIRST.md) terlebih dahulu, kemudian `AGENTS.md`, `PRODUCTION-RULES.md`, dan [`Template Storyboard Universal`](docs/STORYBOARD-TEMPLATE-UNIVERSAL.md). Agar aturan diikuti **sejak awal chat baru**, salin [`Project Instructions siap tempel`](docs/CHATGPT-PROJECT-INSTRUCTIONS.md) ke pengaturan Project ChatGPT. File ZIP tidak memasang instruksi akun otomatis. Semua revisi = ZIP **FILE CHANGE ONLY** untuk ekstrak → copy–paste–Replace.
 
 **Standar kreatif video baru:** [`Design System v2.0`](docs/MOTIONGRAPHIC-DESIGN-SYSTEM.md) · [`Motion Direction`](docs/MOTION-DIRECTION-RULES.md) · [`QA Visual & Motion`](docs/QA-VISUAL-MOTION-CHECKLIST.md). Semua file termasuk saat `npm run zip -- --studio` atau `--studio --with-projects` karena berada di `docs/`. Project/scene ACC tidak dimodifikasi otomatis.
 
-**Satu Master, satu Studio: Remotion.** Paket ini adalah pembersihan terhadap Master v1.8.1 yang sama, **bukan Master baru** dan bukan perpindahan proyek. Tidak ada Concat, launcher aplikasi kedua, Easy Editor, atau Studio Hub.
+**Satu Master, satu Studio: Remotion.** Paket ini adalah upgrade dari Master v1.9.0 ke v2.0.0 pada instalasi yang sama, **bukan Master baru** dan bukan perpindahan proyek. Tidak ada Concat, launcher aplikasi kedua, Easy Editor, atau Studio Hub.
 
 ### Scene VO & ACC Board (otomatis)
 
@@ -135,3 +135,13 @@ ChatGPT (teknik Lemo-Opuscar, 12 Skill resmi Remotion, native editing, motion-fi
 kontrak Master). Jika ingin konteks yang sama dalam obrolan baru, unggah dokumen ini sebagai
 *Sumber* di Project ChatGPT sekali. Memperbarui Master lokal saja tidak memperbarui sumber
 ChatGPT atau Custom Skill yang terpasang pada akun.
+
+## Motion Direction v3.0 (standar produksi Master 2.0.0)
+
+Panduan pemilihan gerak berdasarkan VO: [Decision Matrix](docs/MOTION-DECISION-MATRIX.md), [Vocabulary](docs/MOTION-VOCABULARY.md), [Portrait Camera](docs/PORTRAIT-CAMERA-STANDARD.md), [Motion Plan Contract](docs/MOTION-PLAN-CONTRACT.md), [adapter Motion Continuity Director](skills/motion-continuity-director/SKILL.md). QA plan: `node tools/qa-motion-plan.mjs projects/<slug>`. Kontrak baru opt-in via manifest untuk produksi baru; project lama tidak dimigrasi. Tidak ada perubahan renderer atau dependensi.
+
+## Gate release 2.0.0
+Untuk video baru jalankan `npm run qa:motion -- <folder-addon>` dan `npm run qa:spatial -- <folder-addon>` lalu `npm run addon:validate -- <folder-addon> --production --syntax` (flag produksi eksplisit; scaffold/legacy tetap dapat memakai `--strict`). `npm run qa:motion -- --all` melewati legacy tanpa kontrak, bukan PASS visual. `npm run release:check` memeriksa konsistensi versi sebelum ekspor Master. Baca `docs/RELEASE-2.0.0-AUDIT.md` (riwayat sebelumnya: `docs/RELEASE-1.9.0-AUDIT.md`).
+
+## Production Toolkit v1.0 — Master 2.0.0
+Baca `docs/PRODUCTION-TOOLKIT.md` sebelum build. Untuk video baru: pilih/copy kamera/asset lokal dari `templates/production-toolkit/` bila relevan; wajib `production/spatial-plan.json` dan `npm run qa:spatial -- <folder-addon>` di gate produksi. Catat world/viewport, focus bounds, track aktif dan collision exemption beralasan, gunakan keyframe yang sama dengan source; cek seluruh frame deklarasi dan tetap inspeksi preview full/segment. Setelah rekaman VO: `vo:align` hanya proposal timestamp, bukan ASR/ACC atau retiming otomatis. `qa:approval` read-only; `qa:render` bedakan declared hold dan kandidat dead zone. Legacy/ACC tidak dipaksa migrasi. Lihat laporan release 2.0.0 untuk batas verifikasi.

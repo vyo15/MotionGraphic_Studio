@@ -75,21 +75,21 @@ lalu klik OK.
 Kalau sudah berhasil, tinggal restart komputernya.
 
 20
-00:00:50,000 --> 00:00:53,500
+00:00:50,000 --> 00:00:55,000
 Nah, sekarang kamu bisa coba login lagi.
 
 21
-00:00:53,500 --> 00:00:56,000
+00:00:55,000 --> 00:01:00,100
 Nggak perlu install ulang, kan?
 
 22
-00:00:56,000 --> 00:00:58,000
-Kalau kamu sendiri,
+00:01:00,100 --> 00:01:03,300
+Kalau kamu pernah lupa password Windows,
 
 23
-00:00:58,000 --> 00:01:01,000
-pernah ngalamin masalah kayak gini nggak?
+00:01:03,300 --> 00:01:05,900
+waktu itu ngatasinnya gimana?
 
 24
-00:01:01,000 --> 00:01:05,000
-
+00:01:05,900 --> 00:01:08,600
+Coba tulis di kolom komentar.

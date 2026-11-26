@@ -1,6 +1,6 @@
 {
   "name": "motiongraphic-studio-master",
-  "version": "1.8.1",
+  "version": "2.0.0",
   "private": true,
   "description": "Satu Master folder-first, Remotion Studio saja; tanpa Concat atau editor tambahan",
   "scripts": {
@@ -44,7 +44,12 @@
     "retire:unregistered": "node tools/retire-unregistered.mjs",
     "qa:sound": "node tools/qa-sound-cues.mjs",
     "qa:layers": "node tools/check-layer-instances.mjs",
-    "qa:native": "node tools/qa-native-editable.mjs --strict"
+    "qa:native": "node tools/qa-native-editable.mjs --strict",
+    "qa:motion": "node tools/qa-motion-plan.mjs",
+    "release:check": "node tools/check-release.mjs",
+    "qa:spatial": "node tools/qa-spatial.mjs",
+    "vo:align": "node tools/vo-align.mjs",
+    "qa:approval": "node tools/production-scope.mjs"
   },
   "dependencies": {
     "@remotion/cli": "4.0.538",
