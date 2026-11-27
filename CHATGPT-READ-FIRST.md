@@ -12,7 +12,7 @@ Baca `CHATGPT-HISTORY.md` sekali di awal pekerjaan untuk mengetahui pelajaran da
 |---|---|
 | `docs/EDITABLE-CONTRACT.md` | build/ubah layer, segment, subtitle native, Save-to-code |
 | `docs/MOTION-PLAN-CONTRACT.md`, `docs/PRODUCTION-TOOLKIT.md` | build/retime/geometry video baru |
-| `docs/MOTION-DECISION-MATRIX.md`, `docs/MOTION-VOCABULARY.md`, `skills/motion-continuity-director/SKILL.md` | ketika memilih gerak rumit atau troubleshooting continuity |
+| `docs/MOTION-DECISION-MATRIX.md`, `docs/MOTION-VOCABULARY.md` | ketika memilih gerak rumit atau troubleshooting continuity |
 | `docs/PORTRAIT-CAMERA-STANDARD.md` | UI landscape atau kamera virtual |
 | `docs/SOUND-DIRECTION-RULES.md`, `docs/SFX-LOCAL-FIRST.md`, `docs/SFX-SOFT-EDITORIAL.md` | sound plan/build/preview/mixing; modul sound, bukan director kedua |
 | `docs/PREVIEW-VIDEO-OUTPUT-CONTRACT.md` | permintaan preview bergerak |
@@ -20,8 +20,8 @@ Baca `CHATGPT-HISTORY.md` sekali di awal pekerjaan untuk mengetahui pelajaran da
 | `docs/ARTIFACT-HYGIENE.md`, `docs/MAINTENANCE-AND-RECOVERY.md` | cleanup/recovery |
 | `docs/RENDER-HQ-CAPCUT.md` | hanya jika finishing CapCut diminta |
 
-## Skill selector
-Satu MotionGraphic Studio Director (bila skill benar-benar tersedia). Jika tidak, enam dokumen inti cukup sebagai fallback. Gunakan `docs/SKILL-ROUTING.md` untuk pilihan spesialis; prinsip Opuscar sudah masuk Motion Direction, tidak perlu membaca adapter berulang. Jangan instal skill atau dependensi saat produksi biasa.
+## ChatGPT prompt-first
+ChatGPT menjadi pengarah kreatif dan pembuat/revisi source lewat prompt; Remotion Studio untuk preview, edit dan render. Tidak perlu instalasi agent lokal atau skill pack. Gunakan enam dokumen inti dan modul di atas; teknik Opuscar dimiliki Motion Direction, sound dimiliki Sound Direction. Jika perlu verifikasi API gunakan https://www.remotion.dev/docs/ sesuai versi Master. Skill akun ChatGPT, bila tersedia, hanya referensi on-demand, bukan runtime atau flow kedua. Gunakan ZIP aktual sebagai sumber edit lokal; GitHub untuk riwayat dan source yang sudah di-push. Jangan menganggap GitHub mengetahui edit Studio yang belum di-push.
 
 ## Batas baca dan laporan
 Jangan membaca ulang seluruh koleksi docs, riwayat patch, semua skill, atau seluruh project yang tidak relevan. Snapshot, patch audit, contoh dan tutorial adalah referensi, bukan instruksi aktif. Hanya klaim uji yang dilakukan. Jika ZIP/source tidak dapat dibaca atau render tidak tersedia, laporkan. Untuk video aktif baca board penuh setiap kali, tetapi tampilkan penuh hanya sesuai kebijakan `docs/SCENE-VO-ACC-WORKFLOW.md`.

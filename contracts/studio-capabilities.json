@@ -50,7 +50,7 @@
   "revisionSafety": "SHA-256, preflight on isolated candidate project, rollback",
   "creativeStyleBridge": {
     "default": "minimal-editorial",
-    "profiles": "contracts/creative-style-profiles.json",
+    "rules": "docs/MOTION-DIRECTION-RULES.md",
     "mode": "reference-only",
     "renderer": "remotion"
   },

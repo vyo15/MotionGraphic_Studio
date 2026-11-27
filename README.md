@@ -4,7 +4,7 @@
 
 **Standar kreatif video baru:** [`Design System v2.0`](docs/MOTIONGRAPHIC-DESIGN-SYSTEM.md) · [`Motion Direction`](docs/MOTION-DIRECTION-RULES.md) · [`QA Visual & Motion`](docs/QA-VISUAL-MOTION-CHECKLIST.md). Semua file termasuk saat `npm run zip -- --studio` atau `--studio --with-projects` karena berada di `docs/`. Project/scene ACC tidak dimodifikasi otomatis.
 
-**Satu Master, satu Remotion Studio.** Riwayat singkat: [CHATGPT-HISTORY.md](CHATGPT-HISTORY.md).
+**Satu Master, satu Remotion Studio, ChatGPT prompt-first.** Tidak ada instalasi agent/skill pack lokal. Teknik kreatif dan kontrak dimiliki dokumen Master; ChatGPT membuat dan merevisi add-on melalui prompt. Riwayat singkat: [CHATGPT-HISTORY.md](CHATGPT-HISTORY.md).
 
 ### Scene VO & ACC Board (otomatis)
 
@@ -59,4 +59,4 @@ Catatan batas uji: UI Remotion di Windows, drag/edit manual, dan render MP4 aktu
 - Operasional dan editing: [docs/OPERASIONAL-STUDIO.md](docs/OPERASIONAL-STUDIO.md), [docs/EDITABLE-CONTRACT.md](docs/EDITABLE-CONTRACT.md), [docs/WORKFLOW-VO-UNIVERSAL.md](docs/WORKFLOW-VO-UNIVERSAL.md).
 - Revisi ChatGPT: FILE CHANGE ONLY, copy–paste–Replace setelah cek base hash dan backup. CLI `addon:patch` tetap tersedia untuk format patch native yang berbeda, bukan untuk ZIP FILE CHANGE ONLY biasa.
 - QA bundle/satu frame: `npm run qa:smoke -- --still <IDVideo>` membutuhkan dependency dan Chromium Remotion. Render dan listening tetap perlu uji aktual.
-- Project ChatGPT: ganti seluruh instruksi dengan [docs/CHATGPT-PROJECT-INSTRUCTIONS.md](docs/CHATGPT-PROJECT-INSTRUCTIONS.md). Unggah satu ZIP Master terbaru (engine-only untuk video baru, with-projects untuk revisi existing). Jangan unggah prompt/snapshot lama bersamaan.
+- Project ChatGPT: ganti seluruh instruksi dengan [docs/CHATGPT-PROJECT-INSTRUCTIONS.md](docs/CHATGPT-PROJECT-INSTRUCTIONS.md). Unggah `CHATGPT-LATEST.zip` untuk sumber aktual, terutama jika edit Studio belum di-push. GitHub menyimpan riwayat dan source yang sudah di-push, bukan mirror live PC. Jangan unggah prompt/snapshot lama bersamaan.

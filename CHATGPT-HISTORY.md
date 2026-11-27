@@ -9,6 +9,8 @@ Status: engine 2.0.0 / Remotion 4.0.538. Ini memori pembelajaran, bukan flow/rul
 
 - Automasi operasional: dev menjadi pintu harian; startup gate, log ringkas dan ZIP handoff otomatis setelah perubahan stabil. Log PC: 157 lulus, 3 gagal, 6 skip; fixture scaffold gagal resolve TypeScript pada Windows, diperbaiki dengan resolusi dependency host. QA patch Linux: 163 lulus, 2 gagal (subtitle Easy2Boot legacy), 6 skip; 5 tes automasi lulus. GUI/render Windows belum diuji ulang. Tidak perlu mengetik sync/flow/test/zip berulang.
 
+- Prompt-first: audit GitHub menemukan instalasi agent duplikat; hapus installer, wrapper dan salinan skill lokal, pertahankan teknik di Motion Direction serta sound/QA/ACC. GitHub hanya mencerminkan source yang sudah di-push. Pelajaran 21 Nov: timeline/manifest/narration harus menutup durasi yang sama; jangan mengklaim scene yang dibuat ulang identik/ACC.
+
 ## Pelajaran yang mencegah revisi berulang
 | Kesalahan terdahulu | Pencegahan / pemilik |
 |---|---|

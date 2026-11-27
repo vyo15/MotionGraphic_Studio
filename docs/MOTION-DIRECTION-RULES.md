@@ -56,7 +56,7 @@ Sebelum scene diserahkan, tulis: waktu & frame, pesan, naskah/beat, visual masuk
 
 ## 6. Motion Decision System v3.0 (wajib pada video baru)
 
-Baca `docs/MOTION-DECISION-MATRIX.md`, `docs/MOTION-VOCABULARY.md`, `docs/PORTRAIT-CAMERA-STANDARD.md`, `docs/MOTION-PLAN-CONTRACT.md` dan `skills/motion-continuity-director/SKILL.md`. Gunakan otomatis berdasarkan tugas, bukan berdasarkan nama skill yang disebut user. Skill lokal adalah adapter instruksi, bukan plugin akun atau engine baru.
+Baca `docs/MOTION-DECISION-MATRIX.md`, `docs/MOTION-VOCABULARY.md`, `docs/PORTRAIT-CAMERA-STANDARD.md`, `docs/MOTION-PLAN-CONTRACT.md`. Gunakan otomatis berdasarkan tugas. Teknik di bagian 3 terinspirasi prinsip kreatif [Lemo-Opuscar](https://github.com/lemomo-ai/lemo-opuscar), bukan kode, aset atau tema yang disalin. Tetap gunakan Minimal Editorial; tidak memasang engine lain.
 
 - Tafsirkan makna beat VO, bukan kata kunci literal: intent → target fokus → state awal → gerak yang diperlukan (atau `hold`) → aksi → reaksi → hasil → hold → handoff. Satu fokus dominan. Pilih gerakan minimum yang memberi informasi baru.
 - Atur eye trace: titik akhir perhatian A menjadi titik masuk B. Untuk aplikasi yang sama, pertahankan world, UI state, posisi cursor, kamera, dan momentum; jangan reset scene hanya karena batas Sequence. Match/motivated cut jika konteks memang berubah.

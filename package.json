@@ -25,8 +25,6 @@
     "menu": "node tools/studio-menu.mjs",
     "editcheck": "node tools/check-editability.mjs",
     "qa": "node tools/studio-check.mjs",
-    "skills": "node tools/remotion-skills.mjs status",
-    "skills:install": "node tools/remotion-skills.mjs install",
     "test": "node --test tests/*.test.mjs",
     "addon:validate": "node tools/validate-addon.mjs",
     "addon:patch": "node tools/apply-addon-patch.mjs",

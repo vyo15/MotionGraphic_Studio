@@ -39,3 +39,8 @@ library/backups/easy-editor/
 qa-out/
 exports/addons/
 *.partial.zip
+
+# Agent lokal bukan bagian Master prompt-first
+/.agents/
+/.claude/
+/skills-lock.json

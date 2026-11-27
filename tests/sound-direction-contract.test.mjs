@@ -12,7 +12,7 @@ test('SOUND DIRECTION main contract exists and documents gating, timing, CTA-cov
  }
 });
 test('ChatGPT onboarding, production and design documents point to the canonical sound rules',()=>{
- for(const rel of ['CHATGPT-READ-FIRST.md','AGENTS.md','PRODUCTION-RULES.md','docs/MOTIONGRAPHIC-DESIGN-SYSTEM.md','docs/MOTION-DIRECTION-RULES.md','docs/STORYBOARD-TEMPLATE-UNIVERSAL.md','docs/QA-VISUAL-MOTION-CHECKLIST.md','skills/sound-design-director/SKILL.md']){
+ for(const rel of ['CHATGPT-READ-FIRST.md','AGENTS.md','PRODUCTION-RULES.md','docs/MOTIONGRAPHIC-DESIGN-SYSTEM.md','docs/MOTION-DIRECTION-RULES.md','docs/STORYBOARD-TEMPLATE-UNIVERSAL.md','docs/QA-VISUAL-MOTION-CHECKLIST.md']){
   assert.ok(file(rel).includes('SOUND-DIRECTION-RULES.md'),`${rel} missing read-first pointer`);
  }
 });

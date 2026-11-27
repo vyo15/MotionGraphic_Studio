@@ -45,7 +45,7 @@ test('routing docs and vocabulary are consistent with validator',()=>{
  const matrix=read('docs/MOTION-DECISION-MATRIX.md'),vocab=read('docs/MOTION-VOCABULARY.md');
  for(const v of INTENTS)assert.ok(matrix.includes(`| ${v} |`),v);
  for(const v of MOTIONS)assert.ok(vocab.includes(`| ${v} |`),v);
- for(const p of ['docs/MOTION-DECISION-MATRIX.md','docs/MOTION-VOCABULARY.md','docs/PORTRAIT-CAMERA-STANDARD.md','docs/MOTION-PLAN-CONTRACT.md','skills/motion-continuity-director/SKILL.md'])assert.ok(read('CHATGPT-READ-FIRST.md').includes(p),p);
+ for(const p of ['docs/MOTION-DECISION-MATRIX.md','docs/MOTION-VOCABULARY.md','docs/PORTRAIT-CAMERA-STANDARD.md','docs/MOTION-PLAN-CONTRACT.md'])assert.ok(read('CHATGPT-READ-FIRST.md').includes(p),p);
 });
 test('strict add-on gate opt-in; legacy remains accepted; read-only',()=>{
  const root=fs.mkdtempSync(path.join(os.tmpdir(),'mg-motion-'));

@@ -56,7 +56,7 @@ async function engineOnlyZip(){
     }});
   };
   try{
-    for(const dir of ['src','tools','contracts','templates','docs','skills'])copy(dir);
+    for(const dir of ['src','tools','contracts','templates','docs'])copy(dir);
     for(const file of ['package.json','package-lock.json','tsconfig.json','.gitignore','README.md','CHATGPT-READ-FIRST.md','CHATGPT-HISTORY.md','PRODUCTION-RULES.md','AGENTS.md','public/README.txt','01-BUKA-STUDIO.bat','02-CEK-STUDIO.bat','03-STOP-STUDIO.bat','tests/engine-smoke.test.mjs'])copy(file);
     fs.mkdirSync(path.join(target,'projects'),{recursive:true});
     fs.mkdirSync(path.join(target,'library/masuk'),{recursive:true});
