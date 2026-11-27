@@ -1,0 +1,376 @@
+{
+  "schemaVersion": 1,
+  "status": "draft",
+  "notes": "Belum ada rekaman atau SFX final. Klik dan paper planned; tidak ada playback palsu.",
+  "cues": [
+    {
+      "id": "cue-01",
+      "scene": "S01",
+      "action": "LAN terhubung",
+      "startFrame": 135,
+      "impactFrame": 135,
+      "endFrame": 140,
+      "status": "planned"
+    },
+    {
+      "id": "cue-02",
+      "scene": "S01",
+      "action": "kertas keluar",
+      "startFrame": 242,
+      "impactFrame": 242,
+      "endFrame": 247,
+      "status": "planned"
+    },
+    {
+      "id": "cue-03",
+      "scene": "S01",
+      "action": "transisi ke S02",
+      "startFrame": 275,
+      "impactFrame": 275,
+      "endFrame": 280,
+      "status": "omit"
+    },
+    {
+      "id": "cue-04",
+      "scene": "S02",
+      "action": "ikon Printer Sharing",
+      "startFrame": 329,
+      "impactFrame": 329,
+      "endFrame": 334,
+      "status": "omit"
+    },
+    {
+      "id": "cue-05",
+      "scene": "S02",
+      "action": "transisi ke S03",
+      "startFrame": 605,
+      "impactFrame": 605,
+      "endFrame": 610,
+      "status": "omit"
+    },
+    {
+      "id": "cue-06",
+      "scene": "S03",
+      "action": "Run OK",
+      "startFrame": 773,
+      "impactFrame": 773,
+      "endFrame": 778,
+      "status": "planned"
+    },
+    {
+      "id": "cue-07",
+      "scene": "S03",
+      "action": "Network and Internet",
+      "startFrame": 842,
+      "impactFrame": 842,
+      "endFrame": 847,
+      "status": "planned"
+    },
+    {
+      "id": "cue-08",
+      "scene": "S03",
+      "action": "Network and Sharing Center",
+      "startFrame": 913,
+      "impactFrame": 913,
+      "endFrame": 918,
+      "status": "planned"
+    },
+    {
+      "id": "cue-09",
+      "scene": "S03",
+      "action": "Advanced sharing settings",
+      "startFrame": 1002,
+      "impactFrame": 1002,
+      "endFrame": 1007,
+      "status": "planned"
+    },
+    {
+      "id": "cue-10",
+      "scene": "S03",
+      "action": "Network Discovery",
+      "startFrame": 1089,
+      "impactFrame": 1089,
+      "endFrame": 1094,
+      "status": "planned"
+    },
+    {
+      "id": "cue-11",
+      "scene": "S03",
+      "action": "File and Printer Sharing",
+      "startFrame": 1175,
+      "impactFrame": 1175,
+      "endFrame": 1180,
+      "status": "planned"
+    },
+    {
+      "id": "cue-12",
+      "scene": "S03",
+      "action": "Save changes",
+      "startFrame": 1250,
+      "impactFrame": 1250,
+      "endFrame": 1255,
+      "status": "planned"
+    },
+    {
+      "id": "cue-13",
+      "scene": "S04",
+      "action": "Control Panel Home",
+      "startFrame": 1386,
+      "impactFrame": 1386,
+      "endFrame": 1391,
+      "status": "planned"
+    },
+    {
+      "id": "cue-14",
+      "scene": "S04",
+      "action": "View devices and printers",
+      "startFrame": 1446,
+      "impactFrame": 1446,
+      "endFrame": 1451,
+      "status": "planned"
+    },
+    {
+      "id": "cue-15",
+      "scene": "S04",
+      "action": "Right click",
+      "startFrame": 1506,
+      "impactFrame": 1506,
+      "endFrame": 1511,
+      "status": "planned"
+    },
+    {
+      "id": "cue-16",
+      "scene": "S04",
+      "action": "Printer properties",
+      "startFrame": 1566,
+      "impactFrame": 1566,
+      "endFrame": 1571,
+      "status": "planned"
+    },
+    {
+      "id": "cue-17",
+      "scene": "S04",
+      "action": "Sharing tab",
+      "startFrame": 1626,
+      "impactFrame": 1626,
+      "endFrame": 1631,
+      "status": "planned"
+    },
+    {
+      "id": "cue-18",
+      "scene": "S04",
+      "action": "Share this printer",
+      "startFrame": 1686,
+      "impactFrame": 1686,
+      "endFrame": 1691,
+      "status": "planned"
+    },
+    {
+      "id": "cue-19",
+      "scene": "S04",
+      "action": "OK",
+      "startFrame": 1806,
+      "impactFrame": 1806,
+      "endFrame": 1811,
+      "status": "planned"
+    },
+    {
+      "id": "cue-20",
+      "scene": "S04",
+      "action": "handoff S05",
+      "startFrame": 1865,
+      "impactFrame": 1865,
+      "endFrame": 1870,
+      "status": "omit"
+    },
+    {
+      "id": "cue-21",
+      "scene": "S05",
+      "action": "perpindahan fokus",
+      "startFrame": 1890,
+      "impactFrame": 1890,
+      "endFrame": 1895,
+      "status": "omit"
+    },
+    {
+      "id": "cue-22",
+      "scene": "S05",
+      "action": "Win + R",
+      "startFrame": 1998,
+      "impactFrame": 1998,
+      "endFrame": 2003,
+      "status": "planned"
+    },
+    {
+      "id": "cue-23",
+      "scene": "S05",
+      "action": "UNC typing",
+      "startFrame": 2010,
+      "impactFrame": 2010,
+      "endFrame": 2015,
+      "status": "planned"
+    },
+    {
+      "id": "cue-24",
+      "scene": "S05",
+      "action": "Run OK",
+      "startFrame": 2076,
+      "impactFrame": 2076,
+      "endFrame": 2081,
+      "status": "planned"
+    },
+    {
+      "id": "cue-25",
+      "scene": "S05",
+      "action": "right click",
+      "startFrame": 2154,
+      "impactFrame": 2154,
+      "endFrame": 2159,
+      "status": "planned"
+    },
+    {
+      "id": "cue-26",
+      "scene": "S05",
+      "action": "Connect",
+      "startFrame": 2190,
+      "impactFrame": 2190,
+      "endFrame": 2195,
+      "status": "planned"
+    },
+    {
+      "id": "cue-27",
+      "scene": "S05",
+      "action": "installation selesai",
+      "startFrame": 2280,
+      "impactFrame": 2280,
+      "endFrame": 2285,
+      "status": "omit"
+    },
+    {
+      "id": "cue-28",
+      "scene": "S06",
+      "action": "Buka dokumen",
+      "startFrame": 2370,
+      "impactFrame": 2370,
+      "endFrame": 2375,
+      "status": "planned"
+    },
+    {
+      "id": "cue-29",
+      "scene": "S06",
+      "action": "Ctrl+P",
+      "startFrame": 2403,
+      "impactFrame": 2403,
+      "endFrame": 2408,
+      "status": "planned"
+    },
+    {
+      "id": "cue-30",
+      "scene": "S06",
+      "action": "Pilih printer",
+      "startFrame": 2433,
+      "impactFrame": 2433,
+      "endFrame": 2438,
+      "status": "planned"
+    },
+    {
+      "id": "cue-31",
+      "scene": "S06",
+      "action": "Klik Print",
+      "startFrame": 2467,
+      "impactFrame": 2467,
+      "endFrame": 2472,
+      "status": "planned"
+    },
+    {
+      "id": "cue-32",
+      "scene": "S06",
+      "action": "Data LAN → USB",
+      "startFrame": 2490,
+      "impactFrame": 2490,
+      "endFrame": 2495,
+      "status": "omit"
+    },
+    {
+      "id": "cue-33",
+      "scene": "S06",
+      "action": "Kertas keluar",
+      "startFrame": 2548,
+      "impactFrame": 2548,
+      "endFrame": 2553,
+      "status": "planned"
+    },
+    {
+      "id": "cue-34",
+      "scene": "S06",
+      "action": "Fade S06 → S07",
+      "startFrame": 2705,
+      "impactFrame": 2705,
+      "endFrame": 2710,
+      "status": "omit"
+    },
+    {
+      "id": "cue-35",
+      "scene": "S07",
+      "action": "Kertas keluar",
+      "startFrame": 2779,
+      "impactFrame": 2779,
+      "endFrame": 2784,
+      "status": "planned"
+    },
+    {
+      "id": "cue-36",
+      "scene": "S07",
+      "action": "Ketik komentar",
+      "startFrame": 2849,
+      "impactFrame": 2849,
+      "endFrame": 2854,
+      "status": "planned"
+    },
+    {
+      "id": "cue-37",
+      "scene": "S07",
+      "action": "Komentar selesai",
+      "startFrame": 2901,
+      "impactFrame": 2901,
+      "endFrame": 2906,
+      "status": "omit"
+    },
+    {
+      "id": "cue-38",
+      "scene": "S07",
+      "action": "Fade CTA → cover",
+      "startFrame": 2930,
+      "impactFrame": 2930,
+      "endFrame": 2935,
+      "status": "omit"
+    },
+    {
+      "id": "cue-39",
+      "scene": "S08",
+      "action": "Mini-demo aliran data",
+      "startFrame": 2963,
+      "impactFrame": 2963,
+      "endFrame": 2968,
+      "status": "omit"
+    },
+    {
+      "id": "cue-40",
+      "scene": "S08",
+      "action": "Kertas keluar",
+      "startFrame": 3004,
+      "impactFrame": 3004,
+      "endFrame": 3009,
+      "status": "planned"
+    },
+    {
+      "id": "cue-41",
+      "scene": "S08",
+      "action": "Hero hold",
+      "startFrame": 3039,
+      "impactFrame": 3039,
+      "endFrame": 3044,
+      "status": "omit"
+    }
+  ]
+}

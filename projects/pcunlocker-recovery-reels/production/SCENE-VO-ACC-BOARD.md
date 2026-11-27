@@ -65,7 +65,7 @@
 
 **VO asli:** “Kamu bisa coba aplikasi yang satu ini, namanya PCUnlocker.”
 
-**Catatan dari state:** Style 02 Icon Spotlight + Soft Scale-Up ACC; logo vektor rekonstruksi ACC, posisi dipusatkan sesuai permintaan. Native GUI/render belum diuji. Visual LOCKED 2026-11-25; pertahankan source dan layer editable; perubahan hanya bila user membuka lock. Background kanvas diseragamkan (#F7F7F5, radial putih 32%), sesuai instruksi pengguna; tidak membuka lock isi scene. Technical audit 2026-11-26: outgoing S03 pose handoff, logo starts at frame 8, original logo and final pose unchanged. Native QA pending.
+**Catatan dari state:** Style 02 Icon Spotlight + Soft Scale-Up ACC; logo vektor rekonstruksi ACC, posisi dipusatkan sesuai permintaan. Native GUI/render belum diuji. Visual LOCKED 2026-11-25; pertahankan source dan layer editable; perubahan hanya bila user membuka lock. Background kanvas diseragamkan (#F7F7F5, radial putih 32%), sesuai instruksi pengguna; tidak membuka lock isi scene. Technical audit 2026-11-26: outgoing S03 pose handoff, logo starts at frame 8, original logo and final pose unchanged. Native QA pending. Technical review 2026-11-26 (native QA pending): Shortened outgoing fade to avoid overlapping alert/identity.
 
 ### PCUnlockerRecoveryReels-S05 — Persiapan
 
@@ -85,7 +85,7 @@
 
 **VO asli:** “Setelah aplikasinya terbuka, kamu bakal melihat daftar akun lokal Windows yang terdeteksi.”
 
-**Catatan dari state:** User ACC tampilan UI realistis S06 (referensi Enterprise Edition v4.5; akun contoh, UI pasif). Source direkonstruksi sebagai layer independen, laptop 720 px selaras S05; native render/GUI belum diuji. VO draft tetap. Revisi pengguna: UI 960 px tanpa bingkai laptop. Background kanvas diseragamkan (#F7F7F5, radial putih 32%), sesuai instruksi pengguna; tidak membuka lock isi scene. Dynamic Focus plan ACC 2026-11-26: kamera world kontinu dan subtitle screen-space; VO, durasi, UI asli dan SFX dipertahankan. Native render/Studio Save belum diverifikasi. Technical audit: outgoing S05 pose carry with soft scale and UI group fade, first 18 frames only. Native QA pending.
+**Catatan dari state:** User ACC tampilan UI realistis S06 (referensi Enterprise Edition v4.5; akun contoh, UI pasif). Source direkonstruksi sebagai layer independen, laptop 720 px selaras S05; native render/GUI belum diuji. VO draft tetap. Revisi pengguna: UI 960 px tanpa bingkai laptop. Background kanvas diseragamkan (#F7F7F5, radial putih 32%), sesuai instruksi pengguna; tidak membuka lock isi scene. Dynamic Focus plan ACC 2026-11-26: kamera world kontinu dan subtitle screen-space; VO, durasi, UI asli dan SFX dipertahankan. Native render/Studio Save belum diverifikasi. Technical audit: outgoing S05 pose carry with soft scale and UI group fade, first 18 frames only. Native QA pending. Technical review 2026-11-26 (native QA pending): Opaque screen-state handoff; app replaces media inside screen, uniform push-in, label delayed until established. User ACC Style 01 — Clean Match Cut S05→S06 (preview PCUnlocker-Transition-01-Match-Cut.mp4). Implemented in S06 only: carry S05 f239 for local f0–3, mutually exclusive opaque application from f4, uniform 0.94→1 scale f4–24, existing label and Dynamic Focus f75 onward unchanged. Native render/GUI and recorded VO alignment pending; no final ACC. All other scenes, original UI, duration, narration and SFX preserved.
 
 ### PCUnlockerRecoveryReels-S07 — Pemulihan
 
@@ -95,7 +95,7 @@
 
 **VO asli:** “Nah, di sini kamu tinggal pilih akun Windows kamu yang lupa password, lalu klik Reset Password.”
 
-**Catatan dari state:** ACC referensi fullscreen dan stable click / clean pointer; rekonstruksi layer independen; native render dan GUI belum diuji. VO masih draft. Background kanvas diseragamkan (#F7F7F5, radial putih 32%), sesuai instruksi pengguna; tidak membuka lock isi scene. Dynamic Focus plan ACC 2026-11-26: kamera world kontinu dan subtitle screen-space; VO, durasi, UI asli dan SFX dipertahankan. Native render/Studio Save belum diverifikasi.
+**Catatan dari state:** ACC referensi fullscreen dan stable click / clean pointer; rekonstruksi layer independen; native render dan GUI belum diuji. VO masih draft. Background kanvas diseragamkan (#F7F7F5, radial putih 32%), sesuai instruksi pengguna; tidak membuka lock isi scene. Dynamic Focus plan ACC 2026-11-26: kamera world kontinu dan subtitle screen-space; VO, durasi, UI asli dan SFX dipertahankan. Native render/Studio Save belum diverifikasi. Technical review 2026-11-26 (native QA pending): Dialog gated until camera settled; no clipping during reframe. Dialog is opaque; dim starts before its scale-in. User ACC Continuous Camera Flow preview 2026-11-27 (PCUnlocker-S07-S08-Continuous-Camera-Preview.mp4). Exact preview source timing applied; existing UI/cursor/VO/SFX preserved. Native render/GUI and audio sync pending.
 
 ### PCUnlockerRecoveryReels-S08 — Konfirmasi
 
@@ -105,7 +105,7 @@
 
 **VO asli:** “Setelah itu, kamu bisa masukin password baru, lalu klik OK.”
 
-**Catatan dari state:** ACC referensi fullscreen dan stable click / clean pointer; rekonstruksi layer independen; native render dan GUI belum diuji. VO masih draft. Background kanvas diseragamkan (#F7F7F5, radial putih 32%), sesuai instruksi pengguna; tidak membuka lock isi scene. Dynamic Focus plan ACC 2026-11-26: kamera world kontinu dan subtitle screen-space; VO, durasi, UI asli dan SFX dipertahankan. Native render/Studio Save belum diverifikasi.
+**Catatan dari state:** ACC referensi fullscreen dan stable click / clean pointer; rekonstruksi layer independen; native render dan GUI belum diuji. VO masih draft. Background kanvas diseragamkan (#F7F7F5, radial putih 32%), sesuai instruksi pengguna; tidak membuka lock isi scene. Dynamic Focus plan ACC 2026-11-26: kamera world kontinu dan subtitle screen-space; VO, durasi, UI asli dan SFX dipertahankan. Native render/Studio Save belum diverifikasi. Technical review 2026-11-26 (native QA pending): Dialog group closure eased. Dialog remains opaque during short close; dim fades separately. User ACC Continuous Camera Flow preview 2026-11-27 (PCUnlocker-S07-S08-Continuous-Camera-Preview.mp4). Exact preview source timing applied; existing UI/cursor/VO/SFX preserved. Native render/GUI and audio sync pending.
 
 ### PCUnlockerRecoveryReels-S09 — Restart
 
@@ -115,7 +115,7 @@
 
 **VO asli:** “Kalau sudah berhasil, tinggal restart komputernya.”
 
-**Catatan dari state:** Visual preview dipertahankan sebagai referensi; native source belum diuji. Revisi layout fullscreen dan VO draft sesuai preview; review lanjut, belum lock. Background kanvas diseragamkan (#F7F7F5, radial putih 32%), sesuai instruksi pengguna; tidak membuka lock isi scene. Dynamic Focus plan ACC 2026-11-26: kamera world kontinu dan subtitle screen-space; VO, durasi, UI asli dan SFX dipertahankan. Native render/Studio Save belum diverifikasi. Handoff login S09→S10 disamakan untuk ACC S10 V4; S09 sendiri masih REVIEW.
+**Catatan dari state:** Visual preview dipertahankan sebagai referensi; native source belum diuji. Revisi layout fullscreen dan VO draft sesuai preview; review lanjut, belum lock. Background kanvas diseragamkan (#F7F7F5, radial putih 32%), sesuai instruksi pengguna; tidak membuka lock isi scene. Dynamic Focus plan ACC 2026-11-26: kamera world kontinu dan subtitle screen-space; VO, durasi, UI asli dan SFX dipertahankan. Native render/Studio Save belum diverifikasi. Handoff login S09→S10 disamakan untuk ACC S10 V4; S09 sendiri masih REVIEW. Technical review 2026-11-26 (native QA pending): Exclusive application/restart states; spinner/text fade before login; screen height matches login.
 
 ### PCUnlockerRecoveryReels-S10 — Hasil
 
@@ -125,7 +125,7 @@
 
 **VO asli:** “Nah, sekarang kamu bisa coba login lagi. Nggak perlu install ulang, kan?”
 
-**Catatan dari state:** Visual preview dipertahankan sebagai referensi; native source belum diuji. Revisi layout fullscreen dan VO draft sesuai preview; review lanjut, belum lock. Background kanvas diseragamkan (#F7F7F5, radial putih 32%), sesuai instruksi pengguna; tidak membuka lock isi scene. Rekonstruksi penutup sesuai preview: Connected Gallery / CTA bubble / cover motion; menunggu QA native. User ACC preview Relaxed Pacing V4 2026-11-26; 303 frame, login → desktop → Explorer → galeri; source direkonstruksi editable, native render/GUI belum diuji. Technical audit: screenshot global frame 1539 showed premature gallery. Added non-interactive phase gates, 5 separate SVG assets, retimed fade and hold, preserve 303 frames. Original approved design unchanged; revised implementation pending native QA and review.
+**Catatan dari state:** Visual preview dipertahankan sebagai referensi; native source belum diuji. Revisi layout fullscreen dan VO draft sesuai preview; review lanjut, belum lock. Background kanvas diseragamkan (#F7F7F5, radial putih 32%), sesuai instruksi pengguna; tidak membuka lock isi scene. Rekonstruksi penutup sesuai preview: Connected Gallery / CTA bubble / cover motion; menunggu QA native. User ACC preview Relaxed Pacing V4 2026-11-26; 303 frame, login → desktop → Explorer → galeri; source direkonstruksi editable, native render/GUI belum diuji. Technical audit: screenshot global frame 1539 showed premature gallery. Added non-interactive phase gates, 5 separate SVG assets, retimed fade and hold, preserve 303 frames. Original approved design unchanged; revised implementation pending native QA and review. Technical review 2026-11-26 (native QA pending): Opaque login foreground exit, later gallery reveal and stable final hold. Gallery begins at f208 while Explorer exits, avoiding a near-blank beat. Cards grow from nearly zero scale with opaque artwork; desktop shrinks and moves upward before late fade.
 
 ### PCUnlockerRecoveryReels-S11 — CTA
 
@@ -135,7 +135,7 @@
 
 **VO asli:** “Kalau kamu pernah lupa password Windows, waktu itu ngatasinnya gimana? Coba tulis di kolom komentar.”
 
-**Catatan dari state:** Visual preview dipertahankan sebagai referensi; native source belum diuji. Background kanvas diseragamkan (#F7F7F5, radial putih 32%), sesuai instruksi pengguna; tidak membuka lock isi scene. Rekonstruksi penutup sesuai preview: Connected Gallery / CTA bubble / cover motion; menunggu QA native. User ACC Style 04, VO baru dan Opening Motion Revision (9 detik); caption tipografi tunggal, audio omit. Source rekonstruksi, native QA pending. Technical audit: preserve opening gallery pose for 12 frames and delay first text reveal until handoff, CTA VO/duration/final pose unchanged. Native QA pending.
+**Catatan dari state:** Visual preview dipertahankan sebagai referensi; native source belum diuji. Background kanvas diseragamkan (#F7F7F5, radial putih 32%), sesuai instruksi pengguna; tidak membuka lock isi scene. Rekonstruksi penutup sesuai preview: Connected Gallery / CTA bubble / cover motion; menunggu QA native. User ACC Style 04, VO baru dan Opening Motion Revision (9 detik); caption tipografi tunggal, audio omit. Source rekonstruksi, native QA pending. Technical audit: preserve opening gallery pose for 12 frames and delay first text reveal until handoff, CTA VO/duration/final pose unchanged. Native QA pending. Technical review 2026-11-26 (native QA pending): Outgoing gallery lifted during short fade; approved CTA content unchanged.
 
 ### PCUnlockerRecoveryReels-S12 — Cover Reels
 
@@ -145,7 +145,7 @@
 
 **VO:** *(TANPA VO / COVER / VISUAL HOLD)*
 
-**Catatan dari state:** Visual preview dipertahankan sebagai referensi; native source belum diuji. Background kanvas diseragamkan (#F7F7F5, radial putih 32%), sesuai instruksi pengguna; tidak membuka lock isi scene. Rekonstruksi penutup sesuai preview: Connected Gallery / CTA bubble / cover motion; menunggu QA native. User ACC cover terhubung dari CTA; tiga SVG asli tidak diubah, silent, hold frame 63–119. Native QA pending.
+**Catatan dari state:** Visual preview dipertahankan sebagai referensi; native source belum diuji. Background kanvas diseragamkan (#F7F7F5, radial putih 32%), sesuai instruksi pengguna; tidak membuka lock isi scene. Rekonstruksi penutup sesuai preview: Connected Gallery / CTA bubble / cover motion; menunggu QA native. User ACC cover terhubung dari CTA; tiga SVG asli tidak diubah, silent, hold frame 63–119. Native QA pending. Technical review 2026-11-26 (native QA pending): Reduced outgoing CTA overlap; cover unchanged. Outgoing CTA shifts upward before logo settles.
 
 ## PEMERIKSAAN DAN KONFLIK SUMBER
 

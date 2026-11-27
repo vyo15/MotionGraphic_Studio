@@ -2,9 +2,9 @@
   "schemaVersion": 1,
   "projectId": "PCUnlockerRecoveryReels",
   "slug": "pcunlocker-recovery-reels",
-  "updatedAt": "2026-11-26",
+  "updatedAt": "2026-11-27",
   "workflow": "guided-approval-first-scene",
-  "phase": "screen-state-continuity-review-pending-native-qa",
+  "phase": "s07-s08-continuous-camera-acc-pending-native-qa",
   "voiceOverStatus": "not-recorded",
   "fullVideoApproval": "draft",
   "scenes": [
@@ -90,7 +90,7 @@
       "status": "approved",
       "voTextApproval": "draft",
       "visualApproval": "locked",
-      "notes": "User ACC tampilan UI realistis S06 (referensi Enterprise Edition v4.5; akun contoh, UI pasif). Source direkonstruksi sebagai layer independen, laptop 720 px selaras S05; native render/GUI belum diuji. VO draft tetap. Revisi pengguna: UI 960 px tanpa bingkai laptop. Background kanvas diseragamkan (#F7F7F5, radial putih 32%), sesuai instruksi pengguna; tidak membuka lock isi scene. Dynamic Focus plan ACC 2026-11-26: kamera world kontinu dan subtitle screen-space; VO, durasi, UI asli dan SFX dipertahankan. Native render/Studio Save belum diverifikasi. Technical audit: outgoing S05 pose carry with soft scale and UI group fade, first 18 frames only. Native QA pending. Technical review 2026-11-26 (native QA pending): Opaque screen-state handoff; app replaces media inside screen, uniform push-in, label delayed until established."
+      "notes": "User ACC tampilan UI realistis S06 (referensi Enterprise Edition v4.5; akun contoh, UI pasif). Source direkonstruksi sebagai layer independen, laptop 720 px selaras S05; native render/GUI belum diuji. VO draft tetap. Revisi pengguna: UI 960 px tanpa bingkai laptop. Background kanvas diseragamkan (#F7F7F5, radial putih 32%), sesuai instruksi pengguna; tidak membuka lock isi scene. Dynamic Focus plan ACC 2026-11-26: kamera world kontinu dan subtitle screen-space; VO, durasi, UI asli dan SFX dipertahankan. Native render/Studio Save belum diverifikasi. Technical audit: outgoing S05 pose carry with soft scale and UI group fade, first 18 frames only. Native QA pending. Technical review 2026-11-26 (native QA pending): Opaque screen-state handoff; app replaces media inside screen, uniform push-in, label delayed until established. User ACC Style 01 — Clean Match Cut S05→S06 (preview PCUnlocker-Transition-01-Match-Cut.mp4). Implemented in S06 only: carry S05 f239 for local f0–3, mutually exclusive opaque application from f4, uniform 0.94→1 scale f4–24, existing label and Dynamic Focus f75 onward unchanged. Native render/GUI and recorded VO alignment pending; no final ACC. All other scenes, original UI, duration, narration and SFX preserved."
     },
     {
       "id": "S07",
@@ -104,7 +104,7 @@
       "status": "approved",
       "voTextApproval": "draft",
       "visualApproval": "locked",
-      "notes": "ACC referensi fullscreen dan stable click / clean pointer; rekonstruksi layer independen; native render dan GUI belum diuji. VO masih draft. Background kanvas diseragamkan (#F7F7F5, radial putih 32%), sesuai instruksi pengguna; tidak membuka lock isi scene. Dynamic Focus plan ACC 2026-11-26: kamera world kontinu dan subtitle screen-space; VO, durasi, UI asli dan SFX dipertahankan. Native render/Studio Save belum diverifikasi. Technical review 2026-11-26 (native QA pending): Dialog gated until camera settled; no clipping during reframe. Dialog is opaque; dim starts before its scale-in."
+      "notes": "ACC referensi fullscreen dan stable click / clean pointer; rekonstruksi layer independen; native render dan GUI belum diuji. VO masih draft. Background kanvas diseragamkan (#F7F7F5, radial putih 32%), sesuai instruksi pengguna; tidak membuka lock isi scene. Dynamic Focus plan ACC 2026-11-26: kamera world kontinu dan subtitle screen-space; VO, durasi, UI asli dan SFX dipertahankan. Native render/Studio Save belum diverifikasi. Technical review 2026-11-26 (native QA pending): Dialog gated until camera settled; no clipping during reframe. Dialog is opaque; dim starts before its scale-in. User ACC Continuous Camera Flow preview 2026-11-27 (PCUnlocker-S07-S08-Continuous-Camera-Preview.mp4). Exact preview source timing applied; existing UI/cursor/VO/SFX preserved. Native render/GUI and audio sync pending."
     },
     {
       "id": "S08",
@@ -118,7 +118,7 @@
       "status": "approved",
       "voTextApproval": "draft",
       "visualApproval": "locked",
-      "notes": "ACC referensi fullscreen dan stable click / clean pointer; rekonstruksi layer independen; native render dan GUI belum diuji. VO masih draft. Background kanvas diseragamkan (#F7F7F5, radial putih 32%), sesuai instruksi pengguna; tidak membuka lock isi scene. Dynamic Focus plan ACC 2026-11-26: kamera world kontinu dan subtitle screen-space; VO, durasi, UI asli dan SFX dipertahankan. Native render/Studio Save belum diverifikasi. Technical review 2026-11-26 (native QA pending): Dialog group closure eased. Dialog remains opaque during short close; dim fades separately."
+      "notes": "ACC referensi fullscreen dan stable click / clean pointer; rekonstruksi layer independen; native render dan GUI belum diuji. VO masih draft. Background kanvas diseragamkan (#F7F7F5, radial putih 32%), sesuai instruksi pengguna; tidak membuka lock isi scene. Dynamic Focus plan ACC 2026-11-26: kamera world kontinu dan subtitle screen-space; VO, durasi, UI asli dan SFX dipertahankan. Native render/Studio Save belum diverifikasi. Technical review 2026-11-26 (native QA pending): Dialog group closure eased. Dialog remains opaque during short close; dim fades separately. User ACC Continuous Camera Flow preview 2026-11-27 (PCUnlocker-S07-S08-Continuous-Camera-Preview.mp4). Exact preview source timing applied; existing UI/cursor/VO/SFX preserved. Native render/GUI and audio sync pending."
     },
     {
       "id": "S09",
@@ -221,6 +221,14 @@
     {
       "date": "2026-11-26",
       "decision": "User requested detailed audit and technical correction after screenshot showing overlapping/missing gallery assets at frame 1539 and rushed motion. Technical changes S04, S06, S10, S11 only; preserve VO, all durations, source ACC design and other scenes. No new visual/final ACC inferred. Native render/GUI and listening QA pending."
+    },
+    {
+      "date": "2026-11-27",
+      "decision": "User ACC Style 01 — Clean Match Cut S05→S06 (preview PCUnlocker-Transition-01-Match-Cut.mp4). Implemented in S06 only: carry S05 f239 for local f0–3, mutually exclusive opaque application from f4, uniform 0.94→1 scale f4–24, existing label and Dynamic Focus f75 onward unchanged. Native render/GUI and recorded VO alignment pending; no final ACC. All other scenes, original UI, duration, narration and SFX preserved."
+    },
+    {
+      "date": "2026-11-27",
+      "decision": "User ACC Continuous Camera Flow S07–S08 and requests editable FILE CHANGE ONLY. Apply preview keyframes from retained preview generator: shared camera relative f276–326 single smooth reframe, S07 feedback f124–141 and dialog group reveal f154–166, S08 dialog close/dim f128–144. Preserve S06 Clean Match Cut, S09 pose, all original UI/cursor/VO/SFX, duration and other approvals. Visual ACC only; native render/GUI and audio sync pending."
     }
   ]
 }

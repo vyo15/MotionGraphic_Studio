@@ -1,0 +1,956 @@
+{
+  "schemaVersion": 1,
+  "status": "draft",
+  "narrationHash": "2b7b7143e3637a3889e2b23e6d7a967323493123b656055280f34371c37af98d",
+  "beats": [
+    {
+      "beatIndex": 0,
+      "intent": "introduce",
+      "motion": "establish",
+      "focusTarget": "Printer tanpa Wi-Fi",
+      "reason": "Gerak mendukung VO dan tindakan, hold sebelum transisi.",
+      "stateIn": "Printer USB",
+      "stateOut": "Printer tanpa Wi-Fi",
+      "handoff": {
+        "type": "start",
+        "reason": "Pertahankan objek/jendela; match komposisi saat pindah ke world UI."
+      },
+      "phases": {
+        "action": null,
+        "reaction": null,
+        "holdStart": 60
+      },
+      "camera": null,
+      "collisionPolicy": "World UI/cursor dipotong di viewport; subtitle di screen-space, terpisah. Tumpang tindih kontrol dengan shell asli disengaja.",
+      "editableTargets": [
+        "S01 — Subtitle 01"
+      ]
+    },
+    {
+      "beatIndex": 1,
+      "intent": "sequence",
+      "motion": "spatial-reflow",
+      "focusTarget": "Dua komputer",
+      "reason": "Gerak mendukung VO dan tindakan, hold sebelum transisi.",
+      "stateIn": "Printer tanpa Wi-Fi",
+      "stateOut": "Dua komputer",
+      "handoff": {
+        "type": "carry",
+        "reason": "Pertahankan objek/jendela; match komposisi saat pindah ke world UI."
+      },
+      "phases": {
+        "action": 0,
+        "reaction": 0,
+        "holdStart": 12
+      },
+      "camera": null,
+      "collisionPolicy": "World UI/cursor dipotong di viewport; subtitle di screen-space, terpisah. Tumpang tindih kontrol dengan shell asli disengaja.",
+      "editableTargets": [
+        "S01 — Subtitle 02"
+      ]
+    },
+    {
+      "beatIndex": 2,
+      "intent": "sequence",
+      "motion": "path-motion",
+      "focusTarget": "Kabel LAN dan data",
+      "reason": "Gerak mendukung VO dan tindakan, hold sebelum transisi.",
+      "stateIn": "Dua komputer",
+      "stateOut": "Kabel LAN dan data",
+      "handoff": {
+        "type": "carry",
+        "reason": "Pertahankan objek/jendela; match komposisi saat pindah ke world UI."
+      },
+      "phases": {
+        "action": 0,
+        "reaction": 0,
+        "holdStart": 12
+      },
+      "camera": null,
+      "collisionPolicy": "World UI/cursor dipotong di viewport; subtitle di screen-space, terpisah. Tumpang tindih kontrol dengan shell asli disengaja.",
+      "editableTargets": [
+        "S01 — Subtitle 03"
+      ]
+    },
+    {
+      "beatIndex": 3,
+      "intent": "sequence",
+      "motion": "result-hold",
+      "focusTarget": "Kertas hasil cetak",
+      "reason": "Gerak mendukung VO dan tindakan, hold sebelum transisi.",
+      "stateIn": "Kabel LAN dan data",
+      "stateOut": "Kertas hasil cetak",
+      "handoff": {
+        "type": "carry",
+        "reason": "Pertahankan objek/jendela; match komposisi saat pindah ke world UI."
+      },
+      "phases": {
+        "action": 11,
+        "reaction": 11,
+        "holdStart": 23
+      },
+      "camera": null,
+      "collisionPolicy": "World UI/cursor dipotong di viewport; subtitle di screen-space, terpisah. Tumpang tindih kontrol dengan shell asli disengaja.",
+      "editableTargets": [
+        "S01 — Subtitle 04"
+      ]
+    },
+    {
+      "beatIndex": 4,
+      "intent": "sequence",
+      "motion": "shared-element",
+      "focusTarget": "Host printer",
+      "reason": "Gerak mendukung VO dan tindakan, hold sebelum transisi.",
+      "stateIn": "Kertas hasil cetak",
+      "stateOut": "Host printer",
+      "handoff": {
+        "type": "match",
+        "reason": "Pertahankan objek/jendela; match komposisi saat pindah ke world UI."
+      },
+      "phases": {
+        "action": null,
+        "reaction": null,
+        "holdStart": 60
+      },
+      "camera": null,
+      "collisionPolicy": "World UI/cursor dipotong di viewport; subtitle di screen-space, terpisah. Tumpang tindih kontrol dengan shell asli disengaja.",
+      "editableTargets": [
+        "S02 — Subtitle 01"
+      ]
+    },
+    {
+      "beatIndex": 5,
+      "intent": "sequence",
+      "motion": "state-transform",
+      "focusTarget": "Ikon fitur",
+      "reason": "Gerak mendukung VO dan tindakan, hold sebelum transisi.",
+      "stateIn": "Host printer",
+      "stateOut": "Ikon fitur",
+      "handoff": {
+        "type": "carry",
+        "reason": "Pertahankan objek/jendela; match komposisi saat pindah ke world UI."
+      },
+      "phases": {
+        "action": null,
+        "reaction": null,
+        "holdStart": 72
+      },
+      "camera": null,
+      "collisionPolicy": "World UI/cursor dipotong di viewport; subtitle di screen-space, terpisah. Tumpang tindih kontrol dengan shell asli disengaja.",
+      "editableTargets": [
+        "S02 — Subtitle 02"
+      ]
+    },
+    {
+      "beatIndex": 6,
+      "intent": "sequence",
+      "motion": "focus-handoff",
+      "focusTarget": "Koneksi kedua komputer",
+      "reason": "Gerak mendukung VO dan tindakan, hold sebelum transisi.",
+      "stateIn": "Ikon fitur",
+      "stateOut": "Koneksi kedua komputer",
+      "handoff": {
+        "type": "carry",
+        "reason": "Pertahankan objek/jendela; match komposisi saat pindah ke world UI."
+      },
+      "phases": {
+        "action": 2,
+        "reaction": 2,
+        "holdStart": 14
+      },
+      "camera": null,
+      "collisionPolicy": "World UI/cursor dipotong di viewport; subtitle di screen-space, terpisah. Tumpang tindih kontrol dengan shell asli disengaja.",
+      "editableTargets": [
+        "S02 — Subtitle 03"
+      ]
+    },
+    {
+      "beatIndex": 7,
+      "intent": "sequence",
+      "motion": "progressive-build",
+      "focusTarget": "Contoh IP",
+      "reason": "Gerak mendukung VO dan tindakan, hold sebelum transisi.",
+      "stateIn": "Koneksi kedua komputer",
+      "stateOut": "Contoh IP",
+      "handoff": {
+        "type": "carry",
+        "reason": "Pertahankan objek/jendela; match komposisi saat pindah ke world UI."
+      },
+      "phases": {
+        "action": null,
+        "reaction": null,
+        "holdStart": 78
+      },
+      "camera": null,
+      "collisionPolicy": "World UI/cursor dipotong di viewport; subtitle di screen-space, terpisah. Tumpang tindih kontrol dengan shell asli disengaja.",
+      "editableTargets": [
+        "S02 — Subtitle 04"
+      ]
+    },
+    {
+      "beatIndex": 8,
+      "intent": "sequence",
+      "motion": "focus-zoom",
+      "focusTarget": "Host menuju Run",
+      "reason": "Gerak mendukung VO dan tindakan, hold sebelum transisi.",
+      "stateIn": "Contoh IP",
+      "stateOut": "Host menuju Run",
+      "handoff": {
+        "type": "match",
+        "reason": "Pertahankan objek/jendela; match komposisi saat pindah ke world UI."
+      },
+      "phases": {
+        "action": null,
+        "reaction": null,
+        "holdStart": 84
+      },
+      "camera": null,
+      "collisionPolicy": "World UI/cursor dipotong di viewport; subtitle di screen-space, terpisah. Tumpang tindih kontrol dengan shell asli disengaja.",
+      "editableTargets": [
+        "S03 — Subtitle 01"
+      ]
+    },
+    {
+      "beatIndex": 9,
+      "intent": "sequence",
+      "motion": "natural-typing",
+      "focusTarget": "Run dan Control Panel",
+      "reason": "Gerak mendukung VO dan tindakan, hold sebelum transisi.",
+      "stateIn": "Host menuju Run",
+      "stateOut": "Run dan Control Panel",
+      "handoff": {
+        "type": "carry",
+        "reason": "Pertahankan objek/jendela; match komposisi saat pindah ke world UI."
+      },
+      "phases": {
+        "action": 65,
+        "reaction": 65,
+        "holdStart": 77
+      },
+      "camera": null,
+      "collisionPolicy": "World UI/cursor dipotong di viewport; subtitle di screen-space, terpisah. Tumpang tindih kontrol dengan shell asli disengaja.",
+      "editableTargets": [
+        "S03 — Subtitle 02"
+      ]
+    },
+    {
+      "beatIndex": 10,
+      "intent": "click",
+      "motion": "cursor-action",
+      "focusTarget": "Network and Internet → Network and Sharing Center",
+      "reason": "Gerak mendukung VO dan tindakan, hold sebelum transisi.",
+      "stateIn": "Run dan Control Panel",
+      "stateOut": "Network and Internet → Network and Sharing Center",
+      "handoff": {
+        "type": "match",
+        "reason": "Pertahankan objek/jendela; match komposisi saat pindah ke world UI."
+      },
+      "phases": {
+        "action": 54,
+        "reaction": 54,
+        "holdStart": 66
+      },
+      "camera": {
+        "worldId": "control-panel",
+        "world": {
+          "w": 1080,
+          "h": 1385
+        },
+        "viewport": {
+          "x": 50,
+          "y": 250,
+          "w": 980,
+          "h": 1070
+        },
+        "start": {
+          "cx": 540.0,
+          "cy": 774.0,
+          "zoom": 1.0
+        },
+        "end": {
+          "cx": 548.0514652281673,
+          "cy": 713.7046216649658,
+          "zoom": 1.2685231083248287
+        },
+        "focusSamples": [
+          {
+            "offset": 125,
+            "pose": {
+              "cx": 615.0,
+              "cy": 716.0,
+              "zoom": 1.28
+            },
+            "target": {
+              "x": 360,
+              "y": 490,
+              "w": 250,
+              "h": 60
+            }
+          }
+        ]
+      },
+      "collisionPolicy": "World UI/cursor dipotong di viewport; subtitle di screen-space, terpisah. Tumpang tindih kontrol dengan shell asli disengaja.",
+      "editableTargets": [
+        "S03 — Subtitle 03"
+      ]
+    },
+    {
+      "beatIndex": 11,
+      "intent": "click",
+      "motion": "cursor-action",
+      "focusTarget": "Change advanced sharing settings",
+      "reason": "Gerak mendukung VO dan tindakan, hold sebelum transisi.",
+      "stateIn": "Network and Internet → Network and Sharing Center",
+      "stateOut": "Change advanced sharing settings",
+      "handoff": {
+        "type": "carry",
+        "reason": "Pertahankan objek/jendela; match komposisi saat pindah ke world UI."
+      },
+      "phases": {
+        "action": 81,
+        "reaction": 81,
+        "holdStart": 87
+      },
+      "camera": {
+        "worldId": "control-panel",
+        "world": {
+          "w": 1080,
+          "h": 1385
+        },
+        "viewport": {
+          "x": 50,
+          "y": 250,
+          "w": 980,
+          "h": 1070
+        },
+        "start": {
+          "cx": 548.0514652281673,
+          "cy": 713.7046216649658,
+          "zoom": 1.2685231083248287
+        },
+        "end": {
+          "cx": 459.8250728862974,
+          "cy": 722.6880466472303,
+          "zoom": 1.2004373177842567
+        },
+        "focusSamples": [
+          {
+            "offset": 81,
+            "pose": {
+              "cx": 440.0,
+              "cy": 710.0,
+              "zoom": 1.25
+            },
+            "target": {
+              "x": 74,
+              "y": 605,
+              "w": 200,
+              "h": 45
+            }
+          }
+        ]
+      },
+      "collisionPolicy": "World UI/cursor dipotong di viewport; subtitle di screen-space, terpisah. Tumpang tindih kontrol dengan shell asli disengaja.",
+      "editableTargets": [
+        "S03 — Subtitle 04"
+      ]
+    },
+    {
+      "beatIndex": 12,
+      "intent": "click",
+      "motion": "state-transform",
+      "focusTarget": "Network discovery",
+      "reason": "Gerak mendukung VO dan tindakan, hold sebelum transisi.",
+      "stateIn": "Change advanced sharing settings",
+      "stateOut": "Network discovery",
+      "handoff": {
+        "type": "carry",
+        "reason": "Pertahankan objek/jendela; match komposisi saat pindah ke world UI."
+      },
+      "phases": {
+        "action": 81,
+        "reaction": 81,
+        "holdStart": 93
+      },
+      "camera": {
+        "worldId": "control-panel",
+        "world": {
+          "w": 1080,
+          "h": 1385
+        },
+        "viewport": {
+          "x": 50,
+          "y": 250,
+          "w": 980,
+          "h": 1070
+        },
+        "start": {
+          "cx": 459.8250728862974,
+          "cy": 722.6880466472303,
+          "zoom": 1.2004373177842567
+        },
+        "end": {
+          "cx": 392.0,
+          "cy": 800.0,
+          "zoom": 1.45
+        },
+        "focusSamples": [
+          {
+            "offset": 81,
+            "pose": {
+              "cx": 392.0,
+              "cy": 800.0,
+              "zoom": 1.45
+            },
+            "target": {
+              "x": 142,
+              "y": 715,
+              "w": 300,
+              "h": 45
+            }
+          }
+        ]
+      },
+      "collisionPolicy": "World UI/cursor dipotong di viewport; subtitle di screen-space, terpisah. Tumpang tindih kontrol dengan shell asli disengaja.",
+      "editableTargets": [
+        "S03 — Subtitle 05"
+      ]
+    },
+    {
+      "beatIndex": 13,
+      "intent": "click",
+      "motion": "state-transform",
+      "focusTarget": "File and printer sharing",
+      "reason": "Gerak mendukung VO dan tindakan, hold sebelum transisi.",
+      "stateIn": "Network discovery",
+      "stateOut": "File and printer sharing",
+      "handoff": {
+        "type": "carry",
+        "reason": "Pertahankan objek/jendela; match komposisi saat pindah ke world UI."
+      },
+      "phases": {
+        "action": 51,
+        "reaction": 51,
+        "holdStart": 63
+      },
+      "camera": {
+        "worldId": "control-panel",
+        "world": {
+          "w": 1080,
+          "h": 1385
+        },
+        "viewport": {
+          "x": 50,
+          "y": 250,
+          "w": 980,
+          "h": 1070
+        },
+        "start": {
+          "cx": 392.0,
+          "cy": 800.0,
+          "zoom": 1.45
+        },
+        "end": {
+          "cx": 540.0,
+          "cy": 774.0,
+          "zoom": 1.0
+        },
+        "focusSamples": [
+          {
+            "offset": 51,
+            "pose": {
+              "cx": 392.0,
+              "cy": 800.0,
+              "zoom": 1.45
+            },
+            "target": {
+              "x": 142,
+              "y": 924,
+              "w": 320,
+              "h": 42
+            }
+          }
+        ]
+      },
+      "collisionPolicy": "World UI/cursor dipotong di viewport; subtitle di screen-space, terpisah. Tumpang tindih kontrol dengan shell asli disengaja.",
+      "editableTargets": [
+        "S03 — Subtitle 06"
+      ]
+    },
+    {
+      "beatIndex": 14,
+      "intent": "click",
+      "motion": "result-hold",
+      "focusTarget": "Save changes → Network and Sharing Center",
+      "reason": "Gerak mendukung VO dan tindakan, hold sebelum transisi.",
+      "stateIn": "File and printer sharing",
+      "stateOut": "Save changes → Network and Sharing Center",
+      "handoff": {
+        "type": "carry",
+        "reason": "Pertahankan objek/jendela; match komposisi saat pindah ke world UI."
+      },
+      "phases": {
+        "action": 26,
+        "reaction": 26,
+        "holdStart": 38
+      },
+      "camera": {
+        "worldId": "control-panel",
+        "world": {
+          "w": 1080,
+          "h": 1385
+        },
+        "viewport": {
+          "x": 50,
+          "y": 250,
+          "w": 980,
+          "h": 1070
+        },
+        "start": {
+          "cx": 540.0,
+          "cy": 774.0,
+          "zoom": 1.0
+        },
+        "end": {
+          "cx": 540.0,
+          "cy": 774.0,
+          "zoom": 1.0
+        },
+        "focusSamples": [
+          {
+            "offset": 25,
+            "pose": {
+              "cx": 540.0,
+              "cy": 774.0,
+              "zoom": 1.0
+            },
+            "target": {
+              "x": 706,
+              "y": 1105,
+              "w": 180,
+              "h": 34
+            }
+          }
+        ]
+      },
+      "collisionPolicy": "World UI/cursor dipotong di viewport; subtitle di screen-space, terpisah. Tumpang tindih kontrol dengan shell asli disengaja.",
+      "editableTargets": [
+        "S03 — Subtitle 07"
+      ]
+    },
+    {
+      "beatIndex": 15,
+      "intent": "sequence",
+      "motion": "cursor-action",
+      "focusTarget": "Control Panel → Devices and Printers",
+      "reason": "Aksi sesuai preview ACC; reaksi diikuti hold.",
+      "stateIn": "Save changes → Network and Sharing Center",
+      "stateOut": "Control Panel → Devices and Printers",
+      "handoff": {
+        "type": "match",
+        "reason": "Pertahankan jendela atau alihkan fokus ke client."
+      },
+      "phases": {
+        "action": 120,
+        "reaction": 120,
+        "holdStart": 128
+      },
+      "camera": null,
+      "collisionPolicy": "UI dan dialog asli dalam viewport, subtitle di screen space.",
+      "editableTargets": [
+        "S04 — Subtitle 01"
+      ]
+    },
+    {
+      "beatIndex": 16,
+      "intent": "click",
+      "motion": "cursor-action",
+      "focusTarget": "Printer properties",
+      "reason": "Aksi sesuai preview ACC; reaksi diikuti hold.",
+      "stateIn": "Control Panel → Devices and Printers",
+      "stateOut": "Printer properties",
+      "handoff": {
+        "type": "carry",
+        "reason": "Pertahankan jendela atau alihkan fokus ke client."
+      },
+      "phases": {
+        "action": 89,
+        "reaction": 89,
+        "holdStart": 90
+      },
+      "camera": null,
+      "collisionPolicy": "UI dan dialog asli dalam viewport, subtitle di screen space.",
+      "editableTargets": [
+        "S04 — Subtitle 02"
+      ]
+    },
+    {
+      "beatIndex": 17,
+      "intent": "click",
+      "motion": "state-transform",
+      "focusTarget": "Sharing tab",
+      "reason": "Aksi sesuai preview ACC; reaksi diikuti hold.",
+      "stateIn": "Printer properties",
+      "stateOut": "Sharing tab",
+      "handoff": {
+        "type": "carry",
+        "reason": "Pertahankan jendela atau alihkan fokus ke client."
+      },
+      "phases": {
+        "action": 60,
+        "reaction": 60,
+        "holdStart": 68
+      },
+      "camera": null,
+      "collisionPolicy": "UI dan dialog asli dalam viewport, subtitle di screen space.",
+      "editableTargets": [
+        "S04 — Subtitle 03"
+      ]
+    },
+    {
+      "beatIndex": 18,
+      "intent": "click",
+      "motion": "state-transform",
+      "focusTarget": "Share this printer",
+      "reason": "Aksi sesuai preview ACC; reaksi diikuti hold.",
+      "stateIn": "Sharing tab",
+      "stateOut": "Share this printer",
+      "handoff": {
+        "type": "carry",
+        "reason": "Pertahankan jendela atau alihkan fokus ke client."
+      },
+      "phases": {
+        "action": 30,
+        "reaction": 30,
+        "holdStart": 38
+      },
+      "camera": null,
+      "collisionPolicy": "UI dan dialog asli dalam viewport, subtitle di screen space.",
+      "editableTargets": [
+        "S04 — Subtitle 04"
+      ]
+    },
+    {
+      "beatIndex": 19,
+      "intent": "click",
+      "motion": "result-hold",
+      "focusTarget": "OK",
+      "reason": "Aksi sesuai preview ACC; reaksi diikuti hold.",
+      "stateIn": "Share this printer",
+      "stateOut": "OK",
+      "handoff": {
+        "type": "carry",
+        "reason": "Pertahankan jendela atau alihkan fokus ke client."
+      },
+      "phases": {
+        "action": 30,
+        "reaction": 30,
+        "holdStart": 38
+      },
+      "camera": null,
+      "collisionPolicy": "UI dan dialog asli dalam viewport, subtitle di screen space.",
+      "editableTargets": [
+        "S04 — Subtitle 05"
+      ]
+    },
+    {
+      "beatIndex": 20,
+      "intent": "shift-focus",
+      "motion": "focus-handoff",
+      "focusTarget": "Komputer kedua",
+      "reason": "Aksi sesuai preview ACC; reaksi diikuti hold.",
+      "stateIn": "OK",
+      "stateOut": "Komputer kedua",
+      "handoff": {
+        "type": "match",
+        "reason": "Pertahankan jendela atau alihkan fokus ke client."
+      },
+      "phases": {
+        "action": 83,
+        "reaction": 83,
+        "holdStart": 84
+      },
+      "camera": null,
+      "collisionPolicy": "UI dan dialog asli dalam viewport, subtitle di screen space.",
+      "editableTargets": [
+        "S05 — Subtitle 01"
+      ]
+    },
+    {
+      "beatIndex": 21,
+      "intent": "click",
+      "motion": "cursor-action",
+      "focusTarget": "Win + R",
+      "reason": "Aksi sesuai preview ACC; reaksi diikuti hold.",
+      "stateIn": "Komputer kedua",
+      "stateOut": "Win + R",
+      "handoff": {
+        "type": "carry",
+        "reason": "Pertahankan jendela atau alihkan fokus ke client."
+      },
+      "phases": {
+        "action": 6,
+        "reaction": 6,
+        "holdStart": 14
+      },
+      "camera": null,
+      "collisionPolicy": "UI dan dialog asli dalam viewport, subtitle di screen space.",
+      "editableTargets": [
+        "S05 — Subtitle 02"
+      ]
+    },
+    {
+      "beatIndex": 22,
+      "intent": "type",
+      "motion": "natural-typing",
+      "focusTarget": "UNC address",
+      "reason": "Aksi sesuai preview ACC; reaksi diikuti hold.",
+      "stateIn": "Win + R",
+      "stateOut": "UNC address",
+      "handoff": {
+        "type": "carry",
+        "reason": "Pertahankan jendela atau alihkan fokus ke client."
+      },
+      "phases": {
+        "action": 78,
+        "reaction": 78,
+        "holdStart": 86
+      },
+      "camera": null,
+      "collisionPolicy": "UI dan dialog asli dalam viewport, subtitle di screen space.",
+      "editableTargets": [
+        "S05 — Subtitle 03"
+      ]
+    },
+    {
+      "beatIndex": 23,
+      "intent": "point",
+      "motion": "hold",
+      "focusTarget": "Printer terlihat",
+      "reason": "Aksi sesuai preview ACC; reaksi diikuti hold.",
+      "stateIn": "UNC address",
+      "stateOut": "Printer terlihat",
+      "handoff": {
+        "type": "carry",
+        "reason": "Pertahankan jendela atau alihkan fokus ke client."
+      },
+      "phases": {
+        "action": 30,
+        "reaction": 30,
+        "holdStart": 38
+      },
+      "camera": null,
+      "collisionPolicy": "UI dan dialog asli dalam viewport, subtitle di screen space.",
+      "editableTargets": [
+        "S05 — Subtitle 04"
+      ]
+    },
+    {
+      "beatIndex": 24,
+      "intent": "click",
+      "motion": "result-hold",
+      "focusTarget": "Connect → instalasi selesai",
+      "reason": "Aksi sesuai preview ACC; reaksi diikuti hold.",
+      "stateIn": "Printer terlihat",
+      "stateOut": "Connect → instalasi selesai",
+      "handoff": {
+        "type": "carry",
+        "reason": "Pertahankan jendela atau alihkan fokus ke client."
+      },
+      "phases": {
+        "action": 126,
+        "reaction": 126,
+        "holdStart": 134
+      },
+      "camera": null,
+      "collisionPolicy": "UI dan dialog asli dalam viewport, subtitle di screen space.",
+      "editableTargets": [
+        "S05 — Subtitle 05"
+      ]
+    },
+    {
+      "beatIndex": 25,
+      "intent": "result",
+      "motion": "cursor-action",
+      "focusTarget": "Dokumen dan dialog Print",
+      "reason": "Preview referensi ACC; satu fokus per beat, hasil dan hold.",
+      "stateIn": "S05 printer terpasang",
+      "stateOut": "EPSON dipilih",
+      "handoff": {
+        "type": "carry",
+        "reason": "Fade terarah antar scene berbeda; dalam scene pertahankan komposisi."
+      },
+      "phases": {
+        "action": 18,
+        "reaction": 87,
+        "holdStart": 117
+      },
+      "camera": null,
+      "collisionPolicy": "UI modal sengaja di dalam window; subtitle terpisah dari area objek; transisi fade dengan Freeze.",
+      "editableTargets": [
+        "S06 — Subtitle 01"
+      ]
+    },
+    {
+      "beatIndex": 26,
+      "intent": "flow",
+      "motion": "path-motion",
+      "focusTarget": "Print → LAN → USB → kertas",
+      "reason": "Preview referensi ACC; satu fokus per beat, hasil dan hold.",
+      "stateIn": "EPSON dipilih",
+      "stateOut": "Kertas keluar",
+      "handoff": {
+        "type": "carry",
+        "reason": "Fade terarah antar scene berbeda; dalam scene pertahankan komposisi."
+      },
+      "phases": {
+        "action": 31,
+        "reaction": 54,
+        "holdStart": 149
+      },
+      "camera": null,
+      "collisionPolicy": "UI modal sengaja di dalam window; subtitle terpisah dari area objek; transisi fade dengan Freeze.",
+      "editableTargets": [
+        "S06 — Subtitle 02"
+      ]
+    },
+    {
+      "beatIndex": 27,
+      "intent": "point",
+      "motion": "selective-emphasis",
+      "focusTarget": "Komputer host tetap menyala",
+      "reason": "Preview referensi ACC; satu fokus per beat, hasil dan hold.",
+      "stateIn": "Kertas keluar",
+      "stateOut": "Host menyala",
+      "handoff": {
+        "type": "carry",
+        "reason": "Fade terarah antar scene berbeda; dalam scene pertahankan komposisi."
+      },
+      "phases": {
+        "action": 0,
+        "reaction": 18,
+        "holdStart": 18
+      },
+      "camera": null,
+      "collisionPolicy": "UI modal sengaja di dalam window; subtitle terpisah dari area objek; transisi fade dengan Freeze.",
+      "editableTargets": [
+        "S06 — Subtitle 03"
+      ]
+    },
+    {
+      "beatIndex": 28,
+      "intent": "result",
+      "motion": "result-hold",
+      "focusTarget": "Host dan hasil cetak",
+      "reason": "Preview referensi ACC; satu fokus per beat, hasil dan hold.",
+      "stateIn": "Host menyala",
+      "stateOut": "Host menyala",
+      "handoff": {
+        "type": "carry",
+        "reason": "Fade terarah antar scene berbeda; dalam scene pertahankan komposisi."
+      },
+      "phases": {
+        "action": null,
+        "reaction": null,
+        "holdStart": 0
+      },
+      "camera": null,
+      "collisionPolicy": "UI modal sengaja di dalam window; subtitle terpisah dari area objek; transisi fade dengan Freeze.",
+      "editableTargets": [
+        "S06 — Subtitle 04"
+      ]
+    },
+    {
+      "beatIndex": 29,
+      "intent": "bridge",
+      "motion": "motivated-cut",
+      "focusTarget": "Bubble percakapan",
+      "reason": "Preview referensi ACC; satu fokus per beat, hasil dan hold.",
+      "stateIn": "Host menyala",
+      "stateOut": "Percakapan terbentuk",
+      "handoff": {
+        "type": "cut",
+        "reason": "Fade terarah antar scene berbeda; dalam scene pertahankan komposisi."
+      },
+      "phases": {
+        "action": 0,
+        "reaction": 17,
+        "holdStart": 28
+      },
+      "camera": null,
+      "collisionPolicy": "UI modal sengaja di dalam window; subtitle terpisah dari area objek; transisi fade dengan Freeze.",
+      "editableTargets": [
+        "S07 — Subtitle 01"
+      ]
+    },
+    {
+      "beatIndex": 30,
+      "intent": "detail",
+      "motion": "progressive-build",
+      "focusTarget": "Printer mengeluarkan kertas",
+      "reason": "Preview referensi ACC; satu fokus per beat, hasil dan hold.",
+      "stateIn": "Percakapan terbentuk",
+      "stateOut": "Kertas keluar",
+      "handoff": {
+        "type": "carry",
+        "reason": "Fade terarah antar scene berbeda; dalam scene pertahankan komposisi."
+      },
+      "phases": {
+        "action": 11,
+        "reaction": 42,
+        "holdStart": 42
+      },
+      "camera": null,
+      "collisionPolicy": "UI modal sengaja di dalam window; subtitle terpisah dari area objek; transisi fade dengan Freeze.",
+      "editableTargets": [
+        "S07 — Subtitle 02"
+      ]
+    },
+    {
+      "beatIndex": 31,
+      "intent": "type",
+      "motion": "natural-typing",
+      "focusTarget": "Komentar di dalam bubble",
+      "reason": "Preview referensi ACC; satu fokus per beat, hasil dan hold.",
+      "stateIn": "Kertas keluar",
+      "stateOut": "Komentar selesai",
+      "handoff": {
+        "type": "carry",
+        "reason": "Fade terarah antar scene berbeda; dalam scene pertahankan komposisi."
+      },
+      "phases": {
+        "action": 0,
+        "reaction": 76,
+        "holdStart": 85
+      },
+      "camera": null,
+      "collisionPolicy": "UI modal sengaja di dalam window; subtitle terpisah dari area objek; transisi fade dengan Freeze.",
+      "editableTargets": [
+        "S07 — Subtitle 03"
+      ]
+    },
+    {
+      "beatIndex": 32,
+      "intent": "recap",
+      "motion": "progressive-build",
+      "focusTarget": "Mini-demo dan cover hero",
+      "reason": "Preview referensi ACC; satu fokus per beat, hasil dan hold.",
+      "stateIn": "Komentar selesai",
+      "stateOut": "Cover hold",
+      "handoff": {
+        "type": "cut",
+        "reason": "Fade terarah antar scene berbeda; dalam scene pertahankan komposisi."
+      },
+      "phases": {
+        "action": 32,
+        "reaction": 75,
+        "holdStart": 108
+      },
+      "camera": null,
+      "collisionPolicy": "UI modal sengaja di dalam window; subtitle terpisah dari area objek; transisi fade dengan Freeze.",
+      "editableTargets": [
+        "S08 — Cover composition scale"
+      ]
+    }
+  ]
+}

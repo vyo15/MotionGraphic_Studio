@@ -1,0 +1,2822 @@
+{
+  "schemaVersion": 1,
+  "nativeTextTargets": [
+    {
+      "name": "S03 — Jendela Control Panel — ‹",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Jendela Control Panel — ›",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Jendela Control Panel — ↑",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Jendela Control Panel — Search Control Panel",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Control Panel — Adjust your computer’s settings",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Control Panel — View by:",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Control Panel — Category  ▾",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Control Panel — System and Security",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Control Panel — Review your computer’s status",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Control Panel — Save backup copies of your files",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Control Panel — Find and fix problems",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Control Panel — Network and Internet",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Control Panel — View network status and tasks",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Control Panel — Hardware and Sound",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Control Panel — View devices and printers",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Control Panel — Add a device",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Control Panel — Programs",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Control Panel — Uninstall a program",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Control Panel — User Accounts",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Control Panel — Change account type",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Control Panel — Appearance and Personalization",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Control Panel — Clock and Region",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Control Panel — Change date, time, or number formats",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Control Panel — Ease of Access",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Control Panel — Let Windows suggest settings",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Control Panel — Optimize visual display",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Control Panel — Navigasi — Control Panel",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Control Panel — Navigasi — Control Panel 02",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Network and Internet — Control Panel Home",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Network and Internet — System and Security",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Network and Internet — Network and Internet",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Network and Internet — Hardware and Sound",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Network and Internet — Programs",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Network and Internet — User Accounts",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Network and Internet — Appearance and Personalization",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Network and Internet — Clock and Region",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Network and Internet — Ease of Access",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Network and Internet — Network and Sharing Center",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Network and Internet — View network status and tasks",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Network and Internet — Connect to a network",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Network and Internet — View network computers and devices",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Network and Internet — Internet Options",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Network and Internet — Change your homepage",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Network and Internet — Manage browser add-ons",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Network and Internet — Delete browsing history and cookies",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Network and Internet — Navigasi — Network and Internet",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Network and Internet — Navigasi — Control Panel  ›  Network and Internet",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Network and Sharing Center — Control Panel Home",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Network and Sharing Center — Change adapter settings",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Network and Sharing Center — Change advanced sharing",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Network and Sharing Center — settings",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Network and Sharing Center — See also",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Network and Sharing Center — Internet Options",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Network and Sharing Center — Windows Defender Firewall",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Network and Sharing Center — View your basic network information",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Network and Sharing Center — and set up connections",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Network and Sharing Center — View your active networks",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Network and Sharing Center — Network",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Network and Sharing Center — Private network",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Network and Sharing Center — Access type:",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Network and Sharing Center — No Internet access",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Network and Sharing Center — Connections:",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Network and Sharing Center — Ethernet",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Network and Sharing Center — Change your networking settings",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Network and Sharing Center — Set up a new connection or network",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Network and Sharing Center — Set up a broadband, dial-up, or VPN connection;",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Network and Sharing Center — or set up a router or access point.",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Network and Sharing Center — Troubleshoot problems",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Network and Sharing Center — Diagnose and repair network problems, or get",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Network and Sharing Center — troubleshooting information.",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Network and Sharing Center — Navigasi — Network and Sharing Center",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Network and Sharing Center — Navigasi — Control Panel  ›  Network and Internet  ›  Network and ",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Sharing — Change sharing options for different network profiles",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Sharing — Windows creates a separate network profile for each net",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Sharing — options for each profile.",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Sharing — Private (current profile)",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Sharing — ⌃",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Sharing — Network discovery",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Sharing — When network discovery is on, this computer can see oth",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Sharing — and devices and is visible to other network computers.",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Sharing — Turn on network discovery",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Sharing — Turn on automatic setup of network connected devices.",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Sharing — Turn off network discovery",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Sharing — File and printer sharing",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Sharing — When file and printer sharing is on, files and printers",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Sharing — this computer can be accessed by people on the network.",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Sharing — Turn on file and printer sharing",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Sharing — Turn off file and printer sharing",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Sharing — Guest or Public",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Sharing — ⌄",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Sharing — All Networks",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Sharing — ⌄ 02",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Sharing — Save changes",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Sharing — Cancel",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Sharing — Navigasi — Advanced sharing settings",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Sharing — Navigasi — Control Panel  ›  …  ›  Network and Sharing Center  ›  ",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Run — Run",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Run — Type the name of a program, folder, document, or",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Run — Internet resource, and Windows will open it for you.",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Run — Open:",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Run — ⌄",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Run — OK",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Run — Cancel",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Run — Browse...",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S01 — Subtitle 01",
+      "source": "src/components/Captions01.tsx"
+    },
+    {
+      "name": "S01 — Subtitle 02",
+      "source": "src/components/Captions01.tsx"
+    },
+    {
+      "name": "S01 — Subtitle 03",
+      "source": "src/components/Captions01.tsx"
+    },
+    {
+      "name": "S01 — Subtitle 04",
+      "source": "src/components/Captions01.tsx"
+    },
+    {
+      "name": "S02 — Subtitle 01",
+      "source": "src/components/Captions02.tsx"
+    },
+    {
+      "name": "S02 — Subtitle 02",
+      "source": "src/components/Captions02.tsx"
+    },
+    {
+      "name": "S02 — Subtitle 03",
+      "source": "src/components/Captions02.tsx"
+    },
+    {
+      "name": "S02 — Subtitle 04",
+      "source": "src/components/Captions02.tsx"
+    },
+    {
+      "name": "S03 — Subtitle 01",
+      "source": "src/components/Captions03.tsx"
+    },
+    {
+      "name": "S03 — Subtitle 02",
+      "source": "src/components/Captions03.tsx"
+    },
+    {
+      "name": "S03 — Subtitle 03",
+      "source": "src/components/Captions03.tsx"
+    },
+    {
+      "name": "S03 — Subtitle 04",
+      "source": "src/components/Captions03.tsx"
+    },
+    {
+      "name": "S03 — Subtitle 05",
+      "source": "src/components/Captions03.tsx"
+    },
+    {
+      "name": "S03 — Subtitle 06",
+      "source": "src/components/Captions03.tsx"
+    },
+    {
+      "name": "S03 — Subtitle 07",
+      "source": "src/components/Captions03.tsx"
+    },
+    {
+      "name": "S01 — Label LAN",
+      "source": "src/components/Topology01.tsx"
+    },
+    {
+      "name": "S01 — Label USB",
+      "source": "src/components/Topology01.tsx"
+    },
+    {
+      "name": "S01 — Komputer 1",
+      "source": "src/components/Topology01.tsx"
+    },
+    {
+      "name": "S01 — Komputer 2",
+      "source": "src/components/Topology01.tsx"
+    },
+    {
+      "name": "S01 — IP host",
+      "source": "src/components/Topology01.tsx"
+    },
+    {
+      "name": "S01 — IP client",
+      "source": "src/components/Topology01.tsx"
+    },
+    {
+      "name": "S01 — Judul fitur",
+      "source": "src/components/Topology01.tsx"
+    },
+    {
+      "name": "S02 — Label LAN",
+      "source": "src/components/Topology02.tsx"
+    },
+    {
+      "name": "S02 — Label USB",
+      "source": "src/components/Topology02.tsx"
+    },
+    {
+      "name": "S02 — Komputer 1",
+      "source": "src/components/Topology02.tsx"
+    },
+    {
+      "name": "S02 — Komputer 2",
+      "source": "src/components/Topology02.tsx"
+    },
+    {
+      "name": "S02 — IP host",
+      "source": "src/components/Topology02.tsx"
+    },
+    {
+      "name": "S02 — IP client",
+      "source": "src/components/Topology02.tsx"
+    },
+    {
+      "name": "S03 — Label LAN",
+      "source": "src/components/Topology03.tsx"
+    },
+    {
+      "name": "S03 — Label USB",
+      "source": "src/components/Topology03.tsx"
+    },
+    {
+      "name": "S03 — Komputer 1",
+      "source": "src/components/Topology03.tsx"
+    },
+    {
+      "name": "S03 — Komputer 2",
+      "source": "src/components/Topology03.tsx"
+    },
+    {
+      "name": "S03 — IP host",
+      "source": "src/components/Topology03.tsx"
+    },
+    {
+      "name": "S03 — IP client",
+      "source": "src/components/Topology03.tsx"
+    },
+    {
+      "name": "S04 — Subtitle 01",
+      "source": "src/components/Captions04.tsx"
+    },
+    {
+      "name": "S04 — Subtitle 02",
+      "source": "src/components/Captions04.tsx"
+    },
+    {
+      "name": "S04 — Subtitle 03",
+      "source": "src/components/Captions04.tsx"
+    },
+    {
+      "name": "S04 — Subtitle 04",
+      "source": "src/components/Captions04.tsx"
+    },
+    {
+      "name": "S04 — Subtitle 05",
+      "source": "src/components/Captions04.tsx"
+    },
+    {
+      "name": "S05 — Subtitle 01",
+      "source": "src/components/Captions05.tsx"
+    },
+    {
+      "name": "S05 — Subtitle 02",
+      "source": "src/components/Captions05.tsx"
+    },
+    {
+      "name": "S05 — Subtitle 03",
+      "source": "src/components/Captions05.tsx"
+    },
+    {
+      "name": "S05 — Subtitle 04",
+      "source": "src/components/Captions05.tsx"
+    },
+    {
+      "name": "S05 — Subtitle 05",
+      "source": "src/components/Captions05.tsx"
+    },
+    {
+      "name": "S05 — Label LAN",
+      "source": "src/components/Topology05.tsx"
+    },
+    {
+      "name": "S05 — Label USB",
+      "source": "src/components/Topology05.tsx"
+    },
+    {
+      "name": "S05 — Komputer 1",
+      "source": "src/components/Topology05.tsx"
+    },
+    {
+      "name": "S05 — Komputer 2",
+      "source": "src/components/Topology05.tsx"
+    },
+    {
+      "name": "S05 — IP host",
+      "source": "src/components/Topology05.tsx"
+    },
+    {
+      "name": "S05 — IP client",
+      "source": "src/components/Topology05.tsx"
+    },
+    {
+      "name": "S05 — Recycle Bin label",
+      "source": "src/components/WindowsConnectUI.tsx"
+    },
+    {
+      "name": "S05 — Taskbar search label",
+      "source": "src/components/WindowsConnectUI.tsx"
+    },
+    {
+      "name": "S05 — Taskbar tray",
+      "source": "src/components/WindowsConnectUI.tsx"
+    },
+    {
+      "name": "S05 — Shortcut plus",
+      "source": "src/components/WindowsConnectUI.tsx"
+    },
+    {
+      "name": "S05 — R key label",
+      "source": "src/components/WindowsConnectUI.tsx"
+    },
+    {
+      "name": "S05 — Run title",
+      "source": "src/components/WindowsConnectUI.tsx"
+    },
+    {
+      "name": "S05 — Run prompt 1",
+      "source": "src/components/WindowsConnectUI.tsx"
+    },
+    {
+      "name": "S05 — Run prompt 2",
+      "source": "src/components/WindowsConnectUI.tsx"
+    },
+    {
+      "name": "S05 — Open label",
+      "source": "src/components/WindowsConnectUI.tsx"
+    },
+    {
+      "name": "S05 — OK label",
+      "source": "src/components/WindowsConnectUI.tsx"
+    },
+    {
+      "name": "S05 — Cancel label",
+      "source": "src/components/WindowsConnectUI.tsx"
+    },
+    {
+      "name": "S05 — Browse... label",
+      "source": "src/components/WindowsConnectUI.tsx"
+    },
+    {
+      "name": "S05 — Explorer title",
+      "source": "src/components/WindowsConnectUI.tsx"
+    },
+    {
+      "name": "S05 — Ribbon File",
+      "source": "src/components/WindowsConnectUI.tsx"
+    },
+    {
+      "name": "S05 — Ribbon Home",
+      "source": "src/components/WindowsConnectUI.tsx"
+    },
+    {
+      "name": "S05 — Ribbon Share",
+      "source": "src/components/WindowsConnectUI.tsx"
+    },
+    {
+      "name": "S05 — Ribbon View",
+      "source": "src/components/WindowsConnectUI.tsx"
+    },
+    {
+      "name": "S05 — Nav back",
+      "source": "src/components/WindowsConnectUI.tsx"
+    },
+    {
+      "name": "S05 — Nav forward",
+      "source": "src/components/WindowsConnectUI.tsx"
+    },
+    {
+      "name": "S05 — Nav up",
+      "source": "src/components/WindowsConnectUI.tsx"
+    },
+    {
+      "name": "S05 — Address value",
+      "source": "src/components/WindowsConnectUI.tsx"
+    },
+    {
+      "name": "S05 — Search value",
+      "source": "src/components/WindowsConnectUI.tsx"
+    },
+    {
+      "name": "S05 — Sidebar Quick access",
+      "source": "src/components/WindowsConnectUI.tsx"
+    },
+    {
+      "name": "S05 — Sidebar Desktop",
+      "source": "src/components/WindowsConnectUI.tsx"
+    },
+    {
+      "name": "S05 — Sidebar Downloads",
+      "source": "src/components/WindowsConnectUI.tsx"
+    },
+    {
+      "name": "S05 — Sidebar Documents",
+      "source": "src/components/WindowsConnectUI.tsx"
+    },
+    {
+      "name": "S05 — Sidebar Pictures",
+      "source": "src/components/WindowsConnectUI.tsx"
+    },
+    {
+      "name": "S05 — Sidebar This PC",
+      "source": "src/components/WindowsConnectUI.tsx"
+    },
+    {
+      "name": "S05 — Sidebar Network",
+      "source": "src/components/WindowsConnectUI.tsx"
+    },
+    {
+      "name": "S05 — Shared printer label",
+      "source": "src/components/WindowsConnectUI.tsx"
+    },
+    {
+      "name": "S05 — Shared printer type",
+      "source": "src/components/WindowsConnectUI.tsx"
+    },
+    {
+      "name": "S05 — Explorer status text",
+      "source": "src/components/WindowsConnectUI.tsx"
+    },
+    {
+      "name": "S05 — Menu Open",
+      "source": "src/components/WindowsConnectUI.tsx"
+    },
+    {
+      "name": "S05 — Menu Connect...",
+      "source": "src/components/WindowsConnectUI.tsx"
+    },
+    {
+      "name": "S05 — Menu Create shortcut",
+      "source": "src/components/WindowsConnectUI.tsx"
+    },
+    {
+      "name": "S05 — Menu Properties",
+      "source": "src/components/WindowsConnectUI.tsx"
+    },
+    {
+      "name": "S05 — Installation title",
+      "source": "src/components/WindowsConnectUI.tsx"
+    },
+    {
+      "name": "S05 — Installing label",
+      "source": "src/components/WindowsConnectUI.tsx"
+    },
+    {
+      "name": "S05 — Driver lookup",
+      "source": "src/components/WindowsConnectUI.tsx"
+    },
+    {
+      "name": "S05 — Install Cancel label",
+      "source": "src/components/WindowsConnectUI.tsx"
+    },
+    {
+      "name": "S04 — Jendela Control Panel — ‹",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Jendela Control Panel — ›",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Jendela Control Panel — ↑",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Jendela Control Panel — Search Control Panel",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Control Panel — Navigasi — Control Panel",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Control Panel — Navigasi — Control Panel 02",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Control Panel — Adjust your computer’s settings",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Control Panel — View by:",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Control Panel — Category  ▾",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Control Panel — System and Security",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Control Panel — Review your computer’s status",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Control Panel — Save backup copies of your files",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Control Panel — Find and fix problems",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Control Panel — Network and Internet",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Control Panel — View network status and tasks",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Control Panel — Hardware and Sound",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Control Panel — View devices and printers",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Control Panel — Add a device",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Control Panel — Programs",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Control Panel — Uninstall a program",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Control Panel — User Accounts",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Control Panel — Change account type",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Control Panel — Appearance and Personalization",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Control Panel — Clock and Region",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Control Panel — Change date, time, or number formats",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Control Panel — Ease of Access",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Control Panel — Let Windows suggest settings",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Control Panel — Optimize visual display",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Network and Sharing Center — Navigasi — Network and Sharing Center",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Network and Sharing Center — Navigasi — Control Panel  ›  Network and Internet  ›  Network and ",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Network and Sharing Center — Control Panel Home",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Network and Sharing Center — Change adapter settings",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Network and Sharing Center — Change advanced sharing",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Network and Sharing Center — settings",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Network and Sharing Center — See also",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Network and Sharing Center — Internet Options",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Network and Sharing Center — Windows Defender Firewall",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Network and Sharing Center — View your basic network information",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Network and Sharing Center — and set up connections",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Network and Sharing Center — View your active networks",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Network and Sharing Center — Network",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Network and Sharing Center — Private network",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Network and Sharing Center — Access type:",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Network and Sharing Center — No Internet access",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Network and Sharing Center — Connections:",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Network and Sharing Center — Ethernet",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Network and Sharing Center — Change your networking settings",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Network and Sharing Center — Set up a new connection or network",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Network and Sharing Center — Set up a broadband, dial-up, or VPN connection;",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Network and Sharing Center — or set up a router or access point.",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Network and Sharing Center — Troubleshoot problems",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Network and Sharing Center — Diagnose and repair network problems, or get",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Network and Sharing Center — troubleshooting information.",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Devices title",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Devices breadcrumb",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Toolbar 0",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Toolbar 1",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Toolbar 2",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Toolbar 3",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Toolbar 4",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Devices group",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Desktop label",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Keyboard label",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Mouse label",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Printers group",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — EPSON label 1",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — EPSON label 2",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Fax label",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — PDF label 1",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — PDF label 2",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Selection detail title",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Selection detail model",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Selection detail category",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Context 0",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Context 1",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Context 2",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Context 3",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Context 4",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Context 5",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Context 6",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Context 7",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Context 8",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Properties title",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Tab label Color Management",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Tab label Security",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Tab label Version Information",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Tab label General",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Tab label Sharing",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Tab label Ports",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Tab label Advanced",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Tab label Utility",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Printer name",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Location label",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Comment label",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Model",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Features",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Color",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Duplex",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Preferences... label",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Print Test Page label",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Sharing explanation 1",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Sharing explanation 2",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Sharing explanation 3",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Share this printer",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Share name label",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Share name value",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Render print jobs",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Drivers title",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Drivers description 1",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Drivers description 2",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Additional Drivers... label",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — OK label",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Cancel label",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Apply label",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S07 — Printed document title",
+      "source": "src/components/CTA07Artwork.tsx"
+    },
+    {
+      "name": "S06 — Subtitle 01",
+      "source": "src/components/Captions06.tsx"
+    },
+    {
+      "name": "S06 — Subtitle 02",
+      "source": "src/components/Captions06.tsx"
+    },
+    {
+      "name": "S06 — Subtitle 03",
+      "source": "src/components/Captions06.tsx"
+    },
+    {
+      "name": "S06 — Subtitle 04",
+      "source": "src/components/Captions06.tsx"
+    },
+    {
+      "name": "S07 — Subtitle 01",
+      "source": "src/components/Captions07.tsx"
+    },
+    {
+      "name": "S07 — Subtitle 02",
+      "source": "src/components/Captions07.tsx"
+    },
+    {
+      "name": "S07 — Subtitle 03",
+      "source": "src/components/Captions07.tsx"
+    },
+    {
+      "name": "S08 — LAN label",
+      "source": "src/components/Cover08Artwork.tsx"
+    },
+    {
+      "name": "S08 — USB label",
+      "source": "src/components/Cover08Artwork.tsx"
+    },
+    {
+      "name": "S08 — Printed document title",
+      "source": "src/components/Cover08Artwork.tsx"
+    },
+    {
+      "name": "S08 — Title line 1",
+      "source": "src/components/Cover08Artwork.tsx"
+    },
+    {
+      "name": "S08 — Title line 2",
+      "source": "src/components/Cover08Artwork.tsx"
+    },
+    {
+      "name": "S08 — Title accent",
+      "source": "src/components/Cover08Artwork.tsx"
+    },
+    {
+      "name": "S06 — LAN label",
+      "source": "src/components/Topology06.tsx"
+    },
+    {
+      "name": "S06 — USB label",
+      "source": "src/components/Topology06.tsx"
+    },
+    {
+      "name": "S06 — Printed document title",
+      "source": "src/components/Topology06.tsx"
+    },
+    {
+      "name": "S06 — Host label",
+      "source": "src/components/Topology06.tsx"
+    },
+    {
+      "name": "S06 — Recycle Bin label",
+      "source": "src/components/WindowsPrintUI.tsx"
+    },
+    {
+      "name": "S06 — Taskbar search label",
+      "source": "src/components/WindowsPrintUI.tsx"
+    },
+    {
+      "name": "S06 — Taskbar tray",
+      "source": "src/components/WindowsPrintUI.tsx"
+    },
+    {
+      "name": "S06 — Text document desktop label",
+      "source": "src/components/WindowsPrintUI.tsx"
+    },
+    {
+      "name": "S06 — Notepad title",
+      "source": "src/components/WindowsPrintUI.tsx"
+    },
+    {
+      "name": "S06 — Notepad menu File",
+      "source": "src/components/WindowsPrintUI.tsx"
+    },
+    {
+      "name": "S06 — Notepad menu Edit",
+      "source": "src/components/WindowsPrintUI.tsx"
+    },
+    {
+      "name": "S06 — Notepad menu Format",
+      "source": "src/components/WindowsPrintUI.tsx"
+    },
+    {
+      "name": "S06 — Notepad menu View",
+      "source": "src/components/WindowsPrintUI.tsx"
+    },
+    {
+      "name": "S06 — Notepad menu Help",
+      "source": "src/components/WindowsPrintUI.tsx"
+    },
+    {
+      "name": "S06 — Document heading",
+      "source": "src/components/WindowsPrintUI.tsx"
+    },
+    {
+      "name": "S06 — Document content",
+      "source": "src/components/WindowsPrintUI.tsx"
+    },
+    {
+      "name": "S06 — Notepad status",
+      "source": "src/components/WindowsPrintUI.tsx"
+    },
+    {
+      "name": "S06 — Print title",
+      "source": "src/components/WindowsPrintUI.tsx"
+    },
+    {
+      "name": "S06 — General tab label",
+      "source": "src/components/WindowsPrintUI.tsx"
+    },
+    {
+      "name": "S06 — Select Printer label",
+      "source": "src/components/WindowsPrintUI.tsx"
+    },
+    {
+      "name": "S06 — PDF printer name",
+      "source": "src/components/WindowsPrintUI.tsx"
+    },
+    {
+      "name": "S06 — EPSON printer name",
+      "source": "src/components/WindowsPrintUI.tsx"
+    },
+    {
+      "name": "S06 — Print Status:",
+      "source": "src/components/WindowsPrintUI.tsx"
+    },
+    {
+      "name": "S06 — Print value 0",
+      "source": "src/components/WindowsPrintUI.tsx"
+    },
+    {
+      "name": "S06 — Print Location:",
+      "source": "src/components/WindowsPrintUI.tsx"
+    },
+    {
+      "name": "S06 — Print Comment:",
+      "source": "src/components/WindowsPrintUI.tsx"
+    },
+    {
+      "name": "S06 — Preferences button label",
+      "source": "src/components/WindowsPrintUI.tsx"
+    },
+    {
+      "name": "S06 — Find Printer... button label",
+      "source": "src/components/WindowsPrintUI.tsx"
+    },
+    {
+      "name": "S06 — Page range title",
+      "source": "src/components/WindowsPrintUI.tsx"
+    },
+    {
+      "name": "S06 — All radio label",
+      "source": "src/components/WindowsPrintUI.tsx"
+    },
+    {
+      "name": "S06 — Pages radio label",
+      "source": "src/components/WindowsPrintUI.tsx"
+    },
+    {
+      "name": "S06 — Copies label",
+      "source": "src/components/WindowsPrintUI.tsx"
+    },
+    {
+      "name": "S06 — Copies value",
+      "source": "src/components/WindowsPrintUI.tsx"
+    },
+    {
+      "name": "S06 — Collate label",
+      "source": "src/components/WindowsPrintUI.tsx"
+    },
+    {
+      "name": "S06 — Print action label",
+      "source": "src/components/WindowsPrintUI.tsx"
+    },
+    {
+      "name": "S06 — Cancel action label",
+      "source": "src/components/WindowsPrintUI.tsx"
+    },
+    {
+      "name": "S06 — Apply action label",
+      "source": "src/components/WindowsPrintUI.tsx"
+    }
+  ],
+  "nativeVisualTargets": [
+    {
+      "name": "S03 — Jendela Control Panel — Bidang",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Jendela Control Panel — Ikon panel",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Jendela Control Panel — Garis",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Jendela Control Panel — Bidang 02",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Jendela Control Panel — Garis 02",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Jendela Control Panel — Garis 03",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Jendela Control Panel — Garis 04",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Jendela Control Panel — Bidang 03",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Jendela Control Panel — Ikon panel 02",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Jendela Control Panel — Bidang 04",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Jendela Control Panel — Kontrol bulat",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Jendela Control Panel — Garis 05",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Jendela Control Panel — Garis 06",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Control Panel — Ikon shield",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Control Panel — Ikon network",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Control Panel — Ikon printer",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Control Panel — Ikon programs",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Control Panel — Ikon users",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Control Panel — Ikon appearance",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Control Panel — Ikon clock",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Control Panel — Ikon access",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Network and Internet — Garis",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Network and Internet — Ikon network",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Network and Internet — Ikon internet",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Network and Sharing Center — Garis",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Network and Sharing Center — Garis 02",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Network and Sharing Center — Ikon network",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Network and Sharing Center — Garis 03",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Network and Sharing Center — Ikon network 02",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Network and Sharing Center — Garis 04",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Network and Sharing Center — Ikon network 03",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Network and Sharing Center — Ikon trouble",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Sharing — Garis",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Sharing — Kontrol bulat",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Sharing — Garis 02",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Sharing — Kontrol bulat 02",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Sharing — Kontrol bulat 03",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Sharing — Bidang",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Sharing — Garis 03",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Sharing — Kontrol bulat 04",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Sharing — Garis 04",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Sharing — Kontrol bulat 05",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Sharing — Kontrol bulat 06",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Sharing — Kontrol bulat 07",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Sharing — Garis 05",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Sharing — Kontrol bulat 08",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Sharing — Garis 06",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Sharing — Kontrol bulat 09",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Sharing — Bidang 02",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Sharing — Bidang 03",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Sharing — Ikon shield",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Sharing — Bidang 04",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Network discovery OFF dot",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — File and printer sharing OFF dot",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Run — Bidang",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Run — Bidang 02",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Run — Ikon panel",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Run — Garis",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Run — Garis 02",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Run — Ikon panel 02",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Run — Bidang 03",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Run — Isi Run (ketik)",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Run — Bidang 04",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Run — Bidang 05",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S03 — Run — Bidang 06",
+      "source": "src/components/WindowsNetworkUI.tsx"
+    },
+    {
+      "name": "S01 — Kabel USB",
+      "source": "src/components/Topology01.tsx"
+    },
+    {
+      "name": "S01 — Kabel LAN",
+      "source": "src/components/Topology01.tsx"
+    },
+    {
+      "name": "S01 — Host Monitor casing",
+      "source": "src/components/Topology01.tsx"
+    },
+    {
+      "name": "S01 — Host Dokumen layar",
+      "source": "src/components/Topology01.tsx"
+    },
+    {
+      "name": "S01 — Host Ikon komputer jaringan",
+      "source": "src/components/Topology01.tsx"
+    },
+    {
+      "name": "S01 — Host ikon Printer Sharing",
+      "source": "src/components/Topology01.tsx"
+    },
+    {
+      "name": "S01 — Host Status berhasil",
+      "source": "src/components/Topology01.tsx"
+    },
+    {
+      "name": "S01 — Client Monitor casing",
+      "source": "src/components/Topology01.tsx"
+    },
+    {
+      "name": "S01 — Client Dokumen layar",
+      "source": "src/components/Topology01.tsx"
+    },
+    {
+      "name": "S01 — Client Ikon komputer jaringan",
+      "source": "src/components/Topology01.tsx"
+    },
+    {
+      "name": "S01 — Client Status berhasil",
+      "source": "src/components/Topology01.tsx"
+    },
+    {
+      "name": "S01 — Printer bayangan",
+      "source": "src/components/Topology01.tsx"
+    },
+    {
+      "name": "S01 — Printer casing",
+      "source": "src/components/Topology01.tsx"
+    },
+    {
+      "name": "S01 — Printer panel tombol",
+      "source": "src/components/Topology01.tsx"
+    },
+    {
+      "name": "S01 — Kertas hasil cetak",
+      "source": "src/components/Topology01.tsx"
+    },
+    {
+      "name": "S01 — Ikon Wi-Fi tidak tersedia",
+      "source": "src/components/Topology01.tsx"
+    },
+    {
+      "name": "S01 — Data cetak bergerak",
+      "source": "src/components/Topology01.tsx"
+    },
+    {
+      "name": "S02 — Kabel USB",
+      "source": "src/components/Topology02.tsx"
+    },
+    {
+      "name": "S02 — Kabel LAN",
+      "source": "src/components/Topology02.tsx"
+    },
+    {
+      "name": "S02 — Host Monitor casing",
+      "source": "src/components/Topology02.tsx"
+    },
+    {
+      "name": "S02 — Host Dokumen layar",
+      "source": "src/components/Topology02.tsx"
+    },
+    {
+      "name": "S02 — Host Ikon komputer jaringan",
+      "source": "src/components/Topology02.tsx"
+    },
+    {
+      "name": "S02 — Host ikon Printer Sharing",
+      "source": "src/components/Topology02.tsx"
+    },
+    {
+      "name": "S02 — Host Status berhasil",
+      "source": "src/components/Topology02.tsx"
+    },
+    {
+      "name": "S02 — Client Monitor casing",
+      "source": "src/components/Topology02.tsx"
+    },
+    {
+      "name": "S02 — Client Dokumen layar",
+      "source": "src/components/Topology02.tsx"
+    },
+    {
+      "name": "S02 — Client Ikon komputer jaringan",
+      "source": "src/components/Topology02.tsx"
+    },
+    {
+      "name": "S02 — Client Status berhasil",
+      "source": "src/components/Topology02.tsx"
+    },
+    {
+      "name": "S02 — Printer bayangan",
+      "source": "src/components/Topology02.tsx"
+    },
+    {
+      "name": "S02 — Printer casing",
+      "source": "src/components/Topology02.tsx"
+    },
+    {
+      "name": "S02 — Printer panel tombol",
+      "source": "src/components/Topology02.tsx"
+    },
+    {
+      "name": "S02 — Kertas hasil cetak",
+      "source": "src/components/Topology02.tsx"
+    },
+    {
+      "name": "S02 — Ikon Wi-Fi tidak tersedia",
+      "source": "src/components/Topology02.tsx"
+    },
+    {
+      "name": "S03 — Kabel USB",
+      "source": "src/components/Topology03.tsx"
+    },
+    {
+      "name": "S03 — Kabel LAN",
+      "source": "src/components/Topology03.tsx"
+    },
+    {
+      "name": "S03 — Host Monitor casing",
+      "source": "src/components/Topology03.tsx"
+    },
+    {
+      "name": "S03 — Host Dokumen layar",
+      "source": "src/components/Topology03.tsx"
+    },
+    {
+      "name": "S03 — Host Ikon komputer jaringan",
+      "source": "src/components/Topology03.tsx"
+    },
+    {
+      "name": "S03 — Host ikon Printer Sharing",
+      "source": "src/components/Topology03.tsx"
+    },
+    {
+      "name": "S03 — Host Status berhasil",
+      "source": "src/components/Topology03.tsx"
+    },
+    {
+      "name": "S03 — Client Monitor casing",
+      "source": "src/components/Topology03.tsx"
+    },
+    {
+      "name": "S03 — Client Dokumen layar",
+      "source": "src/components/Topology03.tsx"
+    },
+    {
+      "name": "S03 — Client Ikon komputer jaringan",
+      "source": "src/components/Topology03.tsx"
+    },
+    {
+      "name": "S03 — Client Status berhasil",
+      "source": "src/components/Topology03.tsx"
+    },
+    {
+      "name": "S03 — Printer bayangan",
+      "source": "src/components/Topology03.tsx"
+    },
+    {
+      "name": "S03 — Printer casing",
+      "source": "src/components/Topology03.tsx"
+    },
+    {
+      "name": "S03 — Printer panel tombol",
+      "source": "src/components/Topology03.tsx"
+    },
+    {
+      "name": "S03 — Kertas hasil cetak",
+      "source": "src/components/Topology03.tsx"
+    },
+    {
+      "name": "S03 — Ikon Wi-Fi tidak tersedia",
+      "source": "src/components/Topology03.tsx"
+    },
+    {
+      "name": "S03 — Cursor Windows hotspot",
+      "source": "src/scenes/Scene03.tsx"
+    },
+    {
+      "name": "Global — Background",
+      "source": "src/components/EditorialBackground.tsx"
+    },
+    {
+      "name": "S05 — Kabel USB",
+      "source": "src/components/Topology05.tsx"
+    },
+    {
+      "name": "S05 — Kabel LAN",
+      "source": "src/components/Topology05.tsx"
+    },
+    {
+      "name": "S05 — Host Monitor casing",
+      "source": "src/components/Topology05.tsx"
+    },
+    {
+      "name": "S05 — Host Dokumen layar",
+      "source": "src/components/Topology05.tsx"
+    },
+    {
+      "name": "S05 — Host Ikon komputer jaringan",
+      "source": "src/components/Topology05.tsx"
+    },
+    {
+      "name": "S05 — Host ikon Printer Sharing",
+      "source": "src/components/Topology05.tsx"
+    },
+    {
+      "name": "S05 — Host Status berhasil",
+      "source": "src/components/Topology05.tsx"
+    },
+    {
+      "name": "S05 — Client Monitor casing",
+      "source": "src/components/Topology05.tsx"
+    },
+    {
+      "name": "S05 — Client Dokumen layar",
+      "source": "src/components/Topology05.tsx"
+    },
+    {
+      "name": "S05 — Client Ikon komputer jaringan",
+      "source": "src/components/Topology05.tsx"
+    },
+    {
+      "name": "S05 — Client Status berhasil",
+      "source": "src/components/Topology05.tsx"
+    },
+    {
+      "name": "S05 — Printer bayangan",
+      "source": "src/components/Topology05.tsx"
+    },
+    {
+      "name": "S05 — Printer casing",
+      "source": "src/components/Topology05.tsx"
+    },
+    {
+      "name": "S05 — Printer panel tombol",
+      "source": "src/components/Topology05.tsx"
+    },
+    {
+      "name": "S05 — Kertas hasil cetak",
+      "source": "src/components/Topology05.tsx"
+    },
+    {
+      "name": "S05 — Ikon Wi-Fi tidak tersedia",
+      "source": "src/components/Topology05.tsx"
+    },
+    {
+      "name": "S05 — Desktop wallpaper",
+      "source": "src/components/WindowsConnectUI.tsx"
+    },
+    {
+      "name": "S05 — Recycle Bin icon",
+      "source": "src/components/WindowsConnectUI.tsx"
+    },
+    {
+      "name": "S05 — Taskbar",
+      "source": "src/components/WindowsConnectUI.tsx"
+    },
+    {
+      "name": "S05 — Start icon",
+      "source": "src/components/WindowsConnectUI.tsx"
+    },
+    {
+      "name": "S05 — Taskbar Search",
+      "source": "src/components/WindowsConnectUI.tsx"
+    },
+    {
+      "name": "S05 — Explorer taskbar icon",
+      "source": "src/components/WindowsConnectUI.tsx"
+    },
+    {
+      "name": "S05 — Win key",
+      "source": "src/components/WindowsConnectUI.tsx"
+    },
+    {
+      "name": "S05 — Win key logo",
+      "source": "src/components/WindowsConnectUI.tsx"
+    },
+    {
+      "name": "S05 — R key",
+      "source": "src/components/WindowsConnectUI.tsx"
+    },
+    {
+      "name": "S05 — Run dialog",
+      "source": "src/components/WindowsConnectUI.tsx"
+    },
+    {
+      "name": "S05 — Run titlebar",
+      "source": "src/components/WindowsConnectUI.tsx"
+    },
+    {
+      "name": "S05 — Run icon",
+      "source": "src/components/WindowsConnectUI.tsx"
+    },
+    {
+      "name": "S05 — Run close",
+      "source": "src/components/WindowsConnectUI.tsx"
+    },
+    {
+      "name": "S05 — Run input",
+      "source": "src/components/WindowsConnectUI.tsx"
+    },
+    {
+      "name": "S05 — Run dropdown",
+      "source": "src/components/WindowsConnectUI.tsx"
+    },
+    {
+      "name": "S05 — OK bidang",
+      "source": "src/components/WindowsConnectUI.tsx"
+    },
+    {
+      "name": "S05 — Cancel bidang",
+      "source": "src/components/WindowsConnectUI.tsx"
+    },
+    {
+      "name": "S05 — Browse... bidang",
+      "source": "src/components/WindowsConnectUI.tsx"
+    },
+    {
+      "name": "S05 — Explorer window",
+      "source": "src/components/WindowsConnectUI.tsx"
+    },
+    {
+      "name": "S05 — Explorer window buttons",
+      "source": "src/components/WindowsConnectUI.tsx"
+    },
+    {
+      "name": "S05 — Ribbon File tab",
+      "source": "src/components/WindowsConnectUI.tsx"
+    },
+    {
+      "name": "S05 — Address bar",
+      "source": "src/components/WindowsConnectUI.tsx"
+    },
+    {
+      "name": "S05 — Search box",
+      "source": "src/components/WindowsConnectUI.tsx"
+    },
+    {
+      "name": "S05 — Sidebar",
+      "source": "src/components/WindowsConnectUI.tsx"
+    },
+    {
+      "name": "S05 — Sidebar icon Quick access",
+      "source": "src/components/WindowsConnectUI.tsx"
+    },
+    {
+      "name": "S05 — Sidebar icon Desktop",
+      "source": "src/components/WindowsConnectUI.tsx"
+    },
+    {
+      "name": "S05 — Sidebar icon Downloads",
+      "source": "src/components/WindowsConnectUI.tsx"
+    },
+    {
+      "name": "S05 — Sidebar icon Documents",
+      "source": "src/components/WindowsConnectUI.tsx"
+    },
+    {
+      "name": "S05 — Sidebar icon Pictures",
+      "source": "src/components/WindowsConnectUI.tsx"
+    },
+    {
+      "name": "S05 — Sidebar icon This PC",
+      "source": "src/components/WindowsConnectUI.tsx"
+    },
+    {
+      "name": "S05 — Network selection",
+      "source": "src/components/WindowsConnectUI.tsx"
+    },
+    {
+      "name": "S05 — Sidebar icon Network",
+      "source": "src/components/WindowsConnectUI.tsx"
+    },
+    {
+      "name": "S05 — Printer selection",
+      "source": "src/components/WindowsConnectUI.tsx"
+    },
+    {
+      "name": "S05 — Network printer icon",
+      "source": "src/components/WindowsConnectUI.tsx"
+    },
+    {
+      "name": "S05 — Explorer status",
+      "source": "src/components/WindowsConnectUI.tsx"
+    },
+    {
+      "name": "S05 — Connect context menu",
+      "source": "src/components/WindowsConnectUI.tsx"
+    },
+    {
+      "name": "S05 — Connect hover",
+      "source": "src/components/WindowsConnectUI.tsx"
+    },
+    {
+      "name": "S05 — Installation shadow",
+      "source": "src/components/WindowsConnectUI.tsx"
+    },
+    {
+      "name": "S05 — Installation window",
+      "source": "src/components/WindowsConnectUI.tsx"
+    },
+    {
+      "name": "S05 — Installation titlebar",
+      "source": "src/components/WindowsConnectUI.tsx"
+    },
+    {
+      "name": "S05 — Installing icon",
+      "source": "src/components/WindowsConnectUI.tsx"
+    },
+    {
+      "name": "S05 — Progress track",
+      "source": "src/components/WindowsConnectUI.tsx"
+    },
+    {
+      "name": "S05 — Progress moving segment",
+      "source": "src/components/WindowsConnectUI.tsx"
+    },
+    {
+      "name": "S05 — Install Cancel bidang",
+      "source": "src/components/WindowsConnectUI.tsx"
+    },
+    {
+      "name": "S04 — Jendela Control Panel — Bidang",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Jendela Control Panel — Ikon panel",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Jendela Control Panel — Garis",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Jendela Control Panel — Bidang 02",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Jendela Control Panel — Garis 02",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Jendela Control Panel — Garis 03",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Jendela Control Panel — Garis 04",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Jendela Control Panel — Bidang 03",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Jendela Control Panel — Ikon panel 02",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Jendela Control Panel — Bidang 04",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Jendela Control Panel — Kontrol bulat",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Jendela Control Panel — Garis 05",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Jendela Control Panel — Garis 06",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Control Panel — Ikon shield",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Control Panel — Ikon network",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Control Panel — Ikon printer",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Control Panel — Ikon programs",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Control Panel — Ikon users",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Control Panel — Ikon appearance",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Control Panel — Ikon clock",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Control Panel — Ikon access",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Network and Sharing Center — Garis",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Network and Sharing Center — Garis 02",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Network and Sharing Center — Ikon network",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Network and Sharing Center — Garis 03",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Network and Sharing Center — Ikon network 02",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Network and Sharing Center — Garis 04",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Network and Sharing Center — Ikon network 03",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Network and Sharing Center — Ikon trouble",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Toolbar",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Devices separator",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Desktop icon",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — USB keyboard icon",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Mouse icon",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Printers separator",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Selected EPSON tile",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — EPSON icon",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Fax icon",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — PDF icon",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Selection detail bar",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Selection detail icon",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Printer context menu",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Properties hover",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Properties shadow",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Properties window",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Properties titlebar",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Properties close",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Tab Color Management",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Tab Security",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Tab Version Information",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Tab General",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Tab Sharing",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Tab Ports",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Tab Advanced",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Tab Utility",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Tab content",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — General printer",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Printer name field",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Location field",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Comment field",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Preferences... bidang",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Print Test Page bidang",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Sharing printer icon",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Share checkbox",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Share checkmark",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Share name box",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Render checkbox",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Render checkmark",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Additional Drivers... bidang",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — OK bidang",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Cancel bidang",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Apply bidang",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Cursor Windows hotspot",
+      "source": "src/scenes/Scene04.tsx"
+    },
+    {
+      "name": "S05 — Cursor Windows hotspot",
+      "source": "src/scenes/Scene05.tsx"
+    },
+    {
+      "name": "S04 — Jendela Control Panel — Shadow",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S04 — Jendela Control Panel — Background",
+      "source": "src/components/WindowsPrinterUI.tsx"
+    },
+    {
+      "name": "S07 — First conversation bubble",
+      "source": "src/components/CTA07Artwork.tsx"
+    },
+    {
+      "name": "S07 — First avatar",
+      "source": "src/components/CTA07Artwork.tsx"
+    },
+    {
+      "name": "S07 — First conversation dots",
+      "source": "src/components/CTA07Artwork.tsx"
+    },
+    {
+      "name": "S07 — Comment bubble body",
+      "source": "src/components/CTA07Artwork.tsx"
+    },
+    {
+      "name": "S07 — Comment avatar",
+      "source": "src/components/CTA07Artwork.tsx"
+    },
+    {
+      "name": "S07 — Comment conversation dots",
+      "source": "src/components/CTA07Artwork.tsx"
+    },
+    {
+      "name": "S07 — Send comment icon",
+      "source": "src/components/CTA07Artwork.tsx"
+    },
+    {
+      "name": "S07 — Printer shadow",
+      "source": "src/components/CTA07Artwork.tsx"
+    },
+    {
+      "name": "S07 — Printer input tray",
+      "source": "src/components/CTA07Artwork.tsx"
+    },
+    {
+      "name": "S07 — Printer blank paper",
+      "source": "src/components/CTA07Artwork.tsx"
+    },
+    {
+      "name": "S07 — Printer casing",
+      "source": "src/components/CTA07Artwork.tsx"
+    },
+    {
+      "name": "S07 — Printer upper panel",
+      "source": "src/components/CTA07Artwork.tsx"
+    },
+    {
+      "name": "S07 — Printer controls",
+      "source": "src/components/CTA07Artwork.tsx"
+    },
+    {
+      "name": "S07 — Printer output slot",
+      "source": "src/components/CTA07Artwork.tsx"
+    },
+    {
+      "name": "S07 — Printed sheet",
+      "source": "src/components/CTA07Artwork.tsx"
+    },
+    {
+      "name": "S07 — Printed document lines",
+      "source": "src/components/CTA07Artwork.tsx"
+    },
+    {
+      "name": "S07 — Comment typed text",
+      "source": "src/components/CTA07Artwork.tsx"
+    },
+    {
+      "name": "S07 — Text caret",
+      "source": "src/components/CTA07Artwork.tsx"
+    },
+    {
+      "name": "S08 — Cover composition scale",
+      "source": "src/components/Cover08Artwork.tsx"
+    },
+    {
+      "name": "S08 — LAN cable",
+      "source": "src/components/Cover08Artwork.tsx"
+    },
+    {
+      "name": "S08 — USB cable",
+      "source": "src/components/Cover08Artwork.tsx"
+    },
+    {
+      "name": "S08 — Host monitor body",
+      "source": "src/components/Cover08Artwork.tsx"
+    },
+    {
+      "name": "S08 — Host power LED",
+      "source": "src/components/Cover08Artwork.tsx"
+    },
+    {
+      "name": "S08 — Host sharing symbol",
+      "source": "src/components/Cover08Artwork.tsx"
+    },
+    {
+      "name": "S08 — Client monitor body",
+      "source": "src/components/Cover08Artwork.tsx"
+    },
+    {
+      "name": "S08 — Client power LED",
+      "source": "src/components/Cover08Artwork.tsx"
+    },
+    {
+      "name": "S08 — Client document",
+      "source": "src/components/Cover08Artwork.tsx"
+    },
+    {
+      "name": "S08 — Client success",
+      "source": "src/components/Cover08Artwork.tsx"
+    },
+    {
+      "name": "S08 — Printer shadow",
+      "source": "src/components/Cover08Artwork.tsx"
+    },
+    {
+      "name": "S08 — Printer input tray",
+      "source": "src/components/Cover08Artwork.tsx"
+    },
+    {
+      "name": "S08 — Printer blank paper",
+      "source": "src/components/Cover08Artwork.tsx"
+    },
+    {
+      "name": "S08 — Printer casing",
+      "source": "src/components/Cover08Artwork.tsx"
+    },
+    {
+      "name": "S08 — Printer upper panel",
+      "source": "src/components/Cover08Artwork.tsx"
+    },
+    {
+      "name": "S08 — Printer controls",
+      "source": "src/components/Cover08Artwork.tsx"
+    },
+    {
+      "name": "S08 — Printer output slot",
+      "source": "src/components/Cover08Artwork.tsx"
+    },
+    {
+      "name": "S08 — Printed sheet",
+      "source": "src/components/Cover08Artwork.tsx"
+    },
+    {
+      "name": "S08 — Printed document lines",
+      "source": "src/components/Cover08Artwork.tsx"
+    },
+    {
+      "name": "S08 — Print data packet",
+      "source": "src/components/Cover08Artwork.tsx"
+    },
+    {
+      "name": "S06 — LAN cable",
+      "source": "src/components/Topology06.tsx"
+    },
+    {
+      "name": "S06 — USB cable",
+      "source": "src/components/Topology06.tsx"
+    },
+    {
+      "name": "S06 — Host monitor body",
+      "source": "src/components/Topology06.tsx"
+    },
+    {
+      "name": "S06 — Host power LED",
+      "source": "src/components/Topology06.tsx"
+    },
+    {
+      "name": "S06 — Host sharing symbol",
+      "source": "src/components/Topology06.tsx"
+    },
+    {
+      "name": "S06 — Client monitor body",
+      "source": "src/components/Topology06.tsx"
+    },
+    {
+      "name": "S06 — Client power LED",
+      "source": "src/components/Topology06.tsx"
+    },
+    {
+      "name": "S06 — Client document",
+      "source": "src/components/Topology06.tsx"
+    },
+    {
+      "name": "S06 — Client success",
+      "source": "src/components/Topology06.tsx"
+    },
+    {
+      "name": "S06 — Printer shadow",
+      "source": "src/components/Topology06.tsx"
+    },
+    {
+      "name": "S06 — Printer input tray",
+      "source": "src/components/Topology06.tsx"
+    },
+    {
+      "name": "S06 — Printer blank paper",
+      "source": "src/components/Topology06.tsx"
+    },
+    {
+      "name": "S06 — Printer casing",
+      "source": "src/components/Topology06.tsx"
+    },
+    {
+      "name": "S06 — Printer upper panel",
+      "source": "src/components/Topology06.tsx"
+    },
+    {
+      "name": "S06 — Printer controls",
+      "source": "src/components/Topology06.tsx"
+    },
+    {
+      "name": "S06 — Printer output slot",
+      "source": "src/components/Topology06.tsx"
+    },
+    {
+      "name": "S06 — Printed sheet",
+      "source": "src/components/Topology06.tsx"
+    },
+    {
+      "name": "S06 — Printed document lines",
+      "source": "src/components/Topology06.tsx"
+    },
+    {
+      "name": "S06 — Print data packet",
+      "source": "src/components/Topology06.tsx"
+    },
+    {
+      "name": "S06 — Desktop wallpaper",
+      "source": "src/components/WindowsPrintUI.tsx"
+    },
+    {
+      "name": "S06 — Recycle Bin icon",
+      "source": "src/components/WindowsPrintUI.tsx"
+    },
+    {
+      "name": "S06 — Taskbar",
+      "source": "src/components/WindowsPrintUI.tsx"
+    },
+    {
+      "name": "S06 — Start icon",
+      "source": "src/components/WindowsPrintUI.tsx"
+    },
+    {
+      "name": "S06 — Taskbar Search",
+      "source": "src/components/WindowsPrintUI.tsx"
+    },
+    {
+      "name": "S06 — Explorer taskbar icon",
+      "source": "src/components/WindowsPrintUI.tsx"
+    },
+    {
+      "name": "S06 — Text document desktop icon",
+      "source": "src/components/WindowsPrintUI.tsx"
+    },
+    {
+      "name": "S06 — Notepad window",
+      "source": "src/components/WindowsPrintUI.tsx"
+    },
+    {
+      "name": "S06 — Notepad titlebar",
+      "source": "src/components/WindowsPrintUI.tsx"
+    },
+    {
+      "name": "S06 — Notepad menus background",
+      "source": "src/components/WindowsPrintUI.tsx"
+    },
+    {
+      "name": "S06 — Notepad scrollbar",
+      "source": "src/components/WindowsPrintUI.tsx"
+    },
+    {
+      "name": "S06 — Notepad status bar",
+      "source": "src/components/WindowsPrintUI.tsx"
+    },
+    {
+      "name": "S06 — Print dialog shadow",
+      "source": "src/components/WindowsPrintUI.tsx"
+    },
+    {
+      "name": "S06 — Print dialog body",
+      "source": "src/components/WindowsPrintUI.tsx"
+    },
+    {
+      "name": "S06 — Print titlebar",
+      "source": "src/components/WindowsPrintUI.tsx"
+    },
+    {
+      "name": "S06 — General tab",
+      "source": "src/components/WindowsPrintUI.tsx"
+    },
+    {
+      "name": "S06 — Printer list box",
+      "source": "src/components/WindowsPrintUI.tsx"
+    },
+    {
+      "name": "S06 — PDF selected",
+      "source": "src/components/WindowsPrintUI.tsx"
+    },
+    {
+      "name": "S06 — EPSON selected",
+      "source": "src/components/WindowsPrintUI.tsx"
+    },
+    {
+      "name": "S06 — PDF printer icon",
+      "source": "src/components/WindowsPrintUI.tsx"
+    },
+    {
+      "name": "S06 — EPSON printer icon",
+      "source": "src/components/WindowsPrintUI.tsx"
+    },
+    {
+      "name": "S06 — Preferences button",
+      "source": "src/components/WindowsPrintUI.tsx"
+    },
+    {
+      "name": "S06 — Find Printer... button",
+      "source": "src/components/WindowsPrintUI.tsx"
+    },
+    {
+      "name": "S06 — Page range group",
+      "source": "src/components/WindowsPrintUI.tsx"
+    },
+    {
+      "name": "S06 — All radio",
+      "source": "src/components/WindowsPrintUI.tsx"
+    },
+    {
+      "name": "S06 — Pages radio",
+      "source": "src/components/WindowsPrintUI.tsx"
+    },
+    {
+      "name": "S06 — Copies input",
+      "source": "src/components/WindowsPrintUI.tsx"
+    },
+    {
+      "name": "S06 — Collate checkbox",
+      "source": "src/components/WindowsPrintUI.tsx"
+    },
+    {
+      "name": "S06 — Print action button",
+      "source": "src/components/WindowsPrintUI.tsx"
+    },
+    {
+      "name": "S06 — Cancel action button",
+      "source": "src/components/WindowsPrintUI.tsx"
+    },
+    {
+      "name": "S06 — Apply action button",
+      "source": "src/components/WindowsPrintUI.tsx"
+    },
+    {
+      "name": "S06 — Windows cursor hotspot",
+      "source": "src/scenes/Scene06.tsx"
+    }
+  ],
+  "propsTextTargets": [
+    {
+      "name": "Run command — props",
+      "prop": "runCommand"
+    },
+    {
+      "name": "S05 UNC address — props",
+      "prop": "hostAddress"
+    },
+    {
+      "name": "S07 comment typed text — props",
+      "prop": "ctaComment"
+    }
+  ],
+  "guiVerification": "unverified"
+}

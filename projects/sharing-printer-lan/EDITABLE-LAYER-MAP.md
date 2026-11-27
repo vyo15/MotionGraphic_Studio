@@ -1,0 +1,582 @@
+# Layer map — S01–S05
+
+Native candidates (AST only; GUI belum diuji). S04 Devices and Printers digunakan kembali pada pembuka S05 agar edit jendela tersebut mengikuti continuity.
+
+## Teks literal
+- S03 — Jendela Control Panel — ‹ — `src/components/WindowsNetworkUI.tsx`
+- S03 — Jendela Control Panel — › — `src/components/WindowsNetworkUI.tsx`
+- S03 — Jendela Control Panel — ↑ — `src/components/WindowsNetworkUI.tsx`
+- S03 — Jendela Control Panel — Search Control Panel — `src/components/WindowsNetworkUI.tsx`
+- S03 — Control Panel — Adjust your computer’s settings — `src/components/WindowsNetworkUI.tsx`
+- S03 — Control Panel — View by: — `src/components/WindowsNetworkUI.tsx`
+- S03 — Control Panel — Category  ▾ — `src/components/WindowsNetworkUI.tsx`
+- S03 — Control Panel — System and Security — `src/components/WindowsNetworkUI.tsx`
+- S03 — Control Panel — Review your computer’s status — `src/components/WindowsNetworkUI.tsx`
+- S03 — Control Panel — Save backup copies of your files — `src/components/WindowsNetworkUI.tsx`
+- S03 — Control Panel — Find and fix problems — `src/components/WindowsNetworkUI.tsx`
+- S03 — Control Panel — Network and Internet — `src/components/WindowsNetworkUI.tsx`
+- S03 — Control Panel — View network status and tasks — `src/components/WindowsNetworkUI.tsx`
+- S03 — Control Panel — Hardware and Sound — `src/components/WindowsNetworkUI.tsx`
+- S03 — Control Panel — View devices and printers — `src/components/WindowsNetworkUI.tsx`
+- S03 — Control Panel — Add a device — `src/components/WindowsNetworkUI.tsx`
+- S03 — Control Panel — Programs — `src/components/WindowsNetworkUI.tsx`
+- S03 — Control Panel — Uninstall a program — `src/components/WindowsNetworkUI.tsx`
+- S03 — Control Panel — User Accounts — `src/components/WindowsNetworkUI.tsx`
+- S03 — Control Panel — Change account type — `src/components/WindowsNetworkUI.tsx`
+- S03 — Control Panel — Appearance and Personalization — `src/components/WindowsNetworkUI.tsx`
+- S03 — Control Panel — Clock and Region — `src/components/WindowsNetworkUI.tsx`
+- S03 — Control Panel — Change date, time, or number formats — `src/components/WindowsNetworkUI.tsx`
+- S03 — Control Panel — Ease of Access — `src/components/WindowsNetworkUI.tsx`
+- S03 — Control Panel — Let Windows suggest settings — `src/components/WindowsNetworkUI.tsx`
+- S03 — Control Panel — Optimize visual display — `src/components/WindowsNetworkUI.tsx`
+- S03 — Control Panel — Navigasi — Control Panel — `src/components/WindowsNetworkUI.tsx`
+- S03 — Control Panel — Navigasi — Control Panel 02 — `src/components/WindowsNetworkUI.tsx`
+- S03 — Network and Internet — Control Panel Home — `src/components/WindowsNetworkUI.tsx`
+- S03 — Network and Internet — System and Security — `src/components/WindowsNetworkUI.tsx`
+- S03 — Network and Internet — Network and Internet — `src/components/WindowsNetworkUI.tsx`
+- S03 — Network and Internet — Hardware and Sound — `src/components/WindowsNetworkUI.tsx`
+- S03 — Network and Internet — Programs — `src/components/WindowsNetworkUI.tsx`
+- S03 — Network and Internet — User Accounts — `src/components/WindowsNetworkUI.tsx`
+- S03 — Network and Internet — Appearance and Personalization — `src/components/WindowsNetworkUI.tsx`
+- S03 — Network and Internet — Clock and Region — `src/components/WindowsNetworkUI.tsx`
+- S03 — Network and Internet — Ease of Access — `src/components/WindowsNetworkUI.tsx`
+- S03 — Network and Internet — Network and Sharing Center — `src/components/WindowsNetworkUI.tsx`
+- S03 — Network and Internet — View network status and tasks — `src/components/WindowsNetworkUI.tsx`
+- S03 — Network and Internet — Connect to a network — `src/components/WindowsNetworkUI.tsx`
+- S03 — Network and Internet — View network computers and devices — `src/components/WindowsNetworkUI.tsx`
+- S03 — Network and Internet — Internet Options — `src/components/WindowsNetworkUI.tsx`
+- S03 — Network and Internet — Change your homepage — `src/components/WindowsNetworkUI.tsx`
+- S03 — Network and Internet — Manage browser add-ons — `src/components/WindowsNetworkUI.tsx`
+- S03 — Network and Internet — Delete browsing history and cookies — `src/components/WindowsNetworkUI.tsx`
+- S03 — Network and Internet — Navigasi — Network and Internet — `src/components/WindowsNetworkUI.tsx`
+- S03 — Network and Internet — Navigasi — Control Panel  ›  Network and Internet — `src/components/WindowsNetworkUI.tsx`
+- S03 — Network and Sharing Center — Control Panel Home — `src/components/WindowsNetworkUI.tsx`
+- S03 — Network and Sharing Center — Change adapter settings — `src/components/WindowsNetworkUI.tsx`
+- S03 — Network and Sharing Center — Change advanced sharing — `src/components/WindowsNetworkUI.tsx`
+- S03 — Network and Sharing Center — settings — `src/components/WindowsNetworkUI.tsx`
+- S03 — Network and Sharing Center — See also — `src/components/WindowsNetworkUI.tsx`
+- S03 — Network and Sharing Center — Internet Options — `src/components/WindowsNetworkUI.tsx`
+- S03 — Network and Sharing Center — Windows Defender Firewall — `src/components/WindowsNetworkUI.tsx`
+- S03 — Network and Sharing Center — View your basic network information — `src/components/WindowsNetworkUI.tsx`
+- S03 — Network and Sharing Center — and set up connections — `src/components/WindowsNetworkUI.tsx`
+- S03 — Network and Sharing Center — View your active networks — `src/components/WindowsNetworkUI.tsx`
+- S03 — Network and Sharing Center — Network — `src/components/WindowsNetworkUI.tsx`
+- S03 — Network and Sharing Center — Private network — `src/components/WindowsNetworkUI.tsx`
+- S03 — Network and Sharing Center — Access type: — `src/components/WindowsNetworkUI.tsx`
+- S03 — Network and Sharing Center — No Internet access — `src/components/WindowsNetworkUI.tsx`
+- S03 — Network and Sharing Center — Connections: — `src/components/WindowsNetworkUI.tsx`
+- S03 — Network and Sharing Center — Ethernet — `src/components/WindowsNetworkUI.tsx`
+- S03 — Network and Sharing Center — Change your networking settings — `src/components/WindowsNetworkUI.tsx`
+- S03 — Network and Sharing Center — Set up a new connection or network — `src/components/WindowsNetworkUI.tsx`
+- S03 — Network and Sharing Center — Set up a broadband, dial-up, or VPN connection; — `src/components/WindowsNetworkUI.tsx`
+- S03 — Network and Sharing Center — or set up a router or access point. — `src/components/WindowsNetworkUI.tsx`
+- S03 — Network and Sharing Center — Troubleshoot problems — `src/components/WindowsNetworkUI.tsx`
+- S03 — Network and Sharing Center — Diagnose and repair network problems, or get — `src/components/WindowsNetworkUI.tsx`
+- S03 — Network and Sharing Center — troubleshooting information. — `src/components/WindowsNetworkUI.tsx`
+- S03 — Network and Sharing Center — Navigasi — Network and Sharing Center — `src/components/WindowsNetworkUI.tsx`
+- S03 — Network and Sharing Center — Navigasi — Control Panel  ›  Network and Internet  ›  Network and  — `src/components/WindowsNetworkUI.tsx`
+- S03 — Sharing — Change sharing options for different network profiles — `src/components/WindowsNetworkUI.tsx`
+- S03 — Sharing — Windows creates a separate network profile for each net — `src/components/WindowsNetworkUI.tsx`
+- S03 — Sharing — options for each profile. — `src/components/WindowsNetworkUI.tsx`
+- S03 — Sharing — Private (current profile) — `src/components/WindowsNetworkUI.tsx`
+- S03 — Sharing — ⌃ — `src/components/WindowsNetworkUI.tsx`
+- S03 — Sharing — Network discovery — `src/components/WindowsNetworkUI.tsx`
+- S03 — Sharing — When network discovery is on, this computer can see oth — `src/components/WindowsNetworkUI.tsx`
+- S03 — Sharing — and devices and is visible to other network computers. — `src/components/WindowsNetworkUI.tsx`
+- S03 — Sharing — Turn on network discovery — `src/components/WindowsNetworkUI.tsx`
+- S03 — Sharing — Turn on automatic setup of network connected devices. — `src/components/WindowsNetworkUI.tsx`
+- S03 — Sharing — Turn off network discovery — `src/components/WindowsNetworkUI.tsx`
+- S03 — Sharing — File and printer sharing — `src/components/WindowsNetworkUI.tsx`
+- S03 — Sharing — When file and printer sharing is on, files and printers — `src/components/WindowsNetworkUI.tsx`
+- S03 — Sharing — this computer can be accessed by people on the network. — `src/components/WindowsNetworkUI.tsx`
+- S03 — Sharing — Turn on file and printer sharing — `src/components/WindowsNetworkUI.tsx`
+- S03 — Sharing — Turn off file and printer sharing — `src/components/WindowsNetworkUI.tsx`
+- S03 — Sharing — Guest or Public — `src/components/WindowsNetworkUI.tsx`
+- S03 — Sharing — ⌄ — `src/components/WindowsNetworkUI.tsx`
+- S03 — Sharing — All Networks — `src/components/WindowsNetworkUI.tsx`
+- S03 — Sharing — ⌄ 02 — `src/components/WindowsNetworkUI.tsx`
+- S03 — Sharing — Save changes — `src/components/WindowsNetworkUI.tsx`
+- S03 — Sharing — Cancel — `src/components/WindowsNetworkUI.tsx`
+- S03 — Sharing — Navigasi — Advanced sharing settings — `src/components/WindowsNetworkUI.tsx`
+- S03 — Sharing — Navigasi — Control Panel  ›  …  ›  Network and Sharing Center  ›   — `src/components/WindowsNetworkUI.tsx`
+- S03 — Run — Run — `src/components/WindowsNetworkUI.tsx`
+- S03 — Run — Type the name of a program, folder, document, or — `src/components/WindowsNetworkUI.tsx`
+- S03 — Run — Internet resource, and Windows will open it for you. — `src/components/WindowsNetworkUI.tsx`
+- S03 — Run — Open: — `src/components/WindowsNetworkUI.tsx`
+- S03 — Run — ⌄ — `src/components/WindowsNetworkUI.tsx`
+- S03 — Run — OK — `src/components/WindowsNetworkUI.tsx`
+- S03 — Run — Cancel — `src/components/WindowsNetworkUI.tsx`
+- S03 — Run — Browse... — `src/components/WindowsNetworkUI.tsx`
+- S01 — Subtitle 01 — `src/components/Captions01.tsx`
+- S01 — Subtitle 02 — `src/components/Captions01.tsx`
+- S01 — Subtitle 03 — `src/components/Captions01.tsx`
+- S01 — Subtitle 04 — `src/components/Captions01.tsx`
+- S02 — Subtitle 01 — `src/components/Captions02.tsx`
+- S02 — Subtitle 02 — `src/components/Captions02.tsx`
+- S02 — Subtitle 03 — `src/components/Captions02.tsx`
+- S02 — Subtitle 04 — `src/components/Captions02.tsx`
+- S03 — Subtitle 01 — `src/components/Captions03.tsx`
+- S03 — Subtitle 02 — `src/components/Captions03.tsx`
+- S03 — Subtitle 03 — `src/components/Captions03.tsx`
+- S03 — Subtitle 04 — `src/components/Captions03.tsx`
+- S03 — Subtitle 05 — `src/components/Captions03.tsx`
+- S03 — Subtitle 06 — `src/components/Captions03.tsx`
+- S03 — Subtitle 07 — `src/components/Captions03.tsx`
+- S01 — Label LAN — `src/components/Topology01.tsx`
+- S01 — Label USB — `src/components/Topology01.tsx`
+- S01 — Komputer 1 — `src/components/Topology01.tsx`
+- S01 — Komputer 2 — `src/components/Topology01.tsx`
+- S01 — IP host — `src/components/Topology01.tsx`
+- S01 — IP client — `src/components/Topology01.tsx`
+- S01 — Judul fitur — `src/components/Topology01.tsx`
+- S02 — Label LAN — `src/components/Topology02.tsx`
+- S02 — Label USB — `src/components/Topology02.tsx`
+- S02 — Komputer 1 — `src/components/Topology02.tsx`
+- S02 — Komputer 2 — `src/components/Topology02.tsx`
+- S02 — IP host — `src/components/Topology02.tsx`
+- S02 — IP client — `src/components/Topology02.tsx`
+- S03 — Label LAN — `src/components/Topology03.tsx`
+- S03 — Label USB — `src/components/Topology03.tsx`
+- S03 — Komputer 1 — `src/components/Topology03.tsx`
+- S03 — Komputer 2 — `src/components/Topology03.tsx`
+- S03 — IP host — `src/components/Topology03.tsx`
+- S03 — IP client — `src/components/Topology03.tsx`
+- S04 — Subtitle 01 — `src/components/Captions04.tsx`
+- S04 — Subtitle 02 — `src/components/Captions04.tsx`
+- S04 — Subtitle 03 — `src/components/Captions04.tsx`
+- S04 — Subtitle 04 — `src/components/Captions04.tsx`
+- S04 — Subtitle 05 — `src/components/Captions04.tsx`
+- S05 — Subtitle 01 — `src/components/Captions05.tsx`
+- S05 — Subtitle 02 — `src/components/Captions05.tsx`
+- S05 — Subtitle 03 — `src/components/Captions05.tsx`
+- S05 — Subtitle 04 — `src/components/Captions05.tsx`
+- S05 — Subtitle 05 — `src/components/Captions05.tsx`
+- S05 — Label LAN — `src/components/Topology05.tsx`
+- S05 — Label USB — `src/components/Topology05.tsx`
+- S05 — Komputer 1 — `src/components/Topology05.tsx`
+- S05 — Komputer 2 — `src/components/Topology05.tsx`
+- S05 — IP host — `src/components/Topology05.tsx`
+- S05 — IP client — `src/components/Topology05.tsx`
+- S05 — Recycle Bin label — `src/components/WindowsConnectUI.tsx`
+- S05 — Taskbar search label — `src/components/WindowsConnectUI.tsx`
+- S05 — Taskbar tray — `src/components/WindowsConnectUI.tsx`
+- S05 — Shortcut plus — `src/components/WindowsConnectUI.tsx`
+- S05 — R key label — `src/components/WindowsConnectUI.tsx`
+- S05 — Run title — `src/components/WindowsConnectUI.tsx`
+- S05 — Run prompt 1 — `src/components/WindowsConnectUI.tsx`
+- S05 — Run prompt 2 — `src/components/WindowsConnectUI.tsx`
+- S05 — Open label — `src/components/WindowsConnectUI.tsx`
+- S05 — OK label — `src/components/WindowsConnectUI.tsx`
+- S05 — Cancel label — `src/components/WindowsConnectUI.tsx`
+- S05 — Browse... label — `src/components/WindowsConnectUI.tsx`
+- S05 — Explorer title — `src/components/WindowsConnectUI.tsx`
+- S05 — Ribbon File — `src/components/WindowsConnectUI.tsx`
+- S05 — Ribbon Home — `src/components/WindowsConnectUI.tsx`
+- S05 — Ribbon Share — `src/components/WindowsConnectUI.tsx`
+- S05 — Ribbon View — `src/components/WindowsConnectUI.tsx`
+- S05 — Nav back — `src/components/WindowsConnectUI.tsx`
+- S05 — Nav forward — `src/components/WindowsConnectUI.tsx`
+- S05 — Nav up — `src/components/WindowsConnectUI.tsx`
+- S05 — Address value — `src/components/WindowsConnectUI.tsx`
+- S05 — Search value — `src/components/WindowsConnectUI.tsx`
+- S05 — Sidebar Quick access — `src/components/WindowsConnectUI.tsx`
+- S05 — Sidebar Desktop — `src/components/WindowsConnectUI.tsx`
+- S05 — Sidebar Downloads — `src/components/WindowsConnectUI.tsx`
+- S05 — Sidebar Documents — `src/components/WindowsConnectUI.tsx`
+- S05 — Sidebar Pictures — `src/components/WindowsConnectUI.tsx`
+- S05 — Sidebar This PC — `src/components/WindowsConnectUI.tsx`
+- S05 — Sidebar Network — `src/components/WindowsConnectUI.tsx`
+- S05 — Shared printer label — `src/components/WindowsConnectUI.tsx`
+- S05 — Shared printer type — `src/components/WindowsConnectUI.tsx`
+- S05 — Explorer status text — `src/components/WindowsConnectUI.tsx`
+- S05 — Menu Open — `src/components/WindowsConnectUI.tsx`
+- S05 — Menu Connect... — `src/components/WindowsConnectUI.tsx`
+- S05 — Menu Create shortcut — `src/components/WindowsConnectUI.tsx`
+- S05 — Menu Properties — `src/components/WindowsConnectUI.tsx`
+- S05 — Installation title — `src/components/WindowsConnectUI.tsx`
+- S05 — Installing label — `src/components/WindowsConnectUI.tsx`
+- S05 — Driver lookup — `src/components/WindowsConnectUI.tsx`
+- S05 — Install Cancel label — `src/components/WindowsConnectUI.tsx`
+- S04 — Jendela Control Panel — ‹ — `src/components/WindowsPrinterUI.tsx`
+- S04 — Jendela Control Panel — › — `src/components/WindowsPrinterUI.tsx`
+- S04 — Jendela Control Panel — ↑ — `src/components/WindowsPrinterUI.tsx`
+- S04 — Jendela Control Panel — Search Control Panel — `src/components/WindowsPrinterUI.tsx`
+- S04 — Control Panel — Navigasi — Control Panel — `src/components/WindowsPrinterUI.tsx`
+- S04 — Control Panel — Navigasi — Control Panel 02 — `src/components/WindowsPrinterUI.tsx`
+- S04 — Control Panel — Adjust your computer’s settings — `src/components/WindowsPrinterUI.tsx`
+- S04 — Control Panel — View by: — `src/components/WindowsPrinterUI.tsx`
+- S04 — Control Panel — Category  ▾ — `src/components/WindowsPrinterUI.tsx`
+- S04 — Control Panel — System and Security — `src/components/WindowsPrinterUI.tsx`
+- S04 — Control Panel — Review your computer’s status — `src/components/WindowsPrinterUI.tsx`
+- S04 — Control Panel — Save backup copies of your files — `src/components/WindowsPrinterUI.tsx`
+- S04 — Control Panel — Find and fix problems — `src/components/WindowsPrinterUI.tsx`
+- S04 — Control Panel — Network and Internet — `src/components/WindowsPrinterUI.tsx`
+- S04 — Control Panel — View network status and tasks — `src/components/WindowsPrinterUI.tsx`
+- S04 — Control Panel — Hardware and Sound — `src/components/WindowsPrinterUI.tsx`
+- S04 — Control Panel — View devices and printers — `src/components/WindowsPrinterUI.tsx`
+- S04 — Control Panel — Add a device — `src/components/WindowsPrinterUI.tsx`
+- S04 — Control Panel — Programs — `src/components/WindowsPrinterUI.tsx`
+- S04 — Control Panel — Uninstall a program — `src/components/WindowsPrinterUI.tsx`
+- S04 — Control Panel — User Accounts — `src/components/WindowsPrinterUI.tsx`
+- S04 — Control Panel — Change account type — `src/components/WindowsPrinterUI.tsx`
+- S04 — Control Panel — Appearance and Personalization — `src/components/WindowsPrinterUI.tsx`
+- S04 — Control Panel — Clock and Region — `src/components/WindowsPrinterUI.tsx`
+- S04 — Control Panel — Change date, time, or number formats — `src/components/WindowsPrinterUI.tsx`
+- S04 — Control Panel — Ease of Access — `src/components/WindowsPrinterUI.tsx`
+- S04 — Control Panel — Let Windows suggest settings — `src/components/WindowsPrinterUI.tsx`
+- S04 — Control Panel — Optimize visual display — `src/components/WindowsPrinterUI.tsx`
+- S04 — Network and Sharing Center — Navigasi — Network and Sharing Center — `src/components/WindowsPrinterUI.tsx`
+- S04 — Network and Sharing Center — Navigasi — Control Panel  ›  Network and Internet  ›  Network and  — `src/components/WindowsPrinterUI.tsx`
+- S04 — Network and Sharing Center — Control Panel Home — `src/components/WindowsPrinterUI.tsx`
+- S04 — Network and Sharing Center — Change adapter settings — `src/components/WindowsPrinterUI.tsx`
+- S04 — Network and Sharing Center — Change advanced sharing — `src/components/WindowsPrinterUI.tsx`
+- S04 — Network and Sharing Center — settings — `src/components/WindowsPrinterUI.tsx`
+- S04 — Network and Sharing Center — See also — `src/components/WindowsPrinterUI.tsx`
+- S04 — Network and Sharing Center — Internet Options — `src/components/WindowsPrinterUI.tsx`
+- S04 — Network and Sharing Center — Windows Defender Firewall — `src/components/WindowsPrinterUI.tsx`
+- S04 — Network and Sharing Center — View your basic network information — `src/components/WindowsPrinterUI.tsx`
+- S04 — Network and Sharing Center — and set up connections — `src/components/WindowsPrinterUI.tsx`
+- S04 — Network and Sharing Center — View your active networks — `src/components/WindowsPrinterUI.tsx`
+- S04 — Network and Sharing Center — Network — `src/components/WindowsPrinterUI.tsx`
+- S04 — Network and Sharing Center — Private network — `src/components/WindowsPrinterUI.tsx`
+- S04 — Network and Sharing Center — Access type: — `src/components/WindowsPrinterUI.tsx`
+- S04 — Network and Sharing Center — No Internet access — `src/components/WindowsPrinterUI.tsx`
+- S04 — Network and Sharing Center — Connections: — `src/components/WindowsPrinterUI.tsx`
+- S04 — Network and Sharing Center — Ethernet — `src/components/WindowsPrinterUI.tsx`
+- S04 — Network and Sharing Center — Change your networking settings — `src/components/WindowsPrinterUI.tsx`
+- S04 — Network and Sharing Center — Set up a new connection or network — `src/components/WindowsPrinterUI.tsx`
+- S04 — Network and Sharing Center — Set up a broadband, dial-up, or VPN connection; — `src/components/WindowsPrinterUI.tsx`
+- S04 — Network and Sharing Center — or set up a router or access point. — `src/components/WindowsPrinterUI.tsx`
+- S04 — Network and Sharing Center — Troubleshoot problems — `src/components/WindowsPrinterUI.tsx`
+- S04 — Network and Sharing Center — Diagnose and repair network problems, or get — `src/components/WindowsPrinterUI.tsx`
+- S04 — Network and Sharing Center — troubleshooting information. — `src/components/WindowsPrinterUI.tsx`
+- S04 — Devices title — `src/components/WindowsPrinterUI.tsx`
+- S04 — Devices breadcrumb — `src/components/WindowsPrinterUI.tsx`
+- S04 — Toolbar 0 — `src/components/WindowsPrinterUI.tsx`
+- S04 — Toolbar 1 — `src/components/WindowsPrinterUI.tsx`
+- S04 — Toolbar 2 — `src/components/WindowsPrinterUI.tsx`
+- S04 — Toolbar 3 — `src/components/WindowsPrinterUI.tsx`
+- S04 — Toolbar 4 — `src/components/WindowsPrinterUI.tsx`
+- S04 — Devices group — `src/components/WindowsPrinterUI.tsx`
+- S04 — Desktop label — `src/components/WindowsPrinterUI.tsx`
+- S04 — Keyboard label — `src/components/WindowsPrinterUI.tsx`
+- S04 — Mouse label — `src/components/WindowsPrinterUI.tsx`
+- S04 — Printers group — `src/components/WindowsPrinterUI.tsx`
+- S04 — EPSON label 1 — `src/components/WindowsPrinterUI.tsx`
+- S04 — EPSON label 2 — `src/components/WindowsPrinterUI.tsx`
+- S04 — Fax label — `src/components/WindowsPrinterUI.tsx`
+- S04 — PDF label 1 — `src/components/WindowsPrinterUI.tsx`
+- S04 — PDF label 2 — `src/components/WindowsPrinterUI.tsx`
+- S04 — Selection detail title — `src/components/WindowsPrinterUI.tsx`
+- S04 — Selection detail model — `src/components/WindowsPrinterUI.tsx`
+- S04 — Selection detail category — `src/components/WindowsPrinterUI.tsx`
+- S04 — Context 0 — `src/components/WindowsPrinterUI.tsx`
+- S04 — Context 1 — `src/components/WindowsPrinterUI.tsx`
+- S04 — Context 2 — `src/components/WindowsPrinterUI.tsx`
+- S04 — Context 3 — `src/components/WindowsPrinterUI.tsx`
+- S04 — Context 4 — `src/components/WindowsPrinterUI.tsx`
+- S04 — Context 5 — `src/components/WindowsPrinterUI.tsx`
+- S04 — Context 6 — `src/components/WindowsPrinterUI.tsx`
+- S04 — Context 7 — `src/components/WindowsPrinterUI.tsx`
+- S04 — Context 8 — `src/components/WindowsPrinterUI.tsx`
+- S04 — Properties title — `src/components/WindowsPrinterUI.tsx`
+- S04 — Tab label Color Management — `src/components/WindowsPrinterUI.tsx`
+- S04 — Tab label Security — `src/components/WindowsPrinterUI.tsx`
+- S04 — Tab label Version Information — `src/components/WindowsPrinterUI.tsx`
+- S04 — Tab label General — `src/components/WindowsPrinterUI.tsx`
+- S04 — Tab label Sharing — `src/components/WindowsPrinterUI.tsx`
+- S04 — Tab label Ports — `src/components/WindowsPrinterUI.tsx`
+- S04 — Tab label Advanced — `src/components/WindowsPrinterUI.tsx`
+- S04 — Tab label Utility — `src/components/WindowsPrinterUI.tsx`
+- S04 — Printer name — `src/components/WindowsPrinterUI.tsx`
+- S04 — Location label — `src/components/WindowsPrinterUI.tsx`
+- S04 — Comment label — `src/components/WindowsPrinterUI.tsx`
+- S04 — Model — `src/components/WindowsPrinterUI.tsx`
+- S04 — Features — `src/components/WindowsPrinterUI.tsx`
+- S04 — Color — `src/components/WindowsPrinterUI.tsx`
+- S04 — Duplex — `src/components/WindowsPrinterUI.tsx`
+- S04 — Preferences... label — `src/components/WindowsPrinterUI.tsx`
+- S04 — Print Test Page label — `src/components/WindowsPrinterUI.tsx`
+- S04 — Sharing explanation 1 — `src/components/WindowsPrinterUI.tsx`
+- S04 — Sharing explanation 2 — `src/components/WindowsPrinterUI.tsx`
+- S04 — Sharing explanation 3 — `src/components/WindowsPrinterUI.tsx`
+- S04 — Share this printer — `src/components/WindowsPrinterUI.tsx`
+- S04 — Share name label — `src/components/WindowsPrinterUI.tsx`
+- S04 — Share name value — `src/components/WindowsPrinterUI.tsx`
+- S04 — Render print jobs — `src/components/WindowsPrinterUI.tsx`
+- S04 — Drivers title — `src/components/WindowsPrinterUI.tsx`
+- S04 — Drivers description 1 — `src/components/WindowsPrinterUI.tsx`
+- S04 — Drivers description 2 — `src/components/WindowsPrinterUI.tsx`
+- S04 — Additional Drivers... label — `src/components/WindowsPrinterUI.tsx`
+- S04 — OK label — `src/components/WindowsPrinterUI.tsx`
+- S04 — Cancel label — `src/components/WindowsPrinterUI.tsx`
+- S04 — Apply label — `src/components/WindowsPrinterUI.tsx`
+
+## Visual / grup
+- S03 — Jendela Control Panel — Bidang — `src/components/WindowsNetworkUI.tsx`
+- S03 — Jendela Control Panel — Ikon panel — `src/components/WindowsNetworkUI.tsx`
+- S03 — Jendela Control Panel — Garis — `src/components/WindowsNetworkUI.tsx`
+- S03 — Jendela Control Panel — Bidang 02 — `src/components/WindowsNetworkUI.tsx`
+- S03 — Jendela Control Panel — Garis 02 — `src/components/WindowsNetworkUI.tsx`
+- S03 — Jendela Control Panel — Garis 03 — `src/components/WindowsNetworkUI.tsx`
+- S03 — Jendela Control Panel — Garis 04 — `src/components/WindowsNetworkUI.tsx`
+- S03 — Jendela Control Panel — Bidang 03 — `src/components/WindowsNetworkUI.tsx`
+- S03 — Jendela Control Panel — Ikon panel 02 — `src/components/WindowsNetworkUI.tsx`
+- S03 — Jendela Control Panel — Bidang 04 — `src/components/WindowsNetworkUI.tsx`
+- S03 — Jendela Control Panel — Kontrol bulat — `src/components/WindowsNetworkUI.tsx`
+- S03 — Jendela Control Panel — Garis 05 — `src/components/WindowsNetworkUI.tsx`
+- S03 — Jendela Control Panel — Garis 06 — `src/components/WindowsNetworkUI.tsx`
+- S03 — Control Panel — Ikon shield — `src/components/WindowsNetworkUI.tsx`
+- S03 — Control Panel — Ikon network — `src/components/WindowsNetworkUI.tsx`
+- S03 — Control Panel — Ikon printer — `src/components/WindowsNetworkUI.tsx`
+- S03 — Control Panel — Ikon programs — `src/components/WindowsNetworkUI.tsx`
+- S03 — Control Panel — Ikon users — `src/components/WindowsNetworkUI.tsx`
+- S03 — Control Panel — Ikon appearance — `src/components/WindowsNetworkUI.tsx`
+- S03 — Control Panel — Ikon clock — `src/components/WindowsNetworkUI.tsx`
+- S03 — Control Panel — Ikon access — `src/components/WindowsNetworkUI.tsx`
+- S03 — Network and Internet — Garis — `src/components/WindowsNetworkUI.tsx`
+- S03 — Network and Internet — Ikon network — `src/components/WindowsNetworkUI.tsx`
+- S03 — Network and Internet — Ikon internet — `src/components/WindowsNetworkUI.tsx`
+- S03 — Network and Sharing Center — Garis — `src/components/WindowsNetworkUI.tsx`
+- S03 — Network and Sharing Center — Garis 02 — `src/components/WindowsNetworkUI.tsx`
+- S03 — Network and Sharing Center — Ikon network — `src/components/WindowsNetworkUI.tsx`
+- S03 — Network and Sharing Center — Garis 03 — `src/components/WindowsNetworkUI.tsx`
+- S03 — Network and Sharing Center — Ikon network 02 — `src/components/WindowsNetworkUI.tsx`
+- S03 — Network and Sharing Center — Garis 04 — `src/components/WindowsNetworkUI.tsx`
+- S03 — Network and Sharing Center — Ikon network 03 — `src/components/WindowsNetworkUI.tsx`
+- S03 — Network and Sharing Center — Ikon trouble — `src/components/WindowsNetworkUI.tsx`
+- S03 — Sharing — Garis — `src/components/WindowsNetworkUI.tsx`
+- S03 — Sharing — Kontrol bulat — `src/components/WindowsNetworkUI.tsx`
+- S03 — Sharing — Garis 02 — `src/components/WindowsNetworkUI.tsx`
+- S03 — Sharing — Kontrol bulat 02 — `src/components/WindowsNetworkUI.tsx`
+- S03 — Sharing — Kontrol bulat 03 — `src/components/WindowsNetworkUI.tsx`
+- S03 — Sharing — Bidang — `src/components/WindowsNetworkUI.tsx`
+- S03 — Sharing — Garis 03 — `src/components/WindowsNetworkUI.tsx`
+- S03 — Sharing — Kontrol bulat 04 — `src/components/WindowsNetworkUI.tsx`
+- S03 — Sharing — Garis 04 — `src/components/WindowsNetworkUI.tsx`
+- S03 — Sharing — Kontrol bulat 05 — `src/components/WindowsNetworkUI.tsx`
+- S03 — Sharing — Kontrol bulat 06 — `src/components/WindowsNetworkUI.tsx`
+- S03 — Sharing — Kontrol bulat 07 — `src/components/WindowsNetworkUI.tsx`
+- S03 — Sharing — Garis 05 — `src/components/WindowsNetworkUI.tsx`
+- S03 — Sharing — Kontrol bulat 08 — `src/components/WindowsNetworkUI.tsx`
+- S03 — Sharing — Garis 06 — `src/components/WindowsNetworkUI.tsx`
+- S03 — Sharing — Kontrol bulat 09 — `src/components/WindowsNetworkUI.tsx`
+- S03 — Sharing — Bidang 02 — `src/components/WindowsNetworkUI.tsx`
+- S03 — Sharing — Bidang 03 — `src/components/WindowsNetworkUI.tsx`
+- S03 — Sharing — Ikon shield — `src/components/WindowsNetworkUI.tsx`
+- S03 — Sharing — Bidang 04 — `src/components/WindowsNetworkUI.tsx`
+- S03 — Network discovery OFF dot — `src/components/WindowsNetworkUI.tsx`
+- S03 — File and printer sharing OFF dot — `src/components/WindowsNetworkUI.tsx`
+- S03 — Run — Bidang — `src/components/WindowsNetworkUI.tsx`
+- S03 — Run — Bidang 02 — `src/components/WindowsNetworkUI.tsx`
+- S03 — Run — Ikon panel — `src/components/WindowsNetworkUI.tsx`
+- S03 — Run — Garis — `src/components/WindowsNetworkUI.tsx`
+- S03 — Run — Garis 02 — `src/components/WindowsNetworkUI.tsx`
+- S03 — Run — Ikon panel 02 — `src/components/WindowsNetworkUI.tsx`
+- S03 — Run — Bidang 03 — `src/components/WindowsNetworkUI.tsx`
+- S03 — Run — Isi Run (ketik) — `src/components/WindowsNetworkUI.tsx`
+- S03 — Run — Bidang 04 — `src/components/WindowsNetworkUI.tsx`
+- S03 — Run — Bidang 05 — `src/components/WindowsNetworkUI.tsx`
+- S03 — Run — Bidang 06 — `src/components/WindowsNetworkUI.tsx`
+- S01 — Kabel USB — `src/components/Topology01.tsx`
+- S01 — Kabel LAN — `src/components/Topology01.tsx`
+- S01 — Host Monitor casing — `src/components/Topology01.tsx`
+- S01 — Host Dokumen layar — `src/components/Topology01.tsx`
+- S01 — Host Ikon komputer jaringan — `src/components/Topology01.tsx`
+- S01 — Host ikon Printer Sharing — `src/components/Topology01.tsx`
+- S01 — Host Status berhasil — `src/components/Topology01.tsx`
+- S01 — Client Monitor casing — `src/components/Topology01.tsx`
+- S01 — Client Dokumen layar — `src/components/Topology01.tsx`
+- S01 — Client Ikon komputer jaringan — `src/components/Topology01.tsx`
+- S01 — Client Status berhasil — `src/components/Topology01.tsx`
+- S01 — Printer bayangan — `src/components/Topology01.tsx`
+- S01 — Printer casing — `src/components/Topology01.tsx`
+- S01 — Printer panel tombol — `src/components/Topology01.tsx`
+- S01 — Kertas hasil cetak — `src/components/Topology01.tsx`
+- S01 — Ikon Wi-Fi tidak tersedia — `src/components/Topology01.tsx`
+- S01 — Data cetak bergerak — `src/components/Topology01.tsx`
+- S02 — Kabel USB — `src/components/Topology02.tsx`
+- S02 — Kabel LAN — `src/components/Topology02.tsx`
+- S02 — Host Monitor casing — `src/components/Topology02.tsx`
+- S02 — Host Dokumen layar — `src/components/Topology02.tsx`
+- S02 — Host Ikon komputer jaringan — `src/components/Topology02.tsx`
+- S02 — Host ikon Printer Sharing — `src/components/Topology02.tsx`
+- S02 — Host Status berhasil — `src/components/Topology02.tsx`
+- S02 — Client Monitor casing — `src/components/Topology02.tsx`
+- S02 — Client Dokumen layar — `src/components/Topology02.tsx`
+- S02 — Client Ikon komputer jaringan — `src/components/Topology02.tsx`
+- S02 — Client Status berhasil — `src/components/Topology02.tsx`
+- S02 — Printer bayangan — `src/components/Topology02.tsx`
+- S02 — Printer casing — `src/components/Topology02.tsx`
+- S02 — Printer panel tombol — `src/components/Topology02.tsx`
+- S02 — Kertas hasil cetak — `src/components/Topology02.tsx`
+- S02 — Ikon Wi-Fi tidak tersedia — `src/components/Topology02.tsx`
+- S03 — Kabel USB — `src/components/Topology03.tsx`
+- S03 — Kabel LAN — `src/components/Topology03.tsx`
+- S03 — Host Monitor casing — `src/components/Topology03.tsx`
+- S03 — Host Dokumen layar — `src/components/Topology03.tsx`
+- S03 — Host Ikon komputer jaringan — `src/components/Topology03.tsx`
+- S03 — Host ikon Printer Sharing — `src/components/Topology03.tsx`
+- S03 — Host Status berhasil — `src/components/Topology03.tsx`
+- S03 — Client Monitor casing — `src/components/Topology03.tsx`
+- S03 — Client Dokumen layar — `src/components/Topology03.tsx`
+- S03 — Client Ikon komputer jaringan — `src/components/Topology03.tsx`
+- S03 — Client Status berhasil — `src/components/Topology03.tsx`
+- S03 — Printer bayangan — `src/components/Topology03.tsx`
+- S03 — Printer casing — `src/components/Topology03.tsx`
+- S03 — Printer panel tombol — `src/components/Topology03.tsx`
+- S03 — Kertas hasil cetak — `src/components/Topology03.tsx`
+- S03 — Ikon Wi-Fi tidak tersedia — `src/components/Topology03.tsx`
+- S03 — Cursor Windows hotspot — `src/scenes/Scene03.tsx`
+- Global — Background — `src/components/EditorialBackground.tsx`
+- S05 — Kabel USB — `src/components/Topology05.tsx`
+- S05 — Kabel LAN — `src/components/Topology05.tsx`
+- S05 — Host Monitor casing — `src/components/Topology05.tsx`
+- S05 — Host Dokumen layar — `src/components/Topology05.tsx`
+- S05 — Host Ikon komputer jaringan — `src/components/Topology05.tsx`
+- S05 — Host ikon Printer Sharing — `src/components/Topology05.tsx`
+- S05 — Host Status berhasil — `src/components/Topology05.tsx`
+- S05 — Client Monitor casing — `src/components/Topology05.tsx`
+- S05 — Client Dokumen layar — `src/components/Topology05.tsx`
+- S05 — Client Ikon komputer jaringan — `src/components/Topology05.tsx`
+- S05 — Client Status berhasil — `src/components/Topology05.tsx`
+- S05 — Printer bayangan — `src/components/Topology05.tsx`
+- S05 — Printer casing — `src/components/Topology05.tsx`
+- S05 — Printer panel tombol — `src/components/Topology05.tsx`
+- S05 — Kertas hasil cetak — `src/components/Topology05.tsx`
+- S05 — Ikon Wi-Fi tidak tersedia — `src/components/Topology05.tsx`
+- S05 — Desktop wallpaper — `src/components/WindowsConnectUI.tsx`
+- S05 — Recycle Bin icon — `src/components/WindowsConnectUI.tsx`
+- S05 — Taskbar — `src/components/WindowsConnectUI.tsx`
+- S05 — Start icon — `src/components/WindowsConnectUI.tsx`
+- S05 — Taskbar Search — `src/components/WindowsConnectUI.tsx`
+- S05 — Explorer taskbar icon — `src/components/WindowsConnectUI.tsx`
+- S05 — Win key — `src/components/WindowsConnectUI.tsx`
+- S05 — Win key logo — `src/components/WindowsConnectUI.tsx`
+- S05 — R key — `src/components/WindowsConnectUI.tsx`
+- S05 — Run dialog — `src/components/WindowsConnectUI.tsx`
+- S05 — Run titlebar — `src/components/WindowsConnectUI.tsx`
+- S05 — Run icon — `src/components/WindowsConnectUI.tsx`
+- S05 — Run close — `src/components/WindowsConnectUI.tsx`
+- S05 — Run input — `src/components/WindowsConnectUI.tsx`
+- S05 — Run dropdown — `src/components/WindowsConnectUI.tsx`
+- S05 — OK bidang — `src/components/WindowsConnectUI.tsx`
+- S05 — Cancel bidang — `src/components/WindowsConnectUI.tsx`
+- S05 — Browse... bidang — `src/components/WindowsConnectUI.tsx`
+- S05 — Explorer window — `src/components/WindowsConnectUI.tsx`
+- S05 — Explorer window buttons — `src/components/WindowsConnectUI.tsx`
+- S05 — Ribbon File tab — `src/components/WindowsConnectUI.tsx`
+- S05 — Address bar — `src/components/WindowsConnectUI.tsx`
+- S05 — Search box — `src/components/WindowsConnectUI.tsx`
+- S05 — Sidebar — `src/components/WindowsConnectUI.tsx`
+- S05 — Sidebar icon Quick access — `src/components/WindowsConnectUI.tsx`
+- S05 — Sidebar icon Desktop — `src/components/WindowsConnectUI.tsx`
+- S05 — Sidebar icon Downloads — `src/components/WindowsConnectUI.tsx`
+- S05 — Sidebar icon Documents — `src/components/WindowsConnectUI.tsx`
+- S05 — Sidebar icon Pictures — `src/components/WindowsConnectUI.tsx`
+- S05 — Sidebar icon This PC — `src/components/WindowsConnectUI.tsx`
+- S05 — Network selection — `src/components/WindowsConnectUI.tsx`
+- S05 — Sidebar icon Network — `src/components/WindowsConnectUI.tsx`
+- S05 — Printer selection — `src/components/WindowsConnectUI.tsx`
+- S05 — Network printer icon — `src/components/WindowsConnectUI.tsx`
+- S05 — Explorer status — `src/components/WindowsConnectUI.tsx`
+- S05 — Connect context menu — `src/components/WindowsConnectUI.tsx`
+- S05 — Connect hover — `src/components/WindowsConnectUI.tsx`
+- S05 — Installation shadow — `src/components/WindowsConnectUI.tsx`
+- S05 — Installation window — `src/components/WindowsConnectUI.tsx`
+- S05 — Installation titlebar — `src/components/WindowsConnectUI.tsx`
+- S05 — Installing icon — `src/components/WindowsConnectUI.tsx`
+- S05 — Progress track — `src/components/WindowsConnectUI.tsx`
+- S05 — Progress moving segment — `src/components/WindowsConnectUI.tsx`
+- S05 — Install Cancel bidang — `src/components/WindowsConnectUI.tsx`
+- S04 — Jendela Control Panel — Bidang — `src/components/WindowsPrinterUI.tsx`
+- S04 — Jendela Control Panel — Ikon panel — `src/components/WindowsPrinterUI.tsx`
+- S04 — Jendela Control Panel — Garis — `src/components/WindowsPrinterUI.tsx`
+- S04 — Jendela Control Panel — Bidang 02 — `src/components/WindowsPrinterUI.tsx`
+- S04 — Jendela Control Panel — Garis 02 — `src/components/WindowsPrinterUI.tsx`
+- S04 — Jendela Control Panel — Garis 03 — `src/components/WindowsPrinterUI.tsx`
+- S04 — Jendela Control Panel — Garis 04 — `src/components/WindowsPrinterUI.tsx`
+- S04 — Jendela Control Panel — Bidang 03 — `src/components/WindowsPrinterUI.tsx`
+- S04 — Jendela Control Panel — Ikon panel 02 — `src/components/WindowsPrinterUI.tsx`
+- S04 — Jendela Control Panel — Bidang 04 — `src/components/WindowsPrinterUI.tsx`
+- S04 — Jendela Control Panel — Kontrol bulat — `src/components/WindowsPrinterUI.tsx`
+- S04 — Jendela Control Panel — Garis 05 — `src/components/WindowsPrinterUI.tsx`
+- S04 — Jendela Control Panel — Garis 06 — `src/components/WindowsPrinterUI.tsx`
+- S04 — Control Panel — Ikon shield — `src/components/WindowsPrinterUI.tsx`
+- S04 — Control Panel — Ikon network — `src/components/WindowsPrinterUI.tsx`
+- S04 — Control Panel — Ikon printer — `src/components/WindowsPrinterUI.tsx`
+- S04 — Control Panel — Ikon programs — `src/components/WindowsPrinterUI.tsx`
+- S04 — Control Panel — Ikon users — `src/components/WindowsPrinterUI.tsx`
+- S04 — Control Panel — Ikon appearance — `src/components/WindowsPrinterUI.tsx`
+- S04 — Control Panel — Ikon clock — `src/components/WindowsPrinterUI.tsx`
+- S04 — Control Panel — Ikon access — `src/components/WindowsPrinterUI.tsx`
+- S04 — Network and Sharing Center — Garis — `src/components/WindowsPrinterUI.tsx`
+- S04 — Network and Sharing Center — Garis 02 — `src/components/WindowsPrinterUI.tsx`
+- S04 — Network and Sharing Center — Ikon network — `src/components/WindowsPrinterUI.tsx`
+- S04 — Network and Sharing Center — Garis 03 — `src/components/WindowsPrinterUI.tsx`
+- S04 — Network and Sharing Center — Ikon network 02 — `src/components/WindowsPrinterUI.tsx`
+- S04 — Network and Sharing Center — Garis 04 — `src/components/WindowsPrinterUI.tsx`
+- S04 — Network and Sharing Center — Ikon network 03 — `src/components/WindowsPrinterUI.tsx`
+- S04 — Network and Sharing Center — Ikon trouble — `src/components/WindowsPrinterUI.tsx`
+- S04 — Toolbar — `src/components/WindowsPrinterUI.tsx`
+- S04 — Devices separator — `src/components/WindowsPrinterUI.tsx`
+- S04 — Desktop icon — `src/components/WindowsPrinterUI.tsx`
+- S04 — USB keyboard icon — `src/components/WindowsPrinterUI.tsx`
+- S04 — Mouse icon — `src/components/WindowsPrinterUI.tsx`
+- S04 — Printers separator — `src/components/WindowsPrinterUI.tsx`
+- S04 — Selected EPSON tile — `src/components/WindowsPrinterUI.tsx`
+- S04 — EPSON icon — `src/components/WindowsPrinterUI.tsx`
+- S04 — Fax icon — `src/components/WindowsPrinterUI.tsx`
+- S04 — PDF icon — `src/components/WindowsPrinterUI.tsx`
+- S04 — Selection detail bar — `src/components/WindowsPrinterUI.tsx`
+- S04 — Selection detail icon — `src/components/WindowsPrinterUI.tsx`
+- S04 — Printer context menu — `src/components/WindowsPrinterUI.tsx`
+- S04 — Properties hover — `src/components/WindowsPrinterUI.tsx`
+- S04 — Properties shadow — `src/components/WindowsPrinterUI.tsx`
+- S04 — Properties window — `src/components/WindowsPrinterUI.tsx`
+- S04 — Properties titlebar — `src/components/WindowsPrinterUI.tsx`
+- S04 — Properties close — `src/components/WindowsPrinterUI.tsx`
+- S04 — Tab Color Management — `src/components/WindowsPrinterUI.tsx`
+- S04 — Tab Security — `src/components/WindowsPrinterUI.tsx`
+- S04 — Tab Version Information — `src/components/WindowsPrinterUI.tsx`
+- S04 — Tab General — `src/components/WindowsPrinterUI.tsx`
+- S04 — Tab Sharing — `src/components/WindowsPrinterUI.tsx`
+- S04 — Tab Ports — `src/components/WindowsPrinterUI.tsx`
+- S04 — Tab Advanced — `src/components/WindowsPrinterUI.tsx`
+- S04 — Tab Utility — `src/components/WindowsPrinterUI.tsx`
+- S04 — Tab content — `src/components/WindowsPrinterUI.tsx`
+- S04 — General printer — `src/components/WindowsPrinterUI.tsx`
+- S04 — Printer name field — `src/components/WindowsPrinterUI.tsx`
+- S04 — Location field — `src/components/WindowsPrinterUI.tsx`
+- S04 — Comment field — `src/components/WindowsPrinterUI.tsx`
+- S04 — Preferences... bidang — `src/components/WindowsPrinterUI.tsx`
+- S04 — Print Test Page bidang — `src/components/WindowsPrinterUI.tsx`
+- S04 — Sharing printer icon — `src/components/WindowsPrinterUI.tsx`
+- S04 — Share checkbox — `src/components/WindowsPrinterUI.tsx`
+- S04 — Share checkmark — `src/components/WindowsPrinterUI.tsx`
+- S04 — Share name box — `src/components/WindowsPrinterUI.tsx`
+- S04 — Render checkbox — `src/components/WindowsPrinterUI.tsx`
+- S04 — Render checkmark — `src/components/WindowsPrinterUI.tsx`
+- S04 — Additional Drivers... bidang — `src/components/WindowsPrinterUI.tsx`
+- S04 — OK bidang — `src/components/WindowsPrinterUI.tsx`
+- S04 — Cancel bidang — `src/components/WindowsPrinterUI.tsx`
+- S04 — Apply bidang — `src/components/WindowsPrinterUI.tsx`
+- S04 — Cursor Windows hotspot — `src/scenes/Scene04.tsx`
+- S05 — Cursor Windows hotspot — `src/scenes/Scene05.tsx`
+- S04 — Jendela Control Panel — Shadow — `src/components/WindowsPrinterUI.tsx`
+- S04 — Jendela Control Panel — Background — `src/components/WindowsPrinterUI.tsx`
+
+## Props teks
+- Run command — props — `runCommand`
+- S05 UNC address — props — `hostAddress`
+
+## Source/config
+- Kamera, path cursor, action frames, typing offsets: `src/config/scene03-timing.json`, `scene04-timing.json`, `scene05-timing.json`.
+- Primitive di dalam grup SVG: source-editable; bukan jaminan drag per primitive.
+- Subtitle timing: `src/config/narration.json`; teks literal di `Captions*.tsx`.
+
+## S06–08 — target tambahan
+- S06: Notepad, dialog Print dan pilihan printer, cursor hotspot, host/client monitor, simbol sharing/dokumen, LED, kabel LAN/USB, packet, tray, casing, slot, panel, output sheet, label, subtitle per cue.
+- S07: bubble body/avatars/dots, printer sublayer, paper feed, teks komentar dinamis, caret, send icon, subtitle per cue. Ketikan memakai Props `ctaComment`, bukan teks native literal; batas tampilan 2 baris, teks yang jauh lebih panjang memerlukan reflow. Tidak ada judul pengulang VO.
+- S08: layer cover scale sebagai grup, title literal tiga baris, diagram per objek, packet, print sheet, hasil; tidak ada subtitle. Scale `0.87963 0.8802083`, sesuai referensi proporsional; edit group scale bila perlu.
+- Periksa `production/editable-blueprint.json` untuk semua nama literal. Native AST tidak membuktikan GUI; path/dimensi internal SVG, geometry reflow, caret, timing keyframe computed, dan pose parent dapat diubah via source/config. Jangan mengklaim semua property drag/Save sampai uji Windows.

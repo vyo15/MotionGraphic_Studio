@@ -1,0 +1,71 @@
+{
+  "contractVersion": "1.0.0",
+  "id": "SharingPrinterLan",
+  "slug": "sharing-printer-lan",
+  "title": "Sharing Printer Tanpa Wi-Fi",
+  "entry": "src/Video.tsx",
+  "exportName": "Video",
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "durationInFrames": 3111,
+  "defaultProps": {
+    "showSubtitles": true,
+    "backgroundColor": "#F7F7F5",
+    "runCommand": "control",
+    "hostAddress": "\\\\192.168.10.1",
+    "ctaComment": "Aku juga pernah pakai cara ini."
+  },
+  "editableContract": "studio-direct-v4",
+  "motionPlanContract": "focus-driven-v1",
+  "segments": [
+    {
+      "id": "SharingPrinterLan-S01",
+      "title": "Hook",
+      "startFrame": 0,
+      "durationInFrames": 276
+    },
+    {
+      "id": "SharingPrinterLan-S02",
+      "title": "Koneksi jaringan",
+      "startFrame": 276,
+      "durationInFrames": 330
+    },
+    {
+      "id": "SharingPrinterLan-S03",
+      "title": "Network Sharing",
+      "startFrame": 606,
+      "durationInFrames": 720
+    },
+    {
+      "id": "SharingPrinterLan-S04",
+      "title": "Sharing Printer",
+      "startFrame": 1326,
+      "durationInFrames": 540
+    },
+    {
+      "id": "SharingPrinterLan-S05",
+      "title": "Menghubungkan printer",
+      "startFrame": 1866,
+      "durationInFrames": 450
+    },
+    {
+      "id": "SharingPrinterLan-S06",
+      "title": "Hasil cetak",
+      "startFrame": 2316,
+      "durationInFrames": 390
+    },
+    {
+      "id": "SharingPrinterLan-S07",
+      "title": "CTA",
+      "startFrame": 2706,
+      "durationInFrames": 225
+    },
+    {
+      "id": "SharingPrinterLan-S08",
+      "title": "Cover Reels",
+      "startFrame": 2931,
+      "durationInFrames": 180
+    }
+  ]
+}

@@ -2106,6 +2106,10 @@
     {
       "name": "S10 — Gallery artwork XLSX",
       "source": "src/scenes/Scene10.tsx"
+    },
+    {
+      "name": "S06 — Match Cut camera",
+      "source": "src/scenes/Scene06.tsx"
     }
   ],
   "propsTextTargets": [],

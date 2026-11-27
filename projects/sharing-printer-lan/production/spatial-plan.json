@@ -1,0 +1,1087 @@
+{
+  "schemaVersion": 1,
+  "narrationHash": "2b7b7143e3637a3889e2b23e6d7a967323493123b656055280f34371c37af98d",
+  "safeRect": {
+    "x": 50,
+    "y": 250,
+    "w": 980,
+    "h": 1320
+  },
+  "worlds": [
+    {
+      "id": "control-panel",
+      "viewport": {
+        "x": 50,
+        "y": 250,
+        "w": 980,
+        "h": 1070
+      },
+      "keys": [
+        {
+          "frame": 772,
+          "value": {
+            "cx": 540,
+            "cy": 774,
+            "zoom": 1
+          },
+          "ease": "smooth"
+        },
+        {
+          "frame": 791,
+          "value": {
+            "cx": 540,
+            "cy": 774,
+            "zoom": 1
+          },
+          "ease": "smooth"
+        },
+        {
+          "frame": 812,
+          "value": {
+            "cx": 392,
+            "cy": 740,
+            "zoom": 1.4
+          },
+          "ease": "smooth"
+        },
+        {
+          "frame": 831,
+          "value": {
+            "cx": 392,
+            "cy": 740,
+            "zoom": 1.4
+          },
+          "ease": "smooth"
+        },
+        {
+          "frame": 842,
+          "value": {
+            "cx": 392,
+            "cy": 740,
+            "zoom": 1.4
+          },
+          "ease": "smooth"
+        },
+        {
+          "frame": 859,
+          "value": {
+            "cx": 615,
+            "cy": 716,
+            "zoom": 1.28
+          },
+          "ease": "smooth"
+        },
+        {
+          "frame": 876,
+          "value": {
+            "cx": 615,
+            "cy": 716,
+            "zoom": 1.28
+          },
+          "ease": "smooth"
+        },
+        {
+          "frame": 913,
+          "value": {
+            "cx": 615,
+            "cy": 716,
+            "zoom": 1.28
+          },
+          "ease": "smooth"
+        },
+        {
+          "frame": 932,
+          "value": {
+            "cx": 440,
+            "cy": 710,
+            "zoom": 1.25
+          },
+          "ease": "smooth"
+        },
+        {
+          "frame": 945,
+          "value": {
+            "cx": 440,
+            "cy": 710,
+            "zoom": 1.25
+          },
+          "ease": "smooth"
+        },
+        {
+          "frame": 1002,
+          "value": {
+            "cx": 440,
+            "cy": 710,
+            "zoom": 1.25
+          },
+          "ease": "smooth"
+        },
+        {
+          "frame": 1023,
+          "value": {
+            "cx": 540,
+            "cy": 774,
+            "zoom": 1.0
+          },
+          "ease": "smooth"
+        },
+        {
+          "frame": 1034,
+          "value": {
+            "cx": 540,
+            "cy": 774,
+            "zoom": 1.0
+          },
+          "ease": "smooth"
+        },
+        {
+          "frame": 1058,
+          "value": {
+            "cx": 392,
+            "cy": 800,
+            "zoom": 1.45
+          },
+          "ease": "smooth"
+        },
+        {
+          "frame": 1194,
+          "value": {
+            "cx": 392,
+            "cy": 800,
+            "zoom": 1.45
+          },
+          "ease": "smooth"
+        },
+        {
+          "frame": 1216,
+          "value": {
+            "cx": 540,
+            "cy": 774,
+            "zoom": 1.0
+          },
+          "ease": "smooth"
+        },
+        {
+          "frame": 1250,
+          "value": {
+            "cx": 540,
+            "cy": 774,
+            "zoom": 1.0
+          },
+          "ease": "smooth"
+        },
+        {
+          "frame": 1326,
+          "value": {
+            "cx": 540,
+            "cy": 774,
+            "zoom": 1.0
+          },
+          "ease": "smooth"
+        }
+      ]
+    },
+    {
+      "id": "printer-ui-fixed",
+      "viewport": {
+        "x": 50,
+        "y": 250,
+        "w": 980,
+        "h": 1070
+      },
+      "keys": [
+        {
+          "frame": 1326,
+          "value": {
+            "cx": 540,
+            "cy": 774,
+            "zoom": 1
+          },
+          "ease": "smooth"
+        },
+        {
+          "frame": 2315,
+          "value": {
+            "cx": 540,
+            "cy": 774,
+            "zoom": 1
+          },
+          "ease": "smooth"
+        }
+      ]
+    }
+  ],
+  "tracks": [
+    {
+      "id": "subtitle",
+      "space": "screen",
+      "protected": true,
+      "start": 0,
+      "end": 2316,
+      "keys": [
+        {
+          "frame": 0,
+          "value": {
+            "x": 90,
+            "y": 1380,
+            "w": 900,
+            "h": 112
+          }
+        },
+        {
+          "frame": 2315,
+          "value": {
+            "x": 90,
+            "y": 1380,
+            "w": 900,
+            "h": 112
+          }
+        }
+      ]
+    },
+    {
+      "id": "topology-safe-region",
+      "space": "screen",
+      "protected": false,
+      "start": 0,
+      "end": 690,
+      "keys": [
+        {
+          "frame": 0,
+          "value": {
+            "x": 50,
+            "y": 250,
+            "w": 980,
+            "h": 1070
+          }
+        },
+        {
+          "frame": 689,
+          "value": {
+            "x": 50,
+            "y": 250,
+            "w": 980,
+            "h": 1070
+          }
+        }
+      ]
+    },
+    {
+      "id": "ui-viewport",
+      "space": "screen",
+      "protected": true,
+      "start": 690,
+      "end": 1326,
+      "keys": [
+        {
+          "frame": 690,
+          "value": {
+            "x": 50,
+            "y": 250,
+            "w": 980,
+            "h": 1070
+          }
+        },
+        {
+          "frame": 1325,
+          "value": {
+            "x": 50,
+            "y": 250,
+            "w": 980,
+            "h": 1070
+          }
+        }
+      ]
+    },
+    {
+      "id": "focus-10",
+      "space": "world",
+      "protected": true,
+      "start": 913,
+      "end": 914,
+      "keys": [
+        {
+          "frame": 913,
+          "value": {
+            "x": 360,
+            "y": 490,
+            "w": 250,
+            "h": 60
+          }
+        }
+      ],
+      "worldId": "control-panel"
+    },
+    {
+      "id": "focus-11",
+      "space": "world",
+      "protected": true,
+      "start": 1002,
+      "end": 1003,
+      "keys": [
+        {
+          "frame": 1002,
+          "value": {
+            "x": 74,
+            "y": 605,
+            "w": 200,
+            "h": 45
+          }
+        }
+      ],
+      "worldId": "control-panel"
+    },
+    {
+      "id": "focus-12",
+      "space": "world",
+      "protected": true,
+      "start": 1089,
+      "end": 1090,
+      "keys": [
+        {
+          "frame": 1089,
+          "value": {
+            "x": 142,
+            "y": 715,
+            "w": 300,
+            "h": 45
+          }
+        }
+      ],
+      "worldId": "control-panel"
+    },
+    {
+      "id": "focus-13",
+      "space": "world",
+      "protected": true,
+      "start": 1175,
+      "end": 1176,
+      "keys": [
+        {
+          "frame": 1175,
+          "value": {
+            "x": 142,
+            "y": 924,
+            "w": 320,
+            "h": 42
+          }
+        }
+      ],
+      "worldId": "control-panel"
+    },
+    {
+      "id": "focus-14",
+      "space": "world",
+      "protected": true,
+      "start": 1249,
+      "end": 1250,
+      "keys": [
+        {
+          "frame": 1249,
+          "value": {
+            "x": 706,
+            "y": 1105,
+            "w": 180,
+            "h": 34
+          }
+        }
+      ],
+      "worldId": "control-panel"
+    },
+    {
+      "id": "s04-s05-ui",
+      "space": "screen",
+      "protected": true,
+      "start": 1326,
+      "end": 2316,
+      "keys": [
+        {
+          "frame": 1326,
+          "value": {
+            "x": 50,
+            "y": 250,
+            "w": 980,
+            "h": 1070
+          }
+        },
+        {
+          "frame": 2315,
+          "value": {
+            "x": 50,
+            "y": 250,
+            "w": 980,
+            "h": 1070
+          }
+        }
+      ]
+    },
+    {
+      "id": "focus-s04-s05-1",
+      "space": "world",
+      "protected": true,
+      "start": 1385,
+      "end": 1386,
+      "keys": [
+        {
+          "frame": 1385,
+          "value": {
+            "x": 74,
+            "y": 503,
+            "w": 170,
+            "h": 30
+          }
+        }
+      ],
+      "worldId": "printer-ui-fixed"
+    },
+    {
+      "id": "focus-s04-s05-2",
+      "space": "world",
+      "protected": true,
+      "start": 1445,
+      "end": 1446,
+      "keys": [
+        {
+          "frame": 1445,
+          "value": {
+            "x": 141,
+            "y": 848,
+            "w": 245,
+            "h": 30
+          }
+        }
+      ],
+      "worldId": "printer-ui-fixed"
+    },
+    {
+      "id": "focus-s04-s05-3",
+      "space": "world",
+      "protected": true,
+      "start": 1505,
+      "end": 1506,
+      "keys": [
+        {
+          "frame": 1505,
+          "value": {
+            "x": 74,
+            "y": 738,
+            "w": 160,
+            "h": 135
+          }
+        }
+      ],
+      "worldId": "printer-ui-fixed"
+    },
+    {
+      "id": "focus-s04-s05-4",
+      "space": "world",
+      "protected": true,
+      "start": 1565,
+      "end": 1566,
+      "keys": [
+        {
+          "frame": 1565,
+          "value": {
+            "x": 166,
+            "y": 902,
+            "w": 241,
+            "h": 27
+          }
+        }
+      ],
+      "worldId": "printer-ui-fixed"
+    },
+    {
+      "id": "focus-s04-s05-5",
+      "space": "world",
+      "protected": true,
+      "start": 1625,
+      "end": 1626,
+      "keys": [
+        {
+          "frame": 1625,
+          "value": {
+            "x": 354,
+            "y": 445,
+            "w": 112,
+            "h": 31
+          }
+        }
+      ],
+      "worldId": "printer-ui-fixed"
+    },
+    {
+      "id": "focus-s04-s05-6",
+      "space": "world",
+      "protected": true,
+      "start": 1685,
+      "end": 1686,
+      "keys": [
+        {
+          "frame": 1685,
+          "value": {
+            "x": 263,
+            "y": 669,
+            "w": 220,
+            "h": 30
+          }
+        }
+      ],
+      "worldId": "printer-ui-fixed"
+    },
+    {
+      "id": "focus-s04-s05-7",
+      "space": "world",
+      "protected": true,
+      "start": 1805,
+      "end": 1806,
+      "keys": [
+        {
+          "frame": 1805,
+          "value": {
+            "x": 526,
+            "y": 1072,
+            "w": 120,
+            "h": 42
+          }
+        }
+      ],
+      "worldId": "printer-ui-fixed"
+    },
+    {
+      "id": "focus-s04-s05-8",
+      "space": "world",
+      "protected": true,
+      "start": 2075,
+      "end": 2076,
+      "keys": [
+        {
+          "frame": 2075,
+          "value": {
+            "x": 472,
+            "y": 934,
+            "w": 132,
+            "h": 43
+          }
+        }
+      ],
+      "worldId": "printer-ui-fixed"
+    },
+    {
+      "id": "focus-s04-s05-9",
+      "space": "world",
+      "protected": true,
+      "start": 2189,
+      "end": 2190,
+      "keys": [
+        {
+          "frame": 2189,
+          "value": {
+            "x": 443,
+            "y": 613,
+            "w": 240,
+            "h": 29
+          }
+        }
+      ],
+      "worldId": "printer-ui-fixed"
+    },
+    {
+      "id": "s06-subtitle",
+      "space": "screen",
+      "protected": true,
+      "start": 2316,
+      "end": 2706,
+      "keys": [
+        {
+          "frame": 2316,
+          "value": {
+            "x": 90,
+            "y": 1380,
+            "w": 900,
+            "h": 112
+          }
+        },
+        {
+          "frame": 2705,
+          "value": {
+            "x": 90,
+            "y": 1380,
+            "w": 900,
+            "h": 112
+          }
+        }
+      ]
+    },
+    {
+      "id": "s07-subtitle",
+      "space": "screen",
+      "protected": true,
+      "start": 2706,
+      "end": 2931,
+      "keys": [
+        {
+          "frame": 2706,
+          "value": {
+            "x": 90,
+            "y": 1380,
+            "w": 900,
+            "h": 112
+          }
+        },
+        {
+          "frame": 2930,
+          "value": {
+            "x": 90,
+            "y": 1380,
+            "w": 900,
+            "h": 112
+          }
+        }
+      ]
+    },
+    {
+      "id": "s06-print-ui",
+      "space": "screen",
+      "protected": true,
+      "start": 2316,
+      "end": 2490,
+      "keys": [
+        {
+          "frame": 2316,
+          "value": {
+            "x": 50,
+            "y": 250,
+            "w": 980,
+            "h": 1070
+          }
+        },
+        {
+          "frame": 2489,
+          "value": {
+            "x": 50,
+            "y": 250,
+            "w": 980,
+            "h": 1070
+          }
+        }
+      ]
+    },
+    {
+      "id": "s06-host",
+      "space": "screen",
+      "protected": true,
+      "start": 2490,
+      "end": 2706,
+      "keys": [
+        {
+          "frame": 2490,
+          "value": {
+            "x": 108,
+            "y": 458,
+            "w": 324,
+            "h": 256
+          }
+        },
+        {
+          "frame": 2705,
+          "value": {
+            "x": 108,
+            "y": 458,
+            "w": 324,
+            "h": 256
+          }
+        }
+      ]
+    },
+    {
+      "id": "s06-client",
+      "space": "screen",
+      "protected": true,
+      "start": 2490,
+      "end": 2706,
+      "keys": [
+        {
+          "frame": 2490,
+          "value": {
+            "x": 648,
+            "y": 458,
+            "w": 324,
+            "h": 256
+          }
+        },
+        {
+          "frame": 2705,
+          "value": {
+            "x": 648,
+            "y": 458,
+            "w": 324,
+            "h": 256
+          }
+        }
+      ]
+    },
+    {
+      "id": "s06-printer",
+      "space": "screen",
+      "protected": true,
+      "start": 2490,
+      "end": 2706,
+      "keys": [
+        {
+          "frame": 2490,
+          "value": {
+            "x": 340,
+            "y": 800,
+            "w": 400,
+            "h": 373
+          }
+        },
+        {
+          "frame": 2705,
+          "value": {
+            "x": 340,
+            "y": 800,
+            "w": 400,
+            "h": 373
+          }
+        }
+      ]
+    },
+    {
+      "id": "s06-host-label",
+      "space": "screen",
+      "protected": true,
+      "start": 2586,
+      "end": 2706,
+      "keys": [
+        {
+          "frame": 2586,
+          "value": {
+            "x": 190,
+            "y": 724,
+            "w": 160,
+            "h": 32
+          }
+        },
+        {
+          "frame": 2705,
+          "value": {
+            "x": 190,
+            "y": 724,
+            "w": 160,
+            "h": 32
+          }
+        }
+      ]
+    },
+    {
+      "id": "s07-fade-composition",
+      "space": "screen",
+      "protected": true,
+      "start": 2706,
+      "end": 2723,
+      "keys": [
+        {
+          "frame": 2706,
+          "value": {
+            "x": 50,
+            "y": 250,
+            "w": 980,
+            "h": 1070
+          }
+        },
+        {
+          "frame": 2722,
+          "value": {
+            "x": 50,
+            "y": 250,
+            "w": 980,
+            "h": 1070
+          }
+        }
+      ]
+    },
+    {
+      "id": "s07-first-bubble",
+      "space": "screen",
+      "protected": true,
+      "start": 2723,
+      "end": 2832,
+      "keys": [
+        {
+          "frame": 2723,
+          "value": {
+            "x": 122,
+            "y": 400,
+            "w": 354,
+            "h": 204
+          }
+        },
+        {
+          "frame": 2831,
+          "value": {
+            "x": 122,
+            "y": 400,
+            "w": 354,
+            "h": 204
+          }
+        }
+      ]
+    },
+    {
+      "id": "s07-comment-bubble",
+      "space": "screen",
+      "protected": true,
+      "start": 2723,
+      "end": 2931,
+      "keys": [
+        {
+          "frame": 2723,
+          "value": {
+            "x": 568,
+            "y": 468,
+            "w": 391,
+            "h": 205
+          }
+        },
+        {
+          "frame": 2825,
+          "value": {
+            "x": 568,
+            "y": 468,
+            "w": 391,
+            "h": 205
+          }
+        },
+        {
+          "frame": 2849,
+          "value": {
+            "x": 121,
+            "y": 422,
+            "w": 841,
+            "h": 278
+          },
+          "ease": "smooth"
+        },
+        {
+          "frame": 2930,
+          "value": {
+            "x": 121,
+            "y": 422,
+            "w": 841,
+            "h": 278
+          }
+        }
+      ]
+    },
+    {
+      "id": "s07-printer",
+      "space": "screen",
+      "protected": true,
+      "start": 2749,
+      "end": 2931,
+      "keys": [
+        {
+          "frame": 2749,
+          "value": {
+            "x": 284,
+            "y": 707,
+            "w": 512,
+            "h": 472
+          }
+        },
+        {
+          "frame": 2930,
+          "value": {
+            "x": 284,
+            "y": 707,
+            "w": 512,
+            "h": 472
+          }
+        }
+      ]
+    },
+    {
+      "id": "s08-fade-composition",
+      "space": "screen",
+      "protected": true,
+      "start": 2931,
+      "end": 2948,
+      "keys": [
+        {
+          "frame": 2931,
+          "value": {
+            "x": 50,
+            "y": 250,
+            "w": 980,
+            "h": 1070
+          }
+        },
+        {
+          "frame": 2947,
+          "value": {
+            "x": 50,
+            "y": 250,
+            "w": 980,
+            "h": 1070
+          }
+        }
+      ]
+    },
+    {
+      "id": "s08-monitors",
+      "space": "screen",
+      "protected": true,
+      "start": 2948,
+      "end": 3111,
+      "keys": [
+        {
+          "frame": 2948,
+          "value": {
+            "x": 158,
+            "y": 781,
+            "w": 762,
+            "h": 225
+          }
+        },
+        {
+          "frame": 3110,
+          "value": {
+            "x": 158,
+            "y": 781,
+            "w": 762,
+            "h": 225
+          }
+        }
+      ]
+    },
+    {
+      "id": "s08-printer",
+      "space": "screen",
+      "protected": true,
+      "start": 2948,
+      "end": 3111,
+      "keys": [
+        {
+          "frame": 2948,
+          "value": {
+            "x": 374,
+            "y": 1040,
+            "w": 335,
+            "h": 310
+          }
+        },
+        {
+          "frame": 3110,
+          "value": {
+            "x": 374,
+            "y": 1040,
+            "w": 335,
+            "h": 310
+          }
+        }
+      ]
+    },
+    {
+      "id": "s08-title",
+      "space": "screen",
+      "protected": true,
+      "start": 3011,
+      "end": 3111,
+      "keys": [
+        {
+          "frame": 3011,
+          "value": {
+            "x": 144,
+            "y": 479,
+            "w": 792,
+            "h": 286
+          }
+        },
+        {
+          "frame": 3110,
+          "value": {
+            "x": 144,
+            "y": 479,
+            "w": 792,
+            "h": 286
+          }
+        }
+      ]
+    }
+  ],
+  "allowedOverlaps": [
+    {
+      "a": "ui-viewport",
+      "b": "focus-10",
+      "reason": "Target adalah child dari viewport UI; containment asli, bukan tabrakan."
+    },
+    {
+      "a": "ui-viewport",
+      "b": "focus-11",
+      "reason": "Target adalah child dari viewport UI; containment asli, bukan tabrakan."
+    },
+    {
+      "a": "ui-viewport",
+      "b": "focus-12",
+      "reason": "Target adalah child dari viewport UI; containment asli, bukan tabrakan."
+    },
+    {
+      "a": "ui-viewport",
+      "b": "focus-13",
+      "reason": "Target adalah child dari viewport UI; containment asli, bukan tabrakan."
+    },
+    {
+      "a": "ui-viewport",
+      "b": "focus-14",
+      "reason": "Target adalah child dari viewport UI; containment asli, bukan tabrakan."
+    },
+    {
+      "a": "s04-s05-ui",
+      "b": "focus-s04-s05-1",
+      "reason": "Kontrol adalah bagian dari viewport UI; containment sengaja."
+    },
+    {
+      "a": "s04-s05-ui",
+      "b": "focus-s04-s05-2",
+      "reason": "Kontrol adalah bagian dari viewport UI; containment sengaja."
+    },
+    {
+      "a": "s04-s05-ui",
+      "b": "focus-s04-s05-3",
+      "reason": "Kontrol adalah bagian dari viewport UI; containment sengaja."
+    },
+    {
+      "a": "s04-s05-ui",
+      "b": "focus-s04-s05-4",
+      "reason": "Kontrol adalah bagian dari viewport UI; containment sengaja."
+    },
+    {
+      "a": "s04-s05-ui",
+      "b": "focus-s04-s05-5",
+      "reason": "Kontrol adalah bagian dari viewport UI; containment sengaja."
+    },
+    {
+      "a": "s04-s05-ui",
+      "b": "focus-s04-s05-6",
+      "reason": "Kontrol adalah bagian dari viewport UI; containment sengaja."
+    },
+    {
+      "a": "s04-s05-ui",
+      "b": "focus-s04-s05-7",
+      "reason": "Kontrol adalah bagian dari viewport UI; containment sengaja."
+    },
+    {
+      "a": "s04-s05-ui",
+      "b": "focus-s04-s05-8",
+      "reason": "Kontrol adalah bagian dari viewport UI; containment sengaja."
+    },
+    {
+      "a": "s04-s05-ui",
+      "b": "focus-s04-s05-9",
+      "reason": "Kontrol adalah bagian dari viewport UI; containment sengaja."
+    }
+  ],
+  "notes": "Deklarasi viewport dan focus samples; tidak mengukur DOM glyph/ikon atau lintasan semua objek. Audit render wajib. S04–05: envelope viewport saja; modal Windows sengaja overlap parent, collision internal/UI/cursor belum diuji. Sampel kontrol pada frame sebelum aksi: S04 dan S05. Kamera fixed untuk UI; topology zoom masih envelope saja. S06–08: protected scene envelopes and subtitle bounds; CTA fade reuses frozen prior scene. Envelope does not prove each vector sublayer collision or actual DOM glyph. Cover group scale 0.87963 / 0.8802083; visual review still required. New protected groups: S06 UI and topology, S07 bubble body reflow (same smoothstep keys; text intentionally within bubble), S08 title/monitors/printer. Cables and print packet intentional path, detailed inner geometry not declared; fade treated as composite envelope while old art dissolves."
+}

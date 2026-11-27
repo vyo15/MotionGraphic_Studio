@@ -32,3 +32,10 @@ S12: tiga SVG cover asli masing-masing punya layer, plus tiga teks terpisah. Pat
 - Tiap kartu mempunyai 3 target native independen: card, artwork, label. Posisi dan motion grup bersama didefinisikan pada div pembungkus Scene10.tsx (source-editable); posisi/ukuran masing-masing bagian tetap target native. Jangan mengubah opacity grup untuk memaksa layer terlihat sebelum fase aktif.
 - S04/S06/S11 menggunakan pose scene sebelumnya melalui Freeze tanpa subtitle/SFX lama, hanya pada handoff; edit di scene sumber.
 - Durasi S10 tetap 303 frame; jika mengubah durasi lagi, sesuaikan manifest, Video, narration, cue dan sound bersama-sama.
+
+
+### S06 — Clean Match Cut (Style 01 ACC, 27 November 2026)
+Buka `PCUnlockerRecoveryReels-S06` pada f4–24. Pilih `S06 — Match Cut camera` untuk grup zoom; scale inline 0.94→1 dan easing dapat diubah di source `src/scenes/Scene06.tsx`. UI/label/subtitle tetap callsite Interactive independen. Laptop pada f0–3 adalah Freeze pose terakhir S05; edit laptop di komposisi S05. Batas cut f4 memakai conditional source agar kedua layar tidak bertumpuk; bila diubah, sesuaikan awal keyframe zoom. Kamera fokus lanjutan tetap di `src/components/FocusCamera.tsx`; jangan mengubah pose S06 akhir tanpa menyesuaikan S07. Native GUI keyframe/Save/reload belum diuji.
+
+### S07–S08 — Continuous Camera Flow ACC (2026-11-27)
+Buka segmen `PCUnlockerRecoveryReels-S07` / `PCUnlockerRecoveryReels-S08`. Target UI, pointer, dialog, highlight dan subtitle tetap native callsite terpisah. `src/components/FocusCamera.tsx`: keyframe sumber kamera bersama, relatif awal S06, f276–326 (50 frame); kamera settle sebelum dialog S07 masuk pada f154. Opacity/scale grup dialog dikelola di Scene07/08, close S08 f128–144. Kamera/grup adalah source-editable, bukan handle GUI yang telah teruji; layer anak tetap memiliki target masing-masing. Jaga pose S06/S09 dan timing cue; audio preview dipertahankan, listening/VO sync pending.

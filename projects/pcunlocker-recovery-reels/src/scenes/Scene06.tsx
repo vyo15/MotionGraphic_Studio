@@ -1,20 +1,21 @@
 import React from 'react';
-import {AbsoluteFill,Interactive,interpolate,Easing,useCurrentFrame,Freeze,Img,staticFile,Sequence,Audio} from 'remotion';
+import {AbsoluteFill,Interactive,interpolate,Easing,useCurrentFrame,Freeze,Img,staticFile} from 'remotion';
 import {VideoProps} from '../config/props';
 import {Scene05} from './Scene05';
 import {FocusCamera} from '../components/FocusCamera';
 
 // Static illustrative UI; fictional sample accounts, no functioning controls.
 export const Scene06:React.FC<VideoProps>=(p)=>{const frame=useCurrentFrame();
-const approach=interpolate(frame,[0,12],[1,1.12],{extrapolateLeft:'clamp',extrapolateRight:'clamp',easing:Easing.bezier(0.42,0,0.58,1)});
-const dive=interpolate(frame,[12,36],[0,1],{extrapolateLeft:'clamp',extrapolateRight:'clamp',easing:Easing.bezier(0.42,0,0.58,1)});
-const screenFit=366/615.78*1.12;
 return <AbsoluteFill style={{backgroundColor:p.backgroundColor??'#F7F7F5',backgroundImage:'radial-gradient(ellipse at 50% 42%,rgba(255,255,255,.32) 0%,rgba(255,255,255,0) 70%)',fontFamily:'Arial, Helvetica, sans-serif'}}>
 
-{/* Recovery screen is replaced at f12. No crossfade between readable screen states. */}
-{frame<36 && <AbsoluteFill style={{opacity:1-interpolate(frame,[18,35],[0,1],{extrapolateLeft:'clamp',extrapolateRight:'clamp',easing:Easing.bezier(0.42,0,0.58,1)}),pointerEvents:"none",transformOrigin:"540px 851px",scale:approach}}><Freeze frame={239}><Scene05 {...p} showSubtitles={false} showVoGuide={false} showSfx={false}/></Freeze>{frame>=12 && <div style={{position:"absolute",left:220,top:668,width:640,height:366,backgroundColor:"#203445",borderRadius:5}}/>}</AbsoluteFill>}
+{/* Style 01 (ACC): carry the exact final S05 pose for four frames, then cut.
+    The outgoing laptop and incoming window are never mounted together.
+    Frozen S05 is silent and has no subtitle; S06 owns the narration throughout. */}
+{frame<4 && <AbsoluteFill style={{pointerEvents:"none"}}><Freeze frame={239}><Scene05 {...p} showSubtitles={false} showVoGuide={false} showSfx={false}/></Freeze></AbsoluteFill>}
 <Interactive.Div name="S06 — Label simulasi" style={{position:'absolute',left:60,top:350,width:940,height:35,boxSizing:'border-box',fontFamily:'Arial, Helvetica, sans-serif',fontSize:24,fontWeight:400,color:'#777777',lineHeight:1.12,display:'flex',alignItems:'center',justifyContent:'flex-start',whiteSpace:'nowrap',opacity:interpolate(frame,[34,46],[0,1],{extrapolateLeft:'clamp',extrapolateRight:'clamp',easing:Easing.bezier(0.42,0,0.58,1)})}}>Simulasi antarmuka</Interactive.Div>
-<div style={{position:"absolute",inset:0,display:frame<12?"none":"block",transformOrigin:"540px 840px",scale:screenFit+(1-screenFit)*dive,translate:`0px ${11*(1-dive)}px`}}>
+{/* Small uniform settle follows the selected preview, not a screen dive.
+    The existing FocusCamera timeline starts its next focus move at f75. */}
+{frame>=4 && <Interactive.Div name="S06 — Match Cut camera" style={{position:'absolute',left:0,top:0,width:1080,height:1920,transformOrigin:'540px 840px',scale:interpolate(frame,[4,24],[0.94,1],{extrapolateLeft:'clamp',extrapolateRight:'clamp',easing:Easing.bezier(0.42,0,0.58,1)})}}>
 <FocusCamera frame={frame+0}>
 <Interactive.Div name="S06 — Window shadow" style={{opacity:1,position:'absolute',left:65.74,top:536.74,width:960.0,height:615.78,boxSizing:'border-box',backgroundColor:'#14394f'}}></Interactive.Div>
 <Interactive.Div name="S06 — Window panel" style={{opacity:1,position:'absolute',left:60.0,top:531.0,width:960.0,height:615.78,boxSizing:'border-box',backgroundColor:'#FFFFFF',border:'2px solid #123b78'}}></Interactive.Div>
@@ -81,7 +82,7 @@ return <AbsoluteFill style={{backgroundColor:p.backgroundColor??'#F7F7F5',backgr
 <Interactive.Div name="S06 — Button Restart" style={{opacity:1,position:'absolute',left:792.43,top:1097.06,width:181.67,height:38.25,boxSizing:'border-box',fontFamily:'Arial, Helvetica, sans-serif',fontSize:19.12,fontWeight:400,color:'#202020',lineHeight:1.12,whiteSpace:'nowrap',display:'flex',alignItems:'center',justifyContent:'center',backgroundImage:'linear-gradient(#fcfcf9,#d6d6cf)',border:'1px solid #949694'}}>Restart</Interactive.Div>
 <Interactive.Div name="S06 — Fokus daftar akun" style={{position:'absolute',left:104,top:882,width:487,height:149,boxSizing:'border-box',border:'3px solid #DF805F',pointerEvents:'none',opacity:interpolate(frame,[100,112],[0,1],{extrapolateLeft:'clamp',extrapolateRight:'clamp'})}}></Interactive.Div>
 </FocusCamera>
-</div>
+</Interactive.Div>}
 <Interactive.Div name="S06 — Subtitle 01" style={{position:'absolute',left:80,top:1440,width:920,height:125,fontFamily:'Arial, Helvetica, sans-serif',color:'#202020',fontSize:44,fontWeight:600,lineHeight:1.26,textAlign:'center',whiteSpace:'pre-line',opacity:(p.showSubtitles!==false && p.showVoGuide!==false && frame>=0 && frame<75)?1:0,paddingTop:0}}>Setelah aplikasinya terbuka,</Interactive.Div>
 <Interactive.Div name="S06 — Subtitle 02" style={{position:'absolute',left:80,top:1440,width:920,height:125,fontFamily:'Arial, Helvetica, sans-serif',color:'#202020',fontSize:44,fontWeight:600,lineHeight:1.26,textAlign:'center',whiteSpace:'pre-line',opacity:(p.showSubtitles!==false && p.showVoGuide!==false && frame>=75 && frame<180)?1:0,paddingTop:0}}>kamu bakal melihat daftar akun<br/>lokal Windows yang terdeteksi.</Interactive.Div>
 </AbsoluteFill>};

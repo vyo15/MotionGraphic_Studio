@@ -1664,6 +1664,45 @@
       "voiceGuideCompositionId": "SampleStartupWindowsDirectorVOGuide"
     },
     {
+      "id": "SharingPrinterLan",
+      "slug": "sharing-printer-lan",
+      "title": "Sharing Printer Tanpa Wi-Fi — S01–S03 (WIP)",
+      "width": 1080,
+      "height": 1920,
+      "fps": 30,
+      "durationInFrames": 1326,
+      "assetPrefix": "videos/sharing-printer-lan",
+      "source": "projects/sharing-printer-lan/src/Video.tsx",
+      "projectDir": "projects/sharing-printer-lan",
+      "exportName": "Video",
+      "defaultProps": {
+        "showSubtitles": true,
+        "backgroundColor": "#F7F7F5",
+        "runCommand": "control"
+      },
+      "segments": [
+        {
+          "id": "SharingPrinterLan-S01",
+          "title": "Hook",
+          "startFrame": 0,
+          "durationInFrames": 276
+        },
+        {
+          "id": "SharingPrinterLan-S02",
+          "title": "Koneksi jaringan",
+          "startFrame": 276,
+          "durationInFrames": 330
+        },
+        {
+          "id": "SharingPrinterLan-S03",
+          "title": "Network Sharing",
+          "startFrame": 606,
+          "durationInFrames": 720
+        }
+      ],
+      "voiceGuideCompositionId": "SharingPrinterLanVOGuide"
+    },
+    {
       "id": "ShutdownOtomatisHookRealistis",
       "slug": "shutdown-otomatis-hook-realistis",
       "title": "Shutdown Otomatis — 11 Scene · CTA v57 + Cover v58 · Editable",

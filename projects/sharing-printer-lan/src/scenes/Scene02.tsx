@@ -1,0 +1,2 @@
+import React from 'react';import {AbsoluteFill,useCurrentFrame} from 'remotion';import {Topology02} from '../components/Topology02';import {Captions02} from '../components/Captions02';import type {VideoProps} from '../config/props';
+export const Scene02:React.FC<VideoProps>=({showSubtitles})=>{const t=useCurrentFrame()/30;return <AbsoluteFill><Topology02 t={t}/><Captions02 showSubtitles={showSubtitles}/></AbsoluteFill>};

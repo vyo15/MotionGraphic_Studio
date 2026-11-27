@@ -1,0 +1,145 @@
+{
+  "schemaVersion": 1,
+  "projectId": "SharingPrinterLan",
+  "slug": "sharing-printer-lan",
+  "workflow": "guided-approval-first-scene",
+  "phase": "scene08-reference-approved-native-qa-pending",
+  "scriptApproval": "partial",
+  "storyboardApproval": "partial",
+  "referenceSceneId": "SharingPrinterLan-S01",
+  "referenceSceneApproval": "approved",
+  "voiceOverStatus": "not-recorded",
+  "fullVideoApproval": "draft",
+  "scenes": [
+    {
+      "id": "SharingPrinterLan-S01",
+      "sceneId": "SharingPrinterLan-S01",
+      "startFrame": 0,
+      "endFrameExclusive": 276,
+      "status": "approved",
+      "visualApproval": "approved",
+      "voTextApproval": "approved",
+      "voText": "ACC",
+      "visual": "ACC_REFERENCE_PENDING_NATIVE_QA",
+      "recordingSync": "NOT_RECORDED",
+      "final": "NOT_FINAL",
+      "notes": "Referensi MP4, bukan bukti kesamaan render native."
+    },
+    {
+      "id": "SharingPrinterLan-S02",
+      "sceneId": "SharingPrinterLan-S02",
+      "startFrame": 276,
+      "endFrameExclusive": 606,
+      "status": "draft",
+      "visualApproval": "draft",
+      "voTextApproval": "draft",
+      "voText": "ACC sebagian (kalimat jaringan); bridge DRAFT",
+      "visual": "PREVIEW_REFERENCE_PENDING_NATIVE_QA",
+      "recordingSync": "NOT_RECORDED",
+      "final": "NOT_FINAL",
+      "notes": "Referensi MP4, bukan bukti kesamaan render native."
+    },
+    {
+      "id": "SharingPrinterLan-S03",
+      "sceneId": "SharingPrinterLan-S03",
+      "startFrame": 606,
+      "endFrameExclusive": 1326,
+      "status": "approved",
+      "visualApproval": "approved",
+      "voTextApproval": "draft",
+      "voText": "DRAFT revisi disetujui untuk preview",
+      "visual": "ACC_REFERENCE_PENDING_NATIVE_QA",
+      "recordingSync": "NOT_RECORDED",
+      "final": "NOT_FINAL",
+      "notes": "Referensi MP4, bukan bukti kesamaan render native."
+    },
+    {
+      "id": "SharingPrinterLan-S04",
+      "sceneId": "SharingPrinterLan-S04",
+      "startFrame": 1326,
+      "endFrameExclusive": 1866,
+      "status": "approved",
+      "visualApproval": "approved",
+      "voTextApproval": "draft",
+      "voText": "DRAFT",
+      "visual": "ACC_REFERENCE_PENDING_NATIVE_QA",
+      "recordingSync": "NOT_RECORDED",
+      "final": "NOT_FINAL",
+      "notes": "User menyetujui preview MP4; hasil source native belum diverifikasi."
+    },
+    {
+      "id": "SharingPrinterLan-S05",
+      "sceneId": "SharingPrinterLan-S05",
+      "startFrame": 1866,
+      "endFrameExclusive": 2316,
+      "status": "approved",
+      "visualApproval": "approved",
+      "voTextApproval": "draft",
+      "voText": "DRAFT",
+      "visual": "ACC_REFERENCE_PENDING_NATIVE_QA",
+      "recordingSync": "NOT_RECORDED",
+      "final": "NOT_FINAL",
+      "notes": "User menyetujui preview MP4; hasil source native belum diverifikasi."
+    },
+    {
+      "id": "SharingPrinterLan-S06",
+      "sceneId": "SharingPrinterLan-S06",
+      "startFrame": 2316,
+      "endFrameExclusive": 2706,
+      "status": "approved",
+      "visualApproval": "approved",
+      "voTextApproval": "draft",
+      "voText": "DRAFT",
+      "visual": "ACC_REFERENCE_PENDING_NATIVE_QA",
+      "recordingSync": "NOT_RECORDED",
+      "final": "NOT_FINAL",
+      "notes": "ACC preview/proposal pengguna; rekonstruksi native belum diverifikasi."
+    },
+    {
+      "id": "SharingPrinterLan-S07",
+      "sceneId": "SharingPrinterLan-S07",
+      "startFrame": 2706,
+      "endFrameExclusive": 2931,
+      "status": "approved",
+      "visualApproval": "approved",
+      "voTextApproval": "approved",
+      "voText": "ACC",
+      "visual": "ACC_REFERENCE_PENDING_NATIVE_QA",
+      "recordingSync": "NOT_RECORDED",
+      "final": "NOT_FINAL",
+      "notes": "ACC preview/proposal pengguna; rekonstruksi native belum diverifikasi."
+    },
+    {
+      "id": "SharingPrinterLan-S08",
+      "sceneId": "SharingPrinterLan-S08",
+      "startFrame": 2931,
+      "endFrameExclusive": 3111,
+      "status": "approved",
+      "visualApproval": "approved",
+      "voTextApproval": "draft",
+      "voText": "SILENT",
+      "visual": "ACC_REFERENCE_PENDING_NATIVE_QA",
+      "recordingSync": "NOT_APPLICABLE",
+      "final": "NOT_FINAL",
+      "notes": "ACC preview/proposal pengguna; rekonstruksi native belum diverifikasi."
+    }
+  ],
+  "decisionLog": [
+    {
+      "date": "2026-11-26",
+      "decision": "Hook teks ACC; pengguna melanjutkan preview S01 ke S02. Kalimat jaringan S02 ACC, bridge tetap draft."
+    },
+    {
+      "date": "2026-11-27",
+      "decision": "CTA terbaru ACC. VO S03 menghapus narasi Private; pengaturan Private hanya visual. User setujui plan revisi continuity dan meminta File Change Only editable. S03 preview referensi disetujui untuk implementasi; native hasil rekonstruksi menunggu review."
+    },
+    {
+      "date": "2026-11-27",
+      "decision": "User ACC preview S04 dan lanjut tanpa patch; user ACC preview S05 serta meminta File Change Only S04–S05. VO teks masih draft, bukan ACC final. S01–S03 tidak diubah."
+    },
+    {
+      "date": "2026-11-27",
+      "decision": "S06 user lanjut setelah preview hasil cetak; S07 user menyetujui revisi komentar “Aku juga pernah pakai cara ini.”, visual mendukung VO tanpa judul duplikat; S08 user menyetujui desain dan plan ukuran cover proporsional, kemudian meminta File Change Only S06–08. VO S06 masih draft, S07 teks ACC, S08 silent. Native QA belum dilakukan."
+    }
+  ]
+}
