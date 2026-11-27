@@ -29,6 +29,4 @@ Tujuan: Master ringan dan dapat dipelihara, **tanpa menghapus video, ACC, aset, 
 
 Pada sebagian ZIP Master terdapat `src/Root.tsx` 9 scene yang sudah mengikuti manifest, tetapi `library/.studio-generated-state.json` masih menyimpan registrasi versi 8 scene. Ini **bukan alasan menghapus Root**. Ketika `npm run sync` melihat konflik itu, `tools/reconcile-generated-state.mjs` akan membangun canonical registry di sandbox sementara dan membandingkannya **byte demi byte** dengan Root aktual. Hanya jika identik, metadata state lama dicadangkan dan direkonsiliasi. Jika tidak cocok, sinkronisasi tetap ditolak agar hasil Save-to-code tidak hilang. Jalankan `node tools/reconcile-generated-state.mjs` untuk audit read-only, dan `node tools/reconcile-generated-state.mjs --repair` hanya jika proof lulus.
 
-## Kondisi Master yang diaudit 22 November 2026, ZIP 03.52
-
-`npm run clean` (preview) melaporkan **0 file disposable** dari allowlist default. Tidak ditemukan `*.log`, `*.tmp`, `*.partial`, `*.bak`, `.DS_Store`, atau `Thumbs.db` dalam arsip. Ada backup histori `Root-*.txt`/`catalog-*.json` di `library/backups/`: semuanya **tetap disimpan untuk pemulihan**. Beberapa README dan status ACC terlihat historis namun tidak cukup bukti sebagai sampah. Oleh sebab itu tidak ada file project yang dihapus dalam patch dashboard ini.
+Riwayat pembelajaran ada di `CHATGPT-HISTORY.md`; bukti detail disimpan di backup di luar Master.

@@ -8,3 +8,5 @@
 4. Bila rendering tidak tersedia/gagal, katakan jujur **preview belum berhasil**; berikan source/diagnosis yang tersedia. Jangan menyebut contact sheet, mockup, screenshot, atau kode sebagai hasil video siap tonton.
 5. Lakukan cek file ada, probe durasi, FPS, resolusi, frame tidak kosong, teks tidak terpotong, transisi dan sound (jika relevan), serta uji playback jika tersedia. Bedakan dari cek source tanpa render.
 6. Preview tidak otomatis memberi ACC. Setelah pengguna menyatakan ACC, perbarui state project dan board VO/ACC melalui file change only.
+
+Audio preview mengikuti `docs/SOUND-DIRECTION-RULES.md` dan `docs/SFX-LOCAL-FIRST.md`. Tidak ada routing audio tambahan di file ini.

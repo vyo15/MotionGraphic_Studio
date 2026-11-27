@@ -22,4 +22,4 @@
 - Preview full + segment, terutama frame sebelum/tepat/setelah batas scene; verifikasi world pose, target/cursor, crop, scale, z-order. QA plan hanya menilai deklarasi, bukan hasil DOM/render.
 
 ## Production Toolkit v1.0 — Master 2.0.0
-Baca `docs/PRODUCTION-TOOLKIT.md` sebelum build. Untuk video baru: pilih/copy kamera/asset lokal dari `templates/production-toolkit/` bila relevan; wajib `production/spatial-plan.json` dan `npm run qa:spatial -- <folder-addon>` di gate produksi. Catat world/viewport, focus bounds, track aktif dan collision exemption beralasan, gunakan keyframe yang sama dengan source; cek seluruh frame deklarasi dan tetap inspeksi preview full/segment. Setelah rekaman VO: `vo:align` hanya proposal timestamp, bukan ASR/ACC atau retiming otomatis. `qa:approval` read-only; `qa:render` bedakan declared hold dan kandidat dead zone. Legacy/ACC tidak dipaksa migrasi. Lihat laporan release 2.0.0 untuk batas verifikasi.
+See `docs/PRODUCTION-TOOLKIT.md` for spatial-plan, camera helpers, VO alignment and approval QA; production flow and gate are owned by `PRODUCTION-RULES.md`.

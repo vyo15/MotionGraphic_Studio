@@ -252,11 +252,19 @@ async function handle(choice){
 try{
   while(true){
     console.log('\n======== MOTIONGRAPHIC STUDIO — MENU ========');
-    for(const [num,label] of menuItems)console.log(` ${num.padStart(2)}. ${label}`);
+    for(const [num,label] of menuItems.filter(([n])=>['1','4','6','7','8','9'].includes(n)))console.log(` ${num.padStart(2)}. ${label}`);
+    console.log('  M. Maintenance / opsi lanjutan');
     console.log('  0. Keluar');
     const choice=await ask('\nPilih menu: ');
     if(!choice||choice==='0'){console.log('Selesai.');break}
-    try{await handle(choice)}catch(e){console.error('[MENU] '+(e?.message||e));}
+    try{if(choice.toLowerCase()==='m'){
+      console.log('\n=== MAINTENANCE (bukan workflow harian) ===');
+      for(const [num,label] of menuItems.filter(([n])=>!['1','4','6','7','8','9'].includes(n)))console.log(` ${num.padStart(2)}. ${label}`);
+      console.log(' 20. Audit statis lengkap + test regresi');
+      const selected=await ask('Pilih (Enter = kembali): ');
+      if(selected==='20'){const ok=runScript('studio-check.mjs');const result=spawnSync(process.execPath,['--test',...fs.readdirSync(path.join(ROOT,'tests')).filter(n=>n.endsWith('.test.mjs')).map(n=>path.join('tests',n))],{cwd:ROOT,stdio:['ignore','inherit','inherit'],windowsHide:true});console.log(ok&&result.status===0?'[MAINTENANCE] Lulus':'[MAINTENANCE] Ada temuan; baca hasil, jangan reset project.');}
+      else if(selected)await handle(selected);
+    }else await handle(choice)}catch(e){console.error('[MENU] '+(e?.message||e));}
   }
 }catch(e){
   if(e?.code!=='ERR_USE_AFTER_CLOSE')console.error('[MENU] '+(e?.message||e));

@@ -1,10 +1,10 @@
 # MotionGraphic Studio Master v2.0.0 — Remotion Only
 
-> **Untuk ChatGPT saat menerima ZIP Master:** buka dan baca [`CHATGPT-READ-FIRST.md`](CHATGPT-READ-FIRST.md) terlebih dahulu, kemudian `AGENTS.md`, `PRODUCTION-RULES.md`, dan [`Template Storyboard Universal`](docs/STORYBOARD-TEMPLATE-UNIVERSAL.md). Agar aturan diikuti **sejak awal chat baru**, salin [`Project Instructions siap tempel`](docs/CHATGPT-PROJECT-INSTRUCTIONS.md) ke pengaturan Project ChatGPT. File ZIP tidak memasang instruksi akun otomatis. Semua revisi = ZIP **FILE CHANGE ONLY** untuk ekstrak → copy–paste–Replace.
+> **Untuk ChatGPT saat menerima ZIP Master:** buka dan baca [`CHATGPT-READ-FIRST.md`](CHATGPT-READ-FIRST.md) terlebih dahulu, kemudian ikuti routing yang berlaku; jangan membaca semua panduan sekaligus. Agar aturan diikuti **sejak awal chat baru**, salin [`Project Instructions siap tempel`](docs/CHATGPT-PROJECT-INSTRUCTIONS.md) ke pengaturan Project ChatGPT. File ZIP tidak memasang instruksi akun otomatis. Semua revisi = ZIP **FILE CHANGE ONLY** untuk ekstrak → copy–paste–Replace.
 
 **Standar kreatif video baru:** [`Design System v2.0`](docs/MOTIONGRAPHIC-DESIGN-SYSTEM.md) · [`Motion Direction`](docs/MOTION-DIRECTION-RULES.md) · [`QA Visual & Motion`](docs/QA-VISUAL-MOTION-CHECKLIST.md). Semua file termasuk saat `npm run zip -- --studio` atau `--studio --with-projects` karena berada di `docs/`. Project/scene ACC tidak dimodifikasi otomatis.
 
-**Satu Master, satu Studio: Remotion.** Paket ini adalah upgrade dari Master v1.9.0 ke v2.0.0 pada instalasi yang sama, **bukan Master baru** dan bukan perpindahan proyek. Tidak ada Concat, launcher aplikasi kedua, Easy Editor, atau Studio Hub.
+**Satu Master, satu Remotion Studio.** Riwayat singkat: [CHATGPT-HISTORY.md](CHATGPT-HISTORY.md).
 
 ### Scene VO & ACC Board (otomatis)
 
@@ -12,37 +12,11 @@ Setiap `npm run dev`/`npm run sync`, Master membangun ulang `projects/<slug>/pro
 
 ## Mulai di Windows
 
-1. Simpan ZIP/folder Master lama sebagai cadangan di luar folder Studio. Gunakan folder hasil ekstrak ini sebagai **Master yang sama**. Jika memakai Git, terapkan perubahan di repository yang sudah ada, bukan membuat repo baru.
-2. Dari folder `MotionGraphic-Studio` jalankan `npm install` (pertama kali), kemudian `npm run dev`. (Launcher `.bat` hanya tersedia jika ada dalam instalasi lokal.)
-3. Pilih video aktif di sidebar Remotion Studio (`npm run list` untuk daftar terbaru). Pada Master kosong, sidebar belum berisi video; impor ZIP add-on pertama melalui `library/masuk/`, lalu jalankan sync.
-4. Edit melalui Remotion Studio dan Props bila layer mendukung, lalu render lewat dialog Remotion Studio atau `npm run render`.
-5. Simpan project tambahan sebagai folder mandiri `projects/<slug>/`. Jalankan `npm run sync` untuk registrasi ulang; tidak perlu mengedit `src/Root.tsx`, `src/index.ts`, atau `library/catalog.json` secara manual.
+Backup Master sebelum memasang patch. Untuk pekerjaan harian cukup `npm run dev`. Instalasi dependency yang belum tersedia, import inbox, sync, static gate, dan snapshot sebelum sesi berjalan otomatis. Saat Studio terbuka, drop ZIP add-on ke `library/masuk/` atau folder ke `projects/`; watcher menangani registrasi, VO Guide dan mirror aset. Edit layer TSX biasa tetap hot reload.
 
-## Perintah yang dipakai
+Setelah source stabil, `../MotionGraphic-Studio-Backups/Master/CHATGPT-LATEST.zip` diperbarui otomatis (Master + project, tanpa backup historis). Gunakan setelah pesan **ZIP terbaru siap**. File sebelumnya dipertahankan jika gate/ekspor gagal. Upload ke ChatGPT tetap manual. Lokasi export override mengikuti konfigurasi Master. Detail: [Panduan Operasional](docs/OPERASIONAL-STUDIO.md).
 
-| Perintah | Fungsi |
-| --- | --- |
-| `npm run clean` | Pratinjau pembersihan artefak lama (tanpa penghapusan) |
-| `npm run dev` | Sinkronisasi, lalu membuka Remotion Studio resmi |
-| `npm run sync` | Registrasi project dan aset otomatis |
-| `npm run list` | Menampilkan semua video aktif |
-| `npm run check` | Audit manifest, editability, layout, TypeScript |
-| `npm test` | Jalankan pengujian otomatis |
-| `npm run render` | Render full/segmen ke MP4; profil HQ/CapCut/preview, lihat `docs/RENDER-HQ-CAPCUT.md` |
-| `npm run zip` | Menu ekspor ZIP video editable / Master |
-| `npm run zip -- --studio` | Ekspor Master Engine Only (tanpa video) |
-| `npm run zip -- --all` | Ekspor semua video satu per satu |
-| `npm run addfolder -- "C:\\lokasi\\folder-video"` | Impor folder add-on |
-| `npm run delete` / `npm run restore` | Arsipkan / pulihkan video dengan aman |
-| `npm run qa` | Audit kualitas statis
-| `npm run flow` | Alur interaktif judul → ChatGPT → add-on → preview → VO → QA | |
-| `npm run addon:validate -- <folder> --strict` | Periksa kontrak dan import add-on ChatGPT |
-| `npm run addon:scaffold -- <slug> <ID> <judul>` | Buat contoh add-on di exports/addons (tidak aktif otomatis) |
-| `npm run addon:patch -- <folder> --dry-run` | Simulasi patch revisi dengan SHA-256 tanpa menulis |
-| `npm run addon:patch -- <folder>` | Terapkan patch dengan backup dan deteksi konflik |
-| `npm run vo:edit -- <slug>` | Edit naskah panduan rekaman melalui terminal |
-| `npm run qa:render -- <MP4> --src projects/<slug>` | QA hasil video sesuai manifest |
-| `npm run zip -- --studio --with-projects` | ZIP engine + seluruh video, tanpa riwayat backup |
+Render dari Studio atau menu. Untuk pekerjaan khusus (render CapCut HQ, arsip/pulihkan, ZIP historis, maintenance) gunakan `npm run menu`. CLI diagnostik tetap tersedia di package.json, bukan daftar perintah yang harus dihafal. Full test, render, Save/reload dan listening QA tidak diklaim oleh startup.
 
 ## Struktur Master folder-first
 
@@ -67,81 +41,22 @@ MotionGraphic-Studio/
 
 ## Audio, editability, dan batas yang benar
 
-**Sound Direction v2.1:** semua video baru menggunakan [`docs/SOUND-DIRECTION-RULES.md`](docs/SOUND-DIRECTION-RULES.md) untuk sound planning, efek relevan per aksi/transisi, kontinuitas antar-scene, voice-first mixing, SFX berlisensi, dan QA mendengar. Template baru memuat `templates/addon-starter/production/SOUND-PLAN.md`; ini tidak mengganti sound pada video ACC.
+**Sound Direction v2.2:** semua video baru menggunakan [`docs/SOUND-DIRECTION-RULES.md`](docs/SOUND-DIRECTION-RULES.md) untuk sound planning, efek relevan per aksi/transisi, kontinuitas antar-scene, voice-first mixing, SFX berlisensi, dan QA mendengar. Template baru memuat `templates/addon-starter/production/SOUND-PLAN.md`; ini tidak mengganti sound pada video ACC.
 
 
 
-Audio sumber dipertahankan di masing-masing `projects/<slug>/public/`. Untuk mengatur voice-over dan musik, lihat [Panduan Operasional](docs/OPERASIONAL-STUDIO.md). Untuk impor, preview, props, render dan ekspor, baca [Panduan Remotion Studio](PANDUAN-REMOTION-STUDIO.md). Aturan produksi ada di [PRODUCTION-RULES.md](PRODUCTION-RULES.md).
+Audio sumber dipertahankan di masing-masing `projects/<slug>/public/`. Untuk mengatur voice-over dan musik, lihat [Panduan Operasional](docs/OPERASIONAL-STUDIO.md). Aturan produksi ada di [PRODUCTION-RULES.md](PRODUCTION-RULES.md).
 
 Remotion Studio **tidak otomatis membuat semua node React draggable**. Layer `Interactive`, Properties/Props dan struktur masing-masing video menentukan apa yang bisa diedit secara visual. Beberapa layer Windows Hacks masih memiliki animasi/posisi computed dan belum semua bebas drag-and-drop. Tidak ada editor voice-over waveform multi-track bawaan tambahan dalam paket ini. Editabilitas penuh tidak boleh diklaim tanpa pengujian per layer.
 
-**Riwayat dipertahankan terpisah:** arsip backup/import lama dari ZIP sumber ada di ZIP pendamping `MotionGraphic-Studio-ARSIP-LAMA-20261104.zip`. Tidak perlu mengekstrak arsip itu ke dalam Master kecuali ingin memulihkan berkas tertentu. Backup baru di `library/backups/` akan dibuat oleh tool saat perlu; output export/render CLI disimpan di folder cadangan di luar Master.
+Backup dan output render disimpan sesuai [Maintenance](docs/MAINTENANCE-AND-RECOVERY.md).
 
 Catatan batas uji: UI Remotion di Windows, drag/edit manual, dan render MP4 aktual memerlukan uji langsung di PC pengguna.
 
-## VO Guide universal (workflow rekam setelah motion)
+## Produksi dan pemeliharaan
 
-Selesaikan storyboard, scene dan revisi visual dulu. **Jangan rekam VO sebelum motion disetujui.**
-Setiap add-on baru otomatis mendapatkan template `src/config/narration.json` saat sync pertama.
-Isi `beats[].text` dan pecah estimasi `startFrame`/`endFrame` mengikuti visual (jumlah frame akhir harus sama dengan manifest).
-Lalu jalankan `npm run sync`. Remotion Studio akan menampilkan satu komposisi ekstra (meski teks masih kosong)
-`<IDVideo>VOGuide`, yang menumpangkan naskah pada video untuk latihan/rekaman.
-Video utama `<IDVideo>` **tidak** mendapat overlay panduan. Audio VO dan subtitle final dimasukkan setelah rekaman.
-
-- Untuk video lama tanpa naskah: `npm run vo:init -- <slug>` (tidak menimpa data).
-- Lihat panduan lengkap: `docs/WORKFLOW-VO-UNIVERSAL.md`.
-- `npm run sync` sekarang menolak kehilangan project yang masih terdaftar bila tidak ada arsip sah di `library/sampah`.
-  Pulihkan folder project dari backup bila muncul pesan `SYNC DIBATALKAN`.
-
-## ChatGPT → Add-on → Master (kontrak versi 1.0)
-
-Dokumen aktif: [AI Production Workflow](docs/AI-PRODUCTION-WORKFLOW.md), [VO Guide Universal](docs/WORKFLOW-VO-UNIVERSAL.md), [Maintenance](docs/MAINTENANCE-AND-RECOVERY.md). Bagi pengguna yang hanya memberikan judul ke ChatGPT, dokumen `contracts/studio-capabilities.json` bisa dikirim sebagai kontrak versi Master agar proyek baru konsisten.
-
-```bash
-# Buat scaffold di exports/addons/ (tidak memodifikasi projects aktif)
-npm run addon:scaffold -- contoh-baru ContohBaruReels "Contoh Judul"
-# Validasi add-on yang diberikan ChatGPT
-npm run addon:validate -- "C:\alamat\contoh-baru" --strict
-# Impor folder; ZIP add-on dapat diletakkan di library/masuk lalu npm run import
-npm run addfolder -- "C:\alamat\contoh-baru"
-# Voice Guide setelah motion selesai
-npm run vo:edit -- contoh-baru
-# Saat revisi file tertentu — cek konflik sebelum apply
-npm run addon:patch -- "C:\alamat\patch" --dry-run
-npm run addon:patch -- "C:\alamat\patch"
-# QA video mengikuti FPS/resolusi manifest
-npm run qa:render -- out/video.mp4 --src projects/contoh-baru
-# ZIP Master tanpa riwayat backup dalam paket saja (backup di PC tidak dihapus)
-npm run zip -- --studio
-```
-
-Pengeditan naskah melalui native Props pada komposisi VO Guide kini memiliki jalur persistensi ke narration.json dengan deteksi konflik, tetapi uji interaksi langsung di Remotion Studio Windows masih diperlukan.
-
-
-### Pemeriksaan dan keamanan add-on ChatGPT (v1.1)
-
-Untuk add-on **baru** gunakan `npm run addon:validate -- "C:\\alamat\\slug" --strict --syntax`; bila FAIL, perbaiki sebelum import. Setelah `npm run sync` jalankan `npm run check` (pemeriksaan **read-only**) dan `npm run qa:smoke -- --still <IDVideo>` untuk uji bundle + satu frame. Setelah render, gunakan `npm run qa:render -- out/nama.mp4 --src projects/nama-slug`. Smoke test perlu `npm ci` dan Chromium Remotion. Patch revisi `npm run addon:patch -- <folder-atau-zip> --dry-run` sekarang memvalidasi project hasil revisi di lokasi sementara. Detail: [Alur pengguna](docs/USER-FLOW-CHATGPT.md), [Kontrak Editable](docs/EDITABLE-CONTRACT.md), dan [Maintenance](docs/MAINTENANCE-AND-RECOVERY.md).
-
-## User flow sederhana (ChatGPT → Studio)
-
-Jalankan `npm run flow` untuk panduan interaktif atau `npm run flow -- --new "Judul Video"` untuk membuat prompt siap salin ke Project ChatGPT. Tidak ada pengunggahan otomatis.
-
-Untuk mengirim **hanya engine** ke ChatGPT, jalankan `npm run zip -- --studio`. Untuk backup dengan semua video: `npm run zip -- --studio --with-projects`; sertakan riwayat backup hanya dengan `--full`.
-
-
-## Satu sumber untuk ChatGPT Project
-`docs/CHATGPT-PROJECT-REFERENCE.md` adalah referensi bersama untuk pembuatan add-on melalui
-ChatGPT (teknik Lemo-Opuscar, 12 Skill resmi Remotion, native editing, motion-first VO,
-kontrak Master). Jika ingin konteks yang sama dalam obrolan baru, unggah dokumen ini sebagai
-*Sumber* di Project ChatGPT sekali. Memperbarui Master lokal saja tidak memperbarui sumber
-ChatGPT atau Custom Skill yang terpasang pada akun.
-
-## Motion Direction v3.0 (standar produksi Master 2.0.0)
-
-Panduan pemilihan gerak berdasarkan VO: [Decision Matrix](docs/MOTION-DECISION-MATRIX.md), [Vocabulary](docs/MOTION-VOCABULARY.md), [Portrait Camera](docs/PORTRAIT-CAMERA-STANDARD.md), [Motion Plan Contract](docs/MOTION-PLAN-CONTRACT.md), [adapter Motion Continuity Director](skills/motion-continuity-director/SKILL.md). QA plan: `node tools/qa-motion-plan.mjs projects/<slug>`. Kontrak baru opt-in via manifest untuk produksi baru; project lama tidak dimigrasi. Tidak ada perubahan renderer atau dependensi.
-
-## Gate release 2.0.0
-Untuk video baru jalankan `npm run qa:motion -- <folder-addon>` dan `npm run qa:spatial -- <folder-addon>` lalu `npm run addon:validate -- <folder-addon> --production --syntax` (flag produksi eksplisit; scaffold/legacy tetap dapat memakai `--strict`). `npm run qa:motion -- --all` melewati legacy tanpa kontrak, bukan PASS visual. `npm run release:check` memeriksa konsistensi versi sebelum ekspor Master. Baca `docs/RELEASE-2.0.0-AUDIT.md` (riwayat sebelumnya: `docs/RELEASE-1.9.0-AUDIT.md`).
-
-## Production Toolkit v1.0 — Master 2.0.0
-Baca `docs/PRODUCTION-TOOLKIT.md` sebelum build. Untuk video baru: pilih/copy kamera/asset lokal dari `templates/production-toolkit/` bila relevan; wajib `production/spatial-plan.json` dan `npm run qa:spatial -- <folder-addon>` di gate produksi. Catat world/viewport, focus bounds, track aktif dan collision exemption beralasan, gunakan keyframe yang sama dengan source; cek seluruh frame deklarasi dan tetap inspeksi preview full/segment. Setelah rekaman VO: `vo:align` hanya proposal timestamp, bukan ASR/ACC atau retiming otomatis. `qa:approval` read-only; `qa:render` bedakan declared hold dan kandidat dead zone. Legacy/ACC tidak dipaksa migrasi. Lihat laporan release 2.0.0 untuk batas verifikasi.
+- Flow resmi dan QA produksi: [PRODUCTION-RULES.md](PRODUCTION-RULES.md). `npm run flow -- --steps` membaca flow yang sama; `npm run flow -- --new "Judul"` membuat brief, bukan upload otomatis.
+- Operasional dan editing: [docs/OPERASIONAL-STUDIO.md](docs/OPERASIONAL-STUDIO.md), [docs/EDITABLE-CONTRACT.md](docs/EDITABLE-CONTRACT.md), [docs/WORKFLOW-VO-UNIVERSAL.md](docs/WORKFLOW-VO-UNIVERSAL.md).
+- Revisi ChatGPT: FILE CHANGE ONLY, copy–paste–Replace setelah cek base hash dan backup. CLI `addon:patch` tetap tersedia untuk format patch native yang berbeda, bukan untuk ZIP FILE CHANGE ONLY biasa.
+- QA bundle/satu frame: `npm run qa:smoke -- --still <IDVideo>` membutuhkan dependency dan Chromium Remotion. Render dan listening tetap perlu uji aktual.
+- Project ChatGPT: ganti seluruh instruksi dengan [docs/CHATGPT-PROJECT-INSTRUCTIONS.md](docs/CHATGPT-PROJECT-INSTRUCTIONS.md). Unggah satu ZIP Master terbaru (engine-only untuk video baru, with-projects untuk revisi existing). Jangan unggah prompt/snapshot lama bersamaan.

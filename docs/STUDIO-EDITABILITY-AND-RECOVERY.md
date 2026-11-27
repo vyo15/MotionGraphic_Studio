@@ -29,7 +29,7 @@ npm run check:sync
 
 Mode preview pertama tidak mengubah apa pun. `--apply` hanya memindahkan folder **yang tidak terdaftar** ke `../MotionGraphic-Studio-Backups/RetiredProjects/`; project aktif tidak akan dipindah. Jika memang ingin mendaftarkan semua project lagi, **jangan** jalankan `--apply`, cukup `npm run sync`.
 
-## QA minimal
+## QA maintenance (bukan startup rutin)
 
 ```bash
 npm test

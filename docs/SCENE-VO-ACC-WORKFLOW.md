@@ -1,6 +1,6 @@
 # SCENE VO & APPROVAL BOARD — ATURAN OTORITATIF v1.0
 
-**Berlaku untuk:** semua diskusi, revisi, preview dan build video pada MotionGraphic Studio. **Tujuan:** ChatGPT selalu menampilkan narasi lengkap per scene sekaligus status keputusan, tanpa menebak apa yang sudah ACC.
+**Berlaku untuk:** semua diskusi, revisi, preview dan build video pada MotionGraphic Studio. **Tujuan:** ChatGPT selalu membaca narasi lengkap per scene dan status keputusan, menampilkan sesuai scope, tanpa menebak apa yang sudah ACC.
 
 ## 1. Satu sumber untuk setiap fakta
 
@@ -14,9 +14,8 @@
 
 `production/SCENE-VO-ACC-BOARD.md` adalah **view turunan yang digenerate**, BUKAN sumber keputusan keempat. Jangan edit langsung isi generated view untuk merevisi keputusan.
 
-## 2. Format jawaban ChatGPT WAJIB pada diskusi video aktif
-
-**Sebelum detail scene:** tampilkan ringkasan seluruh scene aktif **tanpa melewatkan VO lengkap aslinya**, termasuk scene silent/cover dan bridge naratif. Pada video panjang, gunakan tabel ringkas dan blok VO tiap scene yang mudah dibuka/dibaca; jangan sembunyikan scene ACC. Setiap scene menunjukkan waktu, VO persis, `VO TEKS`, `VISUAL`, `REKAMAN/SYNC`, `FINAL`. Setelah ringkasan, baru detail scene yang sedang direvisi, termasuk status ACC dan pengaruh ke continuity tetangga.
+## 2. Baca penuh, tampilkan sesuai scope (Unified Production 1.0)
+Selalu baca board, manifest, narration, state, lock/source terkait sebelum membahas video aktif. Tampilkan VO asli lengkap seluruh scene (termasuk silent/bridge) beserta timing dan empat status pada awal pembahasan project/berpindah chat, review keseluruhan, ACC milestone, VO Guide atau jika diminta. Pada revisi kecil/preview satu scene dalam chat yang sama, cukup target, VO asli target, timing, status dan dampak continuity tetangga; jangan mengulang seluruh board tanpa fungsi. Tidak mengurangi kewajiban membaca atau melindungi ACC. AGENTS project lama yang meminta tampilan penuh setiap giliran adalah format review legacy; aturan tampilan ini berlaku tanpa mengubah keputusan kreatif.
 
 - `VO TEKS`: `DRAFT/REVIEW/ACC/LOCKED`, terpisah dari sudah/tidak direkam.
 - `VISUAL`: `DRAFT/REVIEW/DIPILIH/ACC/LOCKED`. **DIPILIH belum otomatis LOCKED**.

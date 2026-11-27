@@ -95,6 +95,9 @@
           }
         }
       }
+    },
+    "soundImplementationContract": {
+      "const": "cue-track-v1"
     }
   },
   "additionalProperties": true

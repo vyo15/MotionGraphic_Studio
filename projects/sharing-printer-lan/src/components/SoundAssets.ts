@@ -1,0 +1,23 @@
+import {staticFile} from 'remotion';
+export const SFX_FILES: Record<string,string> = {
+  'audio/sfx/editorial-check.wav': staticFile('videos/sharing-printer-lan/audio/sfx/editorial-check.wav'),
+  'audio/sfx/editorial-confirm-tap.wav': staticFile('videos/sharing-printer-lan/audio/sfx/editorial-confirm-tap.wav'),
+  'audio/sfx/editorial-connection.wav': staticFile('videos/sharing-printer-lan/audio/sfx/editorial-connection.wav'),
+  'audio/sfx/editorial-context.wav': staticFile('videos/sharing-printer-lan/audio/sfx/editorial-context.wav'),
+  'audio/sfx/editorial-data.wav': staticFile('videos/sharing-printer-lan/audio/sfx/editorial-data.wav'),
+  'audio/sfx/editorial-key-1.wav': staticFile('videos/sharing-printer-lan/audio/sfx/editorial-key-1.wav'),
+  'audio/sfx/editorial-key-2.wav': staticFile('videos/sharing-printer-lan/audio/sfx/editorial-key-2.wav'),
+  'audio/sfx/editorial-key-3.wav': staticFile('videos/sharing-printer-lan/audio/sfx/editorial-key-3.wav'),
+  'audio/sfx/editorial-paper-cover.wav': staticFile('videos/sharing-printer-lan/audio/sfx/editorial-paper-cover.wav'),
+  'audio/sfx/editorial-paper-cta.wav': staticFile('videos/sharing-printer-lan/audio/sfx/editorial-paper-cta.wav'),
+  'audio/sfx/editorial-paper-hook.wav': staticFile('videos/sharing-printer-lan/audio/sfx/editorial-paper-hook.wav'),
+  'audio/sfx/editorial-printer-result.wav': staticFile('videos/sharing-printer-lan/audio/sfx/editorial-printer-result.wav'),
+  'audio/sfx/editorial-reveal.wav': staticFile('videos/sharing-printer-lan/audio/sfx/editorial-reveal.wav'),
+  'audio/sfx/editorial-settle.wav': staticFile('videos/sharing-printer-lan/audio/sfx/editorial-settle.wav'),
+  'audio/sfx/editorial-shortcut.wav': staticFile('videos/sharing-printer-lan/audio/sfx/editorial-shortcut.wav'),
+  'audio/sfx/editorial-tap-1.wav': staticFile('videos/sharing-printer-lan/audio/sfx/editorial-tap-1.wav'),
+  'audio/sfx/editorial-tap-2.wav': staticFile('videos/sharing-printer-lan/audio/sfx/editorial-tap-2.wav'),
+  'audio/sfx/editorial-tap-3.wav': staticFile('videos/sharing-printer-lan/audio/sfx/editorial-tap-3.wav'),
+  'audio/sfx/editorial-tap-5.wav': staticFile('videos/sharing-printer-lan/audio/sfx/editorial-tap-5.wav'),
+  'audio/sfx/editorial-tap-6.wav': staticFile('videos/sharing-printer-lan/audio/sfx/editorial-tap-6.wav'),
+};

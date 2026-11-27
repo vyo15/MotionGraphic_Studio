@@ -1,3 +1,4 @@
+import {copyFixtureTools} from './fixture-tools.mjs';
 import {test} from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
@@ -47,9 +48,7 @@ test('sync refuses to erase missing registered project BEFORE touching Root or c
  try{
   for(const dir of ['tools','projects/only-one/src','src','library'])fs.mkdirSync(path.join(tmp,dir),{recursive:true});
   fs.cpSync(path.join(ROOT,'templates/production-toolkit'),path.join(tmp,'templates/production-toolkit'),{recursive:true});
-  for(const name of ['sync-projects.mjs','studio-props-bridge.mjs','register-scene-segments.mjs','production-scope.mjs','validate-addon.mjs','qa-motion-plan.mjs','qa-spatial.mjs','qa-spatial-trace.mjs','approval-identity.mjs']){
-   fs.copyFileSync(path.join(ROOT,'tools',name),path.join(tmp,'tools',name));
-  }
+  copyFixtureTools(ROOT,tmp);
   fs.writeFileSync(path.join(tmp,'package.json'),JSON.stringify({dependencies:{}}));
   const m={id:'OnlyOne',slug:'only-one',title:'Only',entry:'src/Video.tsx',exportName:'Video',width:1080,height:1920,fps:30,durationInFrames:90};
   fs.writeFileSync(path.join(tmp,'projects/only-one/motiongraphic-video.json'),JSON.stringify(m));
@@ -69,9 +68,7 @@ test('official archived project may be removed by sync; surviving project remain
  try{
   for(const dir of ['tools','projects/active-one/src','src','library/sampah/2026-11-20-LostVid/project'])fs.mkdirSync(path.join(tmp,dir),{recursive:true});
   fs.cpSync(path.join(ROOT,'templates/production-toolkit'),path.join(tmp,'templates/production-toolkit'),{recursive:true});
-  for(const name of ['sync-projects.mjs','studio-props-bridge.mjs','register-scene-segments.mjs','production-scope.mjs','validate-addon.mjs','qa-motion-plan.mjs','qa-spatial.mjs','qa-spatial-trace.mjs','approval-identity.mjs']){
-   fs.copyFileSync(path.join(ROOT,'tools',name),path.join(tmp,'tools',name));
-  }
+  copyFixtureTools(ROOT,tmp);
   fs.writeFileSync(path.join(tmp,'package.json'),JSON.stringify({dependencies:{}}));
   const m={id:'ActiveOne',slug:'active-one',title:'Active',entry:'src/Video.tsx',exportName:'Video',width:1080,height:1920,fps:30,durationInFrames:90};
   fs.writeFileSync(path.join(tmp,'projects/active-one/motiongraphic-video.json'),JSON.stringify(m));

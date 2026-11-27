@@ -1,3 +1,4 @@
+import {copyFixtureTools} from './fixture-tools.mjs';
 import {test} from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
@@ -41,7 +42,7 @@ test('future add-on with SegmentVideo.tsx is automatically registered as direct 
  try{
   for(const dir of ['tools','projects/demo-baru/src/config','src','library'])fs.mkdirSync(path.join(temp,dir),{recursive:true});
   fs.cpSync(path.join(ROOT,'templates/production-toolkit'),path.join(temp,'templates/production-toolkit'),{recursive:true});
-  for(const name of ['sync-projects.mjs','studio-props-bridge.mjs','register-scene-segments.mjs','production-scope.mjs','validate-addon.mjs','qa-motion-plan.mjs','qa-spatial.mjs','qa-spatial-trace.mjs','approval-identity.mjs'])fs.copyFileSync(path.join(ROOT,'tools',name),path.join(temp,'tools',name));
+  copyFixtureTools(ROOT,temp);
   fs.writeFileSync(path.join(temp,'package.json'),JSON.stringify({dependencies:{react:'19.0.0',remotion:'4.0.538'}}));
   fs.writeFileSync(path.join(temp,'library/catalog.json'),JSON.stringify({schemaVersion:1,videos:[]}));
   const proj=path.join(temp,'projects/demo-baru');

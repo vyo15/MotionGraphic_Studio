@@ -36,7 +36,7 @@ legacyTest('Two video IDs and all essential Remotion docs are preserved',()=>{
   assert.ok(fs.existsSync(path.join(root,'projects',slug,'src/Video.tsx')));
   assert.ok(fs.existsSync(path.join(root,'projects',slug,'public')));
  }
- for(const doc of ['README.md','PANDUAN-REMOTION-STUDIO.md','docs/OPERASIONAL-STUDIO.md','PRODUCTION-RULES.md','docs/USER-FLOW-CHATGPT.md']){
+ for(const doc of ['README.md','docs/OPERASIONAL-STUDIO.md','PRODUCTION-RULES.md','CHATGPT-HISTORY.md']){
   assert.ok(fs.existsSync(path.join(root,doc)),doc);
   assert.ok(read('tools/zip-video.mjs').includes(doc.startsWith('docs/')?'docs':doc),doc);
  }

@@ -7,6 +7,7 @@ import {Scene05} from './scenes/Scene05';
 import {Scene06} from "./scenes/Scene06";
 import {Scene07} from "./scenes/Scene07";
 import {Scene08} from "./scenes/Scene08";
+import {SoundCueTrack} from './components/SoundCueTrack';
 export const Video:React.FC<Partial<VideoProps>>=(input)=>{const p={...DEFAULT_PROPS,...input};return <AbsoluteFill><EditorialBackground color={p.backgroundColor}/>
 <Sequence name="S01" from={0} durationInFrames={276}><Scene01 {...p}/></Sequence>
 <Sequence name="S02" from={276} durationInFrames={330}><Scene02 {...p}/></Sequence>
@@ -16,4 +17,4 @@ export const Video:React.FC<Partial<VideoProps>>=(input)=>{const p={...DEFAULT_P
 <Sequence name="S06" from={2316} durationInFrames={390}><Scene06 {...p}/></Sequence>
 <Sequence name="S07" from={2706} durationInFrames={225}><Scene07 {...p}/></Sequence>
 <Sequence name="S08" from={2931} durationInFrames={180}><Scene08 {...p}/></Sequence>
-</AbsoluteFill>};
+<SoundCueTrack enabled={p.showSfx} gain={p.sfxGain} textProps={{runCommand:p.runCommand,hostAddress:p.hostAddress,ctaComment:p.ctaComment}}/></AbsoluteFill>};

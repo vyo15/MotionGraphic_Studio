@@ -26,10 +26,12 @@ Untuk semua topik, pilih teknik berdasarkan fungsi narasi dan state visual. Matr
 3. Rencanakan exit/entry: `carry` (world dan pose sama), `match` (focal point match; world boleh berubah), `cut` (perubahan konteks beralasan), `start` (beat pertama saja). Jangan menyembunyikan discontinuity dengan fade.
 4. Jika aset lama menghalangi, reflow/exit lebih dahulu. Satu target aktif; overlap asli UI diizinkan hanya jika tidak menghalangi informasi yang sedang dijelaskan.
 5. Selaraskan aksi dengan frasa VO, bukan seluruh scene. Draft timing di awal; setelah rekaman sinkronkan ke ucapan aktual, termasuk jeda. Jangan memaksa audio dipercepat.
-6. Pilih primary motion dari vocabulary; matrix adalah rekomendasi default, boleh berbeda dengan alasan tercatat. Sound cue/omit mengikuti Sound Direction v2.1. Jangan menganggap motion plan sebagai bukti render atau ACC.
+6. Pilih primary motion dari vocabulary; matrix adalah rekomendasi default, boleh berbeda dengan alasan tercatat. Sound cue/omit mengikuti Sound Direction v2.2. Jangan menganggap motion plan sebagai bukti render atau ACC.
 
 ## Contoh netral: File Explorer
 - “Buka lokasi folder” → establish; tampilan landscape fit di viewport portrait.
 - “Perhatikan nama folder” → focus-zoom bila label kecil, atau selective-emphasis jika sudah terbaca.
 - “Lihat informasi ukuran” → focus-handoff/pan ke panel; kamera menunggu target stabil, lalu reading hold.
 - “Sekarang kembali ke daftar” → context-zoom-out bila perlu konteks; jangan reset jika beat berikutnya masih pada panel yang sama.
+
+**Auto SFX v2.2:** wajib implementasi sejak build pertama; `planned` bukan status delivery. Ikuti cue-track-v1 dan gate produksi pada `docs/SOUND-DIRECTION-RULES.md`.

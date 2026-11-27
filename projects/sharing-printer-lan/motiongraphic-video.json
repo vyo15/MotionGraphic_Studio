@@ -14,7 +14,9 @@
     "backgroundColor": "#F7F7F5",
     "runCommand": "control",
     "hostAddress": "\\\\192.168.10.1",
-    "ctaComment": "Aku juga pernah pakai cara ini."
+    "ctaComment": "Aku juga pernah pakai cara ini.",
+    "showSfx": true,
+    "sfxGain": 1
   },
   "editableContract": "studio-direct-v4",
   "motionPlanContract": "focus-driven-v1",
@@ -67,5 +69,7 @@
       "startFrame": 2931,
       "durationInFrames": 180
     }
-  ]
+  ],
+  "soundImplementationContract": "cue-track-v1",
+  "soundTrackVariant": "text-adaptive-v1"
 }

@@ -1,0 +1,7 @@
+{
+  "schemaVersion": 1,
+  "cues": [
+    {"id":"s01-click","scene":"S01","action":"Tombol UI ditekan","impactFrame":15,"status":"ready","character":"synthetic","tags":["ui","click"],"gainDb":-16},
+    {"id":"s02-hold","scene":"S02","action":"Hold hasil dan penjelasan","impactFrame":75,"status":"omit","reason":"Ruang narasi; tidak ada tindakan baru"}
+  ]
+}

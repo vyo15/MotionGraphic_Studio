@@ -8,10 +8,11 @@ const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const read=p=>fs.readFileSync(path.join(root,p),'utf8');
 const starter=p=>read(`templates/addon-starter/${p}`);
 
-test('Text hierarchy lock is propagated to AI entrypoints and visual QA',()=>{
- for(const p of ['AGENTS.md','CHATGPT-READ-FIRST.md','PRODUCTION-RULES.md','PROMPT-PROYEK-CHATGPT.md','docs/CHATGPT-PROJECT-INSTRUCTIONS.md','docs/CHATGPT-PROJECT-REFERENCE.md','docs/MOTIONGRAPHIC-DESIGN-SYSTEM.md','docs/QA-VISUAL-MOTION-CHECKLIST.md']){
-  assert.match(read(p),/TEXT HIERARCHY & SUBTITLE LOCK v1\.0/,p);
- }
+test('Text hierarchy is owned by design system and reachable from entrypoints',()=>{
+ for(const p of ['AGENTS.md','PRODUCTION-RULES.md']) assert.match(read(p),/MOTIONGRAPHIC-DESIGN-SYSTEM\.md/,p);
+ assert.match(read('CHATGPT-READ-FIRST.md'),/MOTIONGRAPHIC-DESIGN-SYSTEM\.md/);
+ for(const p of ['docs/MOTIONGRAPHIC-DESIGN-SYSTEM.md','docs/QA-VISUAL-MOTION-CHECKLIST.md']) assert.match(read(p),/TEXT HIERARCHY & SUBTITLE LOCK v1\.0/,p);
+ assert.match(read('docs/CHATGPT-PROJECT-INSTRUCTIONS.md'),/Subtitle draft default aktif/);
  assert.doesNotMatch(read('docs/MOTIONGRAPHIC-DESIGN-SYSTEM.md'),/Subtitle opsional/);
  const storyboard=read('docs/STORYBOARD-TEMPLATE-UNIVERSAL.md');
  assert.match(storyboard,/Cue subtitle \(bawah\)/);

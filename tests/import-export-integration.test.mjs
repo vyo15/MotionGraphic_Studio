@@ -1,3 +1,4 @@
+import {copyFixtureTools} from './fixture-tools.mjs';
 import {test} from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';import os from 'node:os';import path from 'node:path';
@@ -13,7 +14,7 @@ const fixture=cb=>{const dir=fs.mkdtempSync(path.join(os.tmpdir(),'mg-import-fix
 function host(dir){
  for(const n of ['tools','projects','src','library'])fs.mkdirSync(path.join(dir,n),{recursive:true});
  fs.cpSync(path.join(ROOT,'templates/production-toolkit'),path.join(dir,'templates/production-toolkit'),{recursive:true});
- for(const file of ['import-video.mjs','normalize-project-assets.mjs','validate-addon.mjs','qa-motion-plan.mjs','qa-spatial.mjs','qa-spatial-trace.mjs','approval-identity.mjs','zip-preflight.mjs','sync-projects.mjs','studio-props-bridge.mjs','register-scene-segments.mjs','production-scope.mjs'])fs.copyFileSync(path.join(ROOT,'tools',file),path.join(dir,'tools',file));
+ copyFixtureTools(ROOT,dir);
  fs.writeFileSync(path.join(dir,'package.json'),JSON.stringify({dependencies:{react:'19',remotion:'4.0.538'}}));
  fs.writeFileSync(path.join(dir,'library/catalog.json'),JSON.stringify({schemaVersion:1,videos:[]}));
 }

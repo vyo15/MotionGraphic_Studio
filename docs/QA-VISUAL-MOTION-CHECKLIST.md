@@ -2,6 +2,9 @@
 
 Checklist untuk **video baru dan revisi yang diminta**. Bukan janji semua pengujian tersedia. Gunakan status `PASS`, `FAIL`, `BELUM DIUJI`, `TIDAK RELEVAN` pada tiap pemeriksaan; lampirkan bukti (frame, timestamp, nama file, log) bila ada. Jangan menyebut “lulus QA” secara umum jika hanya source yang diperiksa.
 
+## Pre-preview gate
+Jalankan `npm run addon:validate -- <folder-addon> --production --syntax` untuk video baru yang siap review; gate ini sudah memeriksa motion, spatial, native, sound dan syntax. Gunakan `qa:motion`, `qa:spatial`, `qa:native`, `qa:layers` dan `qa:sound --strict` sebagai diagnostik terarah jika diperlukan, bukan workflow kreatif kedua. Periksa contact sheet, preview full/segment bergerak, audio, dan GUI secara terpisah; koreksi error yang ditemukan sebelum menunjukkan preview jika bisa. Jangan menahan source yang diminta hanya karena runtime tidak tersedia: beri status belum diuji. Untuk final, ulangi gate setelah sync dan cek MP4/audio nyata.
+
 ## A. Pre-build: kebenaran cerita
 
 - [ ] Brief dan satu pesan utama jelas; 8 tahap **naratif** (MASALAH, KONFLIK, REAKSI, SOLUSI, DEMONSTRASI, HASIL, CTA, COVER) terpetakan tanpa memaksa 8 scene.
@@ -48,7 +51,7 @@ Checklist untuk **video baru dan revisi yang diminta**. Bukan janji semua penguj
 
 ## D. VO, subtitle, musik, SFX
 
-**Sound QA v2.1:** rujuk `docs/SOUND-DIRECTION-RULES.md`. Isi status per baris dengan bukti; validator `qa:sound` hanya menguji metadata/asset, bukan kualitas mix.
+**Sound QA v2.2:** rujuk `docs/SOUND-DIRECTION-RULES.md`. Isi status per baris dengan bukti; validator `qa:sound` menguji metadata/asset dan wiring statis pada kontrak cue-track-v1, bukan kualitas mix.
 
 - [ ] Sound intent (`cue`/`omit`) sudah dibuat untuk setiap beat/perpindahan, serta alasan efek/hening jelas; tidak semua transition diberi whoosh.
 - [ ] SFX klik/impact/drop/success terdengar **sesuai frame aksi visual**; tidak ada sound sukses sebelum hasil benar terjadi.
@@ -112,7 +115,7 @@ Checklist untuk **video baru dan revisi yang diminta**. Bukan janji semua penguj
 - [ ] Preview bergerak dan native GUI Save/reload diuji secara terpisah; jika tidak tersedia tandai BELUM DIUJI. Tidak mengubah ACC tanpa izin.
 
 ## Gate release 2.0.0
-Untuk video baru jalankan `npm run qa:motion -- <folder-addon>` dan `npm run qa:spatial -- <folder-addon>` lalu `npm run addon:validate -- <folder-addon> --production --syntax` (flag produksi eksplisit; scaffold/legacy tetap dapat memakai `--strict`). `npm run qa:motion -- --all` melewati legacy tanpa kontrak, bukan PASS visual. `npm run release:check` memeriksa konsistensi versi sebelum ekspor Master. Baca `docs/RELEASE-2.0.0-AUDIT.md` (riwayat sebelumnya: `docs/RELEASE-1.9.0-AUDIT.md`).
+Untuk video baru gunakan production gate di atas (flag produksi eksplisit; scaffold/legacy tetap dapat memakai `--strict`). `npm run qa:motion -- --all` melewati legacy tanpa kontrak, bukan PASS visual. `npm run release:check` memeriksa konsistensi versi sebelum ekspor Master. Lihat `CHATGPT-HISTORY.md` untuk pelajaran historis, bukan aturan produksi.
 
 ## Production Toolkit v1.0 — Master 2.0.0
-Baca `docs/PRODUCTION-TOOLKIT.md` sebelum build. Untuk video baru: pilih/copy kamera/asset lokal dari `templates/production-toolkit/` bila relevan; wajib `production/spatial-plan.json` dan `npm run qa:spatial -- <folder-addon>` di gate produksi. Catat world/viewport, focus bounds, track aktif dan collision exemption beralasan, gunakan keyframe yang sama dengan source; cek seluruh frame deklarasi dan tetap inspeksi preview full/segment. Setelah rekaman VO: `vo:align` hanya proposal timestamp, bukan ASR/ACC atau retiming otomatis. `qa:approval` read-only; `qa:render` bedakan declared hold dan kandidat dead zone. Legacy/ACC tidak dipaksa migrasi. Lihat laporan release 2.0.0 untuk batas verifikasi.
+See `docs/PRODUCTION-TOOLKIT.md` for spatial-plan, camera helpers, VO alignment and approval QA; production flow and gate are owned by `PRODUCTION-RULES.md`.

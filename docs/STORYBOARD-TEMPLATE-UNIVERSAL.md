@@ -54,7 +54,7 @@
 
 ## 3A. Sound plan storyboard (SEMUA VIDEO BARU)
 
-Untuk tiap beat dan sambungan scene, tentukan `SFX / omit`, peran terhadap VO, jenis bunyi, awal/impact/tail, dan continuity. **Setiap transisi diperiksa, bukan setiap transisi dipaksa mengeluarkan whoosh.** Gunakan `docs/SOUND-DIRECTION-RULES.md` sebagai acuan; isi `production/SOUND-PLAN.md` saat draft. Setelah motion ACC, jadikan cue berbasis frame absolut di `production/sound-cues.json`. VO asli direkam setelah motion ACC; hasil audio baru dianggap lulus sesudah di-preview/didengar. CTA→Cover tidak boleh memotong kalimat CTA dan cover akhir perlu hold tenang.
+Untuk tiap beat dan sambungan scene, tentukan `SFX / omit`, peran terhadap VO, jenis bunyi, awal/impact/tail, dan continuity. **Setiap transisi diperiksa, bukan setiap transisi dipaksa mengeluarkan whoosh.** Gunakan `docs/SOUND-DIRECTION-RULES.md` sebagai acuan; isi `production/SOUND-PLAN.md` saat draft. Sejak build pertama, jadikan cue berbasis frame absolut di `production/sound-cues.json`. VO asli direkam setelah motion ACC; hasil audio baru dianggap lulus sesudah di-preview/didengar. CTA→Cover tidak boleh memotong kalimat CTA dan cover akhir perlu hold tenang.
 
 ### CLEAN FOCUS v2.1 — budget visual sebelum menggambar storyboard
 
@@ -111,4 +111,4 @@ Untuk Project ChatGPT lintas chat, unggah file template ini ke **Project Sources
 Lengkapi tabel scene dengan: beatIndex (narration), intent, focusTarget, motion choice + alasan, stateIn/stateOut, pose camera/world/viewport start–end bila relevan, aksi/reaksi/hold relatif beat, handoff ke beat berikutnya, protected bounds/reflow, cue/omit dan editable target. Silent/bridge/cover tetap dicatat. Gunakan `docs/MOTION-DECISION-MATRIX.md`, `docs/PORTRAIT-CAMERA-STANDARD.md` dan `docs/MOTION-PLAN-CONTRACT.md`. Untuk build baru simpan `production/motion-plan.json` dan deklarasikan `motionPlanContract: "focus-driven-v1"`. Draft boleh ditampilkan tanpa file saat diskusi. Jangan menambah gerakan untuk setiap frasa; hold juga keputusan. Jangan retrofit ACC.
 
 ## Production Toolkit v1.0 — Master 2.0.0
-Baca `docs/PRODUCTION-TOOLKIT.md` sebelum build. Untuk video baru: pilih/copy kamera/asset lokal dari `templates/production-toolkit/` bila relevan; wajib `production/spatial-plan.json` dan `npm run qa:spatial -- <folder-addon>` di gate produksi. Catat world/viewport, focus bounds, track aktif dan collision exemption beralasan, gunakan keyframe yang sama dengan source; cek seluruh frame deklarasi dan tetap inspeksi preview full/segment. Setelah rekaman VO: `vo:align` hanya proposal timestamp, bukan ASR/ACC atau retiming otomatis. `qa:approval` read-only; `qa:render` bedakan declared hold dan kandidat dead zone. Legacy/ACC tidak dipaksa migrasi. Lihat laporan release 2.0.0 untuk batas verifikasi.
+See `docs/PRODUCTION-TOOLKIT.md` for spatial-plan, camera helpers, VO alignment and approval QA; production flow and gate are owned by `PRODUCTION-RULES.md`.

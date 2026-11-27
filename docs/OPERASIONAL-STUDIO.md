@@ -4,10 +4,10 @@ Dokumen ini menyatukan panduan penggunaan Studio, audio, dan aturan edit visual 
 
 ## Penggunaan harian
 
-1. Jalankan `npm ci` setelah instalasi awal atau update dependensi, lalu `npm run dev`. Gunakan `npm run sync` bila menambah/mengubah add-on.
-2. Pilih komposisi **full**, **segmen**, atau `<ID>VOGuide`. Gunakan elemen `Interactive`/Props yang memang tersedia pada video tersebut. Tidak semua JSX bisa drag-and-drop otomatis.
-3. Simpan perubahan melalui kontrol Remotion Studio yang sesuai; lakukan **Save → reload → cek hasil → render** sebelum menganggap edit tersimpan.
-4. Sebelum final: `npm test`, `npm run check`, dan `npm run qa:render -- out/video.mp4 --src projects/<slug>`.
+1. Cukup `npm run dev` dari root Master. Dependency yang hilang dipasang otomatis (internet diperlukan hanya bila instalasi). Startup menjalankan release check, import ZIP stabil, sync, source/asset, sintaks, editable, layout dan snapshot. Log detail di folder eksternal `Logs/Studio-startup.log`; error/warning tetap terlihat.
+2. Saat Studio berjalan, drop ZIP ke `library/masuk/` atau folder ke `projects/`. Edit TSX menggunakan hot reload; perubahan manifest, Props, VO, segmen dan aset ditangani watcher. Tidak perlu sync manual rutin.
+3. Pilih full, segmen, atau `<ID>VOGuide`; simpan edit dan periksa Save → reload → hasil. Setelah source stabil, proses lokal otomatis membuat `Master/CHATGPT-LATEST.zip` di root ekspor eksternal. File ini hanya handoff terbaru, bukan backup historis. Tunggu pesan ZIP terbaru siap sebelum menutup Studio/mengunggah. Jika invalid, versi terakhir dipertahankan; detail `Logs/ChatGPT-export.log`. Upload ChatGPT tetap manual.
+4. Render dan pemeriksaan visual/listening tetap memerlukan pilihan pengguna. Opsi lanjutan ada di `npm run menu` → M. Tidak menjalankan seluruh test suite setiap buka Studio. Opsional `MOTION_STUDIO_AUTO_CHATGPT=0` menonaktifkan handoff otomatis.
 
 ## Audio dan VO
 
@@ -27,10 +27,10 @@ Dokumen ini menyatukan panduan penggunaan Studio, audio, dan aturan edit visual 
 `npm run zip` mengemas source editable, **bukan MP4 yang editable**. `npm run zip -- --studio` adalah Master Engine Only; `--with-projects` menyertakan video, sedangkan `--full` juga menyertakan riwayat.
 
 
-Lihat [User Flow](USER-FLOW-CHATGPT.md) untuk pembuatan bersama ChatGPT, dan [Kontrak Editable](EDITABLE-CONTRACT.md) untuk standar add-on baru.
+Lihat [User Flow](../PRODUCTION-RULES.md) untuk pembuatan bersama ChatGPT, dan [Kontrak Editable](EDITABLE-CONTRACT.md) untuk standar add-on baru.
 
 ## Pemulihan perubahan visual dan folder tidak terdaftar
 
 - Sebelum Studio dimulai, source aktif secara otomatis dibackup **di luar Master** (3 snapshot terakhir; tidak masuk ZIP Master), supaya penghapusan layer akibat `Delete` dapat dibandingkan/dipulihkan tanpa menimpa project lain. Lihat [Studio Editing & Recovery](STUDIO-EDITABILITY-AND-RECOVERY.md).
 - `npm run retire:unregistered` menampilkan folder video yang ada di disk tetapi tidak ada di katalog. `--apply` memindahkannya ke folder backup luar Master. Jangan jalankan apabila ingin mendaftarkannya ulang saat sync.
-- `npm run sync` hanya diperlukan untuk perubahan manifest, VO, segmen atau aset. Edit layer TSX biasa mengikuti HMR tanpa registrasi ulang.
+- Sync manual adalah fallback diagnostik jika watcher bermasalah; jangan mengulangnya sebagai ritual harian.

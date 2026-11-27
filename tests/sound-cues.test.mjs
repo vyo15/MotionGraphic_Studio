@@ -29,3 +29,17 @@ test('path traversal ditolak',()=>{const x=fixture();try{put(x.dir,{...base(),cu
 test('planned boleh sebelum ACC, strict gagal',()=>{const x=fixture();try{put(x.dir,{...base(),cues:[ready({status:'planned',file:null})]});assert.equal(checkSoundCues(x.dir).ok,true);assert.equal(checkSoundCues(x.dir,{strict:true}).ok,false)}finally{x.done()}});
 
 test('header WAV rusak ditolak',()=>{const x=fixture();try{fs.writeFileSync(path.join(x.dir,'public','audio','sfx','click.wav'),'bukan-wave');put(x.dir,{...base(),cues:[ready()]});assert.equal(checkSoundCues(x.dir,{strict:true}).ok,false)}finally{x.done()}});
+
+test('v2.2 production fails missing sound plan, legacy still passes',()=>{const x=fixture();try{assert.equal(checkSoundCues(x.dir,{production:true}).ok,false);assert.equal(checkSoundCues(x.dir).ok,true)}finally{x.done()}});
+test('v2.2 Sharing Printer accepts canonical wiring and rejects missing or planned cues',()=>{
+ const src=path.resolve('projects/sharing-printer-lan');if(!fs.existsSync(src))return;
+ const x=fixture();try{
+  fs.cpSync(src,x.dir,{recursive:true});
+  assert.equal(checkSoundCues(x.dir,{strict:true,production:true}).ok,true);
+  const file=path.join(x.dir,'src/SegmentVideo.tsx');const original=fs.readFileSync(file,'utf8');
+  fs.writeFileSync(file,original.replace(/<SoundCueTrack[^>]*\/>/,''));
+  assert.match(checkSoundCues(x.dir,{strict:true}).issues.join(' '),/callsite/);
+  fs.writeFileSync(file,original);const map=path.join(x.dir,'src/components/SoundAssets.ts');const mapOriginal=fs.readFileSync(map,'utf8');fs.writeFileSync(map,'export const SFX_FILES = {};');assert.match(checkSoundCues(x.dir,{strict:true}).issues.join(' '),/literal map/);fs.writeFileSync(map,mapOriginal);const cues=JSON.parse(fs.readFileSync(path.join(x.dir,'production/sound-cues.json'),'utf8'));cues.cues.find(c=>c.status==='ready').status='planned';put(x.dir,cues);
+  assert.equal(checkSoundCues(x.dir).ok,false);
+ }finally{x.done()}
+});

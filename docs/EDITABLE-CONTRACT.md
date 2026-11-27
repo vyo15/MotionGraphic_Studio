@@ -28,7 +28,7 @@ Tidak semua component JSX otomatis draggable. Jangan memaksa refaktor video yang
 ## Guardrails Studio v4 dan pembedaan klaim
 
 - `studio-direct-v4` harus mengikuti **teks literal langsung** pada JSX Interactive untuk editing teks via Studio, dan style objek inline. Teks dari `result.elements[...]`, `DOMParser`, SVG frame bake, atau ekspresi dinamis **hanya editable via source/Props** sampai terbukti lain.
-- Gate `check-direct-studio-text.mjs` dan `audit-inline-editing.mjs` kini mengecek `studio-direct-v4` selain kontrak terdahulu. Output PASS statis tidak menggantikan uji edit → Save → reload → render.
+- Gate gabungan `check-direct-studio-text.mjs` mengecek inline style v2/v3/v4 serta teks langsung v3/v4. `qa-native-editable.mjs` mengecek blueprint dan call-site; `npm run editcheck` adalah diagnostik legacy/manifest terpisah. Output PASS statis tidak menggantikan uji edit → Save → reload → render.
 - Lihat [Studio Editing & Recovery](STUDIO-EDITABILITY-AND-RECOVERY.md) untuk pesan `Deleted <Interactive.G>`, snapshot source dan folder video tidak terdaftar.
 
 

@@ -72,7 +72,7 @@ Mulai dengan `line-height` sekitar 1.08–1.18 untuk judul dan 1.16–1.3 untuk 
 - VO rekaman pengguna **setelah motion ACC**; sebelum itu gunakan naskah draft/VO Guide terpisah. Timing beat, frame dan teks layar harus mengikuti satu sumber konfigurasi per project.
 - Subtitle mengikuti **frasa/pengucapan** dengan jeda alami, bukan karaoke terlalu cepat atau paragraf panjang. Default maksimal 2 baris, visual hold memadai, cek tidak bertabrakan dengan tombol dan UI Reels. Gunakan penekanan kata terbatas; label utama **tidak** perlu mengulang subtitle secara penuh.
 - Untuk subtitle dekat bawah, tempatkan **seluruh bounding box** di atas y=1570; jika perlu pindahkan area demo supaya subtitle dan UI tidak bersaing. Gunakan plate tipis/kontras bila latar ramai, bukan teks gelap pada konten gelap tanpa backing.
-- SFX hanya ketika ada *aksi terlihat*, cek onsets secara frame; VO harus tetap dominan. Rujuk `docs/SCENE-LAYER-AND-SOUND-STANDARD.md`, `docs/SOUND-DESIGN-WORKFLOW.md` dan `docs/WORKFLOW-VO-UNIVERSAL.md` (jangan duplikasi sound dari root dan scene).
+- SFX hanya ketika ada *aksi terlihat*, cek onsets secara frame; VO harus tetap dominan. Rujuk `docs/SOUND-DIRECTION-RULES.md` dan `docs/WORKFLOW-VO-UNIVERSAL.md` (jangan duplikasi sound dari root dan scene).
 
 ## 5A. TEXT HIERARCHY & SUBTITLE LOCK v1.0 — wajib untuk video baru
 

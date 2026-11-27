@@ -45,7 +45,7 @@ Teknik boleh dicampur dengan selektif. Impact Stamp/Card Break/Fold & Unfold/Mat
 - Untuk tutorial, storyboard wajib menyebut *state awal*, trigger yang dilakukan pengguna, *state setelah aksi*, serta screenshot/UI/OS yang dijadikan referensi. Perintah seperti `shutdown` memiliki akibat nyata; ilustrasi harus benar secara sebab-akibat.
 - Animasi memakai `useCurrentFrame`, `interpolate`, `spring`, `Sequence` dari Remotion yang terpasang; timing deterministik dan sama saat preview/render. Tidak menggunakan random tanpa seed, `setInterval` atau animasi CSS yang berjalan bebas pada layer utama.
 - **Source-editable ≠ Studio-draggable.** Layer penting diberi nama dan dipisahkan. Pisahkan posisi dasar, offset pengguna, dan transform animasi. Uji drag/save/reload bila mengklaim editable di Studio. Jangan menyembunyikan properti kunci pada komponen yang tidak dapat diseleksi.
-- SFX dipasang pada aksi yang benar-benar terjadi, bukan *whoosh* otomatis. Mix dan cue merujuk `docs/SCENE-LAYER-AND-SOUND-STANDARD.md`.
+- SFX dipasang pada aksi yang benar-benar terjadi, bukan *whoosh* otomatis. Mix dan cue merujuk `docs/SOUND-DIRECTION-RULES.md`.
 - Untuk transisi yang membawa objek, rencanakan **sound handoff** juga (tail, audio bridge atau silence yang disengaja), bukan sekadar visual match-move. Aturan lengkap mapping, anti-duplikasi, voice-first mix, serta CTA→Cover: `docs/SOUND-DIRECTION-RULES.md`.
 
 ## 5. Checklist scene handoff dan cover

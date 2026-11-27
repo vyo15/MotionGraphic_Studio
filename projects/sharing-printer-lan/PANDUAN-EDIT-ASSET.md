@@ -17,3 +17,10 @@
 1. Buka komposisi `SharingPrinterLan-S06/S07/S08`; pilih layer bernama sesuai scene. Untuk label/subtitle/cover gunakan node literal; untuk komentar dinamis buka Props `ctaComment` (default “Aku juga pernah pakai cara ini.”). Teks final dipertahankan sebagai satu string, typing berdasarkan frame. Panjang berlebih perlu penyesuaian width/font.
 2. `src/config/scene06-timing.json` menyimpan waktu dialog dan posisi cursor. Jika memindah tombol Print, sesuaikan hotspot dan timing. `scene07-timing.json` menyimpan fade, reflow dan typing. `scene08-timing.json` mencatat fade, skala referensi, hold dan thumbnail. Skala native di `Cover08Artwork.tsx` pada layer Cover composition scale; perubahan config skala saja tidak mengubah canvas. Gerak internal printer dan data packet tetap source-editable.
 3. Uji edit → Save → reload → render frame awal/tengah/akhir di Studio. `Freeze` membawa frame akhir scene sebelumnya untuk fade tanpa menyisipkan MP4. Hindari mengubah S01–05. Subtitle draft default aktif; cover silent. Setelah rekaman, perbarui timing narration dan subtitle satu track, serta motion/spatial hash dan SFX cue.
+
+## SFX preview v2.2
+Studio Props: `showSfx` (on/off) dan `sfxGain` (1 = default, 0 = mute). Per cue: `production/sound-cues.json` (frame absolut, end inklusif, gainDb) dan `public/audio/sfx/`. Ganti audio dengan aset legal; jika nama berubah, update `src/components/SoundAssets.ts`, lalu sync. Full dan segment memakai SoundCueTrack yang sama. Edit text/timing perlu cek ulang cue ketikan. Belum diuji Save/reload GUI.
+
+
+## Audio redesign — Soft Editorial
+Edit cue gainDb, frame and source in production/sound-cues.json; showSfx/sfxGain are global Props. Typing follows runCommand, hostAddress and ctaComment visible increments via canonical opt-in text-adaptive-v1. If editing timing rather than text, update matching rule and test; do not touch visual ACC without approval. WAV EQ/fades baked, replacement requires correct metadata + literal map. Native per-cue Studio Save/reload not verified. Legacy audio remains physically present but inactive.

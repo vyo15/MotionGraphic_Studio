@@ -6,17 +6,14 @@ import {createInterface} from 'node:readline/promises';
 import {ROOT} from './menu-helper.mjs';
 
 const slugify=(v)=>v.normalize('NFKD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'').slice(0,48).replace(/-+$/,'')||'video-baru';
-const stages=[
- ['01','Brief di ChatGPT','Tentukan satu pesan, audiens, CTA; buat naskah draft dan storyboard'],
- ['02','Bangun add-on','ChatGPT membuat projects/<slug>/ tanpa mengubah Master'],
- ['03','Validasi & import','Video baru: QA Motion Plan + addon:validate --production; lalu masukkan ke projects/<slug>/'],
- ['04','Review motion','Preview dan revisi sampai ACC; cek editabilitas Save/reload'],
- ['04A','VO & ACC Board','Tampilkan seluruh VO asli dan status scene: node tools/scene-approval-board.mjs --all'],
- ['05','VO Guide','Tampilkan panduan teks setelah motion disetujui'],
- ['06','Rekam & sinkronkan','Rekam suara sendiri, sesuaikan timing, subtitle dan SFX'],
- ['07','QA & render','Periksa source, MP4, audio, safe zone dan ekspor'],
- ['08','Arsip & ulangi','ZIP video terpisah; Master Engine Only tetap ringan'],
-];
+// Read the single authoritative flow instead of hardcoding a second copy.
+const stages=()=>{
+ const doc=fs.readFileSync(path.join(ROOT,'PRODUCTION-RULES.md'),'utf8');
+ const section=doc.split('## 2. Flow tunggal')[1]?.split('## 3.')[0]||'';
+ const rows=[...section.matchAll(/^(\d+)\. \*\*(.+?):\*\* (.+)$/gm)].map(m=>[m[1].padStart(2,'0'),m[2],m[3].replace(/\r$/,'')]);
+ if(rows.length!==7||rows.some((r,i)=>Number(r[0])!==i+1))throw Error('Flow resmi harus berisi tujuh tahap berurutan');
+ return rows;
+};
 const usage=`Pakai:
   npm run flow                        # panduan interaktif
   npm run flow -- --new "Judul video" [--audience "..."] [--cta "..."]
@@ -33,27 +30,17 @@ Slug usulan: ${slug}
 Audiens: ${audience.trim()}
 CTA: ${cta.trim()}
 
-Pada setiap diskusi video aktif, tampilkan VO lengkap seluruh scene dan status ACC dari production/SCENE-VO-ACC-BOARD.md (generated saat sync). Buatkan motion graphic edukasi Remotion untuk judul di atas menggunakan Custom Skill MotionGraphic Studio Director serta Project Rules Motion-Graphic yang berlaku. Satu Master folder-first; jangan membuat Remotion Studio baru atau mengubah file registrasi Master. Periksa contracts/studio-capabilities.json Master terbaru jika disediakan; jangan mengarang kompatibilitas.
-
-Pilih teknik Lemo-Opuscar sesuai materi, hanya sebagai teknik visual. Pertahankan Minimal Editorial: #F7F7F5, #202020, #DF805F, grid samar dan UI clean. Default 1080x1920, 30 FPS, 15–30 detik, safe zone 250/350/50 px. Visual harus memperagakan SEBAB → AKSI → REAKSI → HASIL → HOLD, bukan dekorasi atau mengulang seluruh VO.
-
-Motion Direction v3.0: baca Decision Matrix, Vocabulary, Portrait Camera dan Motion Plan Contract. Pilih gerak dari maksud VO, satu fokus, camera carry, tanpa Slide Mask dekoratif; reflow sebelum aset baru, cursor tepat, subtitle stabil. Buat production/motion-plan.json dan deklarasi focus-driven-v1 untuk video baru; npm run qa:motion -- <folder> lalu npm run addon:validate -- <folder> --production --syntax. Jangan retrofit ACC. Master 2.0: baca docs/PRODUCTION-TOOLKIT.md; production/spatial-plan.json wajib untuk gate produksi (cek setiap frame deklarasi); gunakan toolkit kamera lokal bila sesuai. VO alignment dari timestamp rekaman hanya proposal setelah ACC; planned hold dilaporkan terpisah.
-
-Workflow yang tidak boleh diubah: NASKAH DRAFT → STORYBOARD → BUILD MOTION → PREVIEW/REVISI → VO GUIDE → pengguna rekam VO → sinkronisasi → QA → render final. Jangan meminta file rekaman sebelum motion disetujui.
-
-Buat add-on mandiri <slug>/ dengan motiongraphic-video.json, src/Video.tsx export const Video, scenes/components/animations/config, aset lokal yang diperlukan, README.md, PANDUAN-EDIT-ASSET.md, dan daftar layer/editabilitas. Pisahkan teks, objek, UI, cursor dan efek secara independen. Gunakan Props/Interactive hanya bila didukung Remotion. Animasi dan transform harus berbasis frame dan tidak flatten. Bila saya meminta langsung dibuat, selesaikan add-on ZIP pada giliran ini; jangan berhenti di konsep.
-
-Validasi manifest/import/aset, layout, font, animasi, VO Guide, dan source. Jangan mengklaim semua layer draggable atau MP4/Windows sudah diuji bila belum diuji. Kirim hanya ZIP add-on (atau patch terbatas saat revisi), bukan Master baru.
+Buat motion graphic sesuai Master aktual. Buka CHATGPT-READ-FIRST.md dan CHATGPT-HISTORY.md, ikuti mode langsung build dalam PRODUCTION-RULES.md. Satu add-on ZIP, tidak mengubah Master. VO GUIDE mengikuti flow resmi. Jika runtime belum tersedia, laporkan batas uji.
 `;
 };
-const renderSteps=()=>console.log('\n=== USER FLOW MOTIONGRAPHIC STUDIO ===\n'+stages.map(([n,t,d])=>`${n}. ${t}\n    ${d}`).join('\n')+'\n');
+const renderSteps=()=>console.log('\n=== USER FLOW MOTIONGRAPHIC STUDIO ===\n'+stages().map(([n,t])=>`${n}. ${t}`).join('\n')+'\n');
 function status(){
  const f=path.join(ROOT,'library','catalog.json');
  let videos=[];
  try{videos=JSON.parse(fs.readFileSync(f,'utf8')).videos||[]}catch{}
  console.log(`[FLOW] ${videos.length} project aktif di Master. Semua pembuatan video baru tetap melalui ChatGPT dan add-on mandiri.`);
  console.log('[FLOW] Baca VO/ACC: node tools/scene-approval-board.mjs --all');
- console.log('[FLOW] Berikutnya: npm run flow -- --new "Judul video"');
+ console.log('[FLOW] Berikutnya: berikan judul langsung di ChatGPT.');
 }
 function savePrompt(prompt,title){
  const dir=path.join(ROOT,'exports','briefs');fs.mkdirSync(dir,{recursive:true});
@@ -89,20 +76,20 @@ async function interactive(){
    savePrompt(guide(title,audience||undefined,cta||undefined),title);
   }else if(select==='2'){
    console.log('\n[VALIDASI] npm run addon:validate -- "PATH_ADDON" --production --syntax');
-   console.log('[IMPORT] npm run addfolder -- "PATH_FOLDER_ADDON" (atau letakkan ZIP di library/masuk/)');
-   console.log('[SINKRON] npm run sync && npm run dev');
+   console.log('[IMPORT] Letakkan ZIP di library/masuk/; Studio mengimpor otomatis.');
+   console.log('[STUDIO] npm run dev jika Studio belum berjalan; jika sudah, tunggu auto-sync.');
   }else if(select==='3'){
    console.log('\n[REVISI] Kirim slug, file/scene yang diubah, dan bukti preview ke ChatGPT.');
-   console.log('[PATCH] npm run addon:patch -- "PATH_PATCH" --dry-run');
-   console.log('[APPLY] npm run addon:patch -- "PATH_PATCH" (setelah tidak ada konflik)');
+   console.log('[PATCH] Periksa hash base dan backup sebelum Replace (FILE CHANGE ONLY).');
+   console.log('[APPLY] Copy file lengkap sesuai path relatif root; Studio menyinkronkan perubahan yang relevan otomatis.');
   }else if(select==='4'){
    console.log('\n[VO GUIDE] Pilih komposisi <ID>VOGuide di Remotion Studio.');
    console.log('[VO] Setelah preview/revisi motion disetujui, rekam suara natural, lalu sesuaikan timing.');
   }else if(select==='5'){
-   console.log('\n[QA] npm test && npm run check && npm run dev');
+   console.log('\n[QA] Static gate otomatis saat dev; uji preview/GUI dan hasil render secara nyata.');
    console.log('[RENDER] npm run render');
    console.log('[QA MP4] npm run qa:render -- out/nama.mp4 --src projects/<slug>');
-   console.log('[EXPORT] npm run zip -- --studio (engine saja) atau npm run zip -- --all');
+   console.log('[EXPORT] npm run zip -- --studio (engine saja) atau npm run zip -- --studio --with-projects');
   }else console.log('[FLOW] Selesai tanpa perubahan.');
  }finally{rl.close()}
 }

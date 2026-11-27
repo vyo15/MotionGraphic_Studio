@@ -29,11 +29,17 @@ test('default Master ZIP is standalone engine with empty registry, no old videos
  assert.ok(!paths.some(p=>p.startsWith('MotionGraphic-Studio/projects/')&&p.endsWith('motiongraphic-video.json')));
  assert.ok(paths.includes('MotionGraphic-Studio/docs/EDITABLE-CONTRACT.md'));
  assert.ok(paths.includes('MotionGraphic-Studio/skills/opuscar-remotion-bridge/SKILL.md'));
+ assert.ok(paths.includes('MotionGraphic-Studio/templates/sfx-library/catalog.json'));
+ assert.ok(paths.includes('MotionGraphic-Studio/templates/sfx-library/audio/ui-click.wav'));
+ assert.ok(paths.includes('MotionGraphic-Studio/tools/sfx-local.mjs'));
+ assert.ok(paths.includes('MotionGraphic-Studio/CHATGPT-HISTORY.md'));
+ assert.ok(!paths.some(p=>p.startsWith('MotionGraphic-Studio/library/sfx/')));
  assert.ok(!paths.some(p=>p.startsWith('MotionGraphic-Studio/projects/')&&p.endsWith('motiongraphic-video.json')));
  assert.ok(!paths.some(p=>p.includes('library/.studio-generated-state.json')||p.includes('library/backups/')));
 }));
 test('explicit backup mode includes all projects while excluding historical archives',()=>isolatedExport(dir=>{
  const paths=zip(dir,['--with-projects']);
+ assert.ok(paths.includes('MotionGraphic-Studio/CHATGPT-HISTORY.md'));
  const hasIp=fs.existsSync(path.join(ROOT,'projects/ip-address/motiongraphic-video.json'));
  assert.equal(paths.includes('MotionGraphic-Studio/projects/ip-address/motiongraphic-video.json'),hasIp);
  assert.ok(paths.includes('MotionGraphic-Studio/library/.studio-generated-state.json'));

@@ -2,9 +2,10 @@
 /** Dependency-free audit of production/sound-cues.json; DOES NOT modify audio or scenes. */
 import fs from 'node:fs';
 import path from 'node:path';
-import {pathToFileURL} from 'node:url';
+import {pathToFileURL,fileURLToPath} from 'node:url';
+const ROOT=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 
-export function checkSoundCues(projectDir,{strict=false}={}) {
+export function checkSoundCues(projectDir,{strict=false,production=false}={}) {
  const issues=[],warnings=[],notes=[];
  const fail=s=>issues.push(s),warn=s=>warnings.push(s);
  const dir=path.resolve(projectDir);
@@ -13,8 +14,10 @@ export function checkSoundCues(projectDir,{strict=false}={}) {
  let manifest;
  try {manifest=JSON.parse(fs.readFileSync(mf,'utf8'));}
  catch(e){return {ok:false,issues:['Manifest rusak: '+e.message],warnings,notes,cueCount:0};}
+ const enforce=production||manifest.soundImplementationContract!==undefined;
+ if(enforce&&manifest.soundImplementationContract!=='cue-track-v1')fail('soundImplementationContract cue-track-v1 wajib');
  const f=path.join(dir,'production','sound-cues.json');
- if(!fs.existsSync(f))return {ok:true,issues,warnings,notes:['Belum ada sound-cues.json (opsional untuk project lama)'],cueCount:0};
+ if(!fs.existsSync(f)){if(enforce)fail('sound-cues.json wajib');return {ok:issues.length===0,issues,warnings,notes:enforce?[]:['Belum ada sound-cues.json (opsional untuk project lama)'],cueCount:0};}
  let doc;
  try {doc=JSON.parse(fs.readFileSync(f,'utf8'));}
  catch(e){return {ok:false,issues:['sound-cues.json rusak: '+e.message],warnings,notes,cueCount:0};}
@@ -35,7 +38,7 @@ export function checkSoundCues(projectDir,{strict=false}={}) {
   }
   if(!['planned','ready','omit'].includes(c.status))fail(prefix+': status cue planned/ready/omit');
   if(c.gainDb!==undefined&&(!Number.isFinite(c.gainDb)||c.gainDb< -80||c.gainDb>12))fail(prefix+': gainDb di luar rentang -80..12');
-  if(c.status==='omit')continue;
+  if(c.status==='omit'){if(enforce&&(typeof c.reason!=='string'||!c.reason.trim()))fail(prefix+': omit perlu reason');continue;}
   if(c.status==='planned') {warn(prefix+': SFX masih rencana, belum siap render');continue;}
   const rel=c.file;
   if(typeof rel!=='string'||!/^audio\/sfx\/[A-Za-z0-9_./-]+\.(?:wav|mp3|ogg)$/i.test(rel)||rel.split('/').some(s=>s==='..'||s==='.'||!s)){
@@ -64,8 +67,65 @@ export function checkSoundCues(projectDir,{strict=false}={}) {
   if(license.includes('by')&&license!=='cc0'&&(!src.attribution||typeof src.attribution!=='string'))fail(prefix+': atribusi lisensi BY harus dicatat');
   if(src.kind==='openverse'&&(!src.licenseUrl||typeof src.licenseUrl!=='string'))fail(prefix+': Openverse harus mencatat licenseUrl');
  }
- if(strict&&warnings.length)issues.push(...warnings.map(w=>'STRICT: '+w));
+ if(enforce)checkTrack(dir,manifest,doc,fail);
+ if((strict||enforce)&&warnings.length)issues.push(...warnings.map(w=>'STRICT: '+w));
  return {ok:issues.length===0,issues,warnings,notes,cueCount:doc.cues.length};
+}
+
+function checkTrack(dir,m,doc,fail){
+ const read=rel=>{try{return fs.readFileSync(path.join(dir,rel),'utf8')}catch{fail('File wiring SFX wajib: '+rel);return ''}};
+ const normalize=s=>s.replace(/\r\n/g,'\n').trim();
+ if(doc.status==='draft'||!doc.cues.length)fail('Sound plan produksi tidak boleh draft/kosong');
+ if(!fs.existsSync(path.join(dir,'production/SOUND-PLAN.md')))fail('SOUND-PLAN.md wajib');
+ if(m.defaultProps?.showSfx!==true||m.defaultProps?.sfxGain!==1)fail('defaultProps showSfx:true dan sfxGain:1 wajib');
+ const segments=m.segments?.length?m.segments:[{startFrame:0,durationInFrames:m.durationInFrames}];
+ const seen=new Set();
+ const ready=doc.cues.filter(c=>c&&c.status==='ready');
+ const adaptive=m.soundTrackVariant==='text-adaptive-v1';
+ if(m.soundTrackVariant!==undefined&&!adaptive)fail('soundTrackVariant tidak dikenal');
+ for(const c of doc.cues){
+  if(!c||typeof c!=='object')continue;
+  const index=segments.findIndex(seg=>c.startFrame>=seg.startFrame&&c.startFrame<seg.startFrame+seg.durationInFrames);
+  const scene='S'+String(index+1).padStart(2,'0');
+  if(index<0||c.scene!==scene)fail(c.id+': scene tidak cocok dengan startFrame');else seen.add(index);
+  if(c.status==='ready'){
+   if(index>=0&&c.endFrame>=segments[index].startFrame+segments[index].durationInFrames)fail(c.id+': ready cue melintasi segment; pisahkan tail pada batas');
+   if(!Number.isFinite(c.gainDb))fail(c.id+': gainDb wajib');
+   if(!c.source?.title||!c.source?.license)fail(c.id+': judul dan lisensi source wajib');
+   if(c.typing!==undefined){
+    const t=c.typing,seg=segments[index];
+    const valid=t&&typeof t==='object'&&!Array.isArray(t)&&adaptive&&typeof t.prop==='string'&&typeof m.defaultProps?.[t.prop]==='string'&&seg&&t.originFrame===seg.startFrame&&Number.isInteger(t.localStart)&&Number.isInteger(t.localEnd)&&t.localStart>=0&&t.localEnd>=t.localStart&&t.localEnd<seg.durationInFrames&&c.startFrame===t.originFrame+t.localStart&&c.endFrame===t.originFrame+t.localEnd;
+    if(!valid)fail(c.id+': typing window/prop/variant tidak sah');
+    else if(t.mode==='rate') {if(!Number.isFinite(t.startSeconds)||t.startSeconds<0||!Number.isFinite(t.charsPerSecond)||t.charsPerSecond<=0)fail(c.id+': typing rate tidak sah');}
+    else if(t.mode==='offsets') {if(!Array.isArray(t.offsets)||!t.offsets.length||t.offsets.some((v,i)=>!Number.isInteger(v)||v<0||v>t.localEnd-t.localStart||(i>0&&v<=t.offsets[i-1])))fail(c.id+': typing offsets tidak sah');}
+    else if(t.mode!=='round'||t.localEnd===t.localStart)fail(c.id+': typing mode tidak sah');
+    if(valid&&typeof c.file==='string'&&/^audio\/sfx\/[A-Za-z0-9_.-]+\.wav$/i.test(c.file)){
+     // Adaptive samples must fit one frame. Inspect PCM16 RIFF chunks (not arbitrary compressed audio).
+     try{const b=fs.readFileSync(path.join(dir,'public',c.file));let fmt,bytes;
+      for(let o=12;o+8<=b.length;){const size=b.readUInt32LE(o+4);if(o+8+size>b.length)throw Error('truncated');const tag=b.toString('ascii',o,o+4);if(tag==='fmt '&&size>=16)fmt=b.subarray(o+8,o+8+size);if(tag==='data')bytes=size;o+=8+size+(size%2);}
+      if(!fmt||!bytes||fmt.readUInt16LE(0)!==1||fmt.readUInt16LE(14)!==16||!fmt.readUInt32LE(8)||bytes/fmt.readUInt32LE(8)>1/m.fps+1e-9)throw Error('sample > 1 frame or non PCM16');
+     }catch{fail(c.id+': typing WAV PCM16 wajib muat satu frame');}
+    }else if(valid)fail(c.id+': typing sample WAV path tidak sah');
+   }
+  }
+ }
+ for(let i=0;i<segments.length;i++)if(!seen.has(i))fail('S'+String(i+1).padStart(2,'0')+': belum ada cue/omit');
+ const track=read('src/components/SoundCueTrack.tsx');
+ const canonical=fs.readFileSync(path.join(ROOT,adaptive?'templates/sound-cue-track/SoundCueTrack.text-adaptive-v1.tsx':'templates/sound-cue-track/SoundCueTrack.tsx'),'utf8');
+ if(normalize(track)!==normalize(canonical))fail('SoundCueTrack harus memakai template canonical cue-track-v1 (edit cue/gain/map, bukan engine)');
+ if(adaptive&&normalize(read('src/components/SoundTyping.ts'))!==normalize(fs.readFileSync(path.join(ROOT,'templates/sound-cue-track/SoundTyping.ts'),'utf8')))fail('SoundTyping harus memakai template canonical');
+ const map=read('src/components/SoundAssets.ts');
+ const entries=[...map.matchAll(/['"](audio\/sfx\/[A-Za-z0-9_./-]+)['"]\s*:\s*staticFile\(\s*['"]([^'"]+)['"]\s*\)/g)];
+ for(const c of ready){if(entries.filter(e=>e[1]===c.file&&e[2]===`videos/${m.slug}/${c.file}`).length!==1)fail(c.id+': literal map aset tidak tepat/duplikat');}
+ const props=[...new Set(ready.filter(c=>c.typing&&typeof c.typing.prop==='string').map(c=>c.typing.prop))];
+ // Exact canonical prop wiring, order-independent, with identifiers only.
+ const textWire=adaptive?' textProps={{'+props.map(k=>`${k}:p.${k}`).join(',')+'}}':'';
+ if(adaptive&&props.some(k=>!/^[A-Za-z_$][\w$]*$/.test(k)))fail('typing prop identifier tidak sah');
+ for(const [rel,expected] of [[m.entry,`<SoundCueTrack enabled={p.showSfx} gain={p.sfxGain}${textWire}/>`],...(m.segments?.length?[['src/SegmentVideo.tsx',`<SoundCueTrack enabled={p.showSfx} gain={p.sfxGain}${textWire} segmentIndex={segmentIndex}/>`]]:[])]){
+  if(typeof rel!=='string'||!rel.startsWith('src/')||rel.split('/').includes('..')){fail('entry SFX tidak valid');continue;}
+  const src=read(rel);
+  if(!/import\s*\{SoundCueTrack\}\s*from\s*['"]\.\/components\/SoundCueTrack['"]/.test(src)||!src.includes(expected)||(src.match(/<SoundCueTrack\b/g)||[]).length!==1)fail(rel+': satu callsite SoundCueTrack yang terhubung wajib');
+ }
 }
 
 if(process.argv[1]&&import.meta.url===pathToFileURL(path.resolve(process.argv[1])).href){

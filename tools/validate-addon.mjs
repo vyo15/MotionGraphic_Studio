@@ -9,6 +9,7 @@ import {builtinModules,createRequire} from 'node:module';
 import {fileURLToPath} from 'node:url';
 import {validateMotionPlan} from './qa-motion-plan.mjs';
 import {validateSpatial} from './qa-spatial.mjs';
+import {checkSoundCues} from './qa-sound-cues.mjs';
 const require=createRequire(import.meta.url);
 const ROOT=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 export const validSlug=s=>/^[a-z][a-z0-9-]{1,48}$/.test(s||'');
@@ -132,6 +133,10 @@ export function validateAddon(dir,{root=ROOT,strict=false,sourceCheck=true,match
     const plan=validateMotionPlan(base);
     for(const msg of plan.errors)issue('FAIL','Motion plan: '+msg);
     for(const msg of plan.warnings)issue('WARN','Motion plan: '+msg);
+  }
+  if(production||manifest.soundImplementationContract!==undefined){
+   const sound=checkSoundCues(base,{strict:true,production});
+   for(const msg of sound.issues)issue('FAIL','Sound: '+msg);
   }
   const spatialFile=path.join(base,'production/spatial-plan.json');
   if(production||((strict)&&fs.existsSync(spatialFile))){

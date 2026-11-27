@@ -12,11 +12,11 @@ test('SOUND DIRECTION main contract exists and documents gating, timing, CTA-cov
  }
 });
 test('ChatGPT onboarding, production and design documents point to the canonical sound rules',()=>{
- for(const rel of ['CHATGPT-READ-FIRST.md','AGENTS.md','PRODUCTION-RULES.md','PROMPT-PROYEK-CHATGPT.md','docs/CHATGPT-PROJECT-INSTRUCTIONS.md','docs/MOTIONGRAPHIC-DESIGN-SYSTEM.md','docs/MOTION-DIRECTION-RULES.md','docs/STORYBOARD-TEMPLATE-UNIVERSAL.md','docs/QA-VISUAL-MOTION-CHECKLIST.md','docs/SOUND-DESIGN-WORKFLOW.md','docs/SCENE-LAYER-AND-SOUND-STANDARD.md','skills/sound-design-director/SKILL.md']){
+ for(const rel of ['CHATGPT-READ-FIRST.md','AGENTS.md','PRODUCTION-RULES.md','docs/MOTIONGRAPHIC-DESIGN-SYSTEM.md','docs/MOTION-DIRECTION-RULES.md','docs/STORYBOARD-TEMPLATE-UNIVERSAL.md','docs/QA-VISUAL-MOTION-CHECKLIST.md','skills/sound-design-director/SKILL.md']){
   assert.ok(file(rel).includes('SOUND-DIRECTION-RULES.md'),`${rel} missing read-first pointer`);
  }
 });
-test('Starter keeps sound plan optional and existing sound-cues schema unchanged',()=>{
+test('Starter draft keeps sound plan optional and existing sound-cues schema unchanged',()=>{
  const p=file('templates/addon-starter/production/SOUND-PLAN.md');
  const q=JSON.parse(file('templates/addon-starter/production/sound-cues.json'));
  assert.match(p,/CTA/);assert.match(p,/hold/);assert.match(p,/planned/);

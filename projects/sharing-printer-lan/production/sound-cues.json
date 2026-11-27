@@ -1,25 +1,43 @@
 {
   "schemaVersion": 1,
-  "status": "draft",
-  "notes": "Belum ada rekaman atau SFX final. Klik dan paper planned; tidak ada playback palsu.",
+  "status": "ready",
+  "notes": "Soft Editorial v1: designed synthetic fallback; no physical recordings. Frame absolute inclusive. Audio redesign pending listening and audio ACC. Dynamic typing uses visible text increments, one tap per frame.",
   "cues": [
     {
       "id": "cue-01",
       "scene": "S01",
       "action": "LAN terhubung",
-      "startFrame": 135,
-      "impactFrame": 135,
-      "endFrame": 140,
-      "status": "planned"
+      "startFrame": 143,
+      "impactFrame": 143,
+      "endFrame": 150,
+      "status": "ready",
+      "file": "audio/sfx/editorial-connection.wav",
+      "gainDb": -23,
+      "source": {
+        "kind": "own",
+        "title": "editorial-connection.wav",
+        "creator": "MotionGraphic Studio original procedural editorial design (not physical recording)",
+        "license": "CC0-1.0",
+        "sourceUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
     },
     {
       "id": "cue-02",
       "scene": "S01",
       "action": "kertas keluar",
-      "startFrame": 242,
-      "impactFrame": 242,
-      "endFrame": 247,
-      "status": "planned"
+      "startFrame": 221,
+      "impactFrame": 221,
+      "endFrame": 253,
+      "status": "ready",
+      "file": "audio/sfx/editorial-paper-hook.wav",
+      "gainDb": -20,
+      "source": {
+        "kind": "own",
+        "title": "editorial-paper-hook.wav",
+        "creator": "MotionGraphic Studio original procedural editorial design (not physical recording)",
+        "license": "CC0-1.0",
+        "sourceUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
     },
     {
       "id": "cue-03",
@@ -27,17 +45,27 @@
       "action": "transisi ke S02",
       "startFrame": 275,
       "impactFrame": 275,
-      "endFrame": 280,
-      "status": "omit"
+      "endFrame": 275,
+      "status": "omit",
+      "reason": "Silence disengaja untuk continuity, fokus VO atau hold; tidak ada aksi audio yang perlu diperkuat."
     },
     {
       "id": "cue-04",
       "scene": "S02",
-      "action": "ikon Printer Sharing",
-      "startFrame": 329,
-      "impactFrame": 329,
-      "endFrame": 334,
-      "status": "omit"
+      "action": "Printer Sharing icon reveal (visual S02 onset)",
+      "startFrame": 299,
+      "impactFrame": 299,
+      "endFrame": 306,
+      "status": "ready",
+      "file": "audio/sfx/editorial-reveal.wav",
+      "gainDb": -24,
+      "source": {
+        "kind": "own",
+        "title": "editorial-reveal.wav",
+        "creator": "MotionGraphic Studio original procedural editorial design (not physical recording)",
+        "license": "CC0-1.0",
+        "sourceUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
     },
     {
       "id": "cue-05",
@@ -45,8 +73,36 @@
       "action": "transisi ke S03",
       "startFrame": 605,
       "impactFrame": 605,
-      "endFrame": 610,
-      "status": "omit"
+      "endFrame": 605,
+      "status": "omit",
+      "reason": "Silence disengaja untuk continuity, fokus VO atau hold; tidak ada aksi audio yang perlu diperkuat."
+    },
+    {
+      "id": "cue-42",
+      "scene": "S03",
+      "action": "Ketik control",
+      "startFrame": 690,
+      "impactFrame": 690,
+      "endFrame": 772,
+      "status": "ready",
+      "file": "audio/sfx/editorial-key-1.wav",
+      "gainDb": -23,
+      "source": {
+        "kind": "own",
+        "title": "editorial-key-1.wav",
+        "creator": "MotionGraphic Studio original procedural editorial design (not physical recording)",
+        "license": "CC0-1.0",
+        "sourceUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      },
+      "typing": {
+        "prop": "runCommand",
+        "mode": "rate",
+        "originFrame": 606,
+        "localStart": 84,
+        "localEnd": 166,
+        "startSeconds": 3.27,
+        "charsPerSecond": 9
+      }
     },
     {
       "id": "cue-06",
@@ -54,8 +110,17 @@
       "action": "Run OK",
       "startFrame": 773,
       "impactFrame": 773,
-      "endFrame": 778,
-      "status": "planned"
+      "endFrame": 775,
+      "status": "ready",
+      "file": "audio/sfx/editorial-confirm-tap.wav",
+      "gainDb": -20,
+      "source": {
+        "kind": "own",
+        "title": "editorial-confirm-tap.wav",
+        "creator": "MotionGraphic Studio original procedural editorial design (not physical recording)",
+        "license": "CC0-1.0",
+        "sourceUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
     },
     {
       "id": "cue-07",
@@ -63,8 +128,17 @@
       "action": "Network and Internet",
       "startFrame": 842,
       "impactFrame": 842,
-      "endFrame": 847,
-      "status": "planned"
+      "endFrame": 844,
+      "status": "ready",
+      "file": "audio/sfx/editorial-tap-1.wav",
+      "gainDb": -23,
+      "source": {
+        "kind": "own",
+        "title": "editorial-tap-1.wav",
+        "creator": "MotionGraphic Studio original procedural editorial design (not physical recording)",
+        "license": "CC0-1.0",
+        "sourceUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
     },
     {
       "id": "cue-08",
@@ -72,8 +146,9 @@
       "action": "Network and Sharing Center",
       "startFrame": 913,
       "impactFrame": 913,
-      "endFrame": 918,
-      "status": "planned"
+      "endFrame": 913,
+      "status": "omit",
+      "reason": "Intentional silence: secondary UI navigation, leave space for next meaningful interaction."
     },
     {
       "id": "cue-09",
@@ -81,8 +156,17 @@
       "action": "Advanced sharing settings",
       "startFrame": 1002,
       "impactFrame": 1002,
-      "endFrame": 1007,
-      "status": "planned"
+      "endFrame": 1004,
+      "status": "ready",
+      "file": "audio/sfx/editorial-tap-3.wav",
+      "gainDb": -23,
+      "source": {
+        "kind": "own",
+        "title": "editorial-tap-3.wav",
+        "creator": "MotionGraphic Studio original procedural editorial design (not physical recording)",
+        "license": "CC0-1.0",
+        "sourceUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
     },
     {
       "id": "cue-10",
@@ -90,8 +174,17 @@
       "action": "Network Discovery",
       "startFrame": 1089,
       "impactFrame": 1089,
-      "endFrame": 1094,
-      "status": "planned"
+      "endFrame": 1091,
+      "status": "ready",
+      "file": "audio/sfx/editorial-check.wav",
+      "gainDb": -23,
+      "source": {
+        "kind": "own",
+        "title": "editorial-check.wav",
+        "creator": "MotionGraphic Studio original procedural editorial design (not physical recording)",
+        "license": "CC0-1.0",
+        "sourceUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
     },
     {
       "id": "cue-11",
@@ -99,8 +192,9 @@
       "action": "File and Printer Sharing",
       "startFrame": 1175,
       "impactFrame": 1175,
-      "endFrame": 1180,
-      "status": "planned"
+      "endFrame": 1175,
+      "status": "omit",
+      "reason": "Intentional silence: secondary UI navigation, leave space for next meaningful interaction."
     },
     {
       "id": "cue-12",
@@ -108,8 +202,27 @@
       "action": "Save changes",
       "startFrame": 1250,
       "impactFrame": 1250,
-      "endFrame": 1255,
-      "status": "planned"
+      "endFrame": 1252,
+      "status": "ready",
+      "file": "audio/sfx/editorial-confirm-tap.wav",
+      "gainDb": -19,
+      "source": {
+        "kind": "own",
+        "title": "editorial-confirm-tap.wav",
+        "creator": "MotionGraphic Studio original procedural editorial design (not physical recording)",
+        "license": "CC0-1.0",
+        "sourceUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "id": "cue-43",
+      "scene": "S03",
+      "action": "handoff S03 → S04",
+      "startFrame": 1325,
+      "impactFrame": 1325,
+      "endFrame": 1325,
+      "status": "omit",
+      "reason": "Continuity of Control Panel; no decorative transition."
     },
     {
       "id": "cue-13",
@@ -117,8 +230,9 @@
       "action": "Control Panel Home",
       "startFrame": 1386,
       "impactFrame": 1386,
-      "endFrame": 1391,
-      "status": "planned"
+      "endFrame": 1386,
+      "status": "omit",
+      "reason": "Intentional silence: secondary UI navigation, leave space for next meaningful interaction."
     },
     {
       "id": "cue-14",
@@ -126,8 +240,17 @@
       "action": "View devices and printers",
       "startFrame": 1446,
       "impactFrame": 1446,
-      "endFrame": 1451,
-      "status": "planned"
+      "endFrame": 1448,
+      "status": "ready",
+      "file": "audio/sfx/editorial-tap-5.wav",
+      "gainDb": -22,
+      "source": {
+        "kind": "own",
+        "title": "editorial-tap-5.wav",
+        "creator": "MotionGraphic Studio original procedural editorial design (not physical recording)",
+        "license": "CC0-1.0",
+        "sourceUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
     },
     {
       "id": "cue-15",
@@ -135,8 +258,17 @@
       "action": "Right click",
       "startFrame": 1506,
       "impactFrame": 1506,
-      "endFrame": 1511,
-      "status": "planned"
+      "endFrame": 1508,
+      "status": "ready",
+      "file": "audio/sfx/editorial-context.wav",
+      "gainDb": -20,
+      "source": {
+        "kind": "own",
+        "title": "editorial-context.wav",
+        "creator": "MotionGraphic Studio original procedural editorial design (not physical recording)",
+        "license": "CC0-1.0",
+        "sourceUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
     },
     {
       "id": "cue-16",
@@ -144,8 +276,17 @@
       "action": "Printer properties",
       "startFrame": 1566,
       "impactFrame": 1566,
-      "endFrame": 1571,
-      "status": "planned"
+      "endFrame": 1568,
+      "status": "ready",
+      "file": "audio/sfx/editorial-tap-6.wav",
+      "gainDb": -22,
+      "source": {
+        "kind": "own",
+        "title": "editorial-tap-6.wav",
+        "creator": "MotionGraphic Studio original procedural editorial design (not physical recording)",
+        "license": "CC0-1.0",
+        "sourceUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
     },
     {
       "id": "cue-17",
@@ -153,8 +294,9 @@
       "action": "Sharing tab",
       "startFrame": 1626,
       "impactFrame": 1626,
-      "endFrame": 1631,
-      "status": "planned"
+      "endFrame": 1626,
+      "status": "omit",
+      "reason": "Intentional silence: secondary UI navigation, leave space for next meaningful interaction."
     },
     {
       "id": "cue-18",
@@ -162,8 +304,17 @@
       "action": "Share this printer",
       "startFrame": 1686,
       "impactFrame": 1686,
-      "endFrame": 1691,
-      "status": "planned"
+      "endFrame": 1688,
+      "status": "ready",
+      "file": "audio/sfx/editorial-check.wav",
+      "gainDb": -23,
+      "source": {
+        "kind": "own",
+        "title": "editorial-check.wav",
+        "creator": "MotionGraphic Studio original procedural editorial design (not physical recording)",
+        "license": "CC0-1.0",
+        "sourceUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
     },
     {
       "id": "cue-19",
@@ -171,8 +322,17 @@
       "action": "OK",
       "startFrame": 1806,
       "impactFrame": 1806,
-      "endFrame": 1811,
-      "status": "planned"
+      "endFrame": 1808,
+      "status": "ready",
+      "file": "audio/sfx/editorial-confirm-tap.wav",
+      "gainDb": -20,
+      "source": {
+        "kind": "own",
+        "title": "editorial-confirm-tap.wav",
+        "creator": "MotionGraphic Studio original procedural editorial design (not physical recording)",
+        "license": "CC0-1.0",
+        "sourceUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
     },
     {
       "id": "cue-20",
@@ -180,8 +340,9 @@
       "action": "handoff S05",
       "startFrame": 1865,
       "impactFrame": 1865,
-      "endFrame": 1870,
-      "status": "omit"
+      "endFrame": 1865,
+      "status": "omit",
+      "reason": "Silence disengaja untuk continuity, fokus VO atau hold; tidak ada aksi audio yang perlu diperkuat."
     },
     {
       "id": "cue-21",
@@ -190,16 +351,26 @@
       "startFrame": 1890,
       "impactFrame": 1890,
       "endFrame": 1895,
-      "status": "omit"
+      "status": "omit",
+      "reason": "Silence disengaja untuk continuity, fokus VO atau hold; tidak ada aksi audio yang perlu diperkuat."
     },
     {
       "id": "cue-22",
       "scene": "S05",
       "action": "Win + R",
-      "startFrame": 1998,
-      "impactFrame": 1998,
-      "endFrame": 2003,
-      "status": "planned"
+      "startFrame": 1956,
+      "impactFrame": 1956,
+      "endFrame": 1959,
+      "status": "ready",
+      "file": "audio/sfx/editorial-shortcut.wav",
+      "gainDb": -22,
+      "source": {
+        "kind": "own",
+        "title": "editorial-shortcut.wav",
+        "creator": "MotionGraphic Studio original procedural editorial design (not physical recording)",
+        "license": "CC0-1.0",
+        "sourceUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
     },
     {
       "id": "cue-23",
@@ -207,8 +378,40 @@
       "action": "UNC typing",
       "startFrame": 2010,
       "impactFrame": 2010,
-      "endFrame": 2015,
-      "status": "planned"
+      "endFrame": 2075,
+      "status": "ready",
+      "file": "audio/sfx/editorial-key-2.wav",
+      "gainDb": -23,
+      "source": {
+        "kind": "own",
+        "title": "editorial-key-2.wav",
+        "creator": "MotionGraphic Studio original procedural editorial design (not physical recording)",
+        "license": "CC0-1.0",
+        "sourceUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      },
+      "typing": {
+        "prop": "hostAddress",
+        "mode": "offsets",
+        "originFrame": 1866,
+        "localStart": 144,
+        "localEnd": 209,
+        "offsets": [
+          0,
+          4,
+          8,
+          13,
+          17,
+          23,
+          28,
+          33,
+          37,
+          42,
+          47,
+          52,
+          55,
+          58
+        ]
+      }
     },
     {
       "id": "cue-24",
@@ -216,8 +419,17 @@
       "action": "Run OK",
       "startFrame": 2076,
       "impactFrame": 2076,
-      "endFrame": 2081,
-      "status": "planned"
+      "endFrame": 2078,
+      "status": "ready",
+      "file": "audio/sfx/editorial-tap-2.wav",
+      "gainDb": -22,
+      "source": {
+        "kind": "own",
+        "title": "editorial-tap-2.wav",
+        "creator": "MotionGraphic Studio original procedural editorial design (not physical recording)",
+        "license": "CC0-1.0",
+        "sourceUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
     },
     {
       "id": "cue-25",
@@ -225,8 +437,17 @@
       "action": "right click",
       "startFrame": 2154,
       "impactFrame": 2154,
-      "endFrame": 2159,
-      "status": "planned"
+      "endFrame": 2156,
+      "status": "ready",
+      "file": "audio/sfx/editorial-context.wav",
+      "gainDb": -22,
+      "source": {
+        "kind": "own",
+        "title": "editorial-context.wav",
+        "creator": "MotionGraphic Studio original procedural editorial design (not physical recording)",
+        "license": "CC0-1.0",
+        "sourceUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
     },
     {
       "id": "cue-26",
@@ -234,17 +455,35 @@
       "action": "Connect",
       "startFrame": 2190,
       "impactFrame": 2190,
-      "endFrame": 2195,
-      "status": "planned"
+      "endFrame": 2192,
+      "status": "ready",
+      "file": "audio/sfx/editorial-confirm-tap.wav",
+      "gainDb": -20,
+      "source": {
+        "kind": "own",
+        "title": "editorial-confirm-tap.wav",
+        "creator": "MotionGraphic Studio original procedural editorial design (not physical recording)",
+        "license": "CC0-1.0",
+        "sourceUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
     },
     {
       "id": "cue-27",
       "scene": "S05",
-      "action": "installation selesai",
+      "action": "Installation result — editorial settle, not Windows notification",
       "startFrame": 2280,
       "impactFrame": 2280,
-      "endFrame": 2285,
-      "status": "omit"
+      "endFrame": 2288,
+      "status": "ready",
+      "file": "audio/sfx/editorial-settle.wav",
+      "gainDb": -24,
+      "source": {
+        "kind": "own",
+        "title": "editorial-settle.wav",
+        "creator": "MotionGraphic Studio original procedural editorial design (not physical recording)",
+        "license": "CC0-1.0",
+        "sourceUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
     },
     {
       "id": "cue-28",
@@ -252,8 +491,17 @@
       "action": "Buka dokumen",
       "startFrame": 2370,
       "impactFrame": 2370,
-      "endFrame": 2375,
-      "status": "planned"
+      "endFrame": 2372,
+      "status": "ready",
+      "file": "audio/sfx/editorial-tap-3.wav",
+      "gainDb": -23,
+      "source": {
+        "kind": "own",
+        "title": "editorial-tap-3.wav",
+        "creator": "MotionGraphic Studio original procedural editorial design (not physical recording)",
+        "license": "CC0-1.0",
+        "sourceUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
     },
     {
       "id": "cue-29",
@@ -261,8 +509,17 @@
       "action": "Ctrl+P",
       "startFrame": 2403,
       "impactFrame": 2403,
-      "endFrame": 2408,
-      "status": "planned"
+      "endFrame": 2406,
+      "status": "ready",
+      "file": "audio/sfx/editorial-shortcut.wav",
+      "gainDb": -23,
+      "source": {
+        "kind": "own",
+        "title": "editorial-shortcut.wav",
+        "creator": "MotionGraphic Studio original procedural editorial design (not physical recording)",
+        "license": "CC0-1.0",
+        "sourceUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
     },
     {
       "id": "cue-30",
@@ -270,8 +527,9 @@
       "action": "Pilih printer",
       "startFrame": 2433,
       "impactFrame": 2433,
-      "endFrame": 2438,
-      "status": "planned"
+      "endFrame": 2433,
+      "status": "omit",
+      "reason": "Intentional silence: secondary UI navigation, leave space for next meaningful interaction."
     },
     {
       "id": "cue-31",
@@ -279,17 +537,35 @@
       "action": "Klik Print",
       "startFrame": 2467,
       "impactFrame": 2467,
-      "endFrame": 2472,
-      "status": "planned"
+      "endFrame": 2469,
+      "status": "ready",
+      "file": "audio/sfx/editorial-confirm-tap.wav",
+      "gainDb": -19,
+      "source": {
+        "kind": "own",
+        "title": "editorial-confirm-tap.wav",
+        "creator": "MotionGraphic Studio original procedural editorial design (not physical recording)",
+        "license": "CC0-1.0",
+        "sourceUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
     },
     {
       "id": "cue-32",
       "scene": "S06",
       "action": "Data LAN → USB",
-      "startFrame": 2490,
-      "impactFrame": 2490,
-      "endFrame": 2495,
-      "status": "omit"
+      "startFrame": 2498,
+      "impactFrame": 2498,
+      "endFrame": 2506,
+      "status": "ready",
+      "file": "audio/sfx/editorial-data.wav",
+      "gainDb": -25,
+      "source": {
+        "kind": "own",
+        "title": "editorial-data.wav",
+        "creator": "MotionGraphic Studio original procedural editorial design (not physical recording)",
+        "license": "CC0-1.0",
+        "sourceUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
     },
     {
       "id": "cue-33",
@@ -297,8 +573,17 @@
       "action": "Kertas keluar",
       "startFrame": 2548,
       "impactFrame": 2548,
-      "endFrame": 2553,
-      "status": "planned"
+      "endFrame": 2584,
+      "status": "ready",
+      "file": "audio/sfx/editorial-printer-result.wav",
+      "gainDb": -16,
+      "source": {
+        "kind": "own",
+        "title": "editorial-printer-result.wav",
+        "creator": "MotionGraphic Studio original procedural editorial design (not physical recording)",
+        "license": "CC0-1.0",
+        "sourceUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
     },
     {
       "id": "cue-34",
@@ -306,8 +591,27 @@
       "action": "Fade S06 → S07",
       "startFrame": 2705,
       "impactFrame": 2705,
-      "endFrame": 2710,
-      "status": "omit"
+      "endFrame": 2705,
+      "status": "omit",
+      "reason": "Silence disengaja untuk continuity, fokus VO atau hold; tidak ada aksi audio yang perlu diperkuat."
+    },
+    {
+      "id": "cue-44",
+      "scene": "S07",
+      "action": "Comment bubble reveal",
+      "startFrame": 2720,
+      "impactFrame": 2720,
+      "endFrame": 2727,
+      "status": "ready",
+      "file": "audio/sfx/editorial-reveal.wav",
+      "gainDb": -27,
+      "source": {
+        "kind": "own",
+        "title": "editorial-reveal.wav",
+        "creator": "MotionGraphic Studio original procedural editorial design (not physical recording)",
+        "license": "CC0-1.0",
+        "sourceUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
     },
     {
       "id": "cue-35",
@@ -315,8 +619,17 @@
       "action": "Kertas keluar",
       "startFrame": 2779,
       "impactFrame": 2779,
-      "endFrame": 2784,
-      "status": "planned"
+      "endFrame": 2808,
+      "status": "ready",
+      "file": "audio/sfx/editorial-paper-cta.wav",
+      "gainDb": -23,
+      "source": {
+        "kind": "own",
+        "title": "editorial-paper-cta.wav",
+        "creator": "MotionGraphic Studio original procedural editorial design (not physical recording)",
+        "license": "CC0-1.0",
+        "sourceUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
     },
     {
       "id": "cue-36",
@@ -324,17 +637,42 @@
       "action": "Ketik komentar",
       "startFrame": 2849,
       "impactFrame": 2849,
-      "endFrame": 2854,
-      "status": "planned"
+      "endFrame": 2901,
+      "status": "ready",
+      "file": "audio/sfx/editorial-key-3.wav",
+      "gainDb": -23,
+      "source": {
+        "kind": "own",
+        "title": "editorial-key-3.wav",
+        "creator": "MotionGraphic Studio original procedural editorial design (not physical recording)",
+        "license": "CC0-1.0",
+        "sourceUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      },
+      "typing": {
+        "prop": "ctaComment",
+        "mode": "round",
+        "originFrame": 2706,
+        "localStart": 143,
+        "localEnd": 195
+      }
     },
     {
       "id": "cue-37",
       "scene": "S07",
       "action": "Komentar selesai",
-      "startFrame": 2901,
-      "impactFrame": 2901,
-      "endFrame": 2906,
-      "status": "omit"
+      "startFrame": 2902,
+      "impactFrame": 2902,
+      "endFrame": 2910,
+      "status": "ready",
+      "file": "audio/sfx/editorial-settle.wav",
+      "gainDb": -27,
+      "source": {
+        "kind": "own",
+        "title": "editorial-settle.wav",
+        "creator": "MotionGraphic Studio original procedural editorial design (not physical recording)",
+        "license": "CC0-1.0",
+        "sourceUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
     },
     {
       "id": "cue-38",
@@ -342,8 +680,9 @@
       "action": "Fade CTA → cover",
       "startFrame": 2930,
       "impactFrame": 2930,
-      "endFrame": 2935,
-      "status": "omit"
+      "endFrame": 2930,
+      "status": "omit",
+      "reason": "Silence disengaja untuk continuity, fokus VO atau hold; tidak ada aksi audio yang perlu diperkuat."
     },
     {
       "id": "cue-39",
@@ -351,8 +690,17 @@
       "action": "Mini-demo aliran data",
       "startFrame": 2963,
       "impactFrame": 2963,
-      "endFrame": 2968,
-      "status": "omit"
+      "endFrame": 2971,
+      "status": "ready",
+      "file": "audio/sfx/editorial-data.wav",
+      "gainDb": -27,
+      "source": {
+        "kind": "own",
+        "title": "editorial-data.wav",
+        "creator": "MotionGraphic Studio original procedural editorial design (not physical recording)",
+        "license": "CC0-1.0",
+        "sourceUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
     },
     {
       "id": "cue-40",
@@ -360,8 +708,17 @@
       "action": "Kertas keluar",
       "startFrame": 3004,
       "impactFrame": 3004,
-      "endFrame": 3009,
-      "status": "planned"
+      "endFrame": 3033,
+      "status": "ready",
+      "file": "audio/sfx/editorial-paper-cover.wav",
+      "gainDb": -22,
+      "source": {
+        "kind": "own",
+        "title": "editorial-paper-cover.wav",
+        "creator": "MotionGraphic Studio original procedural editorial design (not physical recording)",
+        "license": "CC0-1.0",
+        "sourceUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
     },
     {
       "id": "cue-41",
@@ -370,7 +727,8 @@
       "startFrame": 3039,
       "impactFrame": 3039,
       "endFrame": 3044,
-      "status": "omit"
+      "status": "omit",
+      "reason": "Silence disengaja untuk continuity, fokus VO atau hold; tidak ada aksi audio yang perlu diperkuat."
     }
   ]
 }

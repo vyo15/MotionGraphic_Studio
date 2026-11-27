@@ -1,3 +1,4 @@
+import {copyFixtureTools} from './fixture-tools.mjs';
 import {test} from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
@@ -6,6 +7,7 @@ import path from 'node:path';
 import {spawnSync} from 'node:child_process';
 import {createHash} from 'node:crypto';
 import {fileURLToPath} from 'node:url';
+import {createRequire} from 'node:module';
 import {validateAddon} from '../tools/validate-addon.mjs';
 import {applyPatch} from '../tools/apply-addon-patch.mjs';
 import {inspectZip} from '../tools/zip-preflight.mjs';
@@ -57,10 +59,11 @@ test('ZIP preflight catches untrusted invalid archive',()=>tmp(root=>{
 test('scaffold creates separate validated add-on without editing projects',()=>tmp(root=>{
  for(const dir of ['tools','templates','exports','projects','library'])fs.mkdirSync(path.join(root,dir),{recursive:true});
  fs.cpSync(path.join(ROOT,'templates/addon-starter'),path.join(root,'templates/addon-starter'),{recursive:true});
- for(const f of ['scaffold-addon.mjs','validate-addon.mjs','qa-motion-plan.mjs','qa-spatial.mjs','qa-spatial-trace.mjs'])fs.copyFileSync(path.join(ROOT,'tools',f),path.join(root,'tools',f));
+ copyFixtureTools(ROOT,root);
  fs.writeFileSync(path.join(root,'package.json'),JSON.stringify({dependencies:{react:'19.0.0',remotion:'4.0.538'}}));
  fs.cpSync(path.join(ROOT,'templates/production-toolkit'),path.join(root,'templates/production-toolkit'),{recursive:true});
- const r=spawnSync(process.execPath,[path.join(root,'tools/scaffold-addon.mjs'),'tes-video','TesVideo','Tutorial','Test'],{cwd:root,encoding:'utf8'});
+ const moduleRoot=path.dirname(path.dirname(createRequire(import.meta.url).resolve('typescript/package.json')));
+ const r=spawnSync(process.execPath,[path.join(root,'tools/scaffold-addon.mjs'),'tes-video','TesVideo','Tutorial','Test'],{cwd:root,encoding:'utf8',env:{...process.env,NODE_PATH:[moduleRoot,process.env.NODE_PATH].filter(Boolean).join(path.delimiter)}});
  assert.equal(r.status,0,r.stderr);
  assert.equal(fs.readdirSync(path.join(root,'projects')).length,0);
  assert.equal(validateAddon(path.join(root,'exports/addons/tes-video'),{root,strict:true}).ok,true);

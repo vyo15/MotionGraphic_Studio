@@ -9,15 +9,18 @@ import {ROOT,readCatalog} from './menu-helper.mjs';
 import {ensureExportDirs,availableFile,timestamp} from './export-paths.mjs';
 import {collectEntries,createZip,progressLogger} from './zip-core.mjs';
 import {inspectRelease} from './check-release.mjs';
+import {createPreflightLog} from './studio-preflight.mjs';
+import {masterSources,masterEntries,entrySignature,assertNoPendingInbox,ignoreNames,ignoreRelative} from './master-export-inputs.mjs';
+import {randomUUID} from 'node:crypto';
 
-const IGNORE=new Set(['node_modules','.git','.cache','dist','build','coverage','.next','tmp','temp','.remotion','out','exports','qa-out']);
+const IGNORE=ignoreNames;
 const controller=new AbortController();
 process.on('SIGINT',()=>{console.error('\n[ZIP] Permintaan batal diterima, membersihkan file sementara...');controller.abort()});
 const report=progressLogger();
 const assert=(ok,message)=>{if(!ok)throw Error(message)};
 const exportDirs=()=>ensureExportDirs();
 async function pack(sources,out,{lean=false}={}){
-  const entries=await collectEntries(sources,{ignoreNames:IGNORE,ignoreRelative:name=>/\.(?:log|tmp|partial|bak)$/i.test(name) || (lean && /^MotionGraphic-Studio\/library\/(?:backups|sampah|arsip-|sudah-diimpor|gagal-import|arsip-migrasi)/.test(name))});
+  const entries=await collectEntries(sources,{ignoreNames:IGNORE,ignoreRelative:name=>ignoreRelative(name,lean)});
   console.log(`[ZIP] Menyiapkan ${entries.length} entri tanpa memuat seluruh file ke RAM.`);
   const result=await createZip(entries,out,{signal:controller.signal,onProgress:report});
   console.log(`\n[ZIP BERHASIL] ${result.out} (${(result.compressedBytes/1048576).toFixed(2)} MB)`);
@@ -54,7 +57,7 @@ async function engineOnlyZip(){
   };
   try{
     for(const dir of ['src','tools','contracts','templates','docs','skills'])copy(dir);
-    for(const file of ['package.json','package-lock.json','tsconfig.json','.gitignore','README.md','CHATGPT-READ-FIRST.md','PROMPT-PROYEK-CHATGPT.md','PRODUCTION-RULES.md','AGENTS.md','PANDUAN-REMOTION-STUDIO.md','public/README.txt','01-BUKA-STUDIO.bat','02-CEK-STUDIO.bat','03-STOP-STUDIO.bat','tests/engine-smoke.test.mjs'])copy(file);
+    for(const file of ['package.json','package-lock.json','tsconfig.json','.gitignore','README.md','CHATGPT-READ-FIRST.md','CHATGPT-HISTORY.md','PRODUCTION-RULES.md','AGENTS.md','public/README.txt','01-BUKA-STUDIO.bat','02-CEK-STUDIO.bat','03-STOP-STUDIO.bat','tests/engine-smoke.test.mjs'])copy(file);
     fs.mkdirSync(path.join(target,'projects'),{recursive:true});
     fs.mkdirSync(path.join(target,'library/masuk'),{recursive:true});
     const inbox='library/masuk/TARUH-ZIP-VIDEO-DI-SINI.txt';
@@ -77,13 +80,30 @@ async function engineOnlyZip(){
   }finally{fs.rmSync(temp,{recursive:true,force:true})}
 }
 async function studioZip({full=false}={}){
-  const dirs=['projects','src','tools','library','tests','contracts','templates','docs','skills'];
-  const files=['package.json','package-lock.json','tsconfig.json','.gitignore','README.md','CHATGPT-READ-FIRST.md','PROMPT-PROYEK-CHATGPT.md','PRODUCTION-RULES.md','AGENTS.md','PANDUAN-REMOTION-STUDIO.md','public/README.txt','01-BUKA-STUDIO.bat','02-CEK-STUDIO.bat','03-STOP-STUDIO.bat'];
-  const sources=[...dirs,...files].filter(name=>fs.existsSync(path.join(ROOT,name))).map(name=>({absolute:path.join(ROOT,name),name:'MotionGraphic-Studio/'+name}));
+  const sources=masterSources(ROOT);
   const pkg=JSON.parse(fs.readFileSync(path.join(ROOT,'package.json'),'utf8'));
   const out=availableFile(exportDirs().master,`MotionGraphic-Studio-${full?'FULL':'WITH-PROJECTS'}-v${pkg.version}-${timestamp()}`,'.zip');
   console.log(`\n[ZIP MASTER] Seluruh project disertakan. Backup historis ${full?'disertakan':'dikecualikan'} dari ZIP.`);
   return pack(sources,out,{lean:!full});
+}
+// Dedicated generated handoff only: prior manual/dated backups are never overwritten.
+async function chatgptZip(){
+ assertNoPendingInbox(ROOT);
+ const before=entrySignature(await masterEntries(ROOT));
+ const log=createPreflightLog('ChatGPT-export.log');
+ log.run('Versi Master','check-release.mjs');log.staticChecks();
+ const entries=await masterEntries(ROOT);
+ assert(before===entrySignature(entries),'Source berubah selama validasi; ekspor ditunda.');
+ const out=path.join(exportDirs().master,'CHATGPT-LATEST.zip');
+ const pending=path.join(path.dirname(out),`.chatgpt-${randomUUID()}.zip`);
+ try{
+  await createZip(entries,pending,{signal:controller.signal});
+  assertNoPendingInbox(ROOT);
+  assert(before===entrySignature(await masterEntries(ROOT)),'Source berubah saat ekspor; ZIP lama dipertahankan.');
+  if(fs.existsSync(out))assert(fs.lstatSync(out).isFile()&&!fs.lstatSync(out).isSymbolicLink(),'CHATGPT-LATEST.zip bukan file biasa.');
+  fs.renameSync(pending,out);
+  console.log('[CHATGPT] ZIP terbaru siap: '+out);
+ }finally{fs.rmSync(pending,{force:true});}
 }
 function matchVideo(videos,input){return videos.find((v,i)=>input===String(i+1)||input===v.id||input===v.slug)}
 function showVideos(videos){
@@ -92,6 +112,7 @@ function showVideos(videos){
 }
 async function run(){
   const args=process.argv.slice(2);
+  if(args.length===1&&args[0]==='--chatgpt')return chatgptZip();
   if(args.includes('--studio')||args.includes('--master')){
     const release=inspectRelease(ROOT);assert(release.ok,'Versi release tidak konsisten: '+release.errors.join('; '));
     if(args.includes('--full'))return studioZip({full:true});

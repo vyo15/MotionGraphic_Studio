@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "assets": [
+    {
+      "id": "reviewed-example-replace-me",
+      "file": "replace-with-reviewed-file.wav",
+      "character": "recorded",
+      "tags": ["computer", "keyboard"],
+      "source": {
+        "kind": "real-recording",
+        "title": "REPLACE with source title",
+        "creator": "REPLACE with creator",
+        "sourceUrl": "REPLACE with actual source URL",
+        "license": "CC0-1.0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      },
+      "rightsEvidence": "REPLACE with independently reviewed source and license evidence",
+      "gainDb": -16
+    }
+  ]
+}

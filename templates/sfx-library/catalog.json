@@ -1,0 +1,873 @@
+{
+  "schemaVersion": 1,
+  "assets": [
+    {
+      "id": "starter-ui-click",
+      "file": "audio/ui-click.wav",
+      "character": "synthetic",
+      "tags": [
+        "ui",
+        "click",
+        "button",
+        "short"
+      ],
+      "impactSample": 119,
+      "sha256": "7358db0eeef64efb655626aa62c14ad14fb46034abea176b78478c0c624aa5bb",
+      "source": {
+        "kind": "own",
+        "title": "ui-click",
+        "license": "CC0-1.0",
+        "creator": "MotionGraphic Studio original synthesized starter",
+        "sourceUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      },
+      "gainDb": -16
+    },
+    {
+      "id": "starter-ui-tap",
+      "file": "audio/ui-tap.wav",
+      "character": "synthetic",
+      "tags": [
+        "ui",
+        "tap",
+        "click",
+        "soft"
+      ],
+      "impactSample": 121,
+      "sha256": "13a4520b3b0b6b5fbc464ab96f046b4148bf9d72a429a6efa8be72218431d41c",
+      "source": {
+        "kind": "own",
+        "title": "ui-tap",
+        "license": "CC0-1.0",
+        "creator": "MotionGraphic Studio original synthesized starter",
+        "sourceUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      },
+      "gainDb": -16
+    },
+    {
+      "id": "starter-ui-toggle",
+      "file": "audio/ui-toggle.wav",
+      "character": "synthetic",
+      "tags": [
+        "ui",
+        "toggle",
+        "switch"
+      ],
+      "impactSample": 2660,
+      "sha256": "73467f575c317619379c2a337ed6bbaaccdd8d2f331f9f80114b6515240026ed",
+      "source": {
+        "kind": "own",
+        "title": "ui-toggle",
+        "license": "CC0-1.0",
+        "creator": "MotionGraphic Studio original synthesized starter",
+        "sourceUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      },
+      "gainDb": -16
+    },
+    {
+      "id": "starter-ui-select",
+      "file": "audio/ui-select.wav",
+      "character": "synthetic",
+      "tags": [
+        "ui",
+        "select",
+        "pop"
+      ],
+      "impactSample": 112,
+      "sha256": "c3de1b848133ab276a39531d9323ed297380dbc01318a1fdcda73460eff15904",
+      "source": {
+        "kind": "own",
+        "title": "ui-select",
+        "license": "CC0-1.0",
+        "creator": "MotionGraphic Studio original synthesized starter",
+        "sourceUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      },
+      "gainDb": -16
+    },
+    {
+      "id": "starter-ui-confirm",
+      "file": "audio/ui-confirm.wav",
+      "character": "synthetic",
+      "tags": [
+        "ui",
+        "success",
+        "confirm",
+        "status"
+      ],
+      "impactSample": 4892,
+      "sha256": "c762e9b1fa37a66edb4f1e210dee136de4908cfd51fc6fddcc13decc4a47f0ee",
+      "source": {
+        "kind": "own",
+        "title": "ui-confirm",
+        "license": "CC0-1.0",
+        "creator": "MotionGraphic Studio original synthesized starter",
+        "sourceUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      },
+      "gainDb": -16
+    },
+    {
+      "id": "starter-ui-error",
+      "file": "audio/ui-error.wav",
+      "character": "synthetic",
+      "tags": [
+        "ui",
+        "error",
+        "warning",
+        "status"
+      ],
+      "impactSample": 4149,
+      "sha256": "5d5c70b8faa75ef988334818afeb88fd9ac6609eb279377c36132dc0840f0103",
+      "source": {
+        "kind": "own",
+        "title": "ui-error",
+        "license": "CC0-1.0",
+        "creator": "MotionGraphic Studio original synthesized starter",
+        "sourceUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      },
+      "gainDb": -16
+    },
+    {
+      "id": "starter-ui-notification",
+      "file": "audio/ui-notification.wav",
+      "character": "synthetic",
+      "tags": [
+        "ui",
+        "notification",
+        "chime"
+      ],
+      "impactSample": 5957,
+      "sha256": "2c457ac3107d28908e2c0d26141570c0307bb54d33205ccf0e6f27e0a273585c",
+      "source": {
+        "kind": "own",
+        "title": "ui-notification",
+        "license": "CC0-1.0",
+        "creator": "MotionGraphic Studio original synthesized starter",
+        "sourceUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      },
+      "gainDb": -16
+    },
+    {
+      "id": "starter-motion-pop",
+      "file": "audio/motion-pop.wav",
+      "character": "synthetic",
+      "tags": [
+        "motion",
+        "pop",
+        "reveal"
+      ],
+      "impactSample": 153,
+      "sha256": "42bfdcfb315a3fa1fc0e3f590f6fc2c2dfc617ee323c94cacb93f539628354ea",
+      "source": {
+        "kind": "own",
+        "title": "motion-pop",
+        "license": "CC0-1.0",
+        "creator": "MotionGraphic Studio original synthesized starter",
+        "sourceUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      },
+      "gainDb": -16
+    },
+    {
+      "id": "starter-motion-tick",
+      "file": "audio/motion-tick.wav",
+      "character": "synthetic",
+      "tags": [
+        "motion",
+        "tick",
+        "data",
+        "number"
+      ],
+      "impactSample": 89,
+      "sha256": "6eb45c06ed6572312288318a8762590647c6709857aee8b7e46430528898962a",
+      "source": {
+        "kind": "own",
+        "title": "motion-tick",
+        "license": "CC0-1.0",
+        "creator": "MotionGraphic Studio original synthesized starter",
+        "sourceUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      },
+      "gainDb": -16
+    },
+    {
+      "id": "starter-motion-impact-soft",
+      "file": "audio/motion-impact-soft.wav",
+      "character": "synthetic",
+      "tags": [
+        "motion",
+        "impact",
+        "soft"
+      ],
+      "impactSample": 194,
+      "sha256": "735c4ddb1c0ff2fbcadb9000cdcfb3b7e6ce97b07dfef40141ff7d7c228f6f6d",
+      "source": {
+        "kind": "own",
+        "title": "motion-impact-soft",
+        "license": "CC0-1.0",
+        "creator": "MotionGraphic Studio original synthesized starter",
+        "sourceUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      },
+      "gainDb": -16
+    },
+    {
+      "id": "starter-motion-impact-dry",
+      "file": "audio/motion-impact-dry.wav",
+      "character": "synthetic",
+      "tags": [
+        "motion",
+        "impact",
+        "dry"
+      ],
+      "impactSample": 220,
+      "sha256": "24ca58c3ba93cf286abb571f61152761f626294ea6100a5ff0440ff22e219789",
+      "source": {
+        "kind": "own",
+        "title": "motion-impact-dry",
+        "license": "CC0-1.0",
+        "creator": "MotionGraphic Studio original synthesized starter",
+        "sourceUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      },
+      "gainDb": -16
+    },
+    {
+      "id": "starter-motion-slide",
+      "file": "audio/motion-slide.wav",
+      "character": "synthetic",
+      "tags": [
+        "motion",
+        "slide",
+        "reflow"
+      ],
+      "impactSample": 7920,
+      "sha256": "b1e030875d96868e6934a71a1e07cc2da6e09dcbba726c490ad47cfb9d864ede",
+      "source": {
+        "kind": "own",
+        "title": "motion-slide",
+        "license": "CC0-1.0",
+        "creator": "MotionGraphic Studio original synthesized starter",
+        "sourceUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      },
+      "gainDb": -16
+    },
+    {
+      "id": "starter-motion-whoosh-short",
+      "file": "audio/motion-whoosh-short.wav",
+      "character": "synthetic",
+      "tags": [
+        "motion",
+        "whoosh",
+        "transition"
+      ],
+      "impactSample": 6740,
+      "sha256": "90f6e0ca362c94a59a51e5063fb371637c60ed993d4d0456bd1abbba0655ff32",
+      "source": {
+        "kind": "own",
+        "title": "motion-whoosh-short",
+        "license": "CC0-1.0",
+        "creator": "MotionGraphic Studio original synthesized starter",
+        "sourceUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      },
+      "gainDb": -16
+    },
+    {
+      "id": "starter-motion-whoosh-long",
+      "file": "audio/motion-whoosh-long.wav",
+      "character": "synthetic",
+      "tags": [
+        "motion",
+        "whoosh",
+        "transition",
+        "long"
+      ],
+      "impactSample": 10201,
+      "sha256": "60eaabfbeb7c404dbb54892be389670857bbbf3e055422c3cf562f7df19e706c",
+      "source": {
+        "kind": "own",
+        "title": "motion-whoosh-long",
+        "license": "CC0-1.0",
+        "creator": "MotionGraphic Studio original synthesized starter",
+        "sourceUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      },
+      "gainDb": -16
+    },
+    {
+      "id": "starter-motion-reveal",
+      "file": "audio/motion-reveal.wav",
+      "character": "synthetic",
+      "tags": [
+        "motion",
+        "reveal",
+        "focus"
+      ],
+      "impactSample": 8249,
+      "sha256": "c88abea2c81601406cff9be55cb5405209b963db1bf3f5b8ef01f6e2ef514842",
+      "source": {
+        "kind": "own",
+        "title": "motion-reveal",
+        "license": "CC0-1.0",
+        "creator": "MotionGraphic Studio original synthesized starter",
+        "sourceUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      },
+      "gainDb": -16
+    },
+    {
+      "id": "starter-motion-riser",
+      "file": "audio/motion-riser.wav",
+      "character": "synthetic",
+      "tags": [
+        "motion",
+        "riser",
+        "anticipation"
+      ],
+      "impactSample": 23337,
+      "sha256": "05d0889837947b1e0c11682f33d3523f27768c0c06914b37b5a4f913071d38d7",
+      "source": {
+        "kind": "own",
+        "title": "motion-riser",
+        "license": "CC0-1.0",
+        "creator": "MotionGraphic Studio original synthesized starter",
+        "sourceUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      },
+      "gainDb": -16
+    },
+    {
+      "id": "starter-motion-settle",
+      "file": "audio/motion-settle.wav",
+      "character": "synthetic",
+      "tags": [
+        "motion",
+        "settle",
+        "hold"
+      ],
+      "impactSample": 100,
+      "sha256": "b924b0b6e2ebcc5e94a341342beb2e2a5f650be40519f8af07d57aeadff2d936",
+      "source": {
+        "kind": "own",
+        "title": "motion-settle",
+        "license": "CC0-1.0",
+        "creator": "MotionGraphic Studio original synthesized starter",
+        "sourceUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      },
+      "gainDb": -16
+    },
+    {
+      "id": "starter-motion-fold",
+      "file": "audio/motion-fold.wav",
+      "character": "synthetic",
+      "tags": [
+        "motion",
+        "fold",
+        "morph"
+      ],
+      "impactSample": 5743,
+      "sha256": "818c805be3778c065f20aaa304b54e15297cca2b902d8c97b78c94510e11c2bb",
+      "source": {
+        "kind": "own",
+        "title": "motion-fold",
+        "license": "CC0-1.0",
+        "creator": "MotionGraphic Studio original synthesized starter",
+        "sourceUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      },
+      "gainDb": -16
+    },
+    {
+      "id": "starter-data-step",
+      "file": "audio/data-step.wav",
+      "character": "synthetic",
+      "tags": [
+        "data",
+        "step",
+        "tick"
+      ],
+      "impactSample": 96,
+      "sha256": "7a84bf47b6ead58fab6b753670ce1bc7e1e395894d717063db9008458f41c118",
+      "source": {
+        "kind": "own",
+        "title": "data-step",
+        "license": "CC0-1.0",
+        "creator": "MotionGraphic Studio original synthesized starter",
+        "sourceUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      },
+      "gainDb": -16
+    },
+    {
+      "id": "starter-data-complete",
+      "file": "audio/data-complete.wav",
+      "character": "synthetic",
+      "tags": [
+        "data",
+        "complete",
+        "success"
+      ],
+      "impactSample": 4299,
+      "sha256": "3a7de01f9c8f09c7b94c44a168bf6c8082a5788d7f782f1331d2cc3ccd4cee09",
+      "source": {
+        "kind": "own",
+        "title": "data-complete",
+        "license": "CC0-1.0",
+        "creator": "MotionGraphic Studio original synthesized starter",
+        "sourceUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      },
+      "gainDb": -16
+    },
+    {
+      "id": "editorial-tap-1",
+      "file": "audio/editorial-tap-1.wav",
+      "character": "synthetic",
+      "tags": [
+        "editorial",
+        "ui",
+        "tap",
+        "soft",
+        "synthetic"
+      ],
+      "impactSample": 126,
+      "sha256": "9d14673c402061451e0a6d821b7e6e2aaf6eb2ea311353ef9633ea8089d21f29",
+      "source": {
+        "kind": "own",
+        "title": "editorial-tap-1.wav",
+        "creator": "MotionGraphic Studio original procedural editorial design (not physical recording)",
+        "license": "CC0-1.0",
+        "sourceUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      },
+      "gainDb": -21
+    },
+    {
+      "id": "editorial-tap-2",
+      "file": "audio/editorial-tap-2.wav",
+      "character": "synthetic",
+      "tags": [
+        "editorial",
+        "ui",
+        "tap",
+        "soft",
+        "synthetic"
+      ],
+      "impactSample": 119,
+      "sha256": "e325b5ab21bfd132850572706f2e927ebf288697db100de9cb7aa2a5c84d8d8a",
+      "source": {
+        "kind": "own",
+        "title": "editorial-tap-2.wav",
+        "creator": "MotionGraphic Studio original procedural editorial design (not physical recording)",
+        "license": "CC0-1.0",
+        "sourceUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      },
+      "gainDb": -21
+    },
+    {
+      "id": "editorial-tap-3",
+      "file": "audio/editorial-tap-3.wav",
+      "character": "synthetic",
+      "tags": [
+        "editorial",
+        "ui",
+        "tap",
+        "soft",
+        "synthetic"
+      ],
+      "impactSample": 142,
+      "sha256": "681ec012f662db740bdaba69d953981d1265de732a0005ac4abd23eaa95782f4",
+      "source": {
+        "kind": "own",
+        "title": "editorial-tap-3.wav",
+        "creator": "MotionGraphic Studio original procedural editorial design (not physical recording)",
+        "license": "CC0-1.0",
+        "sourceUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      },
+      "gainDb": -21
+    },
+    {
+      "id": "editorial-tap-4",
+      "file": "audio/editorial-tap-4.wav",
+      "character": "synthetic",
+      "tags": [
+        "editorial",
+        "ui",
+        "tap",
+        "soft",
+        "synthetic"
+      ],
+      "impactSample": 123,
+      "sha256": "09292f81cdbb1e3d3e4de4ae00f135ddae18d9e93d2cdaa549c4567ec59c831b",
+      "source": {
+        "kind": "own",
+        "title": "editorial-tap-4.wav",
+        "creator": "MotionGraphic Studio original procedural editorial design (not physical recording)",
+        "license": "CC0-1.0",
+        "sourceUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      },
+      "gainDb": -21
+    },
+    {
+      "id": "editorial-tap-5",
+      "file": "audio/editorial-tap-5.wav",
+      "character": "synthetic",
+      "tags": [
+        "editorial",
+        "ui",
+        "tap",
+        "soft",
+        "synthetic"
+      ],
+      "impactSample": 135,
+      "sha256": "b542eb37aff7ec4db5c2ddc4cb64cc88310a5e38902b47fcb7213dbde885feda",
+      "source": {
+        "kind": "own",
+        "title": "editorial-tap-5.wav",
+        "creator": "MotionGraphic Studio original procedural editorial design (not physical recording)",
+        "license": "CC0-1.0",
+        "sourceUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      },
+      "gainDb": -21
+    },
+    {
+      "id": "editorial-tap-6",
+      "file": "audio/editorial-tap-6.wav",
+      "character": "synthetic",
+      "tags": [
+        "editorial",
+        "ui",
+        "tap",
+        "soft",
+        "synthetic"
+      ],
+      "impactSample": 93,
+      "sha256": "cd62413e8aec017b4b767fed6c099cb05a5b84972d2629c8be74b9a391d9b94d",
+      "source": {
+        "kind": "own",
+        "title": "editorial-tap-6.wav",
+        "creator": "MotionGraphic Studio original procedural editorial design (not physical recording)",
+        "license": "CC0-1.0",
+        "sourceUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      },
+      "gainDb": -21
+    },
+    {
+      "id": "editorial-key-1",
+      "file": "audio/editorial-key-1.wav",
+      "character": "synthetic",
+      "tags": [
+        "editorial",
+        "ui",
+        "key",
+        "soft",
+        "synthetic"
+      ],
+      "impactSample": 149,
+      "sha256": "60166b8d7fb53adda61d59d148d72027cb09adc3e857153cb5337118bf3d2dd7",
+      "source": {
+        "kind": "own",
+        "title": "editorial-key-1.wav",
+        "creator": "MotionGraphic Studio original procedural editorial design (not physical recording)",
+        "license": "CC0-1.0",
+        "sourceUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      },
+      "gainDb": -23
+    },
+    {
+      "id": "editorial-key-2",
+      "file": "audio/editorial-key-2.wav",
+      "character": "synthetic",
+      "tags": [
+        "editorial",
+        "ui",
+        "key",
+        "soft",
+        "synthetic"
+      ],
+      "impactSample": 74,
+      "sha256": "860b48fe2fb5597e43acc913da4a31776bdc7e3fe778d9a609661882f0581f5e",
+      "source": {
+        "kind": "own",
+        "title": "editorial-key-2.wav",
+        "creator": "MotionGraphic Studio original procedural editorial design (not physical recording)",
+        "license": "CC0-1.0",
+        "sourceUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      },
+      "gainDb": -23
+    },
+    {
+      "id": "editorial-key-3",
+      "file": "audio/editorial-key-3.wav",
+      "character": "synthetic",
+      "tags": [
+        "editorial",
+        "ui",
+        "key",
+        "soft",
+        "synthetic"
+      ],
+      "impactSample": 122,
+      "sha256": "8d87e9ed4c3ecffffd7c57f30e6f5cc8dc036abfb95607413c62736281c66865",
+      "source": {
+        "kind": "own",
+        "title": "editorial-key-3.wav",
+        "creator": "MotionGraphic Studio original procedural editorial design (not physical recording)",
+        "license": "CC0-1.0",
+        "sourceUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      },
+      "gainDb": -23
+    },
+    {
+      "id": "editorial-context",
+      "file": "audio/editorial-context.wav",
+      "character": "synthetic",
+      "tags": [
+        "editorial",
+        "synthetic",
+        "ui",
+        "context",
+        "soft"
+      ],
+      "impactSample": 143,
+      "sha256": "947ba45cb2f0d084b74b097dbdfd132f5672f7ee4c73b5a1f3e08fa0f6d50c7f",
+      "source": {
+        "kind": "own",
+        "title": "editorial-context.wav",
+        "creator": "MotionGraphic Studio original procedural editorial design (not physical recording)",
+        "license": "CC0-1.0",
+        "sourceUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      },
+      "gainDb": -20
+    },
+    {
+      "id": "editorial-check",
+      "file": "audio/editorial-check.wav",
+      "character": "synthetic",
+      "tags": [
+        "editorial",
+        "synthetic",
+        "ui",
+        "checkbox",
+        "soft"
+      ],
+      "impactSample": 115,
+      "sha256": "c8617f2e4093172d58015712226ccda03ee50b3c7e220ad87d2628660fc1e588",
+      "source": {
+        "kind": "own",
+        "title": "editorial-check.wav",
+        "creator": "MotionGraphic Studio original procedural editorial design (not physical recording)",
+        "license": "CC0-1.0",
+        "sourceUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      },
+      "gainDb": -23
+    },
+    {
+      "id": "editorial-confirm-tap",
+      "file": "audio/editorial-confirm-tap.wav",
+      "character": "synthetic",
+      "tags": [
+        "editorial",
+        "synthetic",
+        "ui",
+        "confirm",
+        "soft"
+      ],
+      "impactSample": 146,
+      "sha256": "1f1de375a7705ff32d7b75c16f1ba86acf2d097f8823e64c10b631f077efa9ad",
+      "source": {
+        "kind": "own",
+        "title": "editorial-confirm-tap.wav",
+        "creator": "MotionGraphic Studio original procedural editorial design (not physical recording)",
+        "license": "CC0-1.0",
+        "sourceUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      },
+      "gainDb": -19
+    },
+    {
+      "id": "editorial-shortcut",
+      "file": "audio/editorial-shortcut.wav",
+      "character": "synthetic",
+      "tags": [
+        "editorial",
+        "synthetic",
+        "ui",
+        "shortcut",
+        "soft"
+      ],
+      "impactSample": 184,
+      "sha256": "68b19c9b438359e8f64dcc847c6479d2091f7086790baf20a9f4be7bbf47a5ae",
+      "source": {
+        "kind": "own",
+        "title": "editorial-shortcut.wav",
+        "creator": "MotionGraphic Studio original procedural editorial design (not physical recording)",
+        "license": "CC0-1.0",
+        "sourceUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      },
+      "gainDb": -22
+    },
+    {
+      "id": "editorial-connection",
+      "file": "audio/editorial-connection.wav",
+      "character": "synthetic",
+      "tags": [
+        "editorial",
+        "synthetic",
+        "motion",
+        "connection",
+        "soft"
+      ],
+      "impactSample": 0,
+      "sha256": "47f52f2eecb028e1aaf7a05539a8218a3ad6c9ec14e5abc54a72ddc08f57e718",
+      "source": {
+        "kind": "own",
+        "title": "editorial-connection.wav",
+        "creator": "MotionGraphic Studio original procedural editorial design (not physical recording)",
+        "license": "CC0-1.0",
+        "sourceUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      },
+      "gainDb": -23
+    },
+    {
+      "id": "editorial-reveal",
+      "file": "audio/editorial-reveal.wav",
+      "character": "synthetic",
+      "tags": [
+        "editorial",
+        "synthetic",
+        "motion",
+        "reveal",
+        "soft"
+      ],
+      "impactSample": 0,
+      "sha256": "100852d59aac14129e083f61422509b96c95c911eb069569536c205828cd7c98",
+      "source": {
+        "kind": "own",
+        "title": "editorial-reveal.wav",
+        "creator": "MotionGraphic Studio original procedural editorial design (not physical recording)",
+        "license": "CC0-1.0",
+        "sourceUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      },
+      "gainDb": -24
+    },
+    {
+      "id": "editorial-data",
+      "file": "audio/editorial-data.wav",
+      "character": "synthetic",
+      "tags": [
+        "editorial",
+        "synthetic",
+        "motion",
+        "data",
+        "soft"
+      ],
+      "impactSample": 0,
+      "sha256": "803abad18b48b5d7ce16ca6c69833a030f85e5bc8410977231d62dbe3e1f6fc1",
+      "source": {
+        "kind": "own",
+        "title": "editorial-data.wav",
+        "creator": "MotionGraphic Studio original procedural editorial design (not physical recording)",
+        "license": "CC0-1.0",
+        "sourceUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      },
+      "gainDb": -25
+    },
+    {
+      "id": "editorial-settle",
+      "file": "audio/editorial-settle.wav",
+      "character": "synthetic",
+      "tags": [
+        "editorial",
+        "synthetic",
+        "motion",
+        "result",
+        "soft"
+      ],
+      "impactSample": 0,
+      "sha256": "116cdbc2e17a5b74e6b286fe8bf03b1c4b1a96faf81f33f22b5377d9c60cb919",
+      "source": {
+        "kind": "own",
+        "title": "editorial-settle.wav",
+        "creator": "MotionGraphic Studio original procedural editorial design (not physical recording)",
+        "license": "CC0-1.0",
+        "sourceUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      },
+      "gainDb": -24
+    },
+    {
+      "id": "editorial-paper-hook",
+      "file": "audio/editorial-paper-hook.wav",
+      "character": "synthetic",
+      "tags": [
+        "editorial",
+        "synthetic",
+        "motion",
+        "paper",
+        "stylized"
+      ],
+      "impactSample": 0,
+      "sha256": "cb79758964e4dc8bdc6afd9c307e32fae60ee1ba1da50647d07fdb65fdfc33fc",
+      "source": {
+        "kind": "own",
+        "title": "editorial-paper-hook.wav",
+        "creator": "MotionGraphic Studio original procedural editorial design (not physical recording)",
+        "license": "CC0-1.0",
+        "sourceUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      },
+      "gainDb": -20
+    },
+    {
+      "id": "editorial-paper-cta",
+      "file": "audio/editorial-paper-cta.wav",
+      "character": "synthetic",
+      "tags": [
+        "editorial",
+        "synthetic",
+        "motion",
+        "paper",
+        "stylized"
+      ],
+      "impactSample": 0,
+      "sha256": "461fd40a1c87061fa5aef20bc5284fcdaa077a02d7eb86d37818689f340853fe",
+      "source": {
+        "kind": "own",
+        "title": "editorial-paper-cta.wav",
+        "creator": "MotionGraphic Studio original procedural editorial design (not physical recording)",
+        "license": "CC0-1.0",
+        "sourceUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      },
+      "gainDb": -23
+    },
+    {
+      "id": "editorial-paper-cover",
+      "file": "audio/editorial-paper-cover.wav",
+      "character": "synthetic",
+      "tags": [
+        "editorial",
+        "synthetic",
+        "motion",
+        "paper",
+        "stylized"
+      ],
+      "impactSample": 0,
+      "sha256": "ffc9f81208a5b330e413506f3578395f4ec88432373e6bc0ea29302b9d5843c9",
+      "source": {
+        "kind": "own",
+        "title": "editorial-paper-cover.wav",
+        "creator": "MotionGraphic Studio original procedural editorial design (not physical recording)",
+        "license": "CC0-1.0",
+        "sourceUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      },
+      "gainDb": -22
+    },
+    {
+      "id": "editorial-printer-result",
+      "file": "audio/editorial-printer-result.wav",
+      "character": "synthetic",
+      "tags": [
+        "editorial",
+        "synthetic",
+        "motion",
+        "printer",
+        "stylized"
+      ],
+      "impactSample": 0,
+      "sha256": "71d6f445243d59b480d0a971f1058cffa231a9575863cee1e6bbb347b859a2a8",
+      "source": {
+        "kind": "own",
+        "title": "editorial-printer-result.wav",
+        "creator": "MotionGraphic Studio original procedural editorial design (not physical recording)",
+        "license": "CC0-1.0",
+        "sourceUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      },
+      "gainDb": -19
+    }
+  ]
+}

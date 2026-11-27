@@ -13,7 +13,7 @@ const metadata=(f)=>{
   catch{return '-'}
 };
 const getPaths=root=>({projects:path.join(root,'projects'),inbox:path.join(root,'library','masuk')});
-const stableFiles=(inbox,ageMs)=>{
+export const stableFiles=(inbox,ageMs)=>{
   if(!fs.existsSync(inbox))return [];
   const now=Date.now();
   return fs.readdirSync(inbox).filter(name=>name.toLowerCase().endsWith('.zip')).filter(name=>{
@@ -75,9 +75,9 @@ export function registrySignature(root){
   if(fs.existsSync(inbox))for(const entry of fs.readdirSync(inbox).filter(x=>x.toLowerCase().endsWith('.zip')).sort())pieces.push('zip:'+entry+':'+metadata(path.join(inbox,entry)));
   return pieces.join('|');
 }
-function nodeScript(root,script){
+function nodeScript(root,script,args=[]){
   return new Promise((resolve,reject)=>{
-    const child=spawn(process.execPath,[path.join(root,'tools',script)],{cwd:root,stdio:'inherit',windowsHide:true});
+    const child=spawn(process.execPath,[path.join(root,'tools',script),...args],{cwd:root,stdio:'inherit',windowsHide:true});
     child.on('error',reject);
     child.on('close',code=>code===0?resolve():reject(new Error(`${script}: exit code ${code}`)));
   });
@@ -88,12 +88,12 @@ export function startAutoSync({
   pollMs=3000,
   zipAgeMs=4500,
   runSync=()=>nodeScript(root,'sync-projects.mjs'),
-  runImport=()=>nodeScript(root,'import-inbox.mjs'),
+  runImport=()=>nodeScript(root,'import-inbox.mjs',['--ready-only']),
 }={}){
   if(!root)throw new Error('startAutoSync memerlukan root Master');
   const {projects,inbox}=getPaths(root);
   for(const dir of [projects,inbox])fs.mkdirSync(dir,{recursive:true});
-  let closed=false,busy=false,timer=null,lastSignature=registrySignature(root);
+  let closed=false,busy=false,timer=null,lastSignature=registrySignature(root),observedSignature=lastSignature;
   const watchers=[];
   async function execute(){
     if(closed){return}
@@ -111,7 +111,7 @@ export function startAutoSync({
       // A ZIP in the middle of being copied must not trigger expensive sync.
       if(pendingZips.length && toImport.length!==pendingZips.length)return;
       await runSync();
-      lastSignature=registrySignature(root);
+      lastSignature=registrySignature(root);observedSignature=lastSignature;
       console.log('[AUTO SYNC] Registrasi/VO/aset diperbarui. Edit TSX biasa hanya hot reload.');
     }catch(e){
       console.error('[AUTO SYNC] '+e.message+' (video lama tidak dihapus; periksa project yang baru disalin)');
@@ -130,7 +130,8 @@ export function startAutoSync({
     // Ignore Remotion Save-to-code of ordinary TSX layers.  Only the
     // registrations/VO/asset/Root signature can trigger a sync.
     if(closed||busy)return;
-    if(registrySignature(root)!==lastSignature)schedule();
+    const next=registrySignature(root);
+    if(next!==observedSignature){observedSignature=next;schedule();}
   }
   function attach(dir){
     // Windows / Node terbaru: recursive memantau semua folder baru dan lama.
@@ -148,11 +149,12 @@ export function startAutoSync({
   const interval=setInterval(()=>{
     if(closed)return;
     const next=registrySignature(root);
-    if(next!==lastSignature){lastSignature=next;schedule()}
+    if(next!==observedSignature){observedSignature=next;schedule()}
     else if(stableFiles(inbox,zipAgeMs).length)schedule();
   },pollMs);
   return {
     close(){closed=true;clearTimeout(timer);clearInterval(interval);for(const w of watchers)w.close()},
     check(){if(registrySignature(root)!==lastSignature)schedule()},
+    isIdle(){return !closed&&!busy&&!timer&&registrySignature(root)===lastSignature&&!fs.readdirSync(inbox).some(n=>n.toLowerCase().endsWith('.zip'));},
   };
 }

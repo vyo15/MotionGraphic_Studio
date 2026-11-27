@@ -1,19 +1,19 @@
-# MOTIONGRAPHIC STUDIO — SOUND DIRECTION SYSTEM v2.1
+# MOTIONGRAPHIC STUDIO — SOUND DIRECTION SYSTEM v2.2
 
-**Status:** standar default untuk **video baru** dan revisi sound yang diminta. **Tidak berlaku retroaktif** pada Easy2Boot, Shutdown Otomatis, VO, scene, atau sound yang sudah `ACC/LOCKED` tanpa permintaan pengguna. **Sumber aturan sound utama**: dokumen ini; cara implementasi: `docs/SOUND-DESIGN-WORKFLOW.md`; validator: `tools/qa-sound-cues.mjs`; quality gate: `docs/QA-VISUAL-MOTION-CHECKLIST.md`.
+**Status:** standar default untuk **video baru** dan revisi sound yang diminta. **Tidak berlaku retroaktif** pada Easy2Boot, Shutdown Otomatis, VO, scene, atau sound yang sudah `ACC/LOCKED` tanpa permintaan pengguna. **Sumber aturan sound utama**: dokumen ini; cara implementasi: bagian berikut dan `docs/SFX-LOCAL-FIRST.md`; validator: `tools/qa-sound-cues.mjs`; quality gate: `docs/QA-VISUAL-MOTION-CHECKLIST.md`.
 
 > **Prinsip:** suara membuat tindakan terasa nyata dan hubungan scene terasa hidup. **Setiap aksi/transisi diperiksa kemungkinan sound-nya, bukan diwajibkan memiliki SFX.** Ketepatan, ruang untuk VO, ritme, dan silence lebih berharga daripada banyak efek. Jangan mengklaim audio sudah dibuat, didengar, di-mix, atau dirender hanya dari JSON/dokumen.
 
 ## 1. Prioritas dan workflow
 
 1. **Naskah DRAFT + storyboard lebih dulu.** Tentukan aksi yang *layak* mendapat SFX, serta tempat yang justru harus hening. Tulis rencana audio per beat meskipun belum ada audio.
-2. **Bangun motion → preview/revisi → ACC visual.** Jangan meminta VO rekaman atau menambahkan musik final sebagai syarat awal.
-3. **Setelah ACC motion**, tentukan cue definitif per frame (`startFrame`, `impactFrame`, `endFrame`) dan aset sumber yang sah. Jika belum ada file audio: `status: "planned"`, bukan `ready`.
+2. **Bangun motion + SFX aktual → preview bersuara/revisi → ACC visual.** Jangan meminta VO rekaman atau menambahkan musik final sebagai syarat awal.
+3. **Sejak build pertama**, tentukan cue per frame (`startFrame`, `impactFrame`, `endFrame`) dan aset sumber yang sah. `planned` hanya untuk storyboard/prototype belum selesai; sebelum delivery build pertama semua cue harus `ready` atau `omit` beralasan.
 4. **VO Guide** dipakai sebagai penanda urutan beat. Pengguna **baru merekam VO** setelah visual disetujui.
 5. **Rekaman VO masuk → sinkronisasi natural**: sesuaikan cue, subtitle, musik dan sound berdasarkan timing rekaman nyata tanpa mempercepat suara sembarangan atau merusak ACC.
 6. **Preview + render + listening QA** → revisi mixing → final setelah bukti. QA metadata atau file WAV saja **bukan** uji mendengar.
 
-Khusus permintaan “bedah/audit/storyboard”: **tidak mengubah source**. Jika user meminta *langsung build*, kerjakan add-on lengkap tanpa approval tambahan; tetap catat sound yang `planned`, `ready`, dan `belum diuji` dengan jujur.
+Khusus permintaan “bedah/audit/storyboard”: **tidak mengubah source**. Jika user meminta *langsung build*, kerjakan add-on lengkap tanpa approval tambahan; wajib pasang SFX aktual dan lulus gate produksi sebelum delivery; laporkan jika render/listening belum diuji.
 
 ## 2. Rumus sound per beat
 
@@ -122,3 +122,17 @@ File: `projects/<slug>/production/sound-cues.json` (`schemaVersion: 1`). Minimal
 3. Saat **merevisi** sound/scene, ubah hanya file terkait; jangan mengubah scene, tempo VO, cue, sound assets atau narasi yang sudah ACC di project lain.
 4. Kirim revisi sebagai **FILE CHANGE ONLY** berisi file baru/berubah dengan path relatif Master agar pengguna copy–paste–Replace. Jika hanya audit/storyboard, jangan tulis source.
 5. Laporkan tiga status terpisah: `sound plan`, `asset/source implementation`, dan `audio rendering/listening QA`.
+
+## AUTOMATIC SOUND IMPLEMENTATION LOCK v2.2
+
+Video baru wajib SFX aktual sejak build pertama, tanpa menunggu ACC visual/VO. `planned` hanya untuk storyboard/prototype belum selesai, bukan delivery lengkap. Semua aksi/transisi dievaluasi; `omit` wajib beralasan, termasuk bila seluruh video memang hening. Full/segment menggunakan sumber cue yang sama, tanpa double playback. Cover silent berarti tanpa VO, mini-demo boleh SFX; hero hold tenang. Setelah ACC, pertahankan cue/visual terkunci dan hanya sesuaikan dengan izin; mixing final setelah VO.
+
+Gate baru `soundImplementationContract: "cue-track-v1"` pada manifest video baru. Isi `production/sound-cues.json` (schemaVersion 1, status review/ready/final, tidak kosong, setiap scene punya cue atau omit). Untuk ready: file WAV/MP3/OGG asli, source/licence, gainDb, frame absolut inklusif; cue tidak melewati batas segment. Copy `templates/sound-cue-track/SoundCueTrack.tsx` ke `src/components/` tanpa mengubah mesin track; buat `SoundAssets.ts` dengan map literal `'audio/sfx/nama.wav': staticFile('videos/<slug>/audio/sfx/nama.wav')`. Import track pada entry dan SegmentVideo jika segments ada; satu callsite full `<SoundCueTrack enabled={p.showSfx} gain={p.sfxGain}/>` dan segment `<SoundCueTrack enabled={p.showSfx} gain={p.sfxGain} segmentIndex={segmentIndex}/>`. Props default `showSfx: true`, `sfxGain: 1`; edit cue JSON / WAV / gain, bukan track mesin. Jika semua omit, map kosong boleh. Untuk project tanpa segments, cue pakai S01 dan hanya entry full.
+
+Jalankan `npm run qa:sound -- projects/<slug> --strict` dan `npm run addon:validate -- projects/<slug> --production --syntax`; gate production otomatis cek kontrak audio. Legacy tanpa marker tetap kompatibel pada pemeriksaan non-production. Gate adalah pemeriksaan statis (metadata, aset, canonical track, pemanggilan source dan timing), bukan bukti runtime/audible; render MP4 pertama dengan SFX, periksa audio stream/peak serta listening QA. Jika render tidak tersedia, tandai belum teruji; jangan klaim preview/audio final. Tidak mengubah proyek ACC lain.
+
+## Local-First adapter v3.0 (pengadaan; kontrak cue tetap v2.2)
+Baca `docs/SFX-LOCAL-FIRST.md` untuk setiap build/preview baru. Gunakan WAV lokal dan CLI `tools/sfx-local.mjs` sebelum render: verifikasi katalog, pilih karakter/aksi, staging cue dan map, copy aset ke add-on. Openverse hanya kurasi opsional, Real SFX metode, Earshot opsional jika tersedia. Tidak ada API/network saat render; tidak mengklaim suara sintetis sebagai rekaman. Library/pack tidak menggantikan listening QA, dan tidak ada retrofit project lama.
+
+
+**SOFT EDITORIAL / LOCAL-FIRST quality gate:** Baca `docs/SFX-SOFT-EDITORIAL.md` untuk setiap build/preview atau revisi audio yang diizinkan. Rekaman nyata diprioritaskan untuk mekanisme fisik; bila tidak tersedia gunakan graphic cue lembut/omit beralasan, laporkan keterbatasan, jangan klaim natural atau final. Hindari pengulangan klik, beri ruang VO, uji listening A/B. `text-adaptive-v1` opsional di bawah cue-track-v1 untuk ketikan yang mengikuti Props; canonical template legacy tetap berlaku. Tidak retrofit proyek ACC.

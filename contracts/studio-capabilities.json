@@ -57,7 +57,7 @@
   "studioUserFlow": {
     "command": "npm run flow",
     "briefOutput": "exports/briefs",
-    "source": "docs/USER-FLOW-CHATGPT.md"
+    "source": "PRODUCTION-RULES.md"
   },
   "masterZipDefault": "engine-only (no projects, no historical logs)",
   "productionStandards": {
@@ -74,6 +74,9 @@
     "productionToolkit": "1.0",
     "spatialQA": "npm run qa:spatial -- <folder-addon>",
     "voAlignment": "npm run vo:align -- <folder-addon> <phrases.json>",
-    "approvalQA": "npm run qa:approval"
+    "approvalQA": "npm run qa:approval",
+    "soundDirection": "2.2",
+    "soundImplementationContract": "cue-track-v1",
+    "soundQA": "npm run qa:sound -- <folder-addon> --strict"
   }
 }
