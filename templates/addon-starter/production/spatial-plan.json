@@ -49,7 +49,8 @@
         }
       ],
       "source": "src/scenes/Scene01.tsx",
-      "fontFamily": "MG Poppins"
+      "fontFamily": "MG Poppins",
+      "fontWeight": 800
     },
     {
       "id": "S01 — Subtitle 01",
@@ -84,7 +85,8 @@
       "maxLines": 1,
       "minFontSize": 32,
       "source": "src/scenes/Scene01.tsx",
-      "fontFamily": "MG Inter"
+      "fontFamily": "MG Inter",
+      "fontWeight": 500
     },
     {
       "id": "S02 — Tombol Win",
@@ -151,7 +153,8 @@
       "native": true,
       "textRequired": true,
       "source": "src/scenes/Scene02.tsx",
-      "fontFamily": "MG Poppins"
+      "fontFamily": "MG Poppins",
+      "fontWeight": 700
     },
     {
       "id": "S02 — Run window",
@@ -518,7 +521,8 @@
       "maxLines": 1,
       "minFontSize": 32,
       "source": "src/scenes/Scene02.tsx",
-      "fontFamily": "MG Inter"
+      "fontFamily": "MG Inter",
+      "fontWeight": 500
     },
     {
       "id": "S02 — Subtitle 02",
@@ -553,7 +557,8 @@
       "maxLines": 1,
       "minFontSize": 32,
       "source": "src/scenes/Scene02.tsx",
-      "fontFamily": "MG Inter"
+      "fontFamily": "MG Inter",
+      "fontWeight": 500
     },
     {
       "id": "S03 — Judul",
@@ -595,7 +600,8 @@
         }
       ],
       "source": "src/scenes/Scene03.tsx",
-      "fontFamily": "MG Poppins"
+      "fontFamily": "MG Poppins",
+      "fontWeight": 700
     },
     {
       "id": "S03 — Subtitle 01",
@@ -630,7 +636,8 @@
       "maxLines": 1,
       "minFontSize": 32,
       "source": "src/scenes/Scene03.tsx",
-      "fontFamily": "MG Inter"
+      "fontFamily": "MG Inter",
+      "fontWeight": 500
     },
     {
       "id": "S04 — Judul",
@@ -672,7 +679,8 @@
         }
       ],
       "source": "src/scenes/Scene04.tsx",
-      "fontFamily": "MG Poppins"
+      "fontFamily": "MG Poppins",
+      "fontWeight": 800
     },
     {
       "id": "S04 — Hero",
@@ -714,7 +722,8 @@
         }
       ],
       "source": "src/scenes/Scene04.tsx",
-      "fontFamily": "MG Poppins"
+      "fontFamily": "MG Poppins",
+      "fontWeight": 700
     },
     {
       "id": "S04 — Windows",
@@ -788,7 +797,8 @@
       "visibility": "visible",
       "native": true,
       "source": "src/scenes/Scene04.tsx",
-      "fontFamily": "MG Poppins"
+      "fontFamily": "MG Poppins",
+      "fontWeight": 700
     },
     {
       "id": "S04 — Mini Run",
@@ -830,7 +840,8 @@
         }
       ],
       "source": "src/scenes/Scene04.tsx",
-      "fontFamily": "MG Poppins"
+      "fontFamily": "MG Poppins",
+      "fontWeight": 700
     },
     {
       "id": "S00 — Background",
@@ -925,5 +936,24 @@
   ],
   "geometryContract": "screen-space-v1",
   "intelligenceContract": "visual-intelligence-v1",
-  "interactions": []
+  "interactions": [],
+  "subtitlePolicy": {
+    "preview": "required",
+    "high": "none",
+    "capcut": "none"
+  },
+  "objectAnchors": [
+    {
+      "id": "CoverHeroAnchor",
+      "anchorId": "S04 — Windows",
+      "headlineIds": [
+        "S04 — Judul",
+        "S04 — Hero"
+      ],
+      "start": 492,
+      "end": 600,
+      "gap": 48,
+      "motion": "fixed"
+    }
+  ]
 }

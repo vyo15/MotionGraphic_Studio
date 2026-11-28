@@ -63,6 +63,8 @@ export function finalGuideOverrides(defaultProps,designContract){
 /** Keep capture and exported pixels in the same visual state; probe differs only for capture. */
 export function renderVisualProps(defaultProps,designContract,profile,{instrumented=false}={}){
  const key=resolveRenderProfile(profile);const selected=key==='capcut'?capcutOverrides(defaultProps).props:key==='high'?finalGuideOverrides(defaultProps,designContract).props:structuredClone(defaultProps);
+ delete selected.qaSpatialIsolation;
+ if(Object.hasOwn(selected,'qaSpatialCapture'))selected.qaSpatialCapture=false;
  return instrumented?{...selected,showSafeZone:false,qaSpatialCapture:false}:selected;
 }
 /** Actual geometry capture uses the same temporary preset resolver as rendering. */

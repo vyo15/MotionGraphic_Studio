@@ -5,205 +5,205 @@
     {
       "scene": "S01-Question",
       "startFrame": 0,
-      "endFrame": 198,
+      "endFrame": 186,
       "text": "Printer kamu belum punya fitur Wi-Fi?"
     },
     {
       "scene": "S01-Response",
-      "startFrame": 198,
-      "endFrame": 282,
+      "startFrame": 186,
+      "endFrame": 270,
       "text": "Tenang, ternyata ada cara"
     },
     {
       "scene": "S01",
-      "startFrame": 282,
-      "endFrame": 407,
+      "startFrame": 270,
+      "endFrame": 329,
       "text": "supaya satu printer bisa digunakan"
     },
     {
       "scene": "S01",
-      "startFrame": 407,
-      "endFrame": 526,
+      "startFrame": 329,
+      "endFrame": 377,
       "text": "oleh beberapa komputer."
     },
     {
       "scene": "S01",
-      "startFrame": 526,
-      "endFrame": 560,
+      "startFrame": 377,
+      "endFrame": 548,
       "text": ""
     },
     {
       "scene": "S02",
-      "startFrame": 560,
-      "endFrame": 638,
+      "startFrame": 548,
+      "endFrame": 626,
       "text": "Caranya, kita cukup manfaatin"
     },
     {
       "scene": "S02",
-      "startFrame": 638,
-      "endFrame": 728,
+      "startFrame": 626,
+      "endFrame": 716,
       "text": "fitur Printer Sharing yang udah ada di Windows."
     },
     {
       "scene": "S02",
-      "startFrame": 728,
-      "endFrame": 794,
+      "startFrame": 716,
+      "endFrame": 782,
       "text": "Pertama, pastikan kedua komputer ini"
     },
     {
       "scene": "S02",
-      "startFrame": 794,
-      "endFrame": 890,
+      "startFrame": 782,
+      "endFrame": 878,
       "text": "udah terhubung ke jaringan yang sama."
     },
     {
       "scene": "S03",
-      "startFrame": 890,
-      "endFrame": 992,
+      "startFrame": 878,
+      "endFrame": 980,
       "text": "Selanjutnya, di komputer yang terhubung langsung ke printer,"
     },
     {
       "scene": "S03",
-      "startFrame": 992,
-      "endFrame": 1072,
+      "startFrame": 980,
+      "endFrame": 1060,
       "text": "buka Control Panel,"
     },
     {
       "scene": "S03",
-      "startFrame": 1072,
-      "endFrame": 1205,
+      "startFrame": 1060,
+      "endFrame": 1193,
       "text": "lalu masuk ke Network and Sharing Center."
     },
     {
       "scene": "S03",
-      "startFrame": 1205,
-      "endFrame": 1292,
+      "startFrame": 1193,
+      "endFrame": 1280,
       "text": "Pilih Change advanced sharing settings,"
     },
     {
       "scene": "S03",
-      "startFrame": 1292,
-      "endFrame": 1408,
+      "startFrame": 1280,
+      "endFrame": 1396,
       "text": "kemudian aktifkan Network Discovery"
     },
     {
       "scene": "S03",
-      "startFrame": 1408,
-      "endFrame": 1508,
+      "startFrame": 1396,
+      "endFrame": 1496,
       "text": "dan File and Printer Sharing."
     },
     {
       "scene": "S03",
-      "startFrame": 1508,
-      "endFrame": 1610,
+      "startFrame": 1496,
+      "endFrame": 1598,
       "text": "Kalau udah, klik Save changes."
     },
     {
       "scene": "S04",
-      "startFrame": 1610,
-      "endFrame": 1760,
+      "startFrame": 1598,
+      "endFrame": 1748,
       "text": "Setelah itu, masuk ke pengaturan printer,"
     },
     {
       "scene": "S04",
-      "startFrame": 1760,
-      "endFrame": 1850,
+      "startFrame": 1748,
+      "endFrame": 1838,
       "text": "pilih printer yang mau kita sharing, lalu buka Printer Properties."
     },
     {
       "scene": "S04",
-      "startFrame": 1850,
-      "endFrame": 1940,
+      "startFrame": 1838,
+      "endFrame": 1928,
       "text": "Masuk ke tab Sharing,"
     },
     {
       "scene": "S04",
-      "startFrame": 1940,
-      "endFrame": 2060,
+      "startFrame": 1928,
+      "endFrame": 2048,
       "text": "centang Share this printer,"
     },
     {
       "scene": "S04",
-      "startFrame": 2060,
-      "endFrame": 2150,
+      "startFrame": 2048,
+      "endFrame": 2138,
       "text": "lalu klik OK."
     },
     {
       "scene": "S05",
-      "startFrame": 2150,
-      "endFrame": 2234,
+      "startFrame": 2138,
+      "endFrame": 2222,
       "text": "Sekarang, kita pindah ke komputer kedua."
     },
     {
       "scene": "S05",
-      "startFrame": 2234,
-      "endFrame": 2282,
+      "startFrame": 2222,
+      "endFrame": 2270,
       "text": "Tekan Windows plus R,"
     },
     {
       "scene": "S05",
-      "startFrame": 2282,
-      "endFrame": 2390,
+      "startFrame": 2270,
+      "endFrame": 2378,
       "text": "lalu masukkan alamat IP komputer pertama."
     },
     {
       "scene": "S05",
-      "startFrame": 2390,
-      "endFrame": 2438,
+      "startFrame": 2378,
+      "endFrame": 2426,
       "text": "Kalau printernya udah muncul,"
     },
     {
       "scene": "S05",
-      "startFrame": 2438,
-      "endFrame": 2600,
+      "startFrame": 2426,
+      "endFrame": 2588,
       "text": "tinggal klik kanan dan pilih Connect."
     },
     {
       "scene": "S06",
-      "startFrame": 2600,
-      "endFrame": 2720,
+      "startFrame": 2588,
+      "endFrame": 2708,
       "text": "Nah, sekarang kita udah bisa nge-print"
     },
     {
       "scene": "S06",
-      "startFrame": 2720,
-      "endFrame": 2870,
+      "startFrame": 2708,
+      "endFrame": 2858,
       "text": "dari kedua komputer tanpa perlu Wi-Fi."
     },
     {
       "scene": "S06",
-      "startFrame": 2870,
-      "endFrame": 2945,
+      "startFrame": 2858,
+      "endFrame": 2933,
       "text": "Tapi pastikan komputer yang terhubung langsung ke printer"
     },
     {
       "scene": "S06",
-      "startFrame": 2945,
-      "endFrame": 2990,
+      "startFrame": 2933,
+      "endFrame": 2978,
       "text": "tetap menyala, ya."
     },
     {
       "scene": "S07",
-      "startFrame": 2990,
-      "endFrame": 3052,
+      "startFrame": 2978,
+      "endFrame": 3040,
       "text": "Kalau kamu punya pengalaman"
     },
     {
       "scene": "S07",
-      "startFrame": 3052,
-      "endFrame": 3109,
+      "startFrame": 3040,
+      "endFrame": 3097,
       "text": "soal sharing printer,"
     },
     {
       "scene": "S07",
-      "startFrame": 3109,
-      "endFrame": 3215,
+      "startFrame": 3097,
+      "endFrame": 3203,
       "text": "coba tulis di kolom komentar."
     },
     {
       "scene": "S08",
-      "startFrame": 3215,
-      "endFrame": 3395,
+      "startFrame": 3203,
+      "endFrame": 3383,
       "text": ""
     }
   ]

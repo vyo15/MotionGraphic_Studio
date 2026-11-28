@@ -1670,7 +1670,7 @@
       "width": 1080,
       "height": 1920,
       "fps": 30,
-      "durationInFrames": 3395,
+      "durationInFrames": 3383,
       "assetPrefix": "videos/sharing-printer-lan",
       "source": "projects/sharing-printer-lan/src/Video.tsx",
       "projectDir": "projects/sharing-printer-lan",
@@ -1682,67 +1682,69 @@
         "hostAddress": "\\\\192.168.10.1",
         "ctaComment": "Aku juga pernah pakai cara ini.",
         "showSfx": true,
-        "sfxGain": 1
+        "sfxGain": 1,
+        "showVoiceover": true,
+        "voiceoverGain": 1
       },
       "segments": [
         {
           "id": "SharingPrinterLan-S01-Question",
           "title": "Hook — Pertanyaan",
           "startFrame": 0,
-          "durationInFrames": 198
+          "durationInFrames": 186
         },
         {
           "id": "SharingPrinterLan-S01-Response",
           "title": "Hook — Tenang, ternyata ada cara",
-          "startFrame": 198,
+          "startFrame": 186,
           "durationInFrames": 84
         },
         {
           "id": "SharingPrinterLan-S01",
           "title": "Hook — Demonstrasi printer",
-          "startFrame": 282,
+          "startFrame": 270,
           "durationInFrames": 278
         },
         {
           "id": "SharingPrinterLan-S02",
           "title": "Koneksi jaringan",
-          "startFrame": 560,
+          "startFrame": 548,
           "durationInFrames": 330
         },
         {
           "id": "SharingPrinterLan-S03",
           "title": "Network Sharing",
-          "startFrame": 890,
+          "startFrame": 878,
           "durationInFrames": 720
         },
         {
           "id": "SharingPrinterLan-S04",
           "title": "Sharing Printer",
-          "startFrame": 1610,
+          "startFrame": 1598,
           "durationInFrames": 540
         },
         {
           "id": "SharingPrinterLan-S05",
           "title": "Menghubungkan printer",
-          "startFrame": 2150,
+          "startFrame": 2138,
           "durationInFrames": 450
         },
         {
           "id": "SharingPrinterLan-S06",
           "title": "Hasil cetak",
-          "startFrame": 2600,
+          "startFrame": 2588,
           "durationInFrames": 390
         },
         {
           "id": "SharingPrinterLan-S07",
           "title": "CTA",
-          "startFrame": 2990,
+          "startFrame": 2978,
           "durationInFrames": 225
         },
         {
           "id": "SharingPrinterLan-S08",
           "title": "Cover Reels",
-          "startFrame": 3215,
+          "startFrame": 3203,
           "durationInFrames": 180
         }
       ],

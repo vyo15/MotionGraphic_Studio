@@ -90,12 +90,12 @@
     "geometryContract": "screen-space-v1 + visual-intelligence-v1 required for new production review; legacy unchanged",
     "actualGeometryCapture": {
       "command": "node tools/capture-spatial.mjs projects/<slug>",
-      "verification": "Trace v3 validates actual supplied geometry, role-aware collisions, sampled hit-test candidates, cursor events, typography metrics and diagnostic evidence. Runtime PC verification required; no exact glyph/pixel mask or GUI certification.",
+      "verification": "Trace v3 with strict font/visibility/containment, object anchor, preset subtitle policy, sampled paint and bounded differential PNG candidates; source/unit QA only until PC runtime verification. No exact glyph, complex mask or GUI certification.",
       "fullValidation": "npm run qa:spatial -- projects/<slug> --trace <trace.json> --require-full --mode preview",
       "dailyWorkflow": "npm run dev (automatic event sampling after source and registry stable; instrumented projects only)",
-      "manualWorkflow": "npm run menu → 17 → project → sample / full / final High / declared / full CapCut",
-      "reports": "qa-out/<slug>/spatial-*/trace.json, report.json, review.html, selected original PNG and annotated SVG; layout-advice.json; qa-out/evidence-index/; quality-gate.json",
-      "scope": "Paket 01–04: geometry/collision candidates, read-only layout advice, exclusive QA/render lease, historical sample cache, exact-scope final gate, MP4 heuristic QA and bounded handoff. Runtime PC pilot, exact glyph/pixel and native GUI not certified."
+      "manualWorkflow": "npm run menu → 17 → project → sample / full / final High / declared / full CapCut; optional staged diagnostic pilot/faults",
+      "reports": "qa-out/<slug>/spatial-*/trace.json, report.json, review.html, selected original PNG and annotated SVG; layout-advice.json; qa-out/evidence-index/; quality-gate.json; precision-review.json; performance.json",
+      "scope": "Final A–E: object-centered read-only advice, bounded reflow and pixel contribution candidates, shared browser per job, timing metrics, existing exclusive queue and exact-scope gate; diagnostic source ZIP via menu 7; actual runtime PC verification pending."
     }
   },
   "delivery": "FILE CHANGE ONLY root-relative for new project, revision, Master maintenance"

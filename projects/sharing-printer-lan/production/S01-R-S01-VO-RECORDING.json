@@ -1,0 +1,54 @@
+{
+  "source": "public/audio/voiceover/s01-response-demo-original.mp3",
+  "expectedText": [
+    "Tenang, ternyata ada cara",
+    "supaya satu printer bisa digunakan oleh beberapa komputer."
+  ],
+  "durationSeconds": 5.64,
+  "processing": [
+    "highpass 65Hz",
+    "afftdn nr=6 nf=-48",
+    "loudnorm I=-17 TP=-1.5 LRA=7"
+  ],
+  "sampleRate": 48000,
+  "channels": 1,
+  "bitDepth": 24,
+  "splitSourceSample": 92800,
+  "splitSourceSeconds": 1.9333333333333333,
+  "alignment": "Continuous full-track playback, source PCM unchanged. 58f boundary is still a provisional energy/VAD candidate, not verified word-level ASR. Segment clips retain exact contiguous samples. User approved continuous preview; global offset -12f, no change to samples or local playback.",
+  "scenes": [
+    {
+      "scene": "S01-Response",
+      "asset": "public/audio/voiceover/s01-response-clean.wav",
+      "startFrame": 26,
+      "durationInFrames": 58
+    },
+    {
+      "scene": "S01",
+      "asset": "public/audio/voiceover/s01-demo-clean.wav",
+      "startFrame": 0,
+      "durationInFrames": 112,
+      "subtitleChangeLocalFrame": 59,
+      "subtitleEndLocalFrame": 107
+    }
+  ],
+  "fullTrack": {
+    "asset": "public/audio/voiceover/s01-response-demo-clean.wav",
+    "startFrame": 212,
+    "durationInFrames": 170,
+    "actualSamples": 270720,
+    "sceneBoundaryFrame": 270,
+    "addedGapFrames": 0,
+    "segmentPlayback": "existing contiguous slices only; full comp disables both scene-local clips"
+  },
+  "subtitleAlignmentReview": {
+    "status": "provisional",
+    "method": "20 ms RMS energy; no ASR/listening verification",
+    "globalCueFrames": [
+      270,
+      329,
+      377
+    ],
+    "reason": "Low energy at 3.87–3.91s of full recording; last activity near 5.4s; retain short reading hold through 5.5s. No claim of word identity."
+  }
+}

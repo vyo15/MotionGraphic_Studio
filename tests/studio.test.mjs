@@ -49,6 +49,15 @@ test('QA detects injected overflow and overlap with timecode',()=>{
  assert.ok(qa.issues.some(x=>x.code==='overlap'));
  assert.deepEqual(qa.summary.framesToReview,[0,45,89]);
 });
+test('static literal safe-zone uses the declared profile and asymmetric scaled margins',()=>{
+ const file=path.join(temp,'motiongraphic-video.json'),original=fs.readFileSync(file,'utf8');
+ try{
+  const m=JSON.parse(original);m.width=720;m.height=1280;m.designContract='compact-balanced-v1';fs.writeFileSync(file,JSON.stringify(m));
+  fs.writeFileSync(source,`export const Video=()=> <><Interactive.Div name="HeadlineLeft" style={{left:70,top:200,width:100,height:80}}>A</Interactive.Div><Interactive.Div name="HeadlineRight" style={{left:520,top:200,width:100,height:80}}>B</Interactive.Div><Interactive.Div name="HeadlineInside" style={{left:100,top:200,width:100,height:80}}>C</Interactive.Div></>`);
+  const qa=checkQuality(slug);assert.deepEqual(qa.issues.filter(x=>x.code==='safe-zone').map(x=>x.layer),['HeadlineLeft','HeadlineRight']);
+  delete m.designContract;fs.writeFileSync(file,JSON.stringify(m));assert.equal(checkQuality(slug).issues.filter(x=>x.code==='safe-zone').length,0);
+ }finally{fs.writeFileSync(file,original);}
+});
 legacyTest('output package has stable source audio references',()=>{
  for(const slug of ['ip-address','windows-hacks-5-shortcut-lengkap']){
   const m=JSON.parse(fs.readFileSync(path.join(ROOT,'projects',slug,'motiongraphic-video.json'),'utf8'));

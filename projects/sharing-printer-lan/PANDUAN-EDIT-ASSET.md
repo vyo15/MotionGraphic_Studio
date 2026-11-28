@@ -1,6 +1,6 @@
 # Panduan edit Sharing Printer — V10 aktif
 
-**Status aktif:** V10 ACC referensi. 10 segmen, 3395 frame, 113,17 detik. Bagian lama adalah riwayat.
+**Status aktif:** V10 ACC referensi. 10 segmen, 3383 frame, 112,77 detik. Bagian lama adalah riwayat.
 
 1. Ekstrak File Change Only ke root MotionGraphic-Studio; backup bila sharing-printer-lan sudah ada.
 2. npm run sync, npm run dev. Pilih SharingPrinterLan dan segmen S01/S02/S03/S04/S05.
@@ -38,3 +38,5 @@ Pilih SharingPrinterLan-S01-Question untuk 3 teks awal, 3 tanda tanya dan coral;
 
 ### S02/S03 — highlight ACC
 Di segment S02 pilih layer `S02 — Highlight Printer Sharing` / `S02 — Highlight jaringan yang sama`. Pada S03 pilih `S03 — Highlight komputer utama`, `S03 — Highlight Win R` atau enam target `S03 — Highlight …` pada frame aktif. Outline berada pada koordinat UI, sehingga ikut kamera. Offset layout dan timing reveal ada di Scene03.tsx; computed transforms source-editable. Belum uji edit, Save/reload native.
+
+**Timing aktif terbaru — Continuous VO ACC:** 3383f (112,77s); question 186f (6,2s), response 84f, demo 278f; opening 548f. Full VO kontinu mulai 212f, batas demo 270f, akhir sequence 382f; cover hero terakhir 3382f (lokal 179). Catatan angka lama adalah riwayat. Hold akhir Wi-Fi dipangkas 12f, tanpa mengubah waveform, reveal/resolve, scene lain atau local cue. Native/listening final belum diuji.

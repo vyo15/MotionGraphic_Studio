@@ -2,11 +2,11 @@ import React,{useEffect,useState} from 'react';
 import {cancelRender,continueRender,delayRender,getRemotionEnvironment,useCurrentFrame,useVideoConfig} from 'remotion';
 import {captureSpatialFrame} from './capture-spatial-frame.mjs';
 /** Opt-in render-only probe. Never updates visual state, and emits no DOM. */
-const ActiveProbe:React.FC<{offset:number}> = ({offset})=>{
+const ActiveProbe:React.FC<{offset:number;isolate?:string[]}> = ({offset,isolate})=>{
  const frame=useCurrentFrame()+offset,{width,height}=useVideoConfig();
  const [handle]=useState(()=>delayRender('Spatial QA capture'));
  useEffect(()=>{
-  let cancelled=false,released=false;
+  let cancelled=false,released=false;const restore:(()=>void)[]=[];
   const release=()=>{if(!released){released=true;continueRender(handle);}};
   const go=async()=>{
    const roots=document.querySelectorAll('[data-qa-root="composition"]');const root=roots[0];if(roots.length!==1||!root)throw Error('Spatial composition root missing');
@@ -19,11 +19,16 @@ const ActiveProbe:React.FC<{offset:number}> = ({offset})=>{
    await document.fonts.ready;await new Promise<void>(r=>requestAnimationFrame(()=>requestAnimationFrame(()=>r())));
    if(cancelled)return;
    const row=captureSpatialFrame(root,frame,width,height);
-   console.log('MG_SPATIAL_FRAME:'+JSON.stringify(row));release();
+   if(isolate?.length){
+    if(isolate.length>2||new Set(isolate).size!==isolate.length)throw Error('Invalid QA isolation request');
+    for(const id of isolate){const matches=Array.from(root.querySelectorAll('[data-qa-track]')).filter(el=>el.getAttribute('data-qa-track')===id);if(matches.length!==1)throw Error('Isolation layer missing '+id);const el=matches[0] as HTMLElement|SVGElement;const value=el.style.getPropertyValue('opacity'),priority=el.style.getPropertyPriority('opacity');restore.push(()=>{if(value)el.style.setProperty('opacity',value,priority);else el.style.removeProperty('opacity');});el.style.setProperty('opacity','0','important');}
+    await new Promise<void>(r=>requestAnimationFrame(()=>requestAnimationFrame(()=>r())));if(cancelled)return;
+   }
+   console.log('MG_SPATIAL_FRAME:'+JSON.stringify({...row,isolationIds:isolate??[]}));release();
   };
   go().catch(e=>{if(!cancelled)cancelRender(e instanceof Error?e:new Error(String(e)));});
-  return()=>{cancelled=true;release();};
- },[frame,width,height,handle]);
+  return()=>{cancelled=true;for(const undo of restore.reverse())undo();release();};
+ },[frame,width,height,handle,isolate]);
  return null;
 };
-export const SpatialProbe:React.FC<{enabled?:boolean;offset?:number}>=({enabled,offset=0})=>{const frame=useCurrentFrame();return enabled&&getRemotionEnvironment().isRendering?<ActiveProbe key={frame} offset={offset}/>:null;};
+export const SpatialProbe:React.FC<{enabled?:boolean;offset?:number;isolate?:string[]}>=({enabled,offset=0,isolate})=>{const frame=useCurrentFrame();return enabled&&getRemotionEnvironment().isRendering?<ActiveProbe key={frame} offset={offset} isolate={isolate}/>:null;};

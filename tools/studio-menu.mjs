@@ -89,7 +89,8 @@ async function doZip(){
   console.log('  3. MASTER ENGINE ONLY (tanpa video — default)');
   console.log('  4. Master + video (tanpa backup historis)');
   console.log('  5. Backup Master penuh + riwayat');
-  const mode=await ask('\nPilih 1/2/3/4/5 (Enter = kembali): ');
+  console.log('  6. ZIP diagnostik ChatGPT (source bermasalah, terpisah dari LATEST)');
+  const mode=await ask('\nPilih 1/2/3/4/5/6 (Enter = kembali): ');
   if(!mode)return console.log('[MENU] Ekspor dibatalkan tanpa perubahan.');
   if(mode==='1'){
     const video=await chooseVideo();
@@ -99,6 +100,7 @@ async function doZip(){
   }else if(mode==='3')runScript('zip-video.mjs',['--studio']);
   else if(mode==='4')runScript('zip-video.mjs',['--studio','--with-projects']);
   else if(mode==='5')runScript('zip-video.mjs',['--studio','--full']);
+  else if(mode==='6')runScript('zip-video.mjs',['--diagnostic']);
   else console.log('[MENU] Pilihan ekspor tidak dikenal: '+mode);
 }
 async function doRender(){
@@ -228,10 +230,14 @@ async function handle(choice){
     case '16': runScript('check-release.mjs');break;
     case '17': {
       if(!runScript('prepare-studio.mjs',['--skip-regression']))break;
-      const v=await chooseVideo();if(!v)break;
+      const choices=[...catalogVideos(),{id:'PILOT-STAGE',slug:'PILOT-STAGE',title:'Buat paket Spatial QA Pilot (draft staging, tidak mengubah video aktif)'}];
+      const v=await choose(choices,'VIDEO / PILOT QA:',v=>`${v.title} [${v.id}]`,v=>[v.id,v.slug]);if(!v)break;
+      if(v.id==='PILOT-STAGE'){runScript('spatial-pilot.mjs',['--stage']);break;}
       console.log(' 1. Sample preview (frame penting)\n 2. Full preview (semua frame)\n 3. Full final (tanpa VO Guide compact)\n 4. Spatial plan deklaratif saja\n 5. Full CapCut HQ');
+      if(v.slug==='spatial-qa-pilot')console.log(' 6. Uji fault pilot (diagnostik)');
       const a=await ask('Pilih (Enter = kembali): ');
-      if(a==='4')runScript('qa-spatial.mjs',[path.join(ROOT,v.projectDir)]);
+      if(a==='6'&&v.slug==='spatial-qa-pilot'){const fault=await ask('Fault overflow / cursor / guide / anchor / occlusion: ');if(['overflow','cursor','guide','anchor','occlusion'].includes(fault))runScript('spatial-pilot.mjs',['--fault',fault]);}
+      else if(a==='4')runScript('qa-spatial.mjs',[path.join(ROOT,v.projectDir)]);
       else if(['1','2','3','5'].includes(a))runScript('auto-spatial.mjs',[v.slug,({1:'sample',2:'full',3:'final',5:'capcut'})[a]]);
       break;}
     case '18': runScript('production-scope.mjs');break;

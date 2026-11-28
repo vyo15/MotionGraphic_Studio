@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
   "status": "draft",
-  "narrationHash": "3803e4e4214cd82f9b806c2febb43525be6dd7caaa4516d7db0c9153b0c6c0c9",
+  "narrationHash": "395ff9d49353e34e1c02ba35bf56c1f8bde101ca588e8c8cacc6ec9aef5ce99a",
   "beats": [
     {
       "beatIndex": 0,
       "intent": "introduce",
       "motion": "selective-emphasis",
       "focusTarget": "Wi-Fi?",
-      "reason": "V10 ACC: normal bold uppercase, highlight dan gerak Wi-Fi, tiga tanda tanya menyatu kembali, jeda natural.",
+      "reason": "V10 ACC: normal bold uppercase, highlight dan gerak Wi-Fi, tiga tanda tanya menyatu kembali, jeda natural. User ACC continuous VO; final Wi-Fi hold reduced 12f, reveal and resolve unchanged; revised timing review.",
       "stateIn": "Latar polos",
       "stateOut": "Pertanyaan Wi-Fi?",
       "handoff": {
@@ -37,7 +37,7 @@
       "intent": "bridge",
       "motion": "progressive-build",
       "focusTarget": "Tenang, ternyata ada cara",
-      "reason": "Ritme V4 ACC, ruang baca dan hold; tidak mengejar durasi.",
+      "reason": "Ritme V4 ACC, ruang baca dan hold; tidak mengejar durasi. VO kontinu dimulai lokal 26f, batas demo tanpa gap tambahan.",
       "stateIn": "Pertanyaan selesai",
       "stateOut": "Respons solusi",
       "handoff": {
@@ -61,7 +61,7 @@
       "intent": "sequence",
       "motion": "spatial-reflow",
       "focusTarget": "Dua komputer dan LAN",
-      "reason": "Ritme V4 ACC, ruang baca dan hold; tidak mengejar durasi.",
+      "reason": "VO recording: provisional first phrase alignment; original topology and camera unchanged. Cue boundary 329f is a provisional acoustic trough, not ASR.",
       "stateIn": "Respons solusi",
       "stateOut": "Dua komputer terhubung",
       "handoff": {
@@ -70,8 +70,8 @@
       },
       "phases": {
         "action": 0,
-        "reaction": 70,
-        "holdStart": 95
+        "reaction": 33,
+        "holdStart": 50
       },
       "camera": null,
       "collisionPolicy": "World UI/cursor dipotong di viewport; subtitle di screen-space, terpisah. Tumpang tindih kontrol dengan shell asli disengaja.",
@@ -83,49 +83,50 @@
     },
     {
       "beatIndex": 3,
-      "intent": "result",
-      "motion": "result-hold",
-      "focusTarget": "Data dan kertas hasil cetak",
-      "reason": "Ritme V4 ACC, ruang baca dan hold; tidak mengejar durasi.",
-      "stateIn": "Kabel LAN",
-      "stateOut": "Kertas hasil cetak",
+      "intent": "sequence",
+      "motion": "progressive-build",
+      "focusTarget": "Headline banyak komputer dan aliran data",
+      "reason": "VO recording: headline timing advances to provisional second phrase; topology unchanged. Reveal maju 5f mengikuti pergeseran audio demo. Subtitle hold through 377f; original approved headline reveal and topology retained.",
+      "stateIn": "Dua komputer dan LAN",
+      "stateOut": "Headline lengkap; demonstrasi berlanjut",
       "handoff": {
         "type": "carry",
         "reason": "V4: fade terarah antar slide; demo membawa hasil ke S02."
       },
       "phases": {
         "action": 0,
-        "reaction": 45,
-        "holdStart": 112
+        "reaction": 18,
+        "holdStart": 45
       },
       "camera": null,
       "collisionPolicy": "World UI/cursor dipotong di viewport; subtitle di screen-space, terpisah. Tumpang tindih kontrol dengan shell asli disengaja.",
       "editableTargets": [
         "S01 — Subtitle 04",
-        "S01 — Kertas hasil cetak",
-        "S01 — Headline banyak komputer"
+        "S01 — Headline banyak komputer",
+        "S01 — Data cetak bergerak"
       ]
     },
     {
       "beatIndex": 4,
-      "intent": "pause",
-      "motion": "hold",
+      "intent": "result",
+      "motion": "result-hold",
       "focusTarget": "Hasil cetak",
-      "reason": "Hold silent akhir V4, tanpa subtitle, memberi ruang sebelum bridge jaringan.",
-      "stateIn": "Kertas hasil cetak",
+      "reason": "Setelah VO selesai, demonstrasi data dan kertas berlanjut dengan SFX asli lalu hold hasil. Tidak mempercepat topology. Silence after caption end 377f; playback sequence continues unchanged through 382f.",
+      "stateIn": "Headline lengkap; demonstrasi berlanjut",
       "stateOut": "Kertas hasil cetak",
       "handoff": {
         "type": "carry",
         "reason": "V4: fade terarah antar slide; demo membawa hasil ke S02."
       },
       "phases": {
-        "action": null,
-        "reaction": null,
-        "holdStart": 0
+        "action": 8,
+        "reaction": 60,
+        "holdStart": 118
       },
       "camera": null,
       "collisionPolicy": "World UI/cursor dipotong di viewport; subtitle di screen-space, terpisah. Tumpang tindih kontrol dengan shell asli disengaja.",
       "editableTargets": [
+        "S01 — Data cetak bergerak",
         "S01 — Kertas hasil cetak"
       ]
     },

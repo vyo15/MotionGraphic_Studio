@@ -172,6 +172,12 @@ export function validateAddon(dir,{root=ROOT,strict=false,sourceCheck=true,match
    if(production&&fs.existsSync(spatialFile)){
     const plan=JSON.parse(fs.readFileSync(spatialFile,'utf8'));
     if(plan.geometryContract!=='screen-space-v1'||plan.intelligenceContract!=='visual-intelligence-v1')issue('FAIL','Video baru: screen-space-v1 + visual-intelligence-v1 wajib');
+    if(manifest.designContract==='compact-balanced-v1'){
+     if(!plan.subtitlePolicy)issue('FAIL','Video compact baru: subtitlePolicy preview/high/capcut wajib');
+     // Explicit object/headline groups for standalone objects; typography-only and camera world remain independent.
+     const tracks=Array.isArray(plan.tracks)?plan.tracks:[],anchors=Array.isArray(plan.objectAnchors)?plan.objectAnchors:[];
+     for(const a of tracks.filter(t=>t.role==='primary-object'&&t.space==='screen'))for(const h of tracks.filter(t=>t.role==='headline'&&t.space==='screen')){const start=Math.max(a.start,h.start),end=Math.min(a.end,h.end);if(start>=end)continue;const spans=anchors.filter(g=>Array.isArray(g.headlineIds)&&g.headlineIds.includes(h.id)).sort((x,y)=>x.start-y.start);let covered=start;for(const g of spans)if(g.start<=covered)covered=Math.max(covered,g.end);if(covered<end)issue('FAIL','Object-centered composition missing anchor policy: '+a.id+' / '+h.id);}
+    }
    }
    const spatial=validateSpatial(base);
    for(const msg of spatial.errors)issue('FAIL','Spatial plan: '+msg);

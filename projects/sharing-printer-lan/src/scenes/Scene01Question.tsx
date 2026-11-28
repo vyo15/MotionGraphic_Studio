@@ -1,13 +1,13 @@
 import React from 'react';
-import {AbsoluteFill, Interactive, useCurrentFrame} from 'remotion';
+import {AbsoluteFill, Audio, Interactive, Sequence, staticFile, useCurrentFrame} from 'remotion';
 import {ramp} from '../animations/motion';
 import type {VideoProps} from '../config/props';
 
 // V10 reference ACC: bold opening, coral Wi-Fi and Focus & Resolve. Native reconstruction pending runtime QA.
-export const Scene01Question: React.FC<VideoProps> = () => {
+export const Scene01Question: React.FC<VideoProps> = ({showVoiceover=true,voiceoverGain=1}) => {
   const t = useCurrentFrame()/30;
   const a = ramp(t,.12,.55), b = ramp(t,1.12,1.38), c = ramp(t,2.33,2.85);
-  const out=1-ramp(t,6.10,6.58);
+  const out=1-ramp(t,5.70,6.18);
   const reveal=ramp(t,2.33,2.85);
   const react=ramp(t,3.05,3.55)*(1-ramp(t,4.8,5.5));
   const scale=1+react*(.018+.018*Math.sin((t-3.05)*Math.PI*1.5));
@@ -15,6 +15,10 @@ export const Scene01Question: React.FC<VideoProps> = () => {
   const l=ramp(t,3.00,3.55), mid=ramp(t,3.35,4.15), r=ramp(t,3.17,3.95);
   const resolve=ramp(t,4.65,5.62);
   return <AbsoluteFill>
+    {/* S01-Q recording only. Local frame 9, 83 frames (2.76s WAV); no duplicated root/segment track. */}
+    {showVoiceover && <Sequence name="VO S01-Q" from={9} durationInFrames={83} layout="none">
+      <Audio src={staticFile('videos/sharing-printer-lan/audio/voiceover/s01-question-clean.wav')} volume={Math.max(0,Math.min(1,Number.isFinite(voiceoverGain)?voiceoverGain:1))}/>
+    </Sequence>}
     {(a*(1-ramp(t,.94,1.14)))>0 && <div style={{position:'absolute',inset:0,opacity:a*(1-ramp(t,.94,1.14)),transform:`translateY(${12*(1-a)}px)`}}>
       <Interactive.Div name="S01Q — Printer kamu" style={{position:'absolute',left:120,top:855,width:800,height:140,display:'flex',alignItems:'center',justifyContent:'center',fontFamily:'MG Poppins, sans-serif',fontSize:76,fontWeight:700,lineHeight:1.05,color:'#202020',textAlign:'center'}}>PRINTER KAMU</Interactive.Div>
     </div>}

@@ -21,6 +21,9 @@ export function validQuad(q){if(!Array.isArray(q)||q.length!==4||!q.every(pointV
 function parentOf(plan,a,b){let id=b.parentId;while(id){if(id===a.id)return true;id=plan.tracks.find(t=>t.id===id)?.parentId;}return false;}
 const pairKey=(a,b)=>JSON.stringify([a,b].sort());
 export function analyzeCollisionFrame(plan,row,visible,emit,{advanced=false}={}){
+ // Explicit parent policies are checked even when boxes do not intersect or neither is protected.
+ const byId=new Map(visible.map(v=>[v.t.id,v]));
+ if(advanced)for(const child of visible){const parent=byId.get(child.t.parentId);if(!child.t.parentId||child.t.containment==='overflow-allowed')continue;if(!parent){emit('PARENT_VISIBILITY_UNVERIFIED',[child.t.id,child.t.parentId],{},'incomplete');continue;}if(!contains(parent.r,child.measured.rawBounds??child.r,-1))emit('CONTAINMENT_ESCAPE',[parent.t.id,child.t.id],{parent:parent.r,child:child.measured.rawBounds??child.r});}
  const samples=new Map((row.paintPairs??[]).map(p=>[pairKey(p.a,p.b),p]));
  const combined=new Map();
  const emitPair=(code,a,b,details,severity='error')=>emit(code,[a.t.id,b.t.id],details,severity);
@@ -67,6 +70,7 @@ export function analyzeInteractions(plan,row,measured,emit){
    if(!pointValid(c.hotspot)){emit('HOTSPOT_MISSING',[e.cursorId,targetId],{eventId:e.id},'incomplete');continue;}
    if(!pointIn(c.hotspot,t.visibleBounds??t)){emit('CURSOR_TARGET_MISS',[e.cursorId,targetId],{eventId:e.id,hotspot:c.hotspot,target:t.visibleBounds??t});continue;}
    if(e.requireActionMarker&&c.actionMarker!==e.id)emit('CLICK_ACTION_MARKER_MISMATCH',[e.cursorId,targetId],{eventId:e.id,actual:c.actionMarker??null});
+   if(c.hotspotUntracked)emit('TARGET_UNTRACKED_OCCLUSION_CANDIDATE',[e.cursorId,targetId],{eventId:e.id},'warning');
    const stack=c.hotspotHits;if(!Array.isArray(stack)||!stack.includes(targetId)){emit('TARGET_HIT_UNVERIFIED',[e.cursorId,targetId],{eventId:e.id,hotspot:c.hotspot},'warning');continue;}
    const top=stack.find(id=>id!==e.cursorId);if(top!==targetId&&!parentOf(plan,plan.tracks.find(t=>t.id===targetId),plan.tracks.find(t=>t.id===top)??{})){const a=measured.get(top);emit('TARGET_OCCLUSION_CANDIDATE',[targetId,top],{eventId:e.id,hotspot:c.hotspot},a?.paintKind==='solid'&&a.opacity>=.98?'error':'warning');}
   }

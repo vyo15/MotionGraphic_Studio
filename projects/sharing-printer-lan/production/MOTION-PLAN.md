@@ -21,3 +21,5 @@ Opening 560f: Question 198f, Response 84f, Demo 278f; full 3395f (113,17s), 10 s
 
 ## S02 V13 dan S03 Hybrid — ACC referensi
 S02: headline PRINTER SHARING local 78–168f, JARINGAN YANG SAMA 168–329f; hold topik. S03: host +96px screen, Run +80px, UI +128px; settle frame 696–719 sebelum S04. KOMPUTER UTAMA / WIN + R, enam outline coral mengikuti world UI dan kamera. Keyframe aksi/cursor, guide dan WAV identik. Tidak menambah scene/durasi. Native QA pending.
+
+**Update continuous VO ACC:** question 186f, opening 548f, full 3383f; VO kontinu mulai 212f hingga 382f (batas demo 270f); gap buatan 0f. Seluruh cue global setelah question -12f; local timing, WAV, gain, typing dan scene lain tetap. Angka sebelumnya riwayat. Hold question -12f review.

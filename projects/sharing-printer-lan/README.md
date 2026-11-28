@@ -1,6 +1,6 @@
 # Sharing Printer — V10 aktif (2026-11-28)
 
-**Status aktif:** V10 ACC referensi, 10 segmen, 3395 frame, 113,17 detik. Bagian V4 dan sebelumnya adalah riwayat.
+**Status aktif:** V10 ACC referensi, 10 segmen, 3383 frame, 112,77 detik. Bagian V4 dan sebelumnya adalah riwayat.
 
 File baru untuk Master v2.0.0. Source vector editable, tidak memakai MP4 sebagai background. Durasi 77,2 detik. Preview lama adalah referensi, bukan native hasil render.
 
@@ -24,3 +24,5 @@ V4 silent result hold 34f, frame 448–481. Teks narasi tetap utuh.
 
 ## V10 — ACC referensi 2026-11-28
 Opening 560f: Question 198f, Response 84f, Demo 278f; full 3395f (113,17s), 10 segmen. +78f untuk seluruh segmen/cue/guide setelah question; local timing, VO dan WAV tetap. Demo source asli +112px screen, headline mengikuti objek (gap referensi ~95px), S02 mengikuti V10 selama 36f (+112→+80px), lalu settle ke posisi asli sampai 78f. Silent hold demo frame 526–559, cover thumbnail lokal 179/global 3394. Native parity/GUI/listening pending. Lima teks baru (tiga tanda tanya, dua headline) + satu coral target; tidak ada raster bake.
+
+**Timing aktif terbaru — Continuous VO ACC:** 3383f (112,77s); question 186f (6,2s), response 84f, demo 278f; opening 548f. Full VO kontinu mulai 212f, batas demo 270f, akhir sequence 382f; cover hero terakhir 3382f (lokal 179). Catatan angka lama adalah riwayat. Hold akhir Wi-Fi dipangkas 12f, tanpa mengubah waveform, reveal/resolve, scene lain atau local cue. Native/listening final belum diuji.

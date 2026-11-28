@@ -1,0 +1,20 @@
+{
+  "scene": "S01-Question",
+  "expectedText": "Printer kamu belum punya fitur Wi-Fi?",
+  "asset": "public/audio/voiceover/s01-question-clean.wav",
+  "original": "public/audio/voiceover/s01-question-original.mp3",
+  "sampleRate": 48000,
+  "channels": 1,
+  "bitDepth": 24,
+  "durationSeconds": 2.76,
+  "startFrame": 9,
+  "durationInFrames": 83,
+  "sceneDurationInFrames": 186,
+  "processing": [
+    "highpass 65 Hz",
+    "afftdn nr=6 dB nf=-48 dB",
+    "loudnorm I=-17 TP=-1.5 LRA=7"
+  ],
+  "alignment": "provisional; VAD not ASR; no verified word timestamps; preserve ACC animation; user approved prior audio reference, hold shortened 12f only; revised preview review",
+  "voiceOverGain": 1
+}

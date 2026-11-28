@@ -9,6 +9,7 @@ export function selectSpatialFrames(m,n,motion,plan,{full=false,start=0,end=m.du
  for(const t of [...(plan.tracks??[]),...(plan.worlds??[])]){add(t.start,2);add(t.end,2);for(const f of t.hiddenFrames??[])add(f,2);for(const r of t.fadeRanges??[])dense(r.start,r.end,2);for(const k of t.keys??[])add(k.frame,2);for(let i=1;i<(t.keys??[]).length;i++){const a=t.keys[i-1],b=t.keys[i];add(Math.floor((a.frame+b.frame)/2));if(JSON.stringify(a.value)!==JSON.stringify(b.value))dense(a.frame,b.frame,Math.max(1,Math.floor(m.fps/10)));}}
  for(const s of m.segments??[]){add(s.startFrame,3);add(s.startFrame+s.durationInFrames,3);}
  for(const g of plan.layoutGroups??[])add(g.frame,2);
+ for(const g of plan.objectAnchors??[]){add(g.start,2);add(g.end-1,2);add(Math.floor((g.start+g.end-1)/2),2);}
  for(const e of plan.interactions??[]){add(e.frame,3);add(e.endFrame,3);if(e.endFrame!==undefined)dense(e.frame,e.endFrame,2);if(e.response)dense(e.response.startFrame,e.response.endFrame-1,2);}
  for(const e of plan.allowedOverlaps??[])if(e.startFrame!==undefined)dense(e.startFrame,e.endFrame-1,3);
  // Optional declared risk windows for transition, typing, spring or opacity events not represented by linear keys.
@@ -22,6 +23,7 @@ export function spatialReviewFrames(m,n,motion,plan,sound,limit=42,{start=0,end=
  if(!Number.isInteger(start)||!Number.isInteger(end)||start<0||end>m.durationInFrames||start>=end||!Number.isInteger(limit)||limit<2)throw Error('Invalid review scope');
  const frames=new Set();const add=x=>{if(Number.isInteger(x)&&x>=start&&x<end)frames.add(x);};add(start);add(end-1);
  for(const g of plan?.layoutGroups??[])add(g.frame);
+ for(const g of plan?.objectAnchors??[]){add(g.start);add(g.end-1);}
  for(const e of plan?.interactions??[]){add(e.frame);add(e.endFrame);add(e.response?.startFrame);}
  for(const [i,b] of (n?.beats??[]).entries()){const p=motion?.beats?.[i];for(const v of Object.values(p?.phases??{}))if(Number.isInteger(v))add(b.startFrame+v);add(b.startFrame);add(b.endFrame-1);}
  for(const c of sound?.cues??[])if(c.status!=='omit')add(c.impactFrame);

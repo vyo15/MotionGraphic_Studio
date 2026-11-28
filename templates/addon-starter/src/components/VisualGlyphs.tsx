@@ -1,6 +1,6 @@
 import React from 'react';
 /** Props/source-editable glyphs. For native drag/size, wrap each instance in a unique literal Interactive callsite. */
-export const WindowsMark:React.FC<{color?:string}> = ({color='#202020'}) => <svg viewBox="0 0 48 48" width="100%" height="100%" aria-hidden><path fill={color} d="M2 5l20-3v20H2zM25 2l21-2v22H25zM2 25h20v20L2 42zM25 25h21v23l-21-3z"/></svg>;
+export const WindowsMark:React.FC<{color?:string}> = ({color='#202020'}) => <svg viewBox="0 0 48 48" width="100%" height="100%" aria-hidden><path data-qa-visual="1" fill={color} d="M2 5l20-3v20H2zM25 2l21-2v22H25zM2 25h20v20L2 42zM25 25h21v23l-21-3z"/></svg>;
 export const CursorGlyph:React.FC=()=> <svg viewBox="0 0 34 44" width="100%" height="100%" aria-hidden><path d="M2 2L2 35L11 27L17 42L23 39L17 25L31 25Z" stroke="#202020" strokeWidth="2" strokeLinejoin="round" fill="#FFFFFF"/></svg>;
 export const FolderGlyph:React.FC=()=> <svg viewBox="0 0 80 60" width="100%" height="100%" aria-hidden><path d="M4 11h28l8 8h36v35H4z" fill="#E3B76B"/><path d="M4 25h72v29H4z" fill="#F3D49D"/></svg>;
 export const ComputerGlyph:React.FC=()=> <svg viewBox="0 0 160 110" width="100%" height="100%" aria-hidden><rect x="4" y="4" width="152" height="83" rx="6" fill="#202020"/><rect x="10" y="10" width="140" height="70" rx="2" fill="#FFFFFF"/><path d="M74 87h12v13h30v6H44v-6h30z" fill="#646464"/></svg>;

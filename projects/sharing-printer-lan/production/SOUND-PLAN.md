@@ -27,3 +27,8 @@ Dua slide typography silent (omit). Demo LAN/paper cue dipindah ke frame aksi se
 
 ## V10 — ACC referensi 2026-11-28
 Opening 560f: Question 198f, Response 84f, Demo 278f; full 3395f (113,17s), 10 segmen. +78f untuk seluruh segmen/cue/guide setelah question; local timing, VO dan WAV tetap. Demo source asli +112px screen, headline mengikuti objek (gap referensi ~95px), S02 mengikuti V10 selama 36f (+112→+80px), lalu settle ke posisi asli sampai 78f. Silent hold demo frame 526–559, cover thumbnail lokal 179/global 3394. Native parity/GUI/listening pending. Lima teks baru (tiga tanda tanya, dua headline) + satu coral target; tidak ada raster bake.
+
+## S01-R/S01 — rekaman VO
+VO asli diproses satu kali, clean PCM 48k/24-bit mono, target -17 LUFS. Full video memakai satu track WAV utuh mulai global 224f, melewati batas 282f tanpa gap. Segment editor saja memakai clip lokal 26f/0f, full comp mematikan dua clip lokal; SFX asli dan gain tetap. Pemisahan dan cue frasa kandidat dari VAD/energi, belum ASR/listening ACC.
+
+**Update continuous VO ACC:** question 186f, opening 548f, full 3383f; VO kontinu mulai 212f hingga 382f (batas demo 270f); gap buatan 0f. Seluruh cue global setelah question -12f; local timing, WAV, gain, typing dan scene lain tetap. Angka sebelumnya riwayat. Hold question -12f review.

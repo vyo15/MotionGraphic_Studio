@@ -56,7 +56,10 @@ export function inspectSpatial(m,n,p,motion=null){
     if(guides.length!==(spoken?1:0))issue('VO GUIDE count',f);
     for(const g of guides)for(const a of visible.filter(v=>isVisual(v.t)))if(g.r.y-(a.r.y+a.r.h)<profile.guideGap-.001)issue('VO GUIDE GAP '+a.t.id,f);
    }
-   for(let i=0;i<visible.length;i++)for(let j=i+1;j<visible.length;j++){const a=visible[i],b=visible[j];if((a.t.protected||b.t.protected)&&!overlapAllowed(p,a.t,b.t,f)&&overlapArea(a.r,b.r)>1)issue('OVERLAP '+pair(a.t.id,b.t.id),f);}
+   const byId=new Map(visible.map(x=>[x.t.id,x]));const advanced=p.intelligenceContract==='visual-intelligence-v1';
+   if(advanced)for(const child of visible){if(!child.t.parentId||child.t.containment==='overflow-allowed')continue;const parent=byId.get(child.t.parentId);if(!parent||!contains(parent.r,child.r,-1))issue('CONTAINMENT '+child.t.id,f);}
+   const ancestor=(a,b)=>{for(let id=b.parentId;id;id=p.tracks.find(t=>t.id===id)?.parentId)if(id===a.id)return true;return false;};
+   for(let i=0;i<visible.length;i++)for(let j=i+1;j<visible.length;j++){const a=visible[i],b=visible[j];if((a.t.protected||b.t.protected)&&!overlapAllowed(p,a.t,b.t,f)&&!(advanced&&(ancestor(a.t,b.t)||ancestor(b.t,a.t)))&&overlapArea(a.r,b.r)>1)issue('OVERLAP '+pair(a.t.id,b.t.id),f);}
    checked++;
   }
  }catch(e){errors.push(e.message);}

@@ -103,6 +103,25 @@ async function chatgptZip(){
   console.log('[CHATGPT] ZIP terbaru siap: '+out);
  }finally{fs.rmSync(pending,{force:true});}
 }
+// Explicit diagnostic snapshot: no static gate bypass for normal handoff, no overwrite of valid ZIP.
+async function diagnosticZip(){
+ const sources=masterSources(ROOT),collect=()=>collectEntries(sources,{ignoreNames:IGNORE,ignoreRelative:n=>ignoreRelative(n,true)});
+ const entries=await collect(),before=entrySignature(entries);
+ const temp=fs.mkdtempSync(path.join(os.tmpdir(),'mg-diagnostic-'));
+ const out=availableFile(exportDirs().master,'CHATGPT-DIAGNOSTIC-'+timestamp(),'.zip');
+ const pending=path.join(path.dirname(out),'.diagnostic-'+randomUUID()+'.zip');
+ try{
+  const log=createPreflightLog('ChatGPT-diagnostic.log');let validation='STATIC_PASS';
+  try{log.run('Versi Master','check-release.mjs');log.staticChecks();}catch(e){validation='STATIC_FAIL: '+e.message;}
+  assert(before===entrySignature(await collect()),'Source changed during diagnostic preflight');
+  const marker=path.join(temp,'DIAGNOSTIC-NOT-PRODUCTION.json');fs.writeFileSync(marker,JSON.stringify({status:'DIAGNOSTIC_ONLY',validation,verification:'Source snapshot for repair. Not a valid production handoff or approval.'},null,2));
+  const additions=await collectEntries([{absolute:marker,name:'MotionGraphic-Studio/DIAGNOSTIC-NOT-PRODUCTION.json'},{absolute:log.file,name:'MotionGraphic-Studio/diagnostic-static-report.txt'}]);
+  await createZip([...entries,...additions],pending,{signal:controller.signal});
+  assert(before===entrySignature(await collect()),'Source changed during diagnostic ZIP');
+  // Hard-link publication is exclusive; never replace another archive.
+  fs.linkSync(pending,out);console.log('[DIAGNOSTIC ONLY] '+out);
+ }finally{fs.rmSync(pending,{force:true});fs.rmSync(temp,{recursive:true,force:true});}
+}
 function matchVideo(videos,input){return videos.find((v,i)=>input===String(i+1)||input===v.id||input===v.slug)}
 function showVideos(videos){
   console.log('\nVIDEO TERSEDIA:');
@@ -111,6 +130,7 @@ function showVideos(videos){
 async function run(){
   const args=process.argv.slice(2);
   if(args.length===1&&args[0]==='--chatgpt')return chatgptZip();
+  if(args.length===1&&args[0]==='--diagnostic')return diagnosticZip();
   if(args.includes('--studio')||args.includes('--master')){
     const release=inspectRelease(ROOT);assert(release.ok,'Versi release tidak konsisten: '+release.errors.join('; '));
     if(args.includes('--full'))return studioZip({full:true});

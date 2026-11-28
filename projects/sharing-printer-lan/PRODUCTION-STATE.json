@@ -3,61 +3,62 @@
   "projectId": "SharingPrinterLan",
   "slug": "sharing-printer-lan",
   "workflow": "guided-approval-first-scene",
-  "phase": "s02-v13-s03-hybrid-reference-approved-native-qa-pending",
+  "phase": "opening-continuous-vo-reference-approved-question-hold-review",
   "scriptApproval": "partial",
   "storyboardApproval": "partial",
   "referenceSceneId": "SharingPrinterLan-S01",
   "referenceSceneApproval": "approved",
-  "voiceOverStatus": "not-recorded",
+  "voiceOverStatus": "partial",
   "fullVideoApproval": "draft",
   "scenes": [
     {
       "id": "SharingPrinterLan-S01-Question",
       "sceneId": "SharingPrinterLan-S01-Question",
       "startFrame": 0,
-      "endFrameExclusive": 198,
+      "endFrameExclusive": 186,
       "status": "approved",
       "visualApproval": "approved",
       "voTextApproval": "approved",
       "voText": "ACC",
       "visual": "ACC_REFERENCE_PENDING_NATIVE_QA",
-      "recordingSync": "NOT_RECORDED",
+      "recordingSync": "RECORDED_REFERENCE_APPROVED",
       "final": "NOT_FINAL",
-      "notes": "ACC preview V10: Poppins Bold uppercase, Wi-Fi ExtraBold coral, Focus & Resolve Style 04 + gerak Wi-Fi; 198f. Native reconstruction belum diuji."
+      "notes": "ACC preview V10: Poppins Bold uppercase, Wi-Fi ExtraBold coral, Focus & Resolve Style 04 + gerak Wi-Fi; 198f. Native reconstruction belum diuji. Rekaman S01-Q diterima 2026-11-28; WAV clean diputar lokal frame 9–91; alignment frasa belum terverifikasi per kata. Scene 198f dan seluruh keyframe visual tetap. User menyukai hasil preview VO S01-Q; native dan timestamp per kata tetap belum teruji. User requests shorter Wi-Fi hold; now 186f, final fade -12f, voice and reveal unchanged; new timing pending review."
     },
     {
       "id": "SharingPrinterLan-S01-Response",
       "sceneId": "SharingPrinterLan-S01-Response",
-      "startFrame": 198,
-      "endFrameExclusive": 282,
+      "startFrame": 186,
+      "endFrameExclusive": 270,
       "status": "approved",
       "visualApproval": "approved",
       "voTextApproval": "approved",
       "voText": "ACC",
       "visual": "ACC_REFERENCE_PENDING_NATIVE_QA",
-      "recordingSync": "NOT_RECORDED",
+      "recordingSync": "RECORDED_REFERENCE_APPROVED",
       "final": "NOT_FINAL",
-      "notes": "ACC preview V4: Tenang, ternyata ada cara; native QA pending. V10 mempertahankan source respons; global +78f."
+      "notes": "ACC preview V4: Tenang, ternyata ada cara; native QA pending. V10 mempertahankan source respons; global +78f. Rekaman gabungan diterima; VO full kontinu global 224f; segment lokal 26–83f, cut kandidat 58f sumber. VAD/energi, bukan word-level ASR; review preview diperlukan. User menyukai kualitas VO dan visual sebelumnya, meminta gap tambahan antar slide dihilangkan. Sync baru masih review. User ACC continuous preview; earlier provisional-review note is historical. Full audio start 212f, boundary 270f, local sync unchanged; native and word-level QA pending."
     },
     {
       "id": "SharingPrinterLan-S01",
       "sceneId": "SharingPrinterLan-S01",
-      "startFrame": 282,
-      "endFrameExclusive": 560,
+      "startFrame": 270,
+      "endFrameExclusive": 548,
       "status": "approved",
       "visualApproval": "approved",
       "voTextApproval": "approved",
       "voText": "ACC",
       "visual": "ACC_REFERENCE_PENDING_NATIVE_QA",
-      "recordingSync": "NOT_RECORDED",
+      "recordingSync": "RECORDED_REFERENCE_APPROVED",
       "final": "NOT_FINAL",
-      "notes": "ACC preview V10: object-centered, headline 1 PRINTER / BANYAK KOMPUTER, gap optik sekitar 95px pada referensi. Topology01 dan time mapping dipertahankan; native QA pending."
+      "notes": "ACC preview V10: object-centered, headline 1 PRINTER / BANYAK KOMPUTER, gap optik sekitar 95px pada referensi. Topology01 dan time mapping dipertahankan; native QA pending. Rekaman gabungan diterima; VO full kontinu lintas batas global 282f, segment lokal 0–111f; subtitle beralih lokal 58f dan selesai 112f; headline kedua reveal 58–76f; topology/SFX tetap. VAD/energi, bukan word-level ASR; review preview diperlukan. User menyukai kualitas VO dan visual sebelumnya, meminta gap tambahan antar slide dihilangkan. Sync baru masih review. User ACC continuous preview; earlier provisional-review note is historical. Full audio start 212f, boundary 270f, local sync unchanged; native and word-level QA pending. 090656 recovery: restored approved contiguous WAV and local segment clips, props and missing source changes. Subtitle cue boundary local 59f, end 107f; acoustic-only proposal, subtitle review pending. Prior audio/visual approval retained.",
+      "subtitleSync": "REVIEW_PROVISIONAL"
     },
     {
       "id": "SharingPrinterLan-S02",
       "sceneId": "SharingPrinterLan-S02",
-      "startFrame": 560,
-      "endFrameExclusive": 890,
+      "startFrame": 548,
+      "endFrameExclusive": 878,
       "status": "approved",
       "visualApproval": "approved",
       "voTextApproval": "draft",
@@ -70,8 +71,8 @@
     {
       "id": "SharingPrinterLan-S03",
       "sceneId": "SharingPrinterLan-S03",
-      "startFrame": 890,
-      "endFrameExclusive": 1610,
+      "startFrame": 878,
+      "endFrameExclusive": 1598,
       "status": "approved",
       "visualApproval": "approved",
       "voTextApproval": "draft",
@@ -84,8 +85,8 @@
     {
       "id": "SharingPrinterLan-S04",
       "sceneId": "SharingPrinterLan-S04",
-      "startFrame": 1610,
-      "endFrameExclusive": 2150,
+      "startFrame": 1598,
+      "endFrameExclusive": 2138,
       "status": "approved",
       "visualApproval": "approved",
       "voTextApproval": "draft",
@@ -98,8 +99,8 @@
     {
       "id": "SharingPrinterLan-S05",
       "sceneId": "SharingPrinterLan-S05",
-      "startFrame": 2150,
-      "endFrameExclusive": 2600,
+      "startFrame": 2138,
+      "endFrameExclusive": 2588,
       "status": "approved",
       "visualApproval": "approved",
       "voTextApproval": "draft",
@@ -112,8 +113,8 @@
     {
       "id": "SharingPrinterLan-S06",
       "sceneId": "SharingPrinterLan-S06",
-      "startFrame": 2600,
-      "endFrameExclusive": 2990,
+      "startFrame": 2588,
+      "endFrameExclusive": 2978,
       "status": "approved",
       "visualApproval": "approved",
       "voTextApproval": "draft",
@@ -126,8 +127,8 @@
     {
       "id": "SharingPrinterLan-S07",
       "sceneId": "SharingPrinterLan-S07",
-      "startFrame": 2990,
-      "endFrameExclusive": 3215,
+      "startFrame": 2978,
+      "endFrameExclusive": 3203,
       "status": "approved",
       "visualApproval": "approved",
       "voTextApproval": "approved",
@@ -140,8 +141,8 @@
     {
       "id": "SharingPrinterLan-S08",
       "sceneId": "SharingPrinterLan-S08",
-      "startFrame": 3215,
-      "endFrameExclusive": 3395,
+      "startFrame": 3203,
+      "endFrameExclusive": 3383,
       "status": "approved",
       "visualApproval": "approved",
       "voTextApproval": "draft",
@@ -180,6 +181,22 @@
     {
       "date": "2026-11-28",
       "decision": "User ACC S02 V13 Topic Hold (lanjut untuk patch gabungan) dan S03 Hybrid Contextual + Action Highlight, meminta FILE CHANGE ONLY. Implementasi native dari referensi MP4; headline dan outline terpisah, S03 offset 96/80/128 output px, settle ke S04; tidak mengubah VO, frame, keyframe kamera/cursor, asset, SFX, rule Master atau scene lain. Visual referensi ACC; native/recording/final belum diuji."
+    },
+    {
+      "date": "2026-11-28",
+      "decision": "User meminta pemrosesan rekaman S01-Q dan pemasangan ke project. Audio original dipertahankan, WAV clean 48k/24-bit mono, playback mulai frame 9; tidak ada perubahan visual/timing global atau ACC baru. Sync per kata dan listening/native QA menunggu review."
+    },
+    {
+      "date": "2026-11-28",
+      "decision": "User menyukai VO S01-Q dan meminta lanjut pemrosesan S01-R/S01. Rekaman gabungan diproses satu kali, dipisah sementara pada 58f; seluruh sampel dipertahankan. Alignment subtitle dan headline S01 provisional; scene duration, topology, SFX, visual ACC lainnya tetap."
+    },
+    {
+      "date": "2026-11-28",
+      "decision": "User menyukai hasil VO S01-R/S01 kecuali jeda buatan saat slide berganti. Full comp memakai rekaman bersih utuh tanpa gap; scene boundary 282f berada pada kandidat 58f, audio mulai global 224f, demo caption/headline kedua maju 5f. Animasi objek, durasi semua scene dan SFX dipertahankan. Sync baru belum ACC."
+    },
+    {
+      "date": "2026-11-28",
+      "decision": "User approves continuous VO opening preview; requests reusable rule and slightly shorter Wi-Fi hold. Keep all original WAV samples and local timing except final question hold -12f (198→186f); shift all downstream global frames -12f. New shortened timing not automatically ACC; final/native QA pending."
     }
   ]
 }

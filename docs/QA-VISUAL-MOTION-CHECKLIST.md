@@ -128,6 +128,8 @@ See `docs/PRODUCTION-TOOLKIT.md` for spatial-plan, camera helpers, VO alignment 
 - Jika durasi berubah, cocokkan manifest, Sequence, segment, narration, cue/typing, spatial/motion plan, thumbnail dan state. Jangan menekan timing untuk mengejar angka.
 - Nyatakan batas static QA versus native render, GUI Save/reload dan listening; jangan mengklaim pixel parity tanpa bukti.
 
+- QA VO kontinu: ikuti `WORKFLOW-VO-UNIVERSAL.md` (CONTINUOUS VO LOCK); periksa gap buatan, potongan/overlap di boundary visual, dual playback full/segment, alignment subtitle/highlight dan listening aktual. Metadata/VAD bukan bukti sinkron kata.
+
 ### Spatial Intelligence Paket 01/02
 - [ ] Video review baru: kontrak layer semantik, native/plain identity, protected visibility, overlap berbatas waktu; plan statis lulus.
 - [ ] Capture trace v3 sesuai preset/frame/scope; data tidak lengkap atau stale tidak dianggap lulus. Sampling bukan full QA.
@@ -138,3 +140,9 @@ See `docs/PRODUCTION-TOOLKIT.md` for spatial-plan, camera helpers, VO alignment 
 - [ ] Baca `layout-advice.json` sebagai usulan screen-space, jangan forced layout; review alignment, spacing, hierarchy, text-fit dan reading time. Terapkan perubahan source hanya dalam scope yang diizinkan; re-capture dan bandingkan.
 - [ ] Preview diagnostik bukan PASS. High/CapCut review baru: bukti full scope sesuai preset dan fingerprint current; post-render QA, SHA-256 output, contact sheet dan review visual/listening terpisah. Warning/fail mempertahankan MP4 diagnostik, bukan final ACC.
 - [ ] `CACHED_SAMPLE` hanya bukti historis input sama, bukan pengukuran browser sesi ini; handoff bounded summary, tidak menggantikan trace lokal. Lihat Production Toolkit untuk queue, batas capture dan status runtime.
+
+### Final A–E refinement
+- [ ] Validate containment, bounded protected fade, exact primary family/weight and explicit preset subtitle policy. No glyph-level certification from computed metadata.
+- [ ] Declare object anchor and headline group for new compact object scenes. Review artwork bounds, drift, gap and alignment; never move locked anchor solely for text.
+- [ ] Review pointer-events-none candidates and differential pixel evidence if available; no waiver from approximate masks. Plain text reflow candidate only; re-capture after source change.
+- [ ] Run staged pilot baseline and expected faults; benchmark capture and verify browser/full-segment/native Save/reload/MP4/listening on PC. Check dev watcher, prod, menu and QA handoff. Separate diagnostic ZIP if normal static gate fails.
