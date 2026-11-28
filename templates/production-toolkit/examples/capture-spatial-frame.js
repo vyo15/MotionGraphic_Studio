@@ -1,14 +1,56 @@
-/** Browser-console helper. No DOM mutation. Call captureSpatialFrame(compositionRoot, frame, 1080,1920) at a settled frame.
- * The root must be the actual unrotated composition container, including viewport and subtitle. */
+/** Read-only probe v3. Normalized screen-space bounds, browser hit-test samples,
+ * not pixel masks, exact glyph geometry, or a complete CSS paint-order proof. */
 function captureSpatialFrame(root,frame,width,height){
- if(!root?.getBoundingClientRect||!Number.isInteger(frame)||frame<0||!Number.isFinite(width)||!Number.isFinite(height)||width<=0||height<=0)throw Error('Invalid root/frame/dimensions');
+ if(!root?.getBoundingClientRect||!Number.isInteger(frame)||frame<0||![width,height].every(x=>Number.isFinite(x)&&x>0))throw Error('Invalid root/frame/dimensions');
+ if(document.querySelectorAll('[data-qa-root="composition"]').length>1)throw Error('Ambiguous composition root');
+ for(let a=root;a;a=a.parentElement){const c=getComputedStyle(a),t=new DOMMatrix(c.transform==='none'?undefined:c.transform);if(!t.is2D||Math.abs(t.b)>1e-6||Math.abs(t.c)>1e-6||t.a<=0||t.d<=0||c.rotate&&c.rotate!=='none'&&c.rotate!=='0deg')throw Error('Composition root must be axis-aligned and non-reflected');}
  const base=root.getBoundingClientRect();if(base.width<=0||base.height<=0)throw Error('Composition root not visible');
- const sx=width/base.width,sy=height/base.height,rects=[],seen=new Set();
+ const sx=width/base.width,sy=height/base.height,rects=[],seen=new Set(),nodes=new Map();
+ const box=r=>({x:(r.left-base.left)*sx,y:(r.top-base.top)*sy,w:r.width*sx,h:r.height*sy});
+ const xy=(x,y)=>({x:(x-base.left)*sx,y:(y-base.top)*sy});
+ const intersect=(r,c,x=true,y=true)=>{const l=x?Math.max(r.x,c.x):r.x,t=y?Math.max(r.y,c.y):r.y,rr=x?Math.min(r.x+r.w,c.x+c.w):r.x+r.w,b=y?Math.min(r.y+r.h,c.y+c.h):r.y+r.h;return {x:l,y:t,w:Math.max(0,rr-l),h:Math.max(0,b-t)};};
+ const union=rs=>{if(!rs.length)return null;const x=Math.min(...rs.map(r=>r.x)),y=Math.min(...rs.map(r=>r.y));return{x,y,w:Math.max(...rs.map(r=>r.x+r.w))-x,h:Math.max(...rs.map(r=>r.y+r.h))-y};};
+ const clips=(r,node,includeSelf=false)=>{let out=intersect(r,{x:0,y:0,w:width,h:height});for(let a=includeSelf?node:node.parentElement;a&&a!==root;a=a.parentElement){const c=getComputedStyle(a),x=/^(hidden|clip|auto|scroll)$/.test(c.overflowX),y=/^(hidden|clip|auto|scroll)$/.test(c.overflowY);if(x||y){const b=a.getBoundingClientRect();out=intersect(out,box(b),x,y);}}return out;};
+ const effective=node=>{let opacity=1,hidden=false,complex=false;for(let a=node;a&&a!==root.parentElement;a=a.parentElement){const c=getComputedStyle(a);opacity*=Number(c.opacity);if(c.display==='none'||opacity===0)hidden=true;if(c.clipPath!=='none'||c.maskImage&&c.maskImage!=='none'||c.filter!=='none'||c.backdropFilter&&c.backdropFilter!=='none'||c.mixBlendMode!=='normal'||c.perspective!=='none')complex=true;}const c=getComputedStyle(node);return {opacity,hidden:hidden||c.visibility!=='visible',complex};};
+ const lineCount=rs=>{const lines=[];for(const r of [...rs].sort((a,b)=>a.y-b.y)){if(!lines.some(y=>Math.abs(y-r.y)<=Math.max(1,r.h*.2)))lines.push(r.y);}return lines.length;};
+ const firstFamily=c=>c.fontFamily.split(',')[0].trim().replace(/^['"]|['"]$/g,'');
+ const fontReady=c=>{const family=firstFamily(c);if(!family.startsWith('MG '))return document.fonts?.status==='loaded';return [...document.fonts].some(f=>{const [min,max=min]=f.weight.split(/\s+/).map(w=>w==='normal'?400:w==='bold'?700:Number(w));return f.family.replace(/^['"]|['"]$/g,'')===family&&f.status==='loaded'&&Number(c.fontWeight)>=min&&Number(c.fontWeight)<=max;});};
+ const effectiveScale=node=>{if(node instanceof SVGElement&&node.getScreenCTM){const q=node.getScreenCTM();if(q)return Math.hypot(q.c*sx,q.d*sy);}let mat=new DOMMatrix();for(let a=node;a;a=a.parentElement){const c=getComputedStyle(a);let current=new DOMMatrix(c.transform==='none'?undefined:c.transform);if(c.scale&&c.scale!=='none'){const v=c.scale.split(/\s+/).map(Number);if(v.every(Number.isFinite))current=current.scale(v[0],v[1]??v[0]);}if(c.rotate&&c.rotate!=='none'){const z=c.rotate.match(/^(-?[\d.]+)deg$/);if(z)current=current.rotate(Number(z[1]));}mat=current.multiply(mat);}return Math.hypot(mat.c*sx,mat.d*sy);};
+ const colorRGB=color=>{const m=color.match(/^rgba?\(([^)]+)\)$/);if(!m)return null;const p=m[1].split(',').map(Number);return p.length>=3&&p.slice(0,3).every(Number.isFinite)&&(p.length===3||p[3]===1)?p.slice(0,3):null;};
+ const luminance=rgb=>rgb.map(x=>{x/=255;return x<=.04045?x/12.92:((x+.055)/1.055)**2.4;}).reduce((a,x,i)=>a+x*[.2126,.7152,.0722][i],0);
+ const contrast=(fg,bg)=>{const a=colorRGB(fg),b=colorRGB(bg);if(!a||!b)return null;const l=[luminance(a),luminance(b)].sort((x,y)=>y-x);return (l[0]+.05)/(l[1]+.05);};
+ const shapeUncertain=node=>{if(node instanceof SVGElement&&!(node instanceof SVGRectElement))return true;for(let a=node;a&&a!==root.parentElement;a=a.parentElement){const c=getComputedStyle(a),m=new DOMMatrix(c.transform==='none'?undefined:c.transform);if(!m.is2D||Math.abs(m.b)>1e-6||Math.abs(m.c)>1e-6||c.rotate&&c.rotate!=='none'&&c.rotate!=='0deg')return true;}return false;};
+ const alpha=color=>{if(color==='transparent'||color==='none')return 0;const m=color.match(/^rgba\([^,]+,[^,]+,[^,]+,\s*([\d.]+)\)$/);return m?Number(m[1]):color.startsWith('rgb(')?1:NaN;};
+ const quadOf=node=>{try{if(node.getBoxQuads){const qs=node.getBoxQuads();if(qs.length===1)return ['p1','p2','p3','p4'].map(k=>xy(qs[0][k].x,qs[0][k].y));}if(node instanceof SVGRectElement&&getComputedStyle(node).stroke==='none'){const b=node.getBBox(),m=node.getScreenCTM();if(m&&b.width&&b.height)return [[b.x,b.y],[b.x+b.width,b.y],[b.x+b.width,b.y+b.height],[b.x,b.y+b.height]].map(([x,y])=>{const p=new DOMPoint(x,y).matrixTransform(m);return xy(p.x,p.y);});}}catch{}return null;};
+ const hits=p=>{const x=p.x/sx+base.left,y=p.y/sy+base.top;return document.elementsFromPoint(x,y).filter(el=>root.contains(el));};
+ const hitIds=p=>[...new Set(hits(p).map(el=>el.closest('[data-qa-track]')?.getAttribute('data-qa-track')).filter(Boolean))];
  for(const node of root.querySelectorAll('[data-qa-track]')){
-  let visible=true;for(let x=node;x&&x!==root.parentElement;x=x.parentElement){const c=getComputedStyle(x);if(c.display==='none'||c.visibility==='hidden'||Number(c.opacity)===0){visible=false;break;}}
-  if(!visible)continue;const id=node.getAttribute('data-qa-track'),r=node.getBoundingClientRect();
-  if(r.width<=0||r.height<=0)continue;if(!id||seen.has(id))throw Error('Duplicate/invalid data-qa-track '+id);seen.add(id);
-  rects.push({id,x:(r.left-base.left)*sx,y:(r.top-base.top)*sy,w:r.width*sx,h:r.height*sy});
+  const id=node.getAttribute('data-qa-track');if(!id||seen.has(id))throw Error('Duplicate/invalid data-qa-track '+id);seen.add(id);nodes.set(id,node);
+  const eff=effective(node),raw=box(node.getBoundingClientRect());if(eff.hidden||raw.w<=0||raw.h<=0){rects.push({id,state:'hidden',opacity:eff.opacity,rawBounds:raw});continue;}
+  const visible=clips(raw,node),clipped=visible.w<raw.w-.5||visible.h<raw.h-.5;
+  const c=getComputedStyle(node),textRects=[],textVisibleRects=[],fontRuns=[],fontFamilies=new Set(),walker=document.createTreeWalker(node,NodeFilter.SHOW_TEXT);
+  const addText=(el,rs)=>{if(!rs.length)return;const tc=getComputedStyle(el),fs=parseFloat(tc.fontSize),scale=effectiveScale(el);fontFamilies.add(tc.fontFamily);textRects.push(...rs);for(const r of rs){const vr=clips(r,el,true);if(vr.w>0&&vr.h>0)textVisibleRects.push(vr);}fontRuns.push({family:tc.fontFamily,weight:tc.fontWeight,fontSize:fs,effectiveFontSize:fs*scale,fontReady:fontReady(tc),lineCount:lineCount(rs),lineHeight:Number.isFinite(parseFloat(tc.lineHeight))?parseFloat(tc.lineHeight):null,letterSpacing:Number.isFinite(parseFloat(tc.letterSpacing))?parseFloat(tc.letterSpacing):null,color:tc.color});};
+  for(let text=walker.nextNode();text;text=walker.nextNode()){
+   const el=text.parentElement;if(!text.textContent?.trim()||el?.closest('[data-qa-track]')!==node||effective(el).hidden)continue;
+   const range=document.createRange();range.selectNodeContents(text);addText(el,[...range.getClientRects()].filter(r=>r.width>0&&r.height>0).map(box));
+  }
+  if(!textRects.length&&node instanceof SVGElement&&node.matches('text,tspan')&&node.textContent.trim())addText(node,[raw]);
+  const textBounds=union(textRects),textVisibleBounds=union(textVisibleRects)??(textBounds?{x:textBounds.x,y:textBounds.y,w:0,h:0}:null);
+  const hotspotNode=node.matches('[data-qa-hotspot]')?node:node.querySelector('[data-qa-hotspot]');let hotspot=null;if(hotspotNode){const r=box(hotspotNode.getBoundingClientRect());hotspot={x:r.x+r.w/2,y:r.y+r.h/2};}
+  const bg=alpha(c.backgroundColor),fill=node instanceof SVGElement?alpha(c.fill):0;
+  const simpleSolid=!eff.complex&&c.backgroundImage==='none'&&(bg===1||node instanceof SVGRectElement&&fill===1&&Number(c.fillOpacity)===1);
+  const paintKind=simpleSolid?'solid':bg===0&&fill===0&&!textRects.length&&node.childElementCount===0&&c.backgroundImage==='none'&&parseFloat(c.borderTopWidth)===0&&parseFloat(c.borderRightWidth)===0&&parseFloat(c.borderBottomWidth)===0&&parseFloat(c.borderLeftWidth)===0&&(!(node instanceof SVGElement)||c.stroke==='none')?'transparent':'mixed';
+  const quad=quadOf(node),uncertainShape=shapeUncertain(node);
+  const opaqueRect=simpleSolid&&!uncertainShape&&eff.opacity===1&&[c.borderTopLeftRadius,c.borderTopRightRadius,c.borderBottomLeftRadius,c.borderBottomRightRadius].every(x=>x==='0px')&&c.backgroundClip==='border-box';
+  const untrackedOcclusion=[];for(const r of textVisibleRects){const p={x:r.x+r.w/2,y:r.y+r.h/2},stack=hits(p),index=stack.findIndex(el=>node.contains(el));if(index<0)continue;for(const el of stack.slice(0,index)){if(el.contains(node)||el.closest('[data-qa-track]'))continue;const cs=getComputedStyle(el);if(alpha(cs.backgroundColor)>0||el.matches('img,canvas,video,svg,path,rect,circle'))untrackedOcclusion.push(p);}
+   const bgEl=stack.slice(index).find(el=>{const cs=getComputedStyle(el);return alpha(cs.backgroundColor)===1&&cs.backgroundImage==='none'&&effective(el).opacity===1;});if(bgEl){for(const fr of fontRuns){const ratio=contrast(fr.color,getComputedStyle(bgEl).backgroundColor);if(ratio!==null)fr.contrastEstimate=fr.contrastEstimate==null?ratio:Math.min(fr.contrastEstimate,ratio);}}}
+  rects.push({id,state:'visible',...raw,rawBounds:raw,visibleBounds:visible,clipped,opacity:eff.opacity,textBounds,textVisibleBounds,textRects,textVisibleRects,fontFamilies:[...fontFamilies],fontSize:parseFloat(c.fontSize),fontWeight:c.fontWeight,fontRuns,lineCount:lineCount(textRects),zIndex:c.zIndex,position:c.position,transform:c.transform,hotspot,hotspotHits:hotspot?hitIds(hotspot):null,actionMarker:node.getAttribute('data-qa-action'),uiState:node.getAttribute('data-qa-state'),quad,complexPaint:eff.complex,shapeUncertain:uncertainShape,opaqueRect,paintKind,untrackedOcclusion});
  }
- return {frame,rects};
+ const paintPairs=[];for(let i=0;i<rects.length;i++)for(let j=i+1;j<rects.length;j++){const a=rects[i],b=rects[j];if(a.state!=='visible'||b.state!=='visible')continue;const ar=a.textVisibleBounds??a.visibleBounds,br=b.textVisibleBounds??b.visibleBounds,regions=[intersect(ar,b.visibleBounds),intersect(br,a.visibleBounds)].filter(r=>r.w*r.h>1);if(!regions.length)continue;
+  const result={a:a.id,b:b.id,aFront:0,bFront:0,unknown:0,total:0};
+  // Ancestor hit-testing cannot prove the order of parent background vs its children.
+  const related=nodes.get(a.id).contains(nodes.get(b.id))||nodes.get(b.id).contains(nodes.get(a.id));
+  for(const r of regions)for(const x of [.15,.5,.85])for(const y of [.15,.5,.85]){const ids=hitIds({x:r.x+x*r.w,y:r.y+y*r.h}),ai=ids.indexOf(a.id),bi=ids.indexOf(b.id);result.total++;if(related||ai<0||bi<0)result.unknown++;else if(ai<bi)result.aFront++;else result.bFront++;}paintPairs.push(result);
+ }
+ return {frame,rects,paintPairs,probeVersion:3,browserUserAgent:navigator.userAgent,fontStatus:document.fonts?.status??'unknown',geometry:'screen-space-aabb',limitations:['Hit-testing samples omit pointer-events:none; no pixel masks or exact glyph/paint-order proof','Range rects are layout bounds; effective font size is estimated; actual fallback glyph face not exposed','Ancestor clipping uses AABB; rounded corners, filters, masks, non-planar transforms require review']};
 }

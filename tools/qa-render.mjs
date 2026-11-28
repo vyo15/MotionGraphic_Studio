@@ -29,6 +29,8 @@
  */
 import {spawn, spawnSync} from 'node:child_process';
 import fs from 'node:fs';
+import {spatialReviewFrames} from './spatial-sampling.mjs';
+import {resolveSpatialProfile,spatialProfiles} from './spatial-profiles.mjs';
 import {plannedHolds,classifyStaticRuns} from './planned-holds.mjs';
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
@@ -54,17 +56,20 @@ const T = {
 
 // ---------- Argumen ----------
 const argv = process.argv.slice(2);
-const opt = {safeTop: 250, safeBottom: 350, safeSide: 50, tolerance: 40};
+const opt = {};
 const files = [];
 for (let i = 0; i < argv.length; i++) {
   const a = argv[i];
   const next = () => argv[++i];
   if (a === '--out') opt.out = next();
   else if (a === '--src') opt.src = next();
+  else if (a === '--segment') opt.segment = next();
   else if (a === '--expect-frames') opt.expectFrames = Number(next());
   else if (a === '--safe-top') opt.safeTop = Number(next());
   else if (a === '--safe-bottom') opt.safeBottom = Number(next());
   else if (a === '--safe-side') opt.safeSide = Number(next());
+  else if (a === '--safe-left') opt.safeLeft = Number(next());
+  else if (a === '--safe-right') opt.safeRight = Number(next());
   else if (a === '--tolerance') opt.tolerance = Number(next());
   else if (a === '--strict') opt.strict = true;
   else if (a === '-h' || a === '--help') opt.help = true;
@@ -87,6 +92,13 @@ if(opt.src){
  }
  T.width=manifestConfig.width;T.height=manifestConfig.height;T.fps=manifestConfig.fps;
 }
+const segment=opt.segment?manifestConfig?.segments?.find(s=>s.id===opt.segment):null;
+if(opt.segment&&!segment){console.error('Invalid QA segment');process.exit(2);}
+const frameOffset=segment?.startFrame??0,expectedScopeFrames=segment?.durationInFrames??manifestConfig?.durationInFrames;
+const spatialProfile=resolveSpatialProfile(manifestConfig??{width:T.width,height:T.height});
+const safe=spatialProfile.reference.safe;
+opt.safeTop??=safe.top;opt.safeBottom??=safe.bottom;opt.safeLeft??=opt.safeSide??safe.left;opt.safeRight??=opt.safeSide??safe.right;opt.tolerance??=spatialProfile.reference.renderTolerance;
+if(![opt.safeTop,opt.safeBottom,opt.safeLeft,opt.safeRight,opt.tolerance].every(v=>Number.isFinite(v)&&v>=0)||opt.safeTop+opt.safeBottom>=spatialProfiles.reference.height||opt.safeLeft+opt.safeRight>=spatialProfiles.reference.width){console.error('Invalid safe-area overrides');process.exit(2);}
 if (!fs.existsSync(video)) { console.error('File tidak ditemukan: ' + video); process.exit(2); }
 const outDir = path.resolve(opt.out || path.join(ROOT, 'qa-out', path.basename(video).replace(/\.[^.]+$/, '')));
 fs.mkdirSync(path.join(outDir, 'frames'), {recursive: true});
@@ -130,12 +142,14 @@ function readFrames(W, H) {
       while (carry.length >= size) { frames.push(new Uint8Array(carry.subarray(0, size))); carry = carry.subarray(size); }
     });
     p.stderr.on('data', (d) => (err += d));
-    p.on('close', (code) => (code === 0 || frames.length ? resolve(frames) : reject(new Error(err || 'ffmpeg gagal'))));
+    p.on('close', (code) => (code === 0 && carry.length===0 ? resolve(frames) : reject(new Error(err || 'ffmpeg gagal'))));
     p.on('error', reject);
   });
 }
 
 // ---------- Pencatat hasil ----------
+let zoneEvidence=null;
+let W0=null,H0=null;
 let n = 0, fps = 0, duration = 0, spark = '', sheet = '', loud = null;
 const saved = [], marks = [], lint = [];
 const results = []; // {level, area, msg}
@@ -152,7 +166,7 @@ const as = (info.streams || []).find((s) => s.codec_type === 'audio');
 if (!vs) { add('FAIL', 'probe', 'Tidak ada stream video.'); finish(); }
 const [fn, fd] = String(vs.avg_frame_rate || vs.r_frame_rate || '30/1').split('/').map(Number);
 fps = fd ? fn / fd : 30;
-const W0 = vs.width, H0 = vs.height;
+W0 = vs.width; H0 = vs.height;
 duration = Number(info.format?.duration || vs.duration || 0);
 
 add(W0 === T.width && H0 === T.height ? 'OK' : (Math.abs(W0/H0-T.width/T.height)<0.005?'WARN':'FAIL'), 'format',
@@ -166,7 +180,7 @@ add(as ? 'OK' : 'WARN', 'audio', as ? `Audio ${as.codec_name} ${as.sample_rate} 
 let expect = opt.expectFrames;
 if (!expect && opt.src) {
   try {
-    expect = manifestConfig.durationInFrames;
+    expect = expectedScopeFrames;
   } catch { /* manifest tidak wajib */ }
 }
 
@@ -187,9 +201,9 @@ for (let i = 1; i < n; i++) {
 
 // 2a. Dead zone / rasio diam
 let declared=[];
-if(opt.src&&manifestConfig&&Math.abs(fps-manifestConfig.fps)<.001&&n===manifestConfig.durationInFrames){
+if(opt.src&&manifestConfig&&Math.abs(fps-manifestConfig.fps)<.001&&n===expectedScopeFrames){
  const pf=path.resolve(opt.src,'production/motion-plan.json');
- if(fs.existsSync(pf)){try{const h=plannedHolds(manifestConfig,JSON.parse(fs.readFileSync(path.resolve(opt.src,'src/config/narration.json'),'utf8')),JSON.parse(fs.readFileSync(pf,'utf8')));declared=h.ranges;if(h.warnings.length)add('WARN','motion-plan','Hold tidak diterapkan: '+h.warnings.join('; '));}catch(e){add('WARN','motion-plan','Hold tidak diterapkan: '+e.message);}}
+ if(fs.existsSync(pf)){try{const h=plannedHolds(manifestConfig,JSON.parse(fs.readFileSync(path.resolve(opt.src,'src/config/narration.json'),'utf8')),JSON.parse(fs.readFileSync(pf,'utf8')));declared=h.ranges.map(r=>({...r,start:Math.max(0,r.start-frameOffset),end:Math.min(n,r.end-frameOffset)})).filter(r=>r.start<r.end);if(h.warnings.length)add('WARN','motion-plan','Hold tidak diterapkan: '+h.warnings.join('; '));}catch(e){add('WARN','motion-plan','Hold tidak diterapkan: '+e.message);}}
 }
 const {planned,unplanned,runs}=classifyStaticRuns(diff,T.staticDiff,declared);
 const staticRatio=unplanned/Math.max(1,n-1);
@@ -245,11 +259,11 @@ else add('OK', 'transisi', 'Tidak ada dissolve yang mencurigakan');
 // 2f. Zona aman + frame pembuka (histogram -> latar -> "tinta")
 const scaleY = H / T.height, scaleX = W / T.width;
 // Safe-area options are specified in reference 1080x1920 coordinates.
-const safeTopPx=opt.safeTop*T.height/1920, safeBottomPx=opt.safeBottom*T.height/1920;
-const sidePx=opt.safeSide*T.width/1080;
-const tolerancePx=opt.tolerance*T.height/1920;
+const safeTopPx=opt.safeTop*spatialProfile.sy, safeBottomPx=opt.safeBottom*spatialProfile.sy;
+const leftPx=opt.safeLeft*spatialProfile.sx,rightPx=opt.safeRight*spatialProfile.sx;
+const tolerancePx=opt.tolerance*spatialProfile.sy;
 const rows = {top: Math.max(0, Math.round((safeTopPx - tolerancePx) * scaleY)), bottom: Math.max(0, Math.round((safeBottomPx - tolerancePx) * scaleY))};
-const cols = Math.max(1, Math.round(sidePx * scaleX));
+const cols = {left:Math.round(leftPx*scaleX),right:Math.round(rightPx*scaleX)};
 const extentTop = [], extentBottom = [];
 const inkFrac = {top: new Float32Array(n), bottom: new Float32Array(n), left: new Float32Array(n), right: new Float32Array(n), all: new Float32Array(n)};
 for (let i = 0; i < n; i++) {
@@ -264,8 +278,8 @@ for (let i = 0; i < n; i++) {
   };
   inkFrac.top[i] = zone(0, W, 0, rows.top);
   inkFrac.bottom[i] = zone(0, W, H - rows.bottom, H);
-  inkFrac.left[i] = zone(0, cols, rows.top, H - rows.bottom);
-  inkFrac.right[i] = zone(W - cols, W, rows.top, H - rows.bottom);
+  inkFrac.left[i] = zone(0, cols.left, rows.top, H - rows.bottom);
+  inkFrac.right[i] = zone(W - cols.right, W, rows.top, H - rows.bottom);
   inkFrac.all[i] = zone(0, W, 0, H);
   let r0 = -1, r1 = -1;
   for (let y = 0; y < H; y++) { let c = 0; for (let x = 0; x < W; x++) if (Math.abs(f[y * W + x] - bg) > T.inkDelta) c++; if (c >= 2) { if (r0 < 0) r0 = y; r1 = y; } }
@@ -278,11 +292,13 @@ for (const z of ['top', 'bottom', 'left', 'right']) {
   const idx = []; for (let i = 0; i < n; i++) if (inkFrac[z][i] > T.zoneInk) idx.push(i);
   const ratio = idx.length / n;
   const worst = [...idx].sort((a, b) => inkFrac[z][b] - inkFrac[z][a]);
-  zoneReport[z] = {ratio, worst};
-  const label = {top: `zona atas ${opt.safeTop}px`, bottom: `zona bawah ${opt.safeBottom}px`, left: `tepi kiri ${opt.safeSide}px`, right: `tepi kanan ${opt.safeSide}px`}[z];
-  add(ratio > T.zoneFlaggedRatio ? 'WARN' : 'OK', 'zona-aman',
+  const runs=[];for(const f of idx){const last=runs.at(-1);if(last&&last.endFrame===f)last.endFrame=f+1;else runs.push({startFrame:f,endFrame:f+1});}
+  zoneReport[z] = {ratio, worst, runs};
+  const label = {top: `zona atas ${opt.safeTop}px`, bottom: `zona bawah ${opt.safeBottom}px`, left: `tepi kiri ${opt.safeLeft}px`, right: `tepi kanan ${opt.safeRight}px`}[z];
+  add(idx.length ? 'WARN' : 'OK', 'zona-aman',
     `Konten di ${label}: ada pada ${fmt(ratio * 100, 0)}% frame` + (worst.length ? ` (terpadat ${sec(worst[0], fps)})` : ''));
 }
+zoneEvidence={profile:spatialProfile.id,referenceBounds:{top:opt.safeTop,bottom:opt.safeBottom,left:opt.safeLeft,right:opt.safeRight,tolerance:opt.tolerance},zones:zoneReport,verification:"pixel heuristic; candidate only"};
 const hookN = Math.min(n, Math.max(1, Math.round(fps * 0.5)));
 let hookInk = 0; for (let i = 0; i < hookN; i++) hookInk = Math.max(hookInk, inkFrac.all[i]);
 add(hookInk > 0.003 ? 'OK' : 'WARN', 'hook', `Konten pada 0,5 detik pertama: ${fmt(hookInk * 100, 1)}%` + (hookInk > 0.003 ? '' : ' (hampir kosong; hook 1-2 detik pertama lemah)'));
@@ -315,15 +331,21 @@ if (as) {
 
 // ---------- 4. Contact sheet + frame bermasalah ----------
 const interval = Math.max(0.5, Math.ceil((duration / 42) * 2) / 2);
-const count = Math.min(42, Math.ceil(duration / interval)); const tileCols = 7, tileRows = Math.ceil(count / tileCols);
+let reviewFrames=[];
+if(opt.src&&manifestConfig&&n===expectedScopeFrames&&Math.abs(fps-manifestConfig.fps)<.001){try{
+ const read=f=>{const file=path.join(opt.src,f);return fs.existsSync(file)?JSON.parse(fs.readFileSync(file,'utf8')):null;};
+ const narration=read('src/config/narration.json');if(narration)reviewFrames=spatialReviewFrames(manifestConfig,narration,read('production/motion-plan.json'),read('production/spatial-plan.json'),read('production/sound-cues.json'),42,{start:frameOffset,end:frameOffset+n}).map(f=>f-frameOffset);
+ }catch(e){add('WARN','contact-sheet','Event mapping unavailable: '+e.message);}}
+const count=reviewFrames.length||Math.min(42,Math.ceil(duration/interval));const tileCols=7,tileRows=Math.ceil(count/tileCols);
+const sheetFilter=reviewFrames.length?`select='${reviewFrames.map(f=>`eq(n,${f})`).join('+')}',scale=270:-1,tile=${tileCols}x${tileRows}`:`fps=1/${interval},scale=270:-1,tile=${tileCols}x${tileRows}`;
+if(reviewFrames.length)add('INFO','contact-sheet','Event-based review frames (bounded selection, not full verification): '+reviewFrames.join(','));
 sheet = path.join(outDir, 'contact-sheet.png');
-const contact=await runTool(FFMPEG, ['-v', 'error', '-y', '-i', video, '-vf', `fps=1/${interval},scale=270:-1,tile=${tileCols}x${tileRows}`, '-frames:v', '1', '-update', '1', sheet]);
+const contact=await runTool(FFMPEG, ['-v', 'error', '-y', '-i', video, '-vf', sheetFilter, '-frames:v', '1', '-update', '1', sheet]);
 if(contact.code!==0||!fs.existsSync(sheet)){add('WARN','contact-sheet','Gagal membuat contact sheet: '+contact.err.slice(0,150));sheet='';}
 const pushMark = (t, label) => { if (!marks.some((m) => Math.abs(m.t - t) < 0.8)) marks.push({t, label}); };
 if (longRuns[0]) pushMark((longRuns[0].from + longRuns[0].len / 2) / fps, 'dead-zone');
 realDissolves.slice(0, 3).forEach((d) => pushMark((d.from + d.len / 2) / fps, 'dissolve'));
-if (zoneReport.bottom.worst[0] !== undefined) pushMark(zoneReport.bottom.worst[0] / fps, 'zona-bawah');
-if (zoneReport.top.worst[0] !== undefined) pushMark(zoneReport.top.worst[0] / fps, 'zona-atas');
+for(const [z,v] of Object.entries(zoneReport))if(v.worst.length)marks.push({t:v.worst[0]/fps,label:'zona-'+z});
 pushMark(0, 'frame-pertama');
 for (const m of marks.slice(0, 8)) {
   const name = `${String(Math.round(m.t * 100)).padStart(5, '0')}_${m.label}.png`;
@@ -387,7 +409,7 @@ function finish() {
   const text = lines.join('\n');
   console.log(text);
   fs.writeFileSync(path.join(outDir, 'report.md'), '```\n' + text + '\n```\n');
-  fs.writeFileSync(path.join(outDir, 'report.json'), JSON.stringify({video: path.basename(video), frames: n, fps, duration, loudness: loud, results: all, marks}, null, 2));
+  fs.writeFileSync(path.join(outDir, 'report.json'), JSON.stringify({video: path.basename(video), width: W0, height: H0, segmentId:segment?.id??null, frameOffset, frames: n, fps, duration, loudness: loud, results: all, marks, zoneEvidence}, null, 2));
   const bad = count('FAIL') || (opt.strict && count('WARN'));
   process.exit(bad ? 1 : 0);
 }

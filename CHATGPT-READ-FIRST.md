@@ -4,7 +4,7 @@ Satu pintu masuk, bukan kumpulan prompt. Buka ZIP aktual, jangan memakai snapsho
 Baca `CHATGPT-HISTORY.md` sekali di awal pekerjaan untuk mengetahui pelajaran dan batas QA terakhir. Riwayat bukan sumber rule/ACC baru; keputusan aktual tetap ada pada source.
 
 ## Routing berdasarkan tugas
-1. Selalu baca `AGENTS.md` (scope, prioritas, perlindungan) dan `PRODUCTION-RULES.md` (flow). Untuk project existing, baca manifest, `PRODUCTION-STATE.json`, `src/config/narration.json`, board generated, lock, source dan AGENTS/PROJECT-SCOPE/SCRIPT/STORYBOARD terkait. Laporkan konflik, jangan menimpa keputusan ACC. Untuk audit/ide, tidak perlu menjalankan seluruh toolkit.
+1. Selalu baca `AGENTS.md` (scope, prioritas, perlindungan) dan `PRODUCTION-RULES.md` (flow). Untuk project existing, baca manifest, `PRODUCTION-STATE.json`, `src/config/narration.json`, board generated, lock, source dan AGENTS/PROJECT-SCOPE/SCRIPT/STORYBOARD terkait. Laporkan konflik, jangan menimpa keputusan ACC. Untuk audit/ide, tidak perlu menjalankan seluruh toolkit; audit read-only kecuali pengguna secara eksplisit meminta perbaikan/cleanup.
 2. Untuk konsep/build baru, tiga acuan kreatif: `docs/MOTIONGRAPHIC-DESIGN-SYSTEM.md`, `docs/MOTION-DIRECTION-RULES.md`, `docs/QA-VISUAL-MOTION-CHECKLIST.md`. Inilah enam dokumen inti termasuk file ini, AGENTS dan Production Rules. `docs/STORYBOARD-TEMPLATE-UNIVERSAL.md` adalah format kerja, bukan flow kedua.
 3. Untuk build/revisi teknis, verifikasi `package.json`, `contracts/studio-capabilities.json`, `contracts/addon.schema.json`, struktur project dan CLI aktual. Buka modul berikut hanya untuk fungsi terkait; kontrak yang berlaku tetap wajib dipenuhi.
 

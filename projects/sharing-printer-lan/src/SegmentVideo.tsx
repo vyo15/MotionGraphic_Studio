@@ -1,11 +1,5 @@
 import React from 'react';import {AbsoluteFill,Sequence} from 'remotion';import {EditorialBackground} from './components/EditorialBackground';import {DEFAULT_PROPS,type VideoProps} from './config/props';
-import {Scene01} from './scenes/Scene01';
-import {Scene02} from './scenes/Scene02';
-import {Scene03} from './scenes/Scene03';
-import {Scene04} from './scenes/Scene04';
-import {Scene05} from './scenes/Scene05';
-import {Scene06} from "./scenes/Scene06";
-import {Scene07} from "./scenes/Scene07";
-import {Scene08} from "./scenes/Scene08";
+import {LocalFonts} from './components/LocalFonts';
+import {SceneLayout} from './components/SceneLayout';
 import {SoundCueTrack} from './components/SoundCueTrack';
-export const SegmentVideo:React.FC<Partial<VideoProps>&{segmentIndex:number}>=({segmentIndex,...input})=>{const p={...DEFAULT_PROPS,...input};return <AbsoluteFill><EditorialBackground color={p.backgroundColor}/>{segmentIndex===0&&<Scene01 {...p}/ >}{segmentIndex===1&&<Scene02 {...p}/ >}{segmentIndex===2&&<Scene03 {...p}/ >}{segmentIndex===3&&<Scene04 {...p}/ >}{segmentIndex===4&&<Scene05 {...p}/ >}{segmentIndex===5&&<Scene06 {...p}/>}{segmentIndex===6&&<Scene07 {...p}/>}{segmentIndex===7&&<Scene08 {...p}/>}<SoundCueTrack enabled={p.showSfx} gain={p.sfxGain} textProps={{runCommand:p.runCommand,hostAddress:p.hostAddress,ctaComment:p.ctaComment}} segmentIndex={segmentIndex}/></AbsoluteFill>};
+export const SegmentVideo:React.FC<Partial<VideoProps>&{segmentIndex:number}>=({segmentIndex,...input})=>{const p={...DEFAULT_PROPS,...input};return <AbsoluteFill><LocalFonts/><EditorialBackground color={p.backgroundColor}/>{segmentIndex===0&&<SceneLayout {...p} sceneIndex={0}/>}{segmentIndex===1&&<SceneLayout {...p} sceneIndex={1}/>}{segmentIndex===2&&<SceneLayout {...p} sceneIndex={2}/>}{segmentIndex===3&&<SceneLayout {...p} sceneIndex={3}/>}{segmentIndex===4&&<SceneLayout {...p} sceneIndex={4}/>}{segmentIndex===5&&<SceneLayout {...p} sceneIndex={5}/>}{segmentIndex===6&&<SceneLayout {...p} sceneIndex={6}/>}{segmentIndex===7&&<SceneLayout {...p} sceneIndex={7}/>}{segmentIndex===8&&<SceneLayout {...p} sceneIndex={8}/>}{segmentIndex===9&&<SceneLayout {...p} sceneIndex={9}/>}<SoundCueTrack enabled={p.showSfx} gain={p.sfxGain} textProps={{runCommand:p.runCommand,hostAddress:p.hostAddress,ctaComment:p.ctaComment}} segmentIndex={segmentIndex}/></AbsoluteFill>};

@@ -1,0 +1,186 @@
+{
+  "schemaVersion": 1,
+  "assets": [
+    {
+      "id": "transition-swoosh-adh-01",
+      "file": "audio/transition/transition-swoosh-adh-01.wav",
+      "character": "synthetic",
+      "tags": [
+        "motion",
+        "transition",
+        "whoosh",
+        "swoosh",
+        "short-accent"
+      ],
+      "source": {
+        "kind": "licensed-other",
+        "title": "Transition Swoosh",
+        "creator": "adh.dreaming",
+        "license": "CC0-1.0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "sourceUrl": "https://freesound.org/people/adh.dreaming/sounds/632763/",
+        "originalFilename": "632763__adhdreaming__transition-swoosh.wav",
+        "originalSha256": "5b812846aa99c8d714003372ef3a7722ef91ee4a339688ee24ab4076c91500c1",
+        "originalFile": "originals/632763__adhdreaming__transition-swoosh.wav"
+      },
+      "rightsEvidence": "Original Freesound sound page explicitly lists Creative Commons 0; checked 2026-11-28. Uploaded WAV retained byte-for-byte. Designed effect classification; original recording method not independently confirmed.",
+      "impactSample": 3087,
+      "gainDb": -16,
+      "sha256": "3be31b8fac74d133ede53cf52b9da31a284ebf37ce26ce62f39f633fe44458c1",
+      "processing": {
+        "format": "PCM_24",
+        "sampleRate": 44100,
+        "channels": 2,
+        "originalFormat": "FLOAT",
+        "peakTargetDbFS": -3,
+        "gainAppliedDb": -1.465,
+        "highpassHz": null,
+        "edgeFadeMs": 0,
+        "resampled": false,
+        "pitchChanged": false,
+        "sourceRangeSeconds": null
+      },
+      "reviewStatus": "pending-listening",
+      "category": "transition",
+      "selectionStatus": "ADDED",
+      "suggestedUse": "Aksen transisi pendek; sekitar 0.25 detik aktif, file utuh 1.49 detik.",
+      "alignmentBasis": "10 ms envelope analysis; camera onset, riser/long swoosh crest; audition and align actual action before ACC"
+    },
+    {
+      "id": "transition-swoosh-halgrimm-01",
+      "file": "audio/transition/transition-swoosh-halgrimm-01.wav",
+      "character": "synthetic",
+      "tags": [
+        "motion",
+        "transition",
+        "whoosh",
+        "swoosh",
+        "long"
+      ],
+      "source": {
+        "kind": "licensed-other",
+        "title": "swoosh",
+        "creator": "Halgrimm",
+        "license": "CC0-1.0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "sourceUrl": "https://freesound.org/people/Halgrimm/sounds/169867/",
+        "originalFilename": "169867__halgrimm__swoosh.wav",
+        "originalSha256": "e4685dbfbea58637e5e09c5b48ae089da97c8011864aa499f46668dc10069d8a",
+        "originalFile": "originals/169867__halgrimm__swoosh.wav"
+      },
+      "rightsEvidence": "Original Freesound sound page explicitly lists Creative Commons 0; checked 2026-11-28. Uploaded WAV retained byte-for-byte. Designed effect classification; original recording method not independently confirmed.",
+      "impactSample": 48510,
+      "gainDb": -16,
+      "sha256": "8525986ccc1ea95be7235b0b11e942de763974d59efbb419c3fc2a3967f7b736",
+      "processing": {
+        "format": "PCM_24",
+        "sampleRate": 44100,
+        "channels": 2,
+        "originalFormat": "PCM_16",
+        "peakTargetDbFS": -3,
+        "gainAppliedDb": 3.263,
+        "highpassHz": null,
+        "edgeFadeMs": 0,
+        "resampled": false,
+        "pitchChanged": false,
+        "sourceRangeSeconds": null
+      },
+      "reviewStatus": "pending-listening",
+      "category": "transition",
+      "selectionStatus": "ADDED",
+      "suggestedUse": "Perpindahan panel atau objek dengan build-up dan tail; cocok transisi lebih panjang.",
+      "alignmentBasis": "10 ms envelope analysis; camera onset, riser/long swoosh crest; audition and align actual action before ACC"
+    },
+    {
+      "id": "riser-anticipation-01",
+      "file": "audio/anticipation/riser-anticipation-01.wav",
+      "character": "synthetic",
+      "tags": [
+        "motion",
+        "riser",
+        "anticipation",
+        "build-up",
+        "long"
+      ],
+      "source": {
+        "kind": "licensed-other",
+        "title": "Riser sound effect short.wav",
+        "creator": "syntheffects",
+        "license": "CC0-1.0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "sourceUrl": "https://freesound.org/people/syntheffects/sounds/685256/",
+        "originalFilename": "685256__syntheffects__riser-sound-effect-short.wav",
+        "originalSha256": "971ac8f6fd99c62a5b96b655ffe543c67ac4ef07a5a3fa5d672cc1f3ce62b551",
+        "originalFile": "originals/685256__syntheffects__riser-sound-effect-short.wav"
+      },
+      "rightsEvidence": "Original Freesound sound page explicitly lists Creative Commons 0; checked 2026-11-28. Uploaded WAV retained byte-for-byte. Designed effect classification; original recording method not independently confirmed.",
+      "impactSample": 120834,
+      "gainDb": -16,
+      "sha256": "ce8f375037d55ad34fe2558b321bb3b737080f7306f46cacf4e324580761f6a0",
+      "processing": {
+        "format": "PCM_24",
+        "sampleRate": 44100,
+        "channels": 2,
+        "originalFormat": "PCM_16",
+        "peakTargetDbFS": -3,
+        "gainAppliedDb": 6.48,
+        "highpassHz": null,
+        "edgeFadeMs": 0,
+        "resampled": false,
+        "pitchChanged": false,
+        "sourceRangeSeconds": null
+      },
+      "reviewStatus": "pending-listening",
+      "category": "anticipation",
+      "selectionStatus": "ADDED",
+      "suggestedUse": "Bangun antisipasi sebelum solusi/hasil; sinkronkan crest ke reveal.",
+      "alignmentBasis": "10 ms envelope analysis; camera onset, riser/long swoosh crest; audition and align actual action before ACC"
+    },
+    {
+      "id": "camera-shutter-flash-01",
+      "file": "audio/camera/camera-shutter-flash-01.wav",
+      "character": "synthetic",
+      "tags": [
+        "camera",
+        "shutter",
+        "flash",
+        "screenshot",
+        "capture",
+        "designed"
+      ],
+      "source": {
+        "kind": "licensed-other",
+        "title": "Camera shutter and flash combined",
+        "creator": "montclairguy",
+        "license": "CC0-1.0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "sourceUrl": "https://freesound.org/people/montclairguy/sounds/353044/",
+        "originalFilename": "353044__montclairguy__camera-shutter-and-flash-combined.wav",
+        "originalSha256": "29856f9362ec962d70d201969cc69ab68731da3816eee8900ec43b59f626f6db",
+        "originalFile": "originals/353044__montclairguy__camera-shutter-and-flash-combined.wav"
+      },
+      "rightsEvidence": "Original Freesound sound page explicitly lists Creative Commons 0; checked 2026-11-28. Uploaded WAV retained byte-for-byte. Designed effect classification; original recording method not independently confirmed.",
+      "impactSample": 42240,
+      "gainDb": -16,
+      "sha256": "4feced54b19febd0d22f4e8242a763aa2f3881c82d546bc54a24b0918d54ef4f",
+      "processing": {
+        "format": "PCM_24",
+        "sampleRate": 48000,
+        "channels": 2,
+        "originalFormat": "PCM_16",
+        "peakTargetDbFS": -3,
+        "gainAppliedDb": -2.999,
+        "highpassHz": null,
+        "edgeFadeMs": 0,
+        "resampled": false,
+        "pitchChanged": false,
+        "sourceRangeSeconds": null
+      },
+      "reviewStatus": "pending-listening",
+      "category": "camera",
+      "selectionStatus": "ADDED",
+      "suggestedUse": "Efek screenshot/freeze-frame stilisasi dengan bunyi flash; bukan suara shutter terisolasi.",
+      "alignmentBasis": "10 ms envelope analysis; camera onset, riser/long swoosh crest; audition and align actual action before ACC"
+    }
+  ]
+}

@@ -55,9 +55,9 @@ test('CLI CapCut mock end-to-end passes temporary props+encoder flags and cleans
   fs.mkdirSync(path.join(root,'library'),{recursive:true});
   const cli=path.join(root,'node_modules/@remotion/cli/remotion-cli.js');
   fs.mkdirSync(path.dirname(cli),{recursive:true});
-  for(const name of ['render-menu.mjs','render-profiles.mjs','menu-helper.mjs','render-plan.mjs','render-progress.mjs','export-paths.mjs']){
-   fs.copyFileSync(path.join(ROOT,'tools',name),path.join(root,'tools',name));
-  }
+  fs.cpSync(path.join(ROOT,'tools'),path.join(root,'tools'),{recursive:true});
+  fs.cpSync(path.join(ROOT,'templates'),path.join(root,'templates'),{recursive:true});
+  fs.cpSync(path.join(ROOT,'contracts'),path.join(root,'contracts'),{recursive:true});
   const demo={id:'DemoTest',title:'Demo Test',slug:'demo-test',durationInFrames:30,fps:30,
    defaultProps:{showVoiceOver:true,showMusic:false,showSfx:true,showOnScreenCaptions:false,showSubtitles:false,scene03ShowTextVO:true,layerOverrides:{obj:{x:1}}},segments:[]};
   fs.writeFileSync(path.join(root,'library/catalog.json'),JSON.stringify({videos:[demo]}));

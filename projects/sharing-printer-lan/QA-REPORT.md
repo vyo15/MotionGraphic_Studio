@@ -110,3 +110,31 @@
 - NEW `projects/sharing-printer-lan/src/scenes/Scene06.tsx`
 - NEW `projects/sharing-printer-lan/src/scenes/Scene07.tsx`
 - NEW `projects/sharing-printer-lan/src/scenes/Scene08.tsx`
+
+## V4 opening — 2026-11-28 (riwayat)
+- Baseline: MotionGraphic-Studio-FULL-v2.0.0-20261128-044058(3).zip; referensi ACC Sharing-Printer-S01-Dramatic-Pause-V4.mp4 (482f).
+- 10 segmen 3317f, +206f. ID S01–08 tetap; dua ID baru di depan demo. S02–08 durasi lokal, VO, state ACC, artwork, cursor/camera timing, WAV asli dan gain tidak berubah. S07 hanya suppress subtitle lama saat Freeze.
+- V4 diukur: pergantian subtitle frame 329, subtitle berakhir 448; silent result hold 34f. Cue audio demo start 273 dan 374 berdasarkan MP4. Rekonstruksi memakai source Topology01 identik, time mapping 89+local/1.3 hingga 275. Typography native Arial vs Arimo preview; bg Master #F7F7F5 vs preview #F6F6F3. Perbedaan piksel belum diuji.
+- PASS addon:validate --production --syntax (0 FAIL/WARN); qa:motion; qa:spatial (3317 frame deklarasi); qa:native (703 target); qa:layers (0 FAIL/WARN); qa:sound (46 cue); sync & validate-library (6 video, 51 segmen, 63 rujukan aset, 0 masalah sumber); board --check.
+- PASS pemeriksaan tambahan: VO asli identik, rentang lokal scene/cue/typing S02–08 identik, 10 Sequence dan SegmentVideo match manifest, caption literal match narration, artwork/timing/WAV byte-identical.
+- BELUM DIUJI: bundling Remotion, GUI edit/Save/reload, render native full/segment, visual pixel parity, listening QA dan sync rekaman VO. Static QA tidak membuktikan output bergerak. Generated board tidak dikirim; sync membuatnya.
+
+## Design v2.1 review (2026-11-28)
+- Manifest 3317 frame / 10 segmen, narration, SFX, state ACC unchanged.
+- Static validator production + syntax: 0 FAIL, 0 WARN; spatial declared 3317 frames PASS; motion metadata PASS.
+- Guide 34 cue, semua kata asli cocok, range contiguous, lebar maksimal sekitar 750px (Inter Medium 36, font metrics). Dua typography spoken tanpa guide ganda.
+- Preview browser sementara mengevaluasi JSX source dan timing dengan shim, bukan Remotion native; Segoe UI Windows tidak tersedia di Linux dan fallback Arial-compatible digunakan. SFX mixed dari file dan cue Master; VO asli belum direkam. GUI Save/reload, native bundling, listening QA belum diuji. Layout baru masih review.
+
+
+## V10 ACC — QA patch aktif (2026-11-28)
+- Baseline: MotionGraphic-Studio-FULL-v2.0.0-20261128-063214.zip; referensi MP4 Sharing-Printer-Opening-V10-Headline-Spacing.mp4, SHA-256 433b799b98f3797456ab744c36ea7145ea5886f4ce3632098b47922a4d2bac49.
+- PASS addon:validate --production --syntax (116 file, 0 FAIL/WARN); qa:native (713 target), qa:layers (0 FAIL/WARN), qa:motion, qa:spatial (3395 frame deklarasi), qa:sound (46 cue), sync (6 video, 63 komposisi, 51 segmen, 71 rujukan aset, 0 masalah sumber), board --check.
+- PASS compare baseline: 34 beat text sama; seluruh scene setelah question bergeser +78f, local durations tetap; 46 cue termasuk typing origin dipertahankan kecuali absolute shift dan silent opening; 10 Sequence match manifest; approval lain tetap. 418 file protected (source tak ditarget, aset, project lain) byte-identical.
+- Referensi V10 diukur: monitor y~637, headline glyph akhir ~542, gap ~95px; source menggeser Topology01 +112px screen dan menambah headline native. S02 36f awal +112→+80px seperti preview, settle tambahan hingga 78f agar kembali ke pose original sebelum S03; bagian tambahan belum ACC render. S02 lokal aksi/VO/cue tidak berubah.
+- Native reconstruction dari referensi composited: tidak mengklaim pixel parity. Tidak ada screenshot/raster sebagai pengganti gerak. Remotion dependency tidak terpasang di sandbox; native bundling/render, GUI Save/reload, listening dan sync rekaman VO belum diuji. Design contract legacy tetap (typography spoken tanpa guide ganda).
+
+## S02 V13 / S03 Hybrid ACC — 2026-11-28
+- Baseline: ZIP Master 063214 + patch V10 ACC; native source dari dua MP4 referensi ACC, bukan file video raster.
+- `addon:validate --production --syntax`: 0 FAIL / 0 WARN. `qa:native`: 723 target, 0 FAIL / WARN. `qa:layers`: 0 FAIL / WARN. `qa:motion`: PASS (metadata). `qa:spatial`: PASS 3395 frame (declared geometry). `qa:sound`: PASS 46 cue. `sync`: 6 video / 63 komposisi / 51 segmen / 71 referensi aset / 0 masalah sumber.
+- 10 layer baru (4 teks + 6 outline). Manifest, VO, guide, SFX, source UI dan Topology, kamera/cursor timing, opening V10 dan S04–S08 identik terhadap baseline. S03 menggeser parent world/cursor bersama dan settle di akhir.
+- Native render, pixel parity, edit/Save/reload, actual spatial trace, listening dan rekaman VO belum diuji. Remotion/React runtime tidak terpasang pada sandbox. Spatial plan legacy menggunakan envelope/sampel fokus, termasuk whitespace dan viewport shift; tidak membuktikan overlap aktual.

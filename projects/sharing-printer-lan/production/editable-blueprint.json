@@ -418,14 +418,6 @@
       "source": "src/components/WindowsNetworkUI.tsx"
     },
     {
-      "name": "S01 — Subtitle 01",
-      "source": "src/components/Captions01.tsx"
-    },
-    {
-      "name": "S01 — Subtitle 02",
-      "source": "src/components/Captions01.tsx"
-    },
-    {
       "name": "S01 — Subtitle 03",
       "source": "src/components/Captions01.tsx"
     },
@@ -1436,6 +1428,78 @@
     {
       "name": "S06 — Apply action label",
       "source": "src/components/WindowsPrintUI.tsx"
+    },
+    {
+      "name": "S01Q — Printer kamu",
+      "source": "src/scenes/Scene01Question.tsx"
+    },
+    {
+      "name": "S01Q — belum punya fitur",
+      "source": "src/scenes/Scene01Question.tsx"
+    },
+    {
+      "name": "S01Q — Wi-Fi?",
+      "source": "src/scenes/Scene01Question.tsx"
+    },
+    {
+      "name": "S01R — Tenang",
+      "source": "src/scenes/Scene01Response.tsx"
+    },
+    {
+      "name": "S01R — ternyata ada cara",
+      "source": "src/scenes/Scene01Response.tsx"
+    },
+    {
+      "name": "S02 — Subtitle 02 — 2",
+      "source": "src/components/Captions02.tsx"
+    },
+    {
+      "name": "S03 — Subtitle 01 — 2",
+      "source": "src/components/Captions03.tsx"
+    },
+    {
+      "name": "S04 — Subtitle 02 — 2",
+      "source": "src/components/Captions04.tsx"
+    },
+    {
+      "name": "S06 — Subtitle 03 — 2",
+      "source": "src/components/Captions06.tsx"
+    },
+    {
+      "name": "S01Q — Tanda tanya kiri",
+      "source": "src/scenes/Scene01Question.tsx"
+    },
+    {
+      "name": "S01Q — Tanda tanya tengah",
+      "source": "src/scenes/Scene01Question.tsx"
+    },
+    {
+      "name": "S01Q — Tanda tanya kanan",
+      "source": "src/scenes/Scene01Question.tsx"
+    },
+    {
+      "name": "S01 — Headline 1 printer",
+      "source": "src/scenes/Scene01.tsx"
+    },
+    {
+      "name": "S01 — Headline banyak komputer",
+      "source": "src/scenes/Scene01.tsx"
+    },
+    {
+      "name": "S02 — Highlight Printer Sharing",
+      "source": "src/scenes/Scene02.tsx"
+    },
+    {
+      "name": "S02 — Highlight jaringan yang sama",
+      "source": "src/scenes/Scene02.tsx"
+    },
+    {
+      "name": "S03 — Highlight komputer utama",
+      "source": "src/scenes/Scene03.tsx"
+    },
+    {
+      "name": "S03 — Highlight Win R",
+      "source": "src/scenes/Scene03.tsx"
     }
   ],
   "nativeVisualTargets": [
@@ -2802,6 +2866,34 @@
     {
       "name": "S06 — Windows cursor hotspot",
       "source": "src/scenes/Scene06.tsx"
+    },
+    {
+      "name": "S01Q — Coral highlight",
+      "source": "src/scenes/Scene01Question.tsx"
+    },
+    {
+      "name": "S03 — Highlight Network and Internet",
+      "source": "src/scenes/Scene03.tsx"
+    },
+    {
+      "name": "S03 — Highlight Network and Sharing Center",
+      "source": "src/scenes/Scene03.tsx"
+    },
+    {
+      "name": "S03 — Highlight Change advanced sharing settings",
+      "source": "src/scenes/Scene03.tsx"
+    },
+    {
+      "name": "S03 — Highlight Network Discovery",
+      "source": "src/scenes/Scene03.tsx"
+    },
+    {
+      "name": "S03 — Highlight File and Printer Sharing",
+      "source": "src/scenes/Scene03.tsx"
+    },
+    {
+      "name": "S03 — Highlight Save changes",
+      "source": "src/scenes/Scene03.tsx"
     }
   ],
   "propsTextTargets": [

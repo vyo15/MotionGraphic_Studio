@@ -1,6 +1,6 @@
 # Portrait Virtual Camera Standard v1.0
 
-**Scope:** UI landscape, diagram luas, atau objek yang memerlukan detail pada Reels portrait. Bukan aturan semua beat harus zoom. Tetap satu Master, 1080×1920 default, safe zone x=50..1030, y=250..1570. Format lain: tetapkan viewport dan zona aman sesuai brief.
+**Scope:** UI landscape, diagram luas, atau objek yang memerlukan detail pada Reels portrait. Bukan aturan semua beat harus zoom. Tetap satu Master, 1080×1920 default, untuk video baru visual zone x=120..920, y=280..1360; guide terpisah y=1470..1540 (legacy mengikuti source ACC). Format lain: tetapkan viewport dan zona aman sesuai brief.
 
 ## Coordinate contract
 - **World space:** UI mempertahankan rasio asli, koordinat piksel konsisten untuk objek, menu/dialog, cursor dan hotspot. Satu `worldId` per world kontinu; ukuran world dan origin tetap. Camera pose `cx`, `cy` dalam world px dan `zoom` dalam screen px per world px, >0. Jangan menyebut 1.0 = fit kecuali benar.

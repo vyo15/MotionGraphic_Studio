@@ -2,6 +2,7 @@
 /** Dependency-free audit of production/sound-cues.json; DOES NOT modify audio or scenes. */
 import fs from 'node:fs';
 import path from 'node:path';
+import {createHash} from 'node:crypto';
 import {pathToFileURL,fileURLToPath} from 'node:url';
 const ROOT=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 
@@ -59,6 +60,13 @@ export function checkSoundCues(projectDir,{strict=false,production=false}={}) {
   const src=c.source;
   if(!src||typeof src!=='object'||!['own','openverse','real-recording','earshot','licensed-other'].includes(src.kind)){
    fail(prefix+': source.kind wajib dan harus known');continue;
+  }
+  // An explicitly unverified license must not pass as own/ready.
+  if(/unverified|not cleared|internal review only|unknown|belum terverifikasi/i.test(String(src.license??'')))fail(prefix+': lisensi belum terverifikasi; omit sampai sumber legal tersedia');
+  if(c.mouseAction!==undefined){
+   const allowed=['single-click','double-click','right-click','scroll-normal','scroll-slow'];
+   if(!allowed.includes(c.mouseAction)||src.mouseAction!==c.mouseAction||src.kind!=='real-recording'||!['cc0','cc0-1.0','public-domain'].includes(String(src.license??'').toLowerCase())||!src.creator||!/^https:\/\//.test(src.sourceUrl??'')||typeof src.rightsEvidence!=='string'||!src.rightsEvidence.trim())fail(prefix+': mouse wajib rekaman dengan bukti sumber/lisensi dan aksi tepat');
+   if(ext!=='.wav'||!/^[a-f0-9]{64}$/.test(src.originalSha256??'')||createHash('sha256').update(fs.readFileSync(full)).digest('hex')!==src.originalSha256)fail(prefix+': WAV mouse bukan bytes original sesuai SHA256');
   }
   if(src.kind==='own'||src.kind==='earshot')continue;
   for(const k of ['title','license','sourceUrl'])if(typeof src[k]!=='string'||!src[k].trim())fail(prefix+': source.'+k+' wajib');

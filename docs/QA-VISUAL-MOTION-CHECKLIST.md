@@ -5,6 +5,9 @@ Checklist untuk **video baru dan revisi yang diminta**. Bukan janji semua penguj
 ## Pre-preview gate
 Jalankan `npm run addon:validate -- <folder-addon> --production --syntax` untuk video baru yang siap review; gate ini sudah memeriksa motion, spatial, native, sound dan syntax. Gunakan `qa:motion`, `qa:spatial`, `qa:native`, `qa:layers` dan `qa:sound --strict` sebagai diagnostik terarah jika diperlukan, bukan workflow kreatif kedua. Periksa contact sheet, preview full/segment bergerak, audio, dan GUI secara terpisah; koreksi error yang ditemukan sebelum menunjukkan preview jika bisa. Jangan menahan source yang diminta hanya karena runtime tidak tersedia: beri status belum diuji. Untuk final, ulangi gate setelah sync dan cek MP4/audio nyata.
 
+### Spatial evidence
+Gunakan `node tools/capture-spatial.mjs projects/<slug>` untuk project baru yang memakai screen-space-v1 setelah sync; `--full` untuk coverage lengkap, `--mode final` untuk guide OFF. Validasi trace dengan `qa:spatial --trace ... --require-full --mode preview|final`. Catat jenis bukti, status, coverage, freshness, dan frame PNG. `PASS_SAMPLED` tidak setara full, `STALE` harus capture ulang setelah edit. Tidak tersedia runtime = NOT RUN/INCOMPLETE. Lihat Production Toolkit; jangan paksa capture untuk project ACC/legacy. Periksa pixel, GUI Save/reload, klik dan z-order secara manual sampai gate tersebut teruji.
+
 ## A. Pre-build: kebenaran cerita
 
 - [ ] Brief dan satu pesan utama jelas; 8 tahap **naratif** (MASALAH, KONFLIK, REAKSI, SOLUSI, DEMONSTRASI, HASIL, CTA, COVER) terpetakan tanpa memaksa 8 scene.
@@ -16,10 +19,11 @@ Jalankan `npm run addon:validate -- <folder-addon> --production --syntax` untuk 
 ## B. Visual/brand
 
 - [ ] `docs/MOTIONGRAPHIC-DESIGN-SYSTEM.md` dipakai atau override brand kit dicatat; setiap scene satu focal point.
-- [ ] Font **benar-benar tersedia saat render**; jika Inter belum dibundel/di-load, gunakan fallback Arial yang konsisten. Gaya headline, subtitle, kode, label tidak bercampur tanpa alasan.
+- [ ] Font **benar-benar tersedia saat render**; Poppins/Inter/Manrope lokal sesuai font-lock; draft fallback tidak boleh diberi status review. Gaya headline, subtitle, kode, label tidak bercampur tanpa alasan.
 - [ ] Typography terbaca pada preview berskala 25–33% (simulasi layar HP); cek pemenggalan, overflow, line-height, serta dominasi teks.
 - [ ] Teks sekunder penting tidak memakai abu terlalu pudar; uji kontras / plate teks pada latar rumit. Warna status selalu ditemani ikon/label.
-- [ ] Hero/CTA/subtitle/hasil di area aman x=50–1030 dan y=250–1570; inset dekorasi boleh di luar. Subtitle dan UI tidak saling bertabrakan.
+- [ ] Hero/CTA/objek penting x=120–920, y=280–1360; guide x=120–920, y=1470–1540; background boleh full frame. Review crop 3:4 dan overlay Reels aktual.
+- [ ] Tulisan terkait compact; gap visual 48–80 px dari teks, antarobjek 40–80 px; jangan mepet atau kopong. Ukur glyph actual, tidak hanya bounding box; tidak ada overflow/wrap guide.
 - [ ] Kartu, shadow, radius, ikon, background grid, stroke, perspektif dan alignment konsisten, tetapi UI software tetap meniru aslinya.
 - [ ] Screenshot/aset tidak pecah, stretched, watermarked, atau melanggar lisensi; catat provenance bila ada.
 
@@ -31,12 +35,12 @@ Jalankan `npm run addon:validate -- <folder-addon> --production --syntax` untuk 
 - [ ] Latar awal off-white polos; jika grid/tekstur/ornamen dipakai, ada alasan fungsi dan tidak bersaing dengan UI. Teks yang sudah selesai fungsinya hilang tepat waktu.
 - [ ] Audit **contact sheet semua scene** untuk overlay persisten, bukan hanya cek still pertama; source-only tidak boleh diberi status PASS render/visual.
 
-### TEXT HIERARCHY & SUBTITLE LOCK v1.0 — gate wajib video baru
+### TEXT HIERARCHY & SUBTITLE LOCK v2.0 — gate wajib video baru
 
 - [ ] Setiap beat bernarasi memiliki cue subtitle draft aktif default; seluruh kata VO sesuai naskah/ACC, urut dan tanpa pengulangan/gap yang tidak disengaja. Cue silent/cover kosong. Timing draft tidak disebut sinkron rekaman.
 - [ ] Supporting text memiliki fungsi tambahan yang dicatat (parameter, arti, nilai, status, batasan atau `omit`); tidak ada headline yang mengulang subtitle/UI. Jika subtitle+demo cukup, hapus teks atas.
-- [ ] Periksa render hook, tiap cue, aksi utama, transisi, CTA dan cover: posisi subtitle stabil, maksimal dua baris, bounding box dan backing dalam safe zone, tidak bertabrakan dengan UI/label; terbaca pada ukuran HP.
-- [ ] `showSubtitles: true` default preview dan `false` benar-benar menyembunyikan track tanpa menghapus UI/supporting text. Full dan segment memakai timing yang sama; final/draft/VO Guide tidak menumpuk. CapCut HQ bersih dari subtitle narasi (cek MP4).
+- [ ] Periksa render hook, tiap cue, aksi utama, transisi, CTA dan cover: VO Guide stabil, Inter 36 px, satu baris tanpa backing, shadow, border atau highlight; jarak minimum 80 px dari objek pada semua frame, termasuk camera/transition; terbaca pada ukuran HP.
+- [ ] `showSubtitles: true` default preview dan `false` benar-benar menyembunyikan track tanpa menghapus UI/supporting text. Full dan segment memakai timing yang sama; final/draft/VO Guide tidak menumpuk. High/CapCut HQ bersih dari guide untuk designContract baru (cek MP4), Preview Cepat ON sesuai Props; safe zone hanya Studio.
 - [ ] Cue native memiliki nama unik, literal dan target blueprint sesuai kontrak; edit teks/timing konsisten dengan naskah. Uji Save/reload jika GUI tersedia; source-only bukan PASS visual/GUI.
 
 ## C. Gerak, continuity, dan layar software
@@ -62,14 +66,9 @@ Jalankan `npm run addon:validate -- <folder-addon> --production --syntax` untuk 
 - [ ] CTA tidak terpotong oleh cover; sound handoff cocok dengan objek yang diteruskan; hold thumbnail final tidak terganggu efek.
 - [ ] Audit MP4 akhir (peak/LUFS bila tersedia), speaker HP, headphone, mono, volume rendah, dan silent spots disengaja.
 
-
-
 - [ ] Jika VO belum direkam, statusnya jelas `DRAFT/VO GUIDE` dan bukan klaim audio final.
 - [ ] Setelah rekaman VO tersedia, sinkronkan onset/caption/hold terhadap **ucapan aktual**, jangan mempercepat suara demi mengejar durasi.
-- [ ] Subtitle tidak mengulang hero text panjang, maksimal sekitar dua baris per beat, tidak tercepat untuk dibaca, dan tidak melanggar safe zone.
-- [ ] SFX punya aksi pemicu dan posisi frame, tanpa doubling layer; VO tetap dominan, tidak ada clipping atau gap berbahaya.
-- [ ] Musik/stock sound memiliki asal dan hak penggunaan yang sesuai, terutama untuk monetisasi.
-- [ ] Mix audio/MP4 final didengarkan, bukan hanya diperiksa dari source atau angka; jika tidak tersedia tandai `BELUM DIUJI`.
+- [ ] Keterbacaan subtitle mengikuti gate Text Hierarchy di bagian B. Hak penggunaan musik/stock sound mencakup tujuan monetisasi bila relevan. Jika listening tidak tersedia, tandai `BELUM DIUJI`.
 
 ## E. Cover Reels / thumbnail
 
@@ -87,7 +86,7 @@ Jalankan `npm run addon:validate -- <folder-addon> --production --syntax` untuk 
 - [ ] Jika Studio GUI tersedia, uji select→drag/edit→Save-to-code→reload→render untuk layer yang dijanjikan editable.
 - [ ] Tidak menyentuh project/scene lain atau `Root/index/catalog/mirror` generated; ACC dan file lokal dijaga.
 - [ ] **Revisi/Master fix:** ZIP FILE CHANGE ONLY, hanya file baru/berubah dengan path relatif **dari dalam `MotionGraphic-Studio/`**. Tidak ada file yang tidak berubah; sebelum Replace cek risiko edit lokal.
-- [ ] **Video baru:** ZIP `<slug>/` mandiri dengan manifest, source, storyboard, README dan panduan aset; bukan seluruh Master.
+- [ ] **Video baru:** ZIP FILE CHANGE ONLY dengan seluruh file baru dalam `projects/<slug>/`, manifest, source, storyboard, README dan panduan aset; bukan seluruh Master.
 - [ ] Untuk chat baru: ZIP Master terbaru benar-benar dibuka dan `CHATGPT-READ-FIRST.md` dibaca; dokumen ZIP tidak otomatis mengubah Project Instructions.
 
 ## Ringkasan QA yang dikirim ChatGPT
@@ -119,3 +118,23 @@ Untuk video baru gunakan production gate di atas (flag produksi eksplisit; scaff
 
 ## Production Toolkit v1.0 — Master 2.0.0
 See `docs/PRODUCTION-TOOLKIT.md` for spatial-plan, camera helpers, VO alignment and approval QA; production flow and gate are owned by `PRODUCTION-RULES.md`.
+
+### Audit Master
+`npm run check` dan `npm run qa` adalah alias full gate; daftar daily/full gate dimiliki `tools/studio-preflight.mjs`. Full gate memeriksa freshness board tanpa menulis, SFX library, layer, approval, sound dan spatial sesuai kontrak, serta typecheck. `npm test` dijalankan terpisah (regression suite); render/GUI/listening tetap terpisah.
+
+## Gate revisi terbatas (scope / animation / natural timing / object-centered)
+- Bandingkan source dan preview sebelum–sesudah: perubahan hanya target ACC; motion lokal, aset, font, subtitle, cue, easing dan scene tetangga tetap. Jangan menerima screenshot sebagai pengganti motion.
+- Cek object bounds aktual, optical center, gap headline dan guide pada frame aksi/hold/handoff; pengecualian berdasarkan ACC dicatat.
+- Jika durasi berubah, cocokkan manifest, Sequence, segment, narration, cue/typing, spatial/motion plan, thumbnail dan state. Jangan menekan timing untuk mengejar angka.
+- Nyatakan batas static QA versus native render, GUI Save/reload dan listening; jangan mengklaim pixel parity tanpa bukti.
+
+### Spatial Intelligence Paket 01/02
+- [ ] Video review baru: kontrak layer semantik, native/plain identity, protected visibility, overlap berbatas waktu; plan statis lulus.
+- [ ] Capture trace v3 sesuai preset/frame/scope; data tidak lengkap atau stale tidak dianggap lulus. Sampling bukan full QA.
+- [ ] Review temuan overlap/occlusion, font/layout/clip, cursor hotspot/response, scene transition dan cover; kandidat `WARNING` membutuhkan inspeksi PNG/MP4, terutama paint/mask/shape kompleks.
+- [ ] `review.html` dan report JSON: frame/scene/layer, rekomendasi, bukti terpilih. Uji actual full/segment, native Save/reload dan listening pada PC; tidak ada forced layout atau ACC otomatis.
+
+### Paket 03/04 — QA gate terintegrasi
+- [ ] Baca `layout-advice.json` sebagai usulan screen-space, jangan forced layout; review alignment, spacing, hierarchy, text-fit dan reading time. Terapkan perubahan source hanya dalam scope yang diizinkan; re-capture dan bandingkan.
+- [ ] Preview diagnostik bukan PASS. High/CapCut review baru: bukti full scope sesuai preset dan fingerprint current; post-render QA, SHA-256 output, contact sheet dan review visual/listening terpisah. Warning/fail mempertahankan MP4 diagnostik, bukan final ACC.
+- [ ] `CACHED_SAMPLE` hanya bukti historis input sama, bukan pengukuran browser sesi ini; handoff bounded summary, tidak menggantikan trace lokal. Lihat Production Toolkit untuk queue, batas capture dan status runtime.

@@ -1,0 +1,8 @@
+{
+  "schemaVersion": 1,
+  "reference": {"width":1080,"height":1920},
+  "profiles": {
+    "legacy": {"safe":{"top":250,"bottom":350,"left":50,"right":50},"renderTolerance":40},
+    "compact-balanced-v1": {"safe":{"top":280,"bottom":350,"left":120,"right":160},"visualBottom":1360,"guideTop":1470,"guideBottom":1540,"guideGap":80,"grid":8,"guideFontMin":32,"guideFontMax":36,"renderTolerance":0}
+  }
+}

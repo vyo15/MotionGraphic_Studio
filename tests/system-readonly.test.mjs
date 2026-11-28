@@ -29,7 +29,10 @@ test('sync-state audit is read-only on isolated fixture',()=>{
 });
 test('studio-check no longer invokes project sync',()=>{
  const code=fs.readFileSync(path.join(ROOT,'tools/studio-check.mjs'),'utf8');
- assert.match(code,/step\('check-sync-state\.mjs'\)/);
+ assert.match(code,/staticGatePlan\(ROOT,\{full:true\}\)/);
+ const preflight=fs.readFileSync(path.join(ROOT,'tools/studio-preflight.mjs'),'utf8');
+ assert.match(preflight,/check-sync-state\.mjs/);
+ assert.doesNotMatch(preflight,/sync-projects\.mjs/);
  assert.doesNotMatch(code,/step\('sync-projects\.mjs'\)/);
 });
 test('real Remotion smoke command requires CLI locally and reports absence as blocker',()=>{

@@ -58,3 +58,12 @@ test('cleanup blocks symlink backup directories rather than following outside Ma
   assert.ok(fs.existsSync(path.join(elsewhere,'outside.txt')));
  }finally{fs.rmSync(elsewhere,{recursive:true,force:true})}
 }));
+test('cleanup keeps locally modified obsolete validator and refuses parent symlink before deleting',()=>fixture(root=>{
+ const old=path.join(root,'tools','check-master-no-code.mjs');fs.writeFileSync(old,'local modification');
+ assert.equal(run(root,['--apply']).status,0);assert.ok(fs.existsSync(old));
+ const elsewhere=fs.mkdtempSync(path.join(os.tmpdir(),'mg-clean-parent-'));
+ try{fs.writeFileSync(path.join(elsewhere,'CLEANUP-ARTEFAK-LEGACY.md'),'outside');
+  try{fs.symlinkSync(elsewhere,path.join(root,'docs'),'dir')}catch{return}
+  assert.notEqual(run(root,['--apply']).status,0);assert.ok(fs.existsSync(path.join(elsewhere,'CLEANUP-ARTEFAK-LEGACY.md')));
+ }finally{fs.rmSync(elsewhere,{recursive:true,force:true})}
+}));

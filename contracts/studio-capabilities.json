@@ -6,7 +6,7 @@
   "remotionVersion": "4.0.538",
   "nodeMinimumMajor": 22,
   "folderFirst": "projects/<slug>/",
-  "registration": "npm run sync",
+  "registration": "npm run dev (automatic sync; internal sync CLI for recovery)",
   "assetPrefix": "videos/<slug>/",
   "videoExport": "export const Video",
   "voiceOverWorkflow": "motion -> visual-approval -> guide -> record -> sync -> qa -> final",
@@ -57,7 +57,9 @@
   "studioUserFlow": {
     "command": "npm run flow",
     "briefOutput": "exports/briefs",
-    "source": "PRODUCTION-RULES.md"
+    "source": "PRODUCTION-RULES.md",
+    "dailyCommand": "npm run dev (sync, static gates, backup, regression, Studio + auto sampling)",
+    "quickPreviewCommand": "npm run prod (same Studio, last synced projects, lightweight readiness only; no Master watchers; not read-only UI or final QA)"
   },
   "masterZipDefault": "engine-only (no projects, no historical logs)",
   "productionStandards": {
@@ -69,7 +71,7 @@
     "motionQAAll": "npm run qa:motion -- --all",
     "productionGate": "npm run addon:validate -- <folder-addon> --production --syntax",
     "releaseCheck": "npm run release:check",
-    "legacyPolicy": "No forced migration; --production is explicit for new videos",
+    "legacyPolicy": "No forced migration; review stage automatically enforces production gate; draft is not ready; legacy unmarked remains compatible",
     "verification": "Motion/geometry metadata and timestamp proposals only; DOM, GUI, bundling, render and listening separate",
     "productionToolkit": "1.0",
     "spatialQA": "npm run qa:spatial -- <folder-addon>",
@@ -77,6 +79,24 @@
     "approvalQA": "npm run qa:approval",
     "soundDirection": "2.2",
     "soundImplementationContract": "cue-track-v1",
-    "soundQA": "npm run qa:sound -- <folder-addon> --strict"
-  }
+    "soundQA": "npm run qa:sound -- <folder-addon> --strict",
+    "productionStage": [
+      "draft",
+      "review"
+    ],
+    "designContract": "compact-balanced-v1",
+    "designSystem": "docs/MOTIONGRAPHIC-DESIGN-SYSTEM.md",
+    "spatialProfiles": "contracts/spatial-profiles.json",
+    "geometryContract": "screen-space-v1 + visual-intelligence-v1 required for new production review; legacy unchanged",
+    "actualGeometryCapture": {
+      "command": "node tools/capture-spatial.mjs projects/<slug>",
+      "verification": "Trace v3 validates actual supplied geometry, role-aware collisions, sampled hit-test candidates, cursor events, typography metrics and diagnostic evidence. Runtime PC verification required; no exact glyph/pixel mask or GUI certification.",
+      "fullValidation": "npm run qa:spatial -- projects/<slug> --trace <trace.json> --require-full --mode preview",
+      "dailyWorkflow": "npm run dev (automatic event sampling after source and registry stable; instrumented projects only)",
+      "manualWorkflow": "npm run menu → 17 → project → sample / full / final High / declared / full CapCut",
+      "reports": "qa-out/<slug>/spatial-*/trace.json, report.json, review.html, selected original PNG and annotated SVG; layout-advice.json; qa-out/evidence-index/; quality-gate.json",
+      "scope": "Paket 01–04: geometry/collision candidates, read-only layout advice, exclusive QA/render lease, historical sample cache, exact-scope final gate, MP4 heuristic QA and bounded handoff. Runtime PC pilot, exact glyph/pixel and native GUI not certified."
+    }
+  },
+  "delivery": "FILE CHANGE ONLY root-relative for new project, revision, Master maintenance"
 }

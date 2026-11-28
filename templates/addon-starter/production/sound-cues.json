@@ -1,6 +1,55 @@
 {
   "schemaVersion": 1,
-  "status": "draft",
-  "notes": "Rancang untuk aksi penting; siapkan cue aktual sebelum preview pertama/ACC. Gunakan library lokal dan prepare staging; planned hanya storyboard/prototype. VO direkam setelah motion disetujui.",
-  "cues": []
+  "status": "review",
+  "notes": "SFX asli sintetis lokal; listening QA belum dilakukan.",
+  "cues": [
+    {
+      "id": "omit-s01",
+      "scene": "S01",
+      "action": "Hook tipografi tidak perlu bunyi",
+      "startFrame": 0,
+      "impactFrame": 0,
+      "endFrame": 0,
+      "status": "omit",
+      "reason": "Hook tipografi tidak perlu bunyi"
+    },
+    {
+      "id": "shortcut-press",
+      "scene": "S02",
+      "action": "Win + R ditekan",
+      "startFrame": 130,
+      "impactFrame": 130,
+      "endFrame": 133,
+      "status": "ready",
+      "file": "audio/sfx/editorial-shortcut.wav",
+      "source": {
+        "kind": "own",
+        "title": "editorial-shortcut.wav",
+        "creator": "MotionGraphic Studio original procedural editorial design (not physical recording)",
+        "license": "CC0-1.0",
+        "sourceUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      },
+      "gainDb": -22
+    },
+    {
+      "id": "omit-s03",
+      "scene": "S03",
+      "action": "CTA VO tanpa aksi klik",
+      "startFrame": 360,
+      "impactFrame": 360,
+      "endFrame": 360,
+      "status": "omit",
+      "reason": "CTA VO tanpa aksi klik"
+    },
+    {
+      "id": "omit-s04",
+      "scene": "S04",
+      "action": "Cover silent, sambungan visual saja",
+      "startFrame": 450,
+      "impactFrame": 450,
+      "endFrame": 450,
+      "status": "omit",
+      "reason": "Cover silent, sambungan visual saja"
+    }
+  ]
 }

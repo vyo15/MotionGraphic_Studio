@@ -6,9 +6,8 @@ Operasional normal memakai `npm run dev` dan ZIP handoff otomatis. Command di ha
 - `npm run sync`: jalankan preflight sebelum capture props; snapshot registrasi/manifests, stage mirror aset dan rollback ketika sync gagal. Data proyek kreatif tidak dihapus otomatis. Sebelum upgrade besar, ekspor Master lengkap.
 - `npm run zip -- --studio`: **Master Engine Only**, tanpa video dan backup historis. `--with-projects` menambahkan seluruh video tanpa backup historis. `--full` membawa semuanya termasuk riwayat; tidak ada penghapusan data PC ketika ZIP dibuat.
 - Project lama tetap dilindungi oleh catalog missing-project guard. Arsip melalui `npm run delete` dan pulihkan melalui `npm run restore`, bukan `rm -rf projects/`.
-- Add-on dari ChatGPT: `npm run addon:validate -- <folder> --production --syntax` dan `npm run addfolder -- <folder>`. Importer menguji ZIP central-directory sebelum ekstraksi. Tidak menjamin source add-on aman dieksekusi; inspeksi kode yang tidak dipercaya sebelum dijalankan.
-- Revisi ChatGPT: FILE CHANGE ONLY melalui copy–paste–Replace setelah cek hash base dan backup. `addon:patch` adalah tool terpisah untuk paket patch berformat native; jangan gunakan untuk ZIP file-change-only biasa.
-- QA: `npm run check` (termasuk TypeScript ketika deps terpasang) kemudian `npm run qa:render -- file.mp4 --src projects/slug`. Keluaran QA di `qa-out/<video>` dan tidak termasuk backup lean.
+- Delivery mengikuti `AGENTS.md` (FILE CHANGE ONLY) dan prosedur di `OPERASIONAL-STUDIO.md`. Importer ZIP dan tool patch native lama hanya recovery; pemeriksaan central-directory bukan jaminan keamanan kode.
+- QA: `npm run check` (alias `npm run qa`; gate statis sama dengan startup/handoff, ditambah release, inventaris legacy, layer, motion/spatial, sound, katalog SFX, approval dan freshness board serta TypeScript; dependency hilang = gate belum lulus) kemudian `npm run qa:render -- file.mp4 --src projects/slug`. Keluaran QA di `qa-out/<video>` dan tidak termasuk backup lean.
 - Startup/sync normal tidak menghapus backup. Cleanup historis eksplisit tersedia, bukan prosedur rutin. Untuk penghapusan, verifikasi cadangan dan pilih file spesifik, jangan massal berdasarkan nama `backup` atau `frames`.
 
 
@@ -23,7 +22,7 @@ Baca `docs/ARTIFACT-HYGIENE.md` sebelum menghapus file. `npm run clean` preview-
 3. Kalau ingin menghapus `library/backups/` historis, simpan ZIP backup terlebih dahulu lalu gunakan `npm run clean -- --apply --history`. Opsi ini memang menghapus titik pemulihan lama dari disk.
 4. Untuk log render yang berada **di luar Master**, tinjau dan hapus secara manual hanya jika tidak diperlukan untuk troubleshooting.
 
-Untuk file obsolete hasil audit terkini gunakan daftar `rm -f -- ...` yang diberikan bersama patch, setelah backup dan cek hash. Jangan gunakan daftar penghapusan dari patch lama atau `rm -rf projects/`.
+Untuk file obsolete hasil audit terkini gunakan daftar penghapusan bersama patch, setelah backup dan cek hash. `clean` hanya menawarkan `tools/check-master-no-code.mjs` jika hash persis sama dengan hasil audit; file modifikasi lokal dipertahankan. Jangan gunakan daftar penghapusan dari patch lama atau `rm -rf projects/`.
 
 ## Master kosong dan konflik registry
 Jika project telah diarsipkan dengan sah, `npm run sync` merekonsiliasi snapshot stale hanya apabila bukti registry canonical cocok. Jika konflik local edits, pulihkan dari backup atau gunakan prosedur dalam [Artifact Hygiene](ARTIFACT-HYGIENE.md); jangan paksa overwrite Root/state. Riwayat kasus terdahulu ada di `CHATGPT-HISTORY.md`.

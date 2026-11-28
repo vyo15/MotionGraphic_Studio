@@ -72,3 +72,8 @@ test('real automatic handoff updates only dedicated latest ZIP, protects previou
   }finally{if(old===undefined)delete process.env.NODE_PATH;else process.env.NODE_PATH=old}
  }finally{fs.rmSync(temp,{recursive:true,force:true})}
 });
+
+test('temporary output lock retries at most twice without source edits',async()=>{
+ let now=0,runs=0;const auto=startAutoChatgptExport({root:ROOT,isIdle:()=>true,now:()=>now,quietMs:10,pollMs:100000,signature:async()=> 'stable',run:async()=>{runs++;throw Object.assign(Error('locked'),{transient:true})}});
+ try{await delay(0);now=10;await auto.tick();assert.equal(runs,1);now=5009;await auto.tick();assert.equal(runs,1);now=5010;await auto.tick();assert.equal(runs,2);now=15010;await auto.tick();assert.equal(runs,3);now=100000;await auto.tick();assert.equal(runs,3)}finally{auto.close()}
+});

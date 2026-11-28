@@ -42,7 +42,7 @@ export const SceneTextVO:React.FC<{scene:3|4;props:Easy2BootScene03Props}>=({sce
    strokeWidth={5}
    paintOrder="stroke"
    style={{translate:'0px 0px',scale:1,rotate:'0deg',opacity:1,pointerEvents:'auto'}}
-  ></Interactive.Text>:null}
+  >Pertama, backup data flashdisk.</Interactive.Text>:null}
   {cue.index===1?<Interactive.Text
    name="S03 — VO buka Easy2Boot"
    x={0}
@@ -57,7 +57,7 @@ export const SceneTextVO:React.FC<{scene:3|4;props:Easy2BootScene03Props}>=({sce
    strokeWidth={5}
    paintOrder="stroke"
    style={{translate:'0px 0px',scale:1,rotate:'0deg',opacity:1,pointerEvents:'auto'}}
-  ></Interactive.Text>:null}
+  >Buka Easy2Boot.</Interactive.Text>:null}
   {cue.index===2?<Interactive.Text
    name="S03 — VO pilih USB"
    x={0}
@@ -72,7 +72,7 @@ export const SceneTextVO:React.FC<{scene:3|4;props:Easy2BootScene03Props}>=({sce
    strokeWidth={5}
    paintOrder="stroke"
    style={{translate:'0px 0px',scale:1,rotate:'0deg',opacity:1,pointerEvents:'auto'}}
-  ></Interactive.Text>:null}
+  >Pilih USB yang benar,</Interactive.Text>:null}
   {cue.index===3?<Interactive.Text name="S03 — VO buat USB" x={0} y={0} textAnchor="middle" dominantBaseline="middle" fontFamily="Inter, Arial, sans-serif" fontSize={43} fontWeight={760} fill="#202628" stroke="#F7F7F5" strokeWidth={5} paintOrder="stroke" style={{translate:'0px 0px',scale:1,rotate:'0deg',opacity:1,pointerEvents:'auto'}}>lalu buat USB multiboot.</Interactive.Text>:null}
  </> : <>
   {cue.index===0?<Interactive.Text name="S04 — VO salin ISO" x={0} y={0} textAnchor="middle" dominantBaseline="middle" fontFamily="Inter, Arial, sans-serif" fontSize={43} fontWeight={760} fill="#202628" stroke="#F7F7F5" strokeWidth={5} paintOrder="stroke" style={{translate:'0px 0px',scale:1,rotate:'0deg',opacity:1,pointerEvents:'auto'}}>Salin file ISO installer</Interactive.Text>:null}

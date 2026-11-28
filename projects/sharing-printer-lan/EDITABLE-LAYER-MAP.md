@@ -3,6 +3,16 @@
 Native candidates (AST only; GUI belum diuji). S04 Devices and Printers digunakan kembali pada pembuka S05 agar edit jendela tersebut mengikuti continuity.
 
 ## Teks literal
+- S01Q — Printer kamu — `src/scenes/Scene01Question.tsx`
+- S01Q — belum punya fitur — `src/scenes/Scene01Question.tsx`
+- S01Q — Wi-Fi? — `src/scenes/Scene01Question.tsx`
+- S01Q — Tanda tanya kiri — `src/scenes/Scene01Question.tsx`
+- S01Q — Tanda tanya tengah — `src/scenes/Scene01Question.tsx`
+- S01Q — Tanda tanya kanan — `src/scenes/Scene01Question.tsx`
+- S01 — Headline 1 printer — `src/scenes/Scene01.tsx`
+- S01 — Headline banyak komputer — `src/scenes/Scene01.tsx`
+- S01R — Tenang — `src/scenes/Scene01Response.tsx`
+- S01R — ternyata ada cara — `src/scenes/Scene01Response.tsx`
 - S03 — Jendela Control Panel — ‹ — `src/components/WindowsNetworkUI.tsx`
 - S03 — Jendela Control Panel — › — `src/components/WindowsNetworkUI.tsx`
 - S03 — Jendela Control Panel — ↑ — `src/components/WindowsNetworkUI.tsx`
@@ -107,8 +117,6 @@ Native candidates (AST only; GUI belum diuji). S04 Devices and Printers digunaka
 - S03 — Run — OK — `src/components/WindowsNetworkUI.tsx`
 - S03 — Run — Cancel — `src/components/WindowsNetworkUI.tsx`
 - S03 — Run — Browse... — `src/components/WindowsNetworkUI.tsx`
-- S01 — Subtitle 01 — `src/components/Captions01.tsx`
-- S01 — Subtitle 02 — `src/components/Captions01.tsx`
 - S01 — Subtitle 03 — `src/components/Captions01.tsx`
 - S01 — Subtitle 04 — `src/components/Captions01.tsx`
 - S02 — Subtitle 01 — `src/components/Captions02.tsx`
@@ -580,3 +588,24 @@ Native candidates (AST only; GUI belum diuji). S04 Devices and Printers digunaka
 - S07: bubble body/avatars/dots, printer sublayer, paper feed, teks komentar dinamis, caret, send icon, subtitle per cue. Ketikan memakai Props `ctaComment`, bukan teks native literal; batas tampilan 2 baris, teks yang jauh lebih panjang memerlukan reflow. Tidak ada judul pengulang VO.
 - S08: layer cover scale sebagai grup, title literal tiga baris, diagram per objek, packet, print sheet, hasil; tidak ada subtitle. Scale `0.87963 0.8802083`, sesuai referensi proporsional; edit group scale bila perlu.
 - Periksa `production/editable-blueprint.json` untuk semua nama literal. Native AST tidak membuktikan GUI; path/dimensi internal SVG, geometry reflow, caret, timing keyframe computed, dan pose parent dapat diubah via source/config. Jangan mengklaim semua property drag/Save sampai uji Windows.
+
+
+## V10 — ACC referensi 2026-11-28
+Opening 560f: Question 198f, Response 84f, Demo 278f; full 3395f (113,17s), 10 segmen. +78f untuk seluruh segmen/cue/guide setelah question; local timing, VO dan WAV tetap. Demo source asli +112px screen, headline mengikuti objek (gap referensi ~95px), S02 mengikuti V10 selama 36f (+112→+80px), lalu settle ke posisi asli sampai 78f. Silent hold demo frame 526–559, cover thumbnail lokal 179/global 3394. Native parity/GUI/listening pending. Lima teks baru (tiga tanda tanya, dua headline) + satu coral target; tidak ada raster bake.
+
+- Target visual V10: `S01Q — Coral highlight` (`src/scenes/Scene01Question.tsx`).
+
+## ACC S02 V13 / S03 Hybrid — layer baru
+
+- S02 — Highlight Printer Sharing — `src/scenes/Scene02.tsx`
+- S02 — Highlight jaringan yang sama — `src/scenes/Scene02.tsx`
+- S03 — Highlight komputer utama — `src/scenes/Scene03.tsx`
+- S03 — Highlight Win R — `src/scenes/Scene03.tsx`
+- S03 — Highlight Network and Internet — `src/scenes/Scene03.tsx`
+- S03 — Highlight Network and Sharing Center — `src/scenes/Scene03.tsx`
+- S03 — Highlight Change advanced sharing settings — `src/scenes/Scene03.tsx`
+- S03 — Highlight Network Discovery — `src/scenes/Scene03.tsx`
+- S03 — Highlight File and Printer Sharing — `src/scenes/Scene03.tsx`
+- S03 — Highlight Save changes — `src/scenes/Scene03.tsx`
+
+Native candidate AST; posisi kamera computed, uji Save/reload belum dilakukan.

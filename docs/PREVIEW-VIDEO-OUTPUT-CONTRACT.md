@@ -10,3 +10,6 @@
 6. Preview tidak otomatis memberi ACC. Setelah pengguna menyatakan ACC, perbarui state project dan board VO/ACC melalui file change only.
 
 Audio preview mengikuti `docs/SOUND-DIRECTION-RULES.md` dan `docs/SFX-LOCAL-FIRST.md`. Tidak ada routing audio tambahan di file ini.
+
+## Animation preservation pada revisi
+Ikuti ANIMATION PRESERVATION LOCK di AGENTS.md. MP4/GIF preview harus mempertahankan gerak asli di luar scope, bukan mengganti bagian bergerak dengan screenshot/fade dari gambar. Compositing frame video asli hanya boleh untuk prototype terbatas yang jujur; source final tetap editable. Bila native render gagal, laporkan; jangan klaim hasil identik tanpa pembandingan.

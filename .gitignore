@@ -38,6 +38,7 @@ library/backups/easy-editor/
 # Artefak QA dan addon scaffold generated
 qa-out/
 exports/addons/
+exports/file-change-only/
 *.partial.zip
 
 # Agent lokal bukan bagian Master prompt-first

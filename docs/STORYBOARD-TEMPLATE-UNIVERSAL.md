@@ -39,7 +39,7 @@
 | Scene, fase, status | Nomor/nama scene, tahap cerita, `DRAFT / REVISI / ACC / LOCKED` |
 | Rentang waktu/frame | Start–end detik dan frame eksklusif, durasi, FPS |
 | VO / beat | Teks VO persis yang diketahui, jeda, penekanan; tandai draft bila belum ACC |
-| Cue subtitle (bawah) | Seluruh VO dalam frasa natural, start/end frame eksklusif, status draft/final; silent/cover kosong |
+| Cue subtitle (bawah) | Seluruh VO dalam frasa natural satu baris, Inter 36, transparan, start/end eksklusif, draft; silent/cover kosong; final OFF |
 | Supporting text (atas/dekat objek) | Maksimal satu penegasan tambahan per beat: isi, fungsi, waktu muncul/hilang, atau `omit` jika UI + subtitle cukup |
 | Objek/layout | Nama objek dan X/Y/skala/z-index, safe zone, hirarki perhatian |
 | Pemicu/aksi | Apa pemicu gerak, apa yang dilakukan objek atau kursor |
@@ -87,7 +87,7 @@ Tujuan cover ialah **(1) penutup cerita yang terasa menyatu dan (2) still frame 
 
 
 - Default edukasi Reels 1080×1920, 30 FPS, durasi video 15–30 dtk sebagai titik mulai, **bukan limit**. Durasi dipanjangkan bila tutorial perlu. Hook awal 1–2 dtk harus menarik secara visual.
-- Prioritaskan objek utama terlihat dalam safe zone atas 250, bawah 350, kiri/kanan 50 px; supporting text singkat, tidak menyalin VO; seluruh VO tampil bertahap pada subtitle sesuai Text Hierarchy & Subtitle Lock v1.0 (Design System §5A).
+- Prioritaskan objek utama terlihat dalam safe zone atas 280, bawah 350, kiri 120/kanan 160 px; area visual y=280–1360, guide y=1470–1540; jarak visual-guide min 80 px; supporting text singkat, tidak menyalin VO; seluruh VO tampil bertahap pada subtitle sesuai Text Hierarchy & Subtitle Lock v2.0 (Design System §5A).
 - Animasi halus dan deterministik; transisi scene singkat sekitar 0,3–0,6 dtk untuk perubahan ringan, sementara **beat jembatan yang menjelaskan sesuatu boleh lebih panjang**, sebagaimana USB Match Move Easy2Boot.
 - Gerak kamera, skala, rotasi dan suara harus punya motif. Anticipation → action → follow-through; jangan semua objek muncul/bergerak bersamaan; sediakan visual hold.
 - UI/tutorial komputer wajib akurat termasuk shortcut, jendela, nama menu, hotspot cursor, click response, dan status hasil; simulasi visual harus dinyatakan jujur bila bukan rekaman nyata.

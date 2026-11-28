@@ -8,7 +8,7 @@
   "width": 1080,
   "height": 1920,
   "fps": 30,
-  "durationInFrames": 3111,
+  "durationInFrames": 3395,
   "defaultProps": {
     "showSubtitles": true,
     "backgroundColor": "#F7F7F5",
@@ -22,51 +22,63 @@
   "motionPlanContract": "focus-driven-v1",
   "segments": [
     {
-      "id": "SharingPrinterLan-S01",
-      "title": "Hook",
+      "id": "SharingPrinterLan-S01-Question",
+      "title": "Hook — Pertanyaan",
       "startFrame": 0,
-      "durationInFrames": 276
+      "durationInFrames": 198
+    },
+    {
+      "id": "SharingPrinterLan-S01-Response",
+      "title": "Hook — Tenang, ternyata ada cara",
+      "startFrame": 198,
+      "durationInFrames": 84
+    },
+    {
+      "id": "SharingPrinterLan-S01",
+      "title": "Hook — Demonstrasi printer",
+      "startFrame": 282,
+      "durationInFrames": 278
     },
     {
       "id": "SharingPrinterLan-S02",
       "title": "Koneksi jaringan",
-      "startFrame": 276,
+      "startFrame": 560,
       "durationInFrames": 330
     },
     {
       "id": "SharingPrinterLan-S03",
       "title": "Network Sharing",
-      "startFrame": 606,
+      "startFrame": 890,
       "durationInFrames": 720
     },
     {
       "id": "SharingPrinterLan-S04",
       "title": "Sharing Printer",
-      "startFrame": 1326,
+      "startFrame": 1610,
       "durationInFrames": 540
     },
     {
       "id": "SharingPrinterLan-S05",
       "title": "Menghubungkan printer",
-      "startFrame": 1866,
+      "startFrame": 2150,
       "durationInFrames": 450
     },
     {
       "id": "SharingPrinterLan-S06",
       "title": "Hasil cetak",
-      "startFrame": 2316,
+      "startFrame": 2600,
       "durationInFrames": 390
     },
     {
       "id": "SharingPrinterLan-S07",
       "title": "CTA",
-      "startFrame": 2706,
+      "startFrame": 2990,
       "durationInFrames": 225
     },
     {
       "id": "SharingPrinterLan-S08",
       "title": "Cover Reels",
-      "startFrame": 2931,
+      "startFrame": 3215,
       "durationInFrames": 180
     }
   ],

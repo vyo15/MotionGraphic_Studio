@@ -10,7 +10,7 @@ import {ensureExportDirs,availableFile,timestamp} from './export-paths.mjs';
 import {collectEntries,createZip,progressLogger} from './zip-core.mjs';
 import {inspectRelease} from './check-release.mjs';
 import {createPreflightLog} from './studio-preflight.mjs';
-import {masterSources,masterEntries,entrySignature,assertNoPendingInbox,ignoreNames,ignoreRelative} from './master-export-inputs.mjs';
+import {masterSources,masterEntries,entrySignature,ignoreNames,ignoreRelative} from './master-export-inputs.mjs';
 import {randomUUID} from 'node:crypto';
 
 const IGNORE=ignoreNames;
@@ -88,7 +88,6 @@ async function studioZip({full=false}={}){
 }
 // Dedicated generated handoff only: prior manual/dated backups are never overwritten.
 async function chatgptZip(){
- assertNoPendingInbox(ROOT);
  const before=entrySignature(await masterEntries(ROOT));
  const log=createPreflightLog('ChatGPT-export.log');
  log.run('Versi Master','check-release.mjs');log.staticChecks();
@@ -98,10 +97,9 @@ async function chatgptZip(){
  const pending=path.join(path.dirname(out),`.chatgpt-${randomUUID()}.zip`);
  try{
   await createZip(entries,pending,{signal:controller.signal});
-  assertNoPendingInbox(ROOT);
   assert(before===entrySignature(await masterEntries(ROOT)),'Source berubah saat ekspor; ZIP lama dipertahankan.');
   if(fs.existsSync(out))assert(fs.lstatSync(out).isFile()&&!fs.lstatSync(out).isSymbolicLink(),'CHATGPT-LATEST.zip bukan file biasa.');
-  fs.renameSync(pending,out);
+  try{fs.renameSync(pending,out)}catch(e){if(['EPERM','EBUSY','EACCES'].includes(e.code))e.transientHandoff=true;throw e;}
   console.log('[CHATGPT] ZIP terbaru siap: '+out);
  }finally{fs.rmSync(pending,{force:true});}
 }
@@ -156,4 +154,4 @@ async function run(){
     await videoZip(selected);
   }finally{rl.close()}
 }
-try{await run()}catch(e){console.error('[ERROR ZIP] '+(e?.message||e));process.exitCode=1}
+try{await run()}catch(e){console.error('[ERROR ZIP] '+(e?.message||e));process.exitCode=e?.transientHandoff?75:1}

@@ -64,7 +64,7 @@ try{
     assert(!catalog.videos.some(v=>v.id===m.id&&v.slug!==m.slug||v.id!==m.id&&v.slug===m.slug),'ID/slug bentrok; project lama aman');
     const target=path.join(ROOT,'projects',m.slug);
     if(fs.existsSync(target)){
-      console.log('[LEWATI] Project sudah ada, tidak ditimpa: '+m.slug);
+      throw Error('Project sudah ada, tidak ditimpa: '+m.slug+'; gunakan FILE CHANGE ONLY dengan backup dan base hash.');
     }else{
       const all=files(dir);
       assert(!all.some(f=>path.relative(dir,f).split(path.sep).some(seg=>['node_modules','.git'].includes(seg))),'Paket berisi node_modules/.git');
@@ -83,7 +83,12 @@ try{
       assert(stagedVerdict.ok,'Paket setelah normalisasi gagal validasi: '+stagedVerdict.errors.join('; '));
       fs.renameSync(staging,target);committed=target;staging=null;
       const r=spawnSync(process.execPath,[path.join(ROOT,'tools/sync-projects.mjs')],{cwd:ROOT,stdio:'inherit'});
-      if(r.status!==0){fs.renameSync(target,path.join(ROOT,'projects','_failed-'+m.slug));committed=null;throw Error('Sync gagal; source dipindah ke projects/_failed-'+m.slug+' untuk diperbaiki, video lain aman.');}
+      if(r.status!==0){
+       const quarantine=path.join(ROOT,'library','gagal-import');fs.mkdirSync(quarantine,{recursive:true});
+       const dest=fs.mkdtempSync(path.join(quarantine,m.slug+'-'));
+       fs.renameSync(target,path.join(dest,'project'));committed=null;
+       throw Error('Sync gagal; project dikarantina di '+dest+'; video lain tidak ditimpa.');
+      }
       console.log('[BERHASIL] Project aktif di projects/'+m.slug+' ['+m.id+']');
     }
   }finally{

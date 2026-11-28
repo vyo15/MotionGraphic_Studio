@@ -10,6 +10,8 @@ import {fileURLToPath} from 'node:url';
 import {validateMotionPlan} from './qa-motion-plan.mjs';
 import {validateSpatial} from './qa-spatial.mjs';
 import {checkSoundCues} from './qa-sound-cues.mjs';
+import {inspectDesignGuide} from './qa-design-guide.mjs';
+import {verifyFontPack,fontLoader} from './font-library.mjs';
 const require=createRequire(import.meta.url);
 const ROOT=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 export const validSlug=s=>/^[a-z][a-z0-9-]{1,48}$/.test(s||'');
@@ -83,6 +85,19 @@ export function validateAddon(dir,{root=ROOT,strict=false,sourceCheck=true,match
   const file=path.join(base,'motiongraphic-video.json');assert(fs.existsSync(file),'motiongraphic-video.json tidak ditemukan');
   manifest=JSON.parse(fs.readFileSync(file,'utf8'));
   assert(manifest&&typeof manifest==='object'&&!Array.isArray(manifest),'Manifest harus object');
+  if(manifest.productionStage!==undefined){
+   assert(['draft','review'].includes(manifest.productionStage),'productionStage harus draft/review');
+   if(manifest.productionStage==='review'){production=true;strict=true;requireSyntax=true;sourceCheck=true;}
+   if(production&&manifest.productionStage==='draft')issue('FAIL','productionStage draft: belum boleh diklaim siap preview produksi');
+   assert(Array.isArray(manifest.segments)&&manifest.segments.length>0,'Project baru wajib segments');
+   assert(fs.existsSync(path.join(base,'src/SegmentVideo.tsx')),'Project baru wajib src/SegmentVideo.tsx');
+   assert(/\bexport\s+(?:const|function)\s+SegmentVideo\b/.test(fs.readFileSync(path.join(base,'src/SegmentVideo.tsx'),'utf8')),'SegmentVideo harus export const/function SegmentVideo');
+   const n=JSON.parse(fs.readFileSync(path.join(base,'src/config/narration.json'),'utf8'));
+   assert(n.schemaVersion===1&&Array.isArray(n.beats)&&n.beats.length>0,'Narration baru wajib beats lengkap');
+   let end=0;
+   for(const b of n.beats){assert(typeof b.scene==='string'&&typeof b.text==='string'&&Number.isInteger(b.startFrame)&&Number.isInteger(b.endFrame)&&b.startFrame===end&&b.endFrame>end,'Narration baru tidak contiguous');end=b.endFrame;}
+   assert(end===manifest.durationInFrames,'Narration baru wajib menutup seluruh durasi termasuk silent');
+  }
   assert(validSlug(manifest.slug),'slug tidak valid');
   assert(!matchFolder||path.basename(base)===manifest.slug,`Nama folder (${path.basename(base)}) tidak sama dengan slug (${manifest.slug})`);
   assert(/^[A-Z][A-Za-z0-9]{2,80}$/.test(manifest.id||''),'id tidak valid');
@@ -126,6 +141,20 @@ export function validateAddon(dir,{root=ROOT,strict=false,sourceCheck=true,match
    const cat=JSON.parse(fs.readFileSync(catalog,'utf8'));
    for(const p of cat.videos||[])if((p.id===manifest.id&&p.slug!==manifest.slug)||(p.slug===manifest.slug&&p.id!==manifest.id))issue('FAIL','Bentrok ID/slug dengan project lain: '+p.id);
   }
+  if(manifest.designContract!==undefined){
+   assert(manifest.designContract==='compact-balanced-v1','designContract tidak didukung');
+   assert(typeof manifest.defaultProps?.showSubtitles==='boolean'&&typeof manifest.defaultProps?.showSafeZone==='boolean','Design contract membutuhkan showSubtitles dan showSafeZone');
+   if(!manifest.defaultProps.showSubtitles)issue('WARN','VO Guide OFF di Props; aktifkan saat review');
+   if(manifest.defaultProps.showSafeZone)issue('WARN','Safe zone overlay ON di Props; hanya Studio');
+   const local=path.join(base,'public/fonts'),loader=path.join(base,'src/components/LocalFonts.tsx');
+   if(!fs.existsSync(local))issue(production?'FAIL':'WARN','Font lokal belum tersedia; install library resmi dan provision sebelum review');
+   else try{verifyFontPack(local);assert(fs.readFileSync(loader,'utf8')===fontLoader(manifest.slug),'LocalFonts loader tidak cocok dengan font lock');}catch(e){issue('FAIL','Font lokal: '+e.message);}
+   for(const rel of [manifest.entry,'src/SegmentVideo.tsx']){
+    const source=fs.readFileSync(path.join(base,rel),'utf8');
+    if(!/<LocalFonts\s*\/>/.test(source))issue('FAIL','Design contract: LocalFonts belum dipasang pada '+rel);
+    if(!/<SafeZoneGuide\s+enabled=/.test(source))issue('FAIL','Design contract: SafeZoneGuide belum dipasang pada '+rel);
+   }
+  }
   // New opt-in motion plan contract; legacy sync/add-ons are not migrated.
   if(production && manifest.motionPlanContract!=='focus-driven-v1')issue('FAIL','Video baru: motionPlanContract focus-driven-v1 wajib');
   if(production && manifest.editableContract!=='studio-direct-v4')issue('FAIL','Video baru: editableContract studio-direct-v4 wajib');
@@ -140,6 +169,10 @@ export function validateAddon(dir,{root=ROOT,strict=false,sourceCheck=true,match
   }
   const spatialFile=path.join(base,'production/spatial-plan.json');
   if(production||((strict)&&fs.existsSync(spatialFile))){
+   if(production&&fs.existsSync(spatialFile)){
+    const plan=JSON.parse(fs.readFileSync(spatialFile,'utf8'));
+    if(plan.geometryContract!=='screen-space-v1'||plan.intelligenceContract!=='visual-intelligence-v1')issue('FAIL','Video baru: screen-space-v1 + visual-intelligence-v1 wajib');
+   }
    const spatial=validateSpatial(base);
    for(const msg of spatial.errors)issue('FAIL','Spatial plan: '+msg);
    for(const item of spatial.issues)issue('FAIL',`Spatial ${item.issue}, frame ${item.first}..${item.last} (${item.count})`);
@@ -201,6 +234,9 @@ export function validateAddon(dir,{root=ROOT,strict=false,sourceCheck=true,match
      if(!fs.existsSync(target)||!fs.statSync(target).isFile())issue('FAIL',`Aset tidak ditemukan (${rel}): ${ref}`);
     }
    }
+  }
+  if(manifest.designContract==='compact-balanced-v1'&&sourceCheck&&(strict||production)){
+   const guide=inspectDesignGuide(base,manifest,files);for(const msg of guide.errors)issue('FAIL','Design guide: '+msg);
   }
   if(sourceCheck&&!source.length)issue('FAIL','Tidak ada source JS/TS');
  }catch(e){issue('FAIL',e.message)}

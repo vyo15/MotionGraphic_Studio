@@ -1,10 +1,18 @@
 # Naskah lengkap — Sharing Printer
 
-S01–08 aktif; VO teks tetap pada status ACC/draft/silent masing-masing.
+10 segmen aktif (S01-Question, S01-Response, S01–08); VO teks tetap pada status ACC/draft/silent masing-masing.
 
-## S01 — Hook (ACC)
+## S01-Question — Pertanyaan (ACC)
 
-Printer kamu belum punya fitur Wi-Fi? Tenang, ternyata ada cara supaya satu printer bisa digunakan oleh beberapa komputer.
+Printer kamu belum punya fitur Wi-Fi?
+
+## S01-Response — Respons (ACC)
+
+Tenang, ternyata ada cara
+
+## S01 — Demonstrasi (ACC)
+
+supaya satu printer bisa digunakan oleh beberapa komputer.
 
 ## S02 — Koneksi jaringan (Kalimat jaringan ACC; bridge draft)
 

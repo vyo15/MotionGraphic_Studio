@@ -1,4 +1,5 @@
 import React from 'react';
+import {isSilentNarration} from '../tools/narration-silence.mjs';
 import {AbsoluteFill, useCurrentFrame, useVideoConfig} from 'remotion';
 
 /** VO script for recording *after* motion approval, not viewer captions. */
@@ -27,7 +28,7 @@ export const VoiceGuideOverlay: React.FC<{beats: ReadonlyArray<VoiceGuideBeat>}>
   const frame=useCurrentFrame();
   const {width,height,fps}=useVideoConfig();
   const beat=beats.find((b)=>frame>=b.startFrame&&frame<b.endFrame);
-  if(!beat||!beat.text.trim())return null;
+  if(!beat||isSilentNarration(beat.text))return null;
   const pages=splitGuideText(beat.text,width>=800?130:90);
   const part=Math.min(pages.length-1,Math.floor(((frame-beat.startFrame)/Math.max(1,beat.endFrame-beat.startFrame))*pages.length));
   const scale=Math.min(width/1080,height/1920);

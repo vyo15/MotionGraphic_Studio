@@ -1,5 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import {createHash} from 'node:crypto';
 import fs from 'node:fs';import os from 'node:os';import path from 'node:path';import {fileURLToPath} from 'node:url';
 import {loadLibrary,selectAsset,prepare,importPack,inspectWav,renderEarshot} from '../tools/sfx-local.mjs';
 import {checkSoundCues} from '../tools/qa-sound-cues.mjs';
@@ -41,4 +42,38 @@ test('optional Earshot adapter invokes only bank render, imports result; mock ru
  const fake=(cmd,args)=>{called++;assert.equal(cmd,'earshot');assert.deepEqual(args.slice(0,3),['sfx','render','whoosh_fast/crisp']);fs.copyFileSync(a.full,args[4]);return {status:0};};
  const r=renderEarshot('whoosh_fast/crisp','test-earshot',['motion','whoosh'],root,fake);assert.equal(called,1);assert.equal(r.provider,'earshot-local');assert.equal(loadLibrary(root).find(x=>x.id==='earshot-test-earshot').source.kind,'earshot');
  assert.throws(()=>renderEarshot('fit/no','bad-pack',['motion'],root,fake),/non-fit/);assert.throws(()=>renderEarshot('whoosh_fast/crisp','test-earshot',['motion'],root,fake),/sudah ada/);
+}));
+
+test('catalog verifies all bundled WAV; editorial selection remains exact and duration-fit',()=>{
+ assert.equal(library.filter(a=>a.full.startsWith(path.join(ROOT,'templates/sfx-library')+path.sep)).length,41);
+ assert.equal(selectAsset(library,{character:'synthetic',tags:['ui','tap'],preferSoftEditorial:true}).id,'editorial-tap-1');
+ assert.throws(()=>selectAsset(library,{character:'recorded',tags:['ui','tap'],preferSoftEditorial:true}),/Tidak ada/);
+});
+
+// Metadata fixtures exercise selection only; they are not audio recordings or proof of provenance.
+test('physical mouse requires recorded no-attribution source and one exact action',()=>{
+ const fixture=(id,action,character='recorded',license='CC0-1.0')=>({id,character,tags:['mouse',action],source:{license,kind:'real-recording'}});
+ const assets=[fixture('mouse-fake','single-click','synthetic'),fixture('mouse-by','single-click','recorded','CC-BY-4.0'),fixture('mouse-click-01','single-click'),fixture('mouse-double-click-01','double-click'),fixture('mouse-scroll','scroll-normal'),fixture('mouse-scroll-slow','scroll-slow')];
+ for(const [action,id] of [['single-click','mouse-click-01'],['double-click','mouse-double-click-01'],['scroll-normal','mouse-scroll'],['scroll-slow','mouse-scroll-slow']])assert.equal(selectAsset(assets,{character:'either',tags:['mouse',action]}).id,id);
+ assert.throws(()=>selectAsset(assets,{character:'synthetic',tags:['mouse','single-click']}),/wajib recorded/);
+ assert.throws(()=>selectAsset(assets,{character:'either',tags:['mouse']}),/Pilih satu aksi/);
+ assert.throws(()=>selectAsset(assets,{character:'recorded',tags:['mouse','single-click','double-click']}),/Pilih satu aksi/);
+ assert.throws(()=>selectAsset(assets,{character:'either',assetId:'mouse-fake',tags:['mouse','single-click']}),/Tidak ada/);
+ assert.throws(()=>selectAsset(assets,{character:'recorded',assetId:'mouse-by',tags:['mouse','single-click']}),/Tidak ada/);
+ assert.throws(()=>selectAsset(assets,{character:'recorded',assetId:'mouse-double-click-01',tags:['mouse','single-click']}),/Tidak ada/);
+ assert.throws(()=>selectAsset(assets,{character:'recorded',assetId:'mouse-click-01'}),/Pilih satu aksi/);
+ assert.throws(()=>selectAsset(library.filter(a=>a.character==='synthetic'),{character:'either',tags:['mouse','single-click']}),/Tidak ada/);
+});
+
+// Synthetic fixture bytes ONLY, never a production recording; exercise integrity guard.
+test('mouse import requires source original hash and preserves exact bytes through staging',()=>tmp(d=>{
+ const root=path.join(d,'master');fs.mkdirSync(path.join(root,'templates'),{recursive:true});fs.cpSync(path.join(ROOT,'templates/sfx-library'),path.join(root,'templates/sfx-library'),{recursive:true});
+ const b=fs.readFileSync(library.find(a=>a.id==='starter-ui-click').full);fs.writeFileSync(path.join(d,'sample.wav'),b);
+ const a={id:'mouse-fixture',file:'sample.wav',character:'recorded',tags:['mouse','single-click'],source:{kind:'real-recording',title:'TEST FIXTURE ONLY',creator:'fixture',license:'CC0-1.0',sourceUrl:'https://example.com/fixture',originalSha256:'0'.repeat(64)},rightsEvidence:'TEST fixture only'};
+ const f=path.join(d,'spec.json'),write=()=>fs.writeFileSync(f,JSON.stringify({schemaVersion:1,assets:[a]}));write();assert.throws(()=>importPack(f,'test-mouse',root),/SHA256/);
+ a.source.originalSha256=createHash('sha256').update(b).digest('hex');write();assert.equal(importPack(f,'test-mouse',root).assets,1);
+ const assets=loadLibrary(root);const q=structuredClone(request);Object.assign(q.cues[0],{character:'recorded',tags:['mouse','single-click'],assetId:'mouse-fixture'});
+ const out=path.join(d,'staging');prepare(manifest,q,out,assets);
+ assert.deepEqual(fs.readFileSync(path.join(out,'public/audio/sfx/mouse-fixture.wav')),b);
+ const cue=JSON.parse(fs.readFileSync(path.join(out,'production/sound-cues.json'))).cues[0];assert.equal(cue.mouseAction,'single-click');assert.equal(cue.source.originalSha256,a.source.originalSha256);
 }));

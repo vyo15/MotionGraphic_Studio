@@ -1,41 +1,10 @@
 import React from 'react';
-import {AbsoluteFill, Interactive, interpolate, useCurrentFrame} from 'remotion';
-
-/** CLEAN FOCUS starter: one focal point per beat; no decorative bars or persistent headers.
- * Replace every placeholder with the topic-specific real object; do not copy this mock card to final videos.
- * Editable names and literal inline styles are preserved for native Studio editing.
- */
-export const Scene01: React.FC<{showSubtitles?: boolean}> = ({showSubtitles = true}) => {
-  const frame = useCurrentFrame();
-  return (
-    <AbsoluteFill>
-      <Interactive.Div name="S01 — Judul" style={{
-        position: 'absolute', left: 110, top: 610, width: 860,
-        color: '#202020', fontFamily: 'Arial, sans-serif', fontSize: 86,
-        fontWeight: 700, textAlign: 'center',
-        opacity: interpolate(frame, [0, 12, 47, 60], [0, 1, 1, 0], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'}),
-        translate: interpolate(frame, [0, 18], ['0px 42px', '0px 0px'], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'}),
-      }}>Satu pertanyaan penting?</Interactive.Div>
-      <Interactive.Div name="S01 — Kartu informasi" style={{
-        position: 'absolute', left: 100, top: 550, width: 880, height: 740,
-        backgroundColor: '#FFFFFF', borderColor: '#E7E7E5', borderStyle: 'solid',
-        borderWidth: 2, borderRadius: 28,
-        opacity: interpolate(frame, [66, 82], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'}),
-        translate: interpolate(frame, [66, 86], ['0px 32px', '0px 0px'], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'}),
-      }}/>
-      {/* One direct Studio text node per editable caption cue. Keep draft text/timing in sync with narration.json; never loop a shared Interactive wrapper. */}
-      {showSubtitles && frame>=128 && frame<218 ? <Interactive.Div name="S01 — Subtitle 01" style={{
-        position:'absolute',left:110,top:1400,width:860,
-        fontFamily:'Arial, sans-serif',fontSize:42,fontWeight:700,
-        color:'#202020',textAlign:'center',lineHeight:1.2,
-        translate:'0px 0px',scale:1,rotate:'0deg',opacity:1,
-      }}>Hasilnya langsung terlihat.</Interactive.Div> : null}
-      <Interactive.Div name="S01 — Isi kartu" style={{
-        position: 'absolute', left: 185, top: 885, width: 710,
-        color: '#202020', fontFamily: 'Arial, sans-serif', fontSize: 53,
-        fontWeight: 600, textAlign: 'center',
-        opacity: interpolate(frame, [86, 104], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'}),
-      }}>AKSI → HASIL</Interactive.Div>
-    </AbsoluteFill>
-  );
+import {AbsoluteFill,Interactive,interpolate,useCurrentFrame} from 'remotion';
+import {CLAMP} from '../animations/interaction';
+export const Scene01:React.FC<{showSubtitles?:boolean}> = ({showSubtitles=true}) => {
+ const frame=useCurrentFrame();
+ return <AbsoluteFill>
+    <Interactive.Div name="S01 — Judul" data-qa-track="S01 — Judul" style={{position:'absolute',left:120,top:565,width:800,height:210,fontFamily:'MG Poppins, Poppins, Arial, sans-serif',fontSize:84,fontWeight:800,color:'#202020',textAlign:'center',lineHeight:1.05,opacity: interpolate(frame,[0,12],[0,1],CLAMP),translate:'0px 0px',scale:1,rotate:'0deg',letterSpacing:'-0.03em'}}>Buka lebih cepat.</Interactive.Div>
+    {showSubtitles && frame>=0 && frame<90 ? <Interactive.Div name="S01 — Subtitle 01" data-qa-track="S01 — Subtitle 01" style={{position:'absolute',left:120,top:1483.4,width:800,height:43.2,fontFamily:'MG Inter, Inter, Arial, sans-serif',fontSize:36,fontWeight:500,color:'#646464',textAlign:'center',lineHeight:1.2,translate:'0px 0px',scale:1,rotate:'0deg',whiteSpace:'nowrap',letterSpacing:0}}>Mau buka Run tanpa mencari menu?</Interactive.Div> : null}
+ </AbsoluteFill>;
 };

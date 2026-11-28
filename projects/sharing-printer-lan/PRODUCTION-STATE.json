@@ -3,7 +3,7 @@
   "projectId": "SharingPrinterLan",
   "slug": "sharing-printer-lan",
   "workflow": "guided-approval-first-scene",
-  "phase": "scene08-reference-approved-native-qa-pending",
+  "phase": "s02-v13-s03-hybrid-reference-approved-native-qa-pending",
   "scriptApproval": "partial",
   "storyboardApproval": "partial",
   "referenceSceneId": "SharingPrinterLan-S01",
@@ -12,10 +12,10 @@
   "fullVideoApproval": "draft",
   "scenes": [
     {
-      "id": "SharingPrinterLan-S01",
-      "sceneId": "SharingPrinterLan-S01",
+      "id": "SharingPrinterLan-S01-Question",
+      "sceneId": "SharingPrinterLan-S01-Question",
       "startFrame": 0,
-      "endFrameExclusive": 276,
+      "endFrameExclusive": 198,
       "status": "approved",
       "visualApproval": "approved",
       "voTextApproval": "approved",
@@ -23,27 +23,55 @@
       "visual": "ACC_REFERENCE_PENDING_NATIVE_QA",
       "recordingSync": "NOT_RECORDED",
       "final": "NOT_FINAL",
-      "notes": "Referensi MP4, bukan bukti kesamaan render native."
+      "notes": "ACC preview V10: Poppins Bold uppercase, Wi-Fi ExtraBold coral, Focus & Resolve Style 04 + gerak Wi-Fi; 198f. Native reconstruction belum diuji."
+    },
+    {
+      "id": "SharingPrinterLan-S01-Response",
+      "sceneId": "SharingPrinterLan-S01-Response",
+      "startFrame": 198,
+      "endFrameExclusive": 282,
+      "status": "approved",
+      "visualApproval": "approved",
+      "voTextApproval": "approved",
+      "voText": "ACC",
+      "visual": "ACC_REFERENCE_PENDING_NATIVE_QA",
+      "recordingSync": "NOT_RECORDED",
+      "final": "NOT_FINAL",
+      "notes": "ACC preview V4: Tenang, ternyata ada cara; native QA pending. V10 mempertahankan source respons; global +78f."
+    },
+    {
+      "id": "SharingPrinterLan-S01",
+      "sceneId": "SharingPrinterLan-S01",
+      "startFrame": 282,
+      "endFrameExclusive": 560,
+      "status": "approved",
+      "visualApproval": "approved",
+      "voTextApproval": "approved",
+      "voText": "ACC",
+      "visual": "ACC_REFERENCE_PENDING_NATIVE_QA",
+      "recordingSync": "NOT_RECORDED",
+      "final": "NOT_FINAL",
+      "notes": "ACC preview V10: object-centered, headline 1 PRINTER / BANYAK KOMPUTER, gap optik sekitar 95px pada referensi. Topology01 dan time mapping dipertahankan; native QA pending."
     },
     {
       "id": "SharingPrinterLan-S02",
       "sceneId": "SharingPrinterLan-S02",
-      "startFrame": 276,
-      "endFrameExclusive": 606,
-      "status": "draft",
-      "visualApproval": "draft",
+      "startFrame": 560,
+      "endFrameExclusive": 890,
+      "status": "approved",
+      "visualApproval": "approved",
       "voTextApproval": "draft",
       "voText": "ACC sebagian (kalimat jaringan); bridge DRAFT",
-      "visual": "PREVIEW_REFERENCE_PENDING_NATIVE_QA",
+      "visual": "ACC_REFERENCE_PENDING_NATIVE_QA",
       "recordingSync": "NOT_RECORDED",
       "final": "NOT_FINAL",
-      "notes": "Referensi MP4, bukan bukti kesamaan render native."
+      "notes": "Referensi MP4, bukan bukti kesamaan render native. Handoff posisi S01→S02 mengikuti V10 +112→+80px selama 36f, lalu settle ke posisi lama sampai 78f; status review tetap. User ACC V13 Topic Hold; headline Printer Sharing → Jaringan yang sama, no banner. VO bridge tetap draft."
     },
     {
       "id": "SharingPrinterLan-S03",
       "sceneId": "SharingPrinterLan-S03",
-      "startFrame": 606,
-      "endFrameExclusive": 1326,
+      "startFrame": 890,
+      "endFrameExclusive": 1610,
       "status": "approved",
       "visualApproval": "approved",
       "voTextApproval": "draft",
@@ -51,13 +79,13 @@
       "visual": "ACC_REFERENCE_PENDING_NATIVE_QA",
       "recordingSync": "NOT_RECORDED",
       "final": "NOT_FINAL",
-      "notes": "Referensi MP4, bukan bukti kesamaan render native."
+      "notes": "User ACC Hybrid Contextual + Action Highlight; centered offsets, KOMPUTER UTAMA / WIN + R, 6 action outlines attached to original UI world; timing, cursor, VO and SFX unchanged. Native render/GUI pending."
     },
     {
       "id": "SharingPrinterLan-S04",
       "sceneId": "SharingPrinterLan-S04",
-      "startFrame": 1326,
-      "endFrameExclusive": 1866,
+      "startFrame": 1610,
+      "endFrameExclusive": 2150,
       "status": "approved",
       "visualApproval": "approved",
       "voTextApproval": "draft",
@@ -70,8 +98,8 @@
     {
       "id": "SharingPrinterLan-S05",
       "sceneId": "SharingPrinterLan-S05",
-      "startFrame": 1866,
-      "endFrameExclusive": 2316,
+      "startFrame": 2150,
+      "endFrameExclusive": 2600,
       "status": "approved",
       "visualApproval": "approved",
       "voTextApproval": "draft",
@@ -84,8 +112,8 @@
     {
       "id": "SharingPrinterLan-S06",
       "sceneId": "SharingPrinterLan-S06",
-      "startFrame": 2316,
-      "endFrameExclusive": 2706,
+      "startFrame": 2600,
+      "endFrameExclusive": 2990,
       "status": "approved",
       "visualApproval": "approved",
       "voTextApproval": "draft",
@@ -98,8 +126,8 @@
     {
       "id": "SharingPrinterLan-S07",
       "sceneId": "SharingPrinterLan-S07",
-      "startFrame": 2706,
-      "endFrameExclusive": 2931,
+      "startFrame": 2990,
+      "endFrameExclusive": 3215,
       "status": "approved",
       "visualApproval": "approved",
       "voTextApproval": "approved",
@@ -112,8 +140,8 @@
     {
       "id": "SharingPrinterLan-S08",
       "sceneId": "SharingPrinterLan-S08",
-      "startFrame": 2931,
-      "endFrameExclusive": 3111,
+      "startFrame": 3215,
+      "endFrameExclusive": 3395,
       "status": "approved",
       "visualApproval": "approved",
       "voTextApproval": "draft",
@@ -140,6 +168,18 @@
     {
       "date": "2026-11-27",
       "decision": "S06 user lanjut setelah preview hasil cetak; S07 user menyetujui revisi komentar “Aku juga pernah pakai cara ini.”, visual mendukung VO tanpa judul duplikat; S08 user menyetujui desain dan plan ukuran cover proporsional, kemudian meminta File Change Only S06–08. VO S06 masih draft, S07 teks ACC, S08 silent. Native QA belum dilakukan."
+    },
+    {
+      "date": "2026-11-28",
+      "decision": "User ACC V4 Dramatic Pause + Typography Solution, meminta FILE CHANGE ONLY dan penyesuaian lanjutan. Dua segmen baru sebelum S01 demo; ID S01–S08 dipertahankan. 482f opening, +206f seluruh scene berikutnya. Durasi mengikuti VO dan demonstrasi; jangan dipaksa. Naskah lama utuh; S02–S08 approval tetap. Native QA dan rekaman belum diuji."
+    },
+    {
+      "date": "2026-11-28",
+      "decision": "User ACC preview V10 (Style 04 Focus & Resolve, Wi-Fi ikut bergerak, centered diagram, headline naik 32px), meminta FILE CHANGE ONLY project + empat rule Master. Question 198f (+78f), opening 560f, total 3395f; scene lain local timing/VO/ACC/SFX dipertahankan, hanya handoff S02 posisi 78f (36f pertama mengikuti referensi, lanjutan settle baru). Native render, GUI, listening dan final belum diuji."
+    },
+    {
+      "date": "2026-11-28",
+      "decision": "User ACC S02 V13 Topic Hold (lanjut untuk patch gabungan) dan S03 Hybrid Contextual + Action Highlight, meminta FILE CHANGE ONLY. Implementasi native dari referensi MP4; headline dan outline terpisah, S03 offset 96/80/128 output px, settle ke S04; tidak mengubah VO, frame, keyframe kamera/cursor, asset, SFX, rule Master atau scene lain. Visual referensi ACC; native/recording/final belum diuji."
     }
   ]
 }

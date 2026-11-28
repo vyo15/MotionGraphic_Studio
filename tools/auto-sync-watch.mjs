@@ -1,6 +1,6 @@
 /**
  * Auto-sync folder-first Master ketika Remotion Studio sedang berjalan.
- * Menangani copy folder ke projects/ dan ZIP masuk ke library/masuk.
+ * Menangani source projects/; ZIP inbox hanya untuk kompatibilitas eksplisit.
  * Debounce + pemantauan berkala mencegah gagal event fs.watch di beberapa Windows/NAS.
  * Tidak membuka studio lain dan tidak menulis Root.tsx secara manual.
  */
@@ -42,7 +42,7 @@ function completedZip(file){
 }
 // Only changes that affect registration, Props, asset mirrors or VO Guide require sync.
 // Editing scene TSX is owned by Remotion HMR and MUST NOT restart sync.
-export function registrySignature(root){
+export function registrySignature(root,{legacyInbox=true}={}){
   const {projects,inbox}=getPaths(root),pieces=[];
   pieces.push('native-props:'+metadata(path.join(root,'src','Root.tsx')));
   if(fs.existsSync(projects))for(const dir of fs.readdirSync(projects,{withFileTypes:true}).sort((a,b)=>a.name.localeCompare(b.name))){
@@ -72,7 +72,7 @@ export function registrySignature(root){
     }
     visit(assets);
   }
-  if(fs.existsSync(inbox))for(const entry of fs.readdirSync(inbox).filter(x=>x.toLowerCase().endsWith('.zip')).sort())pieces.push('zip:'+entry+':'+metadata(path.join(inbox,entry)));
+  if(legacyInbox&&fs.existsSync(inbox))for(const entry of fs.readdirSync(inbox).filter(x=>x.toLowerCase().endsWith('.zip')).sort())pieces.push('zip:'+entry+':'+metadata(path.join(inbox,entry)));
   return pieces.join('|');
 }
 function nodeScript(root,script,args=[]){
@@ -87,21 +87,23 @@ export function startAutoSync({
   debounceMs=1350,
   pollMs=3000,
   zipAgeMs=4500,
+  legacyInbox=false,
   runSync=()=>nodeScript(root,'sync-projects.mjs'),
   runImport=()=>nodeScript(root,'import-inbox.mjs',['--ready-only']),
 }={}){
   if(!root)throw new Error('startAutoSync memerlukan root Master');
   const {projects,inbox}=getPaths(root);
-  for(const dir of [projects,inbox])fs.mkdirSync(dir,{recursive:true});
-  let closed=false,busy=false,timer=null,lastSignature=registrySignature(root),observedSignature=lastSignature;
+  const signature=()=>registrySignature(root,{legacyInbox});
+  for(const dir of legacyInbox?[projects,inbox]:[projects])fs.mkdirSync(dir,{recursive:true});
+  let closed=false,busy=false,timer=null,lastSignature=signature(),observedSignature=lastSignature;
   const watchers=[];
   async function execute(){
     if(closed){return}
     if(busy)return
     busy=true;
     try{
-      const pendingZips=fs.readdirSync(inbox).filter(name=>name.toLowerCase().endsWith('.zip'));
-      const toImport=stableFiles(inbox,zipAgeMs);
+      const pendingZips=legacyInbox?fs.readdirSync(inbox).filter(name=>name.toLowerCase().endsWith('.zip')):[];
+      const toImport=legacyInbox?stableFiles(inbox,zipAgeMs):[];
       // Jangan panggil import-inbox (yang memproses semua ZIP) bila masih ada
       // ZIP lain yang belum selesai dicopy ke folder inbox.
       if(toImport.length && toImport.length===pendingZips.length){
@@ -111,7 +113,7 @@ export function startAutoSync({
       // A ZIP in the middle of being copied must not trigger expensive sync.
       if(pendingZips.length && toImport.length!==pendingZips.length)return;
       await runSync();
-      lastSignature=registrySignature(root);observedSignature=lastSignature;
+      lastSignature=signature();observedSignature=lastSignature;
       console.log('[AUTO SYNC] Registrasi/VO/aset diperbarui. Edit TSX biasa hanya hot reload.');
     }catch(e){
       console.error('[AUTO SYNC] '+e.message+' (video lama tidak dihapus; periksa project yang baru disalin)');
@@ -130,7 +132,7 @@ export function startAutoSync({
     // Ignore Remotion Save-to-code of ordinary TSX layers.  Only the
     // registrations/VO/asset/Root signature can trigger a sync.
     if(closed||busy)return;
-    const next=registrySignature(root);
+    const next=signature();
     if(next!==observedSignature){observedSignature=next;schedule();}
   }
   function attach(dir){
@@ -141,20 +143,20 @@ export function startAutoSync({
       try{const w=fs.watch(dir,onWatchChange);w.on('error',e=>console.warn('[AUTO SYNC] Watcher error: '+e.message+'; polling tetap berjalan.'));watchers.push(w)}catch(e){console.warn('[AUTO SYNC] Watcher tidak tersedia: '+e.message)}
     }
   }
-  attach(projects);attach(inbox);
+  attach(projects);if(legacyInbox)attach(inbox);
   // Save to Code in Remotion Studio modifies generated Root defaultProps.
   // Watch it so changed VO Guide/Props can be merged into manifest/narration.
   const nativePropsFile=path.join(root,'src','Root.tsx');
   if(fs.existsSync(nativePropsFile))try{const w=fs.watch(nativePropsFile,onWatchChange);w.on('error',()=>{});watchers.push(w)}catch{}
   const interval=setInterval(()=>{
     if(closed)return;
-    const next=registrySignature(root);
+    const next=signature();
     if(next!==observedSignature){observedSignature=next;schedule()}
-    else if(stableFiles(inbox,zipAgeMs).length)schedule();
+    else if(legacyInbox&&stableFiles(inbox,zipAgeMs).length)schedule();
   },pollMs);
   return {
     close(){closed=true;clearTimeout(timer);clearInterval(interval);for(const w of watchers)w.close()},
-    check(){if(registrySignature(root)!==lastSignature)schedule()},
-    isIdle(){return !closed&&!busy&&!timer&&registrySignature(root)===lastSignature&&!fs.readdirSync(inbox).some(n=>n.toLowerCase().endsWith('.zip'));},
+    check(){if(signature()!==lastSignature)schedule()},
+    isIdle(){return !closed&&!busy&&!timer&&signature()===lastSignature&&(!legacyInbox||!fs.readdirSync(inbox).some(n=>n.toLowerCase().endsWith('.zip')));},
   };
 }

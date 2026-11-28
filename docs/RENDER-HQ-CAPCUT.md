@@ -47,3 +47,5 @@ CLI lama `npm run render -- IDVideo` tetap bekerja sebagai **high quality dengan
 ## Catatan kontrak Master
 
 File yang diubah untuk kualitas render hanya `tools/render-menu.mjs`, `tools/studio-menu.mjs`, modul profil yang baru, tes terkait, dan dokumentasi. Jangan edit manual `src/Root.tsx`, `library/catalog.json`, video ACC, atau memindahkan output render ke dalam source Master.
+
+Project `compact-balanced-v1`: profil High juga mematikan `showSubtitles`/`showSafeZone` lewat Props sementara, Preview Cepat mempertahankan guide untuk review. Saat render langsung dari Studio, set `showSubtitles=false` pada final. Legacy tetap memakai alur sebelumnya. Safe zone overlay Studio tidak dirender.

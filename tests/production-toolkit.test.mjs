@@ -14,26 +14,20 @@ test('approval resolves explicit alias only and rejects ambiguous rows',()=>{con
 test('planned static holds do not hide unplanned frozen frames',()=>{const d=[0,0,0,0,0,0,0,0];const q=classifyStaticRuns(d,.15,[{start:3,end:6}]);assert.equal(q.planned,2);assert.equal(q.unplanned,5);assert.deepEqual(q.runs,[{from:1,len:3},{from:6,len:2}]);});
 test('automatic exact word-to-beat alignment rejects transcript drift',()=>{const input={schemaVersion:1,narrationHash:fingerprint(n.beats),audioDurationMs:1000,words:[{text:'Lihat',startMs:100,endMs:400},{text:'folder.',startMs:400,endMs:900}]};const result=proposeAlignment(m,n,input);assert.equal(result.beats[0].cues.length,2);assert.equal(result.beats[0].speechEnd,27);input.words[1].text='file';assert.throws(()=>proposeAlignment(m,n,input),/mismatch/);});
 
-test('new production add-on gate accepts matched motion + spatial plan and rejects drift',async()=>{
+test('new project gate accepts complete starter-derived review and rejects geometry or narration drift',async()=>{
  const fs=await import('node:fs'),os=await import('node:os'),path=await import('node:path');const {validateAddon}=await import('../tools/validate-addon.mjs');
  const root=path.resolve('.'),tmp=fs.mkdtempSync(path.join(os.tmpdir(),'mg-prod-'));
  try{
   const d=path.join(tmp,'contoh-video-reels');fs.cpSync(path.join(root,'templates/addon-starter'),d,{recursive:true});
-  const write=(f,v)=>fs.writeFileSync(path.join(d,f),JSON.stringify(v));
-  const manifest=JSON.parse(fs.readFileSync(path.join(d,'motiongraphic-video.json'),'utf8'));manifest.motionPlanContract='focus-driven-v1';manifest.soundImplementationContract='cue-track-v1';Object.assign(manifest.defaultProps,{showSfx:true,sfxGain:1});write('motiongraphic-video.json',manifest);
-  const narr={beats:[{scene:'S01',text:'Lihat kartu.',startFrame:0,endFrame:600}]};write('src/config/narration.json',narr);
-  const viewport=r(60,300,960,900),start={cx:320,cy:180,zoom:1.5},end={cx:350,cy:180,zoom:2};
-  const plan={schemaVersion:1,status:'draft',narrationHash:fingerprint(narr.beats),beats:[{beatIndex:0,intent:'detail',motion:'focus-zoom',focusTarget:'Kartu',reason:'Baca detail',stateIn:'World siap',stateOut:'Detail terlihat',handoff:{type:'start',reason:'Awal'},phases:{action:null,reaction:null,holdStart:500},camera:{worldId:'demo',world:{w:640,h:360},viewport,start,end,focusSamples:[{offset:0,pose:start,target:r(300,150,60,60)}]},collisionPolicy:'Subtitle di luar viewport',editableTargets:['S01 — Kartu informasi']}]};write('production/motion-plan.json',plan);
-  const sp={schemaVersion:1,narrationHash:plan.narrationHash,safeRect:r(50,250,980,1320),worlds:[{id:'demo',viewport,keys:[{frame:0,value:start},{frame:500,value:end},{frame:600,value:end}]}],tracks:[{id:'Kartu',space:'world',worldId:'demo',protected:true,start:0,end:600,keys:[{frame:0,value:r(300,150,60,60)},{frame:599,value:r(300,150,60,60)}]}],allowedOverlaps:[]};write('production/spatial-plan.json',sp);
-  // Verify production validation resolves copied toolkit imports without relying on shared Master source.
-  fs.cpSync(path.join(root,'templates/production-toolkit/src'),path.join(d,'src'),{recursive:true});
-  write('production/sound-cues.json',{schemaVersion:1,status:'ready',cues:[{id:'silent',scene:'S01',action:'Hold kartu',startFrame:0,impactFrame:0,endFrame:599,status:'omit',reason:'Tidak ada aksi bunyi'}]});
-  fs.copyFileSync(path.join(root,'templates/sound-cue-track/SoundCueTrack.tsx'),path.join(d,'src/components/SoundCueTrack.tsx'));
-  fs.writeFileSync(path.join(d,'src/components/SoundAssets.ts'),'export const SFX_FILES: Record<string,string> = {};');
-  const entry=path.join(d,'src/Video.tsx');const entryCode=fs.readFileSync(entry,'utf8');
-  fs.writeFileSync(entry,"import {SoundCueTrack} from './components/SoundCueTrack';\n"+entryCode.replace('({showSubtitles = true}) => (','(p) => (').replace('showSubtitles={showSubtitles}','showSubtitles={p.showSubtitles}').replace('</AbsoluteFill>','<SoundCueTrack enabled={p.showSfx} gain={p.sfxGain}/></AbsoluteFill>').replace('{showSubtitles?: boolean}','{showSubtitles?: boolean;showSfx:boolean;sfxGain:number}'));
+  const read=f=>JSON.parse(fs.readFileSync(path.join(d,f),'utf8'));const write=(f,v)=>fs.writeFileSync(path.join(d,f),JSON.stringify(v));
+  const mf='motiongraphic-video.json',manifest=read(mf);manifest.productionStage='review';write(mf,manifest);
+  const missingFont=validateAddon(d,{root,strict:true,production:true});assert.equal(missingFont.ok,false);assert.match(missingFont.errors.join(' '),/Font lokal belum tersedia/);
+  // Legacy production contract remains supported; no font binaries in isolated fixture.
+  delete manifest.designContract;write(mf,manifest);
   const good=validateAddon(d,{root,strict:true,production:true});assert.equal(good.ok,true,good.errors.join('\n'));
-  sp.worlds[0].keys[2].value={...end,zoom:3};write('production/spatial-plan.json',sp);const bad=validateAddon(d,{root,strict:true,production:true});assert.equal(bad.ok,false);assert.match(bad.errors.join(' '),/boundary pose mismatch/);
+  const sf='production/spatial-plan.json',sp=read(sf);sp.tracks[0].keys[0].value.x=2000;write(sf,sp);
+  const bad=validateAddon(d,{root,sourceCheck:false});assert.equal(bad.ok,false);assert.match(bad.errors.join(' '),/CLIP/);
+  sp.tracks[0].keys[0].value.x=120;write(sf,sp);const nf='src/config/narration.json',narr=read(nf);narr.beats[0].text+=' drift';write(nf,narr);assert.match(validateAddon(d,{root}).errors.join(' '),/narrationHash/);
  }finally{fs.rmSync(tmp,{recursive:true,force:true});}
 });
 test('measured spatial trace detects missing/colliding layers and distinguishes sampled coverage',async()=>{

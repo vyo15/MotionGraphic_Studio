@@ -167,7 +167,7 @@ export const Scene02Solution:React.FC<Easy2BootScene03Props>=(p)=>{
        fontWeight={620}
        fill="#202327"
        style={{translate:'0px 0px',scale:1,rotate:'0deg',opacity:1}}
-      ></Interactive.Text> :
+      >Ah, ribet banget.</Interactive.Text> :
       <Txt x={270} y={750} v={title('reactionCaption','Ah, ribet banget.')} color={COL.ink} size={20} weight={620}/>}
    </Layer></Interactive.G>:null}
    {/* Solution appears after reaction exits. */}
@@ -195,7 +195,7 @@ export const Scene02Solution:React.FC<Easy2BootScene03Props>=(p)=>{
        fontWeight={620}
        fill="#202327"
        style={{translate:'0px 0px',scale:1,rotate:'0deg',opacity:1}}
-      ></Interactive.Text> :
+      >Mending pakai Easy2Boot aja.</Interactive.Text> :
       <Txt x={270} y={750} size={19} weight={620} v={title('solutionCaption','Mending pakai Easy2Boot aja.')}/>}
    </Layer></Interactive.G>:null}
    {/* Files visibly enter one USB, not three independent slides. */}
@@ -227,7 +227,7 @@ export const Scene02Solution:React.FC<Easy2BootScene03Props>=(p)=>{
        fontWeight={620}
        fill="#202327"
        style={{translate:'0px 0px',scale:1,rotate:'0deg',opacity:1}}
-      ></Interactive.Text> :
+      >Satu flashdisk bisa nyimpen installer.</Interactive.Text> :
       <Txt x={270} y={750} size={19} weight={620} v={title('manyCaption','Satu flashdisk bisa nyimpen installer.')}/>) :
      t<9.15 ? (title('manyCaption','Windows 10, Windows 11,')==='Windows 10, Windows 11,' ?
       <Interactive.Text name="S02 — Subtitle draft 03B — Windows" x={270} y={750} textAnchor="middle" dominantBaseline="middle" fontFamily="Inter, Arial, sans-serif" fontSize={19} fontWeight={620} fill="#202327" style={{translate:'0px 0px',scale:1,rotate:'0deg',opacity:1}}>Windows 10, Windows 11,</Interactive.Text> :
@@ -244,7 +244,7 @@ export const Scene02Solution:React.FC<Easy2BootScene03Props>=(p)=>{
        fontWeight={620}
        fill="#202327"
        style={{translate:'0px 0px',scale:1,rotate:'0deg',opacity:1}}
-      ></Interactive.Text> :
+      >Sampai Linux sekaligus.</Interactive.Text> :
       <Txt x={270} y={750} size={19} weight={620} v={title('manyCaption','Sampai Linux sekaligus.')}/>)}
    </Layer></Interactive.G>:null}
   </svg>

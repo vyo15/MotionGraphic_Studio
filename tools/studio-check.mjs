@@ -1,9 +1,12 @@
 /** Non-destructive end-to-end static check for UI job and command-line workflow. */
 import fs from 'node:fs';import path from 'node:path';import {spawnSync} from 'node:child_process';
 import {ROOT,readCatalog} from './menu-helper.mjs';import {checkQuality} from './studio-quality.mjs';
+import {staticGatePlan} from './studio-preflight.mjs';
 let failures=0;
 function step(file,args=[]){const p=spawnSync(process.execPath,[path.join(ROOT,'tools',file),...args],{cwd:ROOT,encoding:'utf8',timeout:60000,env:process.env});if(p.stdout)process.stdout.write(p.stdout);if(p.stderr)process.stderr.write(p.stderr);if(p.status!==0){failures++;console.error('[CHECK ERROR] '+file)}}
-step('check-release.mjs');step('qa-motion-plan.mjs',['--all']);step('qa-native-editable.mjs');step('check-sync-state.mjs');step('validate-library.mjs');step('check-direct-studio-text.mjs');step('check-layout-flow.mjs');
+const {gates,drafts}=staticGatePlan(ROOT,{full:true});
+for(const {script,args} of gates)step(script,args);
+for(const name of drafts)console.log('[DRAFT] '+name+' — bukan preview produksi yang tervalidasi.');
 for(const p of readCatalog().videos){const dir=path.join(ROOT,p.projectDir);if(!fs.existsSync(path.join(dir,'src','Video.tsx'))){console.error('[ERROR] Missing Video.tsx: '+p.slug);failures++;continue;}
  const qa=checkQuality(p.slug);console.log(`[QUALITY] ${p.title}: ${qa.summary.interactive} interactive | ${qa.summary.literalGeometry} literal | ${qa.summary.computedGeometry} dinamis | ${qa.issues.length} temuan`);
  for(const x of qa.issues.slice(0,7))console.log(` [${x.level}] frame ${x.frame}: ${x.message}`);failures+=qa.issues.filter(x=>x.level==='error').length;

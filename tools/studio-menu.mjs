@@ -20,7 +20,6 @@ if(!process.stdin.isTTY){
 
 const menuItems=[
   ['1','Buka Remotion Studio'],
-  ['2','Tambah folder video'],
   ['3','Rename project / judul'],
   ['4','Daftar video'],
   ['5','Periksa dan sinkronkan'],
@@ -31,11 +30,11 @@ const menuItems=[
   ['10','Cek masalah folder (tanpa perubahan)'],
   ['11','Validasi add-on dari ChatGPT'],
   ['12','Edit panduan rekaman VO'],
-  ['13','Terapkan patch revisi aman'],
+  ['13','Recovery patch native lama (opsional)'],
   ['14','Panduan alur ChatGPT → MotionGraphic Studio'],
   ['15','QA Motion Plan (read-only, semua project)'],
   ['16','Cek versi release (read-only)'],
- ['17','QA Spatial Plan (read-only, satu project)'],
+ ['17','QA Spatial — pilih video, sample / full / final'],
  ['18','QA Approval & timeline metadata (read-only)'],
  ['19','VO alignment proposal (timestamp JSON, read-only)'],
 ];
@@ -104,7 +103,7 @@ async function doZip(){
 }
 async function doRender(){
   // Sinkronkan lebih dulu agar daftar scene untuk project baru juga aktual.
-  if(!runScript('prepare-studio.mjs'))return;
+  if(!runScript('prepare-studio.mjs',['--skip-regression']))return;
   const video=await chooseVideo();
   if(!video)return;
   console.log(`\n=== RENDER: ${video.title} ===`);
@@ -180,15 +179,7 @@ async function doRestore(){
   if(!selected)return;
   runScript('restore-video.mjs',[selected.name]);
 }
-async function doAddFolder(){
-  const label=process.platform==='win32'
-    ?'Masukkan path folder add-on, atau Enter untuk memilih dari jendela Windows: '
-    :'Masukkan path lengkap folder add-on (Enter = kembali): ';
-  const folder=await ask('\n'+label);
-  if(folder)runScript('add-folder.mjs',[folder.replace(/^["']|["']$/g,'')]);
-  else if(process.platform==='win32')runScript('add-folder.mjs',['--dialog-only']);
-  else console.log('[MENU] Import dibatalkan.');
-}
+
 async function doValidateAddon(){
  const folder=await ask('Path folder add-on ChatGPT (Enter = kembali): ');
  if(!folder)return;
@@ -222,7 +213,6 @@ async function doPatch(){
 async function handle(choice){
   switch(choice){
     case '1': if(runScript('prepare-studio.mjs'))runScript('start-studio.mjs');break;
-    case '2': await doAddFolder();break;
     case '3': await doRename();break;
     case '4': runScript('list-videos.mjs');break;
     case '5': if(runScript('sync-projects.mjs'))runScript('validate-library.mjs');break;
@@ -236,7 +226,14 @@ async function handle(choice){
     case '13': await doPatch();break;
     case '15': runScript('qa-motion-plan.mjs',['--all']);break;
     case '16': runScript('check-release.mjs');break;
-    case '17': {const v=await chooseVideo();if(v)runScript('qa-spatial.mjs',[path.join(ROOT,v.projectDir)]);break;}
+    case '17': {
+      if(!runScript('prepare-studio.mjs',['--skip-regression']))break;
+      const v=await chooseVideo();if(!v)break;
+      console.log(' 1. Sample preview (frame penting)\n 2. Full preview (semua frame)\n 3. Full final (tanpa VO Guide compact)\n 4. Spatial plan deklaratif saja\n 5. Full CapCut HQ');
+      const a=await ask('Pilih (Enter = kembali): ');
+      if(a==='4')runScript('qa-spatial.mjs',[path.join(ROOT,v.projectDir)]);
+      else if(['1','2','3','5'].includes(a))runScript('auto-spatial.mjs',[v.slug,({1:'sample',2:'full',3:'final',5:'capcut'})[a]]);
+      break;}
     case '18': runScript('production-scope.mjs');break;
     case '19': {const v=await chooseVideo();if(!v)break;const f=await ask('Path phrases.json (Enter = kembali): ');if(f)runScript('vo-align.mjs',[path.join(ROOT,v.projectDir),f.replace(/^[\"']|[\"']$/g,'')]);break;}
     case '14': {
@@ -252,17 +249,17 @@ async function handle(choice){
 try{
   while(true){
     console.log('\n======== MOTIONGRAPHIC STUDIO — MENU ========');
-    for(const [num,label] of menuItems.filter(([n])=>['1','4','6','7','8','9'].includes(n)))console.log(` ${num.padStart(2)}. ${label}`);
+    for(const [num,label] of menuItems.filter(([n])=>['1','4','6','7','8','9','17'].includes(n)))console.log(` ${num.padStart(2)}. ${label}`);
     console.log('  M. Maintenance / opsi lanjutan');
     console.log('  0. Keluar');
     const choice=await ask('\nPilih menu: ');
     if(!choice||choice==='0'){console.log('Selesai.');break}
     try{if(choice.toLowerCase()==='m'){
       console.log('\n=== MAINTENANCE (bukan workflow harian) ===');
-      for(const [num,label] of menuItems.filter(([n])=>!['1','4','6','7','8','9'].includes(n)))console.log(` ${num.padStart(2)}. ${label}`);
+      for(const [num,label] of menuItems.filter(([n])=>!['1','4','6','7','8','9','17'].includes(n)))console.log(` ${num.padStart(2)}. ${label}`);
       console.log(' 20. Audit statis lengkap + test regresi');
       const selected=await ask('Pilih (Enter = kembali): ');
-      if(selected==='20'){const ok=runScript('studio-check.mjs');const result=spawnSync(process.execPath,['--test',...fs.readdirSync(path.join(ROOT,'tests')).filter(n=>n.endsWith('.test.mjs')).map(n=>path.join('tests',n))],{cwd:ROOT,stdio:['ignore','inherit','inherit'],windowsHide:true});console.log(ok&&result.status===0?'[MAINTENANCE] Lulus':'[MAINTENANCE] Ada temuan; baca hasil, jangan reset project.');}
+      if(selected==='20'){const ok=runScript('studio-check.mjs');const testsOk=runScript('run-regression.mjs');console.log(ok&&testsOk?'[MAINTENANCE] Lulus':'[MAINTENANCE] Ada temuan; baca hasil, jangan reset project.');}
       else if(selected)await handle(selected);
     }else await handle(choice)}catch(e){console.error('[MENU] '+(e?.message||e));}
   }

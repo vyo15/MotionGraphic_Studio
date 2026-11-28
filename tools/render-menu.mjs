@@ -13,14 +13,14 @@ import {ROOT,readCatalog} from './menu-helper.mjs';
 import {renderChoices,resolveMode,printSceneList,makeRenderPlan} from './render-plan.mjs';
 import {removeAnsi,duration,progressBar,parseRenderUpdate,newProgressTracker} from './render-progress.mjs';
 import {ensureExportDirs,exportPaths,availableFile,timestamp} from './export-paths.mjs';
-import {RENDER_PROFILES,resolveRenderProfile,renderProfileChoices,encoderFlags,capcutOverrides} from './render-profiles.mjs';
+import {RENDER_PROFILES,resolveRenderProfile,renderProfileChoices,encoderFlags,capcutOverrides,finalGuideOverrides,renderVisualProps} from './render-profiles.mjs';
 
 const MAX_LOG_LINES=16;
 const now=()=>Date.now();
 const usage=()=>{
- console.log(`\nRENDER MP4 — MotionGraphic Studio\n\n  npm run render                          Pilih project & mode interaktif\n  npm run render -- IDVideo               Full video high quality (Props asli)
+ console.log(`\nRENDER MP4 — MotionGraphic Studio\n\n  npm run render                          Pilih project & mode interaktif\n  npm run render -- IDVideo               Full video high quality (guide OFF pada compact)
   npm run render -- IDVideo --profile capcut   Motion + SFX untuk CapCut\n  npm run render -- IDVideo --mode scene --scene 3\n  npm run render -- IDVideo --mode selected --scenes 1,3,5\n  npm run render -- IDVideo --mode all\n  node tools/render-menu.mjs IDVideo --mode all --dry-run\n\nMode: full | scene | selected | all. Profil: capcut | high | preview.
-Default CLI tanpa --profile = high (Props asli). Menu dapat memilih CapCut HQ.\nFile MP4 dan log berada di MotionGraphic-Studio-Backups (di luar Master).\n`);
+Default CLI tanpa --profile = high (guide OFF pada compact, Props asli pada legacy). Menu dapat memilih CapCut HQ.\nFile MP4 dan log berada di MotionGraphic-Studio-Backups (di luar Master).\n`);
 };
 function parseArgs(args){
  const o={video:null,mode:null,scene:null,scenes:null,profile:null,dryRun:false,help:false};
@@ -244,17 +244,26 @@ async function main(){
  fs.mkdirSync(outputDir,{recursive:true});fs.mkdirSync(logsDir,{recursive:true});
  let completed=0;const outputs=[];
  let propsDir=null,propsPath=null;
- if(profile==='capcut'){
+ const manifestPath=path.join(ROOT,'projects',video.slug,'motiongraphic-video.json');
+ const quality=await import('./spatial-render-gate.mjs');
+ const project=quality.classifyRenderProject(ROOT,video);
+ const designContract=profile==='high'&&fs.existsSync(manifestPath)?JSON.parse(fs.readFileSync(manifestPath,'utf8')).designContract:undefined;
+ if(!project.legacy||profile==='capcut'||(profile==='high'&&designContract==='compact-balanced-v1')){
   // Gunakan props sementara, bukan mengedit manifest/Root.tsx/ACC.
-  const {props,changed}=capcutOverrides(video.defaultProps);
+  const {props,changed}=!project.legacy?{props:renderVisualProps(video.defaultProps??{},project.m.designContract,profile,{instrumented:true}),changed:['showSafeZone','qaSpatialCapture']}:profile==='capcut'?capcutOverrides(video.defaultProps):finalGuideOverrides(video.defaultProps,designContract);
   propsDir=fs.mkdtempSync(path.join(os.tmpdir(),'mg-capcut-render-'));
   propsPath=path.join(propsDir,'props.json');
   fs.writeFileSync(propsPath,JSON.stringify(props),'utf8');
-  console.log(`[CAPCUT] Override sementara: ${changed.length?changed.join(', '):'(sudah sesuai)'}`);
-  if(!Object.hasOwn(video.defaultProps,'showSfx'))console.warn('[CAPCUT] Tidak ada showSfx di Props; cek SFX pada output.');
+  console.log(`[${profile.toUpperCase()}] Override sementara: ${changed.length?changed.join(', '):'(sudah sesuai)'}`);
+  if(profile==='capcut'&&!Object.hasOwn(video.defaultProps,'showSfx'))console.warn('[CAPCUT] Tidak ada showSfx di Props; cek SFX pada output.');
  }
  try{
  for(const [i,job] of plan.entries()){ 
+  const gate=await quality.preRenderSpatial(ROOT,project,video,job,profile);
+  console.log('[PRE-RENDER QA]',gate.status,gate.reason??'');
+  if(!gate.allowed)throw Error('Render blocked: '+(gate.reason??gate.status));
+  const lease=await quality.acquireQaLease(ROOT,'render');
+  try{quality.assertRenderFresh(ROOT,project,gate);
   const stem=`${job.id}-${profile}-${timestamp()}`;
   const output=availableFile(outputDir,stem,'.mp4');
   const logPath=availableFile(logsDir,stem,'.log');
@@ -263,7 +272,11 @@ async function main(){
    console.error(`\n[BATCH TERHENTI] ${completed}/${plan.length} MP4 berhasil. Yang sudah jadi tetap tersimpan.`);
    process.exitCode=result.code||1;return;
   }
+  const post=await quality.postRenderSpatial(ROOT,project,video,job,profile,result.output,gate);
+  console.log('[POST-RENDER QA]',post.status,post.out??'');
+  if(!post.allowed){console.error('[QUALITY GATE] MP4 retained for diagnosis, NOT final verified: '+result.output);process.exitCode=1;return;}
   completed++;outputs.push(result.output);
+  }finally{lease.release();}
  }
  console.log(`\n========= RENDER SELESAI (${completed}/${plan.length}) =========`);
  for(const file of outputs)console.log('  '+file);

@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 1,
+  "assets": [
+    {
+      "id": "pop-cartoon-clean-01",
+      "file": "audio/pop/pop-cartoon-clean-01.wav",
+      "character": "recorded",
+      "tags": [
+        "motion",
+        "pop",
+        "reveal",
+        "short"
+      ],
+      "source": {
+        "kind": "real-recording",
+        "title": "Cartoon Pop (Clean)",
+        "creator": "unfa",
+        "license": "CC0-1.0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "sourceUrl": "https://freesound.org/people/unfa/sounds/245645/",
+        "originalFilename": "245645__unfa__cartoon-pop-clean.flac",
+        "originalSha256": "72cbd6cbe710a2746e88fb6c53bd5a36b17226f5ebb9288a1645cfb023f25624",
+        "originalFile": "originals/245645__unfa__cartoon-pop-clean.flac"
+      },
+      "rightsEvidence": "Freesound creator confirms CC0 on sound page; supplied original FLAC.",
+      "impactSample": 237,
+      "gainDb": -14,
+      "sha256": "8af89f08c2730ece9cacf04dae4e5d0cf479a622a42dfc9e58b71b3346d31abb",
+      "processing": {
+        "format": "PCM_24",
+        "sampleRate": 48000,
+        "channels": 2,
+        "peakTargetDbFS": -3,
+        "gainAppliedDb": -1.823,
+        "highpassHz": null,
+        "edgeFadeMs": 0,
+        "resampled": false,
+        "pitchChanged": false,
+        "sourceRangeSeconds": null
+      },
+      "reviewStatus": "user-selected",
+      "category": "pop",
+      "selectionStatus": "KEEP",
+      "suggestedUse": "Kemunculan objek / pop"
+    }
+  ],
+  "selectionSource": {
+    "file": "SFX-Sortir.json",
+    "sha256": "170b11aea431af2946196d167457c7096d8566dbcea4e08123fd38fda9fdcfbb",
+    "meaning": "KEEP/DROP only; no semantic labels or final mix approval"
+  }
+}

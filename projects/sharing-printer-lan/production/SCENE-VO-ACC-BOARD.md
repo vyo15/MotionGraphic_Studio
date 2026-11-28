@@ -2,8 +2,8 @@
 
 > **AUTO-GENERATED / READ-ONLY VIEW.** Jangan edit file ini sebagai sumber keputusan. Edit sumber yang benar melalui patch terbatas setelah pengguna memberi ACC, kemudian jalankan `npm run sync`. Dokumen ini tidak membuktikan MP4 telah dirender atau edit GUI Save/reload telah diuji.
 
-- **Project:** `sharing-printer-lan` · 30 FPS · 3111 frame (103.70s)
-- **Visual:** 0/8 LOCKED · 7/8 ACC/LOCKED · 0 hanya DIPILIH
+- **Project:** `sharing-printer-lan` · 30 FPS · 3395 frame (113.17s)
+- **Visual:** 0/10 LOCKED · 9/10 ACC/LOCKED · 0 hanya DIPILIH
 - **VO narration status:** draft; **Script approval (state):** partial
 - **Storyboard approval (state):** partial
 - **Rekaman:** not-recorded · **Final:** draft
@@ -12,40 +12,62 @@
 
 | Scene | Rentang | VO teks | Visual/ACC | Rekaman | Final |
 |---|---|---|---|---|---|
-| SharingPrinterLan-S01 | 0.00s–9.20s | ACC TEKS | ACC VISUAL (belum otomatis LOCKED) | VO GUIDE / BELUM DIREKAM | BELUM FINAL ACC |
-| SharingPrinterLan-S02 | 9.20s–20.20s | DRAFT / REVIEW | BELUM ACC | VO GUIDE / BELUM DIREKAM | BELUM FINAL ACC |
-| SharingPrinterLan-S03 | 20.20s–44.20s | DRAFT / REVIEW | ACC VISUAL (belum otomatis LOCKED) | VO GUIDE / BELUM DIREKAM | BELUM FINAL ACC |
-| SharingPrinterLan-S04 | 44.20s–62.20s | DRAFT / REVIEW | ACC VISUAL (belum otomatis LOCKED) | VO GUIDE / BELUM DIREKAM | BELUM FINAL ACC |
-| SharingPrinterLan-S05 | 62.20s–77.20s | DRAFT / REVIEW | ACC VISUAL (belum otomatis LOCKED) | VO GUIDE / BELUM DIREKAM | BELUM FINAL ACC |
-| SharingPrinterLan-S06 | 77.20s–90.20s | DRAFT / REVIEW | ACC VISUAL (belum otomatis LOCKED) | VO GUIDE / BELUM DIREKAM | BELUM FINAL ACC |
-| SharingPrinterLan-S07 | 90.20s–97.70s | ACC TEKS | ACC VISUAL (belum otomatis LOCKED) | VO GUIDE / BELUM DIREKAM | BELUM FINAL ACC |
-| SharingPrinterLan-S08 | 97.70s–103.70s | TANPA VO (visual saja) | ACC VISUAL (belum otomatis LOCKED) | VO GUIDE / BELUM DIREKAM | BELUM FINAL ACC |
+| SharingPrinterLan-S01-Question | 0.00s–6.60s | ACC TEKS | ACC VISUAL (belum otomatis LOCKED) | VO GUIDE / BELUM DIREKAM | BELUM FINAL ACC |
+| SharingPrinterLan-S01-Response | 6.60s–9.40s | ACC TEKS | ACC VISUAL (belum otomatis LOCKED) | VO GUIDE / BELUM DIREKAM | BELUM FINAL ACC |
+| SharingPrinterLan-S01 | 9.40s–18.67s | ACC TEKS | ACC VISUAL (belum otomatis LOCKED) | VO GUIDE / BELUM DIREKAM | BELUM FINAL ACC |
+| SharingPrinterLan-S02 | 18.67s–29.67s | DRAFT / REVIEW | BELUM ACC | VO GUIDE / BELUM DIREKAM | BELUM FINAL ACC |
+| SharingPrinterLan-S03 | 29.67s–53.67s | DRAFT / REVIEW | ACC VISUAL (belum otomatis LOCKED) | VO GUIDE / BELUM DIREKAM | BELUM FINAL ACC |
+| SharingPrinterLan-S04 | 53.67s–71.67s | DRAFT / REVIEW | ACC VISUAL (belum otomatis LOCKED) | VO GUIDE / BELUM DIREKAM | BELUM FINAL ACC |
+| SharingPrinterLan-S05 | 71.67s–86.67s | DRAFT / REVIEW | ACC VISUAL (belum otomatis LOCKED) | VO GUIDE / BELUM DIREKAM | BELUM FINAL ACC |
+| SharingPrinterLan-S06 | 86.67s–99.67s | DRAFT / REVIEW | ACC VISUAL (belum otomatis LOCKED) | VO GUIDE / BELUM DIREKAM | BELUM FINAL ACC |
+| SharingPrinterLan-S07 | 99.67s–107.17s | ACC TEKS | ACC VISUAL (belum otomatis LOCKED) | VO GUIDE / BELUM DIREKAM | BELUM FINAL ACC |
+| SharingPrinterLan-S08 | 107.17s–113.17s | TANPA VO (visual saja) | ACC VISUAL (belum otomatis LOCKED) | VO GUIDE / BELUM DIREKAM | BELUM FINAL ACC |
 
 ## VO LENGKAP PER SCENE DAN CATATAN ACC
 
-### SharingPrinterLan-S01 — Hook
+### SharingPrinterLan-S01-Question — Hook — Pertanyaan
 
-- **Waktu:** 0.00s–9.20s (276 frame)
+- **Waktu:** 0.00s–6.60s (198 frame)
 - **VO teks:** ACC TEKS · **Visual:** ACC VISUAL (belum otomatis LOCKED) (sumber: PRODUCTION-STATE.json)
 - **Rekaman/sync:** VO GUIDE / BELUM DIREKAM · **Final:** BELUM FINAL ACC
 
-**VO asli:** “Printer kamu belum punya fitur Wi-Fi? Tenang, ternyata ada cara supaya satu printer bisa digunakan oleh beberapa komputer.”
+**VO asli:** “Printer kamu belum punya fitur Wi-Fi?”
 
-**Catatan dari state:** Referensi MP4, bukan bukti kesamaan render native.
+**Catatan dari state:** ACC preview V10: Poppins Bold uppercase, Wi-Fi ExtraBold coral, Focus & Resolve Style 04 + gerak Wi-Fi; 198f. Native reconstruction belum diuji.
+
+### SharingPrinterLan-S01-Response — Hook — Tenang, ternyata ada cara
+
+- **Waktu:** 6.60s–9.40s (84 frame)
+- **VO teks:** ACC TEKS · **Visual:** ACC VISUAL (belum otomatis LOCKED) (sumber: PRODUCTION-STATE.json)
+- **Rekaman/sync:** VO GUIDE / BELUM DIREKAM · **Final:** BELUM FINAL ACC
+
+**VO asli:** “Tenang, ternyata ada cara”
+
+**Catatan dari state:** ACC preview V4: Tenang, ternyata ada cara; native QA pending. V10 mempertahankan source respons; global +78f.
+
+### SharingPrinterLan-S01 — Hook — Demonstrasi printer
+
+- **Waktu:** 9.40s–18.67s (278 frame)
+- **VO teks:** ACC TEKS · **Visual:** ACC VISUAL (belum otomatis LOCKED) (sumber: PRODUCTION-STATE.json)
+- **Rekaman/sync:** VO GUIDE / BELUM DIREKAM · **Final:** BELUM FINAL ACC
+
+**VO asli:** “supaya satu printer bisa digunakan oleh beberapa komputer.”
+
+**Catatan dari state:** ACC preview V10: object-centered, headline 1 PRINTER / BANYAK KOMPUTER, gap optik sekitar 95px pada referensi. Topology01 dan time mapping dipertahankan; native QA pending.
 
 ### SharingPrinterLan-S02 — Koneksi jaringan
 
-- **Waktu:** 9.20s–20.20s (330 frame)
+- **Waktu:** 18.67s–29.67s (330 frame)
 - **VO teks:** DRAFT / REVIEW · **Visual:** BELUM ACC (sumber: PRODUCTION-STATE.json)
 - **Rekaman/sync:** VO GUIDE / BELUM DIREKAM · **Final:** BELUM FINAL ACC
 
 **VO asli:** “Caranya, kita cukup manfaatin fitur Printer Sharing yang udah ada di Windows. Pertama, pastikan kedua komputer ini udah terhubung ke jaringan yang sama.”
 
-**Catatan dari state:** Referensi MP4, bukan bukti kesamaan render native.
+**Catatan dari state:** Referensi MP4, bukan bukti kesamaan render native. Handoff posisi S01→S02 mengikuti V10 +112→+80px selama 36f, lalu settle ke posisi lama sampai 78f; status review tetap.
 
 ### SharingPrinterLan-S03 — Network Sharing
 
-- **Waktu:** 20.20s–44.20s (720 frame)
+- **Waktu:** 29.67s–53.67s (720 frame)
 - **VO teks:** DRAFT / REVIEW · **Visual:** ACC VISUAL (belum otomatis LOCKED) (sumber: PRODUCTION-STATE.json)
 - **Rekaman/sync:** VO GUIDE / BELUM DIREKAM · **Final:** BELUM FINAL ACC
 
@@ -55,7 +77,7 @@
 
 ### SharingPrinterLan-S04 — Sharing Printer
 
-- **Waktu:** 44.20s–62.20s (540 frame)
+- **Waktu:** 53.67s–71.67s (540 frame)
 - **VO teks:** DRAFT / REVIEW · **Visual:** ACC VISUAL (belum otomatis LOCKED) (sumber: PRODUCTION-STATE.json)
 - **Rekaman/sync:** VO GUIDE / BELUM DIREKAM · **Final:** BELUM FINAL ACC
 
@@ -65,7 +87,7 @@
 
 ### SharingPrinterLan-S05 — Menghubungkan printer
 
-- **Waktu:** 62.20s–77.20s (450 frame)
+- **Waktu:** 71.67s–86.67s (450 frame)
 - **VO teks:** DRAFT / REVIEW · **Visual:** ACC VISUAL (belum otomatis LOCKED) (sumber: PRODUCTION-STATE.json)
 - **Rekaman/sync:** VO GUIDE / BELUM DIREKAM · **Final:** BELUM FINAL ACC
 
@@ -75,7 +97,7 @@
 
 ### SharingPrinterLan-S06 — Hasil cetak
 
-- **Waktu:** 77.20s–90.20s (390 frame)
+- **Waktu:** 86.67s–99.67s (390 frame)
 - **VO teks:** DRAFT / REVIEW · **Visual:** ACC VISUAL (belum otomatis LOCKED) (sumber: PRODUCTION-STATE.json)
 - **Rekaman/sync:** VO GUIDE / BELUM DIREKAM · **Final:** BELUM FINAL ACC
 
@@ -85,7 +107,7 @@
 
 ### SharingPrinterLan-S07 — CTA
 
-- **Waktu:** 90.20s–97.70s (225 frame)
+- **Waktu:** 99.67s–107.17s (225 frame)
 - **VO teks:** ACC TEKS · **Visual:** ACC VISUAL (belum otomatis LOCKED) (sumber: PRODUCTION-STATE.json)
 - **Rekaman/sync:** VO GUIDE / BELUM DIREKAM · **Final:** BELUM FINAL ACC
 
@@ -95,7 +117,7 @@
 
 ### SharingPrinterLan-S08 — Cover Reels
 
-- **Waktu:** 97.70s–103.70s (180 frame)
+- **Waktu:** 107.17s–113.17s (180 frame)
 - **VO teks:** TANPA VO (visual saja) · **Visual:** ACC VISUAL (belum otomatis LOCKED) (sumber: PRODUCTION-STATE.json)
 - **Rekaman/sync:** VO GUIDE / BELUM DIREKAM · **Final:** BELUM FINAL ACC
 

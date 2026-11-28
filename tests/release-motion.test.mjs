@@ -23,6 +23,6 @@ test('batch motion QA distinguishes legacy and incomplete declared plans',()=>{
 });
 test('explicit production gate rejects placeholder without breaking legacy strict scaffold',()=>{
  const temp=fs.mkdtempSync(path.join(os.tmpdir(),'mg-release-scaffold-'));
- try{const d=path.join(temp,'contoh-video-reels');fs.cpSync(path.join(root,'templates/addon-starter'),d,{recursive:true});assert.equal(validateAddon(d,{root,strict:true}).ok,true);const result=validateAddon(d,{root,strict:true,production:true});assert.equal(result.ok,false);assert.match(result.errors.join(' '),/motionPlanContract/);
+ try{const d=path.join(temp,'contoh-video-reels');fs.cpSync(path.join(root,'templates/addon-starter'),d,{recursive:true});assert.equal(validateAddon(d,{root,strict:true}).ok,true);const result=validateAddon(d,{root,strict:true,production:true});assert.equal(result.ok,false);assert.match(result.errors.join(' '),/productionStage draft/);
  }finally{fs.rmSync(temp,{recursive:true,force:true});}
 });

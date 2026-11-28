@@ -98,6 +98,15 @@
     },
     "soundImplementationContract": {
       "const": "cue-track-v1"
+    },
+    "productionStage": {
+      "enum": [
+        "draft",
+        "review"
+      ]
+    },
+    "designContract": {
+      "const": "compact-balanced-v1"
     }
   },
   "additionalProperties": true

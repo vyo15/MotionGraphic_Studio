@@ -45,7 +45,8 @@ test('template declares its native captions, title and visual object',()=>{
  const root=path.resolve('.');
  const report=inspectNativeEditable(path.join(root,'templates/addon-starter'),{strict:true});
  assert.deepEqual(report.errors,[],JSON.stringify(report.errors));
- assert.equal(report.targets,4);
+ const blueprint=JSON.parse(fs.readFileSync(path.join(root,'templates/addon-starter/production/editable-blueprint.json'),'utf8'));
+ assert.equal(report.targets,blueprint.nativeTextTargets.length+blueprint.nativeVisualTargets.length);assert.ok(report.targets>=15);
 });
 test('Easy2Boot final subtitles: each cue gets a unique JSX declaration; no map',()=>{
  const root=path.resolve('.');
@@ -78,6 +79,7 @@ test('strict add-on import gate rejects promised native captions if blueprint mi
   const mf=path.join(app,'motiongraphic-video.json');
   const value=JSON.parse(fs.readFileSync(mf,'utf8'));
   value.slug='test-native-video';value.id='TestNativeVideo';
+  const assets=path.join(app,'src/components/SoundAssets.ts');fs.writeFileSync(assets,fs.readFileSync(assets,'utf8').replaceAll('videos/contoh-video-reels/','videos/test-native-video/'));
   fs.writeFileSync(mf,JSON.stringify(value,null,2));
   const good=validateAddon(app,{strict:true});
   assert.equal(good.ok,true,good.errors.join('\n'));

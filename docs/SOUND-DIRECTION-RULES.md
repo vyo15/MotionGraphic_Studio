@@ -34,7 +34,7 @@ Pada storyboard tulis kolom tambahan: `Sound intent | Cue/omit | Timing (frame a
 |---|---|---|---|
 | Hook/pertanyaan penting | Single soft emphasis, tap, subtle pop | Saat satu kata/objek kunci muncul | Hook sudah kuat dengan VO; tidak perlu efek |
 | Typography muncul | Soft reveal / pop pendek | Pada reveal utama, bukan setiap kata | Teks hanya caption/subtitle atau reveal minor |
-| Kursor klik UI | Micro click | Tepat pada pointer-down / aktivasi tombol | Klik tidak dinarasikan dan tidak penting |
+| Kursor klik UI (mouse fisik) | Rekaman mouse asli, single/double sesuai aksi | Attack tekan selaras dengan pointer-down; release tetap natural | Klik minor atau rekaman belum tersedia; jangan ganti dengan pop/tap sintetis |
 | Keyboard/shortcut | 1–2 key tap yang realistis | Pada penekanan tuts, bukan suara mengetik tak relevan | Menutupi VO / mengulang efek lain |
 | Drag/drop, file/ISO berpindah | Pick + drop ringan | Kontak awal/objek sampai tujuan; prioritas pada drop | Pergerakan hanya dekoratif |
 | Benturan, stamp, warning | Short impact / thump | Puncak benturan + tail yang sesuai massa benda | Tidak ada kontak atau perubahan state |
@@ -78,6 +78,7 @@ Durasi contoh, **bukan angka wajib**: UI click 40–120 ms; pop 80–250 ms; who
 
 ## 6. Aset dan lisensi
 
+- Untuk mouse fisik gunakan koleksi rekaman CC0/Public Domain terverifikasi (prioritas pack HunteR4708 setelah WAV dan hak tersedia); tag `mouse` + satu aksi yang tepat. Scroll bukan double click, dan klik kanan khusus tidak diasumsikan tersedia. Lihat pemetaan aset pada `docs/SFX-LOCAL-FIRST.md`. Jika belum ada rekaman yang cocok, omit beralasan, bukan pop sintetis.
 - Simpan master/audio asli per project di `projects/<slug>/public/audio/sfx/`; VO mentah di `public/audio/voiceover/` setelah rekaman, musik di `public/audio/music/` bila digunakan dan kontrak Master mendukungnya. Nama file stabil, deskriptif, ASCII dan tidak menimpa aset ACC.
 - WAV PCM berkualitas baik (48 kHz dapat dipilih bila aset baru) atau format yang didukung tool; mono SFX dekat, stereo hanya saat spatial cue/ambience memang diperlukan. **Jangan memaksakan resampling atau format baru untuk project lama.**
 - `source.kind` sesuai skema aktual (`own`, `openverse`, `real-recording`, `earshot`, `licensed-other`); catat judul, pencipta, URL sumber, lisensi, URL lisensi, izin komersial dan atribusi bila diwajibkan. Bukti halaman asal lebih kuat daripada hasil pencarian Openverse.
@@ -135,4 +136,4 @@ Jalankan `npm run qa:sound -- projects/<slug> --strict` dan `npm run addon:valid
 Baca `docs/SFX-LOCAL-FIRST.md` untuk setiap build/preview baru. Gunakan WAV lokal dan CLI `tools/sfx-local.mjs` sebelum render: verifikasi katalog, pilih karakter/aksi, staging cue dan map, copy aset ke add-on. Openverse hanya kurasi opsional, Real SFX metode, Earshot opsional jika tersedia. Tidak ada API/network saat render; tidak mengklaim suara sintetis sebagai rekaman. Library/pack tidak menggantikan listening QA, dan tidak ada retrofit project lama.
 
 
-**SOFT EDITORIAL / LOCAL-FIRST quality gate:** Baca `docs/SFX-SOFT-EDITORIAL.md` untuk setiap build/preview atau revisi audio yang diizinkan. Rekaman nyata diprioritaskan untuk mekanisme fisik; bila tidak tersedia gunakan graphic cue lembut/omit beralasan, laporkan keterbatasan, jangan klaim natural atau final. Hindari pengulangan klik, beri ruang VO, uji listening A/B. `text-adaptive-v1` opsional di bawah cue-track-v1 untuk ketikan yang mengikuti Props; canonical template legacy tetap berlaku. Tidak retrofit proyek ACC.
+**SOFT EDITORIAL / LOCAL-FIRST quality gate:** Baca `docs/SFX-SOFT-EDITORIAL.md` untuk setiap build/preview atau revisi audio yang diizinkan. Rekaman nyata diprioritaskan untuk mekanisme fisik; bila tidak tersedia, mouse fisik wajib omit beralasan; jangan pakai pengganti sintetis atau rekaman tanpa asal jelas. Aset eksternal CC0 yang telah diaudisi pengguna diprioritaskan untuk semua SFX baru; pertahankan bytes asli, metadata asal dan checksum. Jangan menghasilkan SFX sendiri tanpa persetujuan eksplisit. Untuk suara non-mouse lama pertahankan scope ACC; laporkan keterbatasan, jangan klaim natural atau final. Hindari pengulangan klik, beri ruang VO, uji listening A/B. `text-adaptive-v1` opsional di bawah cue-track-v1 untuk ketikan yang mengikuti Props; canonical template legacy tetap berlaku. Tidak retrofit proyek ACC.

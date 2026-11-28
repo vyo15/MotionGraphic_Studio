@@ -4,6 +4,7 @@
  * Tidak pernah menyentuh projects/, root generated state, catalog, atau rendered MP4.
  */
 import fs from 'node:fs';
+import {createHash} from 'node:crypto';
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
 
@@ -37,7 +38,22 @@ function fileList(dir){
  }
  return result;
 }
+const obsoleteTool='tools/check-master-no-code.mjs';
+const obsoleteHash='881f1c4f6279200205db1f99beeee9bc79a2b1a5ea278907d7d4be0087477110';
+function safeFile(file){
+ const rel=path.relative(ROOT,file);
+ if(rel.startsWith('..')||path.isAbsolute(rel))throw Error('Path keluar Master: '+file);
+ let current=ROOT;
+ for(const part of rel.split(path.sep)){current=path.join(current,part);if(fs.lstatSync(current).isSymbolicLink())throw Error('Symlink dilarang: '+current);}
+ if(!fs.lstatSync(file).isFile())throw Error('Bukan file reguler: '+file);
+}
 const docPaths=oldDocs.map(p=>path.join(ROOT,p)).filter(f=>fs.existsSync(f));
+const oldTool=path.join(ROOT,obsoleteTool);
+if(fs.existsSync(oldTool)){
+ safeFile(oldTool);
+ if(createHash('sha256').update(fs.readFileSync(oldTool)).digest('hex')===obsoleteHash){oldDocs.push(obsoleteTool);docPaths.push(oldTool);}
+ else console.warn('[CLEAN] Pertahankan '+obsoleteTool+': hash berbeda, review edit lokal.');
+}
 let historyPaths=[];
 if(args.has('--history'))historyPaths=fileList(path.join(ROOT,'library','backups'));
 // Logs may be removed only from the Master root or its dedicated logs/ folder.
@@ -52,6 +68,7 @@ if(args.has('--logs'))for(const dir of [ROOT,path.join(ROOT,'logs')]){
  }
 }
 const all=[...docPaths,...historyPaths,...logPaths];
+for(const f of all)safeFile(f);
 const bytes=all.reduce((s,f)=>s+fs.statSync(f).size,0);
 console.log(`\n[CLEAN ${apply?'APPLY':'PREVIEW'}] ${all.length} file, ${(bytes/1024).toFixed(1)} KiB`);
 for(const f of all)console.log(`  ${apply?'HAPUS':'KANDIDAT'} ${path.relative(ROOT,f).replaceAll('\\','/')}`);
@@ -61,7 +78,8 @@ for(const f of all){
  // Defensive allowlist: no creative project source, generated state, current registries or outputs.
  if(rel.startsWith('projects/')||rel.startsWith('public/')||rel.startsWith('src/')||rel.startsWith('contracts/')||rel.startsWith('templates/')||rel.startsWith('tests/'))throw Error('Path dilarang: '+rel);
  if(!oldDocs.includes(rel) && !(args.has('--history')&&rel.startsWith('library/backups/')) && !(args.has('--logs')&&logPaths.includes(f)))throw Error('Tidak masuk daftar aman: '+rel);
- if(fs.lstatSync(f).isSymbolicLink())throw Error('Symlink dilarang: '+rel);
+ safeFile(f);
+ if(rel===obsoleteTool&&createHash('sha256').update(fs.readFileSync(f)).digest('hex')!==obsoleteHash)throw Error('Hash obsolete berubah: '+rel);
  fs.unlinkSync(f);
 }
 console.log(`[CLEAN] Berhasil: ${all.length} file sistem dihapus. Tidak menyentuh projects/ atau katalog.`);

@@ -1,6 +1,7 @@
 import {test} from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
+import {createHash} from 'node:crypto';
 import os from 'node:os';
 import path from 'node:path';
 import {checkSoundCues} from '../tools/qa-sound-cues.mjs';
@@ -43,3 +44,12 @@ test('v2.2 Sharing Printer accepts canonical wiring and rejects missing or plann
   assert.equal(checkSoundCues(x.dir).ok,false);
  }finally{x.done()}
 });
+
+test('unverified own license cannot be ready; marked mouse requires source action and original SHA',()=>{const x=fixture();try{
+ const b=wav(),f=path.join(x.dir,'public/audio/sfx/click.wav');fs.writeFileSync(f,b);
+ put(x.dir,{...base(),cues:[ready({source:{kind:'own',license:'Unverified — internal review only'}})]});assert.match(checkSoundCues(x.dir).issues.join(' '),/lisensi belum/);
+ const c=ready({mouseAction:'single-click',source:{kind:'real-recording',title:'fixture',creator:'fixture',license:'CC0-1.0',sourceUrl:'https://example.com/fixture',rightsEvidence:'fixture only',mouseAction:'single-click',originalSha256:createHash('sha256').update(b).digest('hex')}});
+ put(x.dir,{...base(),cues:[c]});assert.equal(checkSoundCues(x.dir).ok,true);
+ c.source.mouseAction='double-click';put(x.dir,{...base(),cues:[c]});assert.match(checkSoundCues(x.dir).issues.join(' '),/aksi tepat/);
+ c.source.mouseAction='single-click';c.source.originalSha256='0'.repeat(64);put(x.dir,{...base(),cues:[c]});assert.match(checkSoundCues(x.dir).issues.join(' '),/SHA256/);
+ }finally{x.done()}});

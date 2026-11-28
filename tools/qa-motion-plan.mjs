@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 /** Read-only metadata QA. No render, no automatic motion selection, no write. */
+import {resolveSpatialProfile} from './spatial-profiles.mjs';
 import fs from 'node:fs';
 import path from 'node:path';
 import {createHash} from 'node:crypto';
@@ -64,7 +65,7 @@ export function inspectMotionPlan(manifest,narration,plan){
    if(validCamera){
     const canvas={x:0,y:0,w:manifest.width,h:manifest.height};
     need(inRect(c.viewport,canvas),tag+'viewport keluar canvas');
-    if(manifest.width===1080&&manifest.height===1920)need(inRect(c.viewport,{x:50,y:250,w:980,h:1320}),tag+'viewport di luar safe zone 1080x1920');
+    if(manifest.designContract==='compact-balanced-v1'||manifest.width===1080&&manifest.height===1920)need(inRect(c.viewport,resolveSpatialProfile(manifest).safe),tag+'viewport di luar safe zone');
     if(c.focusSamples!==undefined){
      if(need(Array.isArray(c.focusSamples),tag+'focusSamples harus array'))for(const [j,s] of c.focusSamples.entries()){
       const st=tag+`focusSample ${j}: `;

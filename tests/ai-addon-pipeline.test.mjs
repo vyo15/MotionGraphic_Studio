@@ -59,6 +59,7 @@ test('ZIP preflight catches untrusted invalid archive',()=>tmp(root=>{
 test('scaffold creates separate validated add-on without editing projects',()=>tmp(root=>{
  for(const dir of ['tools','templates','exports','projects','library'])fs.mkdirSync(path.join(root,dir),{recursive:true});
  fs.cpSync(path.join(ROOT,'templates/addon-starter'),path.join(root,'templates/addon-starter'),{recursive:true});
+ fs.cpSync(path.join(ROOT,'templates/sound-cue-track'),path.join(root,'templates/sound-cue-track'),{recursive:true});
  copyFixtureTools(ROOT,root);
  fs.writeFileSync(path.join(root,'package.json'),JSON.stringify({dependencies:{react:'19.0.0',remotion:'4.0.538'}}));
  fs.cpSync(path.join(ROOT,'templates/production-toolkit'),path.join(root,'templates/production-toolkit'),{recursive:true});
@@ -66,7 +67,7 @@ test('scaffold creates separate validated add-on without editing projects',()=>t
  const r=spawnSync(process.execPath,[path.join(root,'tools/scaffold-addon.mjs'),'tes-video','TesVideo','Tutorial','Test'],{cwd:root,encoding:'utf8',env:{...process.env,NODE_PATH:[moduleRoot,process.env.NODE_PATH].filter(Boolean).join(path.delimiter)}});
  assert.equal(r.status,0,r.stderr);
  assert.equal(fs.readdirSync(path.join(root,'projects')).length,0);
- assert.equal(validateAddon(path.join(root,'exports/addons/tes-video'),{root,strict:true}).ok,true);
+ assert.equal(validateAddon(path.join(root,'exports/file-change-only/tes-video/projects/tes-video'),{root,strict:true}).ok,true);
 }));
 
 test('revision patch can be loaded directly from a ZIP file',()=>tmp(async root=>{

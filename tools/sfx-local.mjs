@@ -14,6 +14,17 @@ const writeJson=(f,data)=>fs.writeFileSync(f,JSON.stringify(data,null,2)+'\n',{f
 const safeId=s=>typeof s==='string'&&/^[a-z0-9][a-z0-9_-]{0,100}$/.test(s);
 const text=s=>typeof s==='string'&&s.trim().length>0;
 const tags=a=>Array.isArray(a)&&a.length>0&&a.every(s=>safeId(s));
+const mouseActions=['single-click','double-click','right-click','scroll-normal','scroll-slow'];
+const isMouse=a=>a.tags?.includes('mouse')||a.id?.startsWith('mouse-');
+function mouseAction(a){return mouseActions.filter(t=>a.tags?.includes(t));}
+function validateMouse(a,b){
+ if(!isMouse(a))return;
+ assert(a.character==='recorded'&&a.source?.kind==='real-recording'&&['cc0','cc0-1.0','public-domain'].includes(a.source?.license?.toLowerCase()),'Mouse wajib rekaman nyata CC0/Public Domain');
+ assert(a.tags.includes('mouse')&&mouseAction(a).length===1,'Mouse wajib satu tag aksi');
+ assert(text(a.rightsEvidence)&&/^https:\/\//.test(a.source.sourceUrl)&&/^[a-f0-9]{64}$/.test(a.source.originalSha256??''),'Mouse wajib bukti sumber dan SHA256 WAV original');
+ assert(sha(b)===a.source.originalSha256,'SHA256 WAV original mouse tidak cocok; jangan ubah file');
+}
+
 function contained(base,rel){
  assert(typeof rel==='string'&&/^[a-zA-Z0-9_./-]+$/.test(rel)&&!rel.split('/').some(s=>!s||s==='.'||s==='..'),'Path aset tidak aman');
  const b=fs.realpathSync(base); let p=b;
@@ -24,10 +35,11 @@ function contained(base,rel){
 export function inspectWav(b){
  assert(b.length>=44&&b.toString('ascii',0,4)==='RIFF'&&b.toString('ascii',8,12)==='WAVE'&&b.readUInt32LE(4)+8===b.length,'WAV RIFF tidak sah');
  let fmt,data;for(let p=12;p+8<=b.length;){const n=b.readUInt32LE(p+4),end=p+8+n;assert(end<=b.length,'Chunk WAV terpotong');const id=b.toString('ascii',p,p+4);if(id==='fmt '){assert(!fmt,'fmt duplikat');fmt=b.subarray(p+8,end);}if(id==='data'){assert(!data,'data duplikat');data=b.subarray(p+8,end);}p=end+(n%2);}
- assert(fmt&&fmt.length>=16&&data&&fmt.readUInt16LE(0)===1&&fmt.readUInt16LE(14)===16,'WAV harus PCM 16-bit');
- const channels=fmt.readUInt16LE(2),rate=fmt.readUInt32LE(4),block=fmt.readUInt16LE(12);assert([1,2].includes(channels)&&rate>=8000&&rate<=96000&&block===channels*2&&fmt.readUInt32LE(8)===rate*block&&data.length%block===0,'Format PCM salah');
+ assert(fmt&&fmt.length>=16&&data&&fmt.readUInt16LE(0)===1&&[16,24].includes(fmt.readUInt16LE(14)),'WAV harus PCM 16-bit atau 24-bit');
+ const bitsPerSample=fmt.readUInt16LE(14),width=bitsPerSample/8;
+ const channels=fmt.readUInt16LE(2),rate=fmt.readUInt32LE(4),block=fmt.readUInt16LE(12);assert([1,2].includes(channels)&&rate>=8000&&rate<=96000&&block===channels*width&&fmt.readUInt32LE(8)===rate*block&&data.length%block===0,'Format PCM salah');
  const samples=data.length/block;assert(samples>0&&samples/rate<=15,'Durasi one-shot wajib 0–15 detik');
- let peak=0,peakSample=0;for(let p=0;p<data.length;p+=2){const v=Math.abs(data.readInt16LE(p));if(v>peak){peak=v;peakSample=Math.floor(p/block);}}assert(peak>0&&peak<32767,'Audio kosong atau peak full-scale');return {sampleRate:rate,samples,duration:samples/rate,channels,peak,peakSample};
+ let peak=0,peakSample=0;for(let p=0;p<data.length;p+=width){const v=Math.abs(data.readIntLE(p,width));if(v>peak){peak=v;peakSample=Math.floor(p/block);}}assert(peak>0&&peak<2**(bitsPerSample-1)-1,'Audio kosong atau peak full-scale');return {sampleRate:rate,samples,duration:samples/rate,channels,bitsPerSample,peak,peakSample};
 }
 function validateSource(s){
  assert(s&&['own','openverse','real-recording','earshot','licensed-other'].includes(s.kind)&&text(s.title)&&text(s.creator)&&text(s.license)&&text(s.sourceUrl),'Metadata sumber tidak lengkap');
@@ -41,17 +53,26 @@ export function loadLibrary(root=ROOT){
  if(fs.existsSync(local)){assert(!fs.lstatSync(local).isSymbolicLink(),'Library symlink dilarang');for(const d of fs.readdirSync(local,{withFileTypes:true}).sort((a,b)=>a.name.localeCompare(b.name))){if(d.isDirectory()&&!d.isSymbolicLink()&&fs.existsSync(path.join(local,d.name,'catalog.json')))dirs.push(path.join(local,d.name));}}
  const out=[],ids=new Set();for(const dir of dirs){assert(!fs.lstatSync(dir).isSymbolicLink(),'Pack symlink dilarang');const doc=json(contained(dir,'catalog.json'));assert(doc.schemaVersion===1&&Array.isArray(doc.assets),'Catalog tidak sah: '+dir);
  for(const a of doc.assets){assert(safeId(a.id)&&!ids.has(a.id),'ID aset invalid/duplikat: '+a.id);ids.add(a.id);assert(tags(a.tags)&&['recorded','synthetic'].includes(a.character),'Tag/character tidak sah: '+a.id);validateSource(a.source);if(dir!==dirs[0])assert(text(a.rightsEvidence),'Bukti hak pakai pack lokal wajib');assert(a.character!=='recorded'||a.source.kind!=='earshot','Earshot bukan rekaman asli');
- assert(/\.wav$/i.test(a.file),'Hanya WAV PCM');const full=contained(dir,a.file),stat=fs.statSync(full);assert(stat.isFile()&&stat.size<=6_000_000,'Ukuran file tidak sah: '+a.id);const b=fs.readFileSync(full);assert(sha(b)===a.sha256,'SHA256 tidak cocok: '+a.id);const audio=inspectWav(b);
+ assert(/\.wav$/i.test(a.file),'Hanya WAV PCM');const full=contained(dir,a.file),stat=fs.statSync(full);assert(stat.isFile()&&stat.size<=6_000_000,'Ukuran file tidak sah: '+a.id);const b=fs.readFileSync(full);assert(sha(b)===a.sha256,'SHA256 tidak cocok: '+a.id);const audio=inspectWav(b);validateMouse(a,b);
+ if(a.source.originalFile!==undefined){const original=contained(dir,a.source.originalFile);assert(/^[a-f0-9]{64}$/.test(a.source.originalSha256??'')&&sha(fs.readFileSync(original))===a.source.originalSha256,'SHA256 sumber original tidak cocok: '+a.id);}
  assert(Number.isInteger(a.impactSample)&&a.impactSample>=0&&a.impactSample<audio.samples,'impactSample salah: '+a.id);assert(Number.isFinite(a.gainDb)&&a.gainDb>=-80&&a.gainDb<=0,'gainDb aset salah');out.push({...a,...audio,full});}}
  return out;
 }
 export function selectAsset(assets,request){
  assert(['recorded','synthetic','either'].includes(request.character),'Pilih character recorded/synthetic/either');
+ // Physical mouse requests must never fall back to a designed UI tap.
+ const mouse=request.tags?.includes('mouse')||(typeof request.assetId==='string'&&(request.assetId.startsWith('mouse-')||assets.some(a=>a.id===request.assetId&&isMouse(a))));
+ if(mouse){
+  assert(request.character!=='synthetic','Mouse fisik wajib recorded; gunakan omit jika rekaman belum tersedia');
+  assert(mouseAction(request).length===1,'Pilih satu aksi mouse: single-click, double-click, right-click, scroll-normal atau scroll-slow');
+ }
  let matches=assets.filter(a=>request.character==='either'||a.character===request.character);
+ if(!mouse)matches=matches.filter(a=>!isMouse(a));
+ if(mouse)matches=matches.filter(a=>a.character==='recorded'&&a.tags.includes('mouse')&&a.source?.kind==='real-recording'&&['cc0','cc0-1.0','public-domain'].includes(a.source?.license?.toLowerCase())&&mouseAction(a).length===1&&mouseAction(a)[0]===mouseAction(request)[0]);
  if(request.assetId!==undefined){assert(safeId(request.assetId),'assetId salah');matches=matches.filter(a=>a.id===request.assetId);}
- else {assert(tags(request.tags),'tags wajib');matches=matches.filter(a=>request.tags.every(t=>a.tags.includes(t)));}
+ else {assert(tags(request.tags),'tags wajib');matches=matches.filter(a=>!['pending-listening','pending-function'].includes(a.reviewStatus)&&request.tags.every(t=>a.tags.includes(t)));}
  assert(matches.length,'Tidak ada SFX cocok; impor rekaman legal atau pilih omit beralasan. Tidak ada fallback rekaman palsu.');
- return matches.sort((a,b)=>(request.character==='either'?Number(b.character==='recorded')-Number(a.character==='recorded'):0)||a.id.localeCompare(b.id))[0];
+ return matches.sort((a,b)=>(request.character==='either'?Number(b.character==='recorded')-Number(a.character==='recorded'):0)||(request.preferSoftEditorial===true?Number(b.tags.includes('editorial')&&b.tags.includes('soft'))-Number(a.tags.includes('editorial')&&a.tags.includes('soft')):0)||a.id.localeCompare(b.id))[0];
 }
 export function prepare(manifest,requests,output,assets){
  assert(typeof manifest.slug==='string'&&/^[a-z][a-z0-9-]{1,48}$/.test(manifest.slug)&&Number.isInteger(manifest.fps)&&manifest.fps>0&&manifest.fps<=120&&Number.isInteger(manifest.durationInFrames)&&manifest.durationInFrames>0,'Manifest timing/slug salah');
@@ -65,12 +86,14 @@ export function prepare(manifest,requests,output,assets){
   assert(seg&&r.scene==='S'+String(i+1).padStart(2,'0'),'Scene tidak sesuai impactFrame: '+r.id);coverage.add(i);
   const base={id:r.id,scene:r.scene,action:r.action,impactFrame:r.impactFrame};
   if(r.status==='omit'){assert(text(r.reason),'omit perlu alasan');return {...base,startFrame:r.impactFrame,endFrame:r.impactFrame,status:'omit',reason:r.reason};}
-  assert(r.status==='ready','Request hanya ready/omit');const a=selectAsset(assets,r);
+  assert(r.status==='ready','Request hanya ready/omit');
+  const fits=assets.filter(a=>{const start=r.impactFrame-Math.round(a.impactSample/a.sampleRate*manifest.fps);const end=start+Math.max(1,Math.ceil(a.duration*manifest.fps))-1;return start>=seg.startFrame&&end<seg.startFrame+seg.durationInFrames;});
+  const a=selectAsset(fits,r);
   const startFrame=r.impactFrame-Math.round(a.impactSample/a.sampleRate*manifest.fps),endFrame=startFrame+Math.max(1,Math.ceil(a.duration*manifest.fps))-1;
   assert(startFrame>=seg.startFrame&&endFrame<seg.startFrame+seg.durationInFrames&&startFrame<=r.impactFrame&&r.impactFrame<=endFrame,'Cue keluar segment: '+r.id+'; pilih aset pendek atau revisi timing tanpa memotong tail');
   const gainDb=r.gainDb??a.gainDb;assert(Number.isFinite(gainDb)&&gainDb>=-80&&gainDb<=0,'gainDb request salah');
   const file=`audio/sfx/${a.id}.wav`;used.set(file,a);log.push({cueId:r.id,assetId:a.id,character:a.character,sha256:a.sha256,impactSample:a.impactSample,sampleRate:a.sampleRate,source:a.source,providerExecution:'local-file-only',startFrame,impactFrame:r.impactFrame,endFrame});
-  return {...base,startFrame,endFrame,status:'ready',file,source:a.source,gainDb};
+  return {...base,startFrame,endFrame,status:'ready',file,source:a.source,gainDb,...(isMouse(a)?{mouseAction:mouseAction(a)[0],source:{...a.source,rightsEvidence:a.rightsEvidence,mouseAction:mouseAction(a)[0]}}:{})};
  });
  assert(coverage.size===segments.length,'Setiap segment wajib punya cue/omit');
  const out=path.resolve(output);assert(!fs.existsSync(out),'Output sudah ada: tidak overwrite');
@@ -94,7 +117,7 @@ export function importPack(specPath,packId,root=ROOT){
  const ids=new Set(loadLibrary(root).map(a=>a.id));const entries=doc.assets.map(a=>{
   assert(safeId(a.id)&&!ids.has(a.id),'ID duplikat/invalid: '+a.id);ids.add(a.id);assert(tags(a.tags)&&['recorded','synthetic'].includes(a.character),'Tag/character salah');validateSource(a.source);
   assert(a.character!=='recorded'||a.source.kind!=='earshot','Earshot bukan recording');assert(text(a.rightsEvidence),'Bukti hak pakai wajib (review manusia)');
-  const f=contained(base,a.file);assert(fs.statSync(f).isFile()&&fs.statSync(f).size<=6_000_000,'File input tidak sah');const b=fs.readFileSync(f),audio=inspectWav(b),impactSample=a.impactSample??audio.peakSample,gainDb=a.gainDb??-16;
+  const f=contained(base,a.file);assert(fs.statSync(f).isFile()&&fs.statSync(f).size<=6_000_000,'File input tidak sah');const b=fs.readFileSync(f);validateMouse(a,b);const audio=inspectWav(b),impactSample=a.impactSample??audio.peakSample,gainDb=a.gainDb??-16;
   assert(Number.isInteger(impactSample)&&impactSample>=0&&impactSample<audio.samples,'impactSample salah');assert(Number.isFinite(gainDb)&&gainDb>=-80&&gainDb<=0,'gainDb salah');
   return {b,asset:{id:a.id,file:`audio/${a.id}.wav`,character:a.character,tags:a.tags,source:a.source,rightsEvidence:a.rightsEvidence,impactSample,gainDb,sha256:sha(b)}};
  });
@@ -114,7 +137,7 @@ export function renderEarshot(preset,packId,t,root=ROOT,run=spawnSync){
   const call=(command,args)=>{const r=run(command,args,{encoding:'utf8',timeout:120000,windowsHide:true,maxBuffer:1024*1024});assert(!r.error&&r.status===0,`${command} gagal: ${r.error?.message??r.stderr??'exit '+r.status}`);return r;};
   call('earshot',['sfx','render',preset,'-o',raw,'--sr','48000','--peak','-3']);
   assert(fs.existsSync(raw),'Earshot tidak menghasilkan WAV');
-  // Earshot may write PCM24. Convert via FFmpeg only when PCM16 input gate fails.
+  // PCM16/24 RIFF accepted; fallback conversion only if supported PCM gate fails.
   let file='raw.wav';try{inspectWav(fs.readFileSync(raw));}catch{call('ffmpeg',['-nostdin','-v','error','-n','-i',raw,'-ar','48000','-ac','1','-c:a','pcm_s16le',pcm]);file='pcm.wav';}
   const id='earshot-'+packId;assert(safeId(id),'ID hasil terlalu panjang');
   const spec={schemaVersion:1,assets:[{id,file,character:'synthetic',tags:t,gainDb:-16,source:{kind:'earshot',title:preset,creator:'Earshot bank / locally rendered',license:'earshot-rendered-output',sourceUrl:'https://github.com/Leonxlnx/earshot',licenseUrl:'https://github.com/Leonxlnx/earshot/issues/21',preset},rightsEvidence:'Original non-fit bank output; upstream license clarification issue #21 / CHANGELOG. Verify installed revision and output rights before distribution.'}]};

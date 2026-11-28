@@ -42,4 +42,5 @@ for(const v of catalog.videos){
 for(const id of registeredSet)if(!known.has(id))fail('Root.tsx terdaftar tetapi catalog belum ada: '+id);
 console.log(`\nHASIL: ${catalog.videos.length} video, ${expectedSegments.size} segmen, ${assets} rujukan aset dicek, ${errors} masalah sumber.`);
 if(mirrorsPending)console.warn(`[MIRROR BELUM SYNC] ${mirrorsPending} aset asli tersedia tetapi mirror public/videos/ belum dibuat. Jalankan npm run sync sebelum preview/render.`);
-process.exitCode=errors?1:0;
+// Prod must have generated assets present; the normal static audit still permits unsynced mirrors.
+process.exitCode=errors||(process.argv.includes('--require-mirror')&&mirrorsPending)?1:0;

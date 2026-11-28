@@ -30,7 +30,7 @@ Slug usulan: ${slug}
 Audiens: ${audience.trim()}
 CTA: ${cta.trim()}
 
-Buat motion graphic sesuai Master aktual. Buka CHATGPT-READ-FIRST.md dan CHATGPT-HISTORY.md, ikuti mode langsung build dalam PRODUCTION-RULES.md. Satu add-on ZIP, tidak mengubah Master. VO GUIDE mengikuti flow resmi. Jika runtime belum tersedia, laporkan batas uji.
+Buat motion graphic sesuai Master aktual. Buka CHATGPT-READ-FIRST.md dan CHATGPT-HISTORY.md, ikuti mode langsung build dalam PRODUCTION-RULES.md. Satu ZIP FILE CHANGE ONLY dengan path projects/<slug>/, tidak mengubah Master. VO GUIDE mengikuti flow resmi. Jika runtime belum tersedia, laporkan batas uji.
 `;
 };
 const renderSteps=()=>console.log('\n=== USER FLOW MOTIONGRAPHIC STUDIO ===\n'+stages().map(([n,t])=>`${n}. ${t}`).join('\n')+'\n');
@@ -38,7 +38,7 @@ function status(){
  const f=path.join(ROOT,'library','catalog.json');
  let videos=[];
  try{videos=JSON.parse(fs.readFileSync(f,'utf8')).videos||[]}catch{}
- console.log(`[FLOW] ${videos.length} project aktif di Master. Semua pembuatan video baru tetap melalui ChatGPT dan add-on mandiri.`);
+ console.log(`[FLOW] ${videos.length} project aktif di Master. Semua pembuatan video baru tetap melalui ChatGPT dan FILE CHANGE ONLY.`);
  console.log('[FLOW] Baca VO/ACC: node tools/scene-approval-board.mjs --all');
  console.log('[FLOW] Berikutnya: berikan judul langsung di ChatGPT.');
 }
@@ -67,7 +67,7 @@ async function interactive(){
  const ask=async prompt=>(await rl.question(prompt)).trim();
  try{
   renderSteps();
-  console.log('1. Buat brief/prompt ChatGPT\n2. Saya sudah punya add-on ZIP\n3. Saya ingin merevisi video\n4. Motion sudah ACC (VO Guide)\n5. Saya akan render / QA\n0. Keluar');
+  console.log('1. Buat brief/prompt ChatGPT\n2. Saya sudah punya FILE CHANGE ONLY\n3. Saya ingin merevisi video\n4. Motion sudah ACC (VO Guide)\n5. Saya akan render / QA\n0. Keluar');
   const select=await ask('\nPilih langkah: ');
   if(select==='1'){
    const title=await ask('Judul video: ');if(!title)return console.log('[FLOW] Tidak ada judul; batal.');
@@ -75,9 +75,9 @@ async function interactive(){
    const cta=await ask('CTA (Enter = default): ');
    savePrompt(guide(title,audience||undefined,cta||undefined),title);
   }else if(select==='2'){
-   console.log('\n[VALIDASI] npm run addon:validate -- "PATH_ADDON" --production --syntax');
-   console.log('[IMPORT] Letakkan ZIP di library/masuk/; Studio mengimpor otomatis.');
-   console.log('[STUDIO] npm run dev jika Studio belum berjalan; jika sudah, tunggu auto-sync.');
+   console.log('\n[VALIDASI] ChatGPT menguji project sebelum delivery; startup memeriksa source.');
+   console.log('[PASANG] Tutup Studio, backup, cek base hash dan ekstrak di luar Master; copy–paste–Replace ke root Master.');
+   console.log('[STUDIO] npm run dev jika Studio belum berjalan; setelah copy selesai.');
   }else if(select==='3'){
    console.log('\n[REVISI] Kirim slug, file/scene yang diubah, dan bukti preview ke ChatGPT.');
    console.log('[PATCH] Periksa hash base dan backup sebelum Replace (FILE CHANGE ONLY).');

@@ -1,4 +1,2 @@
-TARUH ZIP ADD-ON VIDEO BARU DI FOLDER INI.
-Jangan ekstrak ZIP.
-Kemudian jalankan 01-MULAI-STUDIO.bat.
-ZIP harus memiliki motiongraphic-video.json. Lihat PANDUAN-PAKET-VIDEO.md.
+INBOX KOMPATIBILITAS PAKET VIDEO LAMA.
+Untuk produksi ChatGPT baru/revisi gunakan FILE CHANGE ONLY: tutup Studio, backup, cek base, ekstrak di luar Master, lalu copy isi ke root Master dan buka npm run dev. Jangan masukkan FILE CHANGE ONLY ke inbox.

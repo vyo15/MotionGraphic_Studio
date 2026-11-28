@@ -6,12 +6,12 @@ import {fileURLToPath} from 'node:url';
 const root=resolve(dirname(fileURLToPath(import.meta.url)),'..');
 const strict=process.argv.includes('--strict');
 function walk(d){if(!existsSync(d))return[];return readdirSync(d,{withFileTypes:true}).flatMap(f=>f.isSymbolicLink()?[]:f.isDirectory()?walk(join(d,f.name)):f.isFile()&&/\.tsx$/.test(f.name)?[join(d,f.name)]:[])}
-const dirs=readdirSync(join(root,'projects'),{withFileTypes:true}).filter(d=>d.isDirectory()&&!d.isSymbolicLink());
+const dirs=readdirSync(join(root,'projects'),{withFileTypes:true}).filter(d=>d.isDirectory()&&!d.isSymbolicLink()&&!d.name.startsWith('.')&&!d.name.startsWith('_')&&existsSync(join(root,'projects',d.name,'motiongraphic-video.json')));
 let critical=0;
 console.log('\n=== KONTRAK EDITABLE MASTER — semua project ===');
 for(const d of dirs){const folder=join(root,'projects',d.name),m=JSON.parse(readFileSync(join(folder,'motiongraphic-video.json'),'utf8'));const files=walk(join(folder,'src'));let interactive=0,sourceLayerNames=0,computed=0,sceneLayers=0,cursor=0;const warnings=[];
 for(const f of files){const s=readFileSync(f,'utf8');interactive+=(s.match(/<Interactive\./g)||[]).length;sourceLayerNames+=(s.match(/<Interactive\.\w+[\s\S]{0,150}?name\s*=\s*['"]/g)||[]).length;computed+=(s.match(/style\s*=\s*\{\s*\{[\s\S]{0,180}?var\(--/g)||[]).length;
-if(/<Interactive\./.test(s)&&/style=\{\{[\s\S]{0,90}?\.\.\./.test(s))warnings.push(relative(folder,f)+': style spread berpotensi computed');}
+if(m.editableContract!=='studio-direct-v4'&&/<Interactive\./.test(s)&&/style=\{\{[\s\S]{0,90}?\.\.\./.test(s))warnings.push(relative(folder,f)+': style spread berpotensi computed');}
 for(const v of Object.values(m.defaultProps?.sceneEditor||{}))sceneLayers+=Object.keys(v.layers||{}).length;
 cursor=Object.keys(m.defaultProps?.cursorEditor||{}).length;
 console.log(`• ${m.title} [${m.id}]`);console.log(`  ${interactive} JSX Interactive · ${sceneLayers} layer manifest · ${cursor} track kursor`);
@@ -26,4 +26,4 @@ if(computed)warnings.push(computed+' gaya memuat CSS var; gunakan layer Interact
 for(const w of warnings.slice(0,5))console.log('  [INFO] '+w);
 }
 console.log('Ini hanya hitungan source, tidak membuktikan drag/teks/keyframe/Save/reload. Aturan: docs/EDITABLE-CONTRACT.md');
-if(strict&&critical){console.error('[KONTRAK] '+critical+' pelanggaran pada project dengan editableContract=visual-v1');process.exitCode=1;}
+if(strict&&critical){console.error('[KONTRAK] '+critical+' pelanggaran inventaris pada project visual-v1 / studio-direct-v4');process.exitCode=1;}

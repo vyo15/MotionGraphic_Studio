@@ -204,7 +204,7 @@ export const Scene01Problem:React.FC<Easy2BootScene03Props>=(props)=>{
         <Layer id="caption1" name="Teks VO 1" props={props}
           opacity={smooth((f-8)/9)*(1-smooth((f-(112-7))/7))}>
           {captionValue(props,0,0)==='Mau instal Windows 11,' && props.subtitleColor==='#202020'
-            ? null
+            ? <Interactive.Text name="S01 — Subtitle 01 — Mau instal Windows 11" x={270} y={769} textAnchor="middle" dominantBaseline="middle" fontFamily="Inter, Arial, sans-serif" fontSize={20} fontWeight={650} fill="#202020" style={{translate:'0px 0px',scale:1,rotate:'0deg',opacity:1,pointerEvents:'auto'}}>Mau instal Windows 11,</Interactive.Text>
             : <Text x={270} y={769} size={20} color={props.subtitleColor} weight={650} value={captionValue(props,0,0)}/>}
           {captionValue(props,0,1)? <Text x={270} y={786} size={20} color={props.subtitleColor} weight={650} value={captionValue(props,0,1)}/> : null}
         </Layer>
@@ -222,10 +222,10 @@ export const Scene01Problem:React.FC<Easy2BootScene03Props>=(props)=>{
               fontWeight={650}
               fill="#202020"
               style={{translate:'0px 0px',scale:1,rotate:'0deg',opacity:1,pointerEvents:'auto'}}
-            ></Interactive.Text>
+            >tapi flashdisk bootable-nya</Interactive.Text>
             : <Text x={270} y={754} size={20} color={props.subtitleColor} weight={650} value={captionValue(props,1,0)}/>}
           {captionValue(props,1,1)==='masih Windows 10?' && props.subtitleColor==='#202020'
-            ? null
+            ? <Interactive.Text name="S01 — Subtitle 02B — Masih Windows 10" x={270} y={786} textAnchor="middle" dominantBaseline="middle" fontFamily="Inter, Arial, sans-serif" fontSize={20} fontWeight={650} fill="#202020" style={{translate:'0px 0px',scale:1,rotate:'0deg',opacity:1,pointerEvents:'auto'}}>masih Windows 10?</Interactive.Text>
             : <Text x={270} y={786} size={20} color={props.subtitleColor} weight={650} value={captionValue(props,1,1)}/>}
         </Layer>
         <Layer id="caption3" name="Teks VO 3" props={props}
@@ -248,7 +248,7 @@ export const Scene01Problem:React.FC<Easy2BootScene03Props>=(props)=>{
                 opacity: 1,
                 pointerEvents: 'auto'
               }}
-            ></Interactive.Text>
+            >Masa harus bikin bootable</Interactive.Text>
             : <Text x={270} y={754} size={20} color={props.subtitleColor} weight={650} value={captionValue(props,2,0)}/>}
           {captionValue(props,2,1)==='ulang lagi?' && props.subtitleColor==='#202020'
             ? <Interactive.Text
@@ -262,7 +262,7 @@ export const Scene01Problem:React.FC<Easy2BootScene03Props>=(props)=>{
               fontWeight={650}
               fill="#202020"
               style={{translate:'0px 0px',scale:1,rotate:'0deg',opacity:1,pointerEvents:'auto'}}
-            ></Interactive.Text>
+            >ulang lagi?</Interactive.Text>
             : <Text x={270} y={786} size={20} color={props.subtitleColor} weight={650} value={captionValue(props,2,1)}/>}
         </Layer>
       </> : null}

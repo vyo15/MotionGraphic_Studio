@@ -53,6 +53,7 @@ test('studio-direct-v4 starter passes static gate; flattened or unlabeled scene 
  fs.cpSync(path.join(ROOT,'templates/addon-starter'),base,{recursive:true});
  const mf=path.join(base,'motiongraphic-video.json');const manifest=JSON.parse(fs.readFileSync(mf,'utf8'));
  manifest.id='V4TestAddon';manifest.slug=slug;
+ const assets=path.join(base,'src/components/SoundAssets.ts');fs.writeFileSync(assets,fs.readFileSync(assets,'utf8').replaceAll('videos/contoh-video-reels/','videos/'+slug+'/'));
  fs.writeFileSync(mf,JSON.stringify(manifest));
  let result=validateAddon(base,{root:ROOT,strict:true});
  assert.equal(result.ok,true,result.errors.join('\n'));

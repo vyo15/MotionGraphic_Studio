@@ -35,7 +35,8 @@ test('Starter token palette matches documented visual identity', () => {
     assert.ok(tokens.includes(hex), `starter does not have ${hex}`);
     assert.ok(doc.includes(hex), `documentation does not have ${hex}`);
   }
-  assert.match(doc, /Inter.*belum dibundel|font.*belum dibundel/i);
+  assert.match(doc, /Poppins.*utama/);
+  assert.match(doc, /review wajib font lokal valid/);
 });
 
 test('ZIP engine-only exports docs directory and read-first entrypoint', () => {

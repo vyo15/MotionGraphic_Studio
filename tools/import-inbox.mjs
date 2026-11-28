@@ -9,7 +9,7 @@ const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const inbox=path.join(root,'library/masuk'), archive=path.join(root,'library/sudah-diimpor'), quarantine=path.join(root,'library/gagal-import');
 for(const d of [inbox,archive,quarantine])fs.mkdirSync(d,{recursive:true});
 const items=fs.readdirSync(inbox,{withFileTypes:true}).filter(e=>e.isFile()&&e.name.toLowerCase().endsWith('.zip')).sort((a,b)=>a.name.localeCompare(b.name));
-if(!items.length){console.log('[AUTO IMPORT] Tidak ada video baru.');process.exit(0)}
+if(!items.length){console.log('[AUTO IMPORT] Tidak ada paket legacy.');process.exit(0)}
 if(process.argv.includes('--ready-only')&&stableFiles(inbox,4500).length!==items.length){console.log('[INBOX MENUNGGU] ZIP belum selesai atau belum stabil.');process.exit(0)}
 let success=0,failed=0;
 function uniqueLocation(folder,name){const parsed=path.parse(name);let dest=path.join(folder,name),n=2;while(fs.existsSync(dest))dest=path.join(folder,`${parsed.name}-${n++}${parsed.ext}`);return dest}

@@ -1,111 +1,145 @@
 {
   "schemaVersion": 1,
   "status": "draft",
-  "narrationHash": "2b7b7143e3637a3889e2b23e6d7a967323493123b656055280f34371c37af98d",
+  "narrationHash": "3803e4e4214cd82f9b806c2febb43525be6dd7caaa4516d7db0c9153b0c6c0c9",
   "beats": [
     {
       "beatIndex": 0,
       "intent": "introduce",
-      "motion": "establish",
-      "focusTarget": "Printer tanpa Wi-Fi",
-      "reason": "Gerak mendukung VO dan tindakan, hold sebelum transisi.",
-      "stateIn": "Printer USB",
-      "stateOut": "Printer tanpa Wi-Fi",
+      "motion": "selective-emphasis",
+      "focusTarget": "Wi-Fi?",
+      "reason": "V10 ACC: normal bold uppercase, highlight dan gerak Wi-Fi, tiga tanda tanya menyatu kembali, jeda natural.",
+      "stateIn": "Latar polos",
+      "stateOut": "Pertanyaan Wi-Fi?",
       "handoff": {
         "type": "start",
-        "reason": "Pertahankan objek/jendela; match komposisi saat pindah ke world UI."
+        "reason": "V4: fade terarah antar slide; demo membawa hasil ke S02."
       },
       "phases": {
-        "action": null,
-        "reaction": null,
-        "holdStart": 60
+        "action": 4,
+        "reaction": 70,
+        "holdStart": 169
       },
       "camera": null,
       "collisionPolicy": "World UI/cursor dipotong di viewport; subtitle di screen-space, terpisah. Tumpang tindih kontrol dengan shell asli disengaja.",
       "editableTargets": [
-        "S01 — Subtitle 01"
+        "S01Q — Printer kamu",
+        "S01Q — belum punya fitur",
+        "S01Q — Wi-Fi?",
+        "S01Q — Coral highlight",
+        "S01Q — Tanda tanya kiri",
+        "S01Q — Tanda tanya tengah",
+        "S01Q — Tanda tanya kanan"
       ]
     },
     {
       "beatIndex": 1,
-      "intent": "sequence",
-      "motion": "spatial-reflow",
-      "focusTarget": "Dua komputer",
-      "reason": "Gerak mendukung VO dan tindakan, hold sebelum transisi.",
-      "stateIn": "Printer tanpa Wi-Fi",
-      "stateOut": "Dua komputer",
+      "intent": "bridge",
+      "motion": "progressive-build",
+      "focusTarget": "Tenang, ternyata ada cara",
+      "reason": "Ritme V4 ACC, ruang baca dan hold; tidak mengejar durasi.",
+      "stateIn": "Pertanyaan selesai",
+      "stateOut": "Respons solusi",
       "handoff": {
-        "type": "carry",
-        "reason": "Pertahankan objek/jendela; match komposisi saat pindah ke world UI."
+        "type": "cut",
+        "reason": "V4: fade terarah antar slide; demo membawa hasil ke S02."
       },
       "phases": {
-        "action": 0,
-        "reaction": 0,
-        "holdStart": 12
+        "action": 1,
+        "reaction": 26,
+        "holdStart": 41
       },
       "camera": null,
       "collisionPolicy": "World UI/cursor dipotong di viewport; subtitle di screen-space, terpisah. Tumpang tindih kontrol dengan shell asli disengaja.",
       "editableTargets": [
-        "S01 — Subtitle 02"
+        "S01R — Tenang",
+        "S01R — ternyata ada cara"
       ]
     },
     {
       "beatIndex": 2,
       "intent": "sequence",
-      "motion": "path-motion",
-      "focusTarget": "Kabel LAN dan data",
-      "reason": "Gerak mendukung VO dan tindakan, hold sebelum transisi.",
-      "stateIn": "Dua komputer",
-      "stateOut": "Kabel LAN dan data",
+      "motion": "spatial-reflow",
+      "focusTarget": "Dua komputer dan LAN",
+      "reason": "Ritme V4 ACC, ruang baca dan hold; tidak mengejar durasi.",
+      "stateIn": "Respons solusi",
+      "stateOut": "Dua komputer terhubung",
       "handoff": {
-        "type": "carry",
-        "reason": "Pertahankan objek/jendela; match komposisi saat pindah ke world UI."
+        "type": "cut",
+        "reason": "V4: fade terarah antar slide; demo membawa hasil ke S02."
       },
       "phases": {
         "action": 0,
-        "reaction": 0,
-        "holdStart": 12
+        "reaction": 70,
+        "holdStart": 95
       },
       "camera": null,
       "collisionPolicy": "World UI/cursor dipotong di viewport; subtitle di screen-space, terpisah. Tumpang tindih kontrol dengan shell asli disengaja.",
       "editableTargets": [
-        "S01 — Subtitle 03"
+        "S01 — Subtitle 03",
+        "S01 — Kabel LAN",
+        "S01 — Headline 1 printer"
       ]
     },
     {
       "beatIndex": 3,
-      "intent": "sequence",
+      "intent": "result",
       "motion": "result-hold",
-      "focusTarget": "Kertas hasil cetak",
-      "reason": "Gerak mendukung VO dan tindakan, hold sebelum transisi.",
-      "stateIn": "Kabel LAN dan data",
+      "focusTarget": "Data dan kertas hasil cetak",
+      "reason": "Ritme V4 ACC, ruang baca dan hold; tidak mengejar durasi.",
+      "stateIn": "Kabel LAN",
       "stateOut": "Kertas hasil cetak",
       "handoff": {
         "type": "carry",
-        "reason": "Pertahankan objek/jendela; match komposisi saat pindah ke world UI."
+        "reason": "V4: fade terarah antar slide; demo membawa hasil ke S02."
       },
       "phases": {
-        "action": 11,
-        "reaction": 11,
-        "holdStart": 23
+        "action": 0,
+        "reaction": 45,
+        "holdStart": 112
       },
       "camera": null,
       "collisionPolicy": "World UI/cursor dipotong di viewport; subtitle di screen-space, terpisah. Tumpang tindih kontrol dengan shell asli disengaja.",
       "editableTargets": [
-        "S01 — Subtitle 04"
+        "S01 — Subtitle 04",
+        "S01 — Kertas hasil cetak",
+        "S01 — Headline banyak komputer"
       ]
     },
     {
       "beatIndex": 4,
+      "intent": "pause",
+      "motion": "hold",
+      "focusTarget": "Hasil cetak",
+      "reason": "Hold silent akhir V4, tanpa subtitle, memberi ruang sebelum bridge jaringan.",
+      "stateIn": "Kertas hasil cetak",
+      "stateOut": "Kertas hasil cetak",
+      "handoff": {
+        "type": "carry",
+        "reason": "V4: fade terarah antar slide; demo membawa hasil ke S02."
+      },
+      "phases": {
+        "action": null,
+        "reaction": null,
+        "holdStart": 0
+      },
+      "camera": null,
+      "collisionPolicy": "World UI/cursor dipotong di viewport; subtitle di screen-space, terpisah. Tumpang tindih kontrol dengan shell asli disengaja.",
+      "editableTargets": [
+        "S01 — Kertas hasil cetak"
+      ]
+    },
+    {
+      "beatIndex": 5,
       "intent": "sequence",
       "motion": "shared-element",
       "focusTarget": "Host printer",
-      "reason": "Gerak mendukung VO dan tindakan, hold sebelum transisi.",
+      "reason": "Gerak mendukung VO dan tindakan, hold sebelum transisi. S02 V13: topik hold, bukan subtitle.",
       "stateIn": "Kertas hasil cetak",
       "stateOut": "Host printer",
       "handoff": {
         "type": "match",
-        "reason": "Pertahankan objek/jendela; match komposisi saat pindah ke world UI."
+        "reason": "Carry objek dari S01 centered: +112→+80px selama 36f seperti referensi V10, lalu kembali ke posisi asli sampai 78f; keyframe aksi S02 tidak berubah."
       },
       "phases": {
         "action": null,
@@ -119,11 +153,11 @@
       ]
     },
     {
-      "beatIndex": 5,
+      "beatIndex": 6,
       "intent": "sequence",
       "motion": "state-transform",
       "focusTarget": "Ikon fitur",
-      "reason": "Gerak mendukung VO dan tindakan, hold sebelum transisi.",
+      "reason": "Gerak mendukung VO dan tindakan, hold sebelum transisi. S02 V13: topik hold, bukan subtitle.",
       "stateIn": "Host printer",
       "stateOut": "Ikon fitur",
       "handoff": {
@@ -138,15 +172,17 @@
       "camera": null,
       "collisionPolicy": "World UI/cursor dipotong di viewport; subtitle di screen-space, terpisah. Tumpang tindih kontrol dengan shell asli disengaja.",
       "editableTargets": [
-        "S02 — Subtitle 02"
+        "S02 — Subtitle 02",
+        "S02 — Subtitle 02 — 2",
+        "S02 — Highlight Printer Sharing"
       ]
     },
     {
-      "beatIndex": 6,
+      "beatIndex": 7,
       "intent": "sequence",
       "motion": "focus-handoff",
       "focusTarget": "Koneksi kedua komputer",
-      "reason": "Gerak mendukung VO dan tindakan, hold sebelum transisi.",
+      "reason": "Gerak mendukung VO dan tindakan, hold sebelum transisi. S02 V13: topik hold, bukan subtitle.",
       "stateIn": "Ikon fitur",
       "stateOut": "Koneksi kedua komputer",
       "handoff": {
@@ -161,15 +197,16 @@
       "camera": null,
       "collisionPolicy": "World UI/cursor dipotong di viewport; subtitle di screen-space, terpisah. Tumpang tindih kontrol dengan shell asli disengaja.",
       "editableTargets": [
-        "S02 — Subtitle 03"
+        "S02 — Subtitle 03",
+        "S02 — Highlight jaringan yang sama"
       ]
     },
     {
-      "beatIndex": 7,
+      "beatIndex": 8,
       "intent": "sequence",
       "motion": "progressive-build",
       "focusTarget": "Contoh IP",
-      "reason": "Gerak mendukung VO dan tindakan, hold sebelum transisi.",
+      "reason": "Gerak mendukung VO dan tindakan, hold sebelum transisi. S02 V13: topik hold, bukan subtitle.",
       "stateIn": "Koneksi kedua komputer",
       "stateOut": "Contoh IP",
       "handoff": {
@@ -184,15 +221,16 @@
       "camera": null,
       "collisionPolicy": "World UI/cursor dipotong di viewport; subtitle di screen-space, terpisah. Tumpang tindih kontrol dengan shell asli disengaja.",
       "editableTargets": [
-        "S02 — Subtitle 04"
+        "S02 — Subtitle 04",
+        "S02 — Highlight jaringan yang sama"
       ]
     },
     {
-      "beatIndex": 8,
+      "beatIndex": 9,
       "intent": "sequence",
       "motion": "focus-zoom",
       "focusTarget": "Host menuju Run",
-      "reason": "Gerak mendukung VO dan tindakan, hold sebelum transisi.",
+      "reason": "Gerak mendukung VO dan tindakan, hold sebelum transisi. S03 Hybrid ACC: contextual headline atau outline UI tunggal; world dan cursor ditranslasi bersama, keyframe aksi tidak berubah.",
       "stateIn": "Contoh IP",
       "stateOut": "Host menuju Run",
       "handoff": {
@@ -207,15 +245,17 @@
       "camera": null,
       "collisionPolicy": "World UI/cursor dipotong di viewport; subtitle di screen-space, terpisah. Tumpang tindih kontrol dengan shell asli disengaja.",
       "editableTargets": [
-        "S03 — Subtitle 01"
+        "S03 — Subtitle 01",
+        "S03 — Subtitle 01 — 2",
+        "S03 — Highlight komputer utama"
       ]
     },
     {
-      "beatIndex": 9,
+      "beatIndex": 10,
       "intent": "sequence",
       "motion": "natural-typing",
       "focusTarget": "Run dan Control Panel",
-      "reason": "Gerak mendukung VO dan tindakan, hold sebelum transisi.",
+      "reason": "Gerak mendukung VO dan tindakan, hold sebelum transisi. S03 Hybrid ACC: contextual headline atau outline UI tunggal; world dan cursor ditranslasi bersama, keyframe aksi tidak berubah.",
       "stateIn": "Host menuju Run",
       "stateOut": "Run dan Control Panel",
       "handoff": {
@@ -230,15 +270,16 @@
       "camera": null,
       "collisionPolicy": "World UI/cursor dipotong di viewport; subtitle di screen-space, terpisah. Tumpang tindih kontrol dengan shell asli disengaja.",
       "editableTargets": [
-        "S03 — Subtitle 02"
+        "S03 — Subtitle 02",
+        "S03 — Highlight Win R"
       ]
     },
     {
-      "beatIndex": 10,
+      "beatIndex": 11,
       "intent": "click",
       "motion": "cursor-action",
       "focusTarget": "Network and Internet → Network and Sharing Center",
-      "reason": "Gerak mendukung VO dan tindakan, hold sebelum transisi.",
+      "reason": "Gerak mendukung VO dan tindakan, hold sebelum transisi. S03 Hybrid ACC: contextual headline atau outline UI tunggal; world dan cursor ditranslasi bersama, keyframe aksi tidak berubah.",
       "stateIn": "Run dan Control Panel",
       "stateOut": "Network and Internet → Network and Sharing Center",
       "handoff": {
@@ -257,20 +298,20 @@
           "h": 1385
         },
         "viewport": {
-          "x": 50,
-          "y": 250,
-          "w": 980,
-          "h": 1070
+          "x": 128.0,
+          "y": 485,
+          "w": 784.0,
+          "h": 856.0
         },
         "start": {
           "cx": 540.0,
           "cy": 774.0,
-          "zoom": 1.0
+          "zoom": 0.8
         },
         "end": {
           "cx": 548.0514652281673,
           "cy": 713.7046216649658,
-          "zoom": 1.2685231083248287
+          "zoom": 1.014818486659863
         },
         "focusSamples": [
           {
@@ -278,7 +319,7 @@
             "pose": {
               "cx": 615.0,
               "cy": 716.0,
-              "zoom": 1.28
+              "zoom": 1.024
             },
             "target": {
               "x": 360,
@@ -291,15 +332,17 @@
       },
       "collisionPolicy": "World UI/cursor dipotong di viewport; subtitle di screen-space, terpisah. Tumpang tindih kontrol dengan shell asli disengaja.",
       "editableTargets": [
-        "S03 — Subtitle 03"
+        "S03 — Subtitle 03",
+        "S03 — Highlight Network and Internet",
+        "S03 — Highlight Network and Sharing Center"
       ]
     },
     {
-      "beatIndex": 11,
+      "beatIndex": 12,
       "intent": "click",
       "motion": "cursor-action",
       "focusTarget": "Change advanced sharing settings",
-      "reason": "Gerak mendukung VO dan tindakan, hold sebelum transisi.",
+      "reason": "Gerak mendukung VO dan tindakan, hold sebelum transisi. S03 Hybrid ACC: contextual headline atau outline UI tunggal; world dan cursor ditranslasi bersama, keyframe aksi tidak berubah.",
       "stateIn": "Network and Internet → Network and Sharing Center",
       "stateOut": "Change advanced sharing settings",
       "handoff": {
@@ -318,20 +361,20 @@
           "h": 1385
         },
         "viewport": {
-          "x": 50,
-          "y": 250,
-          "w": 980,
-          "h": 1070
+          "x": 128.0,
+          "y": 485,
+          "w": 784.0,
+          "h": 856.0
         },
         "start": {
           "cx": 548.0514652281673,
           "cy": 713.7046216649658,
-          "zoom": 1.2685231083248287
+          "zoom": 1.014818486659863
         },
         "end": {
           "cx": 459.8250728862974,
           "cy": 722.6880466472303,
-          "zoom": 1.2004373177842567
+          "zoom": 0.9603498542274054
         },
         "focusSamples": [
           {
@@ -339,7 +382,7 @@
             "pose": {
               "cx": 440.0,
               "cy": 710.0,
-              "zoom": 1.25
+              "zoom": 1.0
             },
             "target": {
               "x": 74,
@@ -352,15 +395,16 @@
       },
       "collisionPolicy": "World UI/cursor dipotong di viewport; subtitle di screen-space, terpisah. Tumpang tindih kontrol dengan shell asli disengaja.",
       "editableTargets": [
-        "S03 — Subtitle 04"
+        "S03 — Subtitle 04",
+        "S03 — Highlight Change advanced sharing settings"
       ]
     },
     {
-      "beatIndex": 12,
+      "beatIndex": 13,
       "intent": "click",
       "motion": "state-transform",
       "focusTarget": "Network discovery",
-      "reason": "Gerak mendukung VO dan tindakan, hold sebelum transisi.",
+      "reason": "Gerak mendukung VO dan tindakan, hold sebelum transisi. S03 Hybrid ACC: contextual headline atau outline UI tunggal; world dan cursor ditranslasi bersama, keyframe aksi tidak berubah.",
       "stateIn": "Change advanced sharing settings",
       "stateOut": "Network discovery",
       "handoff": {
@@ -379,20 +423,20 @@
           "h": 1385
         },
         "viewport": {
-          "x": 50,
-          "y": 250,
-          "w": 980,
-          "h": 1070
+          "x": 128.0,
+          "y": 485,
+          "w": 784.0,
+          "h": 856.0
         },
         "start": {
           "cx": 459.8250728862974,
           "cy": 722.6880466472303,
-          "zoom": 1.2004373177842567
+          "zoom": 0.9603498542274054
         },
         "end": {
           "cx": 392.0,
           "cy": 800.0,
-          "zoom": 1.45
+          "zoom": 1.16
         },
         "focusSamples": [
           {
@@ -400,7 +444,7 @@
             "pose": {
               "cx": 392.0,
               "cy": 800.0,
-              "zoom": 1.45
+              "zoom": 1.16
             },
             "target": {
               "x": 142,
@@ -413,15 +457,16 @@
       },
       "collisionPolicy": "World UI/cursor dipotong di viewport; subtitle di screen-space, terpisah. Tumpang tindih kontrol dengan shell asli disengaja.",
       "editableTargets": [
-        "S03 — Subtitle 05"
+        "S03 — Subtitle 05",
+        "S03 — Highlight Network Discovery"
       ]
     },
     {
-      "beatIndex": 13,
+      "beatIndex": 14,
       "intent": "click",
       "motion": "state-transform",
       "focusTarget": "File and printer sharing",
-      "reason": "Gerak mendukung VO dan tindakan, hold sebelum transisi.",
+      "reason": "Gerak mendukung VO dan tindakan, hold sebelum transisi. S03 Hybrid ACC: contextual headline atau outline UI tunggal; world dan cursor ditranslasi bersama, keyframe aksi tidak berubah.",
       "stateIn": "Network discovery",
       "stateOut": "File and printer sharing",
       "handoff": {
@@ -440,20 +485,20 @@
           "h": 1385
         },
         "viewport": {
-          "x": 50,
-          "y": 250,
-          "w": 980,
-          "h": 1070
+          "x": 128.0,
+          "y": 485,
+          "w": 784.0,
+          "h": 856.0
         },
         "start": {
           "cx": 392.0,
           "cy": 800.0,
-          "zoom": 1.45
+          "zoom": 1.16
         },
         "end": {
           "cx": 540.0,
           "cy": 774.0,
-          "zoom": 1.0
+          "zoom": 0.8
         },
         "focusSamples": [
           {
@@ -461,7 +506,7 @@
             "pose": {
               "cx": 392.0,
               "cy": 800.0,
-              "zoom": 1.45
+              "zoom": 1.16
             },
             "target": {
               "x": 142,
@@ -474,15 +519,16 @@
       },
       "collisionPolicy": "World UI/cursor dipotong di viewport; subtitle di screen-space, terpisah. Tumpang tindih kontrol dengan shell asli disengaja.",
       "editableTargets": [
-        "S03 — Subtitle 06"
+        "S03 — Subtitle 06",
+        "S03 — Highlight File and Printer Sharing"
       ]
     },
     {
-      "beatIndex": 14,
+      "beatIndex": 15,
       "intent": "click",
       "motion": "result-hold",
       "focusTarget": "Save changes → Network and Sharing Center",
-      "reason": "Gerak mendukung VO dan tindakan, hold sebelum transisi.",
+      "reason": "Gerak mendukung VO dan tindakan, hold sebelum transisi. S03 Hybrid ACC: contextual headline atau outline UI tunggal; world dan cursor ditranslasi bersama, keyframe aksi tidak berubah.",
       "stateIn": "File and printer sharing",
       "stateOut": "Save changes → Network and Sharing Center",
       "handoff": {
@@ -501,20 +547,20 @@
           "h": 1385
         },
         "viewport": {
-          "x": 50,
-          "y": 250,
-          "w": 980,
-          "h": 1070
+          "x": 128.0,
+          "y": 485,
+          "w": 784.0,
+          "h": 856.0
         },
         "start": {
           "cx": 540.0,
           "cy": 774.0,
-          "zoom": 1.0
+          "zoom": 0.8
         },
         "end": {
           "cx": 540.0,
           "cy": 774.0,
-          "zoom": 1.0
+          "zoom": 0.8
         },
         "focusSamples": [
           {
@@ -522,7 +568,7 @@
             "pose": {
               "cx": 540.0,
               "cy": 774.0,
-              "zoom": 1.0
+              "zoom": 0.8
             },
             "target": {
               "x": 706,
@@ -535,11 +581,12 @@
       },
       "collisionPolicy": "World UI/cursor dipotong di viewport; subtitle di screen-space, terpisah. Tumpang tindih kontrol dengan shell asli disengaja.",
       "editableTargets": [
-        "S03 — Subtitle 07"
+        "S03 — Subtitle 07",
+        "S03 — Highlight Save changes"
       ]
     },
     {
-      "beatIndex": 15,
+      "beatIndex": 16,
       "intent": "sequence",
       "motion": "cursor-action",
       "focusTarget": "Control Panel → Devices and Printers",
@@ -562,7 +609,7 @@
       ]
     },
     {
-      "beatIndex": 16,
+      "beatIndex": 17,
       "intent": "click",
       "motion": "cursor-action",
       "focusTarget": "Printer properties",
@@ -581,11 +628,12 @@
       "camera": null,
       "collisionPolicy": "UI dan dialog asli dalam viewport, subtitle di screen space.",
       "editableTargets": [
-        "S04 — Subtitle 02"
+        "S04 — Subtitle 02",
+        "S04 — Subtitle 02 — 2"
       ]
     },
     {
-      "beatIndex": 17,
+      "beatIndex": 18,
       "intent": "click",
       "motion": "state-transform",
       "focusTarget": "Sharing tab",
@@ -608,7 +656,7 @@
       ]
     },
     {
-      "beatIndex": 18,
+      "beatIndex": 19,
       "intent": "click",
       "motion": "state-transform",
       "focusTarget": "Share this printer",
@@ -631,7 +679,7 @@
       ]
     },
     {
-      "beatIndex": 19,
+      "beatIndex": 20,
       "intent": "click",
       "motion": "result-hold",
       "focusTarget": "OK",
@@ -654,7 +702,7 @@
       ]
     },
     {
-      "beatIndex": 20,
+      "beatIndex": 21,
       "intent": "shift-focus",
       "motion": "focus-handoff",
       "focusTarget": "Komputer kedua",
@@ -677,7 +725,7 @@
       ]
     },
     {
-      "beatIndex": 21,
+      "beatIndex": 22,
       "intent": "click",
       "motion": "cursor-action",
       "focusTarget": "Win + R",
@@ -700,7 +748,7 @@
       ]
     },
     {
-      "beatIndex": 22,
+      "beatIndex": 23,
       "intent": "type",
       "motion": "natural-typing",
       "focusTarget": "UNC address",
@@ -723,7 +771,7 @@
       ]
     },
     {
-      "beatIndex": 23,
+      "beatIndex": 24,
       "intent": "point",
       "motion": "hold",
       "focusTarget": "Printer terlihat",
@@ -746,7 +794,7 @@
       ]
     },
     {
-      "beatIndex": 24,
+      "beatIndex": 25,
       "intent": "click",
       "motion": "result-hold",
       "focusTarget": "Connect → instalasi selesai",
@@ -769,7 +817,7 @@
       ]
     },
     {
-      "beatIndex": 25,
+      "beatIndex": 26,
       "intent": "result",
       "motion": "cursor-action",
       "focusTarget": "Dokumen dan dialog Print",
@@ -792,7 +840,7 @@
       ]
     },
     {
-      "beatIndex": 26,
+      "beatIndex": 27,
       "intent": "flow",
       "motion": "path-motion",
       "focusTarget": "Print → LAN → USB → kertas",
@@ -815,7 +863,7 @@
       ]
     },
     {
-      "beatIndex": 27,
+      "beatIndex": 28,
       "intent": "point",
       "motion": "selective-emphasis",
       "focusTarget": "Komputer host tetap menyala",
@@ -834,11 +882,12 @@
       "camera": null,
       "collisionPolicy": "UI modal sengaja di dalam window; subtitle terpisah dari area objek; transisi fade dengan Freeze.",
       "editableTargets": [
-        "S06 — Subtitle 03"
+        "S06 — Subtitle 03",
+        "S06 — Subtitle 03 — 2"
       ]
     },
     {
-      "beatIndex": 28,
+      "beatIndex": 29,
       "intent": "result",
       "motion": "result-hold",
       "focusTarget": "Host dan hasil cetak",
@@ -861,7 +910,7 @@
       ]
     },
     {
-      "beatIndex": 29,
+      "beatIndex": 30,
       "intent": "bridge",
       "motion": "motivated-cut",
       "focusTarget": "Bubble percakapan",
@@ -884,7 +933,7 @@
       ]
     },
     {
-      "beatIndex": 30,
+      "beatIndex": 31,
       "intent": "detail",
       "motion": "progressive-build",
       "focusTarget": "Printer mengeluarkan kertas",
@@ -907,7 +956,7 @@
       ]
     },
     {
-      "beatIndex": 31,
+      "beatIndex": 32,
       "intent": "type",
       "motion": "natural-typing",
       "focusTarget": "Komentar di dalam bubble",
@@ -930,7 +979,7 @@
       ]
     },
     {
-      "beatIndex": 32,
+      "beatIndex": 33,
       "intent": "recap",
       "motion": "progressive-build",
       "focusTarget": "Mini-demo dan cover hero",

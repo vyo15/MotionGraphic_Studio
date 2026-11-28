@@ -42,8 +42,9 @@ test('real add-on ZIP imports and syncs without touching other active projects',
  assert.equal(catalog.videos.length,1);
  assert.equal(catalog.videos[0].voiceGuideCompositionId,'DemoAddonVOGuide');
  const again=spawnSync(process.execPath,[path.join(dir,'tools/import-video.mjs'),zip],{cwd:dir,encoding:'utf8',env:fixtureEnv});
- assert.equal(again.status,0,again.stderr);
- assert.match(again.stdout,/LEWATI/);
+ assert.notEqual(again.status,0);
+ assert.match(again.stderr,/Project sudah ada/);
+ assert.equal(fs.readFileSync(path.join(dir,'projects/demo-addon/src/Video.tsx'),'utf8'),imported);
 }));
 test('ZIP lean really excludes historical backups, while keeping project data and contracts',()=>fixture(async dir=>{
  fs.mkdirSync(path.join(dir,'library/backups'),{recursive:true});
@@ -59,4 +60,12 @@ test('ZIP lean really excludes historical backups, while keeping project data an
  assert.ok(entries.some(x=>x.name.endsWith('projects/demo/video.txt')));
  assert.ok(entries.some(x=>x.name.endsWith('contracts/studio-capabilities.json')));
  assert.ok(fs.existsSync(path.join(dir,'library/backups/old.txt')));
+}));
+
+test('legacy import failure twice quarantines uniquely and leaves no active project',()=>fixture(async dir=>{
+ host(dir);const source=addon(dir);
+ fs.writeFileSync(path.join(source,'src/config/narration.json'),JSON.stringify({schemaVersion:1,status:'draft',beats:[{scene:'S01',startFrame:5,endFrame:60,text:'Gap'}]}));
+ const zip=path.join(dir,'bad.zip');await createZip(await collectEntries([{absolute:source,name:'demo-addon'}]),zip);
+ for(let i=0;i<2;i++){const r=spawnSync(process.execPath,[path.join(dir,'tools/import-video.mjs'),zip],{cwd:dir,encoding:'utf8',env:fixtureEnv});assert.notEqual(r.status,0);assert.equal(fs.existsSync(path.join(dir,'projects/demo-addon')),false);}
+ assert.equal(fs.readdirSync(path.join(dir,'library/gagal-import')).length,2);assert.deepEqual(JSON.parse(fs.readFileSync(path.join(dir,'library/catalog.json'),'utf8')).videos,[]);
 }));

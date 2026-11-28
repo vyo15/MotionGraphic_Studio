@@ -1,0 +1,124 @@
+{
+  "schemaVersion": 1,
+  "status": "draft",
+  "narrationHash": "eaf9aa16f30fc4c6eb20128a76fc358f493add0578f0daed4442962989255608",
+  "beats": [
+    {
+      "beatIndex": 0,
+      "intent": "introduce",
+      "motion": "selective-emphasis",
+      "focusTarget": "S01 — Judul",
+      "reason": "Tunjukkan langkah dan hasil sesuai narasi",
+      "stateIn": "Hook muncul",
+      "stateOut": "Fokus ke pertanyaan",
+      "handoff": {
+        "type": "start",
+        "reason": "Beat pertama"
+      },
+      "phases": {
+        "action": null,
+        "reaction": null,
+        "holdStart": 12
+      },
+      "camera": null,
+      "collisionPolicy": "Subtitle terpisah; isi Run berada di panel dengan overlap disengaja",
+      "editableTargets": [
+        "S01 — Judul"
+      ]
+    },
+    {
+      "beatIndex": 1,
+      "intent": "click",
+      "motion": "cursor-action",
+      "focusTarget": "S02 — Tombol Win",
+      "reason": "Tunjukkan langkah dan hasil sesuai narasi",
+      "stateIn": "Tombol siap",
+      "stateOut": "Tombol ditekan lalu Run muncul",
+      "handoff": {
+        "type": "cut",
+        "reason": "Pergantian fungsi visual"
+      },
+      "phases": {
+        "action": 40,
+        "reaction": 56,
+        "holdStart": 68
+      },
+      "camera": null,
+      "collisionPolicy": "Subtitle terpisah; isi Run berada di panel dengan overlap disengaja",
+      "editableTargets": [
+        "S02 — Tombol Win"
+      ]
+    },
+    {
+      "beatIndex": 2,
+      "intent": "result",
+      "motion": "result-hold",
+      "focusTarget": "S02 — Run title",
+      "reason": "Tunjukkan langkah dan hasil sesuai narasi",
+      "stateIn": "Run terlihat",
+      "stateOut": "Hasil ditahan",
+      "handoff": {
+        "type": "carry",
+        "reason": "Objek sama"
+      },
+      "phases": {
+        "action": null,
+        "reaction": null,
+        "holdStart": 0
+      },
+      "camera": null,
+      "collisionPolicy": "Subtitle terpisah; isi Run berada di panel dengan overlap disengaja",
+      "editableTargets": [
+        "S02 — Run title"
+      ]
+    },
+    {
+      "beatIndex": 3,
+      "intent": "recap",
+      "motion": "selective-emphasis",
+      "focusTarget": "S03 — Judul",
+      "reason": "Tunjukkan langkah dan hasil sesuai narasi",
+      "stateIn": "Demo selesai",
+      "stateOut": "Pertanyaan CTA",
+      "handoff": {
+        "type": "cut",
+        "reason": "Pergantian fungsi visual"
+      },
+      "phases": {
+        "action": null,
+        "reaction": null,
+        "holdStart": 10
+      },
+      "camera": null,
+      "collisionPolicy": "Subtitle terpisah; isi Run berada di panel dengan overlap disengaja",
+      "editableTargets": [
+        "S03 — Judul"
+      ]
+    },
+    {
+      "beatIndex": 4,
+      "intent": "recap",
+      "motion": "progressive-build",
+      "focusTarget": "S04 — Judul",
+      "reason": "Tunjukkan langkah dan hasil sesuai narasi",
+      "stateIn": "CTA selesai",
+      "stateOut": "Mini-demo lalu hero cover ditahan",
+      "handoff": {
+        "type": "cut",
+        "reason": "Pergantian fungsi visual"
+      },
+      "phases": {
+        "action": 12,
+        "reaction": 22,
+        "holdStart": 58
+      },
+      "camera": null,
+      "collisionPolicy": "Subtitle terpisah; isi Run berada di panel dengan overlap disengaja",
+      "editableTargets": [
+        "S04 — Mini shortcut",
+        "S04 — Mini Run",
+        "S04 — Judul"
+      ]
+    }
+  ]
+}

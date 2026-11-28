@@ -1,12 +1,96 @@
 {
   "schemaVersion": 1,
   "nativeTextTargets": [
-    {"name": "S01 — Judul", "source": "src/scenes/Scene01.tsx"},
-    {"name": "S01 — Isi kartu", "source": "src/scenes/Scene01.tsx"},
-    {"name": "S01 — Subtitle 01", "source": "src/scenes/Scene01.tsx"}
+    {
+      "name": "S01 — Judul",
+      "source": "src/scenes/Scene01.tsx"
+    },
+    {
+      "name": "S01 — Subtitle 01",
+      "source": "src/scenes/Scene01.tsx"
+    },
+    {
+      "name": "S02 — Tombol R",
+      "source": "src/scenes/Scene02.tsx"
+    },
+    {
+      "name": "S02 — Run title",
+      "source": "src/scenes/Scene02.tsx"
+    },
+    {
+      "name": "S02 — Run instruction",
+      "source": "src/scenes/Scene02.tsx"
+    },
+    {
+      "name": "S02 — Run open",
+      "source": "src/scenes/Scene02.tsx"
+    },
+    {
+      "name": "S02 — Run OK",
+      "source": "src/scenes/Scene02.tsx"
+    },
+    {
+      "name": "S02 — Run Cancel",
+      "source": "src/scenes/Scene02.tsx"
+    },
+    {
+      "name": "S02 — Run Browse",
+      "source": "src/scenes/Scene02.tsx"
+    },
+    {
+      "name": "S02 — Subtitle 01",
+      "source": "src/scenes/Scene02.tsx"
+    },
+    {
+      "name": "S02 — Subtitle 02",
+      "source": "src/scenes/Scene02.tsx"
+    },
+    {
+      "name": "S03 — Judul",
+      "source": "src/scenes/Scene03.tsx"
+    },
+    {
+      "name": "S03 — Subtitle 01",
+      "source": "src/scenes/Scene03.tsx"
+    },
+    {
+      "name": "S04 — Judul",
+      "source": "src/scenes/Scene04.tsx"
+    },
+    {
+      "name": "S04 — Hero",
+      "source": "src/scenes/Scene04.tsx"
+    },
+    {
+      "name": "S04 — Mini shortcut",
+      "source": "src/scenes/Scene04.tsx"
+    },
+    {
+      "name": "S04 — Mini Run",
+      "source": "src/scenes/Scene04.tsx"
+    }
   ],
   "nativeVisualTargets": [
-    {"name": "S01 — Kartu informasi", "source": "src/scenes/Scene01.tsx"}
+    {
+      "name": "S02 — Tombol Win",
+      "source": "src/scenes/Scene02.tsx"
+    },
+    {
+      "name": "S02 — Run window",
+      "source": "src/scenes/Scene02.tsx"
+    },
+    {
+      "name": "S02 — Run input",
+      "source": "src/scenes/Scene02.tsx"
+    },
+    {
+      "name": "S04 — Windows",
+      "source": "src/scenes/Scene04.tsx"
+    },
+    {
+      "name": "S00 — Background",
+      "source": "src/components/EditorialBackground.tsx"
+    }
   ],
   "propsTextTargets": [],
   "guiVerification": "unverified"

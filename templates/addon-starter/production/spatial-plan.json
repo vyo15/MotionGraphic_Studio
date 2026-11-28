@@ -1,0 +1,929 @@
+{
+  "schemaVersion": 1,
+  "narrationHash": "eaf9aa16f30fc4c6eb20128a76fc358f493add0578f0daed4442962989255608",
+  "safeRect": {
+    "x": 120,
+    "y": 280,
+    "w": 800,
+    "h": 1290
+  },
+  "worlds": [],
+  "tracks": [
+    {
+      "id": "S01 — Judul",
+      "space": "screen",
+      "protected": true,
+      "start": 0,
+      "end": 90,
+      "keys": [
+        {
+          "frame": 0,
+          "value": {
+            "x": 120.0,
+            "y": 565.0,
+            "w": 800.0,
+            "h": 210.0
+          }
+        },
+        {
+          "frame": 89,
+          "value": {
+            "x": 120.0,
+            "y": 565.0,
+            "w": 800.0,
+            "h": 210.0
+          }
+        }
+      ],
+      "role": "headline",
+      "nativeName": "S01 — Judul",
+      "visibility": "visible",
+      "hiddenFrames": [
+        0
+      ],
+      "native": true,
+      "fadeRanges": [
+        {
+          "start": 0,
+          "end": 12
+        }
+      ],
+      "source": "src/scenes/Scene01.tsx",
+      "fontFamily": "MG Poppins"
+    },
+    {
+      "id": "S01 — Subtitle 01",
+      "space": "screen",
+      "protected": true,
+      "start": 0,
+      "end": 90,
+      "keys": [
+        {
+          "frame": 0,
+          "value": {
+            "x": 120.0,
+            "y": 1483.4,
+            "w": 800.0,
+            "h": 43.2
+          }
+        },
+        {
+          "frame": 89,
+          "value": {
+            "x": 120.0,
+            "y": 1483.4,
+            "w": 800.0,
+            "h": 43.2
+          }
+        }
+      ],
+      "role": "vo-guide",
+      "nativeName": "S01 — Subtitle 01",
+      "visibility": "visible",
+      "native": true,
+      "maxLines": 1,
+      "minFontSize": 32,
+      "source": "src/scenes/Scene01.tsx",
+      "fontFamily": "MG Inter"
+    },
+    {
+      "id": "S02 — Tombol Win",
+      "space": "screen",
+      "protected": true,
+      "start": 90,
+      "end": 360,
+      "keys": [
+        {
+          "frame": 90,
+          "value": {
+            "x": 200.0,
+            "y": 400.0,
+            "w": 270.0,
+            "h": 170.0
+          }
+        },
+        {
+          "frame": 359,
+          "value": {
+            "x": 200.0,
+            "y": 400.0,
+            "w": 270.0,
+            "h": 170.0
+          }
+        }
+      ],
+      "role": "ui-control",
+      "nativeName": "S02 — Tombol Win",
+      "visibility": "visible",
+      "native": true,
+      "textRequired": false,
+      "source": "src/scenes/Scene02.tsx"
+    },
+    {
+      "id": "S02 — Tombol R",
+      "space": "screen",
+      "protected": true,
+      "start": 90,
+      "end": 360,
+      "keys": [
+        {
+          "frame": 90,
+          "value": {
+            "x": 570.0,
+            "y": 400.0,
+            "w": 270.0,
+            "h": 170.0
+          }
+        },
+        {
+          "frame": 359,
+          "value": {
+            "x": 570.0,
+            "y": 400.0,
+            "w": 270.0,
+            "h": 170.0
+          }
+        }
+      ],
+      "role": "ui-control",
+      "nativeName": "S02 — Tombol R",
+      "visibility": "visible",
+      "native": true,
+      "textRequired": true,
+      "source": "src/scenes/Scene02.tsx",
+      "fontFamily": "MG Poppins"
+    },
+    {
+      "id": "S02 — Run window",
+      "space": "screen",
+      "protected": true,
+      "start": 146,
+      "end": 360,
+      "keys": [
+        {
+          "frame": 146,
+          "value": {
+            "x": 190.0,
+            "y": 660.0,
+            "w": 660.0,
+            "h": 445.0
+          }
+        },
+        {
+          "frame": 359,
+          "value": {
+            "x": 190.0,
+            "y": 660.0,
+            "w": 660.0,
+            "h": 445.0
+          }
+        }
+      ],
+      "role": "container",
+      "nativeName": "S02 — Run window",
+      "visibility": "visible",
+      "hiddenFrames": [
+        146
+      ],
+      "native": true,
+      "fadeRanges": [
+        {
+          "start": 146,
+          "end": 158
+        }
+      ],
+      "source": "src/scenes/Scene02.tsx"
+    },
+    {
+      "id": "S02 — Run title",
+      "space": "screen",
+      "protected": true,
+      "start": 146,
+      "end": 360,
+      "keys": [
+        {
+          "frame": 146,
+          "value": {
+            "x": 214.0,
+            "y": 680.0,
+            "w": 612.0,
+            "h": 55.0
+          }
+        },
+        {
+          "frame": 359,
+          "value": {
+            "x": 214.0,
+            "y": 680.0,
+            "w": 612.0,
+            "h": 55.0
+          }
+        }
+      ],
+      "role": "text",
+      "nativeName": "S02 — Run title",
+      "visibility": "visible",
+      "hiddenFrames": [
+        146
+      ],
+      "native": true,
+      "fadeRanges": [
+        {
+          "start": 146,
+          "end": 158
+        }
+      ],
+      "source": "src/scenes/Scene02.tsx"
+    },
+    {
+      "id": "S02 — Run instruction",
+      "space": "screen",
+      "protected": true,
+      "start": 146,
+      "end": 360,
+      "keys": [
+        {
+          "frame": 146,
+          "value": {
+            "x": 214.0,
+            "y": 746.0,
+            "w": 612.0,
+            "h": 100.0
+          }
+        },
+        {
+          "frame": 359,
+          "value": {
+            "x": 214.0,
+            "y": 746.0,
+            "w": 612.0,
+            "h": 100.0
+          }
+        }
+      ],
+      "role": "text",
+      "nativeName": "S02 — Run instruction",
+      "visibility": "visible",
+      "hiddenFrames": [
+        146
+      ],
+      "native": true,
+      "fadeRanges": [
+        {
+          "start": 146,
+          "end": 158
+        }
+      ],
+      "source": "src/scenes/Scene02.tsx"
+    },
+    {
+      "id": "S02 — Run open",
+      "space": "screen",
+      "protected": true,
+      "start": 146,
+      "end": 360,
+      "keys": [
+        {
+          "frame": 146,
+          "value": {
+            "x": 214.0,
+            "y": 870.0,
+            "w": 105.0,
+            "h": 55.0
+          }
+        },
+        {
+          "frame": 359,
+          "value": {
+            "x": 214.0,
+            "y": 870.0,
+            "w": 105.0,
+            "h": 55.0
+          }
+        }
+      ],
+      "role": "text",
+      "nativeName": "S02 — Run open",
+      "visibility": "visible",
+      "hiddenFrames": [
+        146
+      ],
+      "native": true,
+      "fadeRanges": [
+        {
+          "start": 146,
+          "end": 158
+        }
+      ],
+      "source": "src/scenes/Scene02.tsx"
+    },
+    {
+      "id": "S02 — Run input",
+      "space": "screen",
+      "protected": true,
+      "start": 146,
+      "end": 360,
+      "keys": [
+        {
+          "frame": 146,
+          "value": {
+            "x": 327.0,
+            "y": 860.0,
+            "w": 500.0,
+            "h": 80.0
+          }
+        },
+        {
+          "frame": 359,
+          "value": {
+            "x": 327.0,
+            "y": 860.0,
+            "w": 500.0,
+            "h": 80.0
+          }
+        }
+      ],
+      "role": "ui-control",
+      "nativeName": "S02 — Run input",
+      "visibility": "visible",
+      "hiddenFrames": [
+        146
+      ],
+      "native": true,
+      "textRequired": false,
+      "fadeRanges": [
+        {
+          "start": 146,
+          "end": 158
+        }
+      ],
+      "source": "src/scenes/Scene02.tsx"
+    },
+    {
+      "id": "S02 — Run OK",
+      "space": "screen",
+      "protected": true,
+      "start": 146,
+      "end": 360,
+      "keys": [
+        {
+          "frame": 146,
+          "value": {
+            "x": 347.0,
+            "y": 985.0,
+            "w": 150.0,
+            "h": 65.0
+          }
+        },
+        {
+          "frame": 359,
+          "value": {
+            "x": 347.0,
+            "y": 985.0,
+            "w": 150.0,
+            "h": 65.0
+          }
+        }
+      ],
+      "role": "ui-control",
+      "nativeName": "S02 — Run OK",
+      "visibility": "visible",
+      "hiddenFrames": [
+        146
+      ],
+      "native": true,
+      "textRequired": true,
+      "fadeRanges": [
+        {
+          "start": 146,
+          "end": 158
+        }
+      ],
+      "source": "src/scenes/Scene02.tsx"
+    },
+    {
+      "id": "S02 — Run Cancel",
+      "space": "screen",
+      "protected": true,
+      "start": 146,
+      "end": 360,
+      "keys": [
+        {
+          "frame": 146,
+          "value": {
+            "x": 510.0,
+            "y": 985.0,
+            "w": 150.0,
+            "h": 65.0
+          }
+        },
+        {
+          "frame": 359,
+          "value": {
+            "x": 510.0,
+            "y": 985.0,
+            "w": 150.0,
+            "h": 65.0
+          }
+        }
+      ],
+      "role": "ui-control",
+      "nativeName": "S02 — Run Cancel",
+      "visibility": "visible",
+      "hiddenFrames": [
+        146
+      ],
+      "native": true,
+      "textRequired": true,
+      "fadeRanges": [
+        {
+          "start": 146,
+          "end": 158
+        }
+      ],
+      "source": "src/scenes/Scene02.tsx"
+    },
+    {
+      "id": "S02 — Run Browse",
+      "space": "screen",
+      "protected": true,
+      "start": 146,
+      "end": 360,
+      "keys": [
+        {
+          "frame": 146,
+          "value": {
+            "x": 673.0,
+            "y": 985.0,
+            "w": 150.0,
+            "h": 65.0
+          }
+        },
+        {
+          "frame": 359,
+          "value": {
+            "x": 673.0,
+            "y": 985.0,
+            "w": 150.0,
+            "h": 65.0
+          }
+        }
+      ],
+      "role": "ui-control",
+      "nativeName": "S02 — Run Browse",
+      "visibility": "visible",
+      "hiddenFrames": [
+        146
+      ],
+      "native": true,
+      "textRequired": true,
+      "fadeRanges": [
+        {
+          "start": 146,
+          "end": 158
+        }
+      ],
+      "source": "src/scenes/Scene02.tsx"
+    },
+    {
+      "id": "S02 — Subtitle 01",
+      "space": "screen",
+      "protected": true,
+      "start": 90,
+      "end": 180,
+      "keys": [
+        {
+          "frame": 90,
+          "value": {
+            "x": 120.0,
+            "y": 1483.4,
+            "w": 800.0,
+            "h": 43.2
+          }
+        },
+        {
+          "frame": 179,
+          "value": {
+            "x": 120.0,
+            "y": 1483.4,
+            "w": 800.0,
+            "h": 43.2
+          }
+        }
+      ],
+      "role": "vo-guide",
+      "nativeName": "S02 — Subtitle 01",
+      "visibility": "visible",
+      "native": true,
+      "maxLines": 1,
+      "minFontSize": 32,
+      "source": "src/scenes/Scene02.tsx",
+      "fontFamily": "MG Inter"
+    },
+    {
+      "id": "S02 — Subtitle 02",
+      "space": "screen",
+      "protected": true,
+      "start": 180,
+      "end": 360,
+      "keys": [
+        {
+          "frame": 180,
+          "value": {
+            "x": 120.0,
+            "y": 1483.4,
+            "w": 800.0,
+            "h": 43.2
+          }
+        },
+        {
+          "frame": 359,
+          "value": {
+            "x": 120.0,
+            "y": 1483.4,
+            "w": 800.0,
+            "h": 43.2
+          }
+        }
+      ],
+      "role": "vo-guide",
+      "nativeName": "S02 — Subtitle 02",
+      "visibility": "visible",
+      "native": true,
+      "maxLines": 1,
+      "minFontSize": 32,
+      "source": "src/scenes/Scene02.tsx",
+      "fontFamily": "MG Inter"
+    },
+    {
+      "id": "S03 — Judul",
+      "space": "screen",
+      "protected": true,
+      "start": 360,
+      "end": 450,
+      "keys": [
+        {
+          "frame": 360,
+          "value": {
+            "x": 120.0,
+            "y": 570.0,
+            "w": 800.0,
+            "h": 310.0
+          }
+        },
+        {
+          "frame": 449,
+          "value": {
+            "x": 120.0,
+            "y": 570.0,
+            "w": 800.0,
+            "h": 310.0
+          }
+        }
+      ],
+      "role": "headline",
+      "nativeName": "S03 — Judul",
+      "visibility": "visible",
+      "hiddenFrames": [
+        360
+      ],
+      "native": true,
+      "fadeRanges": [
+        {
+          "start": 360,
+          "end": 370
+        }
+      ],
+      "source": "src/scenes/Scene03.tsx",
+      "fontFamily": "MG Poppins"
+    },
+    {
+      "id": "S03 — Subtitle 01",
+      "space": "screen",
+      "protected": true,
+      "start": 360,
+      "end": 450,
+      "keys": [
+        {
+          "frame": 360,
+          "value": {
+            "x": 120.0,
+            "y": 1483.4,
+            "w": 800.0,
+            "h": 43.2
+          }
+        },
+        {
+          "frame": 449,
+          "value": {
+            "x": 120.0,
+            "y": 1483.4,
+            "w": 800.0,
+            "h": 43.2
+          }
+        }
+      ],
+      "role": "vo-guide",
+      "nativeName": "S03 — Subtitle 01",
+      "visibility": "visible",
+      "native": true,
+      "maxLines": 1,
+      "minFontSize": 32,
+      "source": "src/scenes/Scene03.tsx",
+      "fontFamily": "MG Inter"
+    },
+    {
+      "id": "S04 — Judul",
+      "space": "screen",
+      "protected": true,
+      "start": 492,
+      "end": 600,
+      "keys": [
+        {
+          "frame": 492,
+          "value": {
+            "x": 120.0,
+            "y": 500.0,
+            "w": 800.0,
+            "h": 96.0
+          }
+        },
+        {
+          "frame": 599,
+          "value": {
+            "x": 120.0,
+            "y": 500.0,
+            "w": 800.0,
+            "h": 96.0
+          }
+        }
+      ],
+      "role": "headline",
+      "nativeName": "S04 — Judul",
+      "visibility": "visible",
+      "hiddenFrames": [
+        492
+      ],
+      "native": true,
+      "fadeRanges": [
+        {
+          "start": 492,
+          "end": 508
+        }
+      ],
+      "source": "src/scenes/Scene04.tsx",
+      "fontFamily": "MG Poppins"
+    },
+    {
+      "id": "S04 — Hero",
+      "space": "screen",
+      "protected": true,
+      "start": 492,
+      "end": 600,
+      "keys": [
+        {
+          "frame": 492,
+          "value": {
+            "x": 120.0,
+            "y": 608.0,
+            "w": 800.0,
+            "h": 160.0
+          }
+        },
+        {
+          "frame": 599,
+          "value": {
+            "x": 120.0,
+            "y": 608.0,
+            "w": 800.0,
+            "h": 160.0
+          }
+        }
+      ],
+      "role": "headline",
+      "nativeName": "S04 — Hero",
+      "visibility": "visible",
+      "hiddenFrames": [
+        492
+      ],
+      "native": true,
+      "fadeRanges": [
+        {
+          "start": 492,
+          "end": 508
+        }
+      ],
+      "source": "src/scenes/Scene04.tsx",
+      "fontFamily": "MG Poppins"
+    },
+    {
+      "id": "S04 — Windows",
+      "space": "screen",
+      "protected": true,
+      "start": 492,
+      "end": 600,
+      "keys": [
+        {
+          "frame": 492,
+          "value": {
+            "x": 420.0,
+            "y": 850.0,
+            "w": 200.0,
+            "h": 200.0
+          }
+        },
+        {
+          "frame": 599,
+          "value": {
+            "x": 420.0,
+            "y": 850.0,
+            "w": 200.0,
+            "h": 200.0
+          }
+        }
+      ],
+      "role": "primary-object",
+      "nativeName": "S04 — Windows",
+      "visibility": "visible",
+      "hiddenFrames": [
+        492
+      ],
+      "native": true,
+      "fadeRanges": [
+        {
+          "start": 492,
+          "end": 508
+        }
+      ],
+      "source": "src/scenes/Scene04.tsx"
+    },
+    {
+      "id": "S04 — Mini shortcut",
+      "space": "screen",
+      "protected": true,
+      "start": 450,
+      "end": 492,
+      "keys": [
+        {
+          "frame": 450,
+          "value": {
+            "x": 160.0,
+            "y": 620.0,
+            "w": 720.0,
+            "h": 150.0
+          }
+        },
+        {
+          "frame": 491,
+          "value": {
+            "x": 160.0,
+            "y": 620.0,
+            "w": 720.0,
+            "h": 150.0
+          }
+        }
+      ],
+      "role": "text",
+      "nativeName": "S04 — Mini shortcut",
+      "visibility": "visible",
+      "native": true,
+      "source": "src/scenes/Scene04.tsx",
+      "fontFamily": "MG Poppins"
+    },
+    {
+      "id": "S04 — Mini Run",
+      "space": "screen",
+      "protected": true,
+      "start": 472,
+      "end": 492,
+      "keys": [
+        {
+          "frame": 472,
+          "value": {
+            "x": 190.0,
+            "y": 850.0,
+            "w": 660.0,
+            "h": 180.0
+          }
+        },
+        {
+          "frame": 491,
+          "value": {
+            "x": 190.0,
+            "y": 850.0,
+            "w": 660.0,
+            "h": 180.0
+          }
+        }
+      ],
+      "role": "text",
+      "nativeName": "S04 — Mini Run",
+      "visibility": "visible",
+      "hiddenFrames": [
+        472
+      ],
+      "native": true,
+      "fadeRanges": [
+        {
+          "start": 472,
+          "end": 480
+        }
+      ],
+      "source": "src/scenes/Scene04.tsx",
+      "fontFamily": "MG Poppins"
+    },
+    {
+      "id": "S00 — Background",
+      "nativeName": "S00 — Background",
+      "role": "background",
+      "space": "screen",
+      "protected": false,
+      "start": 0,
+      "end": 600,
+      "keys": [
+        {
+          "frame": 0,
+          "value": {
+            "x": 0,
+            "y": 0,
+            "w": 1080,
+            "h": 1920
+          }
+        },
+        {
+          "frame": 599,
+          "value": {
+            "x": 0,
+            "y": 0,
+            "w": 1080,
+            "h": 1920
+          }
+        }
+      ],
+      "visibility": "visible",
+      "native": true,
+      "source": "src/components/EditorialBackground.tsx"
+    }
+  ],
+  "allowedOverlaps": [
+    {
+      "a": "S02 — Run window",
+      "b": "S02 — Run title",
+      "reason": "Isi dialog berada di atas permukaan window",
+      "type": "containment",
+      "startFrame": 146,
+      "endFrame": 360
+    },
+    {
+      "a": "S02 — Run window",
+      "b": "S02 — Run instruction",
+      "reason": "Isi dialog berada di atas permukaan window",
+      "type": "containment",
+      "startFrame": 146,
+      "endFrame": 360
+    },
+    {
+      "a": "S02 — Run window",
+      "b": "S02 — Run open",
+      "reason": "Isi dialog berada di atas permukaan window",
+      "type": "containment",
+      "startFrame": 146,
+      "endFrame": 360
+    },
+    {
+      "a": "S02 — Run window",
+      "b": "S02 — Run input",
+      "reason": "Isi dialog berada di atas permukaan window",
+      "type": "containment",
+      "startFrame": 146,
+      "endFrame": 360
+    },
+    {
+      "a": "S02 — Run window",
+      "b": "S02 — Run OK",
+      "reason": "Isi dialog berada di atas permukaan window",
+      "type": "containment",
+      "startFrame": 146,
+      "endFrame": 360
+    },
+    {
+      "a": "S02 — Run window",
+      "b": "S02 — Run Cancel",
+      "reason": "Isi dialog berada di atas permukaan window",
+      "type": "containment",
+      "startFrame": 146,
+      "endFrame": 360
+    },
+    {
+      "a": "S02 — Run window",
+      "b": "S02 — Run Browse",
+      "reason": "Isi dialog berada di atas permukaan window",
+      "type": "containment",
+      "startFrame": 146,
+      "endFrame": 360
+    }
+  ],
+  "geometryContract": "screen-space-v1",
+  "intelligenceContract": "visual-intelligence-v1",
+  "interactions": []
+}

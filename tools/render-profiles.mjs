@@ -4,7 +4,7 @@
  */
 export const RENDER_PROFILES=Object.freeze({
   capcut:Object.freeze({label:'CapCut HQ — motion + SFX, tanpa VO/subtitle panduan',quality:'high',capcut:true}),
-  high:Object.freeze({label:'Kualitas Tinggi — gunakan Props project asli',quality:'high',capcut:false}),
+  high:Object.freeze({label:'Kualitas Tinggi — tanpa VO Guide sementara (project baru)',quality:'high',capcut:false}),
   preview:Object.freeze({label:'Preview Cepat — cek gerakan, bukan master final',quality:'preview',capcut:false}),
 });
 export function renderProfileChoices(){return [
@@ -39,7 +39,7 @@ export function capcutOverrides(defaultProps){
  const set=(key,value)=>{if(Object.hasOwn(props,key)){
   if(props[key]!==value){props[key]=value;changed.push(key)}
  }};
- set('showSfx',true);
+ set('showSfx',true);set('showSafeZone',false);
  set('showVoiceOver',false);set('showMusic',false);
  set('showOnScreenCaptions',false);set('showCaptions',false);
  // Khusus pola Easy2Boot: saat on-screen captions dimatikan,
@@ -52,4 +52,21 @@ export function capcutOverrides(defaultProps){
   if(/^scene\d+ShowTextVO$/.test(key)&&typeof props[key]==='boolean')set(key,false);
  }
  return {props,changed};
+}
+
+export function finalGuideOverrides(defaultProps,designContract){
+ const props=structuredClone(defaultProps),changed=[];
+ if(designContract==='compact-balanced-v1')for(const key of ['showSubtitles','showSafeZone'])if(Object.hasOwn(props,key)&&props[key]!==false){props[key]=false;changed.push(key);}
+ return {props,changed};
+}
+
+/** Keep capture and exported pixels in the same visual state; probe differs only for capture. */
+export function renderVisualProps(defaultProps,designContract,profile,{instrumented=false}={}){
+ const key=resolveRenderProfile(profile);const selected=key==='capcut'?capcutOverrides(defaultProps).props:key==='high'?finalGuideOverrides(defaultProps,designContract).props:structuredClone(defaultProps);
+ return instrumented?{...selected,showSafeZone:false,qaSpatialCapture:false}:selected;
+}
+/** Actual geometry capture uses the same temporary preset resolver as rendering. */
+export function spatialCaptureProps(defaultProps,designContract,{mode='preview',profile=mode==='final'?'high':'preview'}={}){
+ const key=resolveRenderProfile(profile);if((mode==='preview')!==(key==='preview'))throw Error('Capture mode/preset mismatch');
+ return {...renderVisualProps(defaultProps,designContract,key,{instrumented:true}),qaSpatialCapture:true};
 }

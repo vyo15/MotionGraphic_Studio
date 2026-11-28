@@ -2,13 +2,48 @@
   "contractVersion": "1.0.0",
   "id": "ContohVideoReels",
   "slug": "contoh-video-reels",
-  "title": "Contoh Video Reels",
+  "title": "Contoh draft — Win + R",
   "entry": "src/Video.tsx",
   "exportName": "Video",
   "width": 1080,
   "height": 1920,
   "fps": 30,
   "durationInFrames": 600,
-  "defaultProps": {"showSubtitles": true},
-  "editableContract": "studio-direct-v4"
+  "defaultProps": {
+    "showSubtitles": true,
+    "showSfx": true,
+    "sfxGain": 1,
+    "showSafeZone": false
+  },
+  "editableContract": "studio-direct-v4",
+  "productionStage": "draft",
+  "motionPlanContract": "focus-driven-v1",
+  "soundImplementationContract": "cue-track-v1",
+  "segments": [
+    {
+      "id": "ContohVideoReelsS01",
+      "title": "S01 Hook",
+      "startFrame": 0,
+      "durationInFrames": 90
+    },
+    {
+      "id": "ContohVideoReelsS02",
+      "title": "S02 Demonstrasi",
+      "startFrame": 90,
+      "durationInFrames": 270
+    },
+    {
+      "id": "ContohVideoReelsS03",
+      "title": "S03 CTA",
+      "startFrame": 360,
+      "durationInFrames": 90
+    },
+    {
+      "id": "ContohVideoReelsS04",
+      "title": "S04 Cover",
+      "startFrame": 450,
+      "durationInFrames": 150
+    }
+  ],
+  "designContract": "compact-balanced-v1"
 }

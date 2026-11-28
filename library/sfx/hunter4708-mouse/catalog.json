@@ -1,0 +1,109 @@
+{
+  "schemaVersion": 1,
+  "assets": [
+    {
+      "id": "mouse-click-01",
+      "file": "audio/mouse-click-01.wav",
+      "character": "recorded",
+      "tags": [
+        "mouse",
+        "single-click",
+        "ui",
+        "click",
+        "realistic"
+      ],
+      "source": {
+        "kind": "real-recording",
+        "title": "Mouse Click",
+        "creator": "HunteR4708 (Patrick Hunt)",
+        "sourceUrl": "https://freesound.org/people/HunteR4708/sounds/256455/",
+        "license": "CC0-1.0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "originalSha256": "1718f0feb39ffae59c257d77746f9e39df03dbe956caa0b906d19a55f1cd2e30",
+        "originalFilename": "256455__hunter4708__mouse-click.wav"
+      },
+      "rightsEvidence": "Embedded WAV metadata (artist Patrick Hunt, Recorded with Zoom H1, comment Licensed under Creative Commons 0) inspected via ffprobe; user-supplied Freesound download, matches pack listing name/duration. Individual Freesound page independently confirmed CC0. Pack: https://freesound.org/people/HunteR4708/packs/15732/",
+      "impactSample": 288,
+      "gainDb": -14,
+      "sha256": "1718f0feb39ffae59c257d77746f9e39df03dbe956caa0b906d19a55f1cd2e30"
+    },
+    {
+      "id": "mouse-click-02",
+      "file": "audio/mouse-click-02.wav",
+      "character": "recorded",
+      "tags": [
+        "mouse",
+        "single-click",
+        "ui",
+        "click",
+        "realistic"
+      ],
+      "source": {
+        "kind": "real-recording",
+        "title": "Mouse Click 2",
+        "creator": "HunteR4708 (Patrick Hunt)",
+        "sourceUrl": "https://freesound.org/people/HunteR4708/sounds/256456/",
+        "license": "CC0-1.0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "originalSha256": "19b54a43c923e7e4d780077d5461c17bbbf796f491475acd370163acaac01787",
+        "originalFilename": "256456__hunter4708__mouse-click-2.wav"
+      },
+      "rightsEvidence": "Embedded WAV metadata (artist Patrick Hunt, Recorded with Zoom H1, comment Licensed under Creative Commons 0) inspected via ffprobe; user-supplied Freesound download, matches pack listing name/duration. Individual web page unavailable in this session; CC0 declaration is embedded in supplied WAV. Pack: https://freesound.org/people/HunteR4708/packs/15732/",
+      "impactSample": 384,
+      "gainDb": -11,
+      "sha256": "19b54a43c923e7e4d780077d5461c17bbbf796f491475acd370163acaac01787"
+    },
+    {
+      "id": "mouse-double-click-01",
+      "file": "audio/mouse-double-click-01.wav",
+      "character": "recorded",
+      "tags": [
+        "mouse",
+        "double-click",
+        "ui",
+        "click",
+        "realistic"
+      ],
+      "source": {
+        "kind": "real-recording",
+        "title": "Mouse Double Click",
+        "creator": "HunteR4708 (Patrick Hunt)",
+        "sourceUrl": "https://freesound.org/people/HunteR4708/sounds/256453/",
+        "license": "CC0-1.0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "originalSha256": "a7c0d5c2a14453ffc6b28e6e98c6592ad268d55600cd9fdae37a564c25e29e88",
+        "originalFilename": "256453__hunter4708__mouse-double-click.wav"
+      },
+      "rightsEvidence": "Embedded WAV metadata (artist Patrick Hunt, Recorded with Zoom H1, comment Licensed under Creative Commons 0) inspected via ffprobe; user-supplied Freesound download, matches pack listing name/duration. Individual web page unavailable in this session; CC0 declaration is embedded in supplied WAV. Pack: https://freesound.org/people/HunteR4708/packs/15732/",
+      "impactSample": 192,
+      "gainDb": -14,
+      "sha256": "a7c0d5c2a14453ffc6b28e6e98c6592ad268d55600cd9fdae37a564c25e29e88"
+    },
+    {
+      "id": "mouse-double-click-02",
+      "file": "audio/mouse-double-click-02.wav",
+      "character": "recorded",
+      "tags": [
+        "mouse",
+        "double-click",
+        "ui",
+        "click",
+        "realistic"
+      ],
+      "source": {
+        "kind": "real-recording",
+        "title": "Mouse Double Click 2",
+        "creator": "HunteR4708 (Patrick Hunt)",
+        "sourceUrl": "https://freesound.org/people/HunteR4708/sounds/256454/",
+        "license": "CC0-1.0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "originalSha256": "4881f5c2d07ab4bb4395aa90058e617f398b6b866780f11a3fcc11cd0b1613bf",
+        "originalFilename": "256454__hunter4708__mouse-double-click-2.wav"
+      },
+      "rightsEvidence": "Embedded WAV metadata (artist Patrick Hunt, Recorded with Zoom H1, comment Licensed under Creative Commons 0) inspected via ffprobe; user-supplied Freesound download, matches pack listing name/duration. Individual web page unavailable in this session; CC0 declaration is embedded in supplied WAV. Pack: https://freesound.org/people/HunteR4708/packs/15732/",
+      "impactSample": 192,
+      "gainDb": -14,
+      "sha256": "4881f5c2d07ab4bb4395aa90058e617f398b6b866780f11a3fcc11cd0b1613bf"
+    }
+  ]
+}

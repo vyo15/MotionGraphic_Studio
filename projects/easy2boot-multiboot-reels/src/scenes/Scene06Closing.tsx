@@ -160,7 +160,7 @@ export const Scene06Closing:React.FC<Easy2BootScene03Props>=(p)=>{
      y={0}
      dominantBaseline="middle"
      style={{translate:'0px 0px',scale:1,rotate:'0deg',opacity:1}}
-    ></Interactive.Text></TextLine>
+    >atau pakai multiboot?</Interactive.Text></TextLine>
     <TextLine editId="vo-coba-tulis" overrides={p.layerOverrides} name="S06 — VO: Coba tulis" x={360} y={1016} size={29} opacity={voiceComment} weight={740}><Interactive.Text name="S06 — VO: Coba tulis" x={0} y={0} dominantBaseline="middle" style={{translate:'0px 0px',scale:1,rotate:'0deg',opacity:1}}>Coba tulis</Interactive.Text></TextLine>
     <TextLine editId="vo-di-kolom-komentar" overrides={p.layerOverrides} name="S06 — VO: di kolom komentar!" x={360} y={1058} size={29} opacity={voiceComment} weight={740}><Interactive.Text name="S06 — VO: di kolom komentar!" x={0} y={0} dominantBaseline="middle" style={{translate:'0px 0px',scale:1,rotate:'0deg',opacity:1}}>di kolom komentar!</Interactive.Text></TextLine>
    </>:null}

@@ -1,6 +1,6 @@
-# MOTIONGRAPHIC STUDIO — DESIGN SYSTEM v2.0
+# MOTIONGRAPHIC STUDIO — DESIGN SYSTEM v2.1 — Compact Typography, Balanced Visual & Isolated VO Guide
 
-**Berlaku sebagai default untuk add-on VIDEO BARU** dan revisi yang memang diminta mengubah desain. **Tidak meretrofit Easy2Boot, Shutdown Otomatis, atau scene/VO/style yang ACC**. Prioritas: instruksi terbaru user & LOCK/ACC > bukti source Master dan kebutuhan UI yang benar > Design System > preferensi kreatif. Setiap penyimpangan yang sengaja dipilih dicatat di storyboard/README, tidak diubah diam-diam.
+**Berlaku sebagai default untuk VIDEO BARU** dan revisi yang memang diminta mengubah desain. **Tidak meretrofit Easy2Boot, Shutdown Otomatis, atau scene/VO/style yang ACC**. Prioritas: instruksi terbaru user & LOCK/ACC > bukti source Master dan kebutuhan UI yang benar > Design System > preferensi kreatif. Setiap penyimpangan yang sengaja dipilih dicatat di storyboard/README, tidak diubah diam-diam.
 
 ## 1. Karakter visual
 
@@ -23,28 +23,35 @@ Warna status warning/error hanya bila ada konteks; pilih warna berkontras baik d
 
 ### Kebijakan font dan konsistensi render
 
-- **Baseline yang pasti tersedia** pada Master saat ini: `Arial, Helvetica, sans-serif` (font sistem/fallback); jangan mengklaim Inter akan dipakai identik pada semua PC karena font **belum dibundel dan di-load secara eksplisit**.
-- **Arah brand pilihan**: Inter, **hanya jika** aset font berlisensi resmi ditempatkan/di-load dalam add-on atau ketersediaan render sudah diverifikasi; gunakan weight yang benar. Jika belum, gunakan baseline Arial yang konsisten pada seluruh video baru.
-- Max **satu family sans utama** + family monospace untuk perintah (`Consolas, 'Courier New', monospace`) bila diperlukan. Tidak mengambil font berlisensi komersial tanpa hak dan tidak membundel font dari mesin pengguna secara asal.
-- Untuk Native Studio editing, pertahankan properti `Interactive` yang perlu diedit berupa **nilai literal inline** jika API Save-to-code membutuhkannya. `design.ts` adalah sumber nilai *default/scaffold*, bukan bukti bahwa editor bisa mengubah semua token global otomatis.
+- **Poppins** utama, Inter untuk VO Guide/informasi teknis, Manrope alternatif editorial. Gunakan satu sans utama per video; Segoe UI untuk UI Windows asli, Consolas/Courier New untuk CMD. Jangan membundel font sistem Windows.
+- Font OFL 1.1 disediakan melalui `library/fonts/`: sekali pada PC jalankan `node tools/font-library.mjs --install`. Font binary belum dibundel dalam patch ini; installer memakai sumber resmi, menyertakan lisensi dan mengunci SHA-256. Starter dan video baru opt-in `designContract: "compact-balanced-v1"` memakai `LocalFonts.tsx` dan aset lokal `public/fonts/`. Startup/scaffold memprovision hanya placeholder resmi tanpa menimpa project lain. `MG Poppins`, `MG Inter`, `MG Manrope` adalah alias lokal agar font video lama tidak terpengaruh. Loader menunggu font sebelum render. Draft boleh fallback, **review wajib font lokal valid**. Jangan klaim tampilan font sebelum render nyata.
+- Native layer tetap menggunakan nilai literal inline untuk family, size, weight, lineHeight, letterSpacing, posisi dan ukuran; token `design.ts` untuk starting default saja. Uji Save/reload terpisah.
 
-## 3. Typography pada kanvas 1080×1920 (skala awal, bukan batas keras)
+**OBJECT-CENTERED COMPOSITION LOCK:** tetapkan anchor objek utama dari visual bounds aktual setelah transform (bukan bounding box container/headline). Gunakan optical centering dalam safe zone; untuk scene objek, headline mengikuti objek dengan gap 48–80 px sebagai titik awal, boleh lebih lega berdasarkan review/ACC (contoh 95 px), bukan memindahkan objek demi teks. VO Guide independen. Saat headline muncul/hilang, objek tidak bergeser kecuali gerak bermotif/ACC. Untuk typography-only, teks adalah objek utama; UI camera tetap mengikuti fokus aksi. Cek per beat dan transisi, termasuk perubahan jumlah objek. Tidak mewajibkan retrofit scene ACC.
 
-| Peran | Font size rekomendasi | Weight | Aturan |
-|---|---:|---:|---|
-| Hook / Hero | 88–108 px | 700–800 | Maks 2 baris, 1 gagasan dominan |
-| Judul scene | 64–84 px | 700–800 | Selaras dengan VO, jangan mengulang penuh |
-| Subjudul / poin kunci | 44–56 px | 500–700 | Hanya saat membantu memahami |
-| Subtitle VO | 38–46 px | 600–750 | Maks 2 baris, pecah mengikuti ujaran |
-| Label / callout | 28–36 px | 600–700 | Jangan terlalu kecil untuk HP |
-| Command/keyboard | 32–50 px adaptif | 600–750 | Monospace bila cocok, harus terbaca |
+## 3. Typography 1080×1920 — starting scale adaptif
 
-Mulai dengan `line-height` sekitar 1.08–1.18 untuk judul dan 1.16–1.3 untuk subtitle/body, lalu **cek frame nyata**. Gunakan maksimal 2 tingkat hierarki utama pada satu tampilan, garis teks tidak terlalu panjang, dan sekitar 6–8 kata **teks utama** per beat. `subtitle` bisa memiliki lebih banyak kata bila perlu, tetapi jangan berebut fokus dengan teks hero. Label status, nomor step dan parameter boleh menjadi pengecualian yang fungsional.
+| Elemen | Font | Weight | Ukuran default (rentang) | Line height | Letter spacing |
+|---|---|---:|---|---:|---|
+| Hook | Poppins | 800 | 84 (72–96) px | 1.05 | −0.03em |
+| Headline | Poppins | 700 | 64 (56–72) px | 1.10 | −0.02em |
+| Subheadline | Poppins | 600 | 48 (42–54) px | 1.15 | −0.01em |
+| Deskripsi | Poppins | 400 | 38 (32–42) px | 1.25 | 0 |
+| Label objek | Poppins | 500 | 30 (26–34) px | 1.20 | 0 |
+| Angka utama | Poppins | 800 | 112 (96–140) px | 1.05 | −0.03em |
+| CTA | Poppins | 700 | 64 (56–80) px | 1.10 | −0.02em |
+| Cover | Poppins | 800 | 80 (68–96) px | 1.05 | −0.03em |
+| VO Guide sementara | Inter | 500 | 36 (32–36) px | 1.20 | 0 |
+| Command | monospace | 500–600 | 32–48 px | adaptif | 0 |
+
+Ukuran bukan batas kaku; cek ukuran glyph aktual, bukan hanya kotak layer. Hook satu baris, transparan, satu gagasan, 6–8 kata bila cocok. Maks dua tingkat hierarki utama; jangan menambahkan gap antarbaris di luar line height. Teks terkait compact, objek tetap lega. Jangan mengecilkan UI asli tanpa zoom fokus.
 
 ## 4. Komposisi, safe zone, grid, UI
 
-- Output default `1080×1920`, `30 FPS`, `9:16`. Area informatif aman **x=50–1030, y=250–1570**; margin interior 80–110 px lebih nyaman jika layout memungkinkan. Bagian background/dekorasi boleh di luar safe zone, bukan teks/tombol/hasil penting.
-- Gunakan ritme jarak dari **grid 8 px** (`8/16/24/32/48/64` dan kelipatannya). Satu focal point pada satu waktu, hindari tiga judul besar atau banyak card aktif sekaligus. Setiap objek memiliki nama/fungsi/z-order yang jelas.
+- Output default `1080×1920`, `30 FPS`, `9:16`. Safe zone internal konservatif (bukan spesifikasi resmi Instagram; sumber angka `contracts/spatial-profiles.json`): kiri 120, kanan 160, atas 280, bawah 350 px; pusat X=520, lebar maks 800 px. Area visual **x=120–920, y=280–1360**, VO Guide **x=120–920, y=1470–1540**; pusat Y=1505. Background boleh full frame. Pada format lain skala proporsional atau catat override. Periksa crop, antarmuka Reels aktual dan lintasan transform/camera. `showSafeZone` hanya overlay Studio, default OFF, tidak ikut render.
+- **Spacing:** antarbaris judul memakai line height 1.05–1.10; judul/subjudul 8–16 px; judul/deskripsi 12–24; label/keterangan 8–16; tulisan/objek 48–80; antarobjek 40–80; antargrup visual 64–100; objek/label 16–24. Jarak minimum **80 px** dari bounds objek ke VO Guide pada setiap frame bernarasi, ideal 100–120; jangan geser guide acak. Optical spacing lebih penting dari memaksa grid. Jangan isi whitespace dengan dekorasi atau memperbesar objek tanpa tujuan.
+- **Lebar objek awal:** laptop/PC 640–800, jendela Windows 660–800, Run 500–660, CMD 680–800, ikon utama 120–220, ikon pendukung 64–100, jam 420–560, diagram jaringan 640–800, shortcut 460–720, cursor 28–38 px. Gunakan zoom terarah untuk detail, bukan membesarkan seluruh scene.
+- Gunakan grid 8 px sebagai alat bantu alignment, bukan gap wajib. Satu focal point pada satu waktu, hindari tiga judul besar atau banyak card aktif sekaligus. Setiap objek memiliki nama/fungsi/z-order yang jelas.
 - **Cards:** radius awal 20–28 px, stroke 1–2 px, shadow lembut (contoh `0 12px 32px rgba(32,32,32,0.08)`), padding sesuai isi; bukan efek bevel/glow berlebihan. Pada *realistic Windows UI*, utamakan ukuran, menu, alignment dan radius **asli software**, jangan memaksakan radius editorial pada komponen native.
 - Grid latar hanya bila membantu komposisi, opacity sangat rendah, jangan bertabrakan dengan garis UI. Icon set satu keluarga outline/solid yang koheren; samakan stroke visual dan radius, jangan campur ikon 3D, outline tipis, dan kartun tebal tanpa alasan.
 - Gunakan teks **center** saat ia benar-benar fokus tunggal; alignment kiri untuk langkah teknis/daftar. Jangan membuat border, underline, badge atau tanda tanya hanya sebagai pemanis generik. Ornamen harus menegaskan pertanyaan, status, atau arah perhatian.
@@ -58,7 +65,7 @@ Mulai dengan `line-height` sekitar 1.08–1.18 untuk judul dan 1.16–1.3 untuk 
 - **Headline kontekstual, bukan judul yang selalu menetap:** maksimal satu pesan utama ketika perlu (hook singkat, petunjuk aksi, atau cover). Saat demo layar/software berjalan, biasanya **tidak perlu** headline tambahan; nama aplikasi/shortcut/hasil tampil hanya ketika penonton perlu membacanya. Jangan memasang judul besar di atas, caption yang mengulang judul di bawah, plus subtitle VO sekaligus.
 - **Objek dulu:** pada tutorial Windows, desktop/jendela/kursor/hasil tindakan mengambil area visual dominan dan cukup besar untuk HP. Jangan mengecilkan desktop demi memberi ruang untuk label dekoratif. Taskbar Windows, title bar aplikasi, progress asli software, dan penunjuk tahap yang diperlukan **tetap boleh** karena bagian dari demonstrasi; bedakan dari bar palsu milik template.
 - **Latar sederhana:** off-white polos `#F7F7F5` sebagai awal. Grid bukan kewajiban; default **tanpa grid** pada visual demonstrasi, dan hanya gunakan grid sangat samar bila benar-benar membantu alignment dan tak bersaing dengan UI. Coral dipakai untuk menekankan trigger/hasil, bukan menggarisi tepi scene.
-- **Teks layar sesuai VO:** pilih nol atau satu frasa penegas pendek pada suatu beat, tidak perlu semua elemen informasi aktif bersamaan. Fade out teks yang tidak relevan **sebelum** demo/kursor menjadi fokus. Subtitle draft wajib aktif pada preview bernarasi; subtitle final disinkronkan dengan rekaman. Ikuti §5A; jangan duplikasi tulisan besar.
+- **Teks layar sesuai VO:** pilih nol atau satu frasa penegas pendek pada suatu beat, tidak perlu semua elemen informasi aktif bersamaan. Fade out teks yang tidak relevan **sebelum** demo/kursor menjadi fokus. VO Guide draft wajib aktif pada preview bernarasi; final OFF default. Subtitle final hanya jika diminta dan disinkronkan dengan rekaman. Ikuti §5A; jangan duplikasi tulisan besar.
 - **Transisi bermakna:** lanjutkan objek, gerakan kursor, atau perubahan UI; tidak perlu garis, headline, label chapter maupun progress bar untuk menandai pindah scene. Tahan hasil tindakan cukup lama supaya penonton paham.
 - **Pengecualian terkendali:** progress bar yang merepresentasikan proses sungguhan, menu asli software, state/status data, label keselamatan wajib, atau arahan brand yang diminta pengguna boleh ditampilkan; catat tujuan fungsionalnya. Jangan menambahkan elemen dekoratif hanya demi mengisi ruang kosong.
 
@@ -70,11 +77,11 @@ Mulai dengan `line-height` sekitar 1.08–1.18 untuk judul dan 1.16–1.3 untuk 
 
 
 - VO rekaman pengguna **setelah motion ACC**; sebelum itu gunakan naskah draft/VO Guide terpisah. Timing beat, frame dan teks layar harus mengikuti satu sumber konfigurasi per project.
-- Subtitle mengikuti **frasa/pengucapan** dengan jeda alami, bukan karaoke terlalu cepat atau paragraf panjang. Default maksimal 2 baris, visual hold memadai, cek tidak bertabrakan dengan tombol dan UI Reels. Gunakan penekanan kata terbatas; label utama **tidak** perlu mengulang subtitle secara penuh.
-- Untuk subtitle dekat bawah, tempatkan **seluruh bounding box** di atas y=1570; jika perlu pindahkan area demo supaya subtitle dan UI tidak bersaing. Gunakan plate tipis/kontras bila latar ramai, bukan teks gelap pada konten gelap tanpa backing.
+- VO Guide mengikuti frasa/pengucapan natural, **satu baris**, tanpa highlight atau backing; jika terlalu panjang pecah cue tanpa mengubah naskah.
+- Jika objek mendekati guide, reframe/geser visual ke atas. Jangan mengecilkan teks berlebihan atau memindahkan guide. Pada latar gelap, sesuaikan tinta untuk kontras tanpa blok.
 - SFX hanya ketika ada *aksi terlihat*, cek onsets secara frame; VO harus tetap dominan. Rujuk `docs/SOUND-DIRECTION-RULES.md` dan `docs/WORKFLOW-VO-UNIVERSAL.md` (jangan duplikasi sound dari root dan scene).
 
-## 5A. TEXT HIERARCHY & SUBTITLE LOCK v1.0 — wajib untuk video baru
+## 5A. TEXT HIERARCHY & SUBTITLE LOCK v2.0 — wajib untuk video baru
 
 **Narration explains → motion demonstrates → text emphasizes.** Pisahkan tiga peran; jangan memperlakukan subtitle sebagai headline atau teks pendukung sebagai subtitle kedua. Berlaku pada storyboard, source, preview dan QA video baru; revisi existing hanya dalam scope yang diminta, ACC tetap terkunci. Override eksplisit user (mis. video tanpa subtitle atau tanpa VO) dicatat pada storyboard/README.
 
@@ -82,7 +89,7 @@ Mulai dengan `line-height` sekitar 1.08–1.18 untuk judul dan 1.16–1.3 untuk 
 |---|---|---|
 | Supporting text | Parameter, definisi, konversi, perbandingan, status, batasan, target atau penekanan yang membantu aksi | Atas atau callout dekat objek, muncul saat diperlukan; nol atau satu frasa penegas per beat, ideal 2–6 kata, bukan judul permanen |
 | Main visual | UI/objek/kursor/diagram memperagakan aksi dan hasil; teks UI asli tetap utuh | Tengah, dominan, terbaca di HP; jangan mengecilkan demo untuk label opsional |
-| Subtitle VO | Menampilkan seluruh narasi sesuai urutan frasa, tidak mengubah makna/VO ACC | Bawah, center, posisi konsisten, maksimal dua baris |
+| Subtitle VO | Menampilkan seluruh narasi sesuai urutan frasa, tidak mengubah makna/VO ACC | Bawah, center, posisi konsisten, satu baris, transparan |
 
 **Anti-double-function:** sebelum menambah supporting text, tanyakan apakah ia menambah pemahaman yang belum jelas dari subtitle + objek/UI. Jika tidak, hilangkan. Teks perintah/shortcut yang benar-benar dibutuhkan tetap ada dalam UI atau callout; jangan membuat salinan headline tambahan. Boleh menekankan kata teknis yang sama apabila fungsinya menunjuk parameter/objek, bukan mengulang satu kalimat. Jangan memaksa teks atas pada semua scene. Hook boleh punya satu penegasan singkat jika visual membutuhkan; CTA mengutamakan objek dan subtitle; cover silent hanya judul/objek (tanpa subtitle, tanpa CTA sisa).
 
@@ -97,11 +104,11 @@ Mulai dengan `line-height` sekitar 1.08–1.18 untuk judul dan 1.16–1.3 untuk 
 
 **Subtitle preview:** pada setiap beat bernarasi, tampilkan subtitle DRAFT sejak preview motion pertama, tanpa meminta rekaman. Ambil teks dari `src/config/narration.json` yang aktual/ACC; bagi menjadi frasa natural (umumnya 4–8 kata, fleksibel untuk perintah/nama), tidak menghapus kata atau menambah narasi. Tentukan cue start/end frame eksklusif, jeda sesuai naskah, tanpa overlap, tanpa subtitle pada beat silent/cover. Pastikan teks tidak terlalu cepat dibaca; ubah timing draft jika diperlukan, bukan mengubah VO ACC. Status timing `DRAFT`, bukan sinkronisasi rekaman yang belum tersedia.
 
-**Layout 1080×1920:** gunakan font sans baseline Arial, 38–46 px (default 42), weight 600–750 (default 700), line-height 1.2, tinta `#202020`, center; gunakan backing/kontras bila latar ramai/gelap. Starting box x=110, width=860, y=1400; dua baris dan backing seluruhnya harus berada dalam x=50–1030, y=250–1570. Sisakan ruang antara demo dan subtitle; ukur bounding box pada frame nyata, bukan hanya koordinat anchor. Posisi konsisten, perubahan minimal sesuai frasa, tanpa karaoke/animasi kata berlebihan. Skala proporsional untuk format lain. Hindari tumpang tindih UI, supporting text, transisi dan cover.
+**Layout VO Guide 1080×1920:** Inter Medium 500, default 36 px, line height 1.2, warna `#646464` (ubah tinta untuk latar gelap), center X=520/Y=1505, max width 800. Satu baris `whiteSpace: 'nowrap'`; tanpa block, border, shadow, highlight atau animasi. Box awal x=120, y=1483.4, w=800, h=43.2. Jika glyph lebih lebar, pecah frasa/cue sesuai timing; tidak dipotong, tidak dipaksa kecil. Jarak dari objek min 80 px (ideal 100–120) berdasarkan bounds di setiap frame termasuk zoom dan transisi. `spatial-plan.json` berisi `role: "visual"` atau `"vo-guide"` tiap track; validator memeriksa zona, jumlah guide, gap pada semua frame deklaratif. Cek juga glyph dan pixel render nyata; tidak menyamakan plan dengan DOM.
 
 **Implementasi:** sediakan `showSubtitles: true` pada manifest defaultProps untuk preview bernarasi dan pastikan source benar-benar menggunakannya. Toggle `false` menyembunyikan subtitle tanpa menghilangkan supporting text/UI atau mengubah timing. Full/segment memakai sumber scene dan timing yang sama; mode VO Guide terpisah dan tidak ditumpuk pada track subtitle. Untuk native Studio, buat satu callsite `Interactive.Text`/`Interactive.Div` bernama unik, teks child literal, style inline per cue, catat pada `production/editable-blueprint.json`; simpan timing dan teks cue dalam config terhubung ke naskah (jika literal diperlukan, verifikasi kesamaan), dokumentasikan edit teks/posisi/font/warna/timing. Dynamic Props bukan bukti drag/Save. Template baru dapat memakai `showSubtitles` saja; bila menambah `showOnScreenCaptions`, ikuti kontrak render CapCut dan pastikan kedua mode benar-benar bersih.
 
-**Final:** motion ACC → VO Guide → rekaman pengguna → sinkronkan cue/hold dengan ucapan aktual → aktifkan hanya subtitle final pada mode final (jangan tampilkan draft dan final bersamaan). CapCut HQ adalah bahan mentah: sembunyikan semua subtitle draft/final/VO Guide lewat Props sementara yang dikenali Master, pertahankan supporting text dan UI, audit hasil MP4; jangan menimpa manifest/ACC. Lihat `docs/RENDER-HQ-CAPCUT.md`. QA wajib pada hook, setiap cue/aksi, batas scene, CTA dan cover; laporkan terpisah pemeriksaan source, render, audio dan GUI.
+**Final:** motion ACC → VO Guide → rekaman pengguna → sinkronkan cue/hold dengan ucapan aktual → matikan VO Guide pada final; subtitle final Poppins hanya bila diminta, terpisah dan tidak bertumpuk. High dan CapCut HQ pada project compact mematikan guide melalui Props sementara; Preview Cepat mempertahankan Props. Untuk render langsung di Studio, set `showSubtitles=false` sebelum final (jangan hapus source). CapCut HQ adalah bahan mentah: sembunyikan semua subtitle draft/final/VO Guide lewat Props sementara yang dikenali Master, pertahankan supporting text dan UI, audit hasil MP4; jangan menimpa manifest/ACC. Lihat `docs/RENDER-HQ-CAPCUT.md`. QA wajib pada hook, setiap cue/aksi, batas scene, CTA dan cover; laporkan terpisah pemeriksaan source, render, audio dan GUI.
 
 ## 6. Cover Reels setelah CTA
 

@@ -1,0 +1,322 @@
+{
+  "schemaVersion": 1,
+  "assets": [
+    {
+      "id": "whoosh-metal-tea-strainer-01",
+      "file": "audio/whoosh/whoosh-metal-tea-strainer-01.wav",
+      "character": "recorded",
+      "tags": [
+        "motion",
+        "whoosh",
+        "transition",
+        "short"
+      ],
+      "source": {
+        "kind": "real-recording",
+        "title": "Woosh Metal Tea Strainer 1",
+        "creator": "Sadiquecat",
+        "license": "CC0-1.0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "sourceUrl": "https://freesound.org/people/Sadiquecat/sounds/742832/",
+        "originalFilename": "742832__sadiquecat__woosh-metal-tea-strainer-1.wav",
+        "originalSha256": "6af3561faa6bc672d2d444d86614fda1a6e1f53e1127b3598c89df65466f9c55",
+        "originalFile": "originals/742832__sadiquecat__woosh-metal-tea-strainer-1.wav"
+      },
+      "rightsEvidence": "Embedded WAV comment: CC0 Public Domain, Zoom H5 and RODE NT5 mono.",
+      "impactSample": 2622,
+      "gainDb": -14,
+      "sha256": "a65a35b67e8f8d3d2a26ed5a5e0d4a4715dae5dabdaa2ebca4695c01442913c9",
+      "processing": {
+        "format": "PCM_24",
+        "sampleRate": 96000,
+        "channels": 1,
+        "peakTargetDbFS": -3,
+        "gainAppliedDb": 4.797,
+        "highpassHz": null,
+        "edgeFadeMs": 0,
+        "resampled": false,
+        "pitchChanged": false,
+        "sourceRangeSeconds": null
+      },
+      "reviewStatus": "user-selected",
+      "category": "whoosh",
+      "selectionStatus": "KEEP",
+      "suggestedUse": "Transisi/pergeseran objek"
+    },
+    {
+      "id": "keyboard-typing-01",
+      "file": "audio/keyboard/keyboard-typing-01.wav",
+      "character": "recorded",
+      "tags": [
+        "computer",
+        "keyboard",
+        "typing",
+        "short"
+      ],
+      "source": {
+        "kind": "real-recording",
+        "title": "Keychron K10 66WPM XY",
+        "creator": "Sadiquecat",
+        "license": "CC0-1.0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "sourceUrl": "https://freesound.org/people/Sadiquecat/sounds/789627/",
+        "originalFilename": "789627__sadiquecat__keychron-k10-66wpm-xy.flac",
+        "originalSha256": "533672e07dc4fc503074060662f2d8d52bcdc72852638a0437af89afbcb6eb64",
+        "originalFile": "originals/789627__sadiquecat__keychron-k10-66wpm-xy.flac"
+      },
+      "rightsEvidence": "Embedded FLAC comment: CC0 Public domain, Zoom H2n XY mode.",
+      "impactSample": 1121,
+      "gainDb": -14,
+      "sha256": "0147f18bb16a398fdb17772d5b7440ca5efe52946e64aa54b9b623ff64788a91",
+      "processing": {
+        "format": "PCM_24",
+        "sampleRate": 96000,
+        "channels": 2,
+        "peakTargetDbFS": -3,
+        "gainAppliedDb": -1.493,
+        "highpassHz": 45,
+        "edgeFadeMs": 8,
+        "resampled": false,
+        "pitchChanged": false,
+        "sourceRangeSeconds": [
+          5.49,
+          6.55
+        ]
+      },
+      "reviewStatus": "user-selected",
+      "category": "keyboard",
+      "selectionStatus": "KEEP",
+      "suggestedUse": "Mengetik teks (bukan tombol tunggal)"
+    },
+    {
+      "id": "keyboard-typing-02",
+      "file": "audio/keyboard/keyboard-typing-02.wav",
+      "character": "recorded",
+      "tags": [
+        "computer",
+        "keyboard",
+        "typing",
+        "short"
+      ],
+      "source": {
+        "kind": "real-recording",
+        "title": "Keychron K10 66WPM XY",
+        "creator": "Sadiquecat",
+        "license": "CC0-1.0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "sourceUrl": "https://freesound.org/people/Sadiquecat/sounds/789627/",
+        "originalFilename": "789627__sadiquecat__keychron-k10-66wpm-xy.flac",
+        "originalSha256": "533672e07dc4fc503074060662f2d8d52bcdc72852638a0437af89afbcb6eb64",
+        "originalFile": "originals/789627__sadiquecat__keychron-k10-66wpm-xy.flac"
+      },
+      "rightsEvidence": "Embedded FLAC comment: CC0 Public domain, Zoom H2n XY mode.",
+      "impactSample": 2100,
+      "gainDb": -14,
+      "sha256": "ff3db8a8507c4a1a68de8a941e0b8f7b686ff7cb8a7001782b3f40e397bb52de",
+      "processing": {
+        "format": "PCM_24",
+        "sampleRate": 96000,
+        "channels": 2,
+        "peakTargetDbFS": -3,
+        "gainAppliedDb": 4.025,
+        "highpassHz": 45,
+        "edgeFadeMs": 8,
+        "resampled": false,
+        "pitchChanged": false,
+        "sourceRangeSeconds": [
+          11.82,
+          13.88
+        ]
+      },
+      "reviewStatus": "user-selected",
+      "category": "keyboard",
+      "selectionStatus": "KEEP",
+      "suggestedUse": "Mengetik teks (bukan tombol tunggal)"
+    },
+    {
+      "id": "keyboard-typing-03",
+      "file": "audio/keyboard/keyboard-typing-03.wav",
+      "character": "recorded",
+      "tags": [
+        "computer",
+        "keyboard",
+        "typing",
+        "medium"
+      ],
+      "source": {
+        "kind": "real-recording",
+        "title": "Keychron K10 66WPM XY",
+        "creator": "Sadiquecat",
+        "license": "CC0-1.0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "sourceUrl": "https://freesound.org/people/Sadiquecat/sounds/789627/",
+        "originalFilename": "789627__sadiquecat__keychron-k10-66wpm-xy.flac",
+        "originalSha256": "533672e07dc4fc503074060662f2d8d52bcdc72852638a0437af89afbcb6eb64",
+        "originalFile": "originals/789627__sadiquecat__keychron-k10-66wpm-xy.flac"
+      },
+      "rightsEvidence": "Embedded FLAC comment: CC0 Public domain, Zoom H2n XY mode.",
+      "impactSample": 2344,
+      "gainDb": -14,
+      "sha256": "4ef97835bc1203f8d4555d8e2e749f99e1134a2d1f857c3923882e796de0dd6e",
+      "processing": {
+        "format": "PCM_24",
+        "sampleRate": 96000,
+        "channels": 2,
+        "peakTargetDbFS": -3,
+        "gainAppliedDb": 6.998,
+        "highpassHz": 45,
+        "edgeFadeMs": 8,
+        "resampled": false,
+        "pitchChanged": false,
+        "sourceRangeSeconds": [
+          20.67,
+          23.42
+        ]
+      },
+      "reviewStatus": "user-selected",
+      "category": "keyboard",
+      "selectionStatus": "KEEP",
+      "suggestedUse": "Mengetik teks (bukan tombol tunggal)"
+    },
+    {
+      "id": "keyboard-typing-04",
+      "file": "audio/keyboard/keyboard-typing-04.wav",
+      "character": "recorded",
+      "tags": [
+        "computer",
+        "keyboard",
+        "typing",
+        "medium"
+      ],
+      "source": {
+        "kind": "real-recording",
+        "title": "Keychron K10 66WPM XY",
+        "creator": "Sadiquecat",
+        "license": "CC0-1.0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "sourceUrl": "https://freesound.org/people/Sadiquecat/sounds/789627/",
+        "originalFilename": "789627__sadiquecat__keychron-k10-66wpm-xy.flac",
+        "originalSha256": "533672e07dc4fc503074060662f2d8d52bcdc72852638a0437af89afbcb6eb64",
+        "originalFile": "originals/789627__sadiquecat__keychron-k10-66wpm-xy.flac"
+      },
+      "rightsEvidence": "Embedded FLAC comment: CC0 Public domain, Zoom H2n XY mode.",
+      "impactSample": 2550,
+      "gainDb": -14,
+      "sha256": "fac476a224c0dbc77a7d5af568d211f26d2bb8f87c1c7d56801e6c6b1673e522",
+      "processing": {
+        "format": "PCM_24",
+        "sampleRate": 96000,
+        "channels": 2,
+        "peakTargetDbFS": -3,
+        "gainAppliedDb": -2.976,
+        "highpassHz": 45,
+        "edgeFadeMs": 8,
+        "resampled": false,
+        "pitchChanged": false,
+        "sourceRangeSeconds": [
+          29.45,
+          34.64
+        ]
+      },
+      "reviewStatus": "user-selected",
+      "category": "keyboard",
+      "selectionStatus": "KEEP",
+      "suggestedUse": "Mengetik teks (bukan tombol tunggal)"
+    },
+    {
+      "id": "keyboard-typing-05",
+      "file": "audio/keyboard/keyboard-typing-05.wav",
+      "character": "recorded",
+      "tags": [
+        "computer",
+        "keyboard",
+        "typing",
+        "long"
+      ],
+      "source": {
+        "kind": "real-recording",
+        "title": "Keychron K10 66WPM XY",
+        "creator": "Sadiquecat",
+        "license": "CC0-1.0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "sourceUrl": "https://freesound.org/people/Sadiquecat/sounds/789627/",
+        "originalFilename": "789627__sadiquecat__keychron-k10-66wpm-xy.flac",
+        "originalSha256": "533672e07dc4fc503074060662f2d8d52bcdc72852638a0437af89afbcb6eb64",
+        "originalFile": "originals/789627__sadiquecat__keychron-k10-66wpm-xy.flac"
+      },
+      "rightsEvidence": "Embedded FLAC comment: CC0 Public domain, Zoom H2n XY mode.",
+      "impactSample": 1606,
+      "gainDb": -14,
+      "sha256": "2fabb40c4d7b8a09e39991063e373f177b9a64c40450333d3e5cd6bd6de4f391",
+      "processing": {
+        "format": "PCM_24",
+        "sampleRate": 96000,
+        "channels": 2,
+        "peakTargetDbFS": -3,
+        "gainAppliedDb": 0.823,
+        "highpassHz": 45,
+        "edgeFadeMs": 8,
+        "resampled": false,
+        "pitchChanged": false,
+        "sourceRangeSeconds": [
+          40.88,
+          49.02
+        ]
+      },
+      "reviewStatus": "user-selected",
+      "category": "keyboard",
+      "selectionStatus": "KEEP",
+      "suggestedUse": "Mengetik teks (bukan tombol tunggal)"
+    },
+    {
+      "id": "keyboard-typing-06",
+      "file": "audio/keyboard/keyboard-typing-06.wav",
+      "character": "recorded",
+      "tags": [
+        "computer",
+        "keyboard",
+        "typing",
+        "medium"
+      ],
+      "source": {
+        "kind": "real-recording",
+        "title": "Keychron K10 66WPM XY",
+        "creator": "Sadiquecat",
+        "license": "CC0-1.0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "sourceUrl": "https://freesound.org/people/Sadiquecat/sounds/789627/",
+        "originalFilename": "789627__sadiquecat__keychron-k10-66wpm-xy.flac",
+        "originalSha256": "533672e07dc4fc503074060662f2d8d52bcdc72852638a0437af89afbcb6eb64",
+        "originalFile": "originals/789627__sadiquecat__keychron-k10-66wpm-xy.flac"
+      },
+      "rightsEvidence": "Embedded FLAC comment: CC0 Public domain, Zoom H2n XY mode.",
+      "impactSample": 5460,
+      "gainDb": -14,
+      "sha256": "a1bad26f72aa3245acaf9d4495e26e5a15a284f834911fd49657d7e5d9710e93",
+      "processing": {
+        "format": "PCM_24",
+        "sampleRate": 96000,
+        "channels": 2,
+        "peakTargetDbFS": -3,
+        "gainAppliedDb": 4.201,
+        "highpassHz": 45,
+        "edgeFadeMs": 8,
+        "resampled": false,
+        "pitchChanged": false,
+        "sourceRangeSeconds": [
+          52.34,
+          55.32
+        ]
+      },
+      "reviewStatus": "user-selected",
+      "category": "keyboard",
+      "selectionStatus": "KEEP",
+      "suggestedUse": "Mengetik teks (bukan tombol tunggal)"
+    }
+  ],
+  "selectionSource": {
+    "file": "SFX-Sortir.json",
+    "sha256": "170b11aea431af2946196d167457c7096d8566dbcea4e08123fd38fda9fdcfbb",
+    "meaning": "KEEP/DROP only; no semantic labels or final mix approval"
+  }
+}

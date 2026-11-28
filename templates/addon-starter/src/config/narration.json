@@ -1,1 +1,36 @@
-{"schemaVersion":1,"status":"draft","beats":[{"scene":"Demo","startFrame":128,"endFrame":218,"text":"Hasilnya langsung terlihat."}]}
+{
+  "schemaVersion": 1,
+  "status": "draft",
+  "beats": [
+    {
+      "scene": "S01 Hook",
+      "startFrame": 0,
+      "endFrame": 90,
+      "text": "Mau buka Run tanpa mencari menu?"
+    },
+    {
+      "scene": "S02 Demonstrasi",
+      "startFrame": 90,
+      "endFrame": 180,
+      "text": "Tekan tombol Windows dan R bersamaan."
+    },
+    {
+      "scene": "S02 Demonstrasi",
+      "startFrame": 180,
+      "endFrame": 360,
+      "text": "Jendela Run langsung terbuka."
+    },
+    {
+      "scene": "S03 CTA",
+      "startFrame": 360,
+      "endFrame": 450,
+      "text": "Coba tulis di komentar."
+    },
+    {
+      "scene": "S04 Cover",
+      "startFrame": 450,
+      "endFrame": 600,
+      "text": ""
+    }
+  ]
+}

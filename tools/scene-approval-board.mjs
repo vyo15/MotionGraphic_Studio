@@ -18,7 +18,7 @@ const label = v => String(v ?? '').replace(/\|/g, '\\|').replace(/\r?\n/g, ' ').
 const fmtTime = (frame, fps) => `${(frame / fps).toFixed(2)}s`;
 const normalized = v => String(v ?? '').toLowerCase();
 const isBridge = s => /bridge|pengantar/i.test(String(s ?? ''));
-const isSilent = text => !String(text ?? '').trim() || /^\s*\([^)]*(?:tidak ada vo|tanpa vo|visual hold|silent cover)[^)]*\)\s*$/i.test(String(text));
+import {isSilentNarration as isSilent} from './narration-silence.mjs';
 const safeMarkdown = text => String(text).replace(/\\/g,'\\\\').replace(/\*/g,'\\*').replace(/`/g,'\\`').replace(/\[/g,'\\[').replace(/\]/g,'\\]').replace(/\r?\n/g,' ').trim();
 
 function visualStatus(raw) {

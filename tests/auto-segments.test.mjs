@@ -125,7 +125,7 @@ test('ZIP inbox watcher waits for a complete stable ZIP before import',async()=>
   const inbox=path.join(root,'library/masuk');fs.mkdirSync(inbox,{recursive:true});
   const destination=path.join(inbox,'video-addon.zip');
   let count=0;
-  const watcher=startAutoSync({root,debounceMs:45,pollMs:65,zipAgeMs:110,
+  const watcher=startAutoSync({root,legacyInbox:true,debounceMs:45,pollMs:65,zipAgeMs:110,
     runImport:async()=>{count++;fs.renameSync(destination,destination+'.done')},runSync:async()=>{}});
   try{
    fs.writeFileSync(destination,Buffer.from('PK\x03\x04')); // header only = not a completed zip
@@ -136,6 +136,20 @@ test('ZIP inbox watcher waits for a complete stable ZIP before import',async()=>
    const deadline=Date.now()+1400;
    while(count===0&&Date.now()<deadline)await new Promise(r=>setTimeout(r,50));
    assert.equal(count,1,'Completed ZIP should import automatically');
+  }finally{watcher.close()}
+ }finally{fs.rmSync(root,{recursive:true,force:true})}
+});
+
+test('normal watcher ignores historical ZIP inbox',async()=>{
+ const root=fixture();try{
+  const inbox=path.join(root,'library/masuk');fs.mkdirSync(inbox,{recursive:true});
+  let imported=0,synced=0;
+  const watcher=startAutoSync({root,debounceMs:30,pollMs:50,runImport:async()=>{imported++},runSync:async()=>{synced++}});
+  try{
+   fs.writeFileSync(path.join(inbox,'old.zip'),'PK');
+   await new Promise(r=>setTimeout(r,180));
+   assert.equal(imported,0);assert.equal(synced,0);assert.equal(watcher.isIdle(),true);
+   fs.rmSync(path.join(inbox,'old.zip'));
   }finally{watcher.close()}
  }finally{fs.rmSync(root,{recursive:true,force:true})}
 });
